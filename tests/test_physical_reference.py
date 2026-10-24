@@ -1,5 +1,7 @@
 """Offline replay of a real reference; never acquires new physical data."""
 import json
+import csv
+from csi_correspondence import idf_complex, documented_ht20_layout
 import os
 from pathlib import Path
 import subprocess
@@ -25,6 +27,17 @@ class PhysicalReferenceTests(unittest.TestCase):
         self.assertEqual(r['receivers']['RX-01']['counts']['malformed_rows'],1)
         self.assertFalse(r['receivers']['RX-01']['collector_quality_recorded'])
         self.assertTrue(r['receivers']['RX-02']['collector_quality_recorded'])
+    def test_real_matrices_keep_byte_order_and_metadata_conditional_blocks(self):
+        config=json.loads((ROOT/'config/csi_esp32s3.json').read_text())['firmware_ltf_config']
+        for rx,count in [('rx-01',292),('rx-02',291)]:
+            with (Path(SOURCE)/(rx+'.csv')).open(newline='') as stream:
+                rows=list(csv.DictReader(stream))
+            self.assertEqual(len(rows),count)
+            for row in rows:
+                raw=json.loads(row['data']);z=idf_complex(raw,bool(int(row['first_word_invalid'])))
+                self.assertEqual([v for pair in z for v in (int(pair.imag),int(pair.real))],raw)
+                blocks=documented_ht20_layout({k:int(row[k]) for k in ('len','sig_mode','bandwidth','secondary_channel','stbc')},config)
+                self.assertEqual(len(blocks),2)
     def test_real_cli_keeps_failure_exit_code(self):
         p=subprocess.run([sys.executable,'-B',str(ROOT/'src/validate_capture.py'),SOURCE,
                           '--manifest',str(ROOT/'data/dual_60s_20261024.manifest.json')],capture_output=True,text=True)

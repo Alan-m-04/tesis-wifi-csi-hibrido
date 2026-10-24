@@ -1,0 +1,428 @@
+{
+  "schema": "tesis-csi-correspondence-audit-v1",
+  "operation": "offline",
+  "new_physical_capture": false,
+  "strict_historical_result": {
+    "schema": "tesis-offline-capture-audit-v1",
+    "operation": "offline_validation",
+    "new_physical_capture": false,
+    "manifest_ok": true,
+    "source_evidence_type": "physical_capture",
+    "session_status": "completed",
+    "receivers": {
+      "RX-01": {
+        "valid_rows": 292,
+        "raw_sha256": "51cb3bb1cb191b5a85e09cfa8936c29f9c0e89d930e73802623defbdcae8125a",
+        "csv_sha256": "fd0cca50ba528d5b7d444fad887e79357d25da902a658569f8d9b0e5c0eab507",
+        "raw_frames_equal_csv": true,
+        "integrity_ok": true,
+        "collector_quality_recorded": false,
+        "collector_quality_recomputed": false,
+        "representation_profile_ok": true,
+        "additional_checks_ok": true,
+        "host_frames_inside_requested_gate": true,
+        "counts": {
+          "malformed_rows": 1,
+          "unexpected_source_rows": 0,
+          "unexpected_metadata_rows": 0,
+          "boot_error_count": 0,
+          "oversized_lines": 0,
+          "callback_id_gaps": 0,
+          "nonincreasing_ids": 0,
+          "device_clock_wraps": 0,
+          "device_time_discontinuities": 0,
+          "queue_drop_increment": 0,
+          "queue_counter_decreases": 0
+        },
+        "trailing_bytes": 257,
+        "initial_boot_markers": 2,
+        "midstream_boot_markers": 0,
+        "first_id": 0,
+        "last_id": 291,
+        "quality_ok": false
+      },
+      "RX-02": {
+        "valid_rows": 291,
+        "raw_sha256": "5af63769f6bea835b037e3ad81e4f03ce4b5113ea266219d83fe8e4234f8d6ff",
+        "csv_sha256": "4b8af9370e65b49580164ba84ce5e11c136abd362bbd96c76e9200b6c048c9fc",
+        "raw_frames_equal_csv": true,
+        "integrity_ok": true,
+        "collector_quality_recorded": true,
+        "collector_quality_recomputed": true,
+        "representation_profile_ok": true,
+        "additional_checks_ok": true,
+        "host_frames_inside_requested_gate": true,
+        "counts": {
+          "malformed_rows": 0,
+          "unexpected_source_rows": 0,
+          "unexpected_metadata_rows": 0,
+          "boot_error_count": 0,
+          "oversized_lines": 0,
+          "callback_id_gaps": 0,
+          "nonincreasing_ids": 0,
+          "device_clock_wraps": 0,
+          "device_time_discontinuities": 0,
+          "queue_drop_increment": 0,
+          "queue_counter_decreases": 0
+        },
+        "trailing_bytes": 257,
+        "initial_boot_markers": 2,
+        "midstream_boot_markers": 0,
+        "first_id": 0,
+        "last_id": 290,
+        "quality_ok": true
+      }
+    },
+    "quality_ok": false
+  },
+  "receivers": {
+    "RX-01": {
+      "rows": 292,
+      "metadata_histograms": {
+        "len": {
+          "256": 292
+        },
+        "sig_mode": {
+          "1": 292
+        },
+        "bandwidth": {
+          "0": 292
+        },
+        "secondary_channel": {
+          "0": 292
+        },
+        "stbc": {
+          "0": 292
+        },
+        "first_word_invalid": {
+          "0": 292
+        },
+        "mcs": {
+          "0": 292
+        },
+        "ant": {
+          "0": 292
+        },
+        "rate": {
+          "11": 292
+        },
+        "channel": {
+          "11": 292
+        },
+        "mac": {
+          "1a:00:00:00:00:00": 292
+        },
+        "rx_state": {
+          "0": 292
+        },
+        "noise_floor": {
+          "-96": 3,
+          "-95": 4,
+          "-94": 5,
+          "-93": 7,
+          "-92": 11,
+          "-91": 60,
+          "-90": 202
+        },
+        "smoothing": {
+          "1": 292
+        },
+        "not_sounding": {
+          "1": 292
+        },
+        "aggregation": {
+          "0": 292
+        },
+        "sgi": {
+          "0": 292
+        },
+        "fec_coding": {
+          "0": 292
+        },
+        "sig_len": {
+          "47": 292
+        },
+        "queue_drops": {
+          "0": 292
+        }
+      },
+      "scalar_min": -75,
+      "scalar_max": 73,
+      "saturated_scalars": 0,
+      "valid_complex_pairs": 37376,
+      "zero_pairs": 5856,
+      "pairs_whose_phase_changes_if_swapped": 31049,
+      "rows_consistent_with_documented_HT20_model": 292,
+      "model_does_not_certify_installed_firmware": true,
+      "host_unique_timestamps": 292,
+      "shared_host_timestamp_groups": 0,
+      "largest_host_timestamp_group": 1,
+      "first_callback_id": 0,
+      "last_callback_id": 291,
+      "first_device_timestamp_us": 772582,
+      "last_device_timestamp_us": 59771818,
+      "device_interval_us_min": 195905,
+      "device_interval_us_max": 399992,
+      "rssi_dbm_min": -68,
+      "rssi_dbm_max": -52,
+      "csv_sha256": "fd0cca50ba528d5b7d444fad887e79357d25da902a658569f8d9b0e5c0eab507"
+    },
+    "RX-02": {
+      "rows": 291,
+      "metadata_histograms": {
+        "len": {
+          "256": 291
+        },
+        "sig_mode": {
+          "1": 291
+        },
+        "bandwidth": {
+          "0": 291
+        },
+        "secondary_channel": {
+          "0": 291
+        },
+        "stbc": {
+          "0": 291
+        },
+        "first_word_invalid": {
+          "0": 291
+        },
+        "mcs": {
+          "0": 291
+        },
+        "ant": {
+          "0": 291
+        },
+        "rate": {
+          "11": 291
+        },
+        "channel": {
+          "11": 291
+        },
+        "mac": {
+          "1a:00:00:00:00:00": 291
+        },
+        "rx_state": {
+          "0": 291
+        },
+        "noise_floor": {
+          "-96": 5,
+          "-95": 7,
+          "-94": 9,
+          "-93": 14,
+          "-92": 45,
+          "-91": 211
+        },
+        "smoothing": {
+          "1": 291
+        },
+        "not_sounding": {
+          "1": 291
+        },
+        "aggregation": {
+          "0": 291
+        },
+        "sgi": {
+          "0": 291
+        },
+        "fec_coding": {
+          "0": 291
+        },
+        "sig_len": {
+          "47": 291
+        },
+        "queue_drops": {
+          "0": 291
+        }
+      },
+      "scalar_min": -66,
+      "scalar_max": 66,
+      "saturated_scalars": 0,
+      "valid_complex_pairs": 37248,
+      "zero_pairs": 5820,
+      "pairs_whose_phase_changes_if_swapped": 31051,
+      "rows_consistent_with_documented_HT20_model": 291,
+      "model_does_not_certify_installed_firmware": true,
+      "host_unique_timestamps": 291,
+      "shared_host_timestamp_groups": 0,
+      "largest_host_timestamp_group": 1,
+      "first_callback_id": 0,
+      "last_callback_id": 290,
+      "first_device_timestamp_us": 569753,
+      "last_device_timestamp_us": 59769948,
+      "device_interval_us_min": 195906,
+      "device_interval_us_max": 400417,
+      "rssi_dbm_min": -52,
+      "rssi_dbm_max": -48,
+      "csv_sha256": "4b8af9370e65b49580164ba84ce5e11c136abd362bbd96c76e9200b6c048c9fc"
+    }
+  },
+  "other_historical_references": [
+    {
+      "receiver": "RX-01",
+      "path": "/home/alan-monar/prueba_uart_20261024_155353/usb_5C93199744.log",
+      "sha256": "481d8c3747f1a92ee367268193efdf80a9b3eeac84d89bcee50edb4f097709d4",
+      "category": "historical_15s_fragment",
+      "complete_valid_rows": 74,
+      "counts": {
+        "malformed_rows": 0,
+        "unexpected_source_rows": 0,
+        "unexpected_metadata_rows": 0,
+        "boot_error_count": 0,
+        "oversized_lines": 0,
+        "callback_id_gaps": 0,
+        "nonincreasing_ids": 0,
+        "device_clock_wraps": 0,
+        "device_time_discontinuities": 0,
+        "queue_drop_increment": 0,
+        "queue_counter_decreases": 0
+      },
+      "trailing_bytes": 128,
+      "metadata_histograms": {
+        "len": {
+          "256": 74
+        },
+        "sig_mode": {
+          "1": 74
+        },
+        "bandwidth": {
+          "0": 74
+        },
+        "secondary_channel": {
+          "0": 74
+        },
+        "stbc": {
+          "0": 74
+        },
+        "first_word_invalid": {
+          "0": 74
+        },
+        "channel": {
+          "11": 74
+        },
+        "mac": {
+          "1a:00:00:00:00:00": 74
+        },
+        "mcs": {
+          "0": 74
+        },
+        "ant": {
+          "0": 74
+        }
+      },
+      "host_timestamps_available": false,
+      "merged_into_dual_capture": false
+    },
+    {
+      "receiver": "RX-02",
+      "path": "/home/alan-monar/prueba_uart_20261024_155353/usb_5C93200689.log",
+      "sha256": "d237c1827c6c2629b70a63ebdcaec82a8a1b81b7d952eda0eadab906d21daec1",
+      "category": "historical_15s_fragment",
+      "complete_valid_rows": 74,
+      "counts": {
+        "malformed_rows": 0,
+        "unexpected_source_rows": 0,
+        "unexpected_metadata_rows": 0,
+        "boot_error_count": 0,
+        "oversized_lines": 0,
+        "callback_id_gaps": 0,
+        "nonincreasing_ids": 0,
+        "device_clock_wraps": 0,
+        "device_time_discontinuities": 0,
+        "queue_drop_increment": 0,
+        "queue_counter_decreases": 0
+      },
+      "trailing_bytes": 128,
+      "metadata_histograms": {
+        "len": {
+          "256": 74
+        },
+        "sig_mode": {
+          "1": 74
+        },
+        "bandwidth": {
+          "0": 74
+        },
+        "secondary_channel": {
+          "0": 74
+        },
+        "stbc": {
+          "0": 74
+        },
+        "first_word_invalid": {
+          "0": 74
+        },
+        "channel": {
+          "11": 74
+        },
+        "mac": {
+          "1a:00:00:00:00:00": 74
+        },
+        "mcs": {
+          "0": 74
+        },
+        "ant": {
+          "0": 74
+        }
+      },
+      "host_timestamps_available": false,
+      "merged_into_dual_capture": false
+    },
+    {
+      "receiver": "RX-02",
+      "path": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/evidencia/experimental_incompleta/presencia-val-inicial-ocupado-20261018T002323-10944/rx-02.serial.log",
+      "sha256": "e6cd5c00747852bf39eaef24b2ef6a9ba3e8bf6644144f6ad81ec1aebb7c9ff1",
+      "category": "experimental_incomplete_no_host_UART_chain",
+      "complete_valid_rows": 596,
+      "counts": {
+        "malformed_rows": 0,
+        "unexpected_source_rows": 0,
+        "unexpected_metadata_rows": 0,
+        "boot_error_count": 0,
+        "oversized_lines": 0,
+        "callback_id_gaps": 0,
+        "nonincreasing_ids": 0,
+        "device_clock_wraps": 0,
+        "device_time_discontinuities": 0,
+        "queue_drop_increment": 0,
+        "queue_counter_decreases": 0
+      },
+      "trailing_bytes": 0,
+      "metadata_histograms": {
+        "len": {
+          "256": 596
+        },
+        "sig_mode": {
+          "1": 596
+        },
+        "bandwidth": {
+          "0": 596
+        },
+        "secondary_channel": {
+          "0": 596
+        },
+        "stbc": {
+          "0": 596
+        },
+        "first_word_invalid": {
+          "0": 596
+        },
+        "channel": {
+          "11": 596
+        },
+        "mac": {
+          "1a:00:00:00:00:00": 596
+        },
+        "mcs": {
+          "0": 596
+        },
+        "ant": {
+          "0": 596
+        }
+      },
+      "host_timestamps_available": false,
+      "merged_into_dual_capture": false
+    }
+  ]
+}
