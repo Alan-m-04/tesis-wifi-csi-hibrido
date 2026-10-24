@@ -1,0 +1,163 @@
+{
+  "schema": "tesis-base-provenance-v1",
+  "imported_utc": "2026-10-24T22:45:45.664382+00:00",
+  "origin_base_commit": "72ccb0abc29912b05716d2f52710fd9d270a901b",
+  "source_sdk_commit": "67c1de1eebe095d554d281952fde63c16ee2dca0",
+  "esp_csi_original_reference_commit": "8633d67152db2808f141cc1595970aa9cf406045",
+  "files": [
+    {
+      "repository_path": "firmware/csi_send/CMakeLists.txt",
+      "sha256": "30f04f0d09072d609a05da6e2fac38a41960108dfcc0475a5734d980e4ae6a6a",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_send/CMakeLists.txt",
+      "selected_source_mtime_utc": "2026-10-24T05:09:50.354320+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_send/CMakeLists.txt",
+      "original_sha256": "30f04f0d09072d609a05da6e2fac38a41960108dfcc0475a5734d980e4ae6a6a",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "firmware/csi_send/sdkconfig.defaults",
+      "sha256": "0308464cb583c0d7ead14fd672653951d11986aa394ca4adad2374d8aeee9b11",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_send/sdkconfig.defaults",
+      "selected_source_mtime_utc": "2026-10-24T05:09:50.354492+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_send/sdkconfig.defaults",
+      "original_sha256": "0308464cb583c0d7ead14fd672653951d11986aa394ca4adad2374d8aeee9b11",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "firmware/csi_send/main/app_main.c",
+      "sha256": "8e9d1a0cfd2996f0b6b3420f495fe2270e7f7ad0ca7487c3b876b6878c5c8eba",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_send/main/app_main.c",
+      "selected_source_mtime_utc": "2026-10-24T05:09:51.050684+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_send/main/app_main.c",
+      "original_sha256": "a8fa32258ef5e786b98374a6fbd86d440e34630d7eac93fcc6a294d18b933198",
+      "original_exists": true,
+      "equal_to_original_restoration": false,
+      "selection_reason": "variante consolidada compilada; retirada previa de inicialización de clave del ejemplo en difusión sin cifrar; original intacto"
+    },
+    {
+      "repository_path": "firmware/csi_send/main/CMakeLists.txt",
+      "sha256": "677ada172a1826884b5145497f5f2fba7972e6e8e9f19c91287f46c5b988cb7a",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_send/main/CMakeLists.txt",
+      "selected_source_mtime_utc": "2026-10-24T05:09:51.050202+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_send/main/CMakeLists.txt",
+      "original_sha256": null,
+      "original_exists": false,
+      "equal_to_original_restoration": false,
+      "selection_reason": "CMake TX reconstruido previamente en consolidación; compilación previa salida 0; no se etiqueta original perdido"
+    },
+    {
+      "repository_path": "firmware/csi_recv/CMakeLists.txt",
+      "sha256": "f0ea95f6160e3d84eda8d4442050bb06fd96ecc1619ab81cd0327578450fb5f2",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_recv/CMakeLists.txt",
+      "selected_source_mtime_utc": "2026-10-24T05:09:50.353133+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_recv/CMakeLists.txt",
+      "original_sha256": "f0ea95f6160e3d84eda8d4442050bb06fd96ecc1619ab81cd0327578450fb5f2",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "firmware/csi_recv/sdkconfig.defaults",
+      "sha256": "0308464cb583c0d7ead14fd672653951d11986aa394ca4adad2374d8aeee9b11",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_recv/sdkconfig.defaults",
+      "selected_source_mtime_utc": "2026-10-24T05:09:50.353507+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_recv/sdkconfig.defaults",
+      "original_sha256": "0308464cb583c0d7ead14fd672653951d11986aa394ca4adad2374d8aeee9b11",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "firmware/csi_recv/main/app_main.c",
+      "sha256": "c940779452aedad8862dd6eb7a24d51786c662d3acbb9369b1a86bff54a1ccc6",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_recv/main/app_main.c",
+      "selected_source_mtime_utc": "2026-10-24T05:09:51.050475+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_recv/main/app_main.c",
+      "original_sha256": "93f98b27385be3d0c7c778ead5a8256fec8d6c76dfd77cfd9265517ce11383e8",
+      "original_exists": true,
+      "equal_to_original_restoration": false,
+      "selection_reason": "variante consolidada compilada; retirada previa de inicialización de clave del ejemplo en difusión sin cifrar; original intacto"
+    },
+    {
+      "repository_path": "firmware/csi_recv/main/CMakeLists.txt",
+      "sha256": "47114157940dc826fa2b7f81beeb00d95b0249d410ea516565916871a4247846",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_recv/main/CMakeLists.txt",
+      "selected_source_mtime_utc": "2026-10-24T05:09:50.353222+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_recv/main/CMakeLists.txt",
+      "original_sha256": "47114157940dc826fa2b7f81beeb00d95b0249d410ea516565916871a4247846",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "firmware/csi_recv/main/idf_component.yml",
+      "sha256": "4a1f01c43b2ebab54ee95377ca12412eb14993428f3587227c7c5862d11cf11b",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_recv/main/idf_component.yml",
+      "selected_source_mtime_utc": "2026-10-24T05:09:50.353427+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_recv/main/idf_component.yml",
+      "original_sha256": "4a1f01c43b2ebab54ee95377ca12412eb14993428f3587227c7c5862d11cf11b",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "firmware/csi_recv_02/CMakeLists.txt",
+      "sha256": "3a9acc5679e8b82cc39516193278a4495d0d28ebf1c51c0d70e07991e3036d31",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_recv_02/CMakeLists.txt",
+      "selected_source_mtime_utc": "2026-10-24T05:09:50.353598+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_recv_02/CMakeLists.txt",
+      "original_sha256": "3a9acc5679e8b82cc39516193278a4495d0d28ebf1c51c0d70e07991e3036d31",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "firmware/csi_recv_02/sdkconfig.defaults",
+      "sha256": "3dfc815b2c3f2abfc9dbada469d5a546477a751a3c7bf7251e566ff421ec5897",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_recv_02/sdkconfig.defaults",
+      "selected_source_mtime_utc": "2026-10-24T05:09:50.354240+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_recv_02/sdkconfig.defaults",
+      "original_sha256": "3dfc815b2c3f2abfc9dbada469d5a546477a751a3c7bf7251e566ff421ec5897",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "firmware/csi_recv_02/main/app_main.c",
+      "sha256": "1fb53776e1e5776194749041d1252c3f8ee11f69f30fb982a42c7577319e00d5",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_recv_02/main/app_main.c",
+      "selected_source_mtime_utc": "2026-10-24T05:09:51.050852+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_recv_02/main/app_main.c",
+      "original_sha256": "36b2f9febbf0a812358dac44b67a5f7082ae46812fa802b1d72727265ad5b6d3",
+      "original_exists": true,
+      "equal_to_original_restoration": false,
+      "selection_reason": "variante consolidada compilada; retirada previa de inicialización de clave del ejemplo en difusión sin cifrar; original intacto"
+    },
+    {
+      "repository_path": "firmware/csi_recv_02/main/CMakeLists.txt",
+      "sha256": "47114157940dc826fa2b7f81beeb00d95b0249d410ea516565916871a4247846",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_recv_02/main/CMakeLists.txt",
+      "selected_source_mtime_utc": "2026-10-24T05:09:50.353813+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_recv_02/main/CMakeLists.txt",
+      "original_sha256": "47114157940dc826fa2b7f81beeb00d95b0249d410ea516565916871a4247846",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "firmware/csi_recv_02/main/idf_component.yml",
+      "sha256": "4a1f01c43b2ebab54ee95377ca12412eb14993428f3587227c7c5862d11cf11b",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/trabajo/tesis-wifi-csi-mesh/firmware/csi_recv_02/main/idf_component.yml",
+      "selected_source_mtime_utc": "2026-10-24T05:09:50.354010+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/firmware/csi_recv_02/main/idf_component.yml",
+      "original_sha256": "4a1f01c43b2ebab54ee95377ca12412eb14993428f3587227c7c5862d11cf11b",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    }
+  ]
+}

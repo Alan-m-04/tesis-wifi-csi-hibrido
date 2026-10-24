@@ -27,3 +27,17 @@ models/weights/
 *.tmp
 *.swp
 .DS_Store
+
+# Artefactos locales de verificación de esta base
+firmware/**/sdkconfig
+firmware/**/build*/
+*.bin
+*.elf
+*.map
+*.o
+*.obj
+*.a
+results/local/
+
+# Generated IDF-only dependency resolution (source manifests are tracked)
+firmware/**/dependencies.lock
