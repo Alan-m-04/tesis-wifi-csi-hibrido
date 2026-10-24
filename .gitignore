@@ -41,3 +41,6 @@ results/local/
 
 # Generated IDF-only dependency resolution (source manifests are tracked)
 firmware/**/dependencies.lock
+
+# Isolated Node runtime and verified downloads
+.tools/

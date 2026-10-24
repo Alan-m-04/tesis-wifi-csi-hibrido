@@ -6,7 +6,7 @@ Base verificable del sistema de sensado CSI y Edge AI para MIPYMES de Riobamba, 
 
 - Fuentes TX-01, RX-01 y RX-02 compiladas aquí con ESP-IDF v5.4 para ESP32-S3.
 - Parser y capturador dual restaurados sin cambios; validación offline nueva y perfil explícito.
-- Primer hito: 40 pruebas aprobadas. Segundo hito: 60 aprobadas (57 sintéticas y 3 regresiones offline históricas). No se ejecutaron las 304 pruebas del proyecto anterior.
+- Primer hito: 40 pruebas aprobadas. Segundo hito: 60 aprobadas. Tercer hito: 103 aprobadas (72 Python y 31 Node), sin omisiones. No se ejecutaron las 304 pruebas del proyecto anterior.
 - Referencia física histórica: 292/291 filas. Su rechazo estricto se conserva; aprobar la regresión no convierte la captura en una campaña válida.
 - Sin nueva adquisición UART, flasheo, instalación de RuView ni entrenamiento.
 
@@ -20,8 +20,14 @@ Con el entorno oficial ESP-IDF v5.4 ya activado, ejecutar `./tools/build_firmwar
 
 `firmware/`: tres proyectos y atribuciones; `src/`: captura y validación; `tests/`: pruebas; `config/`: perfil; `data/`: manifiesto; `results/`: resultados; `docs/`: procedencia, formato y pendientes.
 
-Antes de integrar RuView hay que verificar orden I/Q, empaquetado LTF y subportadoras, relojes y compatibilidad de modelos. No existe adaptador aprobado ni modelo entrenado en esta base. Las capturas brutas permanecen locales e intactas. Una nueva adquisición física requiere autorización explícita.
+Antes de integrar RuView hay que verificar orden I/Q, empaquetado LTF y subportadoras, relojes y compatibilidad de modelos. Existe un puente diagnóstico offline al consumidor oficial de este tercer hito; no hay streaming integrado ni modelo entrenado validado. Las capturas brutas permanecen locales e intactas. Una nueva adquisición física requiere autorización explícita.
 
 Consultar [inventario](docs/INVENTARIO_BASE.md), [estado](docs/ESTADO_INICIAL.md), [resultados](results/BASE_VERIFICADA.md) y [flujo Git](docs/FLUJO_GIT.md).
 
 La [auditoría CSI/RuView](docs/COMPATIBILIDAD_CSI_RUVIEW.md) demuestra Im/Re y documenta incompatibilidades de fase, banda e índices. [Resultados del segundo hito](results/AUDITORIA_CSI_RUVIEW.md): queda respaldado el análisis offline; ADR-018 directo sigue bloqueado.
+
+## Tercer hito: visualización offline
+
+Se ejecutan `parsePacket` y `SpectrumCollector` oficiales de `harness/ruview/src/devices/esp32.js` (RuView fefb0f9) con Node v22.20.0 local fijado y sin UDP. La representación canónica conserva fuentes, hashes, máscaras, metadatos y relojes; la página muestra RX-01/RX-02 y LLTF/HT-LTF con **captura histórica con validación estricta rechazada**.
+
+103 pruebas aprobadas: 72 Python y 31 Node, cero omisiones; cuatro vistas verificadas en Firefox. Ver [contrato/procedimiento](docs/CONTRATO_CONSUMIDOR_RUVIEW.md) y [validación](results/VALIDACION_VISUALIZACION_OFFLINE.md). El artefacto local generado es `results/local/visualizacion-csi-entrega/index.html`; no se publican sus datos brutos en Git.

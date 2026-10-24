@@ -1,0 +1,9 @@
+{
+  "version": "v22.20.0",
+  "platform": "linux-x64",
+  "archive": "node-v22.20.0-linux-x64.tar.xz",
+  "archive_sha256": "00bbd05e306ea68b6e13e17360d0e2f680b493ef95f2fea1c4296ff7437530bc",
+  "base_url": "https://nodejs.org/dist/v22.20.0/",
+  "verification": "SHA-256 pinned and compared with official HTTPS SHASUMS256.txt; no GPG signature claimed",
+  "install_scope": "project .tools only; node binary and LICENSE; no npm or RuView dependencies"
+}

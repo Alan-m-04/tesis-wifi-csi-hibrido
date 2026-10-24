@@ -1,0 +1,188 @@
+{
+  "schema": "tesis-offline-view-validation-v1",
+  "status_label": "captura histórica con validación estricta rechazada",
+  "strict_quality_ok": false,
+  "node_version": "v22.20.0",
+  "official_functions": [
+    "parsePacket",
+    "SpectrumCollector.add",
+    "SpectrumCollector.result",
+    "binAmplitudes (transitive)"
+  ],
+  "transport": "memory_buffers_only",
+  "server_started": false,
+  "views": {
+    "RX-01/LLTF": {
+      "receiver_id": "RX-01",
+      "usb_serial": "5C93199744",
+      "ltf": "LLTF",
+      "node_id": 1,
+      "compared_amplitudes": 18688,
+      "compared_phases": 15172,
+      "frames": 292,
+      "shape": "1x64",
+      "spectrum_frames": 292,
+      "rate_hz_host_span": 4.93
+    },
+    "RX-01/HT-LTF": {
+      "receiver_id": "RX-01",
+      "usb_serial": "5C93199744",
+      "ltf": "HT-LTF",
+      "node_id": 1,
+      "compared_amplitudes": 18688,
+      "compared_phases": 16348,
+      "frames": 292,
+      "shape": "1x64",
+      "spectrum_frames": 292,
+      "rate_hz_host_span": 4.93
+    },
+    "RX-02/LLTF": {
+      "receiver_id": "RX-02",
+      "usb_serial": "5C93200689",
+      "ltf": "LLTF",
+      "node_id": 2,
+      "compared_amplitudes": 18624,
+      "compared_phases": 15132,
+      "frames": 291,
+      "shape": "1x64",
+      "spectrum_frames": 291,
+      "rate_hz_host_span": 4.9
+    },
+    "RX-02/HT-LTF": {
+      "receiver_id": "RX-02",
+      "usb_serial": "5C93200689",
+      "ltf": "HT-LTF",
+      "node_id": 2,
+      "compared_amplitudes": 18624,
+      "compared_phases": 16296,
+      "frames": 291,
+      "shape": "1x64",
+      "spectrum_frames": 291,
+      "rate_hz_host_span": 4.9
+    }
+  },
+  "files": {
+    "canonical.json": {
+      "bytes": 6800446,
+      "sha256": "5f65e6c30912eb473136611753e6770c25727a95a00ada8f35c7274dcff3b0cf"
+    },
+    "ruview-consumer.json": {
+      "bytes": 2925287,
+      "sha256": "0212abf3bf7e62929509a6a13112cef6f1bccb86dbf11a4e1f8487a716690e6d"
+    },
+    "index.html": {
+      "bytes": 9735788,
+      "sha256": "aa9da791f974ab01c4508b1cb732960e3625ae3c5ef86206de88a2b7826516f8"
+    }
+  },
+  "base_commit": "73099b3347ff5403ca789c7c87d398ec7928b09b",
+  "branch": "feat/visualizacion-csi-offline",
+  "python_tests": {
+    "run": 72,
+    "seconds": 3.956,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "node_tests": {
+    "run": 31,
+    "pass": 31,
+    "fail": 0,
+    "skipped": 0
+  },
+  "total_tests": 103,
+  "synthetic_tests": 95,
+  "offline_physical_regressions": 8,
+  "local_bundle": "results/local/visualizacion-csi-entrega",
+  "test_log_sha256": "273cb8e8e964c84ed571be7e6c1c75fb51e656bd6f69958c33821c708517e1fd",
+  "browser": {
+    "control_host": "127.0.0.1",
+    "http_server": false,
+    "udp": false,
+    "views": {
+      "RX-01/LLTF": {
+        "rendered": "true",
+        "status": "captura histórica con validación estricta rechazada",
+        "rx": "RX-01",
+        "ltf": "LLTF",
+        "max": "291",
+        "charts": [
+          308,
+          91,
+          79,
+          18704
+        ],
+        "sigmaPoints": 52,
+        "screenshot": "rx-01-lltf.png",
+        "slider": {
+          "value": "0",
+          "sample": "Fila CSV 2 · callback 0 · UTC lectura 2026-10-24T20:59:43.687550+00:00 · host_ns 21039711320173 · RX_us 772582"
+        }
+      },
+      "RX-01/HT-LTF": {
+        "rendered": "true",
+        "status": "captura histórica con validación estricta rechazada",
+        "rx": "RX-01",
+        "ltf": "HT-LTF",
+        "max": "291",
+        "charts": [
+          308,
+          87,
+          79,
+          18704
+        ],
+        "sigmaPoints": 56,
+        "screenshot": "rx-01-ht-ltf.png",
+        "slider": {
+          "value": "0",
+          "sample": "Fila CSV 2 · callback 0 · UTC lectura 2026-10-24T20:59:43.687550+00:00 · host_ns 21039711320173 · RX_us 772582"
+        }
+      },
+      "RX-02/LLTF": {
+        "rendered": "true",
+        "status": "captura histórica con validación estricta rechazada",
+        "rx": "RX-02",
+        "ltf": "LLTF",
+        "max": "290",
+        "charts": [
+          307,
+          91,
+          79,
+          18640
+        ],
+        "sigmaPoints": 52,
+        "screenshot": "rx-02-lltf.png",
+        "slider": {
+          "value": "0",
+          "sample": "Fila CSV 2 · callback 0 · UTC lectura 2026-10-24T20:59:43.494735+00:00 · host_ns 21039518504557 · RX_us 569753"
+        }
+      },
+      "RX-02/HT-LTF": {
+        "rendered": "true",
+        "status": "captura histórica con validación estricta rechazada",
+        "rx": "RX-02",
+        "ltf": "HT-LTF",
+        "max": "290",
+        "charts": [
+          307,
+          87,
+          79,
+          18640
+        ],
+        "sigmaPoints": 56,
+        "screenshot": "rx-02-ht-ltf.png",
+        "slider": {
+          "value": "0",
+          "sample": "Fila CSV 2 · callback 0 · UTC lectura 2026-10-24T20:59:43.494735+00:00 · host_ns 21039518504557 · RX_us 569753"
+        }
+      }
+    }
+  },
+  "browser_version": "154.0",
+  "screenshots": {
+    "rx-01-ht-ltf.png": "0ec0a6de3e24145bb88fe9f50b527ea71685fed4a6b39f53360ed3e850653903",
+    "rx-02-ht-ltf.png": "b9837221bd354a177ac2f653d042525c2bd0d9ca7a471ca1d87ff161127198f9",
+    "rx-02-lltf.png": "13ef36d037fad7bb6715b8d4633275b529b7558d4770dbc4adb641c78e3d2fbe",
+    "rx-01-lltf.png": "50a883b838161bef6a45ff7710a6fa93d80fdef09f939bf8419fe51e25ccb910"
+  }
+}
