@@ -1,42 +1,25 @@
 # Tesis: sistema híbrido WiFi CSI con ESP32-S3 y RuView
 
-Repositorio nuevo para desarrollar y documentar el sistema de sensado CSI y Edge AI aplicado a MIPYMES de Riobamba. El procesamiento se realizará en una PC local.
+Base verificable del sistema de sensado CSI y Edge AI para MIPYMES de Riobamba, con procesamiento en PC local. Se conservan los objetivos del anteproyecto aprobado: presencia será el primer hito, no el alcance total.
 
-## Punto de partida
+## Estado comprobado el 24 de octubre de 2026
 
-Esta base organiza el proyecto desde cero. Todavía no contiene firmware, capturador ni adaptador funcional. El firmware y las capturas existentes se incorporarán desde copias verificadas; no se eliminarán ni se sobrescribirán sus originales.
+- Fuentes TX-01, RX-01 y RX-02 compiladas aquí con ESP-IDF v5.4 para ESP32-S3.
+- Parser y capturador dual restaurados sin cambios; validación offline nueva y perfil explícito.
+- 40 pruebas aprobadas: 18 recuperadas, 20 sintéticas nuevas y 2 de regresión sobre evidencia física histórica. No se ejecutaron las 304 pruebas del proyecto anterior.
+- Referencia física histórica: 292/291 filas. Su rechazo estricto se conserva; aprobar la regresión no convierte la captura en una campaña válida.
+- Sin nueva adquisición UART, flasheo, instalación de RuView ni entrenamiento.
 
-La integración mínima buscará recibir CSI de TX-01, RX-01 y RX-02 con el firmware propio, conservar los registros y reutilizar componentes verificables de RuView. La detección de presencia será el primer hito; no sustituye los objetivos del anteproyecto aprobado, que deben mantenerse.
+## Reproducir
 
-## Estructura
+Crear `.venv` con Python compatible, instalar `requirements-dev.txt` exclusivamente allí y ejecutar `./tools/test_base.sh`. Requiere Bubblewrap (`bwrap`): el procedimiento bloquea red y dispositivos físicos, mantiene el repositorio de solo lectura y permite PTY sintéticos. Sin la copia física local se omiten explícitamente dos pruebas; los datos no se descargan automáticamente.
 
-| Carpeta | Contenido previsto |
-|---|---|
-| firmware/ | Fuentes propias de TX-01, RX-01 y RX-02 |
-| src/ | Capturador, validación, adaptador y procesamiento en PC |
-| tests/ | Pruebas automatizadas y fixtures identificados |
-| config/ | Plantillas de configuración sin credenciales |
-| docs/ | Arquitectura, decisiones, procedimientos y validación |
-| data/ | Manifiestos y documentación de conjuntos de datos |
-| results/ | Informes, métricas y evidencias revisadas |
+Con el entorno oficial ESP-IDF v5.4 ya activado, ejecutar `./tools/build_firmware.sh TX-01` y repetir para RX-01 y RX-02. El procedimiento solo compila; no flashea. Builds y entornos son locales e ignorados.
 
-## Orden de desarrollo
+## Estructura y siguiente hito
 
-1. Crear y conectar este repositorio en GitHub.
-2. Incorporar y revisar las fuentes existentes, su configuración y pruebas.
-3. Reproducir offline una captura real y conservar el resultado estricto.
-4. Fijar una revisión de RuView y aprobar la correspondencia CSI antes de convertir.
-5. Probar el adaptador con ambos receptores y visualización local.
-6. Solicitar autorización antes de abrir UART para una captura física integrada.
-7. Realizar campañas etiquetadas y después comparar modelos de presencia.
+`firmware/`: tres proyectos y atribuciones; `src/`: captura y validación; `tests/`: pruebas; `config/`: perfil; `data/`: manifiesto; `results/`: resultados; `docs/`: procedencia, formato y pendientes.
 
-## Reglas de evidencia
+Antes de integrar RuView hay que verificar orden I/Q, empaquetado LTF y subportadoras, relojes y compatibilidad de modelos. No existe adaptador aprobado ni modelo entrenado en esta base. Las capturas brutas permanecen locales e intactas. Una nueva adquisición física requiere autorización explícita.
 
-- Diferenciar lo declarado por el usuario, lo inspeccionado en código, lo medido en software y lo medido físicamente.
-- Identificar explícitamente cualquier dato sintético.
-- No presentar pruebas sintéticas como validación física.
-- No cambiar criterios de calidad para aprobar capturas.
-- No rellenar matrices incompletas ni aumentar artificialmente la frecuencia.
-- Conservar ESP-IDF v5.4 y el firmware propio hasta que exista una decisión documentada.
-
-Consultar [ESTADO_INICIAL.md](docs/ESTADO_INICIAL.md) y [FLUJO_GIT.md](docs/FLUJO_GIT.md).
+Consultar [inventario](docs/INVENTARIO_BASE.md), [estado](docs/ESTADO_INICIAL.md), [resultados](results/BASE_VERIFICADA.md) y [flujo Git](docs/FLUJO_GIT.md).

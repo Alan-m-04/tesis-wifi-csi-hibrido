@@ -1,0 +1,42 @@
+{
+  "date_utc": "2026-10-24T22:57:21.360325+00:00",
+  "tests_run": 40,
+  "seconds": 3.52,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "recovered_collector_tests": 18,
+  "new_synthetic_validator_tests": 20,
+  "offline_physical_reference_tests": 2,
+  "network_in_tests": false,
+  "physical_uart_opened": false,
+  "source_mount_readonly": true,
+  "command": "./tools/test_base.sh",
+  "log_sha256": "7456ea1b320ec5c3b5d9dbfd8e04c0268f1c15a272975d94edc97c5ee18d1a7a",
+  "firmware_builds": [
+    {
+      "role": "TX-01",
+      "project": "firmware/csi_send",
+      "build": "build/TX-01",
+      "returncode": 0,
+      "wall_seconds": 28.462,
+      "flashed": false
+    },
+    {
+      "role": "RX-01",
+      "project": "firmware/csi_recv",
+      "build": "build/RX-01",
+      "returncode": 0,
+      "wall_seconds": 32.538,
+      "flashed": false
+    },
+    {
+      "role": "RX-02",
+      "project": "firmware/csi_recv_02",
+      "build": "build/RX-02",
+      "returncode": 0,
+      "wall_seconds": 33.854,
+      "flashed": false
+    }
+  ]
+}
