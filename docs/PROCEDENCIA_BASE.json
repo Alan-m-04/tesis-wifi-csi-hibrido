@@ -158,6 +158,39 @@
       "original_exists": true,
       "equal_to_original_restoration": true,
       "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "src/capture_csi.py",
+      "sha256": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/tools/capture_csi.py",
+      "selected_source_mtime_utc": "2026-10-24T04:34:00.746816+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/tools/capture_csi.py",
+      "original_sha256": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "src/capture_csi_multi.py",
+      "sha256": "7a58b62258a8057fc8c7652ccad36b6f0c22895319c2f52d2d44a331ad4e6908",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/tools/capture_csi_multi.py",
+      "selected_source_mtime_utc": "2026-10-24T04:34:00.751414+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/tools/capture_csi_multi.py",
+      "original_sha256": "7a58b62258a8057fc8c7652ccad36b6f0c22895319c2f52d2d44a331ad4e6908",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
+    },
+    {
+      "repository_path": "tests/test_capture_csi_multi.py",
+      "sha256": "339ba29ca1dbdce8dec869872eaa9c3da87e9f120f7dbc2d7e7140960b4d433e",
+      "selected_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/tools/test_capture_csi_multi.py",
+      "selected_source_mtime_utc": "2026-10-24T04:34:00.785208+00:00",
+      "original_restoration_source": "/home/alan-monar/tesis-restaurada-20261024T043056Z/tesis-wifi-csi-mesh/tools/test_capture_csi_multi.py",
+      "original_sha256": "339ba29ca1dbdce8dec869872eaa9c3da87e9f120f7dbc2d7e7140960b4d433e",
+      "original_exists": true,
+      "equal_to_original_restoration": true,
+      "selection_reason": "copia literal verificada"
     }
   ]
 }
