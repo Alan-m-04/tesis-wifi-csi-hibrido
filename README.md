@@ -8,7 +8,7 @@ Base verificable del sistema de sensado CSI y Edge AI para MIPYMES de Riobamba, 
 - Parser restaurado y capturador derivado con correcciones verificadas de entrada, encuadre y cierre; originales preservados.
 - Primer hito: 40 pruebas aprobadas. Segundo hito: 60 aprobadas. Tercer hito: 103 aprobadas (72 Python y 31 Node), sin omisiones. No se ejecutaron las 304 pruebas del proyecto anterior.
 - Referencia física histórica: 292/291 filas. Su rechazo estricto se conserva; aprobar la regresión no convierte la captura en una campaña válida.
-- Un intento físico posterior al reinicio: 145/146 filas completas y sesión estrictamente rechazada; brutos y colas conservados. Sin flasheo, instalación de RuView ni entrenamiento.
+- Dos sesiones físicas separadas y rechazadas: v1 con 145/146 filas y colas conservadas; v2 con 147/147 y parada LF sin cola, rechazada por residuos iniciales. Sin flasheo, instalación de RuView ni entrenamiento.
 
 ## Reproducir
 
@@ -47,3 +47,7 @@ El [diagnóstico offline posterior](docs/DIAGNOSTICO_LIMITES_CAPTURA.md) reprodu
 ## controlled_dual_v2 preparado y probado sin hardware físico
 
 v2 integra el lector acotado: mantiene los 30 s nominales y completa una línea pendiente hasta LF con máximo 250 ms desde el deadline y 65536 bytes adicionales. Conserva todos los fragmentos y registra motivos/tiempos por RX; las filas posteriores quedan fuera del conteo nominal. v1 y sus resultados siguen disponibles. Pasaron 155 pruebas (124 Python, 31 Node), un ensayo PTY de 30 s y ocho vistas de navegador. No se abrió UART físico ni se creó otra autorización. Ver [protocolo, límites y comando pendiente de revisión](docs/PROTOCOLO_CAPTURA_DUAL_V2.md) y [evidencia](results/CONTROLLED_DUAL_V2.validacion.json).
+
+## Intento físico v2 posterior, con autorización nueva
+
+Un único intento produjo 147 filas completas por RX, todas nominales. Integridad registrada, filas completas y parada pasan; la calidad global sigue **rechazada por residuos iniciales**. Ambos puertos se cerraron y no quedó cola; no fue necesaria finalización adicional. Se conservaron v1 y su rechazo, sin concatenar sesiones. Ver [resultado físico, visualización local y comparación](results/CAPTURA_FISICA_V2_20261025.md). No hubo reintentos ni cambios de firmware.

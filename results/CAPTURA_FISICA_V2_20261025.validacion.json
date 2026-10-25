@@ -1,0 +1,412 @@
+{
+  "schema": "tesis-physical-controlled-dual-v2-attempt-v1",
+  "checked_utc": "2026-10-25T20:20:17.819282+00:00",
+  "acquisition_commit": "7aaaa8a6af429753c1036c3d47de6705469587c8",
+  "physical_attempts": 1,
+  "retries": 0,
+  "session_status": "completed",
+  "global_session_quality_ok": false,
+  "started_utc": "2026-10-25T20:11:44.505716+00:00",
+  "finished_utc": "2026-10-25T20:12:14.553486+00:00",
+  "nominal_window_ns": 30000000000,
+  "actual_envelope_ns": 30047753992,
+  "controlled": {
+    "seconds": 30,
+    "stable_window": null,
+    "common_start_ns": "4071668847309",
+    "common_deadline_ns": "4101668847309",
+    "stop_policy": {
+      "grace_ns": 250000000,
+      "max_completion_bytes": 65536
+    }
+  },
+  "environment": {
+    "condition": "Cuarto del operador; declaración explícita actual del usuario, sin medición automática.",
+    "occupancy": "Una persona: el operador, solo en su cuarto.",
+    "movement": "Operador sentado y quieto frente a la laptop durante los 30 segundos nominales.",
+    "geometry": "Una receptora a cada lado del operador; TX-01 a algo más de 2 m. Distancias aproximadas declaradas, no medidas exactas.",
+    "tx_power": "TX-01 alimentado por cargador de pared; RX-01 y RX-02 conectados por USB a Ubuntu."
+  },
+  "preflight": {
+    "RX-01": {
+      "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93199744-if00",
+      "resolved": "/dev/ttyACM1",
+      "serial": "5C93199744",
+      "vid": "1a86",
+      "pid": "55d3",
+      "bus": "usb"
+    },
+    "RX-02": {
+      "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00",
+      "resolved": "/dev/ttyACM0",
+      "serial": "5C93200689",
+      "vid": "1a86",
+      "pid": "55d3",
+      "bus": "usb"
+    }
+  },
+  "postflight": {
+    "RX-01": {
+      "identity_ok": true
+    },
+    "RX-02": {
+      "identity_ok": true
+    }
+  },
+  "lifecycle": [
+    {
+      "event": "opening",
+      "receiver": "RX-01",
+      "monotonic_ns": "4071664144968",
+      "utc": "2026-10-25T20:11:44.507895+00:00"
+    },
+    {
+      "event": "opened",
+      "receiver": "RX-01",
+      "monotonic_ns": "4071664693865",
+      "dtr_requested": false,
+      "rts_requested": false,
+      "open_input_flush_suppressed": 1,
+      "utc": "2026-10-25T20:11:44.508444+00:00"
+    },
+    {
+      "event": "opening",
+      "receiver": "RX-02",
+      "monotonic_ns": "4071667939701",
+      "utc": "2026-10-25T20:11:44.511689+00:00"
+    },
+    {
+      "event": "opened",
+      "receiver": "RX-02",
+      "monotonic_ns": "4071668513543",
+      "dtr_requested": false,
+      "rts_requested": false,
+      "open_input_flush_suppressed": 1,
+      "utc": "2026-10-25T20:11:44.512263+00:00"
+    },
+    {
+      "event": "readers_joined",
+      "monotonic_ns": "4101671992649"
+    },
+    {
+      "event": "closing",
+      "receiver": "RX-02",
+      "monotonic_ns": "4101672025010",
+      "utc": "2026-10-25T20:12:14.515778+00:00"
+    },
+    {
+      "event": "closed",
+      "receiver": "RX-02",
+      "monotonic_ns": "4101674053214",
+      "utc": "2026-10-25T20:12:14.517804+00:00"
+    },
+    {
+      "event": "closing",
+      "receiver": "RX-01",
+      "monotonic_ns": "4101674078334",
+      "utc": "2026-10-25T20:12:14.517828+00:00"
+    },
+    {
+      "event": "closed",
+      "receiver": "RX-01",
+      "monotonic_ns": "4101709683159",
+      "utc": "2026-10-25T20:12:14.553442+00:00"
+    },
+    {
+      "event": "ports_closed",
+      "monotonic_ns": "4101709733092"
+    }
+  ],
+  "ports_closed": true,
+  "fuser_after": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "receivers": {
+    "RX-01": {
+      "registered_integrity_ok": true,
+      "complete_rows_quality_ok": true,
+      "stop_quality_ok": true,
+      "global_receiver_quality_ok": false,
+      "full_audit": {
+        "valid_rows": 147,
+        "raw_sha256": "6eb534791e782a8abf5bf8b6601e923b9f7698421c3c08e51d1a066feef23e96",
+        "csv_sha256": "c383b996e0f646e2c9d68bb3fb8fe358a14de45e5b41e47e53d59e4e6bf0b73f",
+        "raw_frames_equal_csv": true,
+        "integrity_ok": true,
+        "collector_quality_recorded": true,
+        "collector_quality_recomputed": true,
+        "representation_profile_ok": true,
+        "additional_checks_ok": false,
+        "host_frames_inside_requested_gate": true,
+        "read_ledger_ok": true,
+        "common_window_rows": 147,
+        "counts": {
+          "malformed_rows": 0,
+          "unexpected_source_rows": 0,
+          "unexpected_metadata_rows": 0,
+          "boot_error_count": 0,
+          "oversized_lines": 0,
+          "callback_id_gaps": 0,
+          "nonincreasing_ids": 0,
+          "device_clock_wraps": 0,
+          "device_time_discontinuities": 0,
+          "queue_drop_increment": 0,
+          "queue_counter_decreases": 0
+        },
+        "trailing_bytes": 0,
+        "embedded_boot_lines": [
+          1
+        ],
+        "orphan_fragment_lines": [],
+        "initial_boot_markers": 2,
+        "midstream_boot_markers": 0,
+        "first_id": 0,
+        "last_id": 146,
+        "quality_ok": false,
+        "complete_rows_quality_ok": true,
+        "preamble_rows": 0,
+        "post_deadline_rows": 0,
+        "stop_metadata_ok": true,
+        "stop_quality_ok": true,
+        "stop": {
+          "started_ns": "4071666039960",
+          "started_utc": "2026-10-25T20:11:44.509789+00:00",
+          "nominal_deadline_ns": "4101668847309",
+          "completion_deadline_ns": "4101918847309",
+          "max_completion_bytes": 65536,
+          "completion_started_ns": null,
+          "last_read_returned_ns": "4101635090988",
+          "stop_reason": "lf_boundary",
+          "stopped_ns": "4101669519707",
+          "stopped_utc": "2026-10-25T20:12:14.513273+00:00",
+          "bytes_received": 130321,
+          "trailing_bytes": 0,
+          "completion_bytes": 0,
+          "lf_boundary_reached": true,
+          "last_return_within_budget": true
+        }
+      },
+      "raw_bytes": 130321,
+      "read_count": 2125,
+      "residual_lines": [
+        {
+          "line_1based": 1,
+          "offset": 0,
+          "end_exclusive": 27,
+          "bytes": 27,
+          "sha256": "47b38b879dbfa281b451c650eb3b8056a5c97b1bb82c53634b898f514ad7ab95"
+        }
+      ],
+      "rssi_min": -46,
+      "rssi_max": -44,
+      "sample_interval_rate_hz": 5.0004638687157765,
+      "stop_relative_to_nominal_deadline_ns": 672398,
+      "last_data_relative_to_nominal_deadline_ns": -33756321
+    },
+    "RX-02": {
+      "registered_integrity_ok": true,
+      "complete_rows_quality_ok": true,
+      "stop_quality_ok": true,
+      "global_receiver_quality_ok": false,
+      "full_audit": {
+        "valid_rows": 147,
+        "raw_sha256": "0a88339d6799e0bcd29c709aafe81e726d164c0c92d04a8dbab7bd1371b2ba70",
+        "csv_sha256": "11c9a5b763b485173b72a793c8d68a84411e4ab33cd981eb0ba92ed6fd6ff073",
+        "raw_frames_equal_csv": true,
+        "integrity_ok": true,
+        "collector_quality_recorded": true,
+        "collector_quality_recomputed": true,
+        "representation_profile_ok": true,
+        "additional_checks_ok": false,
+        "host_frames_inside_requested_gate": true,
+        "read_ledger_ok": true,
+        "common_window_rows": 147,
+        "counts": {
+          "malformed_rows": 0,
+          "unexpected_source_rows": 0,
+          "unexpected_metadata_rows": 0,
+          "boot_error_count": 0,
+          "oversized_lines": 0,
+          "callback_id_gaps": 0,
+          "nonincreasing_ids": 0,
+          "device_clock_wraps": 0,
+          "device_time_discontinuities": 0,
+          "queue_drop_increment": 0,
+          "queue_counter_decreases": 0
+        },
+        "trailing_bytes": 0,
+        "embedded_boot_lines": [],
+        "orphan_fragment_lines": [
+          1,
+          2
+        ],
+        "initial_boot_markers": 2,
+        "midstream_boot_markers": 0,
+        "first_id": 0,
+        "last_id": 146,
+        "quality_ok": false,
+        "complete_rows_quality_ok": true,
+        "preamble_rows": 0,
+        "post_deadline_rows": 0,
+        "stop_metadata_ok": true,
+        "stop_quality_ok": true,
+        "stop": {
+          "started_ns": "4071668785330",
+          "started_utc": "2026-10-25T20:11:44.512534+00:00",
+          "nominal_deadline_ns": "4101668847309",
+          "completion_deadline_ns": "4101918847309",
+          "max_completion_bytes": 65536,
+          "completion_started_ns": null,
+          "last_read_returned_ns": "4101638145335",
+          "stop_reason": "lf_boundary",
+          "stopped_ns": "4101669253236",
+          "stopped_utc": "2026-10-25T20:12:14.513009+00:00",
+          "bytes_received": 131945,
+          "trailing_bytes": 0,
+          "completion_bytes": 0,
+          "lf_boundary_reached": true,
+          "last_return_within_budget": true
+        }
+      },
+      "raw_bytes": 131945,
+      "read_count": 2155,
+      "residual_lines": [
+        {
+          "line_1based": 1,
+          "offset": 0,
+          "end_exclusive": 44,
+          "bytes": 44,
+          "sha256": "9c684f3ffbfad4944f8e806ab24d59d154b7de5a38bcbb5e57bf64e2915e1631"
+        },
+        {
+          "line_1based": 2,
+          "offset": 44,
+          "end_exclusive": 364,
+          "bytes": 320,
+          "sha256": "1e2381f17c097c489c0092418be30894fec85ba9025c5eb69ff77ca1669a0d48"
+        }
+      ],
+      "rssi_min": -53,
+      "rssi_max": -48,
+      "sample_interval_rate_hz": 5.000082256661429,
+      "stop_relative_to_nominal_deadline_ns": 405927,
+      "last_data_relative_to_nominal_deadline_ns": -30701974
+    }
+  },
+  "independent_audit_matches_acquisition": true,
+  "bundle": {
+    "files_verified": 15,
+    "manifest_sha256": "e9b5c5b0fafff27c6a318ffacfbe857a42418b2c9e012bea2e10f41410d81231"
+  },
+  "preservation": {
+    "pinned_files": 86,
+    "all_unchanged": true,
+    "v1_audit_identical_to_original": true,
+    "v1_global_rejection_unchanged": true
+  },
+  "comparison": {
+    "v1_run": "captura-dual-30s-post-reinicio-20261025-intento01",
+    "v2_run": "captura-dual-v2-30s-20261025-intento01",
+    "sessions_concatenated": false,
+    "derived_window_created": false,
+    "v1_global_quality_ok": false,
+    "v2_global_quality_ok": false,
+    "receivers": {
+      "RX-01": {
+        "v1": {
+          "valid_rows": 145,
+          "common_window_rows": 145,
+          "registered_integrity_ok": true,
+          "complete_rows_quality_ok": true,
+          "trailing_bytes": 129,
+          "embedded_boot_lines": [
+            1
+          ],
+          "global_receiver_quality_ok": false,
+          "stop_policy": "v1 temporal cut; no bounded completion contract"
+        },
+        "v2": {
+          "valid_rows": 147,
+          "common_window_rows": 147,
+          "post_deadline_rows": 0,
+          "trailing_bytes": 0,
+          "stop_quality_ok": true,
+          "embedded_boot_lines": [
+            1
+          ],
+          "orphan_fragment_lines": [],
+          "quality_ok": false
+        }
+      },
+      "RX-02": {
+        "v1": {
+          "valid_rows": 146,
+          "common_window_rows": 146,
+          "registered_integrity_ok": true,
+          "complete_rows_quality_ok": true,
+          "trailing_bytes": 129,
+          "embedded_boot_lines": [
+            1
+          ],
+          "global_receiver_quality_ok": false,
+          "stop_policy": "v1 temporal cut; no bounded completion contract"
+        },
+        "v2": {
+          "valid_rows": 147,
+          "common_window_rows": 147,
+          "post_deadline_rows": 0,
+          "trailing_bytes": 0,
+          "stop_quality_ok": true,
+          "embedded_boot_lines": [],
+          "orphan_fragment_lines": [
+            1,
+            2
+          ],
+          "quality_ok": false
+        }
+      }
+    },
+    "interpretation": "Separate physical sessions. v2 stopped at a clean LF without needing completion; these results do not physically demonstrate the extra-read completion branch or prove a causal RF improvement."
+  },
+  "visualization": {
+    "local_path": "results/local/analisis-dual-v2-30s-20261025-intento01/visualization/index.html",
+    "status_label": "captura dual controlada v2 con validación estricta rechazada",
+    "artifact_validation_sha256": "17b9577de2ac5777e4d3ab709f6cf3cae0176a293faae1d3a870db0846fdb44b",
+    "browser_report_sha256": "de3ae831129cb35be9b02fec310d1d0cb196e18380efa973e350739db4220418",
+    "browser_views_passed": 4,
+    "copied_originals_verified": 9,
+    "http_server": false,
+    "udp": false
+  },
+  "execution": {
+    "command": [
+      "/home/alan-monar/tesis-wifi-csi-hibrido/.venv/bin/python",
+      "-B",
+      "/home/alan-monar/tesis-wifi-csi-hibrido/tools/captura_dual_controlada.py",
+      "--plan",
+      "/home/alan-monar/tesis-wifi-csi-hibrido/config/captura_dual_v2_30s_intento01.local.json",
+      "--output-new",
+      "/home/alan-monar/tesis-wifi-csi-hibrido/results/local/captura-dual-v2-30s-20261025-intento01",
+      "--execute-after-approval"
+    ],
+    "started_utc": "2026-10-25T20:11:44.449271+00:00",
+    "started_monotonic_ns": "4071605529614",
+    "retry_performed": false,
+    "returncode": 1,
+    "finished_utc": "2026-10-25T20:12:14.633617+00:00",
+    "finished_monotonic_ns": "4101789882945",
+    "child_process_exited": true
+  },
+  "analysis_returncode": 1,
+  "installed_firmware_sha256": null,
+  "firmware_sources_unchanged": true,
+  "new_tests_scope": "Real acquisition, independent read-only audit, bundle/canonical/official consumer export and four browser views. Existing 155 integration tests were not rerun; reviewed source hashes are unchanged.",
+  "limits": [
+    "Recorded transport integrity is not proof of lossless physical wire capture.",
+    "Complete rows pass documented format/profile; no presence accuracy, calibration or RF synchronization proven.",
+    "Initial residual origin remains undetermined; no automatic WiFi/firmware/electrical attribution.",
+    "No late rows or completion reads occurred; no hardware claim about completion of a pending line."
+  ]
+}
