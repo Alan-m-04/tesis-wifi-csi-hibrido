@@ -1,0 +1,278 @@
+{
+  "schema": "tesis-physical-dual-post-reboot-validation-v1",
+  "evidence_type": "physical_capture",
+  "run_id": "captura-dual-30s-post-reinicio-20261025-intento01",
+  "git_capture_commit": "f6bfb0f1973cd1b63a52d521c3d0904154701f87",
+  "physical_attempts": 1,
+  "automatic_retries": 0,
+  "capture_returncode": 1,
+  "analysis_returncode": 1,
+  "session_status": "completed",
+  "session_quality_ok": false,
+  "common_window_ns": 30000000000,
+  "actual_envelope_ns": 30059434036,
+  "started_utc": "2026-10-25T19:14:56.676487+00:00",
+  "finished_utc": "2026-10-25T19:15:26.735950+00:00",
+  "preflight": {
+    "RX-01": {
+      "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93199744-if00",
+      "resolved": "/dev/ttyACM1",
+      "serial": "5C93199744",
+      "vid": "1a86",
+      "pid": "55d3",
+      "bus": "usb"
+    },
+    "RX-02": {
+      "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00",
+      "resolved": "/dev/ttyACM0",
+      "serial": "5C93200689",
+      "vid": "1a86",
+      "pid": "55d3",
+      "bus": "usb"
+    }
+  },
+  "postflight": {
+    "RX-01": {
+      "identity_ok": true
+    },
+    "RX-02": {
+      "identity_ok": true
+    }
+  },
+  "ports_closed_event": true,
+  "fuser_after": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "receivers": {
+    "RX-01": {
+      "valid_rows": 145,
+      "raw_sha256": "1a4839ee20f6256058d1a1924007a791b77bacbcb8fc53804018fd4443ffb90e",
+      "csv_sha256": "1b8f9198df0c5d01618ca0ec826d3b55310e93799a20f9115a19e81011d8cc09",
+      "raw_frames_equal_csv": true,
+      "integrity_ok": true,
+      "collector_quality_recorded": true,
+      "collector_quality_recomputed": true,
+      "representation_profile_ok": true,
+      "additional_checks_ok": false,
+      "host_frames_inside_requested_gate": true,
+      "read_ledger_ok": true,
+      "common_window_rows": 145,
+      "counts": {
+        "malformed_rows": 0,
+        "unexpected_source_rows": 0,
+        "unexpected_metadata_rows": 0,
+        "boot_error_count": 0,
+        "oversized_lines": 0,
+        "callback_id_gaps": 0,
+        "nonincreasing_ids": 0,
+        "device_clock_wraps": 0,
+        "device_time_discontinuities": 0,
+        "queue_drop_increment": 0,
+        "queue_counter_decreases": 0
+      },
+      "trailing_bytes": 129,
+      "embedded_boot_lines": [
+        1
+      ],
+      "orphan_fragment_lines": [],
+      "initial_boot_markers": 2,
+      "midstream_boot_markers": 0,
+      "first_id": 0,
+      "last_id": 144,
+      "quality_ok": false
+    },
+    "RX-02": {
+      "valid_rows": 146,
+      "raw_sha256": "a03defbf5fe1483615fc354442c1a9a9a22542e5fa9e4ec8bd49ecd8861246bd",
+      "csv_sha256": "5036345f913fa9eb3bf9adedba3c60f7eff8fd4026e6bad8320fb18ec1b11ffe",
+      "raw_frames_equal_csv": true,
+      "integrity_ok": true,
+      "collector_quality_recorded": true,
+      "collector_quality_recomputed": true,
+      "representation_profile_ok": true,
+      "additional_checks_ok": false,
+      "host_frames_inside_requested_gate": true,
+      "read_ledger_ok": true,
+      "common_window_rows": 146,
+      "counts": {
+        "malformed_rows": 0,
+        "unexpected_source_rows": 0,
+        "unexpected_metadata_rows": 0,
+        "boot_error_count": 0,
+        "oversized_lines": 0,
+        "callback_id_gaps": 0,
+        "nonincreasing_ids": 0,
+        "device_clock_wraps": 0,
+        "device_time_discontinuities": 0,
+        "queue_drop_increment": 0,
+        "queue_counter_decreases": 0
+      },
+      "trailing_bytes": 129,
+      "embedded_boot_lines": [
+        1
+      ],
+      "orphan_fragment_lines": [],
+      "initial_boot_markers": 2,
+      "midstream_boot_markers": 0,
+      "first_id": 0,
+      "last_id": 145,
+      "quality_ok": false
+    }
+  },
+  "raw_evidence": {
+    "RX-01": {
+      "bytes": 129605,
+      "sha256": "1a4839ee20f6256058d1a1924007a791b77bacbcb8fc53804018fd4443ffb90e",
+      "first_line": {
+        "offset": 0,
+        "bytes": 29,
+        "sha256": "c94b2c907bb2826cd8f5e76454c03178c21a01ae1f727cbdb831d97f0fe31d66"
+      },
+      "tail": {
+        "offset": 129476,
+        "bytes": 129,
+        "sha256": "768d7e1f19c8648b76ed1d87d99ba8ca5f83d1d189ae16398c355a2de49a287c"
+      }
+    },
+    "RX-02": {
+      "bytes": 130592,
+      "sha256": "a03defbf5fe1483615fc354442c1a9a9a22542e5fa9e4ec8bd49ecd8861246bd",
+      "first_line": {
+        "offset": 0,
+        "bytes": 28,
+        "sha256": "997e5c4c5c34a74aa5e96e4b6a3d98ef506c04d40676d5fa3370aaac2d801474"
+      },
+      "tail": {
+        "offset": 130463,
+        "bytes": 129,
+        "sha256": "43b891b4d1cdd6a2e07ca1b9d4e549555e05f1c40880c77e2a802a89d6d9a7e0"
+      }
+    }
+  },
+  "bundle_integrity": {
+    "files": 15,
+    "all_ok": true,
+    "manifest_sha256": "56a8ac488286cbcdf4527eb12414096b0ea8155b6551aaae3d11ea73b8733250"
+  },
+  "previous_evidence_and_sources": {
+    "files": 40,
+    "all_unchanged": true
+  },
+  "exported_originals": {
+    "files": 9,
+    "all_identical": true
+  },
+  "offline_audit_matches_capture_audit": true,
+  "visualization": {
+    "local_path": "results/local/analisis-dual-post-reinicio-20261025-intento01/visualization-offline/index.html",
+    "schema": "tesis-offline-view-validation-v1",
+    "status_label": "captura dual controlada con validación estricta rechazada",
+    "strict_quality_ok": false,
+    "node_version": "v22.20.0",
+    "official_functions": [
+      "parsePacket",
+      "SpectrumCollector.add",
+      "SpectrumCollector.result",
+      "binAmplitudes (transitive)"
+    ],
+    "transport": "memory_buffers_only",
+    "server_started": false,
+    "views": {
+      "RX-01/LLTF": {
+        "receiver_id": "RX-01",
+        "usb_serial": "5C93199744",
+        "ltf": "LLTF",
+        "node_id": 1,
+        "compared_amplitudes": 9280,
+        "compared_phases": 7540,
+        "frames": 145,
+        "shape": "1x64",
+        "spectrum_frames": 145,
+        "rate_hz_host_span": 4.93
+      },
+      "RX-01/HT-LTF": {
+        "receiver_id": "RX-01",
+        "usb_serial": "5C93199744",
+        "ltf": "HT-LTF",
+        "node_id": 1,
+        "compared_amplitudes": 9280,
+        "compared_phases": 8120,
+        "frames": 145,
+        "shape": "1x64",
+        "spectrum_frames": 145,
+        "rate_hz_host_span": 4.93
+      },
+      "RX-02/LLTF": {
+        "receiver_id": "RX-02",
+        "usb_serial": "5C93200689",
+        "ltf": "LLTF",
+        "node_id": 2,
+        "compared_amplitudes": 9344,
+        "compared_phases": 7592,
+        "frames": 146,
+        "shape": "1x64",
+        "spectrum_frames": 146,
+        "rate_hz_host_span": 4.96
+      },
+      "RX-02/HT-LTF": {
+        "receiver_id": "RX-02",
+        "usb_serial": "5C93200689",
+        "ltf": "HT-LTF",
+        "node_id": 2,
+        "compared_amplitudes": 9344,
+        "compared_phases": 8176,
+        "frames": 146,
+        "shape": "1x64",
+        "spectrum_frames": 146,
+        "rate_hz_host_span": 4.96
+      }
+    },
+    "files": {
+      "canonical.json": {
+        "bytes": 3442574,
+        "sha256": "f0c6c60e5be3ebc8d78f6e73b0617a85df49b90832ef252d258114b34e9d80a6"
+      },
+      "ruview-consumer.json": {
+        "bytes": 1468161,
+        "sha256": "518d8b7a0974e8caa652138a3def2d7b77b62be27353f8b9f1749fec724e3284"
+      },
+      "index.html": {
+        "bytes": 4920832,
+        "sha256": "7744fe564020692a63fdc13ffe815c5c2c1d5666c212a8c865a4b3f15299f9c7"
+      }
+    }
+  },
+  "browser_validation": {
+    "local_path": "results/local/analisis-dual-post-reinicio-20261025-intento01/visualization-offline/browser-qa/validation.json",
+    "sha256": "e451be77dc2f4f9367252ad93067de17e0579b0150cc43fa8f675d2755ee97b0",
+    "views_checked": [
+      "RX-01/LLTF",
+      "RX-01/HT-LTF",
+      "RX-02/LLTF",
+      "RX-02/HT-LTF"
+    ],
+    "all_rendered": true,
+    "slider_checked": true,
+    "control_host": "127.0.0.1 in isolated network",
+    "http_server": false,
+    "udp": false,
+    "screenshots": {
+      "rx-01-ht-ltf.png": "a521856d96d70825fd95201ae95a3ffd5b48272b5c8f5b9ad4f62c4159645d72",
+      "rx-02-ht-ltf.png": "8aae92dd167a08389481a049ca47932831074ad6179a9be06ed84a4dccb37865",
+      "rx-02-lltf.png": "c8e37553f7827b371ca70ffeec334ebfec601c774fc1e421c80a93c8d6ddae9b",
+      "rx-01-lltf.png": "5452e53625596fabe79108de209d0849a9b52c649497917e4defe6b68982be12"
+    }
+  },
+  "no_derived_window": true,
+  "firmware_sources_unchanged": true,
+  "installed_firmware_sha256": null,
+  "tests_scope": "real acquisition plus independent offline audit, export contracts and four browser views; no rerun of 124 historical software tests; no source code changes",
+  "limitations": [
+    "Full session rejected: embedded boot text on line 1 and 129-byte unterminated tail in each receiver",
+    "No cause of reset or electrical behavior demonstrated",
+    "No presence validation, training or RF synchronization demonstrated"
+  ],
+  "raw_bytes_storage": "Raw fragments remain only in ignored local records; this report pins offsets, lengths and hashes."
+}

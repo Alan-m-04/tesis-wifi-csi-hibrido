@@ -8,7 +8,7 @@ Base verificable del sistema de sensado CSI y Edge AI para MIPYMES de Riobamba, 
 - Parser restaurado y capturador derivado con correcciones verificadas de entrada, encuadre y cierre; originales preservados.
 - Primer hito: 40 pruebas aprobadas. Segundo hito: 60 aprobadas. Tercer hito: 103 aprobadas (72 Python y 31 Node), sin omisiones. No se ejecutaron las 304 pruebas del proyecto anterior.
 - Referencia física histórica: 292/291 filas. Su rechazo estricto se conserva; aprobar la regresión no convierte la captura en una campaña válida.
-- Sin nueva adquisición UART, flasheo, instalación de RuView ni entrenamiento.
+- Un intento físico posterior al reinicio: 145/146 filas completas y sesión estrictamente rechazada; brutos y colas conservados. Sin flasheo, instalación de RuView ni entrenamiento.
 
 ## Reproducir
 
@@ -32,8 +32,12 @@ Se ejecutan `parsePacket` y `SpectrumCollector` oficiales de `harness/ruview/src
 
 103 pruebas aprobadas: 72 Python y 31 Node, cero omisiones; cuatro vistas verificadas en Firefox. Ver [contrato/procedimiento](docs/CONTRATO_CONSUMIDOR_RUVIEW.md) y [validación](results/VALIDACION_VISUALIZACION_OFFLINE.md). El artefacto local generado es `results/local/visualizacion-csi-entrega/index.html`; no se publican sus datos brutos en Git.
 
-## Cuarto hito: preparación de captura dual
+## Cuarto hito: preparación de captura dual (estado previo)
 
 Protocolo de 30 s preparado; **no se han abierto UART ni ejecutado la captura física**. Se corrigieron el flush implícito al abrir, el conteo de cola sin LF y el cierre durante startup interrumpido. Se registrarán ambiente, identidades, procedencia y ledgers sin borrar el arranque ni aprobar un recorte.
 
 124 pruebas aprobadas (93 Python, 31 Node), sin omisiones. Ver [protocolo y comandos pendientes de autorización](docs/PROTOCOLO_CAPTURA_DUAL.md) e [informe de preparación](results/PREPARACION_CAPTURA_DUAL.md). El plan local exige completar la condición ambiental antes de abrir ambos receptores.
+
+## Captura posterior al reinicio
+
+Con autorización nueva y ambiente confirmado se ejecutó un único intento de 30 s comunes. Ambos puertos quedaron cerrados. Se conservaron 145/146 filas completas y todos los bytes leídos; la sesión fue **rechazada** por residuos iniciales pegados a ROM y colas incompletas de 129 bytes en ambos RX. No hubo recortes ni reintentos. La integridad permitió generar una visualización offline con rechazo visible, verificada en sus cuatro vistas. Ver [resultado real y límites](results/CAPTURA_DUAL_POST_REINICIO.md). Los datos permanecen locales; otra adquisición requiere nueva autorización.
