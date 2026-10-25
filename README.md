@@ -41,3 +41,5 @@ Protocolo de 30 s preparado; **no se han abierto UART ni ejecutado la captura f�
 ## Captura posterior al reinicio
 
 Con autorización nueva y ambiente confirmado se ejecutó un único intento de 30 s comunes. Ambos puertos quedaron cerrados. Se conservaron 145/146 filas completas y todos los bytes leídos; la sesión fue **rechazada** por residuos iniciales pegados a ROM y colas incompletas de 129 bytes en ambos RX. No hubo recortes ni reintentos. La integridad permitió generar una visualización offline con rechazo visible, verificada en sus cuatro vistas. Ver [resultado real y límites](results/CAPTURA_DUAL_POST_REINICIO.md). Los datos permanecen locales; otra adquisición requiere nueva autorización.
+
+El [diagnóstico offline posterior](docs/DIAGNOSTICO_LIMITES_CAPTURA.md) reproduce la parada a mitad de línea y propone una finalización hasta LF con espera acotada, ensayada en memoria/PTY y todavía sin integrar a v1. Pasaron 142 pruebas (111 Python, 31 Node), sin omisiones. La causa de los residuos iniciales sigue indeterminada; el intento físico conserva su rechazo. No se realizó otra captura ni se modificó firmware.
