@@ -8,6 +8,7 @@ from pathlib import Path
 import capture_csi_multi as capture
 from csi_correspondence import idf_complex, amplitude_phase, documented_ht20_layout, carrier_role
 from validate_capture import audit_capture
+from controlled_protocol import V1, V2
 
 ROOT = Path(__file__).resolve().parents[1]
 REJECTED_LABEL = 'captura histórica con validación estricta rechazada'
@@ -69,8 +70,10 @@ def canonicalize(directory, manifest, profile):
     session=json.loads((directory/'session.json').read_text())
     gate=int(session['capture_start_monotonic_ns'])
     evidence=manifest['evidence_type'] if manifest else session.get('evidence_type','unspecified')
-    if manifest and manifest.get('source_run_kind')=='controlled_dual_v1':
+    if manifest and manifest.get('source_run_kind') in (V1, V2):
         prefix='captura dual controlada' if evidence=='physical_capture' else 'prueba sintética controlada'
+        if manifest['source_run_kind'] == V2:
+            prefix += ' v2'
         label=prefix+' con validación estricta '+('aceptada' if audit['quality_ok'] else 'rechazada')
     else:
         label=REJECTED_LABEL if evidence=='physical_capture' and not audit['quality_ok'] else 'datos diagnósticos; sin conclusiones de presencia'
@@ -94,6 +97,15 @@ def canonicalize(directory, manifest, profile):
     # Preserve long integer timestamps as decimal strings everywhere in the exported envelope.
     for key in ('capture_start_monotonic_ns','capture_deadline_monotonic_ns'):
         output['original_session'][key]=str(output['original_session'][key])
+    v2 = session.get('protocol') == V2
+    if v2:
+        output['nominal_window'] = {
+            'seconds': session['requested_seconds'],
+            'start_ns': str(session['controlled']['common_start_ns']),
+            'deadline_ns': str(session['controlled']['common_deadline_ns']),
+            'counts_and_stops': {rx: {key: data[key] for key in
+                ('preamble_rows', 'common_window_rows', 'post_deadline_rows', 'stop')}
+                for rx, data in audit['receivers'].items()}}
     for rx,serial in capture.RECEIVERS.items():
         raw_path=directory/(rx.lower()+'.serial.log');csv_path=directory/(rx.lower()+'.csv')
         raw_rows=accepted_raw_lines(raw_path)
@@ -114,5 +126,10 @@ def canonicalize(directory, manifest, profile):
                            'host_elapsed_ns':str(int(row['host_monotonic_ns'])-gate),
                            'local_timestamp_us_uint32':row['local_timestamp'],
                            'blocks':[canonical_block(raw,b,bool(metadata['first_word_invalid'])) for b in blocks]})
+            if v2:
+                when = int(row['host_monotonic_ns'])
+                phase = ('preamble' if when < int(session['controlled']['common_start_ns']) else
+                         'nominal' if when < int(session['controlled']['common_deadline_ns']) else 'after_deadline')
+                frames[-1].update(timing_phase=phase, received_in_common_window=phase == 'nominal')
         output['receivers'][rx]={'receiver_id':rx,'usb_serial':serial,'frames':frames}
     return output

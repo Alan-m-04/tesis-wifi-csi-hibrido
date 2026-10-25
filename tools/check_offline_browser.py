@@ -17,6 +17,9 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('bundle',type=Path);ap.add_argument('--browser',default='/snap/firefox/current/usr/lib/firefox/firefox');args=ap.parse_args()
     bundle=args.bundle.resolve();qa=bundle/'browser-qa';qa.mkdir(exist_ok=False)
+    canonical=json.loads((bundle/'canonical.json').read_text())
+    expected_status=canonical['status_label']
+    expected_rows={rx:len(value['frames']) for rx,value in canonical['receivers'].items()}
     profile=qa/'profile';profile.mkdir()
     with socket.socket() as probe:
         probe.bind(('127.0.0.1',0));port=probe.getsockname()[1]
@@ -61,8 +64,15 @@ def main():
             for ltf in ('LLTF','HT-LTF'):
                 url=(bundle/'index.html').as_uri()+'?rx='+rx+'&ltf='+ltf
                 call('WebDriver:Navigate',{'url':url})
-                state=call('WebDriver:ExecuteScript',{'script':'''return {rendered:document.documentElement.dataset.rendered,status:document.getElementById('status').textContent,rx:document.getElementById('rx').value,ltf:document.getElementById('ltf').value,max:document.getElementById('frame').max,charts:[...document.querySelectorAll('svg')].map(s=>s.children.length),sigmaPoints:document.querySelectorAll('#variability circle').length};''','args':[]})
-                if state.get('rendered')!='true' or state['status']!='captura histórica con validación estricta rechazada' or state['rx']!=rx or state['ltf']!=ltf or not all(x>10 for x in state['charts']) or state['sigmaPoints']!=(52 if ltf=='LLTF' else 56):raise RuntimeError('UI assertion failed: '+str(state))
+                state=call('WebDriver:ExecuteScript',{'script':'''return {rendered:document.documentElement.dataset.rendered,status:document.getElementById('status').textContent,rx:document.getElementById('rx').value,ltf:document.getElementById('ltf').value,max:document.getElementById('frame').max,charts:[...document.querySelectorAll('svg')].map(s=>s.children.length),sigmaPoints:document.querySelectorAll('#variability circle').length,identity:document.getElementById('identity').textContent,sample:document.getElementById('sample').textContent};''','args':[]})
+                if state.get('rendered')!='true' or state['status']!=expected_status or int(state['max'])!=expected_rows[rx]-1 or state['rx']!=rx or state['ltf']!=ltf or not all(x>10 for x in state['charts']) or state['sigmaPoints']!=(52 if ltf=='LLTF' else 56):raise RuntimeError('UI assertion failed: '+str(state))
+                if canonical.get('nominal_window'):
+                    count=canonical['nominal_window']['counts_and_stops'][rx]
+                    last=canonical['receivers'][rx]['frames'][-1]
+                    if (f"ventana nominal: {count['common_window_rows']} filas" not in state['identity'] or
+                            f"fase: {last['timing_phase']}" not in state['sample'] or
+                            f"dentro de {canonical['nominal_window']['seconds']} s nominales: {'sí' if last['received_in_common_window'] else 'no'}" not in state['sample']):
+                        raise RuntimeError('Nominal/late row display mismatch: '+str(state))
                 # Exercise sample selection; input events must not create or resample rows.
                 moved=call('WebDriver:ExecuteScript',{'script':"const s=document.getElementById('frame');s.value=0;s.dispatchEvent(new Event('input'));return {value:s.value,sample:document.getElementById('sample').textContent};",'args':[]})
                 if moved['value']!='0' or 'Fila CSV 2' not in moved['sample']:raise RuntimeError('Slider did not preserve original row mapping')

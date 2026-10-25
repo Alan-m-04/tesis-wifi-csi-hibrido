@@ -162,19 +162,16 @@ def capture_receiver(port, receiver, directory, session_id, gate, stop, timing):
                      if timing.get('record_reads') else None)
             if timing.get('reader_started'):
                 timing['reader_started'][receiver].set()
-            while not stop.is_set() and (timing.get('deadline_ns') is None or time.monotonic_ns() < timing['deadline_ns']):
-                read_started_ns = time.monotonic_ns()
-                chunk = port.read(min(port.in_waiting or 1, 16384))
-                host_ns, host_utc = time.monotonic_ns(), utc_now()
-                if not chunk:
-                    continue
+            def accept_chunk(chunk, event):
+                nonlocal pending, dropping_line, tail_length
+                host_ns = int(event['returned_ns'])
+                host_utc = event['host_timestamp_utc']
                 raw.write(chunk)
                 raw.flush()
                 offset = summary['bytes_received']
                 summary['bytes_received'] += len(chunk)
                 if reads is not None:
-                    reads.write(json.dumps(dict(offset=offset, size=len(chunk), started_ns=str(read_started_ns),
-                                                returned_ns=str(host_ns), host_timestamp_utc=host_utc))+'\n')
+                    reads.write(json.dumps(event)+'\n')
                     reads.flush()
                 tail_length = len(chunk.rsplit(b'\n', 1)[-1]) if b'\n' in chunk else tail_length + len(chunk)
                 pending.extend(chunk)
@@ -239,6 +236,20 @@ def capture_receiver(port, receiver, directory, session_id, gate, stop, timing):
                         summary['oversized_lines'] += 1
                     pending.clear()
                     dropping_line = True
+
+            if timing.get('protocol') == 'controlled_dual_v2':
+                from bounded_frame_reader import read_to_boundary
+                summary['stop'] = {}
+                read_to_boundary(port, lambda: timing['deadline_ns'], accept_chunk, stop,
+                                 report=summary['stop'], **timing['stop_policy'])
+            else:
+                while not stop.is_set() and (timing.get('deadline_ns') is None or time.monotonic_ns() < timing['deadline_ns']):
+                    read_started_ns = time.monotonic_ns()
+                    chunk = port.read(min(port.in_waiting or 1, 16384))
+                    host_ns, host_utc = time.monotonic_ns(), utc_now()
+                    if chunk:
+                        accept_chunk(chunk, dict(offset=summary['bytes_received'], size=len(chunk),
+                            started_ns=str(read_started_ns), returned_ns=str(host_ns), host_timestamp_utc=host_utc))
     except Exception as exc:
         summary['error'] = f'{type(exc).__name__}: {exc}'
         stop.set()

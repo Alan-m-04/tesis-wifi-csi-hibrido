@@ -41,6 +41,10 @@ export function initialize(bundle) {
    document.getElementById('status').textContent=c.status_label;
    document.getElementById('identity').textContent=`${rx} · USB ${receiver.usb_serial} · ${ltf} · ${n} muestras originales; bloque de entrenamiento, no antena adicional`;
    document.getElementById('sample').textContent=`Fila CSV ${f.csv_line_1based} · callback ${f.callback_id} · UTC lectura ${f.host_timestamp_utc} · host_ns ${f.host_monotonic_ns} · RX_us ${f.local_timestamp_us_uint32}`;
+   if(c.nominal_window){const timing=c.nominal_window.counts_and_stops[rx];
+     document.getElementById('sample').textContent+=` · fase: ${f.timing_phase} · dentro de ${c.nominal_window.seconds} s nominales: ${f.received_in_common_window?'sí':'no'}`;
+     document.getElementById('identity').textContent+=` · ventana nominal: ${timing.common_window_rows} filas; después del deadline: ${timing.post_deadline_rows}; preámbulo: ${timing.preamble_rows} · parada: ${timing.stop.stop_reason} @ ${timing.stop.stopped_ns} ns`;
+   }
    document.getElementById('rowmeta').textContent=JSON.stringify({campos_originales:f.original_fields,referencia_bruta:f.raw_reference,referencia_csv:f.csv_reference,perfil:c.profile.firmware_ltf_config,limite:c.ltf_evidence},null,2);
    document.getElementById('official').textContent=`Oficial ejecutado: parsePacket + SpectrumCollector; ${official.views[key].spectrum[0].framesSeen} vistas ${ltf}, misma identidad RX; tasa por span host ${official.views[key].spectrum[0].rateHz} Hz. El colector no conserva tiempos por fila ni máscaras; envoltorio propio intacto.`;
    spectrum('amplitude',`Amplitud · ${rx}/${ltf} · fila ${f.csv_line_1based}`,block,block.amplitude);

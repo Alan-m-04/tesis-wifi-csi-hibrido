@@ -12,6 +12,8 @@ from pathlib import Path
 import sys
 
 import capture_csi_multi as capture
+from controlled_protocol import V1, V2, STOP_POLICY_V2
+from audit_bounded_stop import audit_bounded_stop
 
 ROLES = dict(capture.RECEIVERS)
 NAMES = {"session.json"} | {
@@ -145,13 +147,21 @@ def audit_capture(directory, manifest=None):
     gate = int(session["capture_start_monotonic_ns"])
     deadline = int(session["capture_deadline_monotonic_ns"])
     expected_duration = int(float(session["requested_seconds"]) * 1e9)
-    controlled = session.get('protocol') == 'controlled_dual_v1'
+    v2 = session.get('protocol') == V2
+    controlled = session.get('protocol') in (V1, V2)
     if controlled:
         common=session['controlled']
         common_start=int(common['common_start_ns']); common_deadline=int(common['common_deadline_ns'])
-        if (gate < 0 or not gate <= common_start < common_deadline <= deadline
+        common_fits = (gate <= common_start < common_deadline and common_start <= deadline
+                       and (common_deadline <= deadline or (v2 and session['status'] != 'completed')))
+        if (gate < 0 or not common_fits
                 or common_deadline-common_start != expected_duration or common.get('stable_window') is not None):
             raise ValueError('Invalid controlled envelope/common window')
+        if v2 and (common.get('stop_policy') != STOP_POLICY_V2 or manifest is None
+                   or manifest.get('source_run_kind') != V2 or manifest.get('schema') != 'tesis-controlled-capture-v2'):
+            raise ValueError('Invalid v2 manifest or fixed stop policy')
+        if v2 and session.get('evidence_type') != 'synthetic_fixture' and expected_duration != 30_000_000_000:
+            raise ValueError('Physical v2 requires 30 nominal seconds')
     elif gate < 0 or deadline <= gate or deadline - gate != expected_duration:
         raise ValueError("Invalid shared capture window")
     manifest_ok = True
@@ -195,8 +205,8 @@ def audit_capture(directory, manifest=None):
         summary_ok = summary_ok and summary.get("usb_serial") == serial and summary.get("receiver_id") == rx
         for key, value in parsed["counts"].items():
             summary_ok = summary_ok and summary.get(key) == value
-        original_ok = parsed["collector_quality_ok"]
-        summary_ok = summary_ok and summary.get("format_reception_ok") == original_ok and not summary.get("error")
+        original_ok = parsed["collector_quality_ok"] and (not v2 or not summary.get('error'))
+        summary_ok = summary_ok and summary.get("format_reception_ok") == original_ok and (v2 or not summary.get("error"))
         matrix_ok = all(r["len"] == profile["matrix"]["observed_length_bytes"]
                         and r["first_word_invalid"] == 0 and r["sig_mode"] == 1
                         and r["mcs"] == 0 and r["stbc"] == 0 for r in parsed["numeric"])
@@ -212,6 +222,10 @@ def audit_capture(directory, manifest=None):
                          and parsed["midstream_boot_markers"] == 0 and frames_in_gate
                          and (not controlled or (parsed['trailing_bytes'] == 0 and common_rows > 0
                                                 and not parsed['embedded_boot_lines'] and not parsed['orphan_fragment_lines'])))
+        if v2:
+            stop_integrity, stop_quality = audit_bounded_stop(root, rx, summary, parsed, session)
+            ledger_ok = ledger_ok and stop_integrity
+            additional_ok = additional_ok and stop_quality
         integrity_ok = all((identities_ok, host_ok, frames_match, hashes_ok, summary_ok, ledger_ok))
         report["receivers"][rx] = dict(valid_rows=len(rows), raw_sha256=sha(raw), csv_sha256=sha(exported),
             raw_frames_equal_csv=frames_match, integrity_ok=integrity_ok,
@@ -225,6 +239,12 @@ def audit_capture(directory, manifest=None):
             first_id=parsed["numeric"][0]["id"] if parsed["numeric"] else None,
             last_id=parsed["numeric"][-1]["id"] if parsed["numeric"] else None,
             quality_ok=original_ok and integrity_ok and matrix_ok and additional_ok)
+        if v2:
+            report['receivers'][rx].update(
+                complete_rows_quality_ok=parsed['collector_quality_ok'] and matrix_ok,
+                preamble_rows=sum(t < common_start for t in host),
+                post_deadline_rows=sum(t >= common_deadline for t in host),
+                stop_metadata_ok=stop_integrity, stop_quality_ok=stop_quality, stop=summary.get('stop'))
     postflight_ok=(all(manifest.get('postflight',{}).get(rx,{}).get('identity_ok') is True for rx in ROLES) if controlled else None)
     report['postflight_identity_ok']=postflight_ok
     report["quality_ok"] = postflight_ok is not False and manifest_ok and session["status"] == "completed" and all(
