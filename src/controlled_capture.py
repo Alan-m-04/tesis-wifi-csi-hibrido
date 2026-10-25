@@ -13,7 +13,7 @@ import time
 
 import capture_csi_multi as capture
 from preserving_serial import preserving_serial_type
-from controlled_protocol import V1, V2, STOP_POLICY_V2
+from controlled_protocol import V1, V2, V3, STOP_POLICY_V2, AVAILABILITY_V3
 
 ROOT=Path(__file__).resolve().parents[1]
 PORTS={rx:f'/dev/serial/by-id/usb-1a86_USB_Single_Serial_{serial}-if00' for rx,serial in capture.RECEIVERS.items()}
@@ -29,12 +29,16 @@ def sha(path):
 
 
 def validate_plan(plan, require_environment=True):
-    if plan.get('protocol') not in (V1, V2) or plan.get('seconds')!=30 or plan.get('ports')!=PORTS or plan.get('baud')!=115200:
+    if plan.get('protocol') not in (V1, V2, V3) or plan.get('seconds')!=30 or plan.get('ports')!=PORTS or plan.get('baud')!=115200:
         raise ValueError('Expected fixed dual protocol, 30 seconds and both stable by-id paths')
-    if plan['protocol'] == V2 and plan.get('stop_policy') != STOP_POLICY_V2:
+    if plan['protocol'] in (V2, V3) and plan.get('stop_policy') != STOP_POLICY_V2:
         raise ValueError('v2 requires exactly 250 ms and 65536 completion bytes')
     if plan['protocol'] == V1 and plan.get('stop_policy') is not None:
         raise ValueError('v1 has no bounded completion policy')
+    if plan['protocol'] == V3 and plan.get('availability_policy') != AVAILABILITY_V3:
+        raise ValueError('v3 requires the exact prospectively fixed availability/coverage contract')
+    if plan['protocol'] != V3 and plan.get('availability_policy') is not None:
+        raise ValueError('v1/v2 do not define availability windows')
     if plan.get('stable_window') is not None:
         raise ValueError('This protocol approves no derived stable window; preserve the entire session')
     if require_environment:
@@ -65,8 +69,10 @@ def provenance(plan):
     files=['src/capture_csi_multi.py','src/preserving_serial.py','src/controlled_capture.py',
            'src/validate_capture.py','config/csi_esp32s3.json','firmware/csi_send/main/app_main.c',
            'firmware/csi_recv/main/app_main.c','firmware/csi_recv_02/main/app_main.c']
-    if plan['protocol'] == V2:
+    if plan['protocol'] in (V2, V3):
         files += ['src/bounded_frame_reader.py', 'src/controlled_protocol.py', 'src/audit_bounded_stop.py']
+    if plan['protocol'] == V3:
+        files += ['src/availability_window.py', 'src/controlled_capture_v3.py', 'src/audit_availability.py']
     return {'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
             'files':{name:sha(ROOT/name) for name in files},'pyserial_version':serial.__version__,
             'serialposix_sha256':sha(serial.serialposix.__file__),'installed_firmware_sha256':None,
@@ -79,6 +85,9 @@ def provenance(plan):
 def run_capture(plan,output,*,test_backend=None,seconds=None):
     """Execute only after external human authorization; test injection is explicitly synthetic."""
     validate_plan(plan)
+    if plan['protocol'] == V3:
+        from controlled_capture_v3 import run_capture_v3
+        return run_capture_v3(plan, output, test_backend=test_backend, seconds=seconds)
     identities=preflight(plan) if test_backend is None else test_backend['identities']
     import serial
     if serial.__version__!='3.5':raise ValueError('Audited pySerial 3.5 required')

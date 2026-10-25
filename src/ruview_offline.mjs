@@ -29,8 +29,13 @@ export function consumeCanonical(canonical) {
     metadata_and_masks:'preserved in canonical sidecar; upstream does not retain them', views:{} };
   for (const [rx, receiver] of Object.entries(canonical.receivers)) {
     const nodeId = {'RX-01':1,'RX-02':2}[rx];
-    if (!nodeId || receiver.frames.length === 0) throw new Error('Two known receiver identities required');
+    if (!nodeId || (receiver.frames.length === 0 && !canonical.experimental_window)) throw new Error('Two known receiver identities required');
     for (const ltf of ['LLTF','HT-LTF']) {
+      if(receiver.frames.length === 0){
+        result.views[`${rx}/${ltf}`]={receiver_id:rx,usb_serial:receiver.usb_serial,ltf,node_id:nodeId,
+          frames:[],spectrum:[],compared_amplitudes:0,compared_phases:0,reason:'no_complete_rows; no matrices manufactured'};
+        continue;
+      }
       // Same receiver identity for its two LTFs. Separate collector instance, not fake node/antenna.
       const collector = new SpectrumCollector(receiver.frames.length,64,1);
       const parsedFrames = []; let comparedAmplitude=0, comparedPhase=0;

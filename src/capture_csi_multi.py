@@ -231,16 +231,20 @@ def capture_receiver(port, receiver, directory, session_id, gate, stop, timing):
                     writer.writerow([session_id, receiver, RECEIVERS[receiver], host_utc, host_ns] + row)
                     summary['valid_rows'] += 1
                 output.flush()
+                if timing.get('availability') is not None:
+                    # Publish only after persisting the whole chunk and CSV. The
+                    # coordinator validates all of its lines before any decision.
+                    timing['availability'].publish(receiver, chunk, event)
                 if len(pending) > 65536:
                     if not dropping_line:
                         summary['oversized_lines'] += 1
                     pending.clear()
                     dropping_line = True
 
-            if timing.get('protocol') == 'controlled_dual_v2':
+            if timing.get('protocol') in ('controlled_dual_v2', 'controlled_dual_v3'):
                 from bounded_frame_reader import read_to_boundary
                 summary['stop'] = {}
-                read_to_boundary(port, lambda: timing['deadline_ns'], accept_chunk, stop,
+                read_to_boundary(port, timing.get('deadline_getter', lambda: timing['deadline_ns']), accept_chunk, stop,
                                  report=summary['stop'], **timing['stop_policy'])
             else:
                 while not stop.is_set() and (timing.get('deadline_ns') is None or time.monotonic_ns() < timing['deadline_ns']):

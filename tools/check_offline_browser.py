@@ -64,8 +64,13 @@ def main():
             for ltf in ('LLTF','HT-LTF'):
                 url=(bundle/'index.html').as_uri()+'?rx='+rx+'&ltf='+ltf
                 call('WebDriver:Navigate',{'url':url})
-                state=call('WebDriver:ExecuteScript',{'script':'''return {rendered:document.documentElement.dataset.rendered,status:document.getElementById('status').textContent,rx:document.getElementById('rx').value,ltf:document.getElementById('ltf').value,max:document.getElementById('frame').max,charts:[...document.querySelectorAll('svg')].map(s=>s.children.length),sigmaPoints:document.querySelectorAll('#variability circle').length,identity:document.getElementById('identity').textContent,sample:document.getElementById('sample').textContent};''','args':[]})
-                if state.get('rendered')!='true' or state['status']!=expected_status or int(state['max'])!=expected_rows[rx]-1 or state['rx']!=rx or state['ltf']!=ltf or not all(x>10 for x in state['charts']) or state['sigmaPoints']!=(52 if ltf=='LLTF' else 56):raise RuntimeError('UI assertion failed: '+str(state))
+                state=call('WebDriver:ExecuteScript',{'script':'''return {rendered:document.documentElement.dataset.rendered,status:document.getElementById('status').textContent,rx:document.getElementById('rx').value,ltf:document.getElementById('ltf').value,max:document.getElementById('frame').max,charts:[...document.querySelectorAll('svg')].map(s=>s.children.length),sigmaPoints:document.querySelectorAll('#variability circle').length,identity:document.getElementById('identity').textContent,sample:document.getElementById('sample').textContent,connection:document.getElementById('connection-state')?.textContent,window:document.getElementById('window-state')?.textContent,coverage:document.getElementById('coverage')?.textContent};''','args':[]})
+                populated=expected_rows[rx]>0
+                if (state.get('rendered')!='true' or state['status']!=expected_status or
+                        int(state['max'])!=max(0,expected_rows[rx]-1) or state['rx']!=rx or state['ltf']!=ltf or
+                        not all(x>(10 if populated else 3) for x in state['charts']) or
+                        state['sigmaPoints']!=((52 if ltf=='LLTF' else 56) if populated else 0)):
+                    raise RuntimeError('UI assertion failed: '+str(state))
                 if canonical.get('nominal_window'):
                     count=canonical['nominal_window']['counts_and_stops'][rx]
                     last=canonical['receivers'][rx]['frames'][-1]
@@ -73,9 +78,16 @@ def main():
                             f"fase: {last['timing_phase']}" not in state['sample'] or
                             f"dentro de {canonical['nominal_window']['seconds']} s nominales: {'sí' if last['received_in_common_window'] else 'no'}" not in state['sample']):
                         raise RuntimeError('Nominal/late row display mismatch: '+str(state))
+                if canonical.get('experimental_window'):
+                    w=canonical['experimental_window'];last=canonical['receivers'][rx]['frames'][-1] if populated else None
+                    if (state['connection'] != 'Conexión completa: '+canonical['connection_full']['status'] or
+                            state['window'] != 'Ventana experimental: '+w['status'] or
+                            (last is not None and f"inclusión: {last['timing_phase']}" not in state['sample']) or
+                            f"{w['receivers'][rx]['coverage']['included_rows']} filas incluidas" not in state['coverage']):
+                        raise RuntimeError('Separate v3 scopes not visible: '+str(state))
                 # Exercise sample selection; input events must not create or resample rows.
                 moved=call('WebDriver:ExecuteScript',{'script':"const s=document.getElementById('frame');s.value=0;s.dispatchEvent(new Event('input'));return {value:s.value,sample:document.getElementById('sample').textContent};",'args':[]})
-                if moved['value']!='0' or 'Fila CSV 2' not in moved['sample']:raise RuntimeError('Slider did not preserve original row mapping')
+                if moved['value']!='0' or (populated and 'Fila CSV 2' not in moved['sample']) or (not populated and 'Sin muestras' not in moved['sample']):raise RuntimeError('Slider did not preserve original row mapping')
                 shot=call('WebDriver:TakeScreenshot',{'id':None,'highlights':[],'full':True})
                 name=rx.lower()+'-'+ltf.lower()+'.png';(qa/name).write_bytes(base64.b64decode(shot))
                 report['views'][rx+'/'+ltf]=dict(state,screenshot=name,slider=moved)

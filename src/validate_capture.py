@@ -12,7 +12,7 @@ from pathlib import Path
 import sys
 
 import capture_csi_multi as capture
-from controlled_protocol import V1, V2, STOP_POLICY_V2
+from controlled_protocol import V1, V2, V3, STOP_POLICY_V2
 from audit_bounded_stop import audit_bounded_stop
 
 ROLES = dict(capture.RECEIVERS)
@@ -140,6 +140,9 @@ def audit_capture(directory, manifest=None):
     if not root.is_dir():
         raise ValueError("Capture directory does not exist")
     session = json.loads(regular_file(root, "session.json").read_text())
+    if session.get('protocol') == V3:
+        from audit_availability import audit_availability_capture
+        return audit_availability_capture(root, manifest, session)
     if set(session["results"]) != set(ROLES) or set(session["receivers"]) != set(ROLES):
         raise ValueError("Exactly RX-01 and RX-02 are required")
     if len(set(session["receivers"].values())) != 2:

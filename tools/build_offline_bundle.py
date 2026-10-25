@@ -51,7 +51,7 @@ def main():
     p=subprocess.run([str(node),str(ROOT/'tools/consume_canonical.mjs'),str(out/'canonical.json')],capture_output=True,text=True,check=True)
     consumer=json.loads(p.stdout);write_json('ruview-consumer.json',consumer)
     originals=out/'originals';originals.mkdir()
-    for item in manifest['files']+manifest.get('read_ledgers',[]):
+    for item in manifest['files']+manifest.get('read_ledgers',[])+([manifest['coordination_trace']] if manifest.get('coordination_trace') else []):
         data=(source/item['name']).read_bytes()
         if hashlib.sha256(data).hexdigest()!=item['sha256']:raise ValueError('Original changed during export')
         with (originals/item['name']).open('xb') as f:f.write(data)
@@ -62,9 +62,10 @@ def main():
     reference=html.escape(str(canonical['run_id']))
     page='''<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
-<title>CSI real · diagnóstico offline</title><style>
+<title>__HEADING__</title><style>
 *{box-sizing:border-box}body{margin:0;background:#081220;color:#e6f0ff;font:14px system-ui,sans-serif}main{max-width:1450px;margin:auto;padding:24px}h1{font-size:25px;margin:0 0 10px}.status{background:#53252e;border:1px solid #ff8f9e;border-radius:8px;padding:12px;font-weight:700;color:#ffced5}p{line-height:1.5;color:#b6c9df}select,input{background:#17283e;color:#fff;border:1px solid #68809c;padding:8px;border-radius:5px}label{margin-right:20px}.toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:15px 0}.toolbar input{flex:1;min-width:200px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}svg{width:100%;border:1px solid #31465e;border-radius:8px}details{margin-top:16px;padding:12px;background:#111c2d;border:1px solid #31465e;border-radius:8px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;max-height:380px;overflow:auto}a{color:#7fdacf}.note{font-size:12px}.legend{color:#a6bbd3}.legend b{font-weight:400;color:#ffcc6a}@media(max-width:800px){.grid{grid-template-columns:1fr}}
-</style><main><h1>CSI real · diagnóstico offline</h1><div id="status" class="status">__STATUS__</div>
+</style><main><h1>__HEADING__</h1><div id="status" class="status">__STATUS__</div>
+<section id="scopes" hidden><p id="connection-state" class="status"></p><p id="window-state" class="status"></p><p id="coverage"></p><p>Idoneidad para campañas/modelos: no evaluada. Una ventana conforme no aprueba la conexión completa.</p><details><summary>Disponibilidad, cobertura, exclusiones y errores conservados</summary><pre id="window-audit"></pre></details></section>
 <p>Referencia __RUN__ · __RX01__ filas RX-01 / __RX02__ RX-02. Sin presencia, entrenamiento ni conclusiones de precisión. El modelo LTF es documental y condicionado; no certifica el binario histórico ni sincronización RF.</p>
 <div class="toolbar"><label>Receptor <select id="rx"><option>RX-01</option><option>RX-02</option></select></label><label>LTF <select id="ltf"><option>LLTF</option><option>HT-LTF</option></select></label><label for="frame">Fila registrada</label><input id="frame" type="range" min="0" value="0" step="1"></div>
 <p id="identity"></p><p id="sample" class="note"></p><div class="grid"><svg id="rssi"></svg><svg id="amplitude"></svg><svg id="variability"></svg><svg id="history"></svg></div>
@@ -72,14 +73,17 @@ def main():
 <p id="official" class="note"></p><details><summary>Fila original, relojes y procedencia</summary><pre id="rowmeta"></pre></details>
 <p class="note">Archivos completos locales: <a href="canonical.json">envoltorio canónico</a> · <a href="ruview-consumer.json">resultado oficial en memoria</a> · <a href="originals/rx-01.serial.log">bruto RX-01</a> · <a href="originals/rx-02.serial.log">bruto RX-02</a>. Nada se transmite; esta página funciona como archivo local.</p></main>
 <script id="csi-data" type="application/json">'''+data+'''</script><script type="module">'''+script+'</script></html>'
-    page=page.replace('__STATUS__',status).replace('__RUN__',reference).replace('__RX01__',str(counts['RX-01'])).replace('__RX02__',str(counts['RX-02']))
+    heading='CSI sintético · ensayo offline' if canonical['evidence_type']=='synthetic_fixture' else 'CSI real · diagnóstico offline'
+    page=page.replace('__HEADING__',html.escape(heading),2).replace('__STATUS__',status).replace('__RUN__',reference).replace('__RX01__',str(counts['RX-01'])).replace('__RX02__',str(counts['RX-02']))
     with (out/'index.html').open('x') as f:f.write(page)
     summary={'schema':'tesis-offline-view-validation-v1','status_label':canonical['status_label'],'strict_quality_ok':canonical['strict_quality_ok'],
              'node_version':subprocess.check_output([str(node),'--version'],text=True).strip(),'official_functions':consumer['official_functions'],
              'transport':'memory_buffers_only','server_started':False,'views':{},'files':{}}
     for name,v in consumer['views'].items():
         summary['views'][name]={k:v[k] for k in ('receiver_id','usb_serial','ltf','node_id','compared_amplitudes','compared_phases')}
-        summary['views'][name].update(frames=len(v['frames']),shape=f"{v['frames'][0]['antennas']}x{v['frames'][0]['subcarriers']}",spectrum_frames=len(v['spectrum'][0]['frames']),rate_hz_host_span=v['spectrum'][0]['rateHz'])
+        summary['views'][name].update(frames=len(v['frames']),shape=f"{v['frames'][0]['antennas']}x{v['frames'][0]['subcarriers']}" if v['frames'] else None,
+            spectrum_frames=len(v['spectrum'][0]['frames']) if v['spectrum'] else 0,
+            rate_hz_host_span=v['spectrum'][0]['rateHz'] if v['spectrum'] else None)
     for file in [out/'canonical.json',out/'ruview-consumer.json',out/'index.html']:
         with file.open('rb') as f:summary['files'][file.name]={'bytes':file.stat().st_size,'sha256':hashlib.file_digest(f,'sha256').hexdigest()}
     write_json('validation.json',summary)
