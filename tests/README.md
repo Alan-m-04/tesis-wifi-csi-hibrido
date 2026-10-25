@@ -15,3 +15,6 @@ El módulo oficial vendorizado se ejecuta con buffers en memoria, sin UDP. El co
 ## Cuarto hito
 
 El mismo `tools/test_offline.sh` ejecutó ahora 93 pruebas Python y 31 Node: 124 aprobadas, cero omitidas. Los 21 casos nuevos cubren el protocolo, entrada antes de abrir (solo PTY privado), exclusividad consultiva, encuadre/límites, orden de cierre, interrupción/fallo de segunda apertura, fallo de hilo y ledger alterado. Un caso usa el fragmento histórico exacto en memoria; no equivale a una adquisición física nueva. La captura física propuesta no se ejecuta durante las pruebas.
+# controlled_dual_v2
+
+La integración v2 pasó 155 pruebas: 124 Python y 31 Node, sin fallos, errores ni omisiones. Las 13 nuevas verifican el coordinador con PTY privados, parada acotada, timeout/flujo sin LF, aborto/error, cierre de ambos puertos, persistencia de residuos, separación de filas tardías y auditoría/consumidor. Se conservan las regresiones v1 y del intento físico rechazado. Ver [protocolo y evidencia](../docs/PROTOCOLO_CAPTURA_DUAL_V2.md).
