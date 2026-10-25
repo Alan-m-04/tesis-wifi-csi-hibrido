@@ -37,12 +37,18 @@ def sha(path):
 def scan_raw(path):
     raw = path.read_bytes()
     complete = raw.split(b"\n")
-    rows, numeric, lines = [], [], []
+    rows, numeric, lines, byte_ends = [], [], [], []
+    offset = 0
     counts = dict(malformed_rows=0, unexpected_source_rows=0,
                   unexpected_metadata_rows=0, boot_error_count=0, oversized_lines=0)
-    resets, ready = [], []
+    resets, ready, embedded_boot, orphan_fragments = [], [], [], []
     for number, line in enumerate(complete[:-1], 1):
+        offset += len(line) + 1
         text = capture.ANSI.sub("", line.decode("utf-8", errors="replace")).strip()
+        if 'ESP-ROM:' in text and not text.startswith('ESP-ROM:'):
+            embedded_boot.append(number)
+        if text.startswith(('"', ',')) and not text.startswith('CSI_DATA,'):
+            orphan_fragments.append(number)
         if "rst:" in text or ("ESP-ROM:" in text and "rst:" not in text):
             resets.append(number)
         if " READY" in text:
@@ -68,6 +74,9 @@ def scan_raw(path):
         rows.append(row)
         numeric.append(values)
         lines.append(number)
+        byte_ends.append(offset)
+    if len(complete[-1]) > 65536:
+        counts['oversized_lines'] += 1
     gaps = nonincreasing = wraps = discontinuities = drops = decreases = 0
     for a, b in zip(numeric, numeric[1:]):
         if b["id"] <= a["id"]:
@@ -89,11 +98,39 @@ def scan_raw(path):
     original_flags = ("malformed_rows", "unexpected_source_rows", "unexpected_metadata_rows",
                       "boot_error_count", "oversized_lines", "queue_drop_increment",
                       "nonincreasing_ids", "device_time_discontinuities", "queue_counter_decreases")
-    return dict(rows=rows, numeric=numeric, counts=counts,
+    return dict(rows=rows, numeric=numeric, counts=counts, row_byte_ends=byte_ends,
                 trailing_bytes=len(complete[-1]), ready_lines=ready,
+                embedded_boot_lines=embedded_boot, orphan_fragment_lines=orphan_fragments,
                 initial_boot_markers=sum(n < lines[0] for n in resets) if lines else len(resets),
                 midstream_boot_markers=sum(n >= lines[0] for n in resets) if lines else 0,
                 collector_quality_ok=bool(rows) and not any(counts[k] for k in original_flags))
+
+
+def audit_read_ledger(root,rx,manifest,parsed,rows,gate,deadline):
+    expected={r.lower()+'.reads.jsonl' for r in ROLES}
+    entries=manifest.get('read_ledgers',[])
+    if len(entries)!=2 or {e['name'] for e in entries}!=expected:
+        raise ValueError('Exactly two read ledgers required')
+    item=next(e for e in entries if e['name']==rx.lower()+'.reads.jsonl')
+    path=root/item['name']
+    if path.is_symlink() or not path.is_file():raise ValueError('Regular read ledger required')
+    if path.stat().st_size!=item['bytes'] or sha(path)!=item['sha256']:return False
+    events=[json.loads(x) for x in path.read_text().splitlines()]
+    raw_size=(root/(rx.lower()+'.serial.log')).stat().st_size
+    offset=0;last=gate
+    for event in events:
+        start,end=int(event['started_ns']),int(event['returned_ns'])
+        if event['offset']!=offset or type(event['size']) is not int or event['size']<=0 or not gate<=start<=end<deadline or start<last:return False
+        offset+=event['size'];last=end
+    if offset!=raw_size:return False
+    event_index=0
+    for row,byte_end in zip(rows,parsed['row_byte_ends']):
+        while event_index<len(events) and events[event_index]['offset']+events[event_index]['size']<byte_end:event_index+=1
+        if event_index>=len(events):return False
+        event=events[event_index]
+        if not event['offset']<byte_end<=event['offset']+event['size']:return False
+        if int(row['host_monotonic_ns'])!=int(event['returned_ns']) or row['host_timestamp_utc']!=event['host_timestamp_utc']:return False
+    return True
 
 
 def audit_capture(directory, manifest=None):
@@ -108,7 +145,14 @@ def audit_capture(directory, manifest=None):
     gate = int(session["capture_start_monotonic_ns"])
     deadline = int(session["capture_deadline_monotonic_ns"])
     expected_duration = int(float(session["requested_seconds"]) * 1e9)
-    if gate < 0 or deadline <= gate or deadline - gate != expected_duration:
+    controlled = session.get('protocol') == 'controlled_dual_v1'
+    if controlled:
+        common=session['controlled']
+        common_start=int(common['common_start_ns']); common_deadline=int(common['common_deadline_ns'])
+        if (gate < 0 or not gate <= common_start < common_deadline <= deadline
+                or common_deadline-common_start != expected_duration or common.get('stable_window') is not None):
+            raise ValueError('Invalid controlled envelope/common window')
+    elif gate < 0 or deadline <= gate or deadline - gate != expected_duration:
         raise ValueError("Invalid shared capture window")
     manifest_ok = True
     if manifest is not None:
@@ -157,20 +201,33 @@ def audit_capture(directory, manifest=None):
                         and r["first_word_invalid"] == 0 and r["sig_mode"] == 1
                         and r["mcs"] == 0 and r["stbc"] == 0 for r in parsed["numeric"])
         frames_in_gate = all(gate <= t < deadline for t in host)
+        ledger_ok=True; common_rows=None
+        if controlled:
+            if manifest is None:raise ValueError('Controlled recording requires its manifest and read ledgers')
+            ledger_ok = audit_read_ledger(root,rx,manifest,parsed,rows,gate,deadline)
+            common_rows=sum(common_start <= t < common_deadline for t in host)
+            ledger_ok = ledger_ok and summary.get('trailing_bytes') == parsed['trailing_bytes']
+
         additional_ok = (parsed["counts"]["callback_id_gaps"] == 0
-                         and parsed["midstream_boot_markers"] == 0 and frames_in_gate)
-        integrity_ok = all((identities_ok, host_ok, frames_match, hashes_ok, summary_ok))
+                         and parsed["midstream_boot_markers"] == 0 and frames_in_gate
+                         and (not controlled or (parsed['trailing_bytes'] == 0 and common_rows > 0
+                                                and not parsed['embedded_boot_lines'] and not parsed['orphan_fragment_lines'])))
+        integrity_ok = all((identities_ok, host_ok, frames_match, hashes_ok, summary_ok, ledger_ok))
         report["receivers"][rx] = dict(valid_rows=len(rows), raw_sha256=sha(raw), csv_sha256=sha(exported),
             raw_frames_equal_csv=frames_match, integrity_ok=integrity_ok,
             collector_quality_recorded=summary["format_reception_ok"], collector_quality_recomputed=original_ok,
             representation_profile_ok=matrix_ok, additional_checks_ok=additional_ok,
             host_frames_inside_requested_gate=frames_in_gate,
+            read_ledger_ok=ledger_ok if controlled else None, common_window_rows=common_rows,
             counts=parsed["counts"], trailing_bytes=parsed["trailing_bytes"],
+            embedded_boot_lines=parsed["embedded_boot_lines"], orphan_fragment_lines=parsed["orphan_fragment_lines"],
             initial_boot_markers=parsed["initial_boot_markers"], midstream_boot_markers=parsed["midstream_boot_markers"],
             first_id=parsed["numeric"][0]["id"] if parsed["numeric"] else None,
             last_id=parsed["numeric"][-1]["id"] if parsed["numeric"] else None,
             quality_ok=original_ok and integrity_ok and matrix_ok and additional_ok)
-    report["quality_ok"] = manifest_ok and session["status"] == "completed" and all(
+    postflight_ok=(all(manifest.get('postflight',{}).get(rx,{}).get('identity_ok') is True for rx in ROLES) if controlled else None)
+    report['postflight_identity_ok']=postflight_ok
+    report["quality_ok"] = postflight_ok is not False and manifest_ok and session["status"] == "completed" and all(
         x["quality_ok"] for x in report["receivers"].values())
     return report
 

@@ -2,10 +2,10 @@
 
 Base verificable del sistema de sensado CSI y Edge AI para MIPYMES de Riobamba, con procesamiento en PC local. Se conservan los objetivos del anteproyecto aprobado: presencia será el primer hito, no el alcance total.
 
-## Estado comprobado el 24 de octubre de 2026
+## Estado actualizado el 25 de octubre de 2026
 
 - Fuentes TX-01, RX-01 y RX-02 compiladas aquí con ESP-IDF v5.4 para ESP32-S3.
-- Parser y capturador dual restaurados sin cambios; validación offline nueva y perfil explícito.
+- Parser restaurado y capturador derivado con correcciones verificadas de entrada, encuadre y cierre; originales preservados.
 - Primer hito: 40 pruebas aprobadas. Segundo hito: 60 aprobadas. Tercer hito: 103 aprobadas (72 Python y 31 Node), sin omisiones. No se ejecutaron las 304 pruebas del proyecto anterior.
 - Referencia física histórica: 292/291 filas. Su rechazo estricto se conserva; aprobar la regresión no convierte la captura en una campaña válida.
 - Sin nueva adquisición UART, flasheo, instalación de RuView ni entrenamiento.
@@ -31,3 +31,9 @@ La [auditoría CSI/RuView](docs/COMPATIBILIDAD_CSI_RUVIEW.md) demuestra Im/Re y 
 Se ejecutan `parsePacket` y `SpectrumCollector` oficiales de `harness/ruview/src/devices/esp32.js` (RuView fefb0f9) con Node v22.20.0 local fijado y sin UDP. La representación canónica conserva fuentes, hashes, máscaras, metadatos y relojes; la página muestra RX-01/RX-02 y LLTF/HT-LTF con **captura histórica con validación estricta rechazada**.
 
 103 pruebas aprobadas: 72 Python y 31 Node, cero omisiones; cuatro vistas verificadas en Firefox. Ver [contrato/procedimiento](docs/CONTRATO_CONSUMIDOR_RUVIEW.md) y [validación](results/VALIDACION_VISUALIZACION_OFFLINE.md). El artefacto local generado es `results/local/visualizacion-csi-entrega/index.html`; no se publican sus datos brutos en Git.
+
+## Cuarto hito: preparación de captura dual
+
+Protocolo de 30 s preparado; **no se han abierto UART ni ejecutado la captura física**. Se corrigieron el flush implícito al abrir, el conteo de cola sin LF y el cierre durante startup interrumpido. Se registrarán ambiente, identidades, procedencia y ledgers sin borrar el arranque ni aprobar un recorte.
+
+124 pruebas aprobadas (93 Python, 31 Node), sin omisiones. Ver [protocolo y comandos pendientes de autorización](docs/PROTOCOLO_CAPTURA_DUAL.md) e [informe de preparación](results/PREPARACION_CAPTURA_DUAL.md). El plan local exige completar la condición ambiental antes de abrir ambos receptores.

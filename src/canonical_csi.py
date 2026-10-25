@@ -69,7 +69,11 @@ def canonicalize(directory, manifest, profile):
     session=json.loads((directory/'session.json').read_text())
     gate=int(session['capture_start_monotonic_ns'])
     evidence=manifest['evidence_type'] if manifest else session.get('evidence_type','unspecified')
-    label=REJECTED_LABEL if evidence=='physical_capture' and not audit['quality_ok'] else 'datos diagnósticos; sin conclusiones de presencia'
+    if manifest and manifest.get('source_run_kind')=='controlled_dual_v1':
+        prefix='captura dual controlada' if evidence=='physical_capture' else 'prueba sintética controlada'
+        label=prefix+' con validación estricta '+('aceptada' if audit['quality_ok'] else 'rechazada')
+    else:
+        label=REJECTED_LABEL if evidence=='physical_capture' and not audit['quality_ok'] else 'datos diagnósticos; sin conclusiones de presencia'
     files={f.name:{'bytes':f.stat().st_size,'sha256':digest(f.read_bytes())} for f in directory.iterdir()
            if f.name in ({'session.json'}|{rx.lower()+ext for rx in capture.RECEIVERS for ext in ('.csv','.serial.log','.summary.json')})}
     if profile.get('target')!='esp32s3':raise ValueError('ESP32-S3 profile required')
@@ -78,6 +82,7 @@ def canonicalize(directory, manifest, profile):
             'status_label':label,'strict_quality_ok':audit['quality_ok'],'strict_audit':audit,
             'run_id':manifest.get('source_run_id') if manifest else session['session_id'],
             'original_files':files,'original_session':stringify_ns(session),'profile':profile,
+            'source_manifest':stringify_ns(manifest),
             'derivation':{'base_commit':'73099b3347ff5403ca789c7c87d398ec7928b09b',
                           'representation':'real+j*imag from Im/Re; byte order and raw originals preserved',
                           'profile_sha256':digest(json.dumps(profile,sort_keys=True).encode()),

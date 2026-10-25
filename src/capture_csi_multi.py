@@ -13,6 +13,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from capture_csi import FIELDS, parse_sample
+from preserving_serial import preserving_serial_type
 
 RECEIVERS = {
     'RX-01': '5C93199744',
@@ -147,21 +148,35 @@ def capture_receiver(port, receiver, directory, session_id, gate, stop, timing):
     summary_path = directory / f'{receiver.lower()}.summary.json'
     pending = bytearray()
     dropping_line = False
-    gate.wait()
+    tail_length = 0
+    immediate = timing.get('read_from_open', False)
+    if not immediate:
+        gate.wait()
     summary['started_utc'] = utc_now()
     summary['started_monotonic_ns'] = time.monotonic_ns()
     try:
-        with csv_path.open('x', newline='') as output, raw_path.open('xb') as raw:
+        with csv_path.open('x', newline='') as output, raw_path.open('xb') as raw, ExitStack() as auxiliaries:
             writer = csv.writer(output)
             writer.writerow(EXTRA_FIELDS + FIELDS)
-            while not stop.is_set() and time.monotonic_ns() < timing['deadline_ns']:
+            reads = (auxiliaries.enter_context((directory / f'{receiver.lower()}.reads.jsonl').open('x'))
+                     if timing.get('record_reads') else None)
+            if timing.get('reader_started'):
+                timing['reader_started'][receiver].set()
+            while not stop.is_set() and (timing.get('deadline_ns') is None or time.monotonic_ns() < timing['deadline_ns']):
+                read_started_ns = time.monotonic_ns()
                 chunk = port.read(min(port.in_waiting or 1, 16384))
                 host_ns, host_utc = time.monotonic_ns(), utc_now()
                 if not chunk:
                     continue
                 raw.write(chunk)
                 raw.flush()
+                offset = summary['bytes_received']
                 summary['bytes_received'] += len(chunk)
+                if reads is not None:
+                    reads.write(json.dumps(dict(offset=offset, size=len(chunk), started_ns=str(read_started_ns),
+                                                returned_ns=str(host_ns), host_timestamp_utc=host_utc))+'\n')
+                    reads.flush()
+                tail_length = len(chunk.rsplit(b'\n', 1)[-1]) if b'\n' in chunk else tail_length + len(chunk)
                 pending.extend(chunk)
                 while b'\n' in pending:
                     line, _, rest = pending.partition(b'\n')
@@ -228,7 +243,7 @@ def capture_receiver(port, receiver, directory, session_id, gate, stop, timing):
         summary['error'] = f'{type(exc).__name__}: {exc}'
         stop.set()
     finally:
-        summary['trailing_bytes'] = len(pending)
+        summary['trailing_bytes'] = tail_length
         summary['finished_utc'] = utc_now()
         summary['elapsed_host_seconds'] = (time.monotonic_ns() - summary['started_monotonic_ns']) / 1e9
         summary['rows_per_elapsed_second'] = summary['valid_rows'] / summary['elapsed_host_seconds']
@@ -281,41 +296,50 @@ def main():
     try:
         import serial
         with ExitStack() as stack:
-            opened = {}
-            for receiver, path in verified.items():
-                if verify_port(receiver, path) != path:
-                    raise ValueError(f'{receiver}: USB device changed before opening {path}')
-                device = serial.Serial(port=None, baudrate=115200, timeout=0.1, exclusive=True)
-                stack.callback(device.close)
-                # No deliberate reset pulse; some USB drivers may still glitch on open.
-                device.dtr = False
-                device.rts = False
-                device.port = path
-                device.open()
-                opened[receiver] = device
-            def worker(receiver, device):
-                try:
-                    results[receiver] = capture_receiver(device, receiver, args.output_dir,
-                                                         session['session_id'], gate, stop, timing)
-                except Exception as exc:
-                    results[receiver] = {'error': f'{type(exc).__name__}: {exc}', 'format_reception_ok': False}
-                    stop.set()
-            for receiver, device in opened.items():
-                thread = threading.Thread(target=worker, args=(receiver, device))
-                threads.append(thread)
-                thread.start()
-            timing['deadline_ns'] = time.monotonic_ns() + int(args.seconds * 1e9)
-            session['capture_start_monotonic_ns'] = timing['deadline_ns'] - int(args.seconds * 1e9)
-            session['capture_deadline_monotonic_ns'] = timing['deadline_ns']
-            session['status'] = 'capturing'
-            gate.set()
             try:
-                for thread in threads:
-                    thread.join()
+                opened = {}
+                for receiver, path in verified.items():
+                    if verify_port(receiver, path) != path:
+                        raise ValueError(f'{receiver}: USB device changed before opening {path}')
+                    device = preserving_serial_type(serial.Serial)(port=None, baudrate=115200, timeout=0.1, exclusive=True)
+                    stack.callback(device.close)
+                    # No deliberate reset pulse; some USB drivers may still glitch on open.
+                    device.dtr = False
+                    device.rts = False
+                    device.port = path
+                    device.open()
+                    opened[receiver] = device
+                def worker(receiver, device):
+                    try:
+                        results[receiver] = capture_receiver(device, receiver, args.output_dir,
+                                                             session['session_id'], gate, stop, timing)
+                    except Exception as exc:
+                        results[receiver] = {'error': f'{type(exc).__name__}: {exc}', 'format_reception_ok': False}
+                        stop.set()
+                for receiver, device in opened.items():
+                    thread = threading.Thread(target=worker, args=(receiver, device))
+                    threads.append(thread)
+                    thread.start()
+                timing['deadline_ns'] = time.monotonic_ns() + int(args.seconds * 1e9)
+                session['capture_start_monotonic_ns'] = timing['deadline_ns'] - int(args.seconds * 1e9)
+                session['capture_deadline_monotonic_ns'] = timing['deadline_ns']
+                session['status'] = 'capturing'
+                gate.set()
+                try:
+                    for thread in threads:
+                        if thread.ident is not None:
+                            thread.join()
+                finally:
+                    stop.set()
+                    for thread in threads:
+                        if thread.ident is not None:
+                            thread.join()
             finally:
                 stop.set()
+                gate.set()
                 for thread in threads:
-                    thread.join()
+                    if thread.ident is not None:
+                        thread.join()
         session['status'] = 'error' if any(r.get('error') for r in results.values()) else 'completed'
     except KeyboardInterrupt:
         session['status'] = 'interrupted'
@@ -325,7 +349,8 @@ def main():
         stop.set()
         gate.set()
         for thread in threads:
-            thread.join()
+            if thread.ident is not None:
+                thread.join()
         session['finished_utc'] = utc_now()
         with (args.output_dir / 'session.json').open('x') as output:
             json.dump(session, output, indent=2)

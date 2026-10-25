@@ -1,0 +1,51 @@
+{
+  "base_commit": "56ea2702d362111faa4b470f69315547e65dd1a9",
+  "physical_UART_opened": false,
+  "firmware_modified": false,
+  "stable_window": null,
+  "environment_status": "pending operator declaration",
+  "python_tests": 93,
+  "python_seconds": 4.65,
+  "node_tests": 31,
+  "total_tests": 124,
+  "failures": 0,
+  "skipped": 0,
+  "test_kinds": {
+    "synthetic_or_private_PTY": 115,
+    "historical_byte_excerpt_in_memory": 1,
+    "historical_file_regressions": 8
+  },
+  "pyserial_version": "3.5",
+  "serialposix_sha256": "5d56f98513391e1766a1847a04e2e1202ced4172a152803ba1c823a149a9b6f9",
+  "test_log_sha256": "cd3ab288a602ebe0e85cb036cf2afe21464c743d6784954c0fa60a1d2648aa45",
+  "changed_files": [
+    {
+      "path": "src/capture_csi_multi.py",
+      "base_sha256": "7a58b62258a8057fc8c7652ccad36b6f0c22895319c2f52d2d44a331ad4e6908",
+      "current_sha256": "98a49d0e1ffa1fad5b55c70cbcd7b7a381d8f7ffb0005f2fe5e1e74da99b9432"
+    },
+    {
+      "path": "src/validate_capture.py",
+      "base_sha256": "a91f13ba49d8086b143a35b389278a0ba6a6ee0ace1f61ae29f56a82c4991ca1",
+      "current_sha256": "bea4359f68c9eba82872cb42718b992e1ed1547fa489886c3739b162a13c20f1"
+    },
+    {
+      "path": "src/canonical_csi.py",
+      "base_sha256": "4d3c429256a51bee1746b20f15f61da57fd69686b55789afd2c280acd77e917d",
+      "current_sha256": "f039b39c7cc7090a884df23a87fc9adfe26c8bdd8bcf05a2abc2f275b1fc8496"
+    },
+    {
+      "path": "tools/build_offline_bundle.py",
+      "base_sha256": "6ad0471354bdd1e32eca2f4d77cbf0552863792225f177f27e8c0483a1237958",
+      "current_sha256": "678107f5310b334d73c65e924479b4fe5d9d55a038b3bb4805f287c6c0953801"
+    }
+  ],
+  "synthetic_pipeline_smoke": {
+    "evidence_type": "synthetic_fixture",
+    "expected_exit_code": 1,
+    "quality_ok": false,
+    "visualization": "results/local/ensayo-memoria-analisis-20261025/visualization/index.html"
+  },
+  "planned_run": "results/local/captura-dual-30s-20261025-plan01",
+  "proposed_physical_capture_executed": false
+}

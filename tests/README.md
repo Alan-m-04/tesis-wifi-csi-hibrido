@@ -11,3 +11,7 @@ Las pruebas de correspondencia son contratos matemáticos offline; no ejecutan J
 Con Node fijado preparado, `./tools/test_offline.sh RUTA_CANONICAL_JSON` ejecuta 72 pruebas Python y 31 Node: 103 aprobadas aquí, sin omisiones. Node incluye 26 sintéticas y 5 regresiones físicas offline; Python incluye 69 sintéticas y 3 regresiones físicas. Sin el JSON físico se omiten cinco pruebas Node; sin copias físicas se omiten tres Python. `tools/test_base.sh` sigue ejecutando solo Python.
 
 El módulo oficial vendorizado se ejecuta con buffers en memoria, sin UDP. El control visual opcional usa Firefox ya disponible y TCP localhost en una red privada, no forma parte de los 103 casos unitarios.
+
+## Cuarto hito
+
+El mismo `tools/test_offline.sh` ejecutó ahora 93 pruebas Python y 31 Node: 124 aprobadas, cero omitidas. Los 21 casos nuevos cubren el protocolo, entrada antes de abrir (solo PTY privado), exclusividad consultiva, encuadre/límites, orden de cierre, interrupción/fallo de segunda apertura, fallo de hilo y ledger alterado. Un caso usa el fragmento histórico exacto en memoria; no equivale a una adquisición física nueva. La captura física propuesta no se ejecuta durante las pruebas.

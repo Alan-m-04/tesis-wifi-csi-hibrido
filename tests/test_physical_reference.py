@@ -20,6 +20,7 @@ class PhysicalReferenceTests(unittest.TestCase):
         manifest=json.loads((ROOT/'data/dual_60s_20261024.manifest.json').read_text())
         r=audit.audit_capture(Path(SOURCE),manifest)
         self.assertTrue(r['manifest_ok']);self.assertFalse(r['new_physical_capture'])
+        self.assertIsNone(r['postflight_identity_ok']);self.assertIsNone(r['receivers']['RX-01']['read_ledger_ok'])
         self.assertEqual(r['source_evidence_type'],'physical_capture');self.assertFalse(r['quality_ok'])
         for rx,count in [('RX-01',292),('RX-02',291)]:
             item=r['receivers'][rx];self.assertEqual(item['valid_rows'],count)
