@@ -1,0 +1,320 @@
+{
+  "operation": "offline_signal_inventory_only",
+  "new_physical_capture": false,
+  "new_experimental_window_created": false,
+  "runs": {
+    "captura-dual-30s-post-reinicio-20261025-intento01": {
+      "protocol": "controlled_dual_v1",
+      "original_global_quality_ok": false,
+      "original_nominal_window": {
+        "seconds": 30,
+        "stable_window": null,
+        "common_start_ns": "663842227682",
+        "common_deadline_ns": "693842227682"
+      },
+      "receivers": {
+        "RX-01": {
+          "ready_messages": [
+            {
+              "line_1based": 89,
+              "text_after_ansi": "I (529) csi_recv: RX-01 READY channel=11 HT20 UART0=115200 raw CSI; source=1a:00:00:00:00:00",
+              "byte_start": 4311,
+              "byte_end_exclusive": 4405,
+              "first_read_started_ns": "664380809361",
+              "last_read_returned_ns": "664392500359",
+              "returned_since_envelope_start_ns": 559740766,
+              "host_timestamp_utc": "2026-10-25T19:14:57.236249+00:00",
+              "line_sha256": "09def81d19e1a76c86bd25a2d8df4e37977c85d9e4de5e7dcb0b3160e9c85953"
+            }
+          ],
+          "first_three_valid_complete_rows": [
+            {
+              "line_1based": 92,
+              "callback_id": 0,
+              "local_timestamp_us": 586701,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 4482,
+              "byte_end_exclusive": 5361,
+              "first_read_started_ns": "664395835379",
+              "last_read_returned_ns": "664504624122",
+              "returned_since_envelope_start_ns": 671864529,
+              "host_timestamp_utc": "2026-10-25T19:14:57.348373+00:00",
+              "line_sha256": "bcb719c70125463fdf5843b4165b67c498955a93ec61a9bcdd8d907e8d58c4ab"
+            },
+            {
+              "line_1based": 93,
+              "callback_id": 1,
+              "local_timestamp_us": 786807,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 5361,
+              "byte_end_exclusive": 6240,
+              "first_read_started_ns": "664605302128",
+              "last_read_returned_ns": "664704622576",
+              "returned_since_envelope_start_ns": 871862983,
+              "host_timestamp_utc": "2026-10-25T19:14:57.548372+00:00",
+              "line_sha256": "a7218780ed8cf0e95b76653c7631adc44da7f3f41ce5d5314ae1b26392f781d8"
+            },
+            {
+              "line_1based": 94,
+              "callback_id": 2,
+              "local_timestamp_us": 986703,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 6240,
+              "byte_end_exclusive": 7104,
+              "first_read_started_ns": "664805492441",
+              "last_read_returned_ns": "664902934909",
+              "returned_since_envelope_start_ns": 1070175316,
+              "host_timestamp_utc": "2026-10-25T19:14:57.746684+00:00",
+              "line_sha256": "90dabad6defb06d632ca39180e3144b51af7acbb1eb48fdfb0e780d812a2cd07"
+            }
+          ],
+          "separate_ready_and_row_reads": true,
+          "ready_to_first_valid_return_ns": 112123763,
+          "ready_to_third_valid_return_ns": 510434550
+        },
+        "RX-02": {
+          "ready_messages": [
+            {
+              "line_1based": 91,
+              "text_after_ansi": "I (536) csi_recv_02: RX-02 READY channel=11 HT20 UART0=115200 raw CSI; source=1a:00:00:00:00:00",
+              "byte_start": 4440,
+              "byte_end_exclusive": 4537,
+              "first_read_started_ns": "664394104467",
+              "last_read_returned_ns": "664404876132",
+              "returned_since_envelope_start_ns": 572116539,
+              "host_timestamp_utc": "2026-10-25T19:14:57.248625+00:00",
+              "line_sha256": "0863250a0d55800c8b715f7b6248bde3f46ecaefcdc3c293a7474dede39af3c4"
+            }
+          ],
+          "first_three_valid_complete_rows": [
+            {
+              "line_1based": 93,
+              "callback_id": 0,
+              "local_timestamp_us": 581437,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 4582,
+              "byte_end_exclusive": 5377,
+              "first_read_started_ns": "664405389345",
+              "last_read_returned_ns": "664497123884",
+              "returned_since_envelope_start_ns": 664364291,
+              "host_timestamp_utc": "2026-10-25T19:14:57.340873+00:00",
+              "line_sha256": "c35072a0ce5655ae87e9906ad64fd9a1622a4cbb81aef2abf727b72cb4185869"
+            },
+            {
+              "line_1based": 94,
+              "callback_id": 1,
+              "local_timestamp_us": 781544,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 5377,
+              "byte_end_exclusive": 6366,
+              "first_read_started_ns": "664597812051",
+              "last_read_returned_ns": "664714550038",
+              "returned_since_envelope_start_ns": 881790445,
+              "host_timestamp_utc": "2026-10-25T19:14:57.558299+00:00",
+              "line_sha256": "c1c2744d04742bd615b3a3bebd083ff31d39eb725a059a7fad73d1fe9c838f6d"
+            },
+            {
+              "line_1based": 95,
+              "callback_id": 2,
+              "local_timestamp_us": 981441,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 6366,
+              "byte_end_exclusive": 7127,
+              "first_read_started_ns": "664815263957",
+              "last_read_returned_ns": "664894564284",
+              "returned_since_envelope_start_ns": 1061804691,
+              "host_timestamp_utc": "2026-10-25T19:14:57.738314+00:00",
+              "line_sha256": "faca2fb5d00e1b802479d3b0d705c430ed9f4710da651a89f70ca5ebc24f5e3b"
+            }
+          ],
+          "separate_ready_and_row_reads": true,
+          "ready_to_first_valid_return_ns": 92247752,
+          "ready_to_third_valid_return_ns": 489688152
+        }
+      },
+      "not_a_new_window": "No trigger or 30-second interval has been assigned; only original READY and row events are inventoried."
+    },
+    "captura-dual-v2-30s-20261025-intento01": {
+      "protocol": "controlled_dual_v2",
+      "original_global_quality_ok": false,
+      "original_nominal_window": {
+        "seconds": 30,
+        "stable_window": null,
+        "common_start_ns": "4071668847309",
+        "common_deadline_ns": "4101668847309",
+        "stop_policy": {
+          "grace_ns": 250000000,
+          "max_completion_bytes": 65536
+        }
+      },
+      "receivers": {
+        "RX-01": {
+          "ready_messages": [
+            {
+              "line_1based": 89,
+              "text_after_ansi": "I (528) csi_recv: RX-01 READY channel=11 HT20 UART0=115200 raw CSI; source=1a:00:00:00:00:00",
+              "byte_start": 4309,
+              "byte_end_exclusive": 4403,
+              "first_read_started_ns": "4072208203776",
+              "last_read_returned_ns": "4072219276822",
+              "returned_since_envelope_start_ns": 557295332,
+              "host_timestamp_utc": "2026-10-25T20:11:45.063028+00:00",
+              "line_sha256": "21add1e5acbba18f51528fbf29d0f0fd9b57d02cafdb08afa02a2c689aa7ef3d"
+            }
+          ],
+          "first_three_valid_complete_rows": [
+            {
+              "line_1based": 92,
+              "callback_id": 0,
+              "local_timestamp_us": 692285,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 4480,
+              "byte_end_exclusive": 5350,
+              "first_read_started_ns": "4072323396584",
+              "last_read_returned_ns": "4072437799730",
+              "returned_since_envelope_start_ns": 775818240,
+              "host_timestamp_utc": "2026-10-25T20:11:45.281550+00:00",
+              "line_sha256": "a3aa2e50a0efb8ab8aae08eb1d8d09f45a056516e2e37142421029779efd290c"
+            },
+            {
+              "line_1based": 93,
+              "callback_id": 1,
+              "local_timestamp_us": 890702,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 5350,
+              "byte_end_exclusive": 6338,
+              "first_read_started_ns": "4072539611628",
+              "last_read_returned_ns": "4072646407353",
+              "returned_since_envelope_start_ns": 984425863,
+              "host_timestamp_utc": "2026-10-25T20:11:45.490158+00:00",
+              "line_sha256": "ef859ea87d95ffd619e8e2038d2a5829183106326bc7d6dccbe76c9564540600"
+            },
+            {
+              "line_1based": 94,
+              "callback_id": 2,
+              "local_timestamp_us": 1089752,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 6338,
+              "byte_end_exclusive": 7111,
+              "first_read_started_ns": "4072747079788",
+              "last_read_returned_ns": "4072826346509",
+              "returned_since_envelope_start_ns": 1164365019,
+              "host_timestamp_utc": "2026-10-25T20:11:45.670096+00:00",
+              "line_sha256": "c21d55ab63beab0d78662964dc2c8b518a362b377a399c7405854b7d4a05a2ef"
+            }
+          ],
+          "separate_ready_and_row_reads": true,
+          "ready_to_first_valid_return_ns": 218522908,
+          "ready_to_third_valid_return_ns": 607069687
+        },
+        "RX-02": {
+          "ready_messages": [
+            {
+              "line_1based": 94,
+              "text_after_ansi": "I (549) csi_recv_02: RX-02 READY channel=11 HT20 UART0=115200 raw CSI; source=1a:00:00:00:00:00",
+              "byte_start": 4886,
+              "byte_end_exclusive": 4983,
+              "first_read_started_ns": "4072233215134",
+              "last_read_returned_ns": "4072244458714",
+              "returned_since_envelope_start_ns": 582477224,
+              "host_timestamp_utc": "2026-10-25T20:11:45.088210+00:00",
+              "line_sha256": "c651ea2dd35824e1ca017226f4cc2d1d79f552fd9dba8b47b7cda4494cfa1454"
+            }
+          ],
+          "first_three_valid_complete_rows": [
+            {
+              "line_1based": 96,
+              "callback_id": 0,
+              "local_timestamp_us": 688707,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 5028,
+              "byte_end_exclusive": 5910,
+              "first_read_started_ns": "4072345251190",
+              "last_read_returned_ns": "4072438625706",
+              "returned_since_envelope_start_ns": 776644216,
+              "host_timestamp_utc": "2026-10-25T20:11:45.282377+00:00",
+              "line_sha256": "2400992abf506e3d7e495359d4827bd1aed6358e5cf229f3e23b3e01794ed344"
+            },
+            {
+              "line_1based": 97,
+              "callback_id": 1,
+              "local_timestamp_us": 887126,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 5910,
+              "byte_end_exclusive": 6786,
+              "first_read_started_ns": "4072539640648",
+              "last_read_returned_ns": "4072636827997",
+              "returned_since_envelope_start_ns": 974846507,
+              "host_timestamp_utc": "2026-10-25T20:11:45.480579+00:00",
+              "line_sha256": "190d2d4259f1c4658eccf5cb1f289c3837c357310c4fff15f7f099374c12a92a"
+            },
+            {
+              "line_1based": 98,
+              "callback_id": 2,
+              "local_timestamp_us": 1086176,
+              "len": 256,
+              "first_word_invalid": 0,
+              "byte_start": 6786,
+              "byte_end_exclusive": 7628,
+              "first_read_started_ns": "4072737592313",
+              "last_read_returned_ns": "4072832381716",
+              "returned_since_envelope_start_ns": 1170400226,
+              "host_timestamp_utc": "2026-10-25T20:11:45.676132+00:00",
+              "line_sha256": "c616ed2165a57e5fb575f8fcfe2f53dcd5ef1af2d1de85731b64ff6002c8ecbf"
+            }
+          ],
+          "separate_ready_and_row_reads": true,
+          "ready_to_first_valid_return_ns": 194166992,
+          "ready_to_third_valid_return_ns": 587923002
+        }
+      },
+      "not_a_new_window": "No trigger or 30-second interval has been assigned; only original READY and row events are inventoried."
+    }
+  },
+  "source_observations": {
+    "RX-01": "READY is printed before wifi_csi_init(); fixed textual channel/source declaration.",
+    "RX-02": "READY is printed after wifi_csi_init() and configuration getters/checks.",
+    "host": "ready_seen is only a boolean; current code has no availability gate or coordinator arm timestamp."
+  },
+  "source_sha256": {
+    "firmware/csi_recv/main/app_main.c": "c940779452aedad8862dd6eb7a24d51786c662d3acbb9369b1a86bff54a1ccc6",
+    "firmware/csi_recv_02/main/app_main.c": "1fb53776e1e5776194749041d1252c3f8ee11f69f30fb982a42c7577319e00d5",
+    "src/capture_csi_multi.py": "b0f8248e717a47cb729593845bd3f5ae437de82832c1410293f5c4b0e7c62cd3",
+    "src/validate_capture.py": "0ba5ac8ea08c35f70e927d9b7f1b07f5f7a62dcc4e5385177a5723eb99f6e524",
+    "src/controlled_capture.py": "a1b6acb10628a853e52c6928fb9e198f834979c7a038291a13b8557e996c8179"
+  },
+  "proposal_parameters_only_not_implemented": {
+    "required_READY_per_receiver": true,
+    "consecutive_valid_rows_per_receiver": 3,
+    "freshness_ns": 1000000000,
+    "max_wait_since_before_first_open_ns": 10000000000,
+    "experimental_duration_ns": 30000000000,
+    "completion_grace_ns": 250000000,
+    "max_completion_bytes_per_receiver": 65536,
+    "start_rule": "first real coordinator decision after both states satisfy the condition; never backdated to row time",
+    "row_inclusion": "first source read starts >= T0 and last source read returns < T1; complete LF, identity/profile valid",
+    "no_READY_fallback": true,
+    "no_rearm_after_start": true
+  },
+  "preservation_verification": {
+    "artifacts_hashed": 119,
+    "all_unchanged": true,
+    "includes_existing_v2_visualization": true,
+    "existing_global_rejections_unchanged": true,
+    "snapshot_sha256": "c2a95451025fda0015ed59f520fa174030e0ae03850b8edc7d7691c260c36913",
+    "design_only": true,
+    "capture_code_or_firmware_changed": false,
+    "protocol_tests_not_run": "No new executable protocol or tests were implemented; only offline inspection and preservation checks."
+  }
+}
