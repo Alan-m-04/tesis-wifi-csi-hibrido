@@ -1,0 +1,378 @@
+{
+  "schema": "tesis-ruview-presence-static-inspection-v1",
+  "inspected_utc": "2026-10-26T03:02:28.742935+00:00",
+  "repository_base_commit": "f6829e18a1bccab46a7eca7361849e9d9c89bf2c",
+  "ruview_commit": "fefb0f918eefa7db6daef8cc83787fc7d6f74187",
+  "ruview_checkout_clean": true,
+  "license": "MIT",
+  "dependency_changed": false,
+  "detector_executed": false,
+  "calibration_or_training_executed": false,
+  "real_detector_scores_produced": false,
+  "physical_UART_opened": false,
+  "new_capture": false,
+  "upstream_sources": [
+    {
+      "path": "LICENSE",
+      "bytes": 1059,
+      "sha256": "f6f0fbda447f9374dd06cab17b764c485352f57f4d491471128a0525c10287c8",
+      "lines": 21,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/LICENSE"
+    },
+    {
+      "path": "harness/ruview/src/devices/esp32.js",
+      "bytes": 25396,
+      "sha256": "21b8c74d9b0a47f52538b5d902faa32ac6f4c58dab94d6612d7fbc89237d8f80",
+      "lines": 504,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/harness/ruview/src/devices/esp32.js"
+    },
+    {
+      "path": "scripts/c6-presence-watcher.py",
+      "bytes": 17232,
+      "sha256": "0253e57973243f1177424ec1abad774f03f22ccbac80fecc72fc88853990178c",
+      "lines": 402,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/scripts/c6-presence-watcher.py"
+    },
+    {
+      "path": "scripts/through-wall-detector.js",
+      "bytes": 19830,
+      "sha256": "37f517905795cbbfd72c48e12db28c26b4ed8fdf10c95f572d80fc104b62a8b0",
+      "lines": 595,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/scripts/through-wall-detector.js"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-signal/src/motion.rs",
+      "bytes": 35456,
+      "sha256": "11ea7671ae8b1cc98bd9ddaf9776f49910103a378543329a38923784edcdaecf",
+      "lines": 1026,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-signal/src/motion.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-signal/src/features.rs",
+      "bytes": 29375,
+      "sha256": "f7671b31badcd017c6e910e18a79dd85f11d0af673214c20c0b624003abe03bb",
+      "lines": 951,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-signal/src/features.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-signal/src/ruvsense/field_model.rs",
+      "bytes": 97819,
+      "sha256": "8ceb5d282711084023c2eb443b0e6414b65d48624a24e1d629a6bcd258d220b6",
+      "lines": 2534,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-signal/src/ruvsense/field_model.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-signal/Cargo.toml",
+      "bytes": 3296,
+      "sha256": "f22edb2694ec23171eb77ea430d6fdf7fe6b476a5b083b7620d9b744edeaeb27",
+      "lines": 105,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-signal/Cargo.toml"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-core/Cargo.toml",
+      "bytes": 1718,
+      "sha256": "38509df01d4589390f50fe8b49a9924ea63d6b903eb60fb573ed36cd3e53a4b3",
+      "lines": 67,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-core/Cargo.toml"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-sensing-server/src/main.rs",
+      "bytes": 721691,
+      "sha256": "2a773c46e2afa8caec25212ec93f4f36edea06754168d0900b27c19da37cc4e3",
+      "lines": 16958,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-sensing-server/src/main.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-sensing-server/src/adaptive_classifier.rs",
+      "bytes": 30171,
+      "sha256": "d1f33a1041101f6cdac3f735eddf6b7f0481051eb8029cdbf7890e154e70d1de",
+      "lines": 842,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-sensing-server/src/adaptive_classifier.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-sensing-server/Cargo.toml",
+      "bytes": 8365,
+      "sha256": "a8609720fc96ff47584353cf5474ae264bb8ee12e44f3f066271f3b512c1057c",
+      "lines": 169,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-sensing-server/Cargo.toml"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-calibration/src/specialist.rs",
+      "bytes": 24351,
+      "sha256": "268492d206c891c6267330b050b54c8503420a21ca691abc0332ef156af7bcfb",
+      "lines": 630,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-calibration/src/specialist.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-calibration/src/extract.rs",
+      "bytes": 13691,
+      "sha256": "cb07b8702c23e4292e897ff41a77274aab5878e569fdc2f104e9e3941cd6cb07",
+      "lines": 352,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-calibration/src/extract.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-calibration/src/bank.rs",
+      "bytes": 10637,
+      "sha256": "d2dcdb979a2e222596d6051178ea7f95730637fc438f09599ac70b7791886b23",
+      "lines": 277,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-calibration/src/bank.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-calibration/src/runtime.rs",
+      "bytes": 5983,
+      "sha256": "8bbe06f2d0ab86e9281183ffee7a82761ec69403ee102a731c77b5f29bfdae39",
+      "lines": 178,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-calibration/src/runtime.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-calibration/src/anchor.rs",
+      "bytes": 14121,
+      "sha256": "22bc0ef16384b804cd1d325d18e887f7ab0425d0549784c36178a7808e4fc79b",
+      "lines": 415,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-calibration/src/anchor.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-calibration/src/enrollment.rs",
+      "bytes": 12480,
+      "sha256": "b0d139bd73916bdaaf4697a62bb07ae8fb3c0ed3d6836ccc62f697866fd4a9a9",
+      "lines": 340,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-calibration/src/enrollment.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-calibration/Cargo.toml",
+      "bytes": 709,
+      "sha256": "9569ad89442e7c12f66a1f965deda1589a691c058e80c1e9d76238ab12e38b00",
+      "lines": 22,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-calibration/Cargo.toml"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-cli/src/room.rs",
+      "bytes": 24249,
+      "sha256": "2e93f0694dc1136bc4832461c86b9c9dc193b2013789b1503146d723081368b5",
+      "lines": 626,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-cli/src/room.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-cli/src/calibrate_api.rs",
+      "bytes": 56476,
+      "sha256": "c42aa0a749bfe47e4f83be7105064c7825829aa9cff5a3be5f3ab19dcdfa3fa6",
+      "lines": 1315,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-cli/src/calibrate_api.rs"
+    },
+    {
+      "path": "v2/crates/ruview-unified/src/heads.rs",
+      "bytes": 26817,
+      "sha256": "6a498b74bbb7784a1126ac9c5d3680a25029cf856339403871965bce6298ff52",
+      "lines": 738,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/ruview-unified/src/heads.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-wasm-edge/src/occupancy.rs",
+      "bytes": 8449,
+      "sha256": "2941c88dfc126c244159867f0d1b3cd98608c247643d78580db81cb01963b5e4",
+      "lines": 272,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-wasm-edge/src/occupancy.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-wasm-edge/src/bld_hvac_presence.rs",
+      "bytes": 11387,
+      "sha256": "3ff40acc3861f0b25743d49a1f973a6dac132ee67445e207da40fcca161d1185",
+      "lines": 352,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-wasm-edge/src/bld_hvac_presence.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-wasm-edge/Cargo.toml",
+      "bytes": 2924,
+      "sha256": "b534c0ba836d277fdc025010a74f38a9b37a258fcd845fd4c2e06b346e635e8e",
+      "lines": 74,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-wasm-edge/Cargo.toml"
+    },
+    {
+      "path": "tools/ruview-mcp/src/tools/presence-now.ts",
+      "bytes": 1008,
+      "sha256": "ee5d7506b9d142fdaa0bf6249927cce2ee3c5ed57460a5297124fafd3595f141",
+      "lines": 28,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/tools/ruview-mcp/src/tools/presence-now.ts"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-sensing-server/src/mediatek_heuristic.rs",
+      "bytes": 28647,
+      "sha256": "ceab163dfd78191392fb92408f8fa48680bae266d6741a02ffa6d9c6e587b0a7",
+      "lines": 688,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-sensing-server/src/mediatek_heuristic.rs"
+    },
+    {
+      "path": "archive/v1/src/sensing/classifier.py",
+      "bytes": 6995,
+      "sha256": "24f82fd4779d08461c976838c8819bb07816690f630ca2a65358f6d75c58b43b",
+      "lines": 201,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/archive/v1/src/sensing/classifier.py"
+    },
+    {
+      "path": "archive/v1/src/sensing/feature_extractor.py",
+      "bytes": 10595,
+      "sha256": "6e3ed9e5ffe56c4c7429780c54cd287e3f77312d8d77691a49f840bb60ca2d8e",
+      "lines": 331,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/archive/v1/src/sensing/feature_extractor.py"
+    },
+    {
+      "path": "firmware/esp32-csi-node/main/edge_processing.c",
+      "bytes": 56733,
+      "sha256": "e8f842404b8caf9cebb982438948524fe63b293a0f95c5ad51335eff98a3d933",
+      "lines": 1495,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/firmware/esp32-csi-node/main/edge_processing.c"
+    },
+    {
+      "path": "firmware/esp32-csi-node/main/edge_processing.h",
+      "bytes": 15743,
+      "sha256": "eef170d30079daf56809b1dcf0f30ebc37c208714b5d0767c17c0f1195b434a2",
+      "lines": 347,
+      "git_blob_matches": true,
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/firmware/esp32-csi-node/main/edge_processing.h"
+    }
+  ],
+  "local_sources": [
+    {
+      "path": "firmware/csi_recv/main/app_main.c",
+      "bytes": 10292,
+      "sha256": "c940779452aedad8862dd6eb7a24d51786c662d3acbb9369b1a86bff54a1ccc6"
+    },
+    {
+      "path": "firmware/csi_recv_02/main/app_main.c",
+      "bytes": 11165,
+      "sha256": "1fb53776e1e5776194749041d1252c3f8ee11f69f30fb982a42c7577319e00d5"
+    },
+    {
+      "path": "src/preserving_serial.py",
+      "bytes": 1195,
+      "sha256": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec"
+    },
+    {
+      "path": "src/controlled_capture_v3.py",
+      "bytes": 11786,
+      "sha256": "31efa9ab34f7acd02484993a9f4727f4a9cc4d1e45f80a093c50f1910eccdde1"
+    },
+    {
+      "path": "src/availability_window.py",
+      "bytes": 12330,
+      "sha256": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596"
+    },
+    {
+      "path": "src/capture_csi_multi.py",
+      "bytes": 19548,
+      "sha256": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1"
+    },
+    {
+      "path": "results/CAPTURA_FISICA_V3.resumen.json",
+      "bytes": 70702,
+      "sha256": "8caf7e31625218a98210bcf9b4bcf6bed2a292970bdea271f7925c684e9dd24e"
+    },
+    {
+      "path": "firmware/csi_recv/sdkconfig.defaults",
+      "bytes": 236,
+      "sha256": "0308464cb583c0d7ead14fd672653951d11986aa394ca4adad2374d8aeee9b11"
+    },
+    {
+      "path": "firmware/csi_recv_02/sdkconfig.defaults",
+      "bytes": 366,
+      "sha256": "3dfc815b2c3f2abfc9dbada469d5a546477a751a3c7bf7251e566ff421ec5897"
+    }
+  ],
+  "available_PATH_runtime": {
+    "cargo": null,
+    "rustc": null
+  },
+  "pyserial_posix_source": {
+    "version": "3.5",
+    "sha256": "5d56f98513391e1766a1847a04e2e1202ced4172a152803ba1c823a149a9b6f9",
+    "path": ".venv/lib/python3.14/site-packages/serial/serialposix.py"
+  },
+  "measured_host_cadence_from_consolidated_originals": {
+    "RX-01": {
+      "included_rows": 150,
+      "nominal_window_ns": "30000000000",
+      "count_per_nominal_second": 5.0,
+      "host_span_rate_hz": 4.998528845234989,
+      "interior_gap_min_ns": "179680743",
+      "interior_gap_max_ns": "221798754",
+      "RF_sample_rate_attested": false,
+      "clock_synchronization_attested": false
+    },
+    "RX-02": {
+      "included_rows": 150,
+      "nominal_window_ns": "30000000000",
+      "count_per_nominal_second": 5.0,
+      "host_span_rate_hz": 4.998608940975803,
+      "interior_gap_min_ns": "179746091",
+      "interior_gap_max_ns": "225906040",
+      "RF_sample_rate_attested": false,
+      "clock_synchronization_attested": false
+    }
+  },
+  "selected_candidate": {
+    "component": "wifi-densepose-calibration::PresenceSpecialist",
+    "source": "v2/crates/wifi-densepose-calibration/src/specialist.rs",
+    "classification": "small statistically calibrated model; not pretrained neural weights; train fits thresholds from labeled anchors",
+    "route_status": "SELECTED_FOR_FUTURE_OFFLINE_ADAPTER; BLOCKED_FOR_VALIDATED_PRESENCE",
+    "primary_input": "RX-01 LLTF, fixed 52 active valid tones; one actual 30 s window; RX-02 independent replication",
+    "inputs_used_by_head": [
+      "Features.mean",
+      "Features.variance"
+    ],
+    "thresholds_fit_now": false
+  },
+  "blocking_conditions": [
+    "No labeled empty calibration or compatible fitted bank for our configuration.",
+    "No audited masked-LTF-to-Features adapter or compiled upstream Rust runtime in the current PATH.",
+    "Raw amplitude scale/AGC and physical generalization remain unvalidated; historical global rejections stay.",
+    "READY is emitted once per app_main execution, not on request by a host UART reopen.",
+    "Solo exterior laptop placement/cable reach and audible/visible closure acknowledgement have not been confirmed; no second operator/device assumed."
+  ],
+  "generated_local_sources": [
+    {
+      "path": "firmware/csi_recv/sdkconfig",
+      "bytes": 67636,
+      "sha256": "247e27634c4debc95768a539f519c1c074481621cee1d02eadeaadf0f03aba39",
+      "installed_binary_attested": false
+    },
+    {
+      "path": "firmware/csi_recv_02/sdkconfig",
+      "bytes": 67636,
+      "sha256": "247e27634c4debc95768a539f519c1c074481621cee1d02eadeaadf0f03aba39",
+      "installed_binary_attested": false
+    }
+  ],
+  "other_inspected_license_declarations": {
+    "wifi-densepose-wasm-edge": "MIT OR Apache-2.0"
+  }
+}
