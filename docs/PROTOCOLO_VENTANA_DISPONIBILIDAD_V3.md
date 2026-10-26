@@ -52,6 +52,8 @@ La integridad registrada se informa por separado de parada y requisitos comparti
 
 Los huecos de cobertura se calculan con retornos LF host: diferencias consecutivas y bordes T0/primera y última/T1. Filas del mismo chunk pueden compartir timestamp y producir huecos cero; no se interpolan tiempos RF. Los campos de cobertura no convierten duración nominal en observación continua.
 
+La comprobación heredada de reloj **local** también queda explícita: entre filas válidas, `delta=(actual-anterior) mod 2**32` debe estar entre **1 y 10 000 000 µs**, inclusive. Un delta fuera de ese rango se registra como discontinuidad según el criterio v1/v2 y rechaza el alcance afectado; no diagnostica la causa física. Esta regla ya existente no es `max_gap_ns` del host ni valida una cadencia RF. Por tanto, ausencia de umbral de silencio host no elimina la comprobación independiente de reloj local, callbacks o descartes.
+
 El canónico conserva todas las filas completas representables, más sus referencias e inclusión. La visualización muestra permanentemente los dos estados, conteos/cobertura y T0/T1 sobre el eje host, incluso cuando solo hay pocas filas. El detalle permite inspeccionar errores y exclusiones. Un RX sin filas no recibe matrices inventadas: muestra ausencia de datos y no invoca el consumidor oficial sobre muestras inexistentes.
 
 ## Diferencias y límites respecto de v1/v2

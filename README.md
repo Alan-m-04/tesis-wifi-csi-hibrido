@@ -51,3 +51,9 @@ v2 integra el lector acotado: mantiene los 30 s nominales y completa una línea 
 ## Intento físico v2 posterior, con autorización nueva
 
 Un único intento produjo 147 filas completas por RX, todas nominales. Integridad registrada, filas completas y parada pasan; la calidad global sigue **rechazada por residuos iniciales**. Ambos puertos se cerraron y no quedó cola; no fue necesaria finalización adicional. Se conservaron v1 y su rechazo, sin concatenar sesiones. Ver [resultado físico, visualización local y comparación](results/CAPTURA_FISICA_V2_20261025.md). No hubo reintentos ni cambios de firmware.
+
+## controlled_dual_v3: ventana prospectiva, validación exclusivamente offline
+
+En `feat/ventana-disponibilidad`, desde `a3f10ea`, se implementa el [protocolo v3](docs/PROTOCOLO_VENTANA_DISPONIBILIDAD_V3.md): READY estricto, tres filas consecutivas y frescura de 1 s en ambos RX; máximo 10 s para disparar una única ventana futura de 30 s. Registra eventos auditables, T0 real e inmutable, fronteras conservadoras y cierre acotado de 250 ms/65536 bytes. La visualización muestra conexión completa y ventana por separado; ninguna aprueba a la otra. «Caída de flujo» es terminación prematura del lector; los huecos se informan sin umbral máximo de silencio. La idoneidad para campañas/modelos permanece sin evaluar.
+
+Ver [implementación, pruebas memoria/PTY, navegador y límites](results/VENTANA_DISPONIBILIDAD_V3.md). v1/v2 y sus rechazos físicos permanecen intactos. No hay ventana v3 retrospectiva ni validación física del nuevo protocolo. El comando de preparación no abre UART y una ejecución física requiere otra autorización explícita.
