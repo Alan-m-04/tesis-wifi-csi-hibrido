@@ -1,0 +1,522 @@
+{
+  "schema": "tesis-comparison-v3-figures-v1",
+  "files": [
+    {
+      "path": "figures/comparacion_v3/rssi.svg",
+      "bytes": 112023,
+      "sha256": "8c6b6d19f4b949d18d5af7897ae52c06c09f7d278787492bca96664c6901d096",
+      "verified_rendered_axes": [
+        {
+          "panel": "RX-01",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -66.0,
+            -40.0
+          ]
+        },
+        {
+          "panel": "RX-02",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -66.0,
+            -40.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/comparacion_v3/rssi.png",
+      "bytes": 108692,
+      "sha256": "d22ed10e72817fc75b443fbf0635c73e974c44d01e3b039e327592259091eec4",
+      "verified_rendered_axes": [
+        {
+          "panel": "RX-01",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -66.0,
+            -40.0
+          ]
+        },
+        {
+          "panel": "RX-02",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -66.0,
+            -40.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/comparacion_v3/amplitud_fila.svg",
+      "bytes": 218599,
+      "sha256": "cc89ecc88fc7fc65271507ce7ec09a98b4061e1121c554e6c597de11a3481cfb",
+      "verified_rendered_axes": [
+        {
+          "panel": "RX-01 · LLTF",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        },
+        {
+          "panel": "RX-01 · HT-LTF",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        },
+        {
+          "panel": "RX-02 · LLTF",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        },
+        {
+          "panel": "RX-02 · HT-LTF",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/comparacion_v3/amplitud_fila.png",
+      "bytes": 214977,
+      "sha256": "413f0b28b6f4b7b10e13f6a22d70a34066c9db4d33a3f523531548ba27efe826",
+      "verified_rendered_axes": [
+        {
+          "panel": "RX-01 · LLTF",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        },
+        {
+          "panel": "RX-01 · HT-LTF",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        },
+        {
+          "panel": "RX-02 · LLTF",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        },
+        {
+          "panel": "RX-02 · HT-LTF",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/comparacion_v3/amplitud_tono.svg",
+      "bytes": 187136,
+      "sha256": "a82d6decc0c6e0b65c75208592031553fc18914a99f94e38cfc046ac19ace286",
+      "verified_rendered_axes": [
+        {
+          "panel": "RX-01 · LLTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            74.0
+          ]
+        },
+        {
+          "panel": "RX-01 · HT-LTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            74.0
+          ]
+        },
+        {
+          "panel": "RX-02 · LLTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            74.0
+          ]
+        },
+        {
+          "panel": "RX-02 · HT-LTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            74.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/comparacion_v3/amplitud_tono.png",
+      "bytes": 154126,
+      "sha256": "5d1642327ff3edcb2f0abd2b35034d51d4c8cf96375123a2f0f2bab2f126c212",
+      "verified_rendered_axes": [
+        {
+          "panel": "RX-01 · LLTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            74.0
+          ]
+        },
+        {
+          "panel": "RX-01 · HT-LTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            74.0
+          ]
+        },
+        {
+          "panel": "RX-02 · LLTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            74.0
+          ]
+        },
+        {
+          "panel": "RX-02 · HT-LTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            74.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/comparacion_v3/variabilidad_tono.svg",
+      "bytes": 117471,
+      "sha256": "2eff92fdae21ab94cde06750ba92234555cead66f45a1447c3c6452e666282d3",
+      "verified_rendered_axes": [
+        {
+          "panel": "RX-01 · LLTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            15.0
+          ]
+        },
+        {
+          "panel": "RX-01 · HT-LTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            15.0
+          ]
+        },
+        {
+          "panel": "RX-02 · LLTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            15.0
+          ]
+        },
+        {
+          "panel": "RX-02 · HT-LTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            15.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/comparacion_v3/variabilidad_tono.png",
+      "bytes": 141828,
+      "sha256": "0f1aadbdbd07f5644986ee9b8a52fc51ae492c6a924d2f3c9561702c54e7c5d4",
+      "verified_rendered_axes": [
+        {
+          "panel": "RX-01 · LLTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            15.0
+          ]
+        },
+        {
+          "panel": "RX-01 · HT-LTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            15.0
+          ]
+        },
+        {
+          "panel": "RX-02 · LLTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            15.0
+          ]
+        },
+        {
+          "panel": "RX-02 · HT-LTF",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            15.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/comparacion_v3/cobertura.svg",
+      "bytes": 197114,
+      "sha256": "7f3bb01d0c84feaca10a7a04e95915026df95d3fb9e074881adfa3a4aff6267e",
+      "verified_rendered_axes": [
+        {
+          "panel": "RX-01",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -0.5,
+            1.5
+          ]
+        },
+        {
+          "panel": "RX-02",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -0.5,
+            1.5
+          ]
+        },
+        {
+          "panel": "",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            432.0
+          ]
+        },
+        {
+          "panel": "",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            432.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/comparacion_v3/cobertura.png",
+      "bytes": 129902,
+      "sha256": "9353f8bbe25c375ba561010e8edf887ca174ee5433ddfd06caf4b4080022cb5e",
+      "verified_rendered_axes": [
+        {
+          "panel": "RX-01",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -0.5,
+            1.5
+          ]
+        },
+        {
+          "panel": "RX-02",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -0.5,
+            1.5
+          ]
+        },
+        {
+          "panel": "",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            432.0
+          ]
+        },
+        {
+          "panel": "",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            432.0
+          ]
+        }
+      ]
+    }
+  ],
+  "common_axes": {
+    "time_seconds": [
+      0,
+      30
+    ],
+    "tone_index": [
+      -32,
+      31
+    ],
+    "rssi_dBm": [
+      -66,
+      -40
+    ],
+    "frame_mean_amplitude": [
+      0,
+      55
+    ],
+    "tone_mean_and_std_amplitude": [
+      0,
+      74
+    ],
+    "tone_temporal_std_amplitude": [
+      0,
+      15
+    ],
+    "host_gap_ms": [
+      0,
+      432
+    ]
+  },
+  "runtime": {
+    "six": "1.17.0",
+    "cycler": "0.12.1",
+    "python-dateutil": "3.0.0",
+    "packaging": "26.3",
+    "numpy": "2.4.2",
+    "contourpy": "1.4.0",
+    "kiwisolver": "1.5.1",
+    "pillow": "13.0.0",
+    "matplotlib": "3.10.8",
+    "tzdata": "2026.5",
+    "fonttools": "4.67.0",
+    "pyparsing": "3.3.3"
+  },
+  "requirements": {
+    "path": "requirements-comparacion.txt",
+    "bytes": 271,
+    "sha256": "466c2a8b7597c4758dd642fbe49ace211888c55f423aa8ffe8dddcdb63893871"
+  },
+  "raw_matrices_published": false,
+  "sigma_interpretation": "Population sample spread; not confidence intervals, RF stability or causal effects."
+}
