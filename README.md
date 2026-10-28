@@ -75,3 +75,11 @@ El piloto se revisó para una única persona: laptop exterior con los cables exi
 El [intento exploratorio posterior](results/CAPTURA_MOVIMIENTO_LIBRE_V3.md) conserva 152 filas completas y 149 incluidas por RX: integridad/filas/parada conformes, ventana conforme y conexión/global rechazados. El operador declaró que comenzaría actividades después del mensaje de autorización; el inicio físico sigue incierto. La sesión no pertenece al piloto, calibración o entrenamiento.
 
 La [comparación offline con la sesión sentada](results/COMPARACION_FISICA_V3.md) incluye procedencia, máscaras, cobertura y cinco figuras con escalas comunes de RSSI/amplitud/variabilidad, separadas por RX y LLTF/HT-LTF. Se verifican fuentes/perfil iguales; la igualdad física del montaje solo está declarada. Diez pruebas específicas y preservación de 507 archivos anteriores. Sin umbrales, entrenamiento, detección validada o nueva captura por la comparación; dos sesiones no acreditan causalidad o precisión.
+
+## Adaptador de presencia offline, sin calibración física
+
+La [implementación y validación](results/VALIDACION_ADAPTADOR_PRESENCIA.md) integra extracción LLTF52 por RX independiente y un port Python explícito de `PresenceSpecialist`, con RuView fijado. Pasaron 22 pruebas y 2022 casos sintéticos de equivalencia bit a bit contra los cuerpos Rust originales ejecutados en un arnés mínimo. No se compiló el workspace completo ni se usaron los registros físicos para ajustar o inferir.
+
+Las dos ventanas físicas solo producen rasgos y trazabilidad: media/varianza poblacional por sesión, cuatro resultados **sin calibración y sin decisión de presencia**, con sus rechazos históricos intactos. Un dato requerido incompleto deja el RX/sesión no evaluable, sin relleno o media de un subconjunto. No hay UART, captura, firmware o protocolo nuevo; 598 archivos anteriores preservados y ninguna autorización física vigente.
+
+Reanudación del 27 de octubre: 22 pruebas repetidas y 2022 salidas sintéticas del binario Rust guardado confirmadas. Ver [cierre, límite de Bubblewrap y pendientes físicos](results/VALIDACION_ADAPTADOR_PRESENCIA.md#reanudación-y-cierre-documental--27-de-octubre-de-2026).

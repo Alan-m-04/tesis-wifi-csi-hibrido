@@ -1,0 +1,2 @@
+# Preserve the byte-identical upstream Rust excerpt, including its final blank line.
+vendor/ruview/presence/presence_original.rs whitespace=-blank-at-eof
