@@ -89,3 +89,9 @@ Reanudación del 27 de octubre: 22 pruebas repetidas y 2022 salidas sintéticas 
 Desde `51246df`, un [protocolo nuevo](docs/PROTOCOLO_PRESENCIA_PERSISTENTE_V4.md) mantiene una conexión por RX, READY inicial y disponibilidad fresca con tres filas nuevas antes de cada ventana prospectiva de 30 s. Registra toda la conexión, conserva T0/T1 y separa conexión, ventana, cobertura y etiqueta declarada. v1/v2/v3 permanecen intactos; v4 añade explícitamente vigilancia de silencio de 1 s y cobertura piloto prospectiva, sin aplicarlas a resultados anteriores.
 
 El [plan para revisión](docs/PLAN_REVISION_CAMPAÑA_PERSISTENTE_V4.md) usa laptop/RX dentro, un solo operador, demora de salida, avisos diferentes y recibo de ambos cierres basado en su estado real. El backend es exclusivamente memoria/PTY, sin ejecución física habilitada, dashboard o servidor. [Pruebas y límites](results/PRESENCIA_PERSISTENTE_V4.md): quedan pendientes transporte físico revisado, montaje, READY inicial y audibilidad, además de autorización nueva. No se calibra el detector. El wrapper conserva el fallo de Bubblewrap si no puede aislar.
+
+## Backend UART de v4 implementado — ejecución física pendiente
+
+Desde `414b461`, el [backend UART y su comando solo para revisión](docs/BACKEND_UART_PRESENCIA_V4.md) reutilizan identidad by-id, apertura sin flush y registro/cierre de v4. Preparación y preflight no abren; ejecución solo con opción explícita y autorización nueva. Conserva una apertura por RX, READY obligatorio y cero reintentos. Se documentan solicitudes DTR/RTS sin prometer ausencia de transitorios/resets.
+
+[163 pruebas offline aprobadas](results/BACKEND_UART_V4.md), con dobles y PTY, sin UART real, firmware nuevo, calibración o campaña física. La [práctica breve de sonidos sin ESP](docs/PRACTICA_SONIDOS_V4.md) guarda tu declaración después de escucharlos desde fuera; la audibilidad humana sigue pendiente y nunca se verifica automáticamente.

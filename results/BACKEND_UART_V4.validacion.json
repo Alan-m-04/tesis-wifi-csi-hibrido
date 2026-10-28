@@ -1,0 +1,663 @@
+{
+  "schema": "tesis-presence-v4-uart-verification-v1",
+  "verified_utc": "2026-10-28T01:06:15.315292+00:00",
+  "base_commit": "414b461410fec83f83a149d6e88cf323bb69fe96",
+  "branch": "feat/backend-uart-presencia-v4",
+  "tests": {
+    "new_uart_and_sound": 35,
+    "previous_v4": 38,
+    "legacy_v1_v2_v3": 90,
+    "total_passed": 163,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "bubblewrap": {
+    "attempted": true,
+    "succeeded": false,
+    "exit_code": 1,
+    "explicit_failure_preserved": true,
+    "direct_tests_are_not_Bubblewrap_isolation": true
+  },
+  "physical": {
+    "UART_opened": false,
+    "USB_preflight_performed": false,
+    "new_capture": false,
+    "campaign_executed": false,
+    "detector_calibrated": false,
+    "firmware_changed": false,
+    "audio_played": false,
+    "human_audibility_verified": false,
+    "new_authorization_created": false
+  },
+  "preserved": {
+    "tracked_files_unchanged": 169,
+    "intentional_v4_metadata_journal_and_document_updates": [
+      "README.md",
+      "docs/ESTADO_INICIAL.md",
+      "src/persistent_presence_v4.py",
+      "src/presence_v4_journal.py"
+    ],
+    "legacy_v1_v2_v3_sources_changed": false,
+    "preserving_serial_adapter_changed": false,
+    "historical_files_unchanged": 598
+  },
+  "locked_runtime": {
+    "version": "3.5",
+    "platform": "Linux POSIX",
+    "files": {
+      "serialposix.py": "5d56f98513391e1766a1847a04e2e1202ced4172a152803ba1c823a149a9b6f9",
+      "serialutil.py": "3c84f8c7c319f161a85d6f8db5bedc4f65255714589bdcbeee6f2daf65a17c0a"
+    },
+    "scope": "Inspected local POSIX open/configure/DTR/RTS/close code; no guarantee of electrical behavior, kernel, driver or hardware."
+  },
+  "electrical_claim": "Software requests False; actual update attempts and errors recorded. No exclusion of electrical transients, pulses or resets; no physical measurement.",
+  "synthetic_serial_PTY_runs": {
+    "dos-ventanas": {
+      "integrity_ok": true,
+      "replay_ok": true,
+      "fatal": null,
+      "runtime": {
+        "transport": "synthetic_serial_backend",
+        "receivers": {
+          "RX-01": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "error",
+                "error": "OSError: [Errno 25] Inappropriate ioctl for device",
+                "errno": 25
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          },
+          "RX-02": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "error",
+                "error": "OSError: [Errno 25] Inappropriate ioctl for device",
+                "errno": 25
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          }
+        },
+        "notifier": "synthetic_recording_only_no_audio",
+        "audibility_verified_automatically": false,
+        "bubblewrap_isolation_claimed": false,
+        "retry_count": 0,
+        "startup_reader_stopped": true
+      },
+      "windows": [
+        {
+          "id": "B01-E",
+          "duration_ns": 30000000000,
+          "rows": {
+            "RX-01": 300,
+            "RX-02": 300
+          },
+          "label_status": "declared",
+          "eligible": true
+        },
+        {
+          "id": "B01-S",
+          "duration_ns": 30000000000,
+          "rows": {
+            "RX-01": 300,
+            "RX-02": 300
+          },
+          "label_status": "declared",
+          "eligible": true
+        }
+      ],
+      "artifact_references": [
+        {
+          "path": "results/local/backend-uart-v4/dos-ventanas/manifest.json",
+          "bytes": 1280,
+          "sha256": "b87a5924c5de5913ca61451a7266783313daec8d3303a197abf2cd955041711f"
+        },
+        {
+          "path": "results/local/backend-uart-v4/dos-ventanas/provenance.json",
+          "bytes": 4027,
+          "sha256": "9a4c76d45bdba8cfc33dca68e9df9fbd354a7b3d4d03a13a7092333960c7a8ea"
+        },
+        {
+          "path": "results/local/backend-uart-v4/dos-ventanas/summary.json",
+          "bytes": 814267,
+          "sha256": "97b5300531eda5b0d5c71c32b8c8f4da9750d97c36ffa2e315191518a1cb7da4"
+        },
+        {
+          "path": "results/local/backend-uart-v4/dos-ventanas/close-receipt.json",
+          "bytes": 889,
+          "sha256": "167610583b6751c164cdedd64e71d6a981bea22ef2f178b8b12ee05af0cadc6c"
+        }
+      ],
+      "USB_identity_evidence": "synthetic metadata only; real USB preflight not performed"
+    },
+    "segunda-apertura-fallida": {
+      "integrity_ok": true,
+      "replay_ok": true,
+      "fatal": "io_error",
+      "runtime": {
+        "transport": "synthetic_serial_backend",
+        "receivers": {
+          "RX-01": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "error",
+                "error": "OSError: [Errno 25] Inappropriate ioctl for device",
+                "errno": 25
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          },
+          "RX-02": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "error",
+                "error": "OSError: [Errno 25] Inappropriate ioctl for device",
+                "errno": 25
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          }
+        },
+        "notifier": "synthetic_recording_only_no_audio",
+        "audibility_verified_automatically": false,
+        "bubblewrap_isolation_claimed": false,
+        "retry_count": 0,
+        "startup_reader_stopped": true
+      },
+      "windows": [],
+      "artifact_references": [
+        {
+          "path": "results/local/backend-uart-v4/segunda-apertura-fallida/manifest.json",
+          "bytes": 1263,
+          "sha256": "e13b017846cc51b3790e3b3510c23f08300400eacaf2e9c1cfc2e74187cd92b7"
+        },
+        {
+          "path": "results/local/backend-uart-v4/segunda-apertura-fallida/provenance.json",
+          "bytes": 4027,
+          "sha256": "9a4c76d45bdba8cfc33dca68e9df9fbd354a7b3d4d03a13a7092333960c7a8ea"
+        },
+        {
+          "path": "results/local/backend-uart-v4/segunda-apertura-fallida/summary.json",
+          "bytes": 3659,
+          "sha256": "02a1b8752571dc6ce340ce514919e0216a02b1c03dd76ffcda37130f37eb0753"
+        },
+        {
+          "path": "results/local/backend-uart-v4/segunda-apertura-fallida/close-receipt.json",
+          "bytes": 866,
+          "sha256": "3bc9340d8629e9b44994ddb79ef39144d07a6a00c187a7bedc8699dedaf3e6a5"
+        }
+      ],
+      "USB_identity_evidence": "synthetic metadata only; real USB preflight not performed"
+    },
+    "desconexion": {
+      "integrity_ok": true,
+      "replay_ok": true,
+      "fatal": "io_error:RX-01",
+      "runtime": {
+        "transport": "synthetic_serial_backend",
+        "receivers": {
+          "RX-01": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "error",
+                "error": "OSError: [Errno 25] Inappropriate ioctl for device",
+                "errno": 25
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          },
+          "RX-02": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "error",
+                "error": "OSError: [Errno 25] Inappropriate ioctl for device",
+                "errno": 25
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          }
+        },
+        "notifier": "synthetic_recording_only_no_audio",
+        "audibility_verified_automatically": false,
+        "bubblewrap_isolation_claimed": false,
+        "retry_count": 0,
+        "startup_reader_stopped": true
+      },
+      "windows": [],
+      "artifact_references": [
+        {
+          "path": "results/local/backend-uart-v4/desconexion/manifest.json",
+          "bytes": 1266,
+          "sha256": "69f6621411e26b9042209be99d75f0afe2e6b31e07f358290dbe85f2fa070c27"
+        },
+        {
+          "path": "results/local/backend-uart-v4/desconexion/provenance.json",
+          "bytes": 4027,
+          "sha256": "9a4c76d45bdba8cfc33dca68e9df9fbd354a7b3d4d03a13a7092333960c7a8ea"
+        },
+        {
+          "path": "results/local/backend-uart-v4/desconexion/summary.json",
+          "bytes": 3801,
+          "sha256": "1bbb1e3e377f635fe81bd9bbec54a7580fdbf5ccb1308f81f5485a27afe25b4c"
+        },
+        {
+          "path": "results/local/backend-uart-v4/desconexion/close-receipt.json",
+          "bytes": 864,
+          "sha256": "3b60eee666697102d339e849644e403d6e65b85e4565005824342530a2f9f18c"
+        }
+      ],
+      "USB_identity_evidence": "synthetic metadata only; real USB preflight not performed"
+    },
+    "cierre-fallido": {
+      "integrity_ok": true,
+      "replay_ok": true,
+      "fatal": "interrupt",
+      "runtime": {
+        "transport": "synthetic_serial_backend",
+        "receivers": {
+          "RX-01": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "error",
+                "error": "OSError: [Errno 25] Inappropriate ioctl for device",
+                "errno": 25
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": true,
+            "fd": 10,
+            "electrical_transients_or_resets_excluded": false
+          },
+          "RX-02": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "error",
+                "error": "OSError: [Errno 25] Inappropriate ioctl for device",
+                "errno": 25
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          }
+        },
+        "notifier": "synthetic_recording_only_no_audio",
+        "audibility_verified_automatically": false,
+        "bubblewrap_isolation_claimed": false,
+        "retry_count": 0,
+        "startup_reader_stopped": true
+      },
+      "windows": [],
+      "artifact_references": [
+        {
+          "path": "results/local/backend-uart-v4/cierre-fallido/manifest.json",
+          "bytes": 1266,
+          "sha256": "ff57fc935263f5eee7ed16d1f669724092eb0056c1eb7a0c52852a923319eb49"
+        },
+        {
+          "path": "results/local/backend-uart-v4/cierre-fallido/provenance.json",
+          "bytes": 4027,
+          "sha256": "9a4c76d45bdba8cfc33dca68e9df9fbd354a7b3d4d03a13a7092333960c7a8ea"
+        },
+        {
+          "path": "results/local/backend-uart-v4/cierre-fallido/summary.json",
+          "bytes": 3659,
+          "sha256": "1e79dcf12285321d06a8b2b70d3c345a25470afa15922651daccae4b04a8800f"
+        },
+        {
+          "path": "results/local/backend-uart-v4/cierre-fallido/close-receipt.json",
+          "bytes": 867,
+          "sha256": "3e476bd15733b73c23ea921876e2f809c896147fcc520afed6f9399c3b6d994e"
+        }
+      ],
+      "USB_identity_evidence": "synthetic metadata only; real USB preflight not performed"
+    }
+  },
+  "previous_v4_bundles_replayed": {
+    "ensayo-dos-ventanas-validado": {
+      "integrity_ok": true,
+      "replay_ok": true,
+      "manifest": {
+        "path": "results/local/campana-persistente-v4/ensayo-dos-ventanas-validado/manifest.json",
+        "bytes": 1279,
+        "sha256": "2f0d412e287a38ab83b1f30b1266b677950e57ea55f3188939484004c84c0a3d"
+      }
+    },
+    "ensayo-nominal-definitivo": {
+      "integrity_ok": true,
+      "replay_ok": true,
+      "manifest": {
+        "path": "results/local/campana-persistente-v4/ensayo-nominal-definitivo/manifest.json",
+        "bytes": 1277,
+        "sha256": "a26697f76eb2dce1717c45332fb5840030eb60fbc50658393b3d2730cac69592"
+      }
+    }
+  },
+  "sound_practice": {
+    "human_confirmation": "pending",
+    "audio_played": false,
+    "operator_answer": null,
+    "artifacts": [
+      {
+        "path": "results/local/backend-uart-v4/sonidos-sin-reproducir/PRUEBA-both_ports_closed_confirmed.wav",
+        "bytes": 57644,
+        "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+      },
+      {
+        "path": "results/local/backend-uart-v4/sonidos-sin-reproducir/PRUEBA-establish_condition.wav",
+        "bytes": 17324,
+        "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+      },
+      {
+        "path": "results/local/backend-uart-v4/sonidos-sin-reproducir/PRUEBA-failure.wav",
+        "bytes": 58924,
+        "sha256": "d394f5d61a23f29df7ec760c745b47107aa66a2ed1564670ecb675d8e51362d7"
+      },
+      {
+        "path": "results/local/backend-uart-v4/sonidos-sin-reproducir/PRUEBA-window_finished_connection_open.wav",
+        "bytes": 8684,
+        "sha256": "e3cce4eeab2f906735116e0ea1dd6534db30a46a261910bc3b26e124b9c479c2"
+      },
+      {
+        "path": "results/local/backend-uart-v4/sonidos-sin-reproducir/practice.json",
+        "bytes": 257,
+        "sha256": "5ee8b11fa639d9d20ae4eec1d95f545341027e10e4cb34b305b1712615e09731"
+      }
+    ]
+  },
+  "local_links_checked": 74,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 13750,
+      "sha256": "ed332d7414978f0a1bfdbeb2bbeb1abee3b099e8836082993c204848e9870f4c"
+    },
+    {
+      "path": "config/campana_presencia_uart_v4.template.json",
+      "bytes": 1580,
+      "sha256": "2b358804d35b6d12dd84fd5dec96c6880d4aa53bd0191c88f663337c0dbcd34c"
+    },
+    {
+      "path": "config/pyserial_uart_v4.lock.json",
+      "bytes": 384,
+      "sha256": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010"
+    },
+    {
+      "path": "docs/BACKEND_UART_PRESENCIA_V4.md",
+      "bytes": 11769,
+      "sha256": "611bd3d88907d4842a64d698846ca1de4e0851335dfd117fed10a852cc1e348d"
+    },
+    {
+      "path": "docs/ESTADO_INICIAL.md",
+      "bytes": 22193,
+      "sha256": "1e769ff6105d35089eaf5e4f9970e2fe3e63a49a0dc892e2b610287937546e03"
+    },
+    {
+      "path": "docs/PRACTICA_SONIDOS_V4.md",
+      "bytes": 1671,
+      "sha256": "d8cd358bb31104f94f85a4d1da38d02832055186ca88221f0d1d1d580750da5c"
+    },
+    {
+      "path": "results/BACKEND_UART_V4.md",
+      "bytes": 7493,
+      "sha256": "fce5880524be2094dd926871f6212c914aae5bab0889613203b8e27600aa874a"
+    },
+    {
+      "path": "src/persistent_presence_v4.py",
+      "bytes": 19942,
+      "sha256": "5a26a7ec42398fe536dcbdde39bfec547a0fa964351378b6bae02d67b679f307"
+    },
+    {
+      "path": "src/presence_v4_journal.py",
+      "bytes": 9343,
+      "sha256": "52d28604f573987bf1e2ff84a8d1c2995a479305d14ecc905adc7aa4d25e2cf4"
+    },
+    {
+      "path": "src/presence_v4_uart.py",
+      "bytes": 21275,
+      "sha256": "e49f14dde95ab308a869877d0935b84fed45f93a805cd14db0d011a560fe8968"
+    },
+    {
+      "path": "tests/test_uart_v4.py",
+      "bytes": 24499,
+      "sha256": "b954088787fffd7e118ba226bbda9c6e14a63b559146d4964fac96ce36488f3c"
+    },
+    {
+      "path": "tools/campana_presencia_uart_v4.py",
+      "bytes": 4149,
+      "sha256": "aa91c2f8a4a0dfd83aebfe398559844222be3811b4e38b8e48475cf116404931"
+    },
+    {
+      "path": "tools/practicar_sonidos_v4.py",
+      "bytes": 3434,
+      "sha256": "35d76a31c621012ff83524dd3ba160165df3e90bbb8a7f13378067452f06b986"
+    },
+    {
+      "path": "tools/test_uart_v4.sh",
+      "bytes": 310,
+      "sha256": "fb4a058f8c1569299db1b1451c687438a98adb8443360b2db028876b41262e0b"
+    }
+  ],
+  "local_evidence": [
+    {
+      "path": "results/local/backend-uart-v4/preservacion-antes.json",
+      "bytes": 18452,
+      "sha256": "43f3cb2c8444ec7dab015d929059431e42c3a9461d58635f0e678ac8c0a7de80"
+    },
+    {
+      "path": "results/local/backend-uart-v4/pruebas-integradas.log",
+      "bytes": 29522,
+      "sha256": "b734a230f8b6c33bc2cec736d1e4d1ae51ad8d92c4bd5ed57839bc89e58e641f"
+    },
+    {
+      "path": "results/local/backend-uart-v4/bubblewrap.log",
+      "bytes": 210,
+      "sha256": "0cbac915c0ef2eecb93813c165d1a26c50c871d181752e5e55460df7989febef"
+    },
+    {
+      "path": "results/local/backend-uart-v4/preparacion-final.log",
+      "bytes": 1817,
+      "sha256": "dec924caeb8173b55b1c6ef1f2499038ece645eaf3360671b2307af5ecda91bf"
+    },
+    {
+      "path": "results/local/backend-uart-v4/sonidos.log",
+      "bytes": 254,
+      "sha256": "131e4dc635136c0a8b3a6002017d0f65cd52fe8ffb3269780917bbd345991166"
+    },
+    {
+      "path": "results/local/backend-uart-v4/ensayar_backend.py",
+      "bytes": 2562,
+      "sha256": "26ee65e8de12b94422d292ef86c9ec905175be99ba4fce6a98cf0cb9fd50891c"
+    },
+    {
+      "path": "results/local/backend-uart-v4/ensayos.log",
+      "bytes": 719,
+      "sha256": "c5c2fe170d129bcd7a8bd5c8de4c04d7626f2cf13d8591c3bfd020487181a5ca"
+    },
+    {
+      "path": "results/local/backend-uart-v4/ensayos.resumen.json",
+      "bytes": 9620,
+      "sha256": "f3b9aced3016abe619d31862ab3d1d80fcb762e79b25a2a6665b5b52fdd1bf11"
+    },
+    {
+      "path": "results/local/backend-uart-v4/verificar_entrega.py",
+      "bytes": 5826,
+      "sha256": "f3c3c1c1921877e5a41c4486d43d60821d06c94c02d8b7cea16173ba584d7dc3"
+    }
+  ],
+  "remaining_physical_checks": [
+    "new explicit authorization",
+    "real by-id identities/permissions/driver",
+    "fresh initial READY and host/device buffering",
+    "real electrical DTR/RTS/HUPCL behavior and possible resets",
+    "sustained throughput/storage/latency",
+    "real driver disconnection and close",
+    "human audibility from outside with unchanged mounting"
+  ]
+}

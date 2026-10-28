@@ -18,9 +18,9 @@ POLICY = dict(window_ns=30*SECOND, availability_wait_ns=10*SECOND,
               coverage_gap_ns=500_000_000)
 
 
-def validate_plan(plan):
+def validate_plan(plan, *, allow_physical=False):
     if (plan.get('protocol') != PROTOCOL or plan.get('policy') != POLICY or
-            plan.get('execution_mode') != 'offline_only' or
+            plan.get('execution_mode') not in (('offline_only', 'physical_after_approval') if allow_physical else ('offline_only',)) or
             plan.get('receivers') != RECEIVERS):
         raise ValueError('Exact offline v4 protocol, policy and RX identities required')
     for key in ('connection_id', 'actor', 'mounting_reference', 'partition_group'):
@@ -39,8 +39,12 @@ def validate_plan(plan):
 
 
 class PersistentPresenceV4:
-    def __init__(self, plan):
-        self.plan = validate_plan(plan)
+    def __init__(self, plan, *, allow_physical=False, evidence_type=None):
+        self.plan = validate_plan(plan, allow_physical=allow_physical)
+        self.evidence_type = evidence_type or ('physical_capture' if plan['execution_mode']=='physical_after_approval' else 'synthetic_fixture')
+        if self.evidence_type not in ('synthetic_fixture', 'physical_capture') or (
+                self.evidence_type == 'physical_capture' and plan['execution_mode'] != 'physical_after_approval'):
+            raise ValueError('Evidence type contradicts execution mode')
         self.now = self.a = self.initial_available = None
         self.states = {rx: dict(opened=False, ready=None, previous=None, streak=[],
                               gate_rows=[], last_valid=None, last_read=None, lines=[])
@@ -310,7 +314,7 @@ class PersistentPresenceV4:
             self.signal('both_ports_closed_confirmed')
 
     def summary(self):
-        result = dict(protocol=PROTOCOL, evidence_type='synthetic_fixture', physical_execution_enabled=False,
+        result = dict(protocol=PROTOCOL, evidence_type=self.evidence_type, physical_execution_enabled=self.evidence_type=='physical_capture',
                       connection_id=self.plan['connection_id'], initial_available_ns=self.initial_available,
                       fatal=self.fatal, connection=dict(quality_ok=not self.connection_reasons and
                           len(self.closed) == 2 and all(c['confirmed'] and not c['error'] for c in self.closed.values()),

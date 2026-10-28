@@ -26,12 +26,15 @@ def write_new(path, value):
 
 
 class V4Journal:
-    def __init__(self, output, plan):
-        self.machine = PersistentPresenceV4(plan)
+    def __init__(self, output, plan, *, allow_physical=False, evidence_type=None, extra_provenance=None,
+                 decision_clock=None):
+        self.machine = PersistentPresenceV4(plan, allow_physical=allow_physical, evidence_type=evidence_type)
         self.root = Path(output)
         self.root.mkdir(parents=True, exist_ok=False)
         self.raw, self.ops = {}, None
         self.seq = 0
+        self.decision_clock = decision_clock
+        self.last_command_applied = False
         try:
             write_new(self.root/'plan.json', plan)
             repository = Path(__file__).resolve().parents[1]
@@ -39,12 +42,15 @@ class V4Journal:
                 'presence_v4_pty.py', 'presence_v4_audio.py', 'availability_window.py',
                 'capture_csi_multi.py', 'capture_csi.py', 'preserving_serial.py', 'controlled_protocol.py')]
             sources += ['tools/campana_presencia_v4.py', 'config/csi_esp32s3.json']
-            write_new(self.root/'provenance.json', dict(
+            provenance = dict(
                 implementation_base_commit='51246df4f288ede695b81f8eca8336820e6cb126',
-                evidence_type='synthetic_fixture', python_version=sys.version,
-                physical_transport_enabled=False, plan_sha256=digest(self.root/'plan.json'),
+                evidence_type=self.machine.evidence_type, python_version=sys.version,
+                physical_transport_enabled=self.machine.evidence_type=='physical_capture', plan_sha256=digest(self.root/'plan.json'),
                 sources=[dict(path=name, sha256=digest(repository/name), bytes=(repository/name).stat().st_size)
-                         for name in sources]))
+                         for name in sources])
+            if extra_provenance:
+                provenance['transport'] = extra_provenance
+            write_new(self.root/'provenance.json', provenance)
             for rx in RECEIVERS:
                 self.raw[rx] = (self.root/(rx.lower()+'.serial.log')).open('xb')
             self.ops = (self.root/'operations.jsonl').open('x')
@@ -53,6 +59,7 @@ class V4Journal:
             raise
 
     def command(self, op, now_ns, **data):
+        self.last_command_applied = False
         if op in ('request', 'declare'):
             # Invalid operator input is rejected without corrupting the journal.
             getattr(self.machine, 'validate_'+op)(**data)
@@ -63,11 +70,20 @@ class V4Journal:
             offset = raw.tell()
             raw.write(chunk); raw.flush(); os.fsync(raw.fileno())
             stored.update(offset=offset, size=len(chunk), sha256=hashlib.sha256(chunk).hexdigest())
+        if self.decision_clock is not None:
+            # UART: raw data is durable first, then sample the actual decision
+            # time. Persist the chosen operation afterwards; failure rejects the
+            # attempt, never backdates or replaces an already chosen T0.
+            now_ns = self.decision_clock()
+            self.machine.apply(op, now_ns, **data)
+            self.last_command_applied = True
         record = dict(seq=self.seq, op=op, now_ns=now_ns, data=stored)
         self.ops.write(json.dumps(record, ensure_ascii=False, allow_nan=False)+'\n')
         self.ops.flush(); os.fsync(self.ops.fileno())
         self.seq += 1
-        self.machine.apply(op, now_ns, **data)
+        if not self.last_command_applied:
+            self.machine.apply(op, now_ns, **data)
+            self.last_command_applied = True
 
     def receipt(self):
         m = self.machine
@@ -116,9 +132,10 @@ def audit_v4(directory):
         p = (root/e['path']).resolve()
         if not p.is_relative_to(root.resolve()) or p.stat().st_size != e['bytes'] or digest(p) != e['sha256']:
             raise ValueError('Manifest integrity failure: '+e['path'])
-    m = PersistentPresenceV4(json.loads((root/'plan.json').read_text()))
     provenance = json.loads((root/'provenance.json').read_text())
-    if (provenance['evidence_type'] != 'synthetic_fixture' or provenance['physical_transport_enabled'] or
+    m = PersistentPresenceV4(json.loads((root/'plan.json').read_text()), allow_physical=True,
+                             evidence_type=provenance['evidence_type'])
+    if (provenance['physical_transport_enabled'] != (m.evidence_type=='physical_capture') or
             provenance['plan_sha256'] != digest(root/'plan.json')):
         raise ValueError('Provenance contradicts plan or evidence type')
     raw = {rx: (root/(rx.lower()+'.serial.log')).read_bytes() for rx in RECEIVERS}
