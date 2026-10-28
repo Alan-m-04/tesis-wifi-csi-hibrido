@@ -83,3 +83,9 @@ La [implementación y validación](results/VALIDACION_ADAPTADOR_PRESENCIA.md) in
 Las dos ventanas físicas solo producen rasgos y trazabilidad: media/varianza poblacional por sesión, cuatro resultados **sin calibración y sin decisión de presencia**, con sus rechazos históricos intactos. Un dato requerido incompleto deja el RX/sesión no evaluable, sin relleno o media de un subconjunto. No hay UART, captura, firmware o protocolo nuevo; 598 archivos anteriores preservados y ninguna autorización física vigente.
 
 Reanudación del 27 de octubre: 22 pruebas repetidas y 2022 salidas sintéticas del binario Rust guardado confirmadas. Ver [cierre, límite de Bubblewrap y pendientes físicos](results/VALIDACION_ADAPTADOR_PRESENCIA.md#reanudación-y-cierre-documental--27-de-octubre-de-2026).
+
+## Preparación de campaña persistente v4 — solo offline
+
+Desde `51246df`, un [protocolo nuevo](docs/PROTOCOLO_PRESENCIA_PERSISTENTE_V4.md) mantiene una conexión por RX, READY inicial y disponibilidad fresca con tres filas nuevas antes de cada ventana prospectiva de 30 s. Registra toda la conexión, conserva T0/T1 y separa conexión, ventana, cobertura y etiqueta declarada. v1/v2/v3 permanecen intactos; v4 añade explícitamente vigilancia de silencio de 1 s y cobertura piloto prospectiva, sin aplicarlas a resultados anteriores.
+
+El [plan para revisión](docs/PLAN_REVISION_CAMPAÑA_PERSISTENTE_V4.md) usa laptop/RX dentro, un solo operador, demora de salida, avisos diferentes y recibo de ambos cierres basado en su estado real. El backend es exclusivamente memoria/PTY, sin ejecución física habilitada, dashboard o servidor. [Pruebas y límites](results/PRESENCIA_PERSISTENTE_V4.md): quedan pendientes transporte físico revisado, montaje, READY inicial y audibilidad, además de autorización nueva. No se calibra el detector. El wrapper conserva el fallo de Bubblewrap si no puede aislar.
