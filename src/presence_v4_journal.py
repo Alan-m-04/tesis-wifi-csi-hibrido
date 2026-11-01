@@ -6,7 +6,8 @@ import sys
 from pathlib import Path
 
 from capture_csi_multi import RECEIVERS
-from persistent_presence_v4 import PersistentPresenceV4, STRICT_LINE_POLICY
+from persistent_presence_v4 import STRICT_LINE_POLICY, STRICT_ELIGIBILITY, EXPLORATORY_ELIGIBILITY
+from presence_v4_exploratory import make_v4_machine, certify_exploration
 
 
 def digest(path):
@@ -28,7 +29,7 @@ def write_new(path, value):
 class V4Journal:
     def __init__(self, output, plan, *, allow_physical=False, evidence_type=None, extra_provenance=None,
                  decision_clock=None):
-        self.machine = PersistentPresenceV4(plan, allow_physical=allow_physical, evidence_type=evidence_type)
+        self.machine = make_v4_machine(plan, allow_physical=allow_physical, evidence_type=evidence_type)
         self.root = Path(output)
         self.root.mkdir(parents=True, exist_ok=False)
         self.raw, self.ops = {}, None
@@ -42,9 +43,12 @@ class V4Journal:
                 'presence_v4_pty.py', 'presence_v4_audio.py', 'availability_window.py',
                 'capture_csi_multi.py', 'capture_csi.py', 'preserving_serial.py', 'controlled_protocol.py')]
             sources += ['tools/campana_presencia_v4.py', 'config/csi_esp32s3.json']
+            if plan.get('eligibility_revision') == EXPLORATORY_ELIGIBILITY:
+                sources.append('src/presence_v4_exploratory.py')
             provenance = dict(
                 implementation_base_commit='51246df4f288ede695b81f8eca8336820e6cb126',
                 line_policy_revision=self.machine.line_policy_revision,
+                eligibility_revision=plan.get('eligibility_revision', STRICT_ELIGIBILITY),
                 evidence_type=self.machine.evidence_type, python_version=sys.version,
                 physical_transport_enabled=self.machine.evidence_type=='physical_capture', plan_sha256=digest(self.root/'plan.json'),
                 sources=[dict(path=name, sha256=digest(repository/name), bytes=(repository/name).stat().st_size)
@@ -134,12 +138,23 @@ def audit_v4(directory):
         if not p.is_relative_to(root.resolve()) or p.stat().st_size != e['bytes'] or digest(p) != e['sha256']:
             raise ValueError('Manifest integrity failure: '+e['path'])
     provenance = json.loads((root/'provenance.json').read_text())
-    m = PersistentPresenceV4(json.loads((root/'plan.json').read_text()), allow_physical=True,
+    plan = json.loads((root/'plan.json').read_text())
+    m = make_v4_machine(plan, allow_physical=True,
                              evidence_type=provenance['evidence_type'])
     # Missing revision is accepted only for original strict bundles. Never
     # infer the new exception from installed code, source hashes or log content.
     if provenance.get('line_policy_revision', STRICT_LINE_POLICY) != m.line_policy_revision:
         raise ValueError('Line policy provenance contradicts plan')
+    if provenance.get('eligibility_revision', STRICT_ELIGIBILITY) != plan.get('eligibility_revision', STRICT_ELIGIBILITY):
+        raise ValueError('Eligibility provenance contradicts plan')
+    exploratory = plan.get('eligibility_revision') == EXPLORATORY_ELIGIBILITY
+    if exploratory:
+        module = 'src/presence_v4_exploratory.py'
+        entries = [s for s in provenance['sources'] if s['path'] == module]
+        source_path = Path(__file__).resolve().parents[1]/module
+        if (len(entries) != 1 or entries[0]['sha256'] != digest(source_path) or
+                entries[0]['bytes'] != source_path.stat().st_size):
+            raise ValueError('Exploratory source provenance differs')
     if (provenance['physical_transport_enabled'] != (m.evidence_type=='physical_capture') or
             provenance['plan_sha256'] != digest(root/'plan.json')):
         raise ValueError('Provenance contradicts plan or evidence type')
@@ -175,4 +190,7 @@ def audit_v4(directory):
             receipt['both_confirmed'] != (len(m.closed) == 2 and all(c['confirmed'] and not c['error'] for c in m.closed.values())) or
             any(receipt['raw_sha256'][rx] != hashlib.sha256(raw[rx]).hexdigest() for rx in RECEIVERS)):
         raise ValueError('Close receipt differs')
-    return dict(integrity_ok=True, replay_ok=True, operations=len(operations), state=result)
+    report = dict(integrity_ok=True, replay_ok=True, operations=len(operations), state=result)
+    if exploratory:
+        report['exploratory_eligibility'] = certify_exploration(root, provenance, result)
+    return report

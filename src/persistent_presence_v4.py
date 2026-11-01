@@ -14,6 +14,8 @@ PROTOCOL = 'presence_persistent_v4'
 STRICT_LINE_POLICY = 'v4-strict-post-ready-1'
 APP_MAIN_RETURN_POLICY = 'v4-app-main-return-1'
 STARTUP_SEQUENCE_POLICY = 'v4-startup-sequence-1'
+STRICT_ELIGIBILITY = 'v4-connection-strict-1'
+EXPLORATORY_ELIGIBILITY = 'v4-exploratory-1'
 POLICY = dict(window_ns=30*SECOND, availability_wait_ns=10*SECOND,
               freshness_ns=SECOND, exit_delay_ns=60*SECOND,
               start_cue_delay_ns=30*SECOND, establishment_ns=30*SECOND,
@@ -23,6 +25,11 @@ POLICY = dict(window_ns=30*SECOND, availability_wait_ns=10*SECOND,
 
 
 def validate_plan(plan, *, allow_physical=False):
+    eligibility = plan.get('eligibility_revision', STRICT_ELIGIBILITY)
+    if eligibility not in (STRICT_ELIGIBILITY, EXPLORATORY_ELIGIBILITY) or (
+            eligibility == EXPLORATORY_ELIGIBILITY and
+            plan.get('line_policy_revision') != STARTUP_SEQUENCE_POLICY):
+        raise ValueError('Unknown or incompatible v4 eligibility_revision')
     if plan.get('line_policy_revision', STRICT_LINE_POLICY) not in (
             STRICT_LINE_POLICY, APP_MAIN_RETURN_POLICY, STARTUP_SEQUENCE_POLICY):
         raise ValueError('Unknown v4 line_policy_revision')
@@ -76,6 +83,8 @@ class _StartupSequenceFramer(_StartupLineFramer):
 
 class PersistentPresenceV4:
     def __init__(self, plan, *, allow_physical=False, evidence_type=None):
+        if plan.get('eligibility_revision') == EXPLORATORY_ELIGIBILITY and type(self) is PersistentPresenceV4:
+            raise ValueError('Exploratory plans require the versioned make_v4_machine factory')
         self.plan = validate_plan(plan, allow_physical=allow_physical)
         self.line_policy_revision = self.plan.get('line_policy_revision', STRICT_LINE_POLICY)
         self.evidence_type = evidence_type or ('physical_capture' if plan['execution_mode']=='physical_after_approval' else 'synthetic_fixture')

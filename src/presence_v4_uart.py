@@ -13,7 +13,7 @@ import time
 
 import capture_csi_multi as capture
 from controlled_capture import PORTS, ROOT, ENVIRONMENT_FIELDS
-from persistent_presence_v4 import POLICY, validate_plan
+from persistent_presence_v4 import POLICY, validate_plan, EXPLORATORY_ELIGIBILITY
 from presence_v4_journal import V4Journal, digest, write_new
 from presence_v4_pty import PtySession, SteppedFixtureClock
 from preserving_serial import preserving_serial_type
@@ -172,11 +172,18 @@ class StorageLimit(RuntimeError):
 
 
 class StorageGuard:
-    def __init__(self, root, journal, clock, *, disk_usage=shutil.disk_usage):
+    def __init__(self, root, journal, clock, *, disk_usage=shutil.disk_usage, record=None, lock=None):
         self.root, self.journal, self.clock, self.disk_usage = Path(root), journal, clock, disk_usage
         self.started = clock(); self.checked = None
+        self.record, self.lock = record, lock
 
     def check(self, *, final_extra=0):
+        if self.lock is not None:
+            with self.lock:
+                return self._check(final_extra=final_extra)
+        return self._check(final_extra=final_extra)
+
+    def _check(self, *, final_extra=0):
         now = self.clock()
         raw = sum(f.tell() for f in self.journal.raw.values())
         if not final_extra and raw >= STORAGE['max_raw_bytes']:
@@ -185,11 +192,15 @@ class StorageGuard:
             raise StorageLimit('connection_duration_limit')
         if final_extra or self.checked is None or now-self.checked >= 250_000_000:
             self.checked = now
-            if self.disk_usage(self.root).free-final_extra < STORAGE['reserve_bytes']:
+            free = self.disk_usage(self.root).free
+            if free-final_extra < STORAGE['reserve_bytes']:
                 raise StorageLimit('free_space_reserve')
             size = sum(p.stat().st_size for p in self.root.rglob('*') if p.is_file())
             if size+final_extra >= STORAGE['max_bundle_bytes']:
                 raise StorageLimit('bundle_byte_limit')
+            if self.record is not None:
+                self.record('storage_check', free_bytes=free, raw_bytes=raw, size_bytes=size,
+                            final_extra=final_extra, guard_started_ns=self.started)
 
 
 class UartSession(PtySession):
@@ -201,6 +212,7 @@ class UartSession(PtySession):
         self._startup_stop = threading.Event()
         self._startup_reader = None
         validate_uart_plan(plan, execution=test_backend is None)
+        exploratory = plan.get('eligibility_revision') == EXPLORATORY_ELIGIBILITY
         if test_backend is None:
             check_authorization(authorization_reference)
             if notifier is not None and notifier.name == RecordingNotifier.name:
@@ -220,7 +232,8 @@ class UartSession(PtySession):
         ancestor = out.parent
         while not ancestor.exists():
             ancestor = ancestor.parent
-        if disk(ancestor).free < STORAGE['initial_free_bytes']:
+        initial_free = disk(ancestor).free
+        if initial_free < STORAGE['initial_free_bytes']:
             raise StorageLimit('Need at least 100 MiB free before opening')
         import serial, serial.serialposix, serial.serialutil
         verify_serial_runtime()
@@ -235,6 +248,8 @@ class UartSession(PtySession):
             electrical_behavior_verified=False, installed_firmware_attested=False,
             sources={name:digest(ROOT/name) for name in ('src/presence_v4_uart.py','src/preserving_serial.py',
                 'tools/campana_presencia_uart_v4.py','config/pyserial_uart_v4.lock.json')})
+        if exploratory:
+            transport['initial_free_bytes_observed'] = initial_free
         self.journal = V4Journal(out, plan, allow_physical=True,
             evidence_type='synthetic_fixture' if test_backend is not None else 'physical_capture',
             extra_provenance=transport, decision_clock=self.clock)
@@ -250,7 +265,8 @@ class UartSession(PtySession):
         self.endpoints, self.started_signals = {}, set()
         self.read_loop_stopped = self.receipt_persisted = self.storage_failed = self.finalized = False
         self.notifier_finished = self.finalization_attempted = False
-        self.guard = StorageGuard(out, self.journal, self.clock, disk_usage=disk)
+        self.guard = StorageGuard(out, self.journal, self.clock, disk_usage=disk,
+            record=self.command if exploratory else None, lock=self._state_lock if exploratory else None)
         try:
             for rx in PORTS:
                 self.endpoints[rx] = UartEndpoint(rx, snapshots[rx], factory, checker)
@@ -262,7 +278,12 @@ class UartSession(PtySession):
                     raise RuntimeError('Initial availability deadline expired before next open')
                 endpoint.open()
                 with self._state_lock:
-                    self.command('opened', receiver=rx, serial_configuration=endpoint.details())
+                    binding = {}
+                    if exploratory:
+                        st = os.fstat(endpoint.serial.fileno())
+                        binding['identity_binding'] = dict(identity=copy.deepcopy(snapshots[rx]),
+                            opened_fingerprint=[st.st_dev, st.st_ino, st.st_rdev])
+                    self.command('opened', receiver=rx, serial_configuration=endpoint.details(), **binding)
                     endpoint.readable = True
                 if self._startup_reader is None:
                     self._startup_reader = threading.Thread(target=self._pump_startup, name='v4-uart-startup-reader')

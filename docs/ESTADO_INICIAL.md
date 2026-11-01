@@ -175,3 +175,28 @@ Los prefijos no UTF-8 pegados a ROM y otros formatos iniciales registrados
 mantienen el rechazo de conexión; no se aceptan o recortan para aprobar.
 No se preparó otro intento ni hubo UART, resets, reconexiones, firmware o
 calibración; los datos, rechazos y autorizaciones anteriores siguen intactos.
+
+## Elegibilidad exploratoria v4 — desde 1f974b0
+
+El [contrato nuevo, definido antes del código](ELEGIBILIDAD_EXPLORATORIA_V4_R1.md),
+selecciona explícitamente `v4-exploratory-1` junto al arranque revisado. Mantiene
+rechazada la conexión con preámbulo anómalo/no interpretado y conserva bytes,
+hashes, offsets y tiempos. La elegibilidad exploratoria es un resultado separado
+del auditor; las candidatas del reductor no son aprobación. No autoriza calibrar,
+entrenar o usar en producción ni cambia el perfil CSI o las políticas anteriores.
+
+La disponibilidad exige ambos retornos y tres filas frescas por RX de lecturas
+nuevas fuera de los chunks de arranque. T0 sella fronteras de bytes/lecturas;
+la cobertura exploratoria usa solo evidencia posterior y los mínimos anteriores.
+Anomalías que alcancen una ventana o no puedan excluirse la impiden. Cualquier
+suspensión posterior revoca candidatas sin rearmado. Identidad, almacenamiento,
+integridad/replay, cobertura, etiqueta y ambos cierres se verifican antes de certificar.
+
+[Resultados y límites](../results/ELEGIBILIDAD_EXPLORATORIA_V4.md): 234 pruebas
+offline aprobadas, cero omisiones, dos ventanas sintéticas exploratorias elegibles
+con conexión rechazada y 2370 archivos anteriores intactos. El v4 original conserva
+su rechazo bajo su propia política. Bubblewrap sigue fallando explícitamente.
+Se preparó un [plan nuevo vacío/sentado para revisión](PLAN_PILOTO_EXPLORATORIO_V4_ES_R1.md),
+con ambas revisiones explícitas y declaraciones ambientales pendientes; ejecución
+física requiere autorización nueva. No hubo UART, captura física, firmware,
+calibración o entrenamiento.
