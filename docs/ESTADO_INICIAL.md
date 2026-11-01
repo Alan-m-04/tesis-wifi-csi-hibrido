@@ -152,3 +152,26 @@ No hubo UART, captura, reset, reconexión, cambio de firmware o calibración.
 Antes de otro plan físico deben revisarse los motivos iniciales de formato y
 los límites distintos de RX-01/RX-02; faltan READY/flujo de ambos, ventanas
 físicas elegibles y autorización nueva. No se preparó otro intento.
+
+## Revisión offline de formatos y orden de arranque — desde 6af037b
+
+La [revisión de doce brutos y fuentes ESP-IDF v5.4](../results/REVISION_ARRANQUE_V4.md)
+confirma cinco arranques completos de RX-01 con READY → `ic_enable_sniffer` →
+retorno, a diferencia de RX-02. El v4 no contiene READY completo de RX-01.
+Las tareas independientes permiten cabecera/CSI antes del retorno; se ensaya
+esa posibilidad como reconstrucción sintética, sin atribuirla a otra captura.
+
+La [revisión optativa `v4-startup-sequence-1`](POLITICA_LINEAS_V4_STARTUP_SEQUENCE_V1.md)
+reconoce solo sniffer/retorno exactos, una vez y con orden por RX, dentro del
+plazo original. Añade ambos retornos al gate inicial y mantiene tres filas
+frescas, perfil y continuidad estrictos. No cambia las políticas históricas
+ni plantillas; los bundles anteriores conservan su selección y replay.
+
+210 pruebas aprobadas, incluidas 22 nuevas y dos ventanas completas sobre PTY,
+sin omisiones; 2355 archivos anteriores intactos. El fallo de Bubblewrap sigue
+explícito. **Bloqueo específico antes de preparar un nuevo plan E/S:** faltan
+un tratamiento verificable del preámbulo completo y su contrato de elegibilidad.
+Los prefijos no UTF-8 pegados a ROM y otros formatos iniciales registrados
+mantienen el rechazo de conexión; no se aceptan o recortan para aprobar.
+No se preparó otro intento ni hubo UART, resets, reconexiones, firmware o
+calibración; los datos, rechazos y autorizaciones anteriores siguen intactos.

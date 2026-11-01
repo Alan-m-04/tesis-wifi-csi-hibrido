@@ -13,6 +13,7 @@ SECOND = 1_000_000_000
 PROTOCOL = 'presence_persistent_v4'
 STRICT_LINE_POLICY = 'v4-strict-post-ready-1'
 APP_MAIN_RETURN_POLICY = 'v4-app-main-return-1'
+STARTUP_SEQUENCE_POLICY = 'v4-startup-sequence-1'
 POLICY = dict(window_ns=30*SECOND, availability_wait_ns=10*SECOND,
               freshness_ns=SECOND, exit_delay_ns=60*SECOND,
               start_cue_delay_ns=30*SECOND, establishment_ns=30*SECOND,
@@ -23,7 +24,7 @@ POLICY = dict(window_ns=30*SECOND, availability_wait_ns=10*SECOND,
 
 def validate_plan(plan, *, allow_physical=False):
     if plan.get('line_policy_revision', STRICT_LINE_POLICY) not in (
-            STRICT_LINE_POLICY, APP_MAIN_RETURN_POLICY):
+            STRICT_LINE_POLICY, APP_MAIN_RETURN_POLICY, STARTUP_SEQUENCE_POLICY):
         raise ValueError('Unknown v4 line_policy_revision')
     if (plan.get('protocol') != PROTOCOL or plan.get('policy') != POLICY or
             plan.get('execution_mode') not in (('offline_only', 'physical_after_approval') if allow_physical else ('offline_only',)) or
@@ -58,6 +59,21 @@ class _StartupLineFramer(LineFramer):
         return lines
 
 
+class _StartupSequenceFramer(_StartupLineFramer):
+    """Recognize only the observed sniffer line; no shared log grammar change."""
+    def feed(self, chunk, read_index, event):
+        prefix = bytes(self.prefix)
+        parts = chunk.split(b'\n')
+        lines = super().feed(chunk, read_index, event)
+        for index, line in enumerate(lines):
+            if line['kind'] == 'invalid':
+                raw = (prefix if index == 0 else b'') + parts[index] + b'\n'
+                if re.fullmatch(rb'I \([0-9]+\) wifi:ic_enable_sniffer\r?\n', raw):
+                    line.update(shared_kind=line['kind'], shared_reason=line.pop('reason'),
+                                kind='info', startup_sniffer_enable=True)
+        return lines
+
+
 class PersistentPresenceV4:
     def __init__(self, plan, *, allow_physical=False, evidence_type=None):
         self.plan = validate_plan(plan, allow_physical=allow_physical)
@@ -71,7 +87,10 @@ class PersistentPresenceV4:
                               gate_rows=[], last_valid=None, last_read=None, lines=[])
                        for rx in RECEIVERS}
         framer = _StartupLineFramer if self.line_policy_revision == APP_MAIN_RETURN_POLICY else LineFramer
+        if self.line_policy_revision == STARTUP_SEQUENCE_POLICY:
+            framer = _StartupSequenceFramer
         self.framers = {rx: framer(rx) for rx in RECEIVERS}
+        self.startup_messages = {rx: dict(sniffer=False, returned=False) for rx in RECEIVERS}
         self.events, self.windows, self.signals = [], [], []
         self.fatal = None
         self.connection_reasons = []
@@ -157,6 +176,26 @@ class PersistentPresenceV4:
         else:
             raise ValueError('Unknown operation: '+op)
 
+    def accept_startup_sequence_message(self, receiver, line):
+        """Finite, per-RX initialization exception; called only by revision 1."""
+        if (self.fatal is not None or self.close_requested or self.closing_since is not None or
+                self.initial_available is not None or self.now >= self.a+POLICY['availability_wait_ns']):
+            return False
+        seen = self.startup_messages[receiver]
+        ready = self.states[receiver]['ready'] is not None
+        if line.get('startup_sniffer_enable'):
+            if (seen['sniffer'] or seen['returned'] or self.states[receiver]['previous'] is not None or
+                    ready != (receiver == 'RX-01')):
+                return False
+            seen['sniffer'] = True
+            return True
+        if line.get('startup_app_main_return'):
+            if not ready or seen['returned'] or (receiver == 'RX-01' and not seen['sniffer']):
+                return False
+            seen['returned'] = True
+            return True
+        return False
+
     def feed(self, receiver, chunk, started_ns, returned_ns):
         s = self.states[receiver]
         f = self.framers[receiver]
@@ -186,8 +225,11 @@ class PersistentPresenceV4:
                 s['previous'] is None and self.initial_available is None and
                 self.fatal is None and not self.close_requested and self.closing_since is None and
                 self.now < self.a+POLICY['availability_wait_ns'])
-            if startup_return:
-                line['line_policy_exception'] = APP_MAIN_RETURN_POLICY
+            sequence_pattern = self.line_policy_revision == STARTUP_SEQUENCE_POLICY and (
+                line.get('startup_sniffer_enable') or line.get('startup_app_main_return'))
+            sequence_exception = sequence_pattern and self.accept_startup_sequence_message(receiver, line)
+            if startup_return or sequence_exception:
+                line['line_policy_exception'] = self.line_policy_revision
             s['lines'].append(line)
             self.emit('line', receiver=receiver, evidence=copy.deepcopy(line))
             kind = line['kind']
@@ -216,8 +258,12 @@ class PersistentPresenceV4:
                             s['gate_rows'] = (s['gate_rows']+[line])[-3:]
             elif kind != 'neutral':
                 s['streak'] = []; s['gate_rows'] = []
-                if startup_return:
-                    # One immediate startup return only; never readiness evidence.
+                if startup_return or sequence_exception:
+                    # Explicit initialization messages are never readiness rows.
+                    continue
+                if sequence_pattern:
+                    self.fail('startup_message_order:'+receiver,
+                              start=int(line['first_read_started_ns']), end=returned_ns)
                     continue
                 if kind == 'invalid':
                     reason = 'format:'+receiver
@@ -238,7 +284,9 @@ class PersistentPresenceV4:
         if self.initial_available is None:
             if self.now >= self.a+POLICY['availability_wait_ns']:
                 self.fail('initial_availability_timeout'); return
-            if all(s['opened'] and s['ready'] is not None and self.fresh(s['streak'])
+            startup_complete = self.line_policy_revision != STARTUP_SEQUENCE_POLICY or all(
+                seen['returned'] for seen in self.startup_messages.values())
+            if startup_complete and all(s['opened'] and s['ready'] is not None and self.fresh(s['streak'])
                    for s in self.states.values()):
                 self.initial_available = self.now
                 self.emit('initial_available', evidence=self.gate_evidence('streak'))
@@ -358,6 +406,8 @@ class PersistentPresenceV4:
         # Keep historical JSON values exactly reproducible for strict bundles.
         if self.line_policy_revision != STRICT_LINE_POLICY:
             result['line_policy_revision'] = self.line_policy_revision
+        if self.line_policy_revision == STARTUP_SEQUENCE_POLICY:
+            result['startup_messages'] = copy.deepcopy(self.startup_messages)
         for original in self.windows:
             w = copy.deepcopy(original)
             w['receivers'] = {}
