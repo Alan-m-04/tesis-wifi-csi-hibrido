@@ -4,12 +4,15 @@ The protocol document precedes this implementation. v1/v2/v3 are imported only
 for pure framing/grammar/continuity; their policies are never modified.
 """
 import copy
+import re
 
 from availability_window import LineFramer, transition_error
 from capture_csi_multi import RECEIVERS
 
 SECOND = 1_000_000_000
 PROTOCOL = 'presence_persistent_v4'
+STRICT_LINE_POLICY = 'v4-strict-post-ready-1'
+APP_MAIN_RETURN_POLICY = 'v4-app-main-return-1'
 POLICY = dict(window_ns=30*SECOND, availability_wait_ns=10*SECOND,
               freshness_ns=SECOND, exit_delay_ns=60*SECOND,
               start_cue_delay_ns=30*SECOND, establishment_ns=30*SECOND,
@@ -19,6 +22,9 @@ POLICY = dict(window_ns=30*SECOND, availability_wait_ns=10*SECOND,
 
 
 def validate_plan(plan, *, allow_physical=False):
+    if plan.get('line_policy_revision', STRICT_LINE_POLICY) not in (
+            STRICT_LINE_POLICY, APP_MAIN_RETURN_POLICY):
+        raise ValueError('Unknown v4 line_policy_revision')
     if (plan.get('protocol') != PROTOCOL or plan.get('policy') != POLICY or
             plan.get('execution_mode') not in (('offline_only', 'physical_after_approval') if allow_physical else ('offline_only',)) or
             plan.get('receivers') != RECEIVERS):
@@ -38,9 +44,24 @@ def validate_plan(plan, *, allow_physical=False):
     return copy.deepcopy(plan)
 
 
+class _StartupLineFramer(LineFramer):
+    """v4-only exact byte annotation; shared grammar and raw evidence unchanged."""
+    def feed(self, chunk, read_index, event):
+        prefix = bytes(self.prefix)
+        parts = chunk.split(b'\n')
+        lines = super().feed(chunk, read_index, event)
+        for index, line in enumerate(lines):
+            if line['kind'] == 'info':
+                raw = (prefix if index == 0 else b'') + parts[index] + b'\n'
+                if re.fullmatch(rb'I \([0-9]+\) main_task: Returned from app_main\(\)\r?\n', raw):
+                    line['startup_app_main_return'] = True
+        return lines
+
+
 class PersistentPresenceV4:
     def __init__(self, plan, *, allow_physical=False, evidence_type=None):
         self.plan = validate_plan(plan, allow_physical=allow_physical)
+        self.line_policy_revision = self.plan.get('line_policy_revision', STRICT_LINE_POLICY)
         self.evidence_type = evidence_type or ('physical_capture' if plan['execution_mode']=='physical_after_approval' else 'synthetic_fixture')
         if self.evidence_type not in ('synthetic_fixture', 'physical_capture') or (
                 self.evidence_type == 'physical_capture' and plan['execution_mode'] != 'physical_after_approval'):
@@ -49,7 +70,8 @@ class PersistentPresenceV4:
         self.states = {rx: dict(opened=False, ready=None, previous=None, streak=[],
                               gate_rows=[], last_valid=None, last_read=None, lines=[])
                        for rx in RECEIVERS}
-        self.framers = {rx: LineFramer(rx) for rx in RECEIVERS}
+        framer = _StartupLineFramer if self.line_policy_revision == APP_MAIN_RETURN_POLICY else LineFramer
+        self.framers = {rx: framer(rx) for rx in RECEIVERS}
         self.events, self.windows, self.signals = [], [], []
         self.fatal = None
         self.connection_reasons = []
@@ -157,6 +179,15 @@ class PersistentPresenceV4:
         for line in lines:
             error = transition_error(s['previous'], line) if line['kind'] == 'row' else None
             line['continuity_error'] = error
+            startup_return = (
+                self.line_policy_revision == APP_MAIN_RETURN_POLICY and
+                line['kind'] == 'info' and line.get('startup_app_main_return') and
+                s['ready'] is not None and line['line_1based'] == s['ready']+1 and
+                s['previous'] is None and self.initial_available is None and
+                self.fatal is None and not self.close_requested and self.closing_since is None and
+                self.now < self.a+POLICY['availability_wait_ns'])
+            if startup_return:
+                line['line_policy_exception'] = APP_MAIN_RETURN_POLICY
             s['lines'].append(line)
             self.emit('line', receiver=receiver, evidence=copy.deepcopy(line))
             kind = line['kind']
@@ -185,6 +216,9 @@ class PersistentPresenceV4:
                             s['gate_rows'] = (s['gate_rows']+[line])[-3:]
             elif kind != 'neutral':
                 s['streak'] = []; s['gate_rows'] = []
+                if startup_return:
+                    # One immediate startup return only; never readiness evidence.
+                    continue
                 if kind == 'invalid':
                     reason = 'format:'+receiver
                     if s['ready'] is None:
@@ -321,6 +355,9 @@ class PersistentPresenceV4:
                           reasons=list(self.connection_reasons)), closed=copy.deepcopy(self.closed),
                       windows=[], signals=copy.deepcopy(self.signals),
                       campaign_model_suitability='not_evaluated', physical_label_truth='not_observed')
+        # Keep historical JSON values exactly reproducible for strict bundles.
+        if self.line_policy_revision != STRICT_LINE_POLICY:
+            result['line_policy_revision'] = self.line_policy_revision
         for original in self.windows:
             w = copy.deepcopy(original)
             w['receivers'] = {}

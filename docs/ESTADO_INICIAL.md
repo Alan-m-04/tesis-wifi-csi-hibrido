@@ -131,3 +131,24 @@ Se inspeccionaron DTR/RTS/HUPCL efectivos de pySerial 3.5 y se ensayaron en PTY/
 El usuario ejecutó posteriormente un único intento autorizado desde su terminal. Se conserva `post_ready_info:RX-02`, cero slots, cero filas CSI y recibo de ambos puertos cerrados. [Diagnóstico, bytes/tiempos y propuesta sin activar](../results/DIAGNOSTICO_V4_POST_READY.md): la línea inmediatamente posterior a READY es `I (545) main_task: Returned from app_main()`, compatible con el retorno normal de inicialización en ESP-IDF v5.4. Los marcadores de arranque anteriores no permiten atribuir causa eléctrica. Los residuos iniciales y la cola de RX-01 siguen rechazados.
 
 Auditoría original reproducida; 176 pruebas offline aprobadas, incluidas 13 sobre una excepción estrecha aplicada solo a una copia temporal. Backend/auditor, firmware y protocolos históricos intactos. Se preservan 48 archivos originales, ambas prácticas y el intento consumido. PRUEBA02 es declaración humana de cuatro patrones distinguibles; PRUEBA01 permanece incierta, sin verificación automática. Bubblewrap falla explícitamente; los tests directos no acreditan su aislamiento. No se abrió UART en este diagnóstico. Otra adquisición requiere revisión y autorización nueva; no hay slots físicos v4 ni calibración válidos.
+
+## Corrección versionada del retorno de app_main — 1 de noviembre de 2026
+
+Al retomar se encontró el diagnóstico completo y un parche probado solo en copia,
+todavía sin commit. Se registró ese trabajo y se integró una
+[política optativa](POLITICA_LINEAS_V4_APP_MAIN_RETURN_V1.md), sin cambiar las
+plantillas ni los protocolos históricos. La revisión `v4-app-main-return-1`
+admite exclusivamente el retorno exacto inmediato al primer READY, antes de CSI
+y de disponibilidad, dentro del plazo inicial y sin suspensión/cierre previos.
+Plan, procedencia y auditor concuerdan; ausencia de revisión conserva la regla
+histórica. Los bundles originales siguen reproduciendo sus eventos y rechazo.
+
+[Verificación y límites](../results/CORRECCION_V4_POST_READY.md): 188 pruebas
+offline aprobadas, cero omisiones, con 25 de política/replay y un adaptador
+serial sobre PTY propios. Se verifican 2335 archivos previos intactos, incluidos
+datos, firmware, protocolos y autorización consumida. Bubblewrap continúa sin
+poder crear namespaces; no se atribuye su aislamiento a las pruebas directas.
+No hubo UART, captura, reset, reconexión, cambio de firmware o calibración.
+Antes de otro plan físico deben revisarse los motivos iniciales de formato y
+los límites distintos de RX-01/RX-02; faltan READY/flujo de ambos, ventanas
+físicas elegibles y autorización nueva. No se preparó otro intento.

@@ -1,0 +1,84 @@
+{
+  "schema": "tesis-v4-app-main-return-validation-v1",
+  "date": "2026-11-01",
+  "base_commit": "15b75cd6ec6ad125204cf92d93e27f531cbee49b",
+  "branch": "feat/backend-uart-presencia-v4",
+  "policy": {
+    "legacy": "v4-strict-post-ready-1",
+    "explicit_opt_in": "v4-app-main-return-1",
+    "default": "v4-strict-post-ready-1",
+    "historical_templates_unchanged": true
+  },
+  "tests": {
+    "total": 188,
+    "policy_and_replay": 25,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 14.154,
+    "log_sha256": "e8ea79c09d8f1a6c5398fa3c7d9f9c81d060ade7194efc854e9f0aee567a907f"
+  },
+  "historical_attempt": {
+    "bundle": "results/local/v4-c01-vacia-sentado-20261028T014057Z",
+    "integrity_ok": true,
+    "replay_ok": true,
+    "operations": 112,
+    "fatal": "post_ready_info:RX-02",
+    "windows": 0,
+    "both_ports_closed_confirmed": true,
+    "authorization_still_consumed": true,
+    "raw_sha256": {
+      "RX-01": "67eef193aa3d15638f4f212757ede7713f7de7abfd3250977b454d73ea3d39c4",
+      "RX-02": "2b4cade6d115b28033db17f592e3b28d8723b3523d183b65a52c75aebc7df719"
+    }
+  },
+  "triggering_line": {
+    "receiver": "RX-02",
+    "line_1based": 92,
+    "event_seq": 183,
+    "byte_offset": 4624,
+    "byte_end": 4669,
+    "byte_length": 45,
+    "raw_hex": "49202835343529206d61696e5f7461736b3a2052657475726e65642066726f6d206170705f6d61696e28290d0a",
+    "sha256": "82ba255a7ab0a2cb2f27dccb58898e4b7798e1c4e877722ebc8b2e7ce329522d",
+    "read_started_ns": 31403325310735,
+    "read_returned_ns": 31403325373907,
+    "processed_ns": 31403327961087,
+    "since_begin_ns": 610561043
+  },
+  "preservation": {
+    "checked_files": 2335,
+    "changed": [],
+    "manifest_sha256": "90ce970ceedd1306dd4c21ac09f5725951800e7e4132889b1b06a6ce9a12cbee"
+  },
+  "source_inspection": [
+    {
+      "path": "firmware/csi_recv/main/app_main.c",
+      "expected_sha256": "c940779452aedad8862dd6eb7a24d51786c662d3acbb9369b1a86bff54a1ccc6",
+      "current_sha256": "c940779452aedad8862dd6eb7a24d51786c662d3acbb9369b1a86bff54a1ccc6"
+    },
+    {
+      "path": "firmware/csi_recv_02/main/app_main.c",
+      "expected_sha256": "1fb53776e1e5776194749041d1252c3f8ee11f69f30fb982a42c7577319e00d5",
+      "current_sha256": "1fb53776e1e5776194749041d1252c3f8ee11f69f30fb982a42c7577319e00d5"
+    },
+    {
+      "path": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/sdk/esp-idf/components/freertos/app_startup.c",
+      "expected_sha256": "d30009e2d269f1078c938a87b3f481beae4480c01ea87e74e4d015df5510f22f",
+      "current_sha256": "d30009e2d269f1078c938a87b3f481beae4480c01ea87e74e4d015df5510f22f"
+    }
+  ],
+  "changed_sources": {
+    "src/persistent_presence_v4.py": "82055edec8f5c24d0782b538dd7e70a17fa2b21aef7c4fa536488556b2a3e114",
+    "src/presence_v4_journal.py": "5b55cc443dfb2bcef0e31e1ac0a55e53965de55c9b842658b7025e9cec145324"
+  },
+  "limitations": {
+    "bubblewrap_isolation_claimed": false,
+    "bubblewrap_probe_exit_code": 1,
+    "installed_firmware_attested": false,
+    "physical_operations_performed": false,
+    "detector_calibrated": false,
+    "new_attempt_prepared": false,
+    "new_authorization": false
+  }
+}

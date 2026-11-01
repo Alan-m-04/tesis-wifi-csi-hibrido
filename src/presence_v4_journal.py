@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 from capture_csi_multi import RECEIVERS
-from persistent_presence_v4 import PersistentPresenceV4
+from persistent_presence_v4 import PersistentPresenceV4, STRICT_LINE_POLICY
 
 
 def digest(path):
@@ -44,6 +44,7 @@ class V4Journal:
             sources += ['tools/campana_presencia_v4.py', 'config/csi_esp32s3.json']
             provenance = dict(
                 implementation_base_commit='51246df4f288ede695b81f8eca8336820e6cb126',
+                line_policy_revision=self.machine.line_policy_revision,
                 evidence_type=self.machine.evidence_type, python_version=sys.version,
                 physical_transport_enabled=self.machine.evidence_type=='physical_capture', plan_sha256=digest(self.root/'plan.json'),
                 sources=[dict(path=name, sha256=digest(repository/name), bytes=(repository/name).stat().st_size)
@@ -135,6 +136,10 @@ def audit_v4(directory):
     provenance = json.loads((root/'provenance.json').read_text())
     m = PersistentPresenceV4(json.loads((root/'plan.json').read_text()), allow_physical=True,
                              evidence_type=provenance['evidence_type'])
+    # Missing revision is accepted only for original strict bundles. Never
+    # infer the new exception from installed code, source hashes or log content.
+    if provenance.get('line_policy_revision', STRICT_LINE_POLICY) != m.line_policy_revision:
+        raise ValueError('Line policy provenance contradicts plan')
     if (provenance['physical_transport_enabled'] != (m.evidence_type=='physical_capture') or
             provenance['plan_sha256'] != digest(root/'plan.json')):
         raise ValueError('Provenance contradicts plan or evidence type')

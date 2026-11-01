@@ -1,5 +1,11 @@
 # Diagnóstico offline del intento V4-C01 — 28 de octubre de 2026 UTC
 
+Este informe conserva el diagnóstico y la propuesta de aquella sesión.
+La propuesta quedó integrada de forma optativa y versionada el 1 de noviembre;
+ver [corrección, verificación y pendientes](CORRECCION_V4_POST_READY.md).
+El diff de `proposals/` se conserva como artefacto histórico para la base
+`15b75cd`; no debe aplicarse sobre el código ya corregido.
+
 El intento conserva **suspensión `post_ready_info:RX-02`**, conexión rechazada,
 ningún slot solicitado y ambos puertos cerrados con recibo. La línea causante
 es un mensaje de retorno normal de `app_main()` en las fuentes inspeccionadas;
@@ -195,7 +201,8 @@ No se cambia el ejecutable de adquisición con una regla silenciosa.
 
 ## Verificación y siguiente revisión
 
-[13 pruebas de la propuesta](../tests/test_v4_app_main_return_proposal.py):
+Las 13 pruebas originales de la propuesta, ahora ampliadas en
+[pruebas de la política integrada](../tests/test_v4_line_policy.py):
 rechazo original exacto, todos los cortes de byte en READY+retorno para ambos
 RX, offsets/hash conservados, tres filas frescas obligatorias, READY ausente,
 timeout sin filas, frontera de 10 s, duplicados/interposición/CSI anterior,
