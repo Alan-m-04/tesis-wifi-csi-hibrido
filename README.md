@@ -95,3 +95,7 @@ El [plan para revisión](docs/PLAN_REVISION_CAMPAÑA_PERSISTENTE_V4.md) usa lapt
 Desde `414b461`, el [backend UART y su comando solo para revisión](docs/BACKEND_UART_PRESENCIA_V4.md) reutilizan identidad by-id, apertura sin flush y registro/cierre de v4. Preparación y preflight no abren; ejecución solo con opción explícita y autorización nueva. Conserva una apertura por RX, READY obligatorio y cero reintentos. Se documentan solicitudes DTR/RTS sin prometer ausencia de transitorios/resets.
 
 [163 pruebas offline aprobadas](results/BACKEND_UART_V4.md), con dobles y PTY, sin UART real, firmware nuevo, calibración o campaña física. La [práctica breve de sonidos sin ESP](docs/PRACTICA_SONIDOS_V4.md) guarda tu declaración después de escucharlos desde fuera; la audibilidad humana sigue pendiente y nunca se verifica automáticamente.
+
+## Diagnóstico posterior del primer intento v4
+
+El [análisis de los registros existentes](results/DIAGNOSTICO_V4_POST_READY.md) conserva `post_ready_info:RX-02`, cero slots/CSI y ambos cierres confirmados. El mensaje exacto tras READY corresponde al retorno de `app_main()` en las fuentes ESP-IDF inspeccionadas; la conexión conserva además residuos iniciales y una cola. Se entrega una excepción estrecha propuesta y probada solo en copia temporal: 176 pruebas offline aprobadas, backend activo intacto. Ninguna UART se abrió durante el diagnóstico ni se relanzó el intento. PRUEBA02 queda como declaración humana de audibilidad, sin verificación automática. Otra adquisición requiere revisión y autorización nueva.
