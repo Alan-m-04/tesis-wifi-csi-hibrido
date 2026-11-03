@@ -217,3 +217,20 @@ datos, ambos cierres confirmados y autorización consumida permanecen intactos.
 246 pruebas aprobadas, cero omisiones, 2459 archivos previos preservados. No cambian
 capturador, umbral, políticas, firmware o detector. Sin UART, captura nueva, resets
 o reconexiones durante este diagnóstico; no hay reintento autorizado.
+
+## Diagnóstico de continuidad dual separado — preparación del 3 de noviembre
+
+Desde `6450919`, [continuity-dual-1](CONTRATO_CONTINUIDAD_DUAL_1.md) y su
+[plan de 60 s para revisión](PLAN_CONTINUIDAD_DUAL_60S_R1.md) reutilizan identidad,
+apertura preservando entrada, almacenamiento y cierre. Cada RX tiene lector
+independiente sin stdin. Silencio >1 s produce incidencia y permite observar
+recuperación; transporte/almacenamiento fallidos detienen ambos. No hay ventanas
+elegibles, etiquetas ni aprobación de calidad, calibración o entrenamiento.
+
+[Validación offline](../results/CONTINUIDAD_DUAL_1.md): 262 pruebas aprobadas,
+cero omisiones, y ensayos PTY de 60 s reales. Se conservan brutos, fragmentos,
+referencias por fila, relojes y diferencias de callbacks/descartes sin inferir
+pérdida RF. v4, su watchdog y todos los intentos/rechazos/autorizaciones anteriores
+permanecen intactos. No se abrió UART físico ni se ejecutó preflight sobre las
+ESP. La copia local nueva conserva declaraciones pendientes; antes de ejecutar
+se requieren su confirmación y autorización explícita para un único intento.

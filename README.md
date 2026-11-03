@@ -107,3 +107,13 @@ La [revisión posterior del arranque](results/REVISION_ARRANQUE_V4.md), desde `6
 La [revisión explícita de elegibilidad exploratoria](results/ELEGIBILIDAD_EXPLORATORIA_V4.md), desde `1f974b0`, separa conexión completa rechazada, preámbulo anómalo íntegro, ventanas prospectivas y elegibilidad auditada. `v4-exploratory-1` exige arranque revisado, barreras conservadoras y todas las pruebas de calidad/transporte; no autoriza calibración, entrenamiento o producción. Pasaron 234 pruebas offline y se preparó un [plan E/S nuevo solo para revisión](config/piloto_exploratorio_v4_ES_r1.review.json), todavía con declaraciones pendientes y sin autorización. No hubo UART o adquisición física; los rechazos históricos permanecen intactos.
 
 El intento EXP02 autorizado posteriormente quedó [rechazado por `availability_lost:RX-01`](results/DIAGNOSTICO_EXP02_AVAILABILITY.md), antes de solicitar slots: 1,006375455 s desde su última fila válida, mientras RX-02 seguía fresco y el host registraba operaciones continuas. Se conservan la cola de 768 bytes, ambos cierres y autorización consumida. El diagnóstico offline corrige únicamente el contexto de apertura física en informes nuevos; no cambia el umbral de 1 s ni la aceptación histórica. Pasaron 246 pruebas sin omisiones; ninguna UART se abrió durante el diagnóstico.
+
+## Diagnóstico dual de continuidad preparado, sin ejecución física
+
+[continuity-dual-1](docs/CONTRATO_CONTINUIDAD_DUAL_1.md) observa 60 s comunes con
+una apertura por RX. Registra silencios >1 s y recuperación, colas y relojes,
+sin ventanas elegibles ni aprobación de calidad. Transporte/almacenamiento
+fallidos detienen ambos lectores; v4 y sus watchdogs permanecen intactos.
+Ver [plan, declaraciones pendientes y comando reservado](docs/PLAN_CONTINUIDAD_DUAL_60S_R1.md)
+y [validación exclusivamente offline](results/CONTINUIDAD_DUAL_1.md).
+Otra ejecución requiere autorización explícita nueva; no hay calibración ni entrenamiento.
