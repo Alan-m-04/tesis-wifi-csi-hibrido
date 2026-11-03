@@ -252,3 +252,158 @@ propuesto añade observación pasiva independiente de UART para separar emisión
 de entrega USB/host; no resolvería por sí solo RF frente a filtro/driver.
 Ninguna nueva captura, apertura UART, reset, reconexión, firmware, calibración
 o cambio del watchdog v4 durante el análisis. No hay reintento autorizado.
+
+## Viabilidad del intercambio pendiente — declaración posterior del operador
+
+Alan declara cables de aproximadamente 20 cm y RX a ambos lados de la laptop;
+no puede confirmar alcance conservando cable y puerto. Se registra viabilidad
+**dudosa** y no se prepara ejecución A–B–A. La [alternativa para revisión](VIABILIDAD_MONTAJE_CONTINUIDAD_R1.md)
+propone estudiar orientación local solo si hay holgura, con menor alcance causal,
+y explica los efectos de desconectar/cambiar puerto (alimentación, arranque y
+camino USB). No se movieron equipos, abrieron UART, ejecutaron capturas ni
+cambiaron firmware, umbrales, resultados o autorizaciones. Sin compra propuesta.
+
+## Orientación RX-01: plan A–B–A presentado para revisión
+
+El operador confirma que RX-01 puede girar sin tensión. El [plan r1](PLAN_ORIENTACION_ABA_CONTINUIDAD_R1.md)
+define A1 actual, B propuesto +90° horario y A2 de regreso; tres intentos separados
+de 60 s con continuity-dual-1 intacto. Ambos UART deben estar cerrados y su cierre
+comprobado antes de los cambios físicos. RX-02/TX/laptop y cable/puerto de cada
+RX se mantienen; registrar geometría y curva local del cable RX-01.
+
+Tres JSON nuevos solo para revisión, sin referencias de autorización y con
+declaraciones pendientes que bloquean ejecución. Falta confirmar plano/ángulo B,
+marcas y contexto actual antes de solicitar autorización nueva. No se abrieron
+UART, hicieron movimientos o capturas, cambiaron fuentes/políticas/firmware,
+calibraron detectores ni alteraron datos o autorizaciones consumidas. El estudio
+de orientación no equivale al intercambio de posiciones que sigue sin confirmar.
+
+## Revisión del montaje con antenas externas — r2 pendiente
+
+Se localizaron y abrieron los dos JPG `ChatGPT Image Nov 3, 2026, 02_23_17 PM`
+y `02_23_29 PM` de Downloads. El operador declara que ambos RX usan antenas
+externas por coaxial fino y no ha movido nada. El [plan r2](PLAN_ORIENTACION_ABA_CONTINUIDAD_R2.md)
+distingue placa, antena/base, coaxial y USB. El giro de placa +90° de r1 no define
+un giro de antena externa; su holgura no confirma la del coaxial.
+
+Pendientes: asociar fotos a identidades, confirmar articulación/holgura y fijar
+qué componente, eje y ángulo cambiarían en B. R1 y sus JSON se conservan bloqueados;
+no se preparan ejecución o autorización r2 hasta cerrar la geometría. Sin apertura
+UART, movimiento, desconexión, captura, firmware, calibración o cambio de política.
+
+## Identificación física pendiente con rutas USB consultadas
+
+Se consultaron solo sysfs y udev por ruta, sin abrir UART: RX-01 serie `5C93199744`
+está en `3-7.1`, detrás de un hub GenesysLogic `05e3:0610`; RX-02 `5C93200689`
+en `3-4`, sin ese hub intermedio. Ambos pertenecen al mismo controlador xHCI.
+Las etiquetas físicas del sistema no distinguen los conectores externos; falta
+confirmar visualmente qué cable llega al hub y cuál directamente a la laptop
+antes de asignar las fotos. Ver [registro y observación necesaria](IDENTIFICACION_RX_USB_MONTAJE_R1.md).
+Sin movimientos, desconexiones o capturas; originales y autorización consumida
+verificados intactos. La articulación de antena se revisará después de identificar RX-01.
+
+## Asociación fotográfica confirmada antes de revisar la antena
+
+Alan confirma visualmente los extremos USB, sin mover o desconectar: foto
+`02_23_17 PM` al hub marrón = RX-01, serie `5C93199744`; foto `02_23_29 PM`
+directamente a laptop = RX-02, serie `5C93200689`. Se [registra la asociación](ASOCIACION_RX_FOTOS_CONFIRMADA_R1.md)
+en un artefacto nuevo, conservando los metadatos y fotos originales. El punto
+de identidad del plan r2 queda resuelto; articulación/holgura del coaxial y
+definición de B siguen pendientes. Sin UART, movimientos, capturas o autorización nueva.
+
+## Antena externa RX-01: intervención r3 presentada para autorización
+
+Alan confirma articulación e inclinación de 90° sin desenroscar. El [plan r3](PLAN_ANTENA_ABA_CONTINUIDAD_R3.md)
+selecciona solo el cuerpo móvil: A1 actual documentada, B a 90° en el plano de
+la bisagra hacia arriba, A2 de regreso. Placa, base/conector, coaxial, USB y
+conjunto RX-02/TX/laptop/hub fijos. Si ese sentido/plano no es posible sin tensión
+o desplazamiento, se detiene la preparación antes de adquirir A1.
+
+Tres intentos independientes propuestos de 60 s, cierre comprobado de ambos
+UART antes de cada movimiento y cero reintentos. Tres JSON r3 y registro de
+montaje nuevos solo para revisión; R1/R2, sus configuraciones, imágenes y datos
+se conservan. Faltan registro A1/B, confirmación de partes fijas sin tensión,
+declaraciones actuales y autorización explícita. No se abrió UART, hizo preflight
+físico, movió antena/placa, desconectó equipo o capturó durante la actualización.
+
+## Autorización r3 recibida; documentación previa a A1 pendiente
+
+Alan confirma giro de 90° hacia arriba del cuerpo móvil, sin tensión o movimiento
+de partes fijas, y autoriza tres únicos intentos A1/B/A2 y dos movimientos de
+articulación entre ellos conforme a r3. La autorización queda registrada en
+`results/local/preparacion-antena-aba-r3/autorizacion-serie.json`; es condicional a
+documentar A1/B y completar declaraciones actuales antes de adquirir. No se pide
+de nuevo esa autorización para el alcance ya concedido.
+
+Copias locales nuevas del registro y tres planes preparadas; ejecución aún
+bloqueada por documentación/declaraciones pendientes. Ningún intento iniciado o
+consumido en la serie, salidas físicas inexistentes. Solo se guiará A1 tras esos
+prerrequisitos; B depende de verificar integridad/replay y cierre de ambos UART
+de A1, y A2 de los de B. Ante fallo detener la serie, sin reintentos, resets,
+reconexiones, firmware, calibración o entrenamiento. Sin apertura UART, preflight
+físico, movimiento o captura durante este registro de autorización.
+
+## A1: referencia fotográfica vigente, croquis todavía pendiente
+
+Alan declara que el montaje sigue como en las fotos, sin movimientos; está solo,
+sentado frente a laptop enchufada y abierta, con puerta/ventanas cerradas y sin
+ventilador. Se registra la foto RX-01 `02_23_17 PM` con hash como referencia visual
+vigente y se describe la dirección de antena en el plano de la imagen; no se
+infiere su inclinación 3D. El croquis no está hecho y no se marca como completo.
+
+Siguiente observación única: si el cuerpo móvil negro está apoyado en la mesa o
+levantado/inclinado, sin tocarlo. Suspensión automática, otros lectores/capturas,
+alimentación TX y preflight actuales siguen pendientes; no se dieron por
+verificados. Registro local `results/local/preparacion-antena-aba-r3/estado-previo-A1-01.json`.
+Ejecución bloqueada; ningún UART abierto, movimiento o intento iniciado.
+
+## Serie antena r3: A1 adquirido por el operador y verificado offline
+
+El operador ejecutó solo `CONT-ANT-ABA-R3-A1`: 60,006937558 s comunes,
+integridad/replay correctos y cierre confirmado de ambos UART, con una apertura
+y un cierre por RX. Se verifican 294/296 filas, sin incidencias ni colas; ids
+consecutivos, queue_drops=0 y ninguna anomalía posterior a la primera fila CSI.
+El mensaje exacto de sniffer en arranque RX-01 conserva su clasificación original
+y no se acepta como CSI ni se convierte el resultado en aprobación de calidad.
+
+Bundle A1 y autorización consumida intactos. Verificación independiente guardada
+en `results/local/preparacion-antena-aba-r3/A1-paso-a-B-verificado-r1.json`.
+El siguiente paso autorizado es solo inclinar el cuerpo móvil de la antena RX-01
+a B, tras estos cierres; el movimiento aún no se ha reportado y B/A2 no se han
+iniciado. Esta revisión no abrió UART ni repitió capturas o cambió firmware.
+
+## Serie antena r3: B verificado, regreso a A1 autorizado pendiente
+
+El operador ejecutó B con antena RX-01 a 90° y partes fijas declaradas intactas.
+Auditoría offline: integridad/replay correctos, 60,012542376 s comunes y ambos
+cierres confirmados, una apertura/cierre por RX. RX-01 conserva 213 filas y dos
+incidencias de silencio recuperadas; RX-02, 291 filas y ninguna incidencia.
+Sin colas, saltos de id, cambios de queue_drops o anomalías posteriores al primer
+CSI. Las incidencias siguen siendo observacionales, sin aprobación de calidad.
+
+Se preservan B y su autorización consumida. Verificación en
+`results/local/preparacion-antena-aba-r3/B-paso-a-A2-verificado-r1.json`.
+El siguiente paso es solo el regreso ya autorizado de la articulación a la
+postura A1 apoyada, con base/coaxial/placa y resto del montaje fijos. Ese retorno
+no se ha reportado; A2 no se ha iniciado. Sin UART o nueva captura por el auditor.
+
+## Serie antena r3 cerrada: A2 no reprodujo A1
+
+El operador completó A2 y solicitó consolidar los tres bundles existentes. El
+[informe con gráficos y hashes](../results/COMPARACION_ANTENA_ABA_R3.md) verifica
+integridad/replay, duración común de 60 s, una apertura/cierre por RX y ambos
+cierres en A1/B/A2. Las tres autorizaciones están consumidas, sin permiso restante.
+
+RX-01: 294/213/201 filas, cero/dos/dos incidencias recuperadas. RX-02:
+296/291/291, sin incidencias de 1 s. Todos los ids completos son consecutivos,
+queue_drops=0, perfil constante y colas finales de cero bytes. Medianas RSSI
+RX-01 −58/−54/−51 dBm; RX-02 −50/−49/−47. A2 no recupera A1, pese al retorno
+mecánico declarado; el control cambia también su RSSI y las sesiones están
+separadas por intervalos de minutos. No se establece causalidad por orientación.
+
+Cinco gráficos comparables con runtime local fijado, sin instalar dependencias;
+279 pruebas aprobadas, cero omisiones. Originales, fotos, planes y autorizaciones
+consumidas conservados. Siguiente experimento mínimo propuesto: dos sesiones
+A–A estáticas con intervalo fijado, sin ejecutarlas ni crear autorización nueva.
+Sin UART, captura nueva, movimientos, firmware, cambios de watchdog o calibración
+por esta auditoría. Los borradores previos se conservan como historia de preparación.

@@ -125,3 +125,11 @@ pero presenta intervalos locales mayores durante toda la adquisición, incluidas
 tres incidencias host recuperadas. No se demuestra pérdida RF ni una pausa global
 del host. Colas y autorización consumida intactas; siguiente experimento pasivo
 propuesto sin ejecución ni autorización. No se cambia v4 o firmware.
+
+La serie posterior de inclinación de antena [A1–B–A2 r3, consolidada offline](results/COMPARACION_ANTENA_ABA_R3.md)
+completó tres intentos con integridad/replay y ambos cierres confirmados. RX-01
+produjo 294/213/201 filas y RX-02 296/291/291; **A2 no reprodujo A1**. El RSSI
+aumentó en ambos RX y no se establece causalidad por orientación. Cinco gráficos
+con escalas comunes, hashes y 279 pruebas sin omisiones. Las tres autorizaciones
+están consumidas; siguiente prueba A–A estática solo propuesta. Sin nueva UART,
+captura, cambio de firmware, umbral o calibración durante la consolidación.
