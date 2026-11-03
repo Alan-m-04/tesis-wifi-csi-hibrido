@@ -340,7 +340,9 @@ class ExploratoryAuditTests(unittest.TestCase):
         result = json.loads(out.getvalue())
         self.assertFalse(result['connection']['quality_ok'])
         self.assertTrue(all(w['eligible'] for w in result['exploratory_eligibility']['windows']))
-        self.assertFalse(result['physical_UART_opened'])
+        self.assertFalse(result['audit_activity']['physical_UART_opened'])
+        self.assertFalse(result['acquisition']['physical_UART_opened'])
+        self.assertEqual(result['reporting_schema'], 'tesis-v4-exploratory-audit-report-v2')
         p = json.loads((self.root/'plan.json').read_text()); del p['eligibility_revision']
         self.rewrite('plan.json', p)
         with self.assertRaisesRegex(ValueError, 'historical captures are not migrated'):

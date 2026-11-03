@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'src'))
 from persistent_presence_v4 import EXPLORATORY_ELIGIBILITY
 from presence_v4_journal import audit_v4
+from presence_v4_diagnostics import acquisition_activity
 
 
 def main(argv=None):
@@ -24,7 +25,9 @@ def main(argv=None):
     report = audit_v4(args.bundle)
     state = report['state']; exploration = state['exploration']
     preamble = exploration['preamble']
-    compact = dict(evidence_type=state['evidence_type'], connection=state['connection'],
+    compact = dict(reporting_schema='tesis-v4-exploratory-audit-report-v2',
+        evidence_type=state['evidence_type'], acquisition=acquisition_activity(report),
+        audit_activity=dict(mode='offline', physical_UART_opened=False), connection=state['connection'],
         preamble=dict(status=exploration['preamble_status'],
             end_processed_ns=preamble['end_processed_ns'] if preamble else None,
             receivers={rx: {k:v for k,v in value.items() if k != 'lines'}
@@ -33,8 +36,7 @@ def main(argv=None):
         windows=[dict(id=w['id'], T0_ns=w['T0_ns'], T1_ns=w['T1_ns'],
             strict_eligible=w['eligible'], window_quality_ok=w['window_quality_ok'],
             pilot_coverage_ok=w['pilot_coverage_ok'], label_quality_ok=w['label_quality_ok'])
-            for w in state['windows']], exploratory_eligibility=report['exploratory_eligibility'],
-        physical_UART_opened=False)
+            for w in state['windows']], exploratory_eligibility=report['exploratory_eligibility'])
     if args.output_new:
         with args.output_new.open('x') as stream:
             json.dump(report, stream, ensure_ascii=False, indent=2); stream.write('\n')

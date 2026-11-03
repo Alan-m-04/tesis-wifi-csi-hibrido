@@ -200,3 +200,20 @@ Se preparó un [plan nuevo vacío/sentado para revisión](PLAN_PILOTO_EXPLORATOR
 con ambas revisiones explícitas y declaraciones ambientales pendientes; ejecución
 física requiere autorización nueva. No hubo UART, captura física, firmware,
 calibración o entrenamiento.
+
+## Diagnóstico offline del intento EXP02 consumido — 3 de noviembre de 2026
+
+El usuario ejecutó un único intento autorizado desde su terminal normal con la
+base `4f12233`. Alcanzó disponibilidad inicial pero no solicitó slots. Se conserva
+la suspensión `availability_lost:RX-01`: última fila válida con edad 1006,375455 ms,
+cola de 768 bytes sin LF y RX-02 con edad 5,673129 ms. Hubo 107 ticks y lecturas
+continuas en el intervalo causal; no se demuestra una pausa global del host o
+un bloqueo interactivo de un segundo. La causa física del hueco sigue indeterminada.
+
+[Clocks, persistencia, límites y corrección del informe](../results/DIAGNOSTICO_EXP02_AVAILABILITY.md):
+el nuevo esquema separa apertura física durante adquisición de ausencia de apertura
+por el auditor offline. Los originales se conservan con enmienda nueva; rechazo,
+datos, ambos cierres confirmados y autorización consumida permanecen intactos.
+246 pruebas aprobadas, cero omisiones, 2459 archivos previos preservados. No cambian
+capturador, umbral, políticas, firmware o detector. Sin UART, captura nueva, resets
+o reconexiones durante este diagnóstico; no hay reintento autorizado.
