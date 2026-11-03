@@ -234,3 +234,21 @@ pérdida RF. v4, su watchdog y todos los intentos/rechazos/autorizaciones anteri
 permanecen intactos. No se abrió UART físico ni se ejecutó preflight sobre las
 ESP. La copia local nueva conserva declaraciones pendientes; antes de ejecutar
 se requieren su confirmación y autorización explícita para un único intento.
+
+## CONT-DUAL-01 físico consolidado offline — 3 de noviembre
+
+El operador ejecutó el único diagnóstico autorizado desde `c243406`. El
+[informe r1](../results/DIAGNOSTICO_CONTINUIDAD_DUAL_01_R1.md) verifica 60 s,
+integridad/replay correctos, ambos cierres y autorización consumida. Conserva
+171/296 filas válidas y dos colas de 640 bytes. RX-01 tiene tres incidencias
+host recuperadas con id consecutivo y queue_drops=0; intervalos locales de
+400–800 ms también aparecen fuera de ellas. RX-02 conserva cadencia próxima
+a 200 ms. Servicio continuo de ambos lectores, sin pausa global de escala 1 s
+en los relojes registrados; causa RF/firmware/transporte no localizada.
+
+269 pruebas offline aprobadas, cero omisiones, incluidas siete nuevas del
+analizador reproducible y preservación del bundle. El experimento mínimo
+propuesto añade observación pasiva independiente de UART para separar emisión
+de entrega USB/host; no resolvería por sí solo RF frente a filtro/driver.
+Ninguna nueva captura, apertura UART, reset, reconexión, firmware, calibración
+o cambio del watchdog v4 durante el análisis. No hay reintento autorizado.

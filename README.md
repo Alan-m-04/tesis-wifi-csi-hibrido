@@ -117,3 +117,11 @@ fallidos detienen ambos lectores; v4 y sus watchdogs permanecen intactos.
 Ver [plan, declaraciones pendientes y comando reservado](docs/PLAN_CONTINUIDAD_DUAL_60S_R1.md)
 y [validación exclusivamente offline](results/CONTINUIDAD_DUAL_1.md).
 Otra ejecución requiere autorización explícita nueva; no hay calibración ni entrenamiento.
+
+El único intento físico posterior completó 60 s y cerró ambos puertos, con
+integridad/replay correctos. Su [diagnóstico offline r1](results/DIAGNOSTICO_CONTINUIDAD_DUAL_01_R1.md)
+explica 171/296 filas válidas: RX-01 conserva ids consecutivos y cero descartes,
+pero presenta intervalos locales mayores durante toda la adquisición, incluidas
+tres incidencias host recuperadas. No se demuestra pérdida RF ni una pausa global
+del host. Colas y autorización consumida intactas; siguiente experimento pasivo
+propuesto sin ejecución ni autorización. No se cambia v4 o firmware.
