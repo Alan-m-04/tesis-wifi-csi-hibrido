@@ -1,5 +1,15 @@
 # Tesis: sistema híbrido WiFi CSI con ESP32-S3 y RuView
 
+## RX02-C02 suspendida — diagnóstico exclusivamente offline
+
+El [diagnóstico C02 y comparación de continuidad con C01](results/DIAGNOSTICO_RX02_C02.md)
+conserva `availability_gap:RX-02`, la etiqueta sentada sin declarar y vacío sin
+iniciar. El hueco disparador está después de T1: 1221,332 ms host frente a
+199,978 ms locales; lecturas agrupadas y demoras del host sin causa exclusiva
+identificada. Cola de 349 bytes, cierre confirmado, ambas autorizaciones
+consumidas y 34 archivos originales intactos. 53 pruebas offline aprobadas.
+Sin UART, cambios de parámetros, aprobación retrospectiva ni reemplazo preparado.
+
 ## RX02-C01 consolidada offline — 4 de noviembre de 2026
 
 La [auditoría y comparación descriptiva vacío/sentado](results/RX02_C01.md)
