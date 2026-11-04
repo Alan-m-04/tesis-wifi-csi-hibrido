@@ -1,5 +1,17 @@
 # Tesis: sistema híbrido WiFi CSI con ESP32-S3 y RuView
 
+## RX02-C01 consolidada offline — 4 de noviembre de 2026
+
+La [auditoría y comparación descriptiva vacío/sentado](results/RX02_C01.md)
+verifica 3.299 filas CSI, ventanas de 148/150 filas, ambas exploratorias elegibles,
+etiquetas humanas y cierre confirmado de RX-02. La conexión completa conserva
+el rechazo por preámbulo; 14 archivos originales permanecen intactos. Cinco
+figuras usan escalas comunes de RSSI, amplitud LLTF52, variabilidad y cobertura.
+63 pruebas aprobadas; Bubblewrap no pudo crear namespaces y no se afirma su
+aislamiento. Autorización C01 consumida; C02 solo descrita para preparación,
+sentado → vacío último, con autorización nueva. Sin clasificar presencia,
+calibrar, entrenar o cambiar firmware, montaje o umbrales.
+
 Base verificable del sistema de sensado CSI y Edge AI para MIPYMES de Riobamba, con procesamiento en PC local. Se conservan los objetivos del anteproyecto aprobado: presencia será el primer hito, no el alcance total.
 
 ## Estado actualizado el 25 de octubre de 2026

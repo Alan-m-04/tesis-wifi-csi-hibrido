@@ -1,0 +1,48 @@
+{
+  "schema": "tesis-rx02-c01-validation-1",
+  "original_bundle_files": 14,
+  "original_bytes_and_hashes_unchanged": true,
+  "tracked_acquisition_sources_match_commit": "d8350483a3704f18b57f06f8c673b9fe28c7eebe",
+  "tests": {
+    "command": "PYTHONPATH=src:tests .venv/bin/python -B -m unittest test_consolidar_rx02_c01 test_presence_rx02 test_canonical_csi test_comparar_fisicas_v3",
+    "passed": 63,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log": "results/local/auditoria-rx02-C01-r1/pruebas.stderr.txt",
+    "log_sha256": "98efe12a42e60a6a070b956e758f00513dfd69118b493e1d11c425d0b195941d"
+  },
+  "bubblewrap": {
+    "command": "./tools/test_base.sh",
+    "returncode": 1,
+    "tests_executed": false,
+    "reason": "No permissions to create a new namespace",
+    "isolation_claimed": false,
+    "log_sha256": "0cbac915c0ef2eecb93813c165d1a26c50c871d181752e5e55460df7989febef"
+  },
+  "plots": {
+    "svg": 5,
+    "png_local": 5,
+    "visually_inspected": [
+      "rssi",
+      "amplitud_lltf52",
+      "perfil_lltf52",
+      "variabilidad_lltf52",
+      "cobertura"
+    ],
+    "common_axes_verified": true
+  },
+  "audit_activity": {
+    "physical_UART_opened": false,
+    "new_acquisition": false,
+    "threshold_changes": false,
+    "calibration": false,
+    "training": false,
+    "presence_classification": false
+  },
+  "local_output": "results/local/consolidacion-rx02-C01-r2",
+  "C02_prepared": false,
+  "C02_executed": false,
+  "authorized_vs_captured_plan_equal": true,
+  "supporting_evidence_files_verified": 5
+}
