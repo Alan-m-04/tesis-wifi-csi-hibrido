@@ -1,5 +1,13 @@
 # Tesis: sistema híbrido WiFi CSI con ESP32-S3 y RuView
 
+## C03: integración de checkpoints preparada, sin adquisición
+
+[Entrada optativa C03](docs/INTEGRACION_C03_CHECKPOINTS_RX02.md) con revisión
+explícita en plan/procedencia/auditoría y comportamiento histórico por defecto.
+E→S, partición y criterios intactos; plan local nuevo, sin autorización física.
+Pendientes condiciones actuales, preflight por metadatos y permiso nuevo.
+
+
 ## Checkpoints RX-02: diagnóstico físico de 240 s consolidado
 
 [Un único intento físico](results/RX02_DIAG_CP_R1.md) conserva integridad/replay,

@@ -420,3 +420,13 @@ conserva su rechazo y explica duración, control y condiciones sin causalidad.
 Autorización diagnóstica consumida; C01/C02 y fuentes históricas intactos.
 [Revisión C03](REVISION_C03_CHECKPOINTS_RX02.md) nueva solo offline, persistencia
 explícita y permisos false, sin captura, calibración o entrenamiento.
+
+## C03: integración optativa preparada sin UART
+
+La [entrada C03](INTEGRACION_C03_CHECKPOINTS_RX02.md) selecciona explícitamente
+checkpoints en plan, procedencia y auditoría. Sin campo de persistencia delega
+al comportamiento histórico. Conserva E→S, partición y criterios; admite
+RX-01 declarada desconectada solo en esta revisión. Plan local nuevo y salida
+exclusiva reservada, sin adquisición. Condiciones actuales pendientes de una
+consulta agrupada antes de preflight por metadatos y permiso nuevo. C02 y el
+diagnóstico físico quedan intactos; sin calibración/entrenamiento.

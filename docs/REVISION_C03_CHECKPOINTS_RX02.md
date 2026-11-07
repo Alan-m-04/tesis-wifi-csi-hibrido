@@ -1,3 +1,18 @@
+# C03: revisión actual tras integración optativa
+
+La [integración nueva](INTEGRACION_C03_CHECKPOINTS_RX02.md) añade selección
+explícita de checkpoints en tools/campana_rx02_checkpoint.py, plan/procedencia/
+auditoría y salida exclusiva, conservando por defecto la ruta histórica.
+E→S, grupo/partición C03 y todos los criterios se mantienen. La variante nueva
+puede declarar RX-01 desconectada sin falsear su estado. Las condiciones
+actuales se solicitan agrupadas; no hay preflight físico ni autorización nueva.
+
+El plan integrado es config/piloto_rx02_C03_checkpoint2.integrated.review.json;
+el borrador anterior de este documento se conserva como antecedente.
+No abrir UART, adquirir, calibrar o entrenar durante esta preparación.
+
+## Antecedente: borrador previo en b3b5fc7
+
 # C03 con checkpoints — únicamente para revisión
 
 El diagnóstico RX02-DIAG-CP-R1 completó 240 s sin suspensión y con persistencia,
