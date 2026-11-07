@@ -407,3 +407,16 @@ consumidas conservados. Siguiente experimento mínimo propuesto: dos sesiones
 A–A estáticas con intervalo fijado, sin ejecutarlas ni crear autorización nueva.
 Sin UART, captura nueva, movimientos, firmware, cambios de watchdog o calibración
 por esta auditoría. Los borradores previos se conservan como historia de preparación.
+
+## Checkpoints RX-02: un diagnóstico físico sostenido consolidado offline
+
+[RX02-DIAG-CP-R1](../results/RX02_DIAG_CP_R1.md) alcanza 240,007883569 s hasta
+inicio de cierre; 1190 filas, ids consecutivos, queue_drops=0, cero huecos host
+>500 ms, cola cero y cierre confirmado. Integridad/replay, identidad/espacio y
+76 checkpoints verificados, pendiente final cero. La conexión sigue rechazada
+por preámbulo. CPU 13,364 s y ru_maxrss 26596 KiB hasta fin de servicio; sin
+muestreo físico periódico de fds/hilos ni equivalentes C02. Comparación con C02
+conserva su rechazo y explica duración, control y condiciones sin causalidad.
+Autorización diagnóstica consumida; C01/C02 y fuentes históricas intactos.
+[Revisión C03](REVISION_C03_CHECKPOINTS_RX02.md) nueva solo offline, persistencia
+explícita y permisos false, sin captura, calibración o entrenamiento.

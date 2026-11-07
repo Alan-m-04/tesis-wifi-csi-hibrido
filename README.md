@@ -1,6 +1,17 @@
 # Tesis: sistema híbrido WiFi CSI con ESP32-S3 y RuView
 
-## Servicio RX-02: revisión optativa de persistencia, solo validación offline
+## Checkpoints RX-02: diagnóstico físico de 240 s consolidado
+
+[Un único intento físico](results/RX02_DIAG_CP_R1.md) conserva integridad/replay,
+1190 filas CSI, cero huecos host >500 ms, cola cero y cierre RX-02 confirmado.
+76 checkpoints, pendiente final cero; calidad estricta rechazada por preámbulo.
+Comparación descriptiva con C02 sin causalidad demostrada; CPU/RSS medidos solo
+en el diagnóstico. Autorización consumida, originales intactos. [C03](docs/REVISION_C03_CHECKPOINTS_RX02.md)
+queda únicamente para revisión con persistencia explícita, sin ruta física ni
+permiso nuevo. Sin calibración o entrenamiento.
+
+
+## Antecedente: revisión optativa de persistencia validada offline
 
 La [comparación de código y PTY antes/después](results/SERVICIO_RX02_CHECKPOINT_V2.md)
 reproduce el costo de fsync por tick/control y añade una revisión explícita de
