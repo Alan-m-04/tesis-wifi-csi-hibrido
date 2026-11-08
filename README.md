@@ -1,6 +1,16 @@
 # Tesis: sistema híbrido WiFi CSI con ESP32-S3 y RuView
 
-## C03: integración de checkpoints preparada, sin adquisición
+## C03 consolidada: comparación descriptiva con C01
+
+[C03 E/S auditada](results/RX02_C03_C01.md): 143/146 filas exploratorias elegibles,
+integridad/replay, 495 checkpoints, pendiente cero y cierre RX-02 confirmado.
+Conexión estricta rechazada por preámbulo. RSSI, amplitud LLTF52 y variabilidad
+comparados por condición con C01, en escalas comunes y sin causalidad atribuida
+solo a presencia. C02 permanece rechazada; particiones intactas. Autorización
+C03 consumida; reserva C04–C06 sin abrir, sin calibración o entrenamiento.
+
+
+## Antecedente: integración C03 preparada antes de adquirir
 
 [Entrada optativa C03](docs/INTEGRACION_C03_CHECKPOINTS_RX02.md) con revisión
 explícita en plan/procedencia/auditoría y comportamiento histórico por defecto.

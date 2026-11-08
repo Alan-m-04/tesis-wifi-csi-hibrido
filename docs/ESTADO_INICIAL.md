@@ -430,3 +430,16 @@ RX-01 declarada desconectada solo en esta revisión. Plan local nuevo y salida
 exclusiva reservada, sin adquisición. Condiciones actuales pendientes de una
 consulta agrupada antes de preflight por metadatos y permiso nuevo. C02 y el
 diagnóstico físico quedan intactos; sin calibración/entrenamiento.
+
+## C03 consolidada offline: E/S y comparación con C01
+
+[Informe y figuras](../results/RX02_C03_C01.md): C03 contiene 7414 filas, con
+143/146 en E/S, bins/cobertura conforme, etiquetas humanas y ambas ventanas
+exploratorias elegibles. Conexión estricta conserva rechazo por preámbulo.
+495 checkpoints, pendiente final cero, cola cero y cierre RX-02 confirmado;
+autorización consumida. C01/C03 se comparan por condición usando definiciones
+existentes de RSSI/LLTF52/variabilidad, sin ajustes ni causalidad de presencia.
+Diferencias de persistencia, montaje declarado y RX-01 alimentada/desconectada
+documentadas. C02 y particiones intactas; 102 archivos originales preservados.
+473 pruebas aisladas aprobadas; reserva C04–C06 sin acceder y cero intentos de
+lectura registrados. Sin UART nuevo, captura adicional, calibración o entrenamiento.
