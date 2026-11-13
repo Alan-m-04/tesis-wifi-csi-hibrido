@@ -1,0 +1,136 @@
+{
+  "schema": "tesis-presence-port-equivalence-v1",
+  "evidence_type": "synthetic_fixture",
+  "physical_data_used": false,
+  "ruview_commit": "fefb0f918eefa7db6daef8cc83787fc7d6f74187",
+  "implementation": "Explicit Python binary32 head port",
+  "rust_executed": true,
+  "full_RuView_crate_compiled": false,
+  "rust_scope": "Unmodified original PresenceSpecialist train/infer and expects_presence bodies; serialization attributes removed; minimal test types supplied.",
+  "named_cases": 22,
+  "deterministic_random_cases": 2000,
+  "random_seed": 1729,
+  "case_count": 2022,
+  "bitwise_model_value_confidence_and_label_matches": 2022,
+  "model_and_inference_cases": 513,
+  "missing_anchor_None_cases": 1509,
+  "mismatches": [],
+  "equivalence_verified_for_tested_cases": true,
+  "limits": [
+    "Tested finite nonnegative inputs, boundary neighbors and normal bounded random features; not a proof for every IEEE value or Rust build.",
+    "Extraction is binary64 and stricter about missing/nonfinite rows; Features::from_series and enrollment gates are not ported.",
+    "No accuracy, calibration validity on real rooms, or presence validation follows from formula equivalence."
+  ],
+  "compiler_version": "rustc 1.85.1 (4eb161250 2025-03-15)\nbinary: rustc\ncommit-hash: 4eb161250e340c8f48f66e2b929ef4a5bed7c181\ncommit-date: 2025-03-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.85.1\nLLVM version: 19.1.7\n",
+  "target": "x86_64-unknown-linux-musl",
+  "command": [
+    ".tools/rust-presence-1.85.1/bin/rustc",
+    "results/local/adaptador-presencia-offline-20261026/equivalencia-04/reference.rs",
+    "--edition=2021",
+    "--target=x86_64-unknown-linux-musl",
+    "-C",
+    "opt-level=0",
+    "-C",
+    "linker=.tools/rust-presence-1.85.1/lib/rustlib/x86_64-unknown-linux-gnu/bin/rust-lld",
+    "-C",
+    "link-self-contained=yes",
+    "-o",
+    "results/local/adaptador-presencia-offline-20261026/equivalencia-04/reference"
+  ],
+  "sources": [
+    {
+      "path": "src/ruview_presence_port.py",
+      "sha256": "5994a675a7298ec2e0e21145f42ff6989f44285d308ee60c35d24bf23aeab703",
+      "bytes": 6992
+    },
+    {
+      "path": "tools/verificar_port_presencia.py",
+      "sha256": "35e8481f0f1701c7f59d778e447cebae2115cd9e446a3002b6c7a77f1399846c",
+      "bytes": 8478
+    },
+    {
+      "path": "tools/preparar_rust_presencia.py",
+      "sha256": "2748fa38c179eea18c0c4f5c13104bc6ddfcee79653eaeeee3f8d64b4669b786",
+      "bytes": 2704
+    },
+    {
+      "path": "tests/fixtures/presence_head_synthetic.json",
+      "sha256": "df708d5a7d9b3cbce29134c4d6a6a764739cb06702fd48b7ae8b1b684edc0a80",
+      "bytes": 7869
+    },
+    {
+      "path": "tests/rust/presence_reference_support.rs",
+      "sha256": "1f70f7a8ced57d5a0c4d9787ad1c09f17817dcc72025af69a83ea403832860d2",
+      "bytes": 2545
+    },
+    {
+      "path": "vendor/ruview/presence/presence_original.rs",
+      "sha256": "5d40befddbe14bee7f49ff64f72ced7b0b7396581fe304b8a9ea82db59b29dc1",
+      "bytes": 4321
+    },
+    {
+      "path": "vendor/ruview/presence/expects_presence_original.rs",
+      "sha256": "8f3fa32aa84a4e85cee78b8b1538de0c92b31d374673ceb7c9b336bec9d58645",
+      "bytes": 95
+    },
+    {
+      "path": "vendor/ruview/presence/PROVENANCE.json",
+      "sha256": "756b2c8435ef43699db562bf7c8fb6ddb8d60a7fac853b4e03cb0abcdffd3b03",
+      "bytes": 2026
+    },
+    {
+      "path": "vendor/ruview/presence/LICENSE",
+      "sha256": "f6f0fbda447f9374dd06cab17b764c485352f57f4d491471128a0525c10287c8",
+      "bytes": 1059
+    },
+    {
+      "path": "config/presence_rust_reference.lock.json",
+      "sha256": "32c341822f33eef0a5c82a71d640fea08b7a17c66ce9dc84f6b3841399191da0",
+      "bytes": 863
+    }
+  ],
+  "compiler_sha256": "f8d033fd72e878ec60493788c8bffec2e6c154dcab6f0cb4c145af8ada26a7ed",
+  "linker_sha256": "9d9f97540c7be749f7da3871135645d3bae254c60d49828c281ed43ccb229636",
+  "artifacts": [
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-04/reference.rs",
+      "sha256": "cdf0ed98affe11b0d52abfe5cd972b85b263c66371f015a3045159c7e6d238b5",
+      "bytes": 6847
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-04/reference",
+      "sha256": "930ce872ab6e3e5b208bdd50ff4119595418f024e3b7cbe89475fbb6a84f0a93",
+      "bytes": 4400632
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-04/synthetic-input.txt",
+      "sha256": "d8b226b271329b15a524a2f032884a061a51221bd2d87731a7b92b18f52b071e",
+      "bytes": 184857
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-04/python-output.txt",
+      "sha256": "982159215ad6b707f58e7d3c375e16f20963127175c0447aaf4a4cbf8a157215",
+      "bytes": 85600
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-04/rust-output.txt",
+      "sha256": "982159215ad6b707f58e7d3c375e16f20963127175c0447aaf4a4cbf8a157215",
+      "bytes": 85600
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-04/compile.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-04/compile.stderr.log",
+      "sha256": "575dd30284b779cf6a00fdad55641d2314df91bfb8f020e61b125de926aa89d4",
+      "bytes": 830
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-04/run.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ]
+}

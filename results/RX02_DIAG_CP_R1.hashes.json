@@ -1,0 +1,439 @@
+{
+  "schema": "tesis-rx02-physical-checkpoint-evidence-1",
+  "base_commit": "1bb7619f798fe92721d33b25d1e6694bae420897",
+  "physical_UART_opened_by_consolidation": false,
+  "protected_historical_files": {
+    "config/piloto_rx02_r1_C01.local.json": {
+      "bytes": 3793,
+      "sha256": "89d853add6326c201ed9ff0b84d0793129379b1cf98a177ed83cc158883aff83"
+    },
+    "config/piloto_rx02_r1_C01.review.json": {
+      "bytes": 2165,
+      "sha256": "76168def1353e4cf1e9a393b142ca9d6763e23fd88c05df4984052ccd9b89119"
+    },
+    "config/piloto_rx02_r1_C02.local.json": {
+      "bytes": 3748,
+      "sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b"
+    },
+    "config/piloto_rx02_r1_C02.review.json": {
+      "bytes": 2165,
+      "sha256": "e9ce306812c30fdf84aab4f4559582f1cd0eb857347f187a24e0ccbe42a62cc5"
+    },
+    "results/local/autorizacion-rx02-C01-20261104T220105Z/SHA256.json": {
+      "bytes": 571,
+      "sha256": "efe50946fb2b6fbdee5a2f51cc93be85cea0759f690a01d086c9b355ac9f59f9"
+    },
+    "results/local/autorizacion-rx02-C01-20261104T220105Z/autorizacion.json": {
+      "bytes": 2672,
+      "sha256": "6e00f92da857ab81d8e4793b640734dcd8e38f1ea32b0cb9747c434519d8b8e3"
+    },
+    "results/local/autorizacion-rx02-C01-20261104T220105Z/plan-autorizado.json": {
+      "bytes": 3793,
+      "sha256": "89d853add6326c201ed9ff0b84d0793129379b1cf98a177ed83cc158883aff83"
+    },
+    "results/local/autorizacion-rx02-C01-20261104T220105Z/plan-revisado-antes-de-autorizacion.json": {
+      "bytes": 3792,
+      "sha256": "aad3b6697ded9e5042c2b146b290b538a75973d220714f4b5ab1b94d1ceb98d6"
+    },
+    "results/local/autorizacion-rx02-C02-20261104T225215Z/SHA256.json": {
+      "bytes": 727,
+      "sha256": "3fd960254c8134caf4862a6a7078bcb4c3057e97c1b94e06d6d5517e0e9a388c"
+    },
+    "results/local/autorizacion-rx02-C02-20261104T225215Z/autorizacion.json": {
+      "bytes": 3323,
+      "sha256": "1edcbf06bce4f20971bca3588ba41d97d7bff4e47e3911c7582456a36230a359"
+    },
+    "results/local/autorizacion-rx02-C02-20261104T225215Z/plan-autorizado.json": {
+      "bytes": 3748,
+      "sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b"
+    },
+    "results/local/autorizacion-rx02-C02-20261104T225215Z/plan-revisado-antes-de-autorizacion.json": {
+      "bytes": 3747,
+      "sha256": "39e737b2626a972606344404f3b78fd8babc4db1c5a3587cb011443c863c004c"
+    },
+    "results/local/piloto-rx02-r1-C01/audio/0-establish_condition.wav": {
+      "bytes": 17324,
+      "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+    },
+    "results/local/piloto-rx02-r1-C01/audio/1-window_finished_connection_open.wav": {
+      "bytes": 8684,
+      "sha256": "e3cce4eeab2f906735116e0ea1dd6534db30a46a261910bc3b26e124b9c479c2"
+    },
+    "results/local/piloto-rx02-r1-C01/audio/2-establish_condition.wav": {
+      "bytes": 17324,
+      "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+    },
+    "results/local/piloto-rx02-r1-C01/audio/3-window_finished_connection_open.wav": {
+      "bytes": 8684,
+      "sha256": "e3cce4eeab2f906735116e0ea1dd6534db30a46a261910bc3b26e124b9c479c2"
+    },
+    "results/local/piloto-rx02-r1-C01/audio/4-selected_port_closed_confirmed.wav": {
+      "bytes": 57644,
+      "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+    },
+    "results/local/piloto-rx02-r1-C01/authorization-consumed.json": {
+      "bytes": 261,
+      "sha256": "f963b3ae45b204c707c8d550102184745c0f2363ae297caf5eaa69770242c019"
+    },
+    "results/local/piloto-rx02-r1-C01/close-receipt.json": {
+      "bytes": 618,
+      "sha256": "63e78e576354a43aab4feae88e3a931760a630cff02538465a88b04aace5922a"
+    },
+    "results/local/piloto-rx02-r1-C01/events.json": {
+      "bytes": 2732831,
+      "sha256": "c8dee28ea122d0e1dfd97460945ce9c66cba0c0f10ac524ea5e676d356445a9e"
+    },
+    "results/local/piloto-rx02-r1-C01/manifest.json": {
+      "bytes": 2148,
+      "sha256": "af4c98f10dd8af66f8b1ed90d877e489bc20cc403cc9357c9e4184e8cd8cef2c"
+    },
+    "results/local/piloto-rx02-r1-C01/operations.jsonl": {
+      "bytes": 10916155,
+      "sha256": "adfbe05748ac56c7cf9d686d4455928a71185aadc5bdaae39ba9035b0801b4ea"
+    },
+    "results/local/piloto-rx02-r1-C01/plan.json": {
+      "bytes": 3793,
+      "sha256": "89d853add6326c201ed9ff0b84d0793129379b1cf98a177ed83cc158883aff83"
+    },
+    "results/local/piloto-rx02-r1-C01/provenance.json": {
+      "bytes": 5208,
+      "sha256": "f3964d648c7e83e13490df94286fdc587f8e869fbd29b16d41fddac5507de938"
+    },
+    "results/local/piloto-rx02-r1-C01/rx-02.serial.log": {
+      "bytes": 2833345,
+      "sha256": "0d21c925338f774597396e70782d587ff5c3ec9e8737633b4b82468f794082a7"
+    },
+    "results/local/piloto-rx02-r1-C01/summary.json": {
+      "bytes": 1202787,
+      "sha256": "006b49307c4c1e7076481d4ae5714b3002d0ce369999ab82250477b7d1628a5e"
+    },
+    "results/local/piloto-rx02-r1-C02/audio/0-establish_condition.wav": {
+      "bytes": 17324,
+      "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+    },
+    "results/local/piloto-rx02-r1-C02/audio/1-failure.wav": {
+      "bytes": 58924,
+      "sha256": "d394f5d61a23f29df7ec760c745b47107aa66a2ed1564670ecb675d8e51362d7"
+    },
+    "results/local/piloto-rx02-r1-C02/audio/2-selected_port_closed_confirmed.wav": {
+      "bytes": 57644,
+      "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+    },
+    "results/local/piloto-rx02-r1-C02/authorization-consumed.json": {
+      "bytes": 261,
+      "sha256": "7daf49962b3bf4c4c65289b6016c6dc543830b715c5080d12d5f4a06dba87dde"
+    },
+    "results/local/piloto-rx02-r1-C02/close-receipt.json": {
+      "bytes": 617,
+      "sha256": "ccdce22abb734b447df588257302e0cb3f35c027c60e6226952a56f93928dc35"
+    },
+    "results/local/piloto-rx02-r1-C02/events.json": {
+      "bytes": 900643,
+      "sha256": "8b32b0bbe7e6bdc042405072e080cfb55036ee34ce306bb98b4e4615ade16dda"
+    },
+    "results/local/piloto-rx02-r1-C02/manifest.json": {
+      "bytes": 1776,
+      "sha256": "50d597433625234d3935207f28a4686aa5359dff85a2e956a7fd46110495983c"
+    },
+    "results/local/piloto-rx02-r1-C02/operations.jsonl": {
+      "bytes": 3204975,
+      "sha256": "f78dafab61812623d56785bdb7aca1fadb420cbda175fc3b124ac32fef808412"
+    },
+    "results/local/piloto-rx02-r1-C02/plan.json": {
+      "bytes": 3748,
+      "sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b"
+    },
+    "results/local/piloto-rx02-r1-C02/provenance.json": {
+      "bytes": 5208,
+      "sha256": "63f2836a46dc3cec77f5564552481fe7b998612d557641c23bc320ab2bfab8d3"
+    },
+    "results/local/piloto-rx02-r1-C02/rx-02.serial.log": {
+      "bytes": 880889,
+      "sha256": "dde85d3a83256ac5a201932fb057c248447edb9e01f47db8d7766ecc0b875ca5"
+    },
+    "results/local/piloto-rx02-r1-C02/summary.json": {
+      "bytes": 524779,
+      "sha256": "2321b4956ac24a80c677d70293267bb7bfd9bdb7d5e3730453bc7a80869228be"
+    }
+  },
+  "diagnostic_original_files": {
+    "audio/0-selected_port_closed_confirmed.wav": {
+      "bytes": 57644,
+      "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+    },
+    "authorization-consumed.json": {
+      "bytes": 311,
+      "sha256": "0ddd9b60f04176afb7e507b16d3f7dbcf37d04f13779552a0cd01fa3d1f18402"
+    },
+    "checkpoint-status.json": {
+      "bytes": 600,
+      "sha256": "4b5857b3ec11e06af1f06a42ccdbdf52e4558ce2787124ff3cd3687168ae63f5"
+    },
+    "close-receipt.json": {
+      "bytes": 624,
+      "sha256": "e87a32e27dfb3f6950e8dcb21c4d04dbb0a1d3e2a4e8007251153105d7a4ea80"
+    },
+    "events.json": {
+      "bytes": 1050847,
+      "sha256": "851108ce82a68e289d154cc3c9d9d498ddca52a6cfbca5f1904d73be6ac4a436"
+    },
+    "manifest.json": {
+      "bytes": 1926,
+      "sha256": "8817cf0009d477d081bb5d320aabcb9b403f54afafa9e7902b960b74de7d70e0"
+    },
+    "operations.jsonl": {
+      "bytes": 4772610,
+      "sha256": "96174bed5057cbfd5bb4cdbbcecc4521182b6418a1b74930fa3c9c68b27fff8b"
+    },
+    "persistence-policy.json": {
+      "bytes": 1296,
+      "sha256": "4b35eb4d16be7a1c7183378eec8671912b76f738b0252c43b38cc891e91aa25f"
+    },
+    "plan.json": {
+      "bytes": 3200,
+      "sha256": "617cf0bf21dc3084168209669bb1e82a9dd2da5f3a1549a8edd7ff0aef44f897"
+    },
+    "provenance.json": {
+      "bytes": 6256,
+      "sha256": "8604a0ceb8cc6b6bce727ff07615eabdd8f83e3c4923a11be38ce8e4f2868c3d"
+    },
+    "rx-02.serial.log": {
+      "bytes": 1007158,
+      "sha256": "e8dc6ac746ea1cf4560d9ff2dbf68f3416b0c726277b5415ab061e9a725afc8e"
+    },
+    "service-metrics.json": {
+      "bytes": 273,
+      "sha256": "0e6ed1fb8577240396ba7258c288316112dc833dc36f274a16ac3c486d5cc32e"
+    },
+    "summary.json": {
+      "bytes": 359640,
+      "sha256": "7e13f9205f4c299d677184e446a50d028d9147564ec9c11573086c48257f46d8"
+    }
+  },
+  "C02_original_files": {
+    "audio/0-establish_condition.wav": {
+      "bytes": 17324,
+      "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+    },
+    "audio/1-failure.wav": {
+      "bytes": 58924,
+      "sha256": "d394f5d61a23f29df7ec760c745b47107aa66a2ed1564670ecb675d8e51362d7"
+    },
+    "audio/2-selected_port_closed_confirmed.wav": {
+      "bytes": 57644,
+      "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+    },
+    "authorization-consumed.json": {
+      "bytes": 261,
+      "sha256": "7daf49962b3bf4c4c65289b6016c6dc543830b715c5080d12d5f4a06dba87dde"
+    },
+    "close-receipt.json": {
+      "bytes": 617,
+      "sha256": "ccdce22abb734b447df588257302e0cb3f35c027c60e6226952a56f93928dc35"
+    },
+    "events.json": {
+      "bytes": 900643,
+      "sha256": "8b32b0bbe7e6bdc042405072e080cfb55036ee34ce306bb98b4e4615ade16dda"
+    },
+    "manifest.json": {
+      "bytes": 1776,
+      "sha256": "50d597433625234d3935207f28a4686aa5359dff85a2e956a7fd46110495983c"
+    },
+    "operations.jsonl": {
+      "bytes": 3204975,
+      "sha256": "f78dafab61812623d56785bdb7aca1fadb420cbda175fc3b124ac32fef808412"
+    },
+    "plan.json": {
+      "bytes": 3748,
+      "sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b"
+    },
+    "provenance.json": {
+      "bytes": 5208,
+      "sha256": "63f2836a46dc3cec77f5564552481fe7b998612d557641c23bc320ab2bfab8d3"
+    },
+    "rx-02.serial.log": {
+      "bytes": 880889,
+      "sha256": "dde85d3a83256ac5a201932fb057c248447edb9e01f47db8d7766ecc0b875ca5"
+    },
+    "summary.json": {
+      "bytes": 524779,
+      "sha256": "2321b4956ac24a80c677d70293267bb7bfd9bdb7d5e3730453bc7a80869228be"
+    }
+  },
+  "diagnostic_acquisition_sources": [
+    {
+      "path": "src/persistent_presence_v4.py",
+      "sha256": "2ee89f05c33af7f638016cf4d87871f882e359a859a8671f07037b9a3a37171a",
+      "bytes": 25615
+    },
+    {
+      "path": "src/presence_v4_journal.py",
+      "sha256": "9a42e4132219deb5cecf505e817c61d207516304586cbbd63feb4977adc50b3a",
+      "bytes": 10914
+    },
+    {
+      "path": "src/presence_v4_pty.py",
+      "sha256": "7aa1288295d2cfe10e77c3a6c61104f1d2716ad9967c81842645939d47f4d7f5",
+      "bytes": 10366
+    },
+    {
+      "path": "src/presence_v4_audio.py",
+      "sha256": "658c6fad43079c16d3ca3d5f8bd3a5324a5a9995be85d630165b406395571232",
+      "bytes": 3098
+    },
+    {
+      "path": "src/availability_window.py",
+      "sha256": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596",
+      "bytes": 12330
+    },
+    {
+      "path": "src/capture_csi_multi.py",
+      "sha256": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+      "bytes": 19548
+    },
+    {
+      "path": "src/capture_csi.py",
+      "sha256": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+      "bytes": 4305
+    },
+    {
+      "path": "src/preserving_serial.py",
+      "sha256": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+      "bytes": 1195
+    },
+    {
+      "path": "src/controlled_protocol.py",
+      "sha256": "86f547f825094243e1500bcda507282c934b3daa0a3178c5558c7fa13ccaba78",
+      "bytes": 628
+    },
+    {
+      "path": "tools/campana_presencia_v4.py",
+      "sha256": "49e8d4e1cb2fbcccdb90f5743cfc9fac23370041d9aa3f0263eaedc6a96e7513",
+      "bytes": 9957
+    },
+    {
+      "path": "config/csi_esp32s3.json",
+      "sha256": "c39115ee2a789e8a8b3aa372528f869a6ac9fe5f92847b427ad4075d78f3c048",
+      "bytes": 1050
+    },
+    {
+      "path": "src/presence_v4_exploratory.py",
+      "sha256": "7da77617fc6af9031e334027a2d8a311c37c1119e860579b07332cd27734af50",
+      "bytes": 14409
+    },
+    {
+      "path": "src/presence_rx02.py",
+      "sha256": "b2992f3b4bf6b710bb9c42a549c5984733849a1eaa255f4be101e857648c9c25",
+      "bytes": 15279
+    },
+    {
+      "path": "src/presence_rx02_journal.py",
+      "sha256": "faca3ac20252c93943d199abfc0576c0110234756b953dc2e1844355b887c1a7",
+      "bytes": 10754
+    },
+    {
+      "path": "src/presence_rx02_uart.py",
+      "sha256": "32ba9c9028465a3b56707703715a71f3b8bcbd1a29105e1bc8c57bfe92f86ca8",
+      "bytes": 10399
+    },
+    {
+      "path": "src/presence_v4_uart.py",
+      "sha256": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+      "bytes": 22468
+    },
+    {
+      "path": "tools/piloto_presencia_rx02.py",
+      "sha256": "ddb8d98a9aaa0c7e7dcdf853224de5355b59cbdf18095b73aaa6071dcfccfa34",
+      "bytes": 5459
+    },
+    {
+      "path": "config/pyserial_uart_v4.lock.json",
+      "sha256": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010",
+      "bytes": 384
+    },
+    {
+      "path": "src/rx02_diagnostic/__init__.py",
+      "sha256": "eee0df9f8afa8b68e953f8429071f592f26670b2b8a6616dd5ddae81779160f2",
+      "bytes": 68
+    },
+    {
+      "path": "src/rx02_diagnostic/contract.py",
+      "sha256": "053d4ef78e45e76bfc0701742a2a08c8131e7753c4d359bbbbdfeac48285fc9a",
+      "bytes": 12236
+    },
+    {
+      "path": "src/rx02_diagnostic/journal.py",
+      "sha256": "aa3559925e23c61ca44fce670a51977c45a82d86f6ba3801626308792f6eb522",
+      "bytes": 11210
+    },
+    {
+      "path": "src/rx02_diagnostic/uart.py",
+      "sha256": "f93c0bb270e9defbea4e71269537e8007a8aa99e21be989b7a7270ef005617ea",
+      "bytes": 10507
+    },
+    {
+      "path": "src/rx02_diagnostic/checkpoint.py",
+      "sha256": "27dff3e88b0b5e04a5bbc3d77c3ac1fc7ec703158ca87c44f42a70375f2e7e60",
+      "bytes": 9139
+    },
+    {
+      "path": "tools/diagnostico_checkpoints_rx02.py",
+      "sha256": "7ef7b1488b7fe5b72dbe8e0c8ccb465b51b4f81d366bdd024aea8060338021f3",
+      "bytes": 7261
+    }
+  ],
+  "local_audit_artifacts": {
+    "results/local/consolidacion-diagnostico-checkpoints-rx02-r1/audit-C02.json": {
+      "bytes": 524331,
+      "sha256": "e74d49c34943696aae91fd776f16eef2a95fea7e6a6b1bc63811479531ab0cc4"
+    },
+    "results/local/consolidacion-diagnostico-checkpoints-rx02-r1/audit-diagnostic.json": {
+      "bytes": 359734,
+      "sha256": "7220840fdc132c48c2b505a13b423bd870923ebf36f42a8fc5f55ff39721f329"
+    },
+    "results/local/consolidacion-diagnostico-checkpoints-rx02-r1/cierre-diagnostico-autorizacion-consumida.json": {
+      "bytes": 618,
+      "sha256": "ceeb4de1ad519c9f3ccd2ef58bb9f7fc1549f5d64892984d3c294838d1b7ded4"
+    },
+    "results/local/consolidacion-diagnostico-checkpoints-rx02-r1/files.json": {
+      "bytes": 394,
+      "sha256": "f5f922e42ffd9c17fe7b8f221b2063c92367a090c75fa2bbdd36e18469f2b2e4"
+    },
+    "results/local/consolidacion-diagnostico-checkpoints-rx02-r1/pruebas-command.json": {
+      "bytes": 2184,
+      "sha256": "7cc6b21da2d9a23a78b51908e5421e532882e7a9e2ac6bd6bba6f6f25894155f"
+    },
+    "results/local/consolidacion-diagnostico-checkpoints-rx02-r1/pruebas.json": {
+      "bytes": 1147,
+      "sha256": "d58d317ccb0cc453963b4e66ae154e94445585fb75d6c9b864af2cd69d593335"
+    },
+    "results/local/consolidacion-diagnostico-checkpoints-rx02-r1/pruebas.stderr.txt": {
+      "bytes": 74544,
+      "sha256": "575133bf9c8486db238bef983f3fd22d85d9d5869c608fedb0eeac8c13a00d00"
+    },
+    "results/local/consolidacion-diagnostico-checkpoints-rx02-r1/pruebas.stdout.txt": {
+      "bytes": 1919,
+      "sha256": "afec557e88118e0b61d2a74a0ffd5881fb6de7e19250c6d12ba36aea286d772b"
+    },
+    "results/local/consolidacion-diagnostico-checkpoints-rx02-r1/summary.json": {
+      "bytes": 45052,
+      "sha256": "8b55be94288b63ade0f23523b576c9c9668dc4bb76cbd0b64b10ed1a07554b52"
+    }
+  },
+  "published_report_files": {
+    "results/RX02_DIAG_CP_R1.md": {
+      "bytes": 11153,
+      "sha256": "01c1aa1a97f8a1e29391c0ee4c3059cb0115306db921d63bbdab216595850af2"
+    },
+    "results/RX02_DIAG_CP_R1.resumen.json": {
+      "bytes": 45052,
+      "sha256": "8b55be94288b63ade0f23523b576c9c9668dc4bb76cbd0b64b10ed1a07554b52"
+    },
+    "results/RX02_DIAG_CP_R1.validacion.json": {
+      "bytes": 1451,
+      "sha256": "16d99bc860ac7e1d217d2cf44160ac7c65a9f921019ac4120f730393e4643a92"
+    }
+  },
+  "authorizations": "C01, C02 and RX02-DIAG-CP-R1 consumed; no C03 physical grant",
+  "raw_capture_published_to_git": false
+}

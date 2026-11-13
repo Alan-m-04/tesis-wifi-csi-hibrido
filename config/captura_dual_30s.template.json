@@ -1,0 +1,19 @@
+{
+  "protocol": "controlled_dual_v1",
+  "seconds": 30,
+  "ports": {
+    "RX-01": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93199744-if00",
+    "RX-02": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00"
+  },
+  "baud": 115200,
+  "stable_window": null,
+  "environment": {
+    "condition": null,
+    "occupancy": null,
+    "movement": null,
+    "geometry": null,
+    "tx_power": null
+  },
+  "status": "PENDING_ENVIRONMENT_AND_EXPLICIT_UART_AUTHORIZATION",
+  "startup": "preserve all bytes read from open; no flush; no approved derived window"
+}

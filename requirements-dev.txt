@@ -1,0 +1,2 @@
+# Solo dependencia necesaria para las pruebas PTY del capturador. unittest es stdlib.
+pyserial==3.5

@@ -1,0 +1,26 @@
+{
+  "commit": "fefb0f918eefa7db6daef8cc83787fc7d6f74187",
+  "source": "harness/ruview/src/devices/esp32.js",
+  "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/harness/ruview/src/devices/esp32.js",
+  "sha256": "21b8c74d9b0a47f52538b5d902faa32ac6f4c58dab94d6612d7fbc89237d8f80",
+  "license": "MIT",
+  "imports": [
+    "node:dgram (Node builtin)"
+  ],
+  "external_dependencies": [],
+  "execution_scope": [
+    "parsePacket",
+    "SpectrumCollector.add",
+    "SpectrumCollector.result",
+    "binAmplitudes transitively"
+  ],
+  "not_called": [
+    "captureEsp32",
+    "runAnalysis"
+  ],
+  "node_version": "v22.20.0",
+  "node_binary_sha256": "b1cbec894e45a5814b6ab756e1e14f8a76516273197e67e0412b57c1e10d0d9f",
+  "package_source": "harness/ruview/package.json",
+  "package_sha256": "d1d313a9e57244c817d688918c150c46aaf7aeb50ca65c0d982690e302ef7fdd",
+  "declared_node_engine": ">=20.0.0"
+}

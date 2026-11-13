@@ -1,0 +1,87 @@
+{
+  "schema": "continuity-antenna-aba-mount-review-3",
+  "status": "review_only",
+  "authorization_granted": false,
+  "physical_execution_enabled": false,
+  "movable_component": "RX-01 external antenna moving body, its own hinge only",
+  "confirmed_by_operator": {
+    "photo_identity": true,
+    "hinge_exists": true,
+    "can_tilt_90deg_without_unscrewing": true
+  },
+  "identity_reference": {
+    "RX-01": {
+      "photo": "/home/alan-monar/Downloads/ChatGPT Image Nov 3, 2026, 02_23_17 PM.jpg",
+      "usb_serial": "5C93199744",
+      "usb_sysfs": "3-7.1",
+      "connection": "hub marrón, GenesysLogic según metadatos",
+      "operator_confirmed_cable_endpoint": true,
+      "photo_sha256": "af4fa3e1a25090ec8ec10732435d0033f37294a03474e4ff0288ad9d34f568a8"
+    },
+    "RX-02": {
+      "photo": "/home/alan-monar/Downloads/ChatGPT Image Nov 3, 2026, 02_23_29 PM.jpg",
+      "usb_serial": "5C93200689",
+      "usb_sysfs": "3-4",
+      "connection": "directamente a la laptop",
+      "operator_confirmed_cable_endpoint": true,
+      "photo_sha256": "ae60d38a0136f65312cd952876a61389a93a96f7d4791ebdcd15f05ea7bb760d"
+    }
+  },
+  "A1": {
+    "status": "PENDIENTE document current state before any acquisition",
+    "reference_view_or_sketch": null,
+    "hinge_axis_description": null,
+    "base_location": null,
+    "initial_base_to_tip_direction": null,
+    "initial_inclination_description": null,
+    "board_and_support_marks": null,
+    "coax_route_and_slack": null,
+    "USB_route_and_physical_port": null
+  },
+  "B": {
+    "relative_angle_deg": 90,
+    "plane": "natural hinge motion plane",
+    "direction": "upwards, away from supporting surface, without rotating or moving base/connector",
+    "target_direction_in_A1_sketch": null,
+    "compatible_with_fixed_base_coax_board_and_no_tension": null,
+    "on_incompatibility": "STOP preparation before A1 and report; no substitute movement"
+  },
+  "A2": {
+    "target": "same A1 marks and direction",
+    "motion": "reverse hinge movement only"
+  },
+  "fixed_components": [
+    "RX-01 board/support",
+    "antenna base/connector/hinge point",
+    "coaxial path and RF connections",
+    "USB cables and physical ports",
+    "entire RX-02 assembly including antenna/coax/USB",
+    "TX",
+    "laptop",
+    "hub",
+    "nearby objects"
+  ],
+  "phases": [
+    {
+      "id": "CONT-ANT-ABA-R3-A1",
+      "duration_common_ns": 60000000000,
+      "output_new": "results/local/continuidad-antena-aba-r3-A1"
+    },
+    {
+      "id": "CONT-ANT-ABA-R3-B",
+      "duration_common_ns": 60000000000,
+      "output_new": "results/local/continuidad-antena-aba-r3-B"
+    },
+    {
+      "id": "CONT-ANT-ABA-R3-A2",
+      "duration_common_ns": 60000000000,
+      "output_new": "results/local/continuidad-antena-aba-r3-A2"
+    }
+  ],
+  "inter_attempt_movement_requires": "Both UART closed and confirmed, integrity/replay reviewed, explicit authorization",
+  "retries_allowed": false,
+  "resets_allowed": false,
+  "reconnections_allowed": false,
+  "detector_calibration_allowed": false,
+  "training_allowed": false
+}

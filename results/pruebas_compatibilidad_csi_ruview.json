@@ -1,0 +1,21 @@
+{
+  "base_commit": "74d612a87fa02021a30a7a034595e4aa5575dbb7",
+  "tests_run": 60,
+  "seconds": 3.535,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "synthetic_tests": 57,
+  "historical_physical_offline_regressions": 3,
+  "javascript_runtime_executed": false,
+  "rust_runtime_executed": false,
+  "python_reviewed_pure_recorder_executed": true,
+  "ruview_dependencies_installed": false,
+  "physical_UART_opened": false,
+  "test_log_sha256": "2f08da4cbe2164ba9ba57d79ef67fd3d1e5345894cc5fb451c86c375daa18f86",
+  "audit_json_sha256": "fd337e838244dde96356b401ccc6e45641976a7718215acc6d1dbdee39a4b44f",
+  "commands": [
+    "./tools/test_base.sh",
+    "tools/audit_csi_ruview.py (Bubblewrap, read-only bindings, offline)"
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "revision": "rx02-pilot-campaign-1",
+  "protocol": "presence_rx02_persistent_1",
+  "eligibility_revision": "rx02-exploratory-1",
+  "line_policy_revision": "v4-startup-sequence-1",
+  "selection_revision": "rx02-continuity-selection-1",
+  "base_commit": "9b28addc221468ed1c38e6480a6cf153e5a00c70",
+  "authorization_granted": false,
+  "evidence": "prospective_plan_only_no_presence_results",
+  "receivers": {
+    "RX-02": "5C93200689"
+  },
+  "ports": {
+    "RX-02": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00"
+  },
+  "partition_unit": "complete_connection",
+  "automatic_replacement": false,
+  "stop_campaign_on_failure": true,
+  "unused_receiver": {
+    "receiver": "RX-01",
+    "action": "leave_connected_fixed_uart_unopened",
+    "operator_confirmation": "PENDIENTE"
+  },
+  "connections": [
+    {
+      "connection_id": "RX02-C01",
+      "plan": "config/piloto_rx02_r1_C01.review.json",
+      "future_partition": "development_future",
+      "output_new": "results/local/piloto-rx02-r1-C01",
+      "slots": [
+        {
+          "id": "RX02-C01-E",
+          "condition": "E"
+        },
+        {
+          "id": "RX02-C01-S",
+          "condition": "S"
+        }
+      ],
+      "authorization": "required_new_per_connection"
+    },
+    {
+      "connection_id": "RX02-C02",
+      "plan": "config/piloto_rx02_r1_C02.review.json",
+      "future_partition": "development_future",
+      "output_new": "results/local/piloto-rx02-r1-C02",
+      "slots": [
+        {
+          "id": "RX02-C02-S",
+          "condition": "S"
+        },
+        {
+          "id": "RX02-C02-E",
+          "condition": "E"
+        }
+      ],
+      "authorization": "required_new_per_connection"
+    },
+    {
+      "connection_id": "RX02-C03",
+      "plan": "config/piloto_rx02_r1_C03.review.json",
+      "future_partition": "development_future",
+      "output_new": "results/local/piloto-rx02-r1-C03",
+      "slots": [
+        {
+          "id": "RX02-C03-E",
+          "condition": "E"
+        },
+        {
+          "id": "RX02-C03-S",
+          "condition": "S"
+        }
+      ],
+      "authorization": "required_new_per_connection"
+    },
+    {
+      "connection_id": "RX02-C04",
+      "plan": "config/piloto_rx02_r1_C04.review.json",
+      "future_partition": "evaluation_future_sealed",
+      "output_new": "results/local/piloto-rx02-r1-C04",
+      "slots": [
+        {
+          "id": "RX02-C04-S",
+          "condition": "S"
+        },
+        {
+          "id": "RX02-C04-E",
+          "condition": "E"
+        }
+      ],
+      "authorization": "required_new_per_connection"
+    },
+    {
+      "connection_id": "RX02-C05",
+      "plan": "config/piloto_rx02_r1_C05.review.json",
+      "future_partition": "evaluation_future_sealed",
+      "output_new": "results/local/piloto-rx02-r1-C05",
+      "slots": [
+        {
+          "id": "RX02-C05-E",
+          "condition": "E"
+        },
+        {
+          "id": "RX02-C05-S",
+          "condition": "S"
+        }
+      ],
+      "authorization": "required_new_per_connection"
+    },
+    {
+      "connection_id": "RX02-C06",
+      "plan": "config/piloto_rx02_r1_C06.review.json",
+      "future_partition": "evaluation_future_sealed",
+      "output_new": "results/local/piloto-rx02-r1-C06",
+      "slots": [
+        {
+          "id": "RX02-C06-S",
+          "condition": "S"
+        },
+        {
+          "id": "RX02-C06-E",
+          "condition": "E"
+        }
+      ],
+      "authorization": "required_new_per_connection"
+    }
+  ],
+  "permitted_uses": {
+    "calibration": false,
+    "training": false,
+    "production": false
+  }
+}

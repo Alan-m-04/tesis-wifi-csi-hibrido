@@ -1,0 +1,27 @@
+{
+  "schema": "tesis-rx02-C02-forensics-validation-1",
+  "source_commit": "0eb07cfe5b64b12606e893866a5b7fae60318a87",
+  "files_preserved": 34,
+  "original_bundles_and_authorizations_unchanged": true,
+  "original_C01_integrity_replay": true,
+  "original_C02_integrity_replay": true,
+  "command": "PYTHONPATH=src:tests .venv/bin/python -B -m unittest test_rx02_gap_diagnostics test_presence_rx02 test_v4_availability_diagnostic",
+  "tests": {
+    "passed": 53,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log": "results/local/diagnostico-rx02-C02-r1/pruebas.stderr.txt",
+    "log_sha256": "958008fe0375f4b58852e1e3abdc92b88e638cf305e7e98979d7ba0cd8522eca"
+  },
+  "isolation": "Direct offline tests, synthetic test endpoints; no Bubblewrap isolation claimed",
+  "acquisition_sources_common": 18,
+  "physical_UART_opened": false,
+  "metadata_preflight_executed": false,
+  "threshold_or_firmware_changes": false,
+  "retroactive_label_or_approval": false,
+  "replacement_prepared": false,
+  "C03_C06_executed": false,
+  "calibration": false,
+  "training": false
+}

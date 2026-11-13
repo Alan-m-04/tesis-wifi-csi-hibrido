@@ -1,0 +1,14 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dispositivos · Metadatos locales</title><link rel="stylesheet" href="/panel.css"></head><body><main>
+<nav aria-label="Vistas locales"><span aria-current="page">Dispositivos · metadatos actuales</span><a href="/replay">C01/C03 · datos históricos</a><a href="/sessions">Sesiones · SQLite offline</a></nav>
+<h1>Dispositivos · Metadatos locales</h1>
+<p>Consulta de identificación USB. Vista independiente de la reproducción offline. Es una instantánea: actualiza manualmente para consultar cambios.</p>
+<div class="notice">USB detectado no significa READY ni CSI recibido. No se abre UART. La ausencia se refiere a la vista local del proceso; si falta acceso a <code>/dev</code>, el estado es no verificable.</div>
+<p><button id="refresh" type="button">Consultar dispositivos</button></p>
+<p id="status" role="status" aria-live="polite">Sin consultar.</p>
+<p id="time" class="fine">Hora de consulta: sin consulta disponible.</p>
+<div id="devices"></div>
+<details><summary>Alcance del inventario y errores de metadatos</summary><pre id="scope">Sin consultar.</pre></details>
+<p class="fine">TX-01 con alimentación externa: no verificable por USB. Los permisos mostrados son metadatos del momento de consulta; no autorizan ni garantizan una adquisición.</p>
+<p class="fine">La reproducción C01/C03 muestra datos históricos en otra vista. Esta consulta USB no observa CSI ni cambia capturas, etiquetas, rechazos o autorizaciones.</p>
+</main><script id="catalogue" type="application/json">__DEVICE_CATALOGUE__</script><script type="module" src="/panel.mjs"></script></body></html>

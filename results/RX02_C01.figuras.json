@@ -1,0 +1,330 @@
+{
+  "schema": "tesis-rx02-c01-figures-1",
+  "runtime": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.4.2"
+  },
+  "common_axes": {
+    "time_s": [
+      0,
+      30
+    ],
+    "tone_index": [
+      -32,
+      31
+    ],
+    "rssi_dBm": [
+      -56,
+      -47
+    ],
+    "amplitude": [
+      0,
+      15.243581084509133
+    ],
+    "profile": [
+      0,
+      18.910099258846788
+    ],
+    "sigma": [
+      0,
+      1.832106357981531
+    ],
+    "gap_ms": [
+      0,
+      550
+    ]
+  },
+  "figures": [
+    {
+      "path": "figures/rssi.svg",
+      "bytes": 56522,
+      "sha256": "5b6e6cd9155f8de1a42de76e85b3f7c9f25d0ada122879289b65a5eb9b9877d8",
+      "axes": [
+        {
+          "title": "RSSI por ventana · Vacío (E), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -56.0,
+            -47.0
+          ]
+        },
+        {
+          "title": "RSSI por ventana · Sentado (S), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -56.0,
+            -47.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/rssi.png",
+      "bytes": 56965,
+      "sha256": "2346efd708e5b4227ff84846cfc506feebaef452c03d494ab469a7fbc0d87692",
+      "axes": [
+        {
+          "title": "RSSI por ventana · Vacío (E), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -56.0,
+            -47.0
+          ]
+        },
+        {
+          "title": "RSSI por ventana · Sentado (S), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            -56.0,
+            -47.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/amplitud_lltf52.svg",
+      "bytes": 54426,
+      "sha256": "597e26cc829d986d3a521e318c46dbc887eae3c476f35e4ad56b1884163596ef",
+      "axes": [
+        {
+          "title": "Media por fila LLTF52 · Vacío (E), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            15.243581084509133
+          ]
+        },
+        {
+          "title": "Media por fila LLTF52 · Sentado (S), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            15.243581084509133
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/amplitud_lltf52.png",
+      "bytes": 65639,
+      "sha256": "432eace0dc2b9e699a6c6fdfbdf42e15a53d72a27e93f57ec9073228aa731845",
+      "axes": [
+        {
+          "title": "Media por fila LLTF52 · Vacío (E), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            15.243581084509133
+          ]
+        },
+        {
+          "title": "Media por fila LLTF52 · Sentado (S), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            15.243581084509133
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/perfil_lltf52.svg",
+      "bytes": 49415,
+      "sha256": "d60d647c9b665bc453375cf5dafb87a5709d9f7eae3b484cfd4418af13c1dd44",
+      "axes": [
+        {
+          "title": "Media ± σ temporal por tono LLTF52 · Vacío (E), declarado",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            18.910099258846788
+          ]
+        },
+        {
+          "title": "Media ± σ temporal por tono LLTF52 · Sentado (S), declarado",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            18.910099258846788
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/perfil_lltf52.png",
+      "bytes": 67597,
+      "sha256": "710b764c8637c85526bd179b7a197ff1ba8fd1542094635d6fbebc9c421040b6",
+      "axes": [
+        {
+          "title": "Media ± σ temporal por tono LLTF52 · Vacío (E), declarado",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            18.910099258846788
+          ]
+        },
+        {
+          "title": "Media ± σ temporal por tono LLTF52 · Sentado (S), declarado",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            18.910099258846788
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/variabilidad_lltf52.svg",
+      "bytes": 34180,
+      "sha256": "20daad91330105adabd0f0607a8b33db76dee8d47ef872cc88c24705fca9d427",
+      "axes": [
+        {
+          "title": "σ temporal por tono LLTF52 · Vacío (E), declarado",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            1.832106357981531
+          ]
+        },
+        {
+          "title": "σ temporal por tono LLTF52 · Sentado (S), declarado",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            1.832106357981531
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/variabilidad_lltf52.png",
+      "bytes": 64542,
+      "sha256": "753c0abcf904ecad0f87dc00864aba874d981d0601a961654d31b511be3fe986",
+      "axes": [
+        {
+          "title": "σ temporal por tono LLTF52 · Vacío (E), declarado",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            1.832106357981531
+          ]
+        },
+        {
+          "title": "σ temporal por tono LLTF52 · Sentado (S), declarado",
+          "xlim": [
+            -32.0,
+            31.0
+          ],
+          "ylim": [
+            0.0,
+            1.832106357981531
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/cobertura.svg",
+      "bytes": 55774,
+      "sha256": "cdf3b46daee9c0c3d2c97b3cbb55cd2e308790086e67cf912287fa64c6f5c6a2",
+      "axes": [
+        {
+          "title": "Huecos host incluidos bordes · Vacío (E), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            550.0
+          ]
+        },
+        {
+          "title": "Huecos host incluidos bordes · Sentado (S), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            550.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/cobertura.png",
+      "bytes": 74440,
+      "sha256": "5150c14592735e053a9a5db49da5dee59146de01acb4c044d2c981ebfe2fcfe4",
+      "axes": [
+        {
+          "title": "Huecos host incluidos bordes · Vacío (E), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            550.0
+          ]
+        },
+        {
+          "title": "Huecos host incluidos bordes · Sentado (S), declarado",
+          "xlim": [
+            0.0,
+            30.0
+          ],
+          "ylim": [
+            0.0,
+            550.0
+          ]
+        }
+      ]
+    }
+  ],
+  "summary_sha256": "9d3da6ec0a0199a96d61813322eda585dd45148d81d4dd9680e0eeb4d45e429d"
+}

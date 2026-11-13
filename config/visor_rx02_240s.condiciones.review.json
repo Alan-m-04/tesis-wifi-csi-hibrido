@@ -1,0 +1,16 @@
+{
+  "actor": "PENDIENTE",
+  "mounting_reference": "PENDIENTE",
+  "rx01_disconnected": null,
+  "environment": {
+    "occupancy": "PENDIENTE",
+    "movement": "PENDIENTE",
+    "geometry": "PENDIENTE",
+    "tx_power": "PENDIENTE",
+    "mounting_confirmation": "PENDIENTE",
+    "sound_practice_reference": "PENDIENTE",
+    "laptop_power_lid": "PENDIENTE",
+    "suspension_ac_battery": "PENDIENTE",
+    "serial_readers_absent": "PENDIENTE"
+  }
+}

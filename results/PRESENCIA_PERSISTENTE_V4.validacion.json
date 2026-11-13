@@ -1,0 +1,367 @@
+{
+  "schema": "tesis-presence-persistent-v4-verification-v1",
+  "verified_utc": "2026-10-28T00:31:02.095612+00:00",
+  "base_commit": "51246df4f288ede695b81f8eca8336820e6cb126",
+  "branch": "feat/campana-presencia-persistente-v4",
+  "protocol_defined_before_code": true,
+  "protocol_initial_snapshot": {
+    "path": "results/local/campana-persistente-v4/contrato-previo.md",
+    "bytes": 7719,
+    "sha256": "51c19901f5ed836ed01b8b360fd68631cd517e84ea39b6d4d7d007adf3468892"
+  },
+  "tests": {
+    "new_passed": 38,
+    "legacy_v1_v2_v3_passed": 90,
+    "total_passed": 128,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "bubblewrap": {
+    "attempted": true,
+    "succeeded": false,
+    "exit_code": 1,
+    "explicit_failure_preserved": true,
+    "direct_unittest_run_is_not_Bubblewrap_isolation": true
+  },
+  "preserved": {
+    "tracked_files_unchanged": 159,
+    "tracked_documents_intentionally_appended": [
+      "README.md",
+      "docs/ESTADO_INICIAL.md"
+    ],
+    "historical_files_unchanged": 598,
+    "v1_v2_v3_sources_and_results_changed": false,
+    "firmware_changed": false
+  },
+  "physical": {
+    "UART_opened": false,
+    "new_capture": false,
+    "detector_calibrated": false,
+    "firmware_changed": false,
+    "audibility_checked": false,
+    "authorization_current": false,
+    "transport_enabled": false
+  },
+  "synthetic_runs": {
+    "ensayo-dos-ventanas-validado": {
+      "integrity_ok": true,
+      "replay_ok": true,
+      "operations": 8050,
+      "fatal": null,
+      "runtime": {
+        "transport": "process_owned_PTY_only",
+        "synthetic_clock_speed": null,
+        "notifier": "synthetic_recording_only_no_audio",
+        "clock_kind": "SteppedFixtureClock",
+        "bubblewrap_isolation_claimed": false,
+        "audibility_verified": false,
+        "opens_per_receiver": {
+          "RX-01": 1,
+          "RX-02": 1
+        },
+        "close_attempts": {
+          "RX-01": 1,
+          "RX-02": 1
+        }
+      },
+      "windows": [
+        {
+          "id": "SYN-E",
+          "T0_ns": 60550000000,
+          "T1_ns": 90550000000,
+          "request_to_start_ns": 60300000000,
+          "rows": {
+            "RX-01": 300,
+            "RX-02": 300
+          },
+          "max_gap_ns": {
+            "RX-01": 100000000,
+            "RX-02": 100000000
+          },
+          "window_quality_ok": true,
+          "pilot_coverage_ok": true,
+          "declared_synthetic_label_ok": true
+        },
+        {
+          "id": "SYN-S",
+          "T0_ns": 160850000000,
+          "T1_ns": 190850000000,
+          "request_to_start_ns": 60300000000,
+          "rows": {
+            "RX-01": 300,
+            "RX-02": 300
+          },
+          "max_gap_ns": {
+            "RX-01": 100000000,
+            "RX-02": 100000000
+          },
+          "window_quality_ok": true,
+          "pilot_coverage_ok": true,
+          "declared_synthetic_label_ok": true
+        }
+      ],
+      "source_differences_from_final": [],
+      "source_difference_explanation": null,
+      "artifact_references": [
+        {
+          "path": "results/local/campana-persistente-v4/ensayo-dos-ventanas-validado/manifest.json",
+          "bytes": 1279,
+          "sha256": "2f0d412e287a38ab83b1f30b1266b677950e57ea55f3188939484004c84c0a3d"
+        },
+        {
+          "path": "results/local/campana-persistente-v4/ensayo-dos-ventanas-validado/provenance.json",
+          "bytes": 2094,
+          "sha256": "d1b56d31bc6760f45139c1df1797760fcbd73dd60bb132d1d576bd28f6d395fc"
+        },
+        {
+          "path": "results/local/campana-persistente-v4/ensayo-dos-ventanas-validado/summary.json",
+          "bytes": 812634,
+          "sha256": "0073659ad99306dac77cf6dc4c37cf7b5cb2c549796b8cbc8f32bf8b8ad72354"
+        },
+        {
+          "path": "results/local/campana-persistente-v4/ensayo-dos-ventanas-validado/close-receipt.json",
+          "bytes": 880,
+          "sha256": "fc9a38db7217ceeb930a0c8770395e37a86bd5ebe2625bdb91ca019049e9ab4c"
+        }
+      ]
+    },
+    "ensayo-nominal-definitivo": {
+      "integrity_ok": true,
+      "replay_ok": true,
+      "operations": 28723,
+      "fatal": null,
+      "runtime": {
+        "transport": "process_owned_PTY_only",
+        "synthetic_clock_speed": 1,
+        "notifier": "synthetic_recording_only_no_audio",
+        "clock_kind": "SyntheticClock",
+        "bubblewrap_isolation_claimed": false,
+        "audibility_verified": false,
+        "opens_per_receiver": {
+          "RX-01": 1,
+          "RX-02": 1
+        },
+        "close_attempts": {
+          "RX-01": 1,
+          "RX-02": 1
+        }
+      },
+      "windows": [
+        {
+          "id": "SYN-E",
+          "T0_ns": 60499414684,
+          "T1_ns": 90499414684,
+          "request_to_start_ns": 60258608746,
+          "rows": {
+            "RX-01": 295,
+            "RX-02": 295
+          },
+          "max_gap_ns": {
+            "RX-01": 116679021,
+            "RX-02": 116763330
+          },
+          "window_quality_ok": true,
+          "pilot_coverage_ok": true,
+          "declared_synthetic_label_ok": true
+        }
+      ],
+      "source_differences_from_final": [
+        "src/presence_v4_pty.py"
+      ],
+      "source_difference_explanation": "Only idempotent PTY fixture cleanup changed after this run; original source retained and final behavior covered by dedicated test.",
+      "artifact_references": [
+        {
+          "path": "results/local/campana-persistente-v4/ensayo-nominal-definitivo/manifest.json",
+          "bytes": 1277,
+          "sha256": "a26697f76eb2dce1717c45332fb5840030eb60fbc50658393b3d2730cac69592"
+        },
+        {
+          "path": "results/local/campana-persistente-v4/ensayo-nominal-definitivo/provenance.json",
+          "bytes": 2094,
+          "sha256": "dbfbdc1703d1613051fe34e327d9bec7919d8d6ce4dc3f4903b51bc2c00ef29a"
+        },
+        {
+          "path": "results/local/campana-persistente-v4/ensayo-nominal-definitivo/summary.json",
+          "bytes": 397949,
+          "sha256": "95cfc9139b9e567d6e65816174ed6f0580e3ab14e9f4583cd349bdccb2fa44f3"
+        },
+        {
+          "path": "results/local/campana-persistente-v4/ensayo-nominal-definitivo/close-receipt.json",
+          "bytes": 899,
+          "sha256": "3a4e63550e501e1a31b025c41f4eefc5868b6a066ab50915aa8e79e5ff0f8906"
+        }
+      ]
+    },
+    "operador-aborto-validado": {
+      "integrity_ok": true,
+      "replay_ok": true,
+      "operations": 13,
+      "fatal": "interrupt",
+      "runtime": {
+        "transport": "process_owned_PTY_only",
+        "synthetic_clock_speed": 1,
+        "notifier": "synthetic_recording_only_no_audio",
+        "clock_kind": "SyntheticClock",
+        "bubblewrap_isolation_claimed": false,
+        "audibility_verified": false,
+        "opens_per_receiver": {
+          "RX-01": 1,
+          "RX-02": 1
+        },
+        "close_attempts": {
+          "RX-01": 1,
+          "RX-02": 1
+        }
+      },
+      "windows": [],
+      "source_differences_from_final": [],
+      "source_difference_explanation": null,
+      "artifact_references": [
+        {
+          "path": "results/local/campana-persistente-v4/operador-aborto-validado/manifest.json",
+          "bytes": 1263,
+          "sha256": "4c4898de52f26f7492bc42a39f529d08096dcd97b2d85eac1929cf7f316f9b0d"
+        },
+        {
+          "path": "results/local/campana-persistente-v4/operador-aborto-validado/provenance.json",
+          "bytes": 2094,
+          "sha256": "d1b56d31bc6760f45139c1df1797760fcbd73dd60bb132d1d576bd28f6d395fc"
+        },
+        {
+          "path": "results/local/campana-persistente-v4/operador-aborto-validado/summary.json",
+          "bytes": 2188,
+          "sha256": "a08070d99d3aae947c7d23849ace082b4e27ee83652f0daeaeb6c487feb9732b"
+        },
+        {
+          "path": "results/local/campana-persistente-v4/operador-aborto-validado/close-receipt.json",
+          "bytes": 869,
+          "sha256": "5ed5cbfa5d5e86eaa96d6847b35d585d84ab57e3a3fe26cc0f087958af312754"
+        }
+      ]
+    }
+  },
+  "local_links_checked": 67,
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 12912,
+      "sha256": "4c2ff3ea4bdfbd5447e1f8596d9444ecd743d8904917b291a88414f9ba803976"
+    },
+    {
+      "path": "config/campana_presencia_v4.template.json",
+      "bytes": 896,
+      "sha256": "ca79ca2d5c6c942154f7bc67ffa5497e385187176579ed3ff1e3888041c27159"
+    },
+    {
+      "path": "docs/ESTADO_INICIAL.md",
+      "bytes": 21077,
+      "sha256": "44e8ff1bf8b28d844b7cb43b522603221d667b4b5f198c781e232d063ca04f6e"
+    },
+    {
+      "path": "docs/PLAN_REVISION_CAMPAÑA_PERSISTENTE_V4.md",
+      "bytes": 9676,
+      "sha256": "8f1b76f8ab3e98db9b3ed88ac6e56c1c34822dfaff655075add158a457896782"
+    },
+    {
+      "path": "docs/PROTOCOLO_PRESENCIA_PERSISTENTE_V4.md",
+      "bytes": 10300,
+      "sha256": "93a8928d7841d9ad4b1d43cdd87a31f9108ec5cd0b67e51f76b6873d4d6b91f0"
+    },
+    {
+      "path": "results/PRESENCIA_PERSISTENTE_V4.md",
+      "bytes": 8240,
+      "sha256": "6d9acdda14f647d2c7da6a3b95803df63a7f4f39f6b5d3f61fb9d658fa42ec1c"
+    },
+    {
+      "path": "src/persistent_presence_v4.py",
+      "bytes": 19316,
+      "sha256": "d49a13837de8a9e500367024ea9407a4914cac15badb9e3f3c8f3a6d25b75b81"
+    },
+    {
+      "path": "src/presence_v4_audio.py",
+      "bytes": 3098,
+      "sha256": "658c6fad43079c16d3ca3d5f8bd3a5324a5a9995be85d630165b406395571232"
+    },
+    {
+      "path": "src/presence_v4_journal.py",
+      "bytes": 8285,
+      "sha256": "7a1a62f04eef2f18bc80d44cc1218f821cc0fb88759f083dd782567ec6b5d08d"
+    },
+    {
+      "path": "src/presence_v4_pty.py",
+      "bytes": 10366,
+      "sha256": "7aa1288295d2cfe10e77c3a6c61104f1d2716ad9967c81842645939d47f4d7f5"
+    },
+    {
+      "path": "tests/test_persistent_presence_v4.py",
+      "bytes": 26427,
+      "sha256": "719618188f8286f2ee952d49b59e0d410cb04b60da4f7bce5a012eece4cb9358"
+    },
+    {
+      "path": "tools/campana_presencia_v4.py",
+      "bytes": 9957,
+      "sha256": "49e8d4e1cb2fbcccdb90f5743cfc9fac23370041d9aa3f0263eaedc6a96e7513"
+    },
+    {
+      "path": "tools/test_presence_v4.sh",
+      "bytes": 323,
+      "sha256": "f661f1643fa244e26b9bd29e0fad01efa5e746bd177fc31d3bda18bc1c86c4cf"
+    }
+  ],
+  "local_evidence": [
+    {
+      "path": "results/local/campana-persistente-v4/preservacion-antes.json",
+      "bytes": 17158,
+      "sha256": "26a3c48350a8610f5306fe2220695206d327eb000326c1342887da3e52cb8b76"
+    },
+    {
+      "path": "results/local/campana-persistente-v4/pruebas-verificadas.log",
+      "bytes": 7040,
+      "sha256": "624c754253bda1493fa8bc3f770a879d338a80eb171c55daa71a32b2d4f3df62"
+    },
+    {
+      "path": "results/local/campana-persistente-v4/regresion-v1-v2-v3.log",
+      "bytes": 16217,
+      "sha256": "911e9aa070697829f7ddcd2394187272d0dcd1910e613394d0f34391c9879a06"
+    },
+    {
+      "path": "results/local/campana-persistente-v4/bubblewrap.log",
+      "bytes": 210,
+      "sha256": "0cbac915c0ef2eecb93813c165d1a26c50c871d181752e5e55460df7989febef"
+    },
+    {
+      "path": "results/local/campana-persistente-v4/ensayo-dos-ventanas-validado.log",
+      "bytes": 154,
+      "sha256": "79c712af80e0f56c96d74f76951ffd865c98d0dcc940d6623be6e705c43dbf8d"
+    },
+    {
+      "path": "results/local/campana-persistente-v4/ensayo-nominal-definitivo.log",
+      "bytes": 154,
+      "sha256": "1c04c4b3969fd7bb77ae7bec57c023ef0ccc4cec7de284263169a481ff41ca44"
+    },
+    {
+      "path": "results/local/campana-persistente-v4/operador-aborto-validado.log",
+      "bytes": 827,
+      "sha256": "a3d7a9f93d385e78c3944c3cd8b5a0fd54c1521f2f7ca5ca4fb93ee163fe22cb"
+    },
+    {
+      "path": "results/local/campana-persistente-v4/pty-fuente-ensayo-nominal.py",
+      "bytes": 10102,
+      "sha256": "be7f523ca8d6c995b1e8f1be8e2036644a7d9e41120314c262edacf46116425d"
+    },
+    {
+      "path": "results/local/campana-persistente-v4/verificar_entrega_v4.py",
+      "bytes": 6303,
+      "sha256": "8fc64e71be38b36ba72f54959d663fd14190d1af21cbf91e7e3f7af4b2ea5519"
+    }
+  ],
+  "remaining_physical_checks": [
+    "initial fresh READY without reset/reopen",
+    "review/promote identified UART transport without flush/DTR/RTS changes",
+    "fixed mounting and operator exit timing",
+    "speaker audibility and cue discrimination",
+    "prospective coverage and partitions review",
+    "new explicit physical authorization"
+  ]
+}

@@ -1,0 +1,890 @@
+{
+  "schema": "tesis-controlled-dual-v3-offline-validation-v1",
+  "base_commit": "a3f10ea2bed354cebd1b3354f1fb30a69a646a2e",
+  "implementation_commit": "4b4b4116c35df2a75839453d3a71500715f1b655",
+  "branch": "feat/ventana-disponibilidad",
+  "protocol": "controlled_dual_v3",
+  "evidence_type": "synthetic_memory_private_PTY_and_read_only_regression",
+  "physical_UART_opened": false,
+  "physical_acquisitions": 0,
+  "firmware_changes": false,
+  "training": false,
+  "authorization_created_or_consumed": false,
+  "capture_authorization": "none",
+  "flow_drop_definition": "actual reader termination/failure before T1; late notification preserves actual stop time",
+  "max_gap_limit_ns": null,
+  "inherited_local_clock_delta_uint32_us_inclusive": [1, 10000000],
+  "campaign_model_suitability": "not_evaluated",
+  "tests": {
+    "python": 162,
+    "node": 33,
+    "total": 195,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_python_tests": 38,
+    "new_node_tests": 2,
+    "log": {
+      "path": "results/local/verificacion-ventana-disponibilidad/pruebas-finales-03.log",
+      "bytes": 33542,
+      "sha256": "2e4d063b264ffba171b3a0061320aa904ef3e378b71d445331a08df887fa9213"
+    },
+    "command": "./tools/test_offline.sh results/local/visualizacion-csi-entrega/canonical.json",
+    "test_commit_policy": "executed before commit; final source hashes match the committed implementation"
+  },
+  "development_notes": [
+    "Initial memory run: 13/14 passed; one assertion expected a one-row streak after a profile failure followed by a callback gap. The assertion was corrected to the gating requirement; protocol rejection was not relaxed.",
+    "An intermediate close-error mock also raised again in its destructor; changed the fixture to inject that error once. The original log is retained.",
+    "Review added fatal handling for conflicting READY/embedded ROM after accepted READY and for an actual pre-T0 reader stop notified late. Relevant suites and synthetic evidence were repeated after these changes; previous directories retained."
+  ],
+  "synthetic_source_hashes_verified": 54,
+  "tracked_source_sha256": {
+    "config/captura_dual_30s.template.json": "31ad4c7891a898b4cdcd89fe0431b4e737896abd7f63fd0afff7a5094905bc8d",
+    "config/captura_dual_v2_30s.template.json": "75206ea2e9f817a27ec7b672892769054d4ff6b64c889818d3ccc404112bfd79",
+    "config/captura_dual_v3_30s.template.json": "667050153edf41ff74d46ead1122bdd824785daafca23d98494bec60e66c6c2c",
+    "config/csi_esp32s3.json": "c39115ee2a789e8a8b3aa372528f869a6ac9fe5f92847b427ad4075d78f3c048",
+    "config/node_runtime.lock.json": "61fd6c00d6294c5203285105f2c9c28f815a88f0c505c22b45eafe9ca56e38c7",
+    "src/audit_availability.py": "e7b83876339677355e9ce430576a37b1d9106819763b043ccbbb2a618c065ab6",
+    "src/audit_bounded_stop.py": "cfb831916c4019f358ad2675e59f7aaa9ca5bb07ab370bd06f3fe51046d921d7",
+    "src/availability_window.py": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596",
+    "src/bounded_frame_reader.py": "beff59e37c4df07c7a07dc107b476929dc5ba94213a374170f9cf340bb4b30c4",
+    "src/canonical_csi.py": "59f1b1884efd4287b32257d8f8487d060da3202e4a196cb5e4c1992ce814b344",
+    "src/capture_csi.py": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+    "src/capture_csi_multi.py": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+    "src/controlled_capture.py": "0323ea6e5bcf7460b954080910751e973ed144de244bea1eb2ab0a7c87c5363b",
+    "src/controlled_capture_v3.py": "31efa9ab34f7acd02484993a9f4727f4a9cc4d1e45f80a093c50f1910eccdde1",
+    "src/controlled_protocol.py": "86f547f825094243e1500bcda507282c934b3daa0a3178c5558c7fa13ccaba78",
+    "src/csi_correspondence.py": "e1d9b820a5cb700641134c5a518ed01ead67ae98eac6f71ded9d1cfbf75a4980",
+    "src/diagnose_capture_boundaries.py": "7b306a51ad23287ad60a032a96fbefdb9143e49af323a4bb93bc4df36da6feba",
+    "src/offline_view.mjs": "2d947b421704e0b184cee2d604d993727dd873ebe5f58eb505bc8f6936d82100",
+    "src/preserving_serial.py": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+    "src/ruview_offline.mjs": "fdba37c9279253480edef11a2035fb3390e991f11d7fb5f6926e60b0e080428a",
+    "src/validate_capture.py": "b8a470600ee17473f37600fe8c8d70714e3cc21677a3bf2d1ab557dfa3f8aac0",
+    "tests/fixtures/ruview_record_parser.py": "3a95f7856254f8408ddb28a9580ca950cd3befd2d07bcd2bbf510bf283b3c1fd",
+    "tests/js/offline_view.test.mjs": "a3f9df2e37f660b06416f5cc697ada496c6534d9689034c1af336f1c748df98c",
+    "tests/js/real_reference.test.mjs": "0f676d4d97490c161e587522e48008798a372a4a3984122474ba2193b4e59113",
+    "tests/js/ruview_contract.test.mjs": "4bdda379b97a162935afbdf3abe98f2fdd0f518516da2ce879c0148dd47d6c90",
+    "tests/pty_dual_v2_fixture.py": "335bcca4d10045823a45676a148ec638f99f3a504fab2e5d2c12a6d5d77c608d",
+    "tests/pty_dual_v3_fixture.py": "82a195d426ca5ffe0d99cac4b9f139b78eb02aef582f67bf7fedc058d890158d",
+    "tests/test_availability_window.py": "fc0039e724e18b24b46136b944d15577cefe9b050924aea9bedcf47488116bee",
+    "tests/test_boundary_diagnostic.py": "9294ca5a85c2938e730f296add971309e54b3843f667c1278a1db2f252262cba",
+    "tests/test_canonical_csi.py": "f7351a6c12bf7ce5134305e76c7b613dcbb10bfed79d18acae85925d86c97f64",
+    "tests/test_capture_boundaries.py": "2651affd81da83c13b940b448b1000389baa4f4806bb945de12f4f536cab076f",
+    "tests/test_capture_csi_multi.py": "339ba29ca1dbdce8dec869872eaa9c3da87e9f120f7dbc2d7e7140960b4d433e",
+    "tests/test_capture_preparation.py": "25bfe21b44c8ea8371a326b5410dbcac9de5cb1889a387df70a0e46ca9d9dcff",
+    "tests/test_controlled_v2.py": "6e1237aeffe484ae7593766e106d9b83748f0f2cba123bcb6e2e0faf3f404163",
+    "tests/test_controlled_v3.py": "2d1da9c91309ed196f6a06892a74a51a1a9c95c612d07b0a418dd5173b50fd5e",
+    "tests/test_csi_correspondence.py": "1c7c8c7a70b153ca0e571016a340474637b35673c06721499016f9df6b65f36c",
+    "tests/test_physical_reference.py": "b506bd3adbac4a11108e397c2d1c2f01c90d2b8437566dd53fd3748f2cb63804",
+    "tests/test_validate_capture.py": "28fc69127f0bf5406a642e1a97ddb2e73f0c10c0a513ea8cf354644ce90847ab",
+    "tools/analizar_captura_controlada.py": "9555f96480ed504b798ba08e122491fa9fda1731de53eed1d48d6d6e7d8fbd33",
+    "tools/audit_csi_ruview.py": "4ce2781f2964a43a6ccf52b7bcaed6137223784fa4209c89eede5602ec5da272",
+    "tools/build_firmware.sh": "f4c513c9360802e6ff8068ec59d90ff7382d383dd31ef0180eab93e33efeea10",
+    "tools/build_offline_bundle.py": "825e5bb2699bb705fdef6eb801c67299aa4184f0c4ac2ff770458a474f91b056",
+    "tools/captura_dual_controlada.py": "b8ed8196945562c780260c152f069763c35c4b64d2d781d72dea40fb68c2b91b",
+    "tools/check_offline_browser.py": "c65aa1e60092ce18140481ab0917466fe467549dcd2e99fc6092b145c2a02ef7",
+    "tools/consume_canonical.mjs": "e47d28ba07c6c1f55918edd54c17020ff8ab78cf84376ecfbb8164bb417c69a8",
+    "tools/diagnosticar_limites_captura.py": "f486fc7c432f23d8e3fb2883c0933d530ebbf30beb60ed3e0cdffd31b4b14d1a",
+    "tools/ensayar_controlled_v2.py": "a53fda2ff6768901712c6cfc803ba713304c9f4e91c6e43a86d69a06e023982d",
+    "tools/ensayar_controlled_v3.py": "70403dd03b2dfa9dba37f72dc2069744379abede2fcd139fee846f9405f57d83",
+    "tools/offline_sandbox.sh": "c366474b5a406c501aca5f2f5adf706ae3ebab4e0184941b8caaf76e0cab68d6",
+    "tools/prepare_node.py": "f96275def17a06f86e903e3840c9f6f8ca410a35aa0f1e6b745b40ca7c886f50",
+    "tools/test_base.sh": "fc7ae07b70cabebf2375e900bede56465a74535ba5a01ffae85b62769789c831",
+    "tools/test_offline.sh": "19c3fab527ce8671250d55912049e9587ed2f7766f93c23610278498a6188fbe"
+  },
+  "synthetic_evidence": {
+    "path": "results/local/verificacion-ventana-disponibilidad/ensayo-03/synthetic-results.json",
+    "bytes": 122080,
+    "sha256": "e4e12e2067d532881d5e08283e8beb54a4fd688a5093fd87e6fb939d79a08654"
+  },
+  "synthetic_runs": {
+    "accepted-30s": {
+      "evidence_type": "synthetic_fixture",
+      "returncode": 0,
+      "all_ports_closed": true,
+      "writer_errors": [],
+      "nominal_seconds": 30,
+      "effective_wait_ns": "10000000000",
+      "source_directory": "results/local/verificacion-ventana-disponibilidad/ensayo-03/accepted-30s",
+      "source_bundle_files_verified": 17,
+      "source_bundle": {
+        "path": "results/local/verificacion-ventana-disponibilidad/ensayo-03/accepted-30s/bundle-manifest.json",
+        "bytes": 2753,
+        "sha256": "d1aca4f78e07dee5661cb3235d9f1293ecf062cbf0ad64f003e623a014886336"
+      },
+      "connection_full": {
+        "quality_ok": true,
+        "status": "conforme",
+        "integrity_ok": true,
+        "format_ok": true,
+        "complete_rows_quality_ok": true,
+        "stop_quality_ok": true
+      },
+      "experimental_window": {
+        "quality_ok": true,
+        "status": "conforme",
+        "T0_ns": "17032045220056",
+        "T1_ns": "17062045220056",
+        "integrity_ok": true,
+        "shared_prerequisites_ok": true,
+        "availability": {
+          "activation_ok": true,
+          "A_ns": "17032038127842",
+          "D_ns": "17042038127842",
+          "timed_out": false,
+          "fatal": null,
+          "activation_conflicts": []
+        },
+        "format_continuity_ok": true,
+        "coverage_minimum_ok": true,
+        "stop_quality_ok": true,
+        "complete_duration_observed": true,
+        "flow_drop_policy": "reader_termination_before_T1",
+        "max_gap_limit_ns": null,
+        "campaign_model_suitability": "not_evaluated"
+      },
+      "coordination_trace_ok": true,
+      "receivers": {
+        "RX-01": {
+          "complete_rows": 6,
+          "coverage": {
+            "minimum_rows_ok": true,
+            "included_rows": 2,
+            "first_ns": "17032115755900",
+            "last_ns": "17032155648521",
+            "start_gap_ns": "70535844",
+            "end_gap_ns": "29889571535",
+            "interior_gaps_ns": [
+              "39892621"
+            ],
+            "max_observed_gap_ns": "29889571535",
+            "max_gap_limit_ns": null,
+            "continuous_observation_claimed": false
+          },
+          "stop": {
+            "started_ns": "17032039783328",
+            "started_utc": "2026-10-25T23:47:44.883532+00:00",
+            "nominal_deadline_ns": "17062045220056",
+            "completion_deadline_ns": "17062295220056",
+            "max_completion_bytes": 65536,
+            "completion_started_ns": "17062045416008",
+            "last_read_returned_ns": "17062126869581",
+            "stop_reason": "lf_boundary",
+            "stopped_ns": "17062127216123",
+            "stopped_utc": "2026-10-25T23:48:14.970965+00:00",
+            "bytes_received": 5219,
+            "trailing_bytes": 0,
+            "completion_bytes": 726,
+            "lf_boundary_reached": true,
+            "last_return_within_budget": true
+          },
+          "integrity_ok": true,
+          "complete_rows_quality_ok": true
+        },
+        "RX-02": {
+          "complete_rows": 6,
+          "coverage": {
+            "minimum_rows_ok": true,
+            "included_rows": 2,
+            "first_ns": "17032116079235",
+            "last_ns": "17032155665864",
+            "start_gap_ns": "70859179",
+            "end_gap_ns": "29889554192",
+            "interior_gaps_ns": [
+              "39586629"
+            ],
+            "max_observed_gap_ns": "29889554192",
+            "max_gap_limit_ns": null,
+            "continuous_observation_claimed": false
+          },
+          "stop": {
+            "started_ns": "17032041069642",
+            "started_utc": "2026-10-25T23:47:44.884818+00:00",
+            "nominal_deadline_ns": "17062045220056",
+            "completion_deadline_ns": "17062295220056",
+            "max_completion_bytes": 65536,
+            "completion_started_ns": "17062045363846",
+            "last_read_returned_ns": "17062129436059",
+            "stop_reason": "lf_boundary",
+            "stopped_ns": "17062129687999",
+            "stopped_utc": "2026-10-25T23:48:14.973436+00:00",
+            "bytes_received": 5222,
+            "trailing_bytes": 0,
+            "completion_bytes": 726,
+            "lf_boundary_reached": true,
+            "last_return_within_budget": true
+          },
+          "integrity_ok": true,
+          "complete_rows_quality_ok": true
+        }
+      }
+    },
+    "connection-rejected-window-conforming": {
+      "evidence_type": "synthetic_fixture",
+      "returncode": 1,
+      "all_ports_closed": true,
+      "writer_errors": [],
+      "nominal_seconds": 0.16,
+      "effective_wait_ns": "700000000",
+      "source_directory": "results/local/verificacion-ventana-disponibilidad/ensayo-03/connection-rejected-window-conforming",
+      "source_bundle_files_verified": 17,
+      "source_bundle": {
+        "path": "results/local/verificacion-ventana-disponibilidad/ensayo-03/connection-rejected-window-conforming/bundle-manifest.json",
+        "bytes": 2746,
+        "sha256": "edf32a60f518423b32fb895dcbd61cf77c41911112f12ca05110bfa64f53bc96"
+      },
+      "connection_full": {
+        "quality_ok": false,
+        "status": "rechazada",
+        "integrity_ok": true,
+        "format_ok": false,
+        "complete_rows_quality_ok": true,
+        "stop_quality_ok": true
+      },
+      "experimental_window": {
+        "quality_ok": true,
+        "status": "conforme",
+        "T0_ns": "17062167528516",
+        "T1_ns": "17062327528516",
+        "integrity_ok": true,
+        "shared_prerequisites_ok": true,
+        "availability": {
+          "activation_ok": true,
+          "A_ns": "17062161430464",
+          "D_ns": "17062861430464",
+          "timed_out": false,
+          "fatal": null,
+          "activation_conflicts": []
+        },
+        "format_continuity_ok": true,
+        "coverage_minimum_ok": true,
+        "stop_quality_ok": true,
+        "complete_duration_observed": true,
+        "flow_drop_policy": "reader_termination_before_T1",
+        "max_gap_limit_ns": null,
+        "campaign_model_suitability": "not_evaluated"
+      },
+      "coordination_trace_ok": true,
+      "receivers": {
+        "RX-01": {
+          "complete_rows": 5,
+          "coverage": {
+            "minimum_rows_ok": true,
+            "included_rows": 2,
+            "first_ns": "17062223041661",
+            "last_ns": "17062275454453",
+            "start_gap_ns": "55513145",
+            "end_gap_ns": "52074063",
+            "interior_gaps_ns": [
+              "52412792"
+            ],
+            "max_observed_gap_ns": "55513145",
+            "max_gap_limit_ns": null,
+            "continuous_observation_claimed": false
+          },
+          "stop": {
+            "started_ns": "17062162099363",
+            "started_utc": "2026-10-25T23:48:15.005848+00:00",
+            "nominal_deadline_ns": "17062327528516",
+            "completion_deadline_ns": "17062577528516",
+            "max_completion_bytes": 65536,
+            "completion_started_ns": null,
+            "last_read_returned_ns": "17062275454453",
+            "stop_reason": "lf_boundary",
+            "stopped_ns": "17062327993265",
+            "stopped_utc": "2026-10-25T23:48:15.171745+00:00",
+            "bytes_received": 4384,
+            "trailing_bytes": 0,
+            "completion_bytes": 0,
+            "lf_boundary_reached": true,
+            "last_return_within_budget": true
+          },
+          "integrity_ok": true,
+          "complete_rows_quality_ok": true
+        },
+        "RX-02": {
+          "complete_rows": 5,
+          "coverage": {
+            "minimum_rows_ok": true,
+            "included_rows": 2,
+            "first_ns": "17062221791223",
+            "last_ns": "17062276720219",
+            "start_gap_ns": "54262707",
+            "end_gap_ns": "50808297",
+            "interior_gaps_ns": [
+              "54928996"
+            ],
+            "max_observed_gap_ns": "54928996",
+            "max_gap_limit_ns": null,
+            "continuous_observation_claimed": false
+          },
+          "stop": {
+            "started_ns": "17062163278735",
+            "started_utc": "2026-10-25T23:48:15.007043+00:00",
+            "nominal_deadline_ns": "17062327528516",
+            "completion_deadline_ns": "17062577528516",
+            "max_completion_bytes": 65536,
+            "completion_started_ns": null,
+            "last_read_returned_ns": "17062276720219",
+            "stop_reason": "lf_boundary",
+            "stopped_ns": "17062327749423",
+            "stopped_utc": "2026-10-25T23:48:15.171503+00:00",
+            "bytes_received": 4387,
+            "trailing_bytes": 0,
+            "completion_bytes": 0,
+            "lf_boundary_reached": true,
+            "last_return_within_budget": true
+          },
+          "integrity_ok": true,
+          "complete_rows_quality_ok": true
+        }
+      }
+    },
+    "late-error": {
+      "evidence_type": "synthetic_fixture",
+      "returncode": 1,
+      "all_ports_closed": true,
+      "writer_errors": [],
+      "nominal_seconds": 0.16,
+      "effective_wait_ns": "700000000",
+      "source_directory": "results/local/verificacion-ventana-disponibilidad/ensayo-03/late-error",
+      "source_bundle_files_verified": 17,
+      "source_bundle": {
+        "path": "results/local/verificacion-ventana-disponibilidad/ensayo-03/late-error/bundle-manifest.json",
+        "bytes": 2747,
+        "sha256": "98c6c8475ef2fe16a64b9a4412220a6f395a874842321f18260dfa5df61abcfe"
+      },
+      "connection_full": {
+        "quality_ok": false,
+        "status": "rechazada",
+        "integrity_ok": true,
+        "format_ok": false,
+        "complete_rows_quality_ok": false,
+        "stop_quality_ok": true
+      },
+      "experimental_window": {
+        "quality_ok": false,
+        "status": "rechazada",
+        "T0_ns": "17062355457663",
+        "T1_ns": "17062515457663",
+        "integrity_ok": true,
+        "shared_prerequisites_ok": true,
+        "availability": {
+          "activation_ok": false,
+          "A_ns": "17062348897537",
+          "D_ns": "17063048897537",
+          "timed_out": false,
+          "fatal": null,
+          "activation_conflicts": [
+            19
+          ]
+        },
+        "format_continuity_ok": true,
+        "coverage_minimum_ok": true,
+        "stop_quality_ok": true,
+        "complete_duration_observed": true,
+        "flow_drop_policy": "reader_termination_before_T1",
+        "max_gap_limit_ns": null,
+        "campaign_model_suitability": "not_evaluated"
+      },
+      "coordination_trace_ok": true,
+      "receivers": {
+        "RX-01": {
+          "complete_rows": 5,
+          "coverage": {
+            "minimum_rows_ok": true,
+            "included_rows": 2,
+            "first_ns": "17062409988731",
+            "last_ns": "17062462959598",
+            "start_gap_ns": "54531068",
+            "end_gap_ns": "52498065",
+            "interior_gaps_ns": [
+              "52970867"
+            ],
+            "max_observed_gap_ns": "54531068",
+            "max_gap_limit_ns": null,
+            "continuous_observation_claimed": false
+          },
+          "stop": {
+            "started_ns": "17062349672720",
+            "started_utc": "2026-10-25T23:48:15.193422+00:00",
+            "nominal_deadline_ns": "17062515457663",
+            "completion_deadline_ns": "17062765457663",
+            "max_completion_bytes": 65536,
+            "completion_started_ns": null,
+            "last_read_returned_ns": "17062462959598",
+            "stop_reason": "lf_boundary",
+            "stopped_ns": "17062515713165",
+            "stopped_utc": "2026-10-25T23:48:15.359468+00:00",
+            "bytes_received": 4381,
+            "trailing_bytes": 0,
+            "completion_bytes": 0,
+            "lf_boundary_reached": true,
+            "last_return_within_budget": true
+          },
+          "integrity_ok": true,
+          "complete_rows_quality_ok": false
+        },
+        "RX-02": {
+          "complete_rows": 5,
+          "coverage": {
+            "minimum_rows_ok": true,
+            "included_rows": 2,
+            "first_ns": "17062409705244",
+            "last_ns": "17062462811143",
+            "start_gap_ns": "54247581",
+            "end_gap_ns": "52646520",
+            "interior_gaps_ns": [
+              "53105899"
+            ],
+            "max_observed_gap_ns": "54247581",
+            "max_gap_limit_ns": null,
+            "continuous_observation_claimed": false
+          },
+          "stop": {
+            "started_ns": "17062351268436",
+            "started_utc": "2026-10-25T23:48:15.195017+00:00",
+            "nominal_deadline_ns": "17062515457663",
+            "completion_deadline_ns": "17062765457663",
+            "max_completion_bytes": 65536,
+            "completion_started_ns": null,
+            "last_read_returned_ns": "17062462811143",
+            "stop_reason": "lf_boundary",
+            "stopped_ns": "17062515904608",
+            "stopped_utc": "2026-10-25T23:48:15.359656+00:00",
+            "bytes_received": 4367,
+            "trailing_bytes": 0,
+            "completion_bytes": 0,
+            "lf_boundary_reached": true,
+            "last_return_within_budget": true
+          },
+          "integrity_ok": true,
+          "complete_rows_quality_ok": true
+        }
+      }
+    },
+    "timeout-10s-no-data": {
+      "evidence_type": "synthetic_fixture",
+      "returncode": 1,
+      "all_ports_closed": true,
+      "writer_errors": [],
+      "nominal_seconds": 0.16,
+      "effective_wait_ns": "10000000000",
+      "source_directory": "results/local/verificacion-ventana-disponibilidad/ensayo-03/timeout-10s-no-data",
+      "source_bundle_files_verified": 17,
+      "source_bundle": {
+        "path": "results/local/verificacion-ventana-disponibilidad/ensayo-03/timeout-10s-no-data/bundle-manifest.json",
+        "bytes": 2730,
+        "sha256": "e47fdecf04eac201205353d2412958fb760d7f1746cf04c44b07c402c30321c8"
+      },
+      "connection_full": {
+        "quality_ok": false,
+        "status": "rechazada",
+        "integrity_ok": true,
+        "format_ok": true,
+        "complete_rows_quality_ok": false,
+        "stop_quality_ok": true
+      },
+      "experimental_window": {
+        "quality_ok": false,
+        "status": "no_iniciada",
+        "T0_ns": null,
+        "T1_ns": null,
+        "integrity_ok": true,
+        "shared_prerequisites_ok": true,
+        "availability": {
+          "activation_ok": false,
+          "A_ns": "17062529808458",
+          "D_ns": "17072529808458",
+          "timed_out": true,
+          "fatal": null,
+          "activation_conflicts": []
+        },
+        "format_continuity_ok": true,
+        "coverage_minimum_ok": false,
+        "stop_quality_ok": true,
+        "complete_duration_observed": false,
+        "flow_drop_policy": "reader_termination_before_T1",
+        "max_gap_limit_ns": null,
+        "campaign_model_suitability": "not_evaluated"
+      },
+      "coordination_trace_ok": true,
+      "receivers": {
+        "RX-01": {
+          "complete_rows": 0,
+          "coverage": {
+            "minimum_rows_ok": false,
+            "included_rows": 0,
+            "first_ns": null,
+            "last_ns": null,
+            "start_gap_ns": null,
+            "end_gap_ns": null,
+            "interior_gaps_ns": [],
+            "max_observed_gap_ns": null,
+            "max_gap_limit_ns": null,
+            "continuous_observation_claimed": false
+          },
+          "stop": {
+            "started_ns": "17062530244226",
+            "started_utc": "2026-10-25T23:48:15.373993+00:00",
+            "nominal_deadline_ns": "17072529808458",
+            "completion_deadline_ns": "17072779808458",
+            "max_completion_bytes": 65536,
+            "completion_started_ns": null,
+            "last_read_returned_ns": null,
+            "stop_reason": "lf_boundary",
+            "stopped_ns": "17072575210850",
+            "stopped_utc": "2026-10-25T23:48:25.418962+00:00",
+            "bytes_received": 0,
+            "trailing_bytes": 0,
+            "completion_bytes": 0,
+            "lf_boundary_reached": true,
+            "last_return_within_budget": true
+          },
+          "integrity_ok": true,
+          "complete_rows_quality_ok": false
+        },
+        "RX-02": {
+          "complete_rows": 0,
+          "coverage": {
+            "minimum_rows_ok": false,
+            "included_rows": 0,
+            "first_ns": null,
+            "last_ns": null,
+            "start_gap_ns": null,
+            "end_gap_ns": null,
+            "interior_gaps_ns": [],
+            "max_observed_gap_ns": null,
+            "max_gap_limit_ns": null,
+            "continuous_observation_claimed": false
+          },
+          "stop": {
+            "started_ns": "17062530679011",
+            "started_utc": "2026-10-25T23:48:15.374428+00:00",
+            "nominal_deadline_ns": "17072529808458",
+            "completion_deadline_ns": "17072779808458",
+            "max_completion_bytes": 65536,
+            "completion_started_ns": null,
+            "last_read_returned_ns": null,
+            "stop_reason": "lf_boundary",
+            "stopped_ns": "17072575067722",
+            "stopped_utc": "2026-10-25T23:48:25.418821+00:00",
+            "bytes_received": 0,
+            "trailing_bytes": 0,
+            "completion_bytes": 0,
+            "lf_boundary_reached": true,
+            "last_return_within_budget": true
+          },
+          "integrity_ok": true,
+          "complete_rows_quality_ok": false
+        }
+      }
+    }
+  },
+  "browser_views_verified": 12,
+  "browser_results": {
+    "accepted": {
+      "analysis_returncode": 0,
+      "browser_returncode": 0,
+      "bundle": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-accepted/visualization",
+      "synthetic_heading_checked": true,
+      "views": {
+        "RX-01/LLTF": {
+          "connection": "Conexión completa: conforme",
+          "window": "Ventana experimental: conforme",
+          "coverage": "RX-01: 2 filas incluidas · cobertura mínima: cumple · hueco máximo observado: 29889571535 ns · sin umbral máximo de silencio · T0 17032045220056 · T1 17062045220056",
+          "max": "5",
+          "sigmaPoints": 52,
+          "sample": "Fila CSV 7 · callback 5 · UTC lectura 2026-10-25T23:48:14.970618+00:00 · host_ns 17062126869581 · RX_us 1100000 · inclusión: at_or_after_deadline · dentro de ventana experimental: no",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-accepted/visualization/browser-qa/rx-01-lltf.png",
+            "bytes": 228845,
+            "sha256": "b8551620666f0f0fe4d230e293f705cae6fb3bc599607b21f9beeff0330d2b20"
+          }
+        },
+        "RX-01/HT-LTF": {
+          "connection": "Conexión completa: conforme",
+          "window": "Ventana experimental: conforme",
+          "coverage": "RX-01: 2 filas incluidas · cobertura mínima: cumple · hueco máximo observado: 29889571535 ns · sin umbral máximo de silencio · T0 17032045220056 · T1 17062045220056",
+          "max": "5",
+          "sigmaPoints": 56,
+          "sample": "Fila CSV 7 · callback 5 · UTC lectura 2026-10-25T23:48:14.970618+00:00 · host_ns 17062126869581 · RX_us 1100000 · inclusión: at_or_after_deadline · dentro de ventana experimental: no",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-accepted/visualization/browser-qa/rx-01-ht-ltf.png",
+            "bytes": 230579,
+            "sha256": "42bb87a81a9c2300b385c26d34c590f7eef81e1cd1a7469481f23dfb0827b3ed"
+          }
+        },
+        "RX-02/LLTF": {
+          "connection": "Conexión completa: conforme",
+          "window": "Ventana experimental: conforme",
+          "coverage": "RX-02: 2 filas incluidas · cobertura mínima: cumple · hueco máximo observado: 29889554192 ns · sin umbral máximo de silencio · T0 17032045220056 · T1 17062045220056",
+          "max": "5",
+          "sigmaPoints": 52,
+          "sample": "Fila CSV 7 · callback 5 · UTC lectura 2026-10-25T23:48:14.973184+00:00 · host_ns 17062129436059 · RX_us 1100000 · inclusión: at_or_after_deadline · dentro de ventana experimental: no",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-accepted/visualization/browser-qa/rx-02-lltf.png",
+            "bytes": 229095,
+            "sha256": "ec3195426930d69bb5ac7e05075b6353ee9a6461ca09e95bb761c19b1d8f9418"
+          }
+        },
+        "RX-02/HT-LTF": {
+          "connection": "Conexión completa: conforme",
+          "window": "Ventana experimental: conforme",
+          "coverage": "RX-02: 2 filas incluidas · cobertura mínima: cumple · hueco máximo observado: 29889554192 ns · sin umbral máximo de silencio · T0 17032045220056 · T1 17062045220056",
+          "max": "5",
+          "sigmaPoints": 56,
+          "sample": "Fila CSV 7 · callback 5 · UTC lectura 2026-10-25T23:48:14.973184+00:00 · host_ns 17062129436059 · RX_us 1100000 · inclusión: at_or_after_deadline · dentro de ventana experimental: no",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-accepted/visualization/browser-qa/rx-02-ht-ltf.png",
+            "bytes": 231023,
+            "sha256": "0032b5f5090adec2e9361870d07499d0407406ec58209bdd2a765f5ed1998a9f"
+          }
+        }
+      },
+      "original_files_verified": 10,
+      "artifacts": {
+        "canonical.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-accepted/visualization/canonical.json",
+          "bytes": 160318,
+          "sha256": "ccb2cd72d049470942c878ef0d747b3d8e7cac0121d6434008b97a808f8d72c3"
+        },
+        "ruview-consumer.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-accepted/visualization/ruview-consumer.json",
+          "bytes": 42022,
+          "sha256": "659e996c4dafd47bbc66606e6bd7fbeb1eaa0899e183aa6f9bf3554cae6502ac"
+        },
+        "index.html": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-accepted/visualization/index.html",
+          "bytes": 216143,
+          "sha256": "16231719caede13ead4b197659ff8267b3228521b5f21b28c8a156f9bc0b731a"
+        },
+        "validation.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-accepted/visualization/validation.json",
+          "bytes": 1540,
+          "sha256": "141b5acb5df0b1115e2ee6d2b8c8a3f4a2d64cd3fea0146ce292e8ee829f55c7"
+        },
+        "browser-qa/validation.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-accepted/visualization/browser-qa/validation.json",
+          "bytes": 6852,
+          "sha256": "c0a66d0dac86325230e4a6cec70526d0e49a36de0abeaf6f360d0e02dbe43d29"
+        }
+      }
+    },
+    "scopes": {
+      "analysis_returncode": 1,
+      "browser_returncode": 0,
+      "bundle": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-scopes/visualization",
+      "synthetic_heading_checked": true,
+      "views": {
+        "RX-01/LLTF": {
+          "connection": "Conexión completa: rechazada",
+          "window": "Ventana experimental: conforme",
+          "coverage": "RX-01: 2 filas incluidas · cobertura mínima: cumple · hueco máximo observado: 55513145 ns · sin umbral máximo de silencio · T0 17062167528516 · T1 17062327528516",
+          "max": "4",
+          "sigmaPoints": 52,
+          "sample": "Fila CSV 6 · callback 4 · UTC lectura 2026-10-25T23:48:15.119205+00:00 · host_ns 17062275454453 · RX_us 900000 · inclusión: included · dentro de ventana experimental: sí",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-scopes/visualization/browser-qa/rx-01-lltf.png",
+            "bytes": 236612,
+            "sha256": "06a76341a0676fd573dd67ecf5419b099101d7a4c469a673a6609bdf33421145"
+          }
+        },
+        "RX-01/HT-LTF": {
+          "connection": "Conexión completa: rechazada",
+          "window": "Ventana experimental: conforme",
+          "coverage": "RX-01: 2 filas incluidas · cobertura mínima: cumple · hueco máximo observado: 55513145 ns · sin umbral máximo de silencio · T0 17062167528516 · T1 17062327528516",
+          "max": "4",
+          "sigmaPoints": 56,
+          "sample": "Fila CSV 6 · callback 4 · UTC lectura 2026-10-25T23:48:15.119205+00:00 · host_ns 17062275454453 · RX_us 900000 · inclusión: included · dentro de ventana experimental: sí",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-scopes/visualization/browser-qa/rx-01-ht-ltf.png",
+            "bytes": 238599,
+            "sha256": "24eaf308febfc095979f1f86966079b46678db3e82662c8a9dfaff512101fd6e"
+          }
+        },
+        "RX-02/LLTF": {
+          "connection": "Conexión completa: rechazada",
+          "window": "Ventana experimental: conforme",
+          "coverage": "RX-02: 2 filas incluidas · cobertura mínima: cumple · hueco máximo observado: 54928996 ns · sin umbral máximo de silencio · T0 17062167528516 · T1 17062327528516",
+          "max": "4",
+          "sigmaPoints": 52,
+          "sample": "Fila CSV 6 · callback 4 · UTC lectura 2026-10-25T23:48:15.120473+00:00 · host_ns 17062276720219 · RX_us 900000 · inclusión: included · dentro de ventana experimental: sí",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-scopes/visualization/browser-qa/rx-02-lltf.png",
+            "bytes": 237127,
+            "sha256": "f1ffd4fa32ce5cc8b11913c6070c2194512095c4c0286c62a3e7874881f68371"
+          }
+        },
+        "RX-02/HT-LTF": {
+          "connection": "Conexión completa: rechazada",
+          "window": "Ventana experimental: conforme",
+          "coverage": "RX-02: 2 filas incluidas · cobertura mínima: cumple · hueco máximo observado: 54928996 ns · sin umbral máximo de silencio · T0 17062167528516 · T1 17062327528516",
+          "max": "4",
+          "sigmaPoints": 56,
+          "sample": "Fila CSV 6 · callback 4 · UTC lectura 2026-10-25T23:48:15.120473+00:00 · host_ns 17062276720219 · RX_us 900000 · inclusión: included · dentro de ventana experimental: sí",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-scopes/visualization/browser-qa/rx-02-ht-ltf.png",
+            "bytes": 239483,
+            "sha256": "d8ba7c27efedea2c8c21a2428e165f635237fd230a05c9161564774fce5b3880"
+          }
+        }
+      },
+      "original_files_verified": 10,
+      "artifacts": {
+        "canonical.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-scopes/visualization/canonical.json",
+          "bytes": 139053,
+          "sha256": "9f855e18e33a0783db5e9602174d3e0bb78e38edd50dfdfecabb3951ff7580f3"
+        },
+        "ruview-consumer.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-scopes/visualization/ruview-consumer.json",
+          "bytes": 35284,
+          "sha256": "e7ed9dc76e317e76e1a6a8143d3ce84fc38d3d4f64b31a4e8b485057617d8d3b"
+        },
+        "index.html": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-scopes/visualization/index.html",
+          "bytes": 188166,
+          "sha256": "4bcd8d8e91f301534bfc2033cc2e7195b32ac0f1728ceb2bb566ca5548b310fd"
+        },
+        "validation.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-scopes/visualization/validation.json",
+          "bytes": 1546,
+          "sha256": "1a77fb37eab5b55ba94e9a4c6331e5ce6a38137f1b5e3114df928e8ded61b88a"
+        },
+        "browser-qa/validation.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-scopes/visualization/browser-qa/validation.json",
+          "bytes": 6814,
+          "sha256": "e53b206b855fc2e0f9fbd359094b64b417bed586b0ab81fa77020e902b488214"
+        }
+      }
+    },
+    "timeout": {
+      "analysis_returncode": 1,
+      "browser_returncode": 0,
+      "bundle": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-timeout/visualization",
+      "synthetic_heading_checked": true,
+      "views": {
+        "RX-01/LLTF": {
+          "connection": "Conexión completa: rechazada",
+          "window": "Ventana experimental: no_iniciada",
+          "coverage": "RX-01: 0 filas incluidas · cobertura mínima: no cumple · hueco máximo observado: no evaluable ns · sin umbral máximo de silencio · T0 no iniciado · T1 no iniciado",
+          "max": "0",
+          "sigmaPoints": 0,
+          "sample": "Sin muestras representables. No se rellenan matrices.",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-timeout/visualization/browser-qa/rx-01-lltf.png",
+            "bytes": 140516,
+            "sha256": "d75a3c9d29b1d53f0b9e929aade344d1564dc421f48634993058793d21635178"
+          }
+        },
+        "RX-01/HT-LTF": {
+          "connection": "Conexión completa: rechazada",
+          "window": "Ventana experimental: no_iniciada",
+          "coverage": "RX-01: 0 filas incluidas · cobertura mínima: no cumple · hueco máximo observado: no evaluable ns · sin umbral máximo de silencio · T0 no iniciado · T1 no iniciado",
+          "max": "0",
+          "sigmaPoints": 0,
+          "sample": "Sin muestras representables. No se rellenan matrices.",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-timeout/visualization/browser-qa/rx-01-ht-ltf.png",
+            "bytes": 140554,
+            "sha256": "d769267456eb3ab03ff24446b9f9aa85a92deb830182a0632a678c7d930386d3"
+          }
+        },
+        "RX-02/LLTF": {
+          "connection": "Conexión completa: rechazada",
+          "window": "Ventana experimental: no_iniciada",
+          "coverage": "RX-02: 0 filas incluidas · cobertura mínima: no cumple · hueco máximo observado: no evaluable ns · sin umbral máximo de silencio · T0 no iniciado · T1 no iniciado",
+          "max": "0",
+          "sigmaPoints": 0,
+          "sample": "Sin muestras representables. No se rellenan matrices.",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-timeout/visualization/browser-qa/rx-02-lltf.png",
+            "bytes": 141182,
+            "sha256": "4cd18e2eaeba58008e345aa3a373fc4a7a4bde92f1c23f3ff82f7c244877eb26"
+          }
+        },
+        "RX-02/HT-LTF": {
+          "connection": "Conexión completa: rechazada",
+          "window": "Ventana experimental: no_iniciada",
+          "coverage": "RX-02: 0 filas incluidas · cobertura mínima: no cumple · hueco máximo observado: no evaluable ns · sin umbral máximo de silencio · T0 no iniciado · T1 no iniciado",
+          "max": "0",
+          "sigmaPoints": 0,
+          "sample": "Sin muestras representables. No se rellenan matrices.",
+          "screenshot": {
+            "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-timeout/visualization/browser-qa/rx-02-ht-ltf.png",
+            "bytes": 141221,
+            "sha256": "9f2a2e7a84bc4aac094d15ddd16894c4376224970ed5f4104639322b236a1297"
+          }
+        }
+      },
+      "original_files_verified": 10,
+      "artifacts": {
+        "canonical.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-timeout/visualization/canonical.json",
+          "bytes": 17762,
+          "sha256": "75931d9f85d05124aca6a2cc25aaada5530c6c1c48c9f57eb429cb7e2aa3ac1b"
+        },
+        "ruview-consumer.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-timeout/visualization/ruview-consumer.json",
+          "bytes": 1248,
+          "sha256": "2ac9cfa3b74cd59c54141da7bf345fab84647f4611a1212487602289ee7a774e"
+        },
+        "index.html": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-timeout/visualization/index.html",
+          "bytes": 32821,
+          "sha256": "f959a284af160be534add31ab3543ae399f190cd1527bccb80a98384f393979e"
+        },
+        "validation.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-timeout/visualization/validation.json",
+          "bytes": 1515,
+          "sha256": "a302c3828d7c72f843460a0a5871a3c80ee9985348f35937f9fc75da95ca2bb6"
+        },
+        "browser-qa/validation.json": {
+          "path": "results/local/verificacion-ventana-disponibilidad/analisis-entrega-timeout/visualization/browser-qa/validation.json",
+          "bytes": 5063,
+          "sha256": "922e044a57c828a1586697a9d722ee363d4592e979a86e52d160c48c865fbe2a"
+        }
+      }
+    }
+  },
+  "preservation": {
+    "pinned_previous_files": 139,
+    "all_pinned_unchanged": true,
+    "historical_audits": {
+      "v1": {
+        "audit_exactly_unchanged": true,
+        "quality_ok": false,
+        "valid_rows": {
+          "RX-01": 145,
+          "RX-02": 146
+        },
+        "retrospective_v3_window_created": false
+      },
+      "v2": {
+        "audit_exactly_unchanged": true,
+        "quality_ok": false,
+        "valid_rows": {
+          "RX-01": 147,
+          "RX-02": 147
+        },
+        "retrospective_v3_window_created": false
+      }
+    },
+    "v1_visualization_published_hashes_matched": 3,
+    "v1_visualization_originals_matched": 9,
+    "v1_visualization_validation_snapshot_exact": true,
+    "synthetic_final_source_hashes_matched": 54
+  },
+  "preservation_evidence": {
+    "path": "results/local/verificacion-ventana-disponibilidad/preservacion-entrega.json",
+    "bytes": 701,
+    "sha256": "5f51c699dc427be50bb8885aa36a6d6f5ed77901c6a7a7c009132ab34b476248"
+  },
+  "prepared_command": ".venv/bin/python -B tools/captura_dual_controlada.py --plan config/captura_dual_v3_30s.template.json",
+  "prepared_result": {
+    "path": "results/local/verificacion-ventana-disponibilidad/comando-entrega.json",
+    "bytes": 1226,
+    "sha256": "f85cf49ff0d08b9af2348dbbafbcb48bf54b421f1ebcafcbe07f5aee4e321c08"
+  }
+}

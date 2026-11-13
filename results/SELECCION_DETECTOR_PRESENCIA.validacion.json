@@ -1,0 +1,67 @@
+{
+  "schema": "tesis-presence-selection-verification-v1",
+  "verified_utc": "2026-10-26T03:25:56.743190+00:00",
+  "repository_base_commit": "f6829e18a1bccab46a7eca7361849e9d9c89bf2c",
+  "branch": "feat/ventana-disponibilidad",
+  "ruview_commit": "fefb0f918eefa7db6daef8cc83787fc7d6f74187",
+  "change_scope": "Documentation and source/hash inventory only; no executable acquisition/detector/firmware changes.",
+  "checks": {
+    "upstream_source_git_blob_bytes_sha256_line_counts": 31,
+    "upstream_checkout_clean": true,
+    "local_source_bytes_sha256": 9,
+    "generated_sdkconfigs_sha256": 2,
+    "pyserial_3_5_posix_source_sha256": true,
+    "preserved_files_sha256": 380,
+    "local_link_destinations": 57,
+    "pinned_upstream_link_paths_and_line_ranges": 17,
+    "published_reproduction_command": "31 fuentes upstream y 9 locales coinciden; no se ejecutó detector.",
+    "git_diff_check": true
+  },
+  "initial_verification_issue": "First scope check parsed Git quoted non-ASCII path as literal; corrected verifier to git diff --name-only -z. No source/hash/link or preserved input failed; final checks pass.",
+  "inventory": {
+    "path": "docs/DETECTOR_PRESENCIA_RUVIEW.fuentes.json",
+    "sha256": "cd1c45cf2c66c8c0618f2f3350428a9f42c2dbc0488f253ebff9b29863461a1e"
+  },
+  "documents": [
+    {
+      "path": "README.md",
+      "sha256": "cdf8cdec666b91efe1e49b5f7cb51af2479d69b71b2a9e371efbddda1d33d7c4"
+    },
+    {
+      "path": "docs/ESTADO_INICIAL.md",
+      "sha256": "53ca6850183f18c45c1db6194e39ac2226742b41eadf107f2217f4e7417a71a6"
+    },
+    {
+      "path": "docs/PLAN_CAMPAÑA_PRESENCIA_PILOTO.md",
+      "sha256": "a32d1b8ca5e97638dfcd0f8e09ca9061ffb37c08b679514afd44fa197fd5d605"
+    },
+    {
+      "path": "docs/DETECTOR_PRESENCIA_RUVIEW.md",
+      "sha256": "7c69d3d1b5231bcfd9ca06d4c310ed234aeba754073941dc469f51941d4c8b79"
+    }
+  ],
+  "preservation_evidence_local_only": {
+    "path": "results/local/revision-detector-operacion-20261026/preservacion-antes.json",
+    "sha256": "f565616c9ddeaef3c013f7a49fc0a8783172c027d026750c250d13eb46794a33",
+    "files": 380,
+    "note": "Includes prior originals/source snapshots, physical reports and visualization artifacts. No originals rewritten."
+  },
+  "not_performed": [
+    "physical UART open",
+    "new capture",
+    "reset/reconnection",
+    "firmware/protocol changes",
+    "dependency update/install",
+    "detector compilation/execution",
+    "calibration/training/threshold fit",
+    "replay producing scores",
+    "repeat acquisition test suite"
+  ],
+  "historical_results": "v1/v2/v3 unchanged, including connection/global rejections; conforming v3 window is not presence validation.",
+  "pending": [
+    "Exterior laptop placement with existing cables and audible/visible closure acknowledgement unconfirmed.",
+    "Repeated READY availability after host reopen not demonstrated; no request/reemit exists in inspected firmware.",
+    "Masked LLTF offline adapter and compatible calibrated anchors/runtime absent."
+  ],
+  "outcome": "PASS_STATIC_VERIFICATION; PHYSICAL_OPERATION_AND_VALIDATED_PRESENCE_BLOCKED"
+}

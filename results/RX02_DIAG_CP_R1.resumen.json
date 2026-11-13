@@ -1,0 +1,1395 @@
+{
+  "schema": "tesis-rx02-physical-checkpoint-comparison-1",
+  "physical_UART_opened_by_analysis": false,
+  "diagnostic": {
+    "bundle": "results/local/diagnostico-checkpoints-rx02-r1",
+    "files": {
+      "audio/0-selected_port_closed_confirmed.wav": {
+        "bytes": 57644,
+        "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+      },
+      "authorization-consumed.json": {
+        "bytes": 311,
+        "sha256": "0ddd9b60f04176afb7e507b16d3f7dbcf37d04f13779552a0cd01fa3d1f18402"
+      },
+      "checkpoint-status.json": {
+        "bytes": 600,
+        "sha256": "4b5857b3ec11e06af1f06a42ccdbdf52e4558ce2787124ff3cd3687168ae63f5"
+      },
+      "close-receipt.json": {
+        "bytes": 624,
+        "sha256": "e87a32e27dfb3f6950e8dcb21c4d04dbb0a1d3e2a4e8007251153105d7a4ea80"
+      },
+      "events.json": {
+        "bytes": 1050847,
+        "sha256": "851108ce82a68e289d154cc3c9d9d498ddca52a6cfbca5f1904d73be6ac4a436"
+      },
+      "manifest.json": {
+        "bytes": 1926,
+        "sha256": "8817cf0009d477d081bb5d320aabcb9b403f54afafa9e7902b960b74de7d70e0"
+      },
+      "operations.jsonl": {
+        "bytes": 4772610,
+        "sha256": "96174bed5057cbfd5bb4cdbbcecc4521182b6418a1b74930fa3c9c68b27fff8b"
+      },
+      "persistence-policy.json": {
+        "bytes": 1296,
+        "sha256": "4b35eb4d16be7a1c7183378eec8671912b76f738b0252c43b38cc891e91aa25f"
+      },
+      "plan.json": {
+        "bytes": 3200,
+        "sha256": "617cf0bf21dc3084168209669bb1e82a9dd2da5f3a1549a8edd7ff0aef44f897"
+      },
+      "provenance.json": {
+        "bytes": 6256,
+        "sha256": "8604a0ceb8cc6b6bce727ff07615eabdd8f83e3c4923a11be38ce8e4f2868c3d"
+      },
+      "rx-02.serial.log": {
+        "bytes": 1007158,
+        "sha256": "e8dc6ac746ea1cf4560d9ff2dbf68f3416b0c726277b5415ab061e9a725afc8e"
+      },
+      "service-metrics.json": {
+        "bytes": 273,
+        "sha256": "0e6ed1fb8577240396ba7258c288316112dc833dc36f274a16ac3c486d5cc32e"
+      },
+      "summary.json": {
+        "bytes": 359640,
+        "sha256": "7e13f9205f4c299d677184e446a50d028d9147564ec9c11573086c48257f46d8"
+      }
+    },
+    "integrity_ok": true,
+    "replay_ok": true,
+    "evidence_type": "physical_capture",
+    "connection_id": "RX02-DIAG-CP-R1",
+    "partition_group": "RX02-DIAG-CP-R1",
+    "future_partition": "diagnostic_only",
+    "fatal": null,
+    "connection": {
+      "quality_ok": false,
+      "reasons": [
+        "format:RX-02",
+        "preamble_anomaly:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02"
+      ]
+    },
+    "timings": {
+      "stamps_ns": {
+        "begin": 19401169186158,
+        "opened": 19401188733421,
+        "close_request": 19641193706413,
+        "closing": 19641196616990,
+        "closed": 19641199414603
+      },
+      "begin_to_open_ns": 19547263,
+      "open_to_closing_ns": 240007883569,
+      "open_to_close_ns": 240010681182,
+      "open_to_close_request_ns": 240004972992,
+      "close_driver_and_record_interval_ns": 2797613,
+      "initial_available_after_open_ns": 1165234831,
+      "last_operation_after_open_ns": 241960954715,
+      "all_operation_sample_intervals_ns": {
+        "count": 47403,
+        "min": 36866,
+        "median": 5329393,
+        "mean": 5104750.7958989935,
+        "p95": 8145136,
+        "p99": 18657921,
+        "max": 1932813501
+      },
+      "tick_sample_intervals_ns": {
+        "count": 38647,
+        "min": 5073813,
+        "median": 5396932,
+        "mean": 6209824.070872254,
+        "p95": 8616300,
+        "p99": 19035346,
+        "max": 26935440
+      },
+      "read": {
+        "read_duration_ns": {
+          "count": 7801,
+          "min": 7448,
+          "median": 39429,
+          "mean": 38637.49839764133,
+          "p95": 54554,
+          "p99": 73790,
+          "max": 353912
+        },
+        "return_to_decision_sample_ns": {
+          "count": 7801,
+          "min": 1737423,
+          "median": 2507832,
+          "mean": 3939154.8692475324,
+          "p95": 13364788,
+          "p99": 13800441,
+          "max": 21155655
+        },
+        "bytes_per_read": {
+          "count": 7801,
+          "min": 9,
+          "median": 128,
+          "mean": 129.10626842712472,
+          "p95": 169,
+          "p99": 256,
+          "max": 256
+        },
+        "read_return_gap_ns": {
+          "count": 7800,
+          "min": 6966538,
+          "median": 12690650.5,
+          "mean": 30763318.025512822,
+          "p95": 141214598,
+          "p99": 148116522,
+          "max": 348198966
+        },
+        "previous_return_to_next_read_start_ns": {
+          "count": 7800,
+          "min": 6948259,
+          "median": 12666660.0,
+          "mean": 30724680.240384616,
+          "p95": 141160599,
+          "p99": 148065137,
+          "max": 348152801
+        }
+      }
+    },
+    "cadence_full": {
+      "complete_rows": 1190,
+      "first_id": 0,
+      "last_id": 1189,
+      "first_to_last_return_ns": 239185806804,
+      "host_interarrival_hz": 4.971030747549005,
+      "host_gap_ns": {
+        "count": 1189,
+        "min": 170212822,
+        "median": 199898895,
+        "mean": 201165522.96383515,
+        "p95": 219087699,
+        "p99": 225057426,
+        "max": 418887511
+      },
+      "local_gap_us": {
+        "count": 1189,
+        "min": 186941,
+        "median": 200000,
+        "mean": 201178.07737594616,
+        "p95": 202559,
+        "p99": 204819,
+        "max": 405254
+      },
+      "over_500ms": 0,
+      "over_1s": 0,
+      "zero_host_gaps": 0,
+      "callback_ids_consecutive": true,
+      "queue_drops_values": [
+        0
+      ],
+      "continuity_errors": 0,
+      "worst_host_gap": {
+        "previous_id": 528,
+        "following_id": 529,
+        "host_gap_ns": 418887511,
+        "corresponding_local_gap_us": 405254
+      }
+    },
+    "cadence_after_initial_available": {
+      "complete_rows": 1187,
+      "first_id": 3,
+      "last_id": 1189,
+      "first_to_last_return_ns": 238582374541,
+      "host_interarrival_hz": 4.97102940769075,
+      "host_gap_ns": {
+        "count": 1186,
+        "min": 170212822,
+        "median": 199888370.5,
+        "mean": 201165577.1846543,
+        "p95": 219087699,
+        "p99": 225057426,
+        "max": 418887511
+      },
+      "local_gap_us": {
+        "count": 1186,
+        "min": 186941,
+        "median": 200000.0,
+        "mean": 201178.60033726812,
+        "p95": 202542,
+        "p99": 204819,
+        "max": 405254
+      },
+      "over_500ms": 0,
+      "over_1s": 0,
+      "zero_host_gaps": 0,
+      "callback_ids_consecutive": true,
+      "queue_drops_values": [
+        0
+      ],
+      "continuity_errors": 0,
+      "worst_host_gap": {
+        "previous_id": 528,
+        "following_id": 529,
+        "host_gap_ns": 418887511,
+        "corresponding_local_gap_us": 405254
+      }
+    },
+    "common_first_180s_after_available": {
+      "start_ns": 19402353968252,
+      "end_exclusive_ns": 19582353968252,
+      "complete_rows_by_return": 895,
+      "host_row_gap_ns": {
+        "count": 894,
+        "min": 170212822,
+        "median": 199737009.0,
+        "mean": 201097760.53020135,
+        "p95": 219875470,
+        "p99": 225083456,
+        "max": 418887511
+      },
+      "local_row_gap_us": {
+        "count": 894,
+        "min": 186941,
+        "median": 200001.0,
+        "mean": 201115.6196868009,
+        "p95": 202506,
+        "p99": 204819,
+        "max": 405254
+      },
+      "host_row_gaps_over_500ms": 0,
+      "host_row_gaps_over_1s": 0,
+      "reads_by_return": 5814,
+      "timing": {
+        "read_duration_ns": {
+          "count": 5814,
+          "min": 7448,
+          "median": 43456.5,
+          "mean": 40985.61042311662,
+          "p95": 55417,
+          "p99": 74616,
+          "max": 219161
+        },
+        "return_to_decision_sample_ns": {
+          "count": 5814,
+          "min": 1781954,
+          "median": 2568514.0,
+          "mean": 4006179.7932576537,
+          "p95": 13455480,
+          "p99": 13812918,
+          "max": 21155655
+        },
+        "bytes_per_read": {
+          "count": 5814,
+          "min": 13,
+          "median": 128.0,
+          "mean": 129.5247678018576,
+          "p95": 256,
+          "p99": 256,
+          "max": 256
+        },
+        "read_return_gap_ns": {
+          "count": 5813,
+          "min": 6994172,
+          "median": 12705762,
+          "mean": 30938228.435403407,
+          "p95": 141638648,
+          "p99": 148238670,
+          "max": 348198966
+        },
+        "previous_return_to_next_read_start_ns": {
+          "count": 5813,
+          "min": 6980503,
+          "median": 12679805,
+          "mean": 30897244.51780492,
+          "p95": 141585363,
+          "p99": 148201460,
+          "max": 348152801
+        }
+      }
+    },
+    "common_phase_is_descriptive_not_window": true,
+    "line_kinds": {
+      "invalid": 20,
+      "info": 69,
+      "reset": 1,
+      "neutral": 2,
+      "ready": 1,
+      "row": 1190
+    },
+    "raw_bytes": 1007158,
+    "operations": 47404,
+    "events": 2243,
+    "reads": 7801,
+    "operation_counts": {
+      "begin": 1,
+      "storage_check": 948,
+      "tick": 38649,
+      "opened": 1,
+      "chunk": 7801,
+      "close_request": 1,
+      "closing": 1,
+      "closed": 1,
+      "cue_ack": 1
+    },
+    "windows": [],
+    "signals": [
+      {
+        "id": 0,
+        "kind": "selected_port_closed_confirmed",
+        "requested_ns": 19641199414603,
+        "ack_ns": 19643132228104,
+        "software_playback_ok": true
+      }
+    ],
+    "tails": {
+      "RX-02": {
+        "bytes": 0,
+        "byte_end": 1007158,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "closed": {
+      "RX-02": {
+        "confirmed": true,
+        "reader_stopped": true,
+        "at_ns": 19641199414603,
+        "error": null,
+        "proof": "pyserial_close_returned_and_all_fds_released"
+      }
+    },
+    "runtime": {
+      "transport": "UART",
+      "receivers": {
+        "RX-02": {
+          "open_attempts": 1,
+          "close_attempts": 1,
+          "dtr_requested": false,
+          "rts_requested": false,
+          "actual_line_update_attempts": [
+            {
+              "line": "dtr",
+              "requested": false,
+              "outcome": "ioctl_returned"
+            },
+            {
+              "line": "rts",
+              "requested": false,
+              "outcome": "ioctl_returned"
+            }
+          ],
+          "serial_settings": {
+            "baudrate": 115200,
+            "bytesize": 8,
+            "parity": "N",
+            "stopbits": 1,
+            "xonxoff": false,
+            "dsrdtr": false,
+            "rtscts": false,
+            "timeout": 0,
+            "write_timeout": 0,
+            "inter_byte_timeout": null
+          },
+          "open_flush_suppressed": 1,
+          "is_open": false,
+          "fd": null,
+          "electrical_transients_or_resets_excluded": false
+        }
+      },
+      "notifier": "laptop_aplay_human_audibility_unverified",
+      "audibility_verified_automatically": false,
+      "bubblewrap_isolation_claimed": false,
+      "retry_count": 0,
+      "startup_reader_stopped": true,
+      "persistence_revision": "rx02-raw-sync-control-checkpoint-2"
+    },
+    "authorization_consumed": {
+      "protocol": "rx02_service_diagnostic_1",
+      "connection_id": "RX02-DIAG-CP-R1",
+      "reference": "RX02-DIAG-CP-R1:617cf0bf21dc3084168209669bb1e82a9dd2da5f3a1549a8edd7ff0aef44f897",
+      "consumed": true,
+      "retry_allowed": false,
+      "meaning": "consumed_before_open_attempt; actual opens recorded in operations"
+    },
+    "plan": {
+      "protocol": "rx02_service_diagnostic_1",
+      "execution_mode": "physical_after_approval",
+      "policy": {
+        "window_ns": 30000000000,
+        "availability_wait_ns": 10000000000,
+        "freshness_ns": 1000000000,
+        "exit_delay_ns": 60000000000,
+        "start_cue_delay_ns": 30000000000,
+        "establishment_ns": 30000000000,
+        "label_tail_ns": 10000000000,
+        "close_wait_ns": 250000000,
+        "close_bytes": 65536,
+        "coverage_min_rows": 120,
+        "coverage_bin_rows": 15,
+        "coverage_gap_ns": 500000000
+      },
+      "receivers": {
+        "RX-02": "5C93200689"
+      },
+      "connection_id": "RX02-DIAG-CP-R1",
+      "actor": "Alan, operador único; declaración actual en conversación",
+      "mounting_reference": "Montaje de C02 reconfirmado actualmente por Alan: mismas posiciones y antenas; TX a algo más de 2 m, RX-02 a la derecha; sin metrología nueva",
+      "partition_group": "RX02-DIAG-CP-R1",
+      "slots": [],
+      "ports": {
+        "RX-02": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00"
+      },
+      "baud": 115200,
+      "storage_policy": {
+        "initial_free_bytes": 104857600,
+        "reserve_bytes": 33554432,
+        "max_raw_bytes": 67108864,
+        "max_bundle_bytes": 268435456,
+        "max_connection_ns": 3600000000000
+      },
+      "environment": {
+        "condition": "Habitación con puerta y ventanas cerradas, sin ventilador ni terceros; declaración actual del operador",
+        "occupancy": "Una persona: Alan, sentado frente a la laptop",
+        "movement": "Quieto aproximadamente cinco minutos; sin movimientos de terceros declarados",
+        "geometry": "Mismas posiciones y antenas declaradas anteriormente; TX a algo más de 2 m, RX-02 a la derecha; sin medición nueva",
+        "tx_power": "No medida; sin cambios de firmware declarados; no se afirma una potencia física verificada",
+        "mounting_confirmation": "Montaje, antenas, firmware, cables y puertos sin cambios según declaración actual; TX con cargador de pared, RX-02 por USB directo; RX-01 permanece desconectada",
+        "sound_practice_reference": "PRUEBA02: misma salida y volumen reconfirmados por el operador; antecedente humano, sin nueva reproducción ni audibilidad verificada automáticamente",
+        "laptop_power_lid": "Laptop enchufada y abierta, declarado actualmente",
+        "suspension_ac_battery": "Suspensión desactivada según declaración actual; alimentación de red durante el ensayo",
+        "serial_readers_absent": "Otros lectores cerrados según declaración actual; no se ha realizado comprobación de procesos desde aquí"
+      },
+      "eligibility_revision": "rx02-diagnostic-only-1",
+      "line_policy_revision": "v4-startup-sequence-1",
+      "review_state": "authorized_single_attempt",
+      "authorization_granted": true,
+      "permitted_uses": {
+        "calibration": false,
+        "training": false,
+        "production": false
+      },
+      "transmitter": {
+        "identity": "TX-01",
+        "source_mac": "1a:00:00:00:00:00"
+      },
+      "unused_receiver": {
+        "receiver": "RX-01",
+        "action": "remain_disconnected_uart_unopened",
+        "operator_confirmation": "confirmed_current"
+      },
+      "selection_revision": "rx02-continuity-selection-1",
+      "future_partition": "diagnostic_only",
+      "duration_ns": 240000000000,
+      "persistence_revision": "rx02-raw-sync-control-checkpoint-2"
+    },
+    "source_snapshots": [
+      {
+        "path": "src/persistent_presence_v4.py",
+        "sha256": "2ee89f05c33af7f638016cf4d87871f882e359a859a8671f07037b9a3a37171a",
+        "bytes": 25615
+      },
+      {
+        "path": "src/presence_v4_journal.py",
+        "sha256": "9a42e4132219deb5cecf505e817c61d207516304586cbbd63feb4977adc50b3a",
+        "bytes": 10914
+      },
+      {
+        "path": "src/presence_v4_pty.py",
+        "sha256": "7aa1288295d2cfe10e77c3a6c61104f1d2716ad9967c81842645939d47f4d7f5",
+        "bytes": 10366
+      },
+      {
+        "path": "src/presence_v4_audio.py",
+        "sha256": "658c6fad43079c16d3ca3d5f8bd3a5324a5a9995be85d630165b406395571232",
+        "bytes": 3098
+      },
+      {
+        "path": "src/availability_window.py",
+        "sha256": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596",
+        "bytes": 12330
+      },
+      {
+        "path": "src/capture_csi_multi.py",
+        "sha256": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+        "bytes": 19548
+      },
+      {
+        "path": "src/capture_csi.py",
+        "sha256": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+        "bytes": 4305
+      },
+      {
+        "path": "src/preserving_serial.py",
+        "sha256": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+        "bytes": 1195
+      },
+      {
+        "path": "src/controlled_protocol.py",
+        "sha256": "86f547f825094243e1500bcda507282c934b3daa0a3178c5558c7fa13ccaba78",
+        "bytes": 628
+      },
+      {
+        "path": "tools/campana_presencia_v4.py",
+        "sha256": "49e8d4e1cb2fbcccdb90f5743cfc9fac23370041d9aa3f0263eaedc6a96e7513",
+        "bytes": 9957
+      },
+      {
+        "path": "config/csi_esp32s3.json",
+        "sha256": "c39115ee2a789e8a8b3aa372528f869a6ac9fe5f92847b427ad4075d78f3c048",
+        "bytes": 1050
+      },
+      {
+        "path": "src/presence_v4_exploratory.py",
+        "sha256": "7da77617fc6af9031e334027a2d8a311c37c1119e860579b07332cd27734af50",
+        "bytes": 14409
+      },
+      {
+        "path": "src/presence_rx02.py",
+        "sha256": "b2992f3b4bf6b710bb9c42a549c5984733849a1eaa255f4be101e857648c9c25",
+        "bytes": 15279
+      },
+      {
+        "path": "src/presence_rx02_journal.py",
+        "sha256": "faca3ac20252c93943d199abfc0576c0110234756b953dc2e1844355b887c1a7",
+        "bytes": 10754
+      },
+      {
+        "path": "src/presence_rx02_uart.py",
+        "sha256": "32ba9c9028465a3b56707703715a71f3b8bcbd1a29105e1bc8c57bfe92f86ca8",
+        "bytes": 10399
+      },
+      {
+        "path": "src/presence_v4_uart.py",
+        "sha256": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+        "bytes": 22468
+      },
+      {
+        "path": "tools/piloto_presencia_rx02.py",
+        "sha256": "ddb8d98a9aaa0c7e7dcdf853224de5355b59cbdf18095b73aaa6071dcfccfa34",
+        "bytes": 5459
+      },
+      {
+        "path": "config/pyserial_uart_v4.lock.json",
+        "sha256": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010",
+        "bytes": 384
+      },
+      {
+        "path": "src/rx02_diagnostic/__init__.py",
+        "sha256": "eee0df9f8afa8b68e953f8429071f592f26670b2b8a6616dd5ddae81779160f2",
+        "bytes": 68
+      },
+      {
+        "path": "src/rx02_diagnostic/contract.py",
+        "sha256": "053d4ef78e45e76bfc0701742a2a08c8131e7753c4d359bbbbdfeac48285fc9a",
+        "bytes": 12236
+      },
+      {
+        "path": "src/rx02_diagnostic/journal.py",
+        "sha256": "aa3559925e23c61ca44fce670a51977c45a82d86f6ba3801626308792f6eb522",
+        "bytes": 11210
+      },
+      {
+        "path": "src/rx02_diagnostic/uart.py",
+        "sha256": "f93c0bb270e9defbea4e71269537e8007a8aa99e21be989b7a7270ef005617ea",
+        "bytes": 10507
+      },
+      {
+        "path": "src/rx02_diagnostic/checkpoint.py",
+        "sha256": "27dff3e88b0b5e04a5bbc3d77c3ac1fc7ec703158ca87c44f42a70375f2e7e60",
+        "bytes": 9139
+      },
+      {
+        "path": "tools/diagnostico_checkpoints_rx02.py",
+        "sha256": "7ef7b1488b7fe5b72dbe8e0c8ccb465b51b4f81d366bdd024aea8060338021f3",
+        "bytes": 7261
+      }
+    ],
+    "exploratory_eligibility": null,
+    "diagnostic": {
+      "target_duration_ns": 240000000000,
+      "observed_open_to_closing_ns": 240007883569,
+      "sustained_service_ok": true,
+      "identity_ok": true,
+      "storage_ok": true,
+      "close_ok": true,
+      "checkpoint_ok": true,
+      "diagnostic_ok": true,
+      "quality_is_separate": true,
+      "no_campaign_replacement": true,
+      "windows_requested": false,
+      "permitted_uses": {
+        "calibration": false,
+        "training": false,
+        "production": false
+      }
+    },
+    "checkpoint_status": {
+      "revision": "rx02-raw-sync-control-checkpoint-2",
+      "final_operations": 47404,
+      "last_durable_seq": 47403,
+      "pending_ops_bytes": 0,
+      "max_pending_ops_bytes": 65536,
+      "operations_prefix_bytes": 4772610,
+      "operations_sha256": "96174bed5057cbfd5bb4cdbbcecc4521182b6418a1b74930fa3c9c68b27fff8b",
+      "checkpoints": 76,
+      "raw_syncs": 7801,
+      "events": 2243,
+      "lines": 1283,
+      "limits": {
+        "pending_ops_bytes": 65536,
+        "max_record_bytes": 16384,
+        "max_chunk_bytes": 16384,
+        "max_events": 100000,
+        "max_lines": 25000,
+        "max_operations": 500000
+      },
+      "no_inflight_writer": true
+    },
+    "persistence_policy": {
+      "schema": "tesis-rx02-persistence-policy-2",
+      "revision": "rx02-raw-sync-control-checkpoint-2",
+      "plan_sha256": "617cf0bf21dc3084168209669bb1e82a9dd2da5f3a1549a8edd7ff0aef44f897",
+      "limits": {
+        "pending_ops_bytes": 65536,
+        "max_record_bytes": 16384,
+        "max_chunk_bytes": 16384,
+        "max_events": 100000,
+        "max_lines": 25000,
+        "max_operations": 500000
+      },
+      "barrier_operations": [
+        "begin",
+        "close_request",
+        "closed",
+        "declare",
+        "interrupt",
+        "io_error",
+        "opened",
+        "reader_ended",
+        "request",
+        "storage_error"
+      ],
+      "raw": "write/flush/fsync each entire returned chunk before reducer decision sample",
+      "operations": "write/flush every record; fsync before byte budget would be exceeded and after barrier operations",
+      "periodic_wall_clock_durability_guaranteed": false,
+      "power_loss": "Up to 65536 bytes of operations since the last successful checkpoint may be lost/torn; raw may be ahead. No complete manifest means no eligible bundle.",
+      "receipt": "Checkpoint all preceding operations before durable original close receipt; closed cue gated by receipt",
+      "sources": {
+        "src/rx02_diagnostic/checkpoint.py": {
+          "sha256": "27dff3e88b0b5e04a5bbc3d77c3ac1fc7ec703158ca87c44f42a70375f2e7e60",
+          "bytes": 9139
+        }
+      }
+    },
+    "service_metrics": {
+      "steps": 38648,
+      "max_step_ns": 21569259,
+      "service_cpu_ns": 13363558151,
+      "process_peak_rss_kib": 26596,
+      "peak_rss_scope": "whole process through service end; not periodic sampling",
+      "deadline_ns": 19641188733421,
+      "wall_clock_io_deadline_guaranteed": false
+    }
+  },
+  "C02": {
+    "bundle": "results/local/piloto-rx02-r1-C02",
+    "files": {
+      "audio/0-establish_condition.wav": {
+        "bytes": 17324,
+        "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+      },
+      "audio/1-failure.wav": {
+        "bytes": 58924,
+        "sha256": "d394f5d61a23f29df7ec760c745b47107aa66a2ed1564670ecb675d8e51362d7"
+      },
+      "audio/2-selected_port_closed_confirmed.wav": {
+        "bytes": 57644,
+        "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+      },
+      "authorization-consumed.json": {
+        "bytes": 261,
+        "sha256": "7daf49962b3bf4c4c65289b6016c6dc543830b715c5080d12d5f4a06dba87dde"
+      },
+      "close-receipt.json": {
+        "bytes": 617,
+        "sha256": "ccdce22abb734b447df588257302e0cb3f35c027c60e6226952a56f93928dc35"
+      },
+      "events.json": {
+        "bytes": 900643,
+        "sha256": "8b32b0bbe7e6bdc042405072e080cfb55036ee34ce306bb98b4e4615ade16dda"
+      },
+      "manifest.json": {
+        "bytes": 1776,
+        "sha256": "50d597433625234d3935207f28a4686aa5359dff85a2e956a7fd46110495983c"
+      },
+      "operations.jsonl": {
+        "bytes": 3204975,
+        "sha256": "f78dafab61812623d56785bdb7aca1fadb420cbda175fc3b124ac32fef808412"
+      },
+      "plan.json": {
+        "bytes": 3748,
+        "sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b"
+      },
+      "provenance.json": {
+        "bytes": 5208,
+        "sha256": "63f2836a46dc3cec77f5564552481fe7b998612d557641c23bc320ab2bfab8d3"
+      },
+      "rx-02.serial.log": {
+        "bytes": 880889,
+        "sha256": "dde85d3a83256ac5a201932fb057c248447edb9e01f47db8d7766ecc0b875ca5"
+      },
+      "summary.json": {
+        "bytes": 524779,
+        "sha256": "2321b4956ac24a80c677d70293267bb7bfd9bdb7d5e3730453bc7a80869228be"
+      }
+    },
+    "integrity_ok": true,
+    "replay_ok": true,
+    "evidence_type": "physical_capture",
+    "connection_id": "RX02-C02",
+    "partition_group": "RX02-C02",
+    "future_partition": "development_future",
+    "fatal": "availability_gap:RX-02",
+    "connection": {
+      "quality_ok": false,
+      "reasons": [
+        "format:RX-02",
+        "preamble_anomaly:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "format:RX-02",
+        "availability_gap:RX-02",
+        "incomplete_tail:RX-02"
+      ]
+    },
+    "timings": {
+      "stamps_ns": {
+        "begin": 4152417638928,
+        "opened": 4152433664981,
+        "close_request": null,
+        "closing": 4358058387513,
+        "closed": 4358275291649
+      },
+      "begin_to_open_ns": 16026053,
+      "open_to_closing_ns": 205624722532,
+      "open_to_close_ns": 205841626668,
+      "open_to_close_request_ns": null,
+      "close_driver_and_record_interval_ns": 216904136,
+      "initial_available_after_open_ns": 1055576651,
+      "last_operation_after_open_ns": 209505450660,
+      "all_operation_sample_intervals_ns": {
+        "count": 29105,
+        "min": 1630410,
+        "median": 7528732,
+        "mean": 7198813.836557292,
+        "p95": 10339918,
+        "p99": 11035264,
+        "max": 1914266310
+      },
+      "tick_sample_intervals_ns": {
+        "count": 21971,
+        "min": 5765579,
+        "median": 7792474,
+        "mean": 9334975.703199672,
+        "p95": 13392747,
+        "p99": 15497514,
+        "max": 1926335343
+      },
+      "read": {
+        "read_duration_ns": {
+          "count": 6335,
+          "min": 5270,
+          "median": 33584,
+          "mean": 33269.33559589582,
+          "p95": 54133,
+          "p99": 70609,
+          "max": 546816
+        },
+        "return_to_decision_sample_ns": {
+          "count": 6335,
+          "min": 1473700,
+          "median": 2303220,
+          "mean": 2576997.3114443566,
+          "p95": 2833452,
+          "p99": 3959245,
+          "max": 485252012
+        },
+        "bytes_per_read": {
+          "count": 6335,
+          "min": 1,
+          "median": 128,
+          "mean": 139.05114443567481,
+          "p95": 256,
+          "p99": 256,
+          "max": 4095
+        },
+        "read_return_gap_ns": {
+          "count": 6334,
+          "min": 10354560,
+          "median": 12495773.5,
+          "mean": 32188754.2316072,
+          "p95": 137833779,
+          "p99": 146830256,
+          "max": 1221331818
+        },
+        "previous_return_to_next_read_start_ns": {
+          "count": 6334,
+          "min": 10341009,
+          "median": 12456094.0,
+          "mean": 32155484.25670982,
+          "p95": 137814872,
+          "p99": 146809999,
+          "max": 1221262655
+        }
+      }
+    },
+    "cadence_full": {
+      "complete_rows": 1014,
+      "first_id": 0,
+      "last_id": 1013,
+      "first_to_last_return_ns": 203222550817,
+      "host_interarrival_hz": 4.984683028175338,
+      "host_gap_ns": {
+        "count": 1013,
+        "min": 0,
+        "median": 199661826,
+        "mean": 200614561.51727542,
+        "p95": 218595047,
+        "p99": 226869081,
+        "max": 1221331818
+      },
+      "local_gap_us": {
+        "count": 1013,
+        "min": 183175,
+        "median": 200001,
+        "mean": 200197.77295162884,
+        "p95": 202502,
+        "p99": 204595,
+        "max": 399686
+      },
+      "over_500ms": 5,
+      "over_1s": 1,
+      "zero_host_gaps": 14,
+      "callback_ids_consecutive": true,
+      "queue_drops_values": [
+        0
+      ],
+      "continuity_errors": 0,
+      "worst_host_gap": {
+        "previous_id": 1008,
+        "following_id": 1009,
+        "host_gap_ns": 1221331818,
+        "corresponding_local_gap_us": 199978
+      }
+    },
+    "cadence_after_initial_available": {
+      "complete_rows": 1011,
+      "first_id": 3,
+      "last_id": 1013,
+      "first_to_last_return_ns": 202628418352,
+      "host_interarrival_hz": 4.984493331263428,
+      "host_gap_ns": {
+        "count": 1010,
+        "min": 0,
+        "median": 199658421.5,
+        "mean": 200622196.3881188,
+        "p95": 218595047,
+        "p99": 226869081,
+        "max": 1221331818
+      },
+      "local_gap_us": {
+        "count": 1010,
+        "min": 183175,
+        "median": 200001.0,
+        "mean": 200198.27623762377,
+        "p95": 202502,
+        "p99": 204595,
+        "max": 399686
+      },
+      "over_500ms": 5,
+      "over_1s": 1,
+      "zero_host_gaps": 14,
+      "callback_ids_consecutive": true,
+      "queue_drops_values": [
+        0
+      ],
+      "continuity_errors": 0,
+      "worst_host_gap": {
+        "previous_id": 1008,
+        "following_id": 1009,
+        "host_gap_ns": 1221331818,
+        "corresponding_local_gap_us": 199978
+      }
+    },
+    "common_first_180s_after_available": {
+      "start_ns": 4153489241632,
+      "end_exclusive_ns": 4333489241632,
+      "complete_rows_by_return": 898,
+      "host_row_gap_ns": {
+        "count": 897,
+        "min": 169770484,
+        "median": 199693530,
+        "mean": 200209893.4871795,
+        "p95": 217992596,
+        "p99": 224192563,
+        "max": 391038242
+      },
+      "local_row_gap_us": {
+        "count": 897,
+        "min": 183175,
+        "median": 200002,
+        "mean": 200223.21516164995,
+        "p95": 202502,
+        "p99": 204751,
+        "max": 399686
+      },
+      "host_row_gaps_over_500ms": 0,
+      "host_row_gaps_over_1s": 0,
+      "reads_by_return": 5704,
+      "timing": {
+        "read_duration_ns": {
+          "count": 5704,
+          "min": 5270,
+          "median": 32009.0,
+          "mean": 32802.96791725105,
+          "p95": 53953,
+          "p99": 69642,
+          "max": 546816
+        },
+        "return_to_decision_sample_ns": {
+          "count": 5704,
+          "min": 1473700,
+          "median": 2293204.0,
+          "mean": 2350473.4637096776,
+          "p95": 2816585,
+          "p99": 3206216,
+          "max": 34884556
+        },
+        "bytes_per_read": {
+          "count": 5704,
+          "min": 1,
+          "median": 128.0,
+          "mean": 136.01437587657784,
+          "p95": 256,
+          "p99": 256,
+          "max": 640
+        },
+        "read_return_gap_ns": {
+          "count": 5703,
+          "min": 10354560,
+          "median": 12482629,
+          "mean": 31537296.176924426,
+          "p95": 137833779,
+          "p99": 146562235,
+          "max": 329015966
+        },
+        "previous_return_to_next_read_start_ns": {
+          "count": 5703,
+          "min": 10341009,
+          "median": 12441065,
+          "mean": 31504490.96826232,
+          "p95": 137814872,
+          "p99": 146535551,
+          "max": 328970579
+        }
+      }
+    },
+    "common_phase_is_descriptive_not_window": true,
+    "line_kinds": {
+      "invalid": 20,
+      "info": 68,
+      "reset": 1,
+      "neutral": 2,
+      "ready": 1,
+      "row": 1014
+    },
+    "raw_bytes": 880889,
+    "operations": 29106,
+    "events": 1917,
+    "reads": 6335,
+    "operation_counts": {
+      "begin": 1,
+      "storage_check": 790,
+      "tick": 21973,
+      "opened": 1,
+      "chunk": 6335,
+      "request": 1,
+      "cue_ack": 3,
+      "closing": 1,
+      "closed": 1
+    },
+    "windows": [
+      {
+        "id": "RX02-C02-S",
+        "condition": "S",
+        "label": {
+          "status": "pending",
+          "declaration_ns": null,
+          "timing_uncertainty": "unknown"
+        },
+        "state": "complete",
+        "T0_ns": 4317281061098,
+        "T1_ns": 4347281061098
+      }
+    ],
+    "signals": [
+      {
+        "id": 0,
+        "kind": "establish_condition",
+        "requested_ns": 4285947537461,
+        "ack_ns": 4286644302238,
+        "software_playback_ok": true
+      },
+      {
+        "id": 1,
+        "kind": "failure",
+        "requested_ns": 4356805088842,
+        "ack_ns": 4360010411708,
+        "software_playback_ok": true
+      },
+      {
+        "id": 2,
+        "kind": "selected_port_closed_confirmed",
+        "requested_ns": 4358275291649,
+        "ack_ns": 4361924678018,
+        "software_playback_ok": true
+      }
+    ],
+    "tails": {
+      "RX-02": {
+        "bytes": 349,
+        "byte_end": 880889,
+        "sha256": "dfc8af86bd78634940863e9e27ca991b87ad84b0317eaa6cdea8b3a39b739f97"
+      }
+    },
+    "closed": {
+      "RX-02": {
+        "confirmed": true,
+        "reader_stopped": true,
+        "at_ns": 4358275291649,
+        "error": null,
+        "proof": "pyserial_close_returned_and_all_fds_released"
+      }
+    },
+    "runtime": {
+      "transport": "UART",
+      "receivers": {
+        "RX-02": {
+          "open_attempts": 1,
+          "close_attempts": 1,
+          "dtr_requested": false,
+          "rts_requested": false,
+          "actual_line_update_attempts": [
+            {
+              "line": "dtr",
+              "requested": false,
+              "outcome": "ioctl_returned"
+            },
+            {
+              "line": "rts",
+              "requested": false,
+              "outcome": "ioctl_returned"
+            }
+          ],
+          "serial_settings": {
+            "baudrate": 115200,
+            "bytesize": 8,
+            "parity": "N",
+            "stopbits": 1,
+            "xonxoff": false,
+            "dsrdtr": false,
+            "rtscts": false,
+            "timeout": 0,
+            "write_timeout": 0,
+            "inter_byte_timeout": null
+          },
+          "open_flush_suppressed": 1,
+          "is_open": false,
+          "fd": null,
+          "electrical_transients_or_resets_excluded": false
+        }
+      },
+      "notifier": "laptop_aplay_human_audibility_unverified",
+      "audibility_verified_automatically": false,
+      "bubblewrap_isolation_claimed": false,
+      "retry_count": 0,
+      "startup_reader_stopped": true
+    },
+    "authorization_consumed": {
+      "protocol": "presence_rx02_persistent_1",
+      "connection_id": "RX02-C02",
+      "reference": "Alan-RX02-C02-20261104-unico-intento",
+      "consumed": true,
+      "retry_allowed": false,
+      "meaning": "consumed_before_open_attempt; actual opens recorded in operations"
+    },
+    "plan": {
+      "protocol": "presence_rx02_persistent_1",
+      "execution_mode": "physical_after_approval",
+      "policy": {
+        "window_ns": 30000000000,
+        "availability_wait_ns": 10000000000,
+        "freshness_ns": 1000000000,
+        "exit_delay_ns": 60000000000,
+        "start_cue_delay_ns": 30000000000,
+        "establishment_ns": 30000000000,
+        "label_tail_ns": 10000000000,
+        "close_wait_ns": 250000000,
+        "close_bytes": 65536,
+        "coverage_min_rows": 120,
+        "coverage_bin_rows": 15,
+        "coverage_gap_ns": 500000000
+      },
+      "receivers": {
+        "RX-02": "5C93200689"
+      },
+      "connection_id": "RX02-C02",
+      "actor": "Alan; único operador, confirmado actualmente",
+      "mounting_reference": "results/local/estado-preflight-rx02-C02-20261104T224009Z/declaracion-actual.json#sha256=12b1155799de22e845fd79fce4426310ca96b32933d9174e2feebcc238823685",
+      "partition_group": "RX02-C02",
+      "slots": [
+        {
+          "id": "RX02-C02-S",
+          "condition": "S"
+        },
+        {
+          "id": "RX02-C02-E",
+          "condition": "E"
+        }
+      ],
+      "ports": {
+        "RX-02": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00"
+      },
+      "baud": 115200,
+      "storage_policy": {
+        "initial_free_bytes": 104857600,
+        "reserve_bytes": 33554432,
+        "max_raw_bytes": 67108864,
+        "max_bundle_bytes": 268435456,
+        "max_connection_ns": 3600000000000
+      },
+      "environment": {
+        "condition": "Puerta y ventanas cerradas; sin ventilador ni movimientos ajenos. Condiciones actuales declaradas; ventanas futuras S y E aún sin adquirir.",
+        "occupancy": "Solo Alan al confirmar. Ventanas futuras: sentado S y después vacía E última; aún sin adquirir ni declarar sus etiquetas.",
+        "movement": "Sin cambios de montaje ni movimientos ajenos desde C01, según operador. No se anticipa cumplimiento de las ventanas.",
+        "geometry": "Mismas posiciones, antenas, coaxiales, USB y hub que C01; sin moverlos. RX-01 al hub y RX-02 directo a laptop. results/local/estado-preflight-rx02-C02-20261104T224009Z/declaracion-actual.json#sha256=12b1155799de22e845fd79fce4426310ca96b32933d9174e2feebcc238823685",
+        "tx_power": "TX-01 al cargador; RX-01 al hub; RX-02 directamente a laptop. Sin desconexiones ni reinicios desde C01 según operador; continuidad eléctrica no medida.",
+        "mounting_confirmation": "Montaje actual confirmado sin movimientos desde C01; sin desconexiones ni reinicios declarados. results/local/estado-preflight-rx02-C02-20261104T224009Z/declaracion-actual.json#sha256=12b1155799de22e845fd79fce4426310ca96b32933d9174e2feebcc238823685",
+        "sound_practice_reference": "results/local/SONIDOS-FUERA-PRUEBA02/practice.json#sha256=2fb862e7963828f4b5067c75a4ebe9361fcd84019451e948ff633da3ee2dc7cd; mismo sonido y escucha que PRUEBA02 reconfirmados por operador; sin reproducción nueva ni medición acústica automática.",
+        "laptop_power_lid": "Laptop enchufada y abierta, declarado actualmente por operador.",
+        "suspension_ac_battery": "Suspensión desactivada con corriente y batería según confirmación actual; sin inspección automática de ajustes.",
+        "serial_readers_absent": "Sin otros lectores serie según declaración actual."
+      },
+      "eligibility_revision": "rx02-exploratory-1",
+      "line_policy_revision": "v4-startup-sequence-1",
+      "review_state": "authorized_single_attempt",
+      "authorization_granted": true,
+      "permitted_uses": {
+        "calibration": false,
+        "training": false,
+        "production": false
+      },
+      "transmitter": {
+        "identity": "TX-01",
+        "source_mac": "1a:00:00:00:00:00"
+      },
+      "unused_receiver": {
+        "receiver": "RX-01",
+        "action": "leave_connected_fixed_uart_unopened",
+        "operator_confirmation": "confirmed_current"
+      },
+      "selection_revision": "rx02-continuity-selection-1",
+      "future_partition": "development_future"
+    },
+    "source_snapshots": [
+      {
+        "path": "src/persistent_presence_v4.py",
+        "sha256": "2ee89f05c33af7f638016cf4d87871f882e359a859a8671f07037b9a3a37171a",
+        "bytes": 25615
+      },
+      {
+        "path": "src/presence_v4_journal.py",
+        "sha256": "9a42e4132219deb5cecf505e817c61d207516304586cbbd63feb4977adc50b3a",
+        "bytes": 10914
+      },
+      {
+        "path": "src/presence_v4_pty.py",
+        "sha256": "7aa1288295d2cfe10e77c3a6c61104f1d2716ad9967c81842645939d47f4d7f5",
+        "bytes": 10366
+      },
+      {
+        "path": "src/presence_v4_audio.py",
+        "sha256": "658c6fad43079c16d3ca3d5f8bd3a5324a5a9995be85d630165b406395571232",
+        "bytes": 3098
+      },
+      {
+        "path": "src/availability_window.py",
+        "sha256": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596",
+        "bytes": 12330
+      },
+      {
+        "path": "src/capture_csi_multi.py",
+        "sha256": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+        "bytes": 19548
+      },
+      {
+        "path": "src/capture_csi.py",
+        "sha256": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+        "bytes": 4305
+      },
+      {
+        "path": "src/preserving_serial.py",
+        "sha256": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+        "bytes": 1195
+      },
+      {
+        "path": "src/controlled_protocol.py",
+        "sha256": "86f547f825094243e1500bcda507282c934b3daa0a3178c5558c7fa13ccaba78",
+        "bytes": 628
+      },
+      {
+        "path": "tools/campana_presencia_v4.py",
+        "sha256": "49e8d4e1cb2fbcccdb90f5743cfc9fac23370041d9aa3f0263eaedc6a96e7513",
+        "bytes": 9957
+      },
+      {
+        "path": "config/csi_esp32s3.json",
+        "sha256": "c39115ee2a789e8a8b3aa372528f869a6ac9fe5f92847b427ad4075d78f3c048",
+        "bytes": 1050
+      },
+      {
+        "path": "src/presence_v4_exploratory.py",
+        "sha256": "7da77617fc6af9031e334027a2d8a311c37c1119e860579b07332cd27734af50",
+        "bytes": 14409
+      },
+      {
+        "path": "src/presence_rx02.py",
+        "sha256": "b2992f3b4bf6b710bb9c42a549c5984733849a1eaa255f4be101e857648c9c25",
+        "bytes": 15279
+      },
+      {
+        "path": "src/presence_rx02_journal.py",
+        "sha256": "faca3ac20252c93943d199abfc0576c0110234756b953dc2e1844355b887c1a7",
+        "bytes": 10754
+      },
+      {
+        "path": "src/presence_rx02_uart.py",
+        "sha256": "32ba9c9028465a3b56707703715a71f3b8bcbd1a29105e1bc8c57bfe92f86ca8",
+        "bytes": 10399
+      },
+      {
+        "path": "src/presence_v4_uart.py",
+        "sha256": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+        "bytes": 22468
+      },
+      {
+        "path": "tools/piloto_presencia_rx02.py",
+        "sha256": "ddb8d98a9aaa0c7e7dcdf853224de5355b59cbdf18095b73aaa6071dcfccfa34",
+        "bytes": 5459
+      },
+      {
+        "path": "config/pyserial_uart_v4.lock.json",
+        "sha256": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010",
+        "bytes": 384
+      }
+    ],
+    "exploratory_eligibility": {
+      "revision": "rx02-exploratory-1",
+      "evidence_type": "physical_capture",
+      "integrity_ok": true,
+      "replay_ok": true,
+      "identity_ok": true,
+      "storage_ok": true,
+      "windows": [
+        {
+          "slot_id": "RX02-C02-S",
+          "eligible": false,
+          "reasons": [
+            "connection_suspended",
+            "anomaly_intersects_or_unlocated",
+            "label_quality_ok"
+          ],
+          "status": "ineligible_exploratory"
+        }
+      ],
+      "permitted_uses": {
+        "calibration": false,
+        "training": false,
+        "production": false
+      }
+    },
+    "diagnostic": null,
+    "checkpoint_status": null,
+    "persistence_policy": null,
+    "service_metrics": null
+  },
+  "comparability": {
+    "fixed_fields_equal": {
+      "policy": true,
+      "receivers": true,
+      "ports": true,
+      "baud": true,
+      "storage_policy": true,
+      "transmitter": true,
+      "line_policy_revision": true
+    },
+    "historical_sources_unchanged": 18,
+    "periods_are_different": true,
+    "not_paired_or_randomized": true,
+    "diagnostic_has_no_windows_or_operator_command_poll": true,
+    "rx01_diagnostic": "disconnected by current operator declaration",
+    "rx01_C02": {
+      "receiver": "RX-01",
+      "action": "leave_connected_fixed_uart_unopened",
+      "operator_confirmation": "confirmed_current"
+    },
+    "geometry_scope": "Operator declares same positions/antennas; no new geometrical measurement",
+    "power_scope": "TX wall charger both; new power-on interval after disconnection; TX power unmeasured",
+    "absent_measurements": [
+      "C02 CPU/RSS",
+      "periodic physical RSS/fd/thread samples",
+      "individual fsync end clocks",
+      "scheduler/USB/RF traces"
+    ],
+    "common_interval": "First 180 s after each initial availability; descriptive prefix excludes the later C02 failure and is not an eligibility window"
+  },
+  "limits": [
+    "A successful 240 s diagnostic does not approve strict connection quality, campaign windows, labels, calibration or training.",
+    "Observed host gap and local receiver timestamp gap are different clocks; no RF loss or one-way latency claim.",
+    "Maxima and counts depend on duration, sample count, startup, operator loop, audio, scheduling and hardware state.",
+    "Return-to-decision includes raw persistence, locking, scheduling and Python work; it is not isolated fsync latency.",
+    "Only process CPU and ru_maxrss through service end were recorded physically. No new fd/thread or per-stage profiler data are invented.",
+    "Checkpoint count describes successful decorator syncs, not all kernel/device flushes or a power-loss recovery experiment.",
+    "The diagnostic authorization is consumed. No additional physical action is authorized."
+  ]
+}

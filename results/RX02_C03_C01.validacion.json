@@ -1,0 +1,70 @@
+{
+  "tests": {
+    "modules": [
+      "test_antenna_aba_analysis",
+      "test_availability_window",
+      "test_boundary_diagnostic",
+      "test_canonical_csi",
+      "test_capture_boundaries",
+      "test_capture_csi_multi",
+      "test_capture_preparation",
+      "test_comparar_fisicas_v3",
+      "test_consolidar_fisica_v3",
+      "test_consolidar_rx02_c01",
+      "test_continuity_diagnostics",
+      "test_controlled_v2",
+      "test_controlled_v3",
+      "test_csi_correspondence",
+      "test_dual_continuity",
+      "test_persistent_presence_v4",
+      "test_physical_reference",
+      "test_presence_rx02",
+      "test_rx02_checkpoint",
+      "test_rx02_gap_diagnostics",
+      "test_uart_v4",
+      "test_v4_availability_diagnostic",
+      "test_v4_exploratory",
+      "test_v4_line_policy",
+      "test_v4_startup_sequence",
+      "test_validate_capture",
+      "test_rx02_diagnostic",
+      "test_rx02_physical_report",
+      "test_c03_checkpoint_integration",
+      "test_c03_c01_description"
+    ],
+    "tests": 473,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_s": 51.344962668001244,
+    "physical_UART_opened": false,
+    "reserve_access_attempts": 0,
+    "bubblewrap_isolation_claimed": true,
+    "excluded": {
+      "test_presence_offline": "Calibration/inference outside scope"
+    },
+    "exit_code": 0
+  },
+  "preservation": {
+    "protected_files": 102,
+    "all_unchanged": true,
+    "C02_rejection_retained": true,
+    "partitions_retained": true
+  },
+  "consolidation_isolation": {
+    "bubblewrap": true,
+    "private_dev": true,
+    "originals_read_only": true,
+    "writable_new_output_only": true,
+    "reserve_access_attempts": 0
+  },
+  "plotting_runtime": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.4.2"
+  },
+  "physical_UART_opened_by_analysis": false,
+  "capture_executed_by_analysis": false,
+  "calibration_executed": false,
+  "training_executed": false,
+  "reserve_used_for_feature_or_method_selection": false
+}

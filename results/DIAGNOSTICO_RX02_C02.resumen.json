@@ -1,0 +1,3436 @@
+{
+  "schema": "tesis-rx02-C02-gap-diagnostic-1",
+  "bundles": {
+    "C01": {
+      "bundle": "results/local/piloto-rx02-r1-C01",
+      "original_files": {
+        "audio/0-establish_condition.wav": {
+          "bytes": 17324,
+          "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+        },
+        "audio/1-window_finished_connection_open.wav": {
+          "bytes": 8684,
+          "sha256": "e3cce4eeab2f906735116e0ea1dd6534db30a46a261910bc3b26e124b9c479c2"
+        },
+        "audio/2-establish_condition.wav": {
+          "bytes": 17324,
+          "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+        },
+        "audio/3-window_finished_connection_open.wav": {
+          "bytes": 8684,
+          "sha256": "e3cce4eeab2f906735116e0ea1dd6534db30a46a261910bc3b26e124b9c479c2"
+        },
+        "audio/4-selected_port_closed_confirmed.wav": {
+          "bytes": 57644,
+          "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+        },
+        "authorization-consumed.json": {
+          "bytes": 261,
+          "sha256": "f963b3ae45b204c707c8d550102184745c0f2363ae297caf5eaa69770242c019"
+        },
+        "close-receipt.json": {
+          "bytes": 618,
+          "sha256": "63e78e576354a43aab4feae88e3a931760a630cff02538465a88b04aace5922a"
+        },
+        "events.json": {
+          "bytes": 2732831,
+          "sha256": "c8dee28ea122d0e1dfd97460945ce9c66cba0c0f10ac524ea5e676d356445a9e"
+        },
+        "manifest.json": {
+          "bytes": 2148,
+          "sha256": "af4c98f10dd8af66f8b1ed90d877e489bc20cc403cc9357c9e4184e8cd8cef2c"
+        },
+        "operations.jsonl": {
+          "bytes": 10916155,
+          "sha256": "adfbe05748ac56c7cf9d686d4455928a71185aadc5bdaae39ba9035b0801b4ea"
+        },
+        "plan.json": {
+          "bytes": 3793,
+          "sha256": "89d853add6326c201ed9ff0b84d0793129379b1cf98a177ed83cc158883aff83"
+        },
+        "provenance.json": {
+          "bytes": 5208,
+          "sha256": "f3964d648c7e83e13490df94286fdc587f8e869fbd29b16d41fddac5507de938"
+        },
+        "rx-02.serial.log": {
+          "bytes": 2833345,
+          "sha256": "0d21c925338f774597396e70782d587ff5c3ec9e8737633b4b82468f794082a7"
+        },
+        "summary.json": {
+          "bytes": 1202787,
+          "sha256": "006b49307c4c1e7076481d4ae5714b3002d0ce369999ab82250477b7d1628a5e"
+        }
+      },
+      "integrity_ok": true,
+      "replay_ok": true,
+      "operations": 103382,
+      "events": 6030,
+      "operation_counts": {
+        "begin": 1,
+        "storage_check": 2607,
+        "tick": 80859,
+        "opened": 1,
+        "chunk": 19903,
+        "request": 2,
+        "cue_ack": 5,
+        "declare": 2,
+        "closing": 1,
+        "closed": 1
+      },
+      "fatal": null,
+      "connection": {
+        "quality_ok": false,
+        "reasons": [
+          "format:RX-02",
+          "preamble_anomaly:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02"
+        ]
+      },
+      "exploratory_eligibility": {
+        "revision": "rx02-exploratory-1",
+        "evidence_type": "physical_capture",
+        "integrity_ok": true,
+        "replay_ok": true,
+        "identity_ok": true,
+        "storage_ok": true,
+        "windows": [
+          {
+            "slot_id": "RX02-C01-E",
+            "eligible": true,
+            "reasons": [],
+            "status": "eligible_exploratory"
+          },
+          {
+            "slot_id": "RX02-C01-S",
+            "eligible": true,
+            "reasons": [],
+            "status": "eligible_exploratory"
+          }
+        ],
+        "permitted_uses": {
+          "calibration": false,
+          "training": false,
+          "production": false
+        }
+      },
+      "open_to_close_ns": 664114355399,
+      "complete_CSI_rows": 3299,
+      "raw_bytes": 2833345,
+      "host_row_gap_ns": {
+        "count": 3298,
+        "min": 160412289,
+        "median": 200133821.5,
+        "mean": 201081673.32838082,
+        "p95": 218888973,
+        "p99": 228482629,
+        "max": 416871054
+      },
+      "local_row_gap_us": {
+        "count": 3298,
+        "min": 179578,
+        "median": 200004.0,
+        "mean": 201091.9596725288,
+        "p95": 202292,
+        "p99": 203959,
+        "max": 401429
+      },
+      "host_row_gaps_over_500ms": 0,
+      "host_row_gaps_over_1s": 0,
+      "host_zero_gaps": 0,
+      "callbacks_consecutive": true,
+      "callback_ids": [
+        0,
+        3298
+      ],
+      "queue_drops_values": [
+        0
+      ],
+      "row_assembly_ns": {
+        "count": 3299,
+        "min": 20124,
+        "median": 66756508,
+        "mean": 65976945.721127614,
+        "p95": 80657118,
+        "p99": 84216267,
+        "max": 87836268
+      },
+      "timing": {
+        "read_duration_ns": {
+          "count": 19903,
+          "min": 5102,
+          "median": 47848,
+          "mean": 42737.30367281314,
+          "p95": 55552,
+          "p99": 74246,
+          "max": 338333
+        },
+        "return_to_decision_sample_ns": {
+          "count": 19903,
+          "min": 1593378,
+          "median": 2561310,
+          "mean": 2558438.8694669143,
+          "p95": 2995632,
+          "p99": 3177683,
+          "max": 73721540
+        },
+        "bytes_per_read": {
+          "count": 19903,
+          "min": 1,
+          "median": 128,
+          "mean": 142.35768477114004,
+          "p95": 256,
+          "p99": 256,
+          "max": 755
+        },
+        "read_return_gap_ns": {
+          "count": 19902,
+          "min": 10424884,
+          "median": 13376975.5,
+          "mean": 33364504.857049543,
+          "p95": 138639871,
+          "p99": 147483046,
+          "max": 346972180
+        },
+        "previous_return_to_next_read_start_ns": {
+          "count": 19902,
+          "min": 10402758,
+          "median": 13328370.0,
+          "mean": 33321767.085368305,
+          "p95": 138579374,
+          "p99": 147432382,
+          "max": 346921789
+        }
+      },
+      "windows": [
+        {
+          "id": "RX02-C01-E",
+          "condition": "E",
+          "state": "complete",
+          "last": false,
+          "requested_ns": 1326862909670,
+          "gate_ns": 1387638147655,
+          "gate_deadline_ns": 1397638147655,
+          "T0_ns": 1388146280317,
+          "T1_ns": 1418146280317,
+          "start_signal": 0,
+          "end_signal": 1,
+          "reasons": [],
+          "availability_evidence": {
+            "RX-02": {
+              "ready_line": 92,
+              "row_lines": [
+                1828,
+                1829,
+                1830
+              ]
+            }
+          },
+          "label": {
+            "status": "declared",
+            "declaration_ns": 1478220919891,
+            "timing_uncertainty": "unknown",
+            "established_before_cue": true,
+            "maintained_through_end_cue": true,
+            "cues_heard": true,
+            "notes": "",
+            "observation_method": "operator_declaration"
+          },
+          "window_quality_ok": true,
+          "pilot_coverage_ok": true,
+          "label_quality_ok": true,
+          "eligible": false,
+          "coverage": {
+            "included_rows": 148,
+            "bins_5s": [
+              24,
+              24,
+              24,
+              25,
+              25,
+              26
+            ],
+            "gaps_ns": [
+              218010047,
+              183134865,
+              208294385,
+              200962342,
+              198707763,
+              182408639,
+              215078321,
+              188945820,
+              212427962,
+              383995726,
+              203315423,
+              209191857,
+              218581445,
+              202419965,
+              181830166,
+              182199543,
+              215328688,
+              195372183,
+              202224766,
+              196824541,
+              200067125,
+              201907755,
+              203259405,
+              189289502,
+              216164989,
+              200465233,
+              186134632,
+              224049933,
+              186979884,
+              204478623,
+              208034645,
+              171965372,
+              214909969,
+              195854885,
+              202699173,
+              204533757,
+              188445652,
+              189474269,
+              217288227,
+              200170776,
+              208715888,
+              184200557,
+              212048129,
+              179820037,
+              229062484,
+              182781061,
+              200783911,
+              195761921,
+              202991132,
+              208757632,
+              199098509,
+              182981438,
+              215578495,
+              397044801,
+              200146363,
+              186053273,
+              217908531,
+              186526975,
+              200797723,
+              201862189,
+              207305089,
+              193018953,
+              209201320,
+              208450197,
+              178855932,
+              196987366,
+              215523348,
+              201151241,
+              187064834,
+              226395930,
+              174089851,
+              210689485,
+              204942894,
+              180274726,
+              215080447,
+              190377721,
+              195736455,
+              202769412,
+              212045714,
+              200463870,
+              202326119,
+              186799099,
+              211173096,
+              180974945,
+              198382898,
+              223663605,
+              181450000,
+              214518849,
+              190047594,
+              197966083,
+              220739148,
+              191168243,
+              191457012,
+              190748904,
+              223369956,
+              194195475,
+              190430201,
+              203572400,
+              212485290,
+              197002059,
+              193361711,
+              197910414,
+              203439730,
+              207874686,
+              196685443,
+              211383453,
+              190981957,
+              187567862,
+              202747625,
+              188957767,
+              202903117,
+              223846991,
+              192180520,
+              197762493,
+              188382518,
+              191838348,
+              223176090,
+              180793415,
+              213003628,
+              190271778,
+              213164665,
+              190992219,
+              209800931,
+              203786847,
+              189329066,
+              198660946,
+              195967519,
+              203292407,
+              203082900,
+              191992909,
+              209625099,
+              201045881,
+              206001084,
+              186598822,
+              210706068,
+              190937074,
+              195112651,
+              211977496,
+              204674820,
+              203403443,
+              189813694,
+              210158581,
+              201799192,
+              187981210,
+              204497639,
+              184336331,
+              209053112,
+              186452833,
+              9439952
+            ],
+            "max_gap_ns": 397044801,
+            "basic_ok": true,
+            "pilot_ok": true
+          },
+          "start_gap_ns": 218010047,
+          "end_gap_ns": 9439952,
+          "first_included_reference": {
+            "kind": "row",
+            "id": 1737,
+            "local_timestamp": 350566276,
+            "queue_drops": 0,
+            "first_read_index": 10322,
+            "first_read_started_ns": "1388281270050",
+            "byte_offset": 1488532,
+            "line_1based": 1831,
+            "byte_end": 1489520,
+            "byte_length": 988,
+            "line_sha256": "edf51c3149b580b3611002234bdf6c2e9887424d94349907f2b5a8b2ff58042f",
+            "last_read_index": 10328,
+            "returned_ns": "1388364290364",
+            "continuity_error": null
+          },
+          "last_included_reference": {
+            "kind": "row",
+            "id": 1884,
+            "local_timestamp": 380366352,
+            "queue_drops": 0,
+            "first_read_index": 11169,
+            "first_read_started_ns": "1418085900995",
+            "byte_offset": 1613642,
+            "line_1based": 1978,
+            "byte_end": 1614401,
+            "byte_length": 759,
+            "line_sha256": "b8fda67c467ddcaa4453961102eb8256f7ba72c66518e3f8067025d476e1ebe4",
+            "last_read_index": 11173,
+            "returned_ns": "1418136840365",
+            "continuity_error": null
+          },
+          "timing_scope": "Original references for coverage; read timing below grouped by return, without RF synchronization",
+          "read_and_row_timing": {
+            "start_ns": 1388146280317,
+            "end_exclusive_ns": 1418146280317,
+            "complete_rows_by_return": 148,
+            "host_row_gap_ns": {
+              "count": 147,
+              "min": 171965372,
+              "median": 200797723,
+              "mean": 202534353.74829933,
+              "p95": 223369956,
+              "p99": 383995726,
+              "max": 397044801
+            },
+            "local_row_gap_us": {
+              "count": 147,
+              "min": 196357,
+              "median": 200000,
+              "mean": 202721.60544217686,
+              "p95": 202847,
+              "p99": 400005,
+              "max": 400028
+            },
+            "host_row_gaps_over_500ms": 0,
+            "host_row_gaps_over_1s": 0,
+            "reads_by_return": 852,
+            "timing": {
+              "read_duration_ns": {
+                "count": 852,
+                "min": 26001,
+                "median": 50457.5,
+                "mean": 50130.80751173709,
+                "p95": 55241,
+                "p99": 74803,
+                "max": 88362
+              },
+              "return_to_decision_sample_ns": {
+                "count": 852,
+                "min": 1690915,
+                "median": 2731404.0,
+                "mean": 2719062.7699530516,
+                "p95": 3042718,
+                "p99": 3097945,
+                "max": 3917111
+              },
+              "bytes_per_read": {
+                "count": 852,
+                "min": 16,
+                "median": 128.0,
+                "mean": 147.73356807511738,
+                "p95": 256,
+                "p99": 256,
+                "max": 281
+              },
+              "read_return_gap_ns": {
+                "count": 851,
+                "min": 11104380,
+                "median": 13846130,
+                "mean": 35082866.4453584,
+                "p95": 140353878,
+                "p99": 148979096,
+                "max": 329407031
+              },
+              "previous_return_to_next_read_start_ns": {
+                "count": 851,
+                "min": 11054841,
+                "median": 13797048,
+                "mean": 35032736.6239718,
+                "p95": 140303660,
+                "p99": 148929457,
+                "max": 329356053
+              }
+            }
+          }
+        },
+        {
+          "id": "RX02-C01-S",
+          "condition": "S",
+          "state": "complete",
+          "last": true,
+          "requested_ns": 1600046066669,
+          "gate_ns": 1660765660334,
+          "gate_deadline_ns": 1670765660334,
+          "T0_ns": 1661359117832,
+          "T1_ns": 1691359117832,
+          "start_signal": 2,
+          "end_signal": 3,
+          "reasons": [],
+          "availability_evidence": {
+            "RX-02": {
+              "ready_line": 92,
+              "row_lines": [
+                3188,
+                3189,
+                3190
+              ]
+            }
+          },
+          "label": {
+            "status": "declared",
+            "declaration_ns": 1783090053866,
+            "timing_uncertainty": "unknown",
+            "established_before_cue": true,
+            "maintained_through_end_cue": true,
+            "cues_heard": true,
+            "notes": "",
+            "observation_method": "operator_declaration"
+          },
+          "window_quality_ok": true,
+          "pilot_coverage_ok": true,
+          "label_quality_ok": true,
+          "eligible": false,
+          "coverage": {
+            "included_rows": 150,
+            "bins_5s": [
+              25,
+              25,
+              25,
+              25,
+              25,
+              25
+            ],
+            "gaps_ns": [
+              174531575,
+              207268855,
+              196435888,
+              207985766,
+              215277920,
+              194773134,
+              190538809,
+              214608347,
+              182946394,
+              197504665,
+              214074965,
+              180103968,
+              202421023,
+              211879126,
+              200051712,
+              209123379,
+              193863344,
+              192825666,
+              189323504,
+              213288395,
+              186867339,
+              204204862,
+              208229059,
+              190366398,
+              204143839,
+              191550639,
+              214550650,
+              202428281,
+              196935935,
+              191403213,
+              214618553,
+              206647313,
+              191826429,
+              183499691,
+              214145404,
+              200109018,
+              192002443,
+              198916971,
+              215318870,
+              196512944,
+              184181012,
+              203266697,
+              213954984,
+              197477695,
+              206483450,
+              185483194,
+              206216953,
+              190053861,
+              201232832,
+              208956161,
+              208838762,
+              195279044,
+              187736631,
+              189074419,
+              214393364,
+              192716937,
+              211744080,
+              194118312,
+              193926750,
+              204577988,
+              215456465,
+              179507736,
+              211031629,
+              201458349,
+              190516808,
+              203694957,
+              206128408,
+              210237752,
+              190196908,
+              178907718,
+              216118368,
+              197165237,
+              203224429,
+              192315775,
+              211178281,
+              197408425,
+              199846508,
+              203738897,
+              191781441,
+              199409219,
+              210032438,
+              183535550,
+              210447775,
+              184668397,
+              209129155,
+              200826563,
+              199169890,
+              206040070,
+              188452409,
+              213705096,
+              199405611,
+              197946306,
+              208740128,
+              189741240,
+              201449940,
+              187854726,
+              206200552,
+              208628887,
+              192830887,
+              204377297,
+              199550243,
+              213842105,
+              191709322,
+              190508682,
+              219835496,
+              189177950,
+              201584444,
+              179602829,
+              212250487,
+              202293475,
+              193343319,
+              214786727,
+              201551788,
+              183678546,
+              203893850,
+              188494029,
+              212353380,
+              205359184,
+              200066250,
+              181790699,
+              209954161,
+              195931029,
+              208879905,
+              213832276,
+              189132240,
+              205200041,
+              186733523,
+              200173800,
+              200792340,
+              203879820,
+              197222989,
+              209045898,
+              198651206,
+              201716071,
+              192912576,
+              214648419,
+              174346621,
+              216105738,
+              190365427,
+              199738557,
+              211637390,
+              189732901,
+              212487226,
+              194457272,
+              196588162,
+              202459645,
+              233025520,
+              169556189,
+              200966388,
+              189286499,
+              19543727
+            ],
+            "max_gap_ns": 233025520,
+            "basic_ok": true,
+            "pilot_ok": true
+          },
+          "start_gap_ns": 174531575,
+          "end_gap_ns": 19543727,
+          "first_included_reference": {
+            "kind": "row",
+            "id": 3097,
+            "local_timestamp": 623766854,
+            "queue_drops": 0,
+            "first_read_index": 18600,
+            "first_read_started_ns": "1661477597309",
+            "byte_offset": 2656986,
+            "line_1based": 3191,
+            "byte_end": 2657736,
+            "byte_length": 750,
+            "line_sha256": "b5fc21be4b1eda5d441b41e776bebb7053bd3a641bebe00f322c3dfcbac6264f",
+            "last_read_index": 18605,
+            "returned_ns": "1661533649407",
+            "continuity_error": null
+          },
+          "last_included_reference": {
+            "kind": "row",
+            "id": 3246,
+            "local_timestamp": 653566858,
+            "queue_drops": 0,
+            "first_read_index": 19571,
+            "first_read_started_ns": "1691276795596",
+            "byte_offset": 2787546,
+            "line_1based": 3340,
+            "byte_end": 2788420,
+            "byte_length": 874,
+            "line_sha256": "bdc0f7678643425a20dda47b00370b561f7cc2f0d74f24e3938b671b617f508c",
+            "last_read_index": 19576,
+            "returned_ns": "1691339574105",
+            "continuity_error": null
+          },
+          "timing_scope": "Original references for coverage; read timing below grouped by return, without RF synchronization",
+          "read_and_row_timing": {
+            "start_ns": 1661359117832,
+            "end_exclusive_ns": 1691359117832,
+            "complete_rows_by_return": 150,
+            "host_row_gap_ns": {
+              "count": 149,
+              "min": 169556189,
+              "median": 200173800,
+              "mean": 200039763.0738255,
+              "p95": 214786727,
+              "p99": 219835496,
+              "max": 233025520
+            },
+            "local_row_gap_us": {
+              "count": 149,
+              "min": 180174,
+              "median": 200008,
+              "mean": 200000.0268456376,
+              "p95": 201555,
+              "p99": 204263,
+              "max": 219582
+            },
+            "host_row_gaps_over_500ms": 0,
+            "host_row_gaps_over_1s": 0,
+            "reads_by_return": 977,
+            "timing": {
+              "read_duration_ns": {
+                "count": 977,
+                "min": 11815,
+                "median": 36839,
+                "mean": 35459.63357215967,
+                "p95": 53597,
+                "p99": 69000,
+                "max": 119928
+              },
+              "return_to_decision_sample_ns": {
+                "count": 977,
+                "min": 1805637,
+                "median": 2243637,
+                "mean": 2253799.1811668375,
+                "p95": 2552466,
+                "p99": 2740786,
+                "max": 4552355
+              },
+              "bytes_per_read": {
+                "count": 977,
+                "min": 12,
+                "median": 128,
+                "mean": 134.5281473899693,
+                "p95": 231,
+                "p99": 256,
+                "max": 260
+              },
+              "read_return_gap_ns": {
+                "count": 976,
+                "min": 10739134,
+                "median": 12163186.5,
+                "mean": 30596269.898565575,
+                "p95": 137676829,
+                "p99": 145129009,
+                "max": 150557450
+              },
+              "previous_return_to_next_read_start_ns": {
+                "count": 976,
+                "min": 10703641,
+                "median": 12126542.0,
+                "mean": 30560791.735655736,
+                "p95": 137642178,
+                "p99": 145087284,
+                "max": 150519868
+              }
+            }
+          }
+        }
+      ],
+      "signals": [
+        {
+          "id": 0,
+          "kind": "establish_condition",
+          "requested_ns": 1356867323474,
+          "ack_ns": 1357635668955,
+          "software_playback_ok": true
+        },
+        {
+          "id": 1,
+          "kind": "window_finished_connection_open",
+          "requested_ns": 1428148395963,
+          "ack_ns": 1428655598244,
+          "software_playback_ok": true
+        },
+        {
+          "id": 2,
+          "kind": "establish_condition",
+          "requested_ns": 1630051845702,
+          "ack_ns": 1630758065536,
+          "software_playback_ok": true
+        },
+        {
+          "id": 3,
+          "kind": "window_finished_connection_open",
+          "requested_ns": 1701361530516,
+          "ack_ns": 1701820187626,
+          "software_playback_ok": true
+        },
+        {
+          "id": 4,
+          "kind": "selected_port_closed_confirmed",
+          "requested_ns": 1701827109312,
+          "ack_ns": 1703782202085,
+          "software_playback_ok": true
+        }
+      ],
+      "remaining_slots": [],
+      "close_receipt": {
+        "protocol": "presence_rx02_persistent_1",
+        "connection_id": "RX02-C01",
+        "closed": {
+          "RX-02": {
+            "confirmed": true,
+            "reader_stopped": true,
+            "at_ns": 1701827109312,
+            "error": null,
+            "proof": "pyserial_close_returned_and_all_fds_released"
+          }
+        },
+        "selected_confirmed": true,
+        "read_loop_stopped": true,
+        "timer_is_close_proof": false,
+        "raw_sha256": {
+          "RX-02": "0d21c925338f774597396e70782d587ff5c3ec9e8737633b4b82468f794082a7"
+        },
+        "operations_prefix_bytes": 10204126,
+        "operations_prefix_sha256": "3be4f399fc8c698f4c62836f54e2365cf42c8b4cfee14356384dfd8b6c14f02d"
+      },
+      "runtime": {
+        "transport": "UART",
+        "receivers": {
+          "RX-02": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              },
+              {
+                "line": "rts",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          }
+        },
+        "notifier": "laptop_aplay_human_audibility_unverified",
+        "audibility_verified_automatically": false,
+        "bubblewrap_isolation_claimed": false,
+        "retry_count": 0,
+        "startup_reader_stopped": true
+      },
+      "authorization_consumed": {
+        "protocol": "presence_rx02_persistent_1",
+        "connection_id": "RX02-C01",
+        "reference": "Alan-RX02-C01-20261104-unico-intento",
+        "consumed": true,
+        "retry_allowed": false,
+        "meaning": "consumed_before_open_attempt; actual opens recorded in operations"
+      },
+      "provenance": {
+        "implementation_base_commit": "9b28addc221468ed1c38e6480a6cf153e5a00c70",
+        "line_policy_revision": "v4-startup-sequence-1",
+        "eligibility_revision": "rx02-exploratory-1",
+        "evidence_type": "physical_capture",
+        "python_version": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+        "physical_transport_enabled": true,
+        "plan_sha256": "89d853add6326c201ed9ff0b84d0793129379b1cf98a177ed83cc158883aff83",
+        "sources": [
+          {
+            "path": "src/persistent_presence_v4.py",
+            "sha256": "2ee89f05c33af7f638016cf4d87871f882e359a859a8671f07037b9a3a37171a",
+            "bytes": 25615
+          },
+          {
+            "path": "src/presence_v4_journal.py",
+            "sha256": "9a42e4132219deb5cecf505e817c61d207516304586cbbd63feb4977adc50b3a",
+            "bytes": 10914
+          },
+          {
+            "path": "src/presence_v4_pty.py",
+            "sha256": "7aa1288295d2cfe10e77c3a6c61104f1d2716ad9967c81842645939d47f4d7f5",
+            "bytes": 10366
+          },
+          {
+            "path": "src/presence_v4_audio.py",
+            "sha256": "658c6fad43079c16d3ca3d5f8bd3a5324a5a9995be85d630165b406395571232",
+            "bytes": 3098
+          },
+          {
+            "path": "src/availability_window.py",
+            "sha256": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596",
+            "bytes": 12330
+          },
+          {
+            "path": "src/capture_csi_multi.py",
+            "sha256": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+            "bytes": 19548
+          },
+          {
+            "path": "src/capture_csi.py",
+            "sha256": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+            "bytes": 4305
+          },
+          {
+            "path": "src/preserving_serial.py",
+            "sha256": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+            "bytes": 1195
+          },
+          {
+            "path": "src/controlled_protocol.py",
+            "sha256": "86f547f825094243e1500bcda507282c934b3daa0a3178c5558c7fa13ccaba78",
+            "bytes": 628
+          },
+          {
+            "path": "tools/campana_presencia_v4.py",
+            "sha256": "49e8d4e1cb2fbcccdb90f5743cfc9fac23370041d9aa3f0263eaedc6a96e7513",
+            "bytes": 9957
+          },
+          {
+            "path": "config/csi_esp32s3.json",
+            "sha256": "c39115ee2a789e8a8b3aa372528f869a6ac9fe5f92847b427ad4075d78f3c048",
+            "bytes": 1050
+          },
+          {
+            "path": "src/presence_v4_exploratory.py",
+            "sha256": "7da77617fc6af9031e334027a2d8a311c37c1119e860579b07332cd27734af50",
+            "bytes": 14409
+          },
+          {
+            "path": "src/presence_rx02.py",
+            "sha256": "b2992f3b4bf6b710bb9c42a549c5984733849a1eaa255f4be101e857648c9c25",
+            "bytes": 15279
+          },
+          {
+            "path": "src/presence_rx02_journal.py",
+            "sha256": "faca3ac20252c93943d199abfc0576c0110234756b953dc2e1844355b887c1a7",
+            "bytes": 10754
+          },
+          {
+            "path": "src/presence_rx02_uart.py",
+            "sha256": "32ba9c9028465a3b56707703715a71f3b8bcbd1a29105e1bc8c57bfe92f86ca8",
+            "bytes": 10399
+          },
+          {
+            "path": "src/presence_v4_uart.py",
+            "sha256": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+            "bytes": 22468
+          },
+          {
+            "path": "tools/piloto_presencia_rx02.py",
+            "sha256": "ddb8d98a9aaa0c7e7dcdf853224de5355b59cbdf18095b73aaa6071dcfccfa34",
+            "bytes": 5459
+          },
+          {
+            "path": "config/pyserial_uart_v4.lock.json",
+            "sha256": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010",
+            "bytes": 384
+          }
+        ],
+        "transport": {
+          "implementation_base_commit": "9b28addc221468ed1c38e6480a6cf153e5a00c70",
+          "backend": "UART",
+          "identities": {
+            "RX-02": {
+              "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00",
+              "resolved": "/dev/ttyACM1",
+              "serial": "5C93200689",
+              "vid": "1a86",
+              "pid": "55d3",
+              "bus": "usb",
+              "node_fingerprint": [
+                7,
+                1291,
+                42497
+              ],
+              "permissions": {
+                "mode": "0o660",
+                "uid": 0,
+                "gid": 20
+              }
+            }
+          },
+          "authorization_reference": "Alan-RX02-C01-20261104-unico-intento",
+          "initial_free_bytes_observed": 113769656320,
+          "pyserial_version": "3.5",
+          "serialposix_sha256": "5d56f98513391e1766a1847a04e2e1202ced4172a152803ba1c823a149a9b6f9",
+          "serialutil_sha256": "3c84f8c7c319f161a85d6f8db5bedc4f65255714589bdcbeee6f2daf65a17c0a",
+          "storage_policy": {
+            "initial_free_bytes": 104857600,
+            "reserve_bytes": 33554432,
+            "max_raw_bytes": 67108864,
+            "max_bundle_bytes": 268435456,
+            "max_connection_ns": 3600000000000
+          },
+          "dtr_requested": false,
+          "rts_requested": false,
+          "decision_clock_sampled_after_raw_persistence": true,
+          "electrical_behavior_verified": false,
+          "installed_firmware_attested": false,
+          "sources": {
+            "src/presence_rx02_uart.py": "32ba9c9028465a3b56707703715a71f3b8bcbd1a29105e1bc8c57bfe92f86ca8",
+            "src/presence_v4_uart.py": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+            "src/preserving_serial.py": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+            "tools/piloto_presencia_rx02.py": "ddb8d98a9aaa0c7e7dcdf853224de5355b59cbdf18095b73aaa6071dcfccfa34",
+            "config/pyserial_uart_v4.lock.json": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010"
+          }
+        }
+      },
+      "plan": {
+        "protocol": "presence_rx02_persistent_1",
+        "execution_mode": "physical_after_approval",
+        "policy": {
+          "window_ns": 30000000000,
+          "availability_wait_ns": 10000000000,
+          "freshness_ns": 1000000000,
+          "exit_delay_ns": 60000000000,
+          "start_cue_delay_ns": 30000000000,
+          "establishment_ns": 30000000000,
+          "label_tail_ns": 10000000000,
+          "close_wait_ns": 250000000,
+          "close_bytes": 65536,
+          "coverage_min_rows": 120,
+          "coverage_bin_rows": 15,
+          "coverage_gap_ns": 500000000
+        },
+        "receivers": {
+          "RX-02": "5C93200689"
+        },
+        "connection_id": "RX02-C01",
+        "actor": "Alan; único operador, según confirmación actual",
+        "mounting_reference": "results/local/estado-preflight-rx02-C01-20261104T215611Z/declaracion-actual.json#sha256=4fdb066a344ee294bc515205e47fc18339ae7a9ddd02e4e7e162e3f1dde6cb35",
+        "partition_group": "RX02-C01",
+        "slots": [
+          {
+            "id": "RX02-C01-E",
+            "condition": "E"
+          },
+          {
+            "id": "RX02-C01-S",
+            "condition": "S"
+          }
+        ],
+        "ports": {
+          "RX-02": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00"
+        },
+        "baud": 115200,
+        "storage_policy": {
+          "initial_free_bytes": 104857600,
+          "reserve_bytes": 33554432,
+          "max_raw_bytes": 67108864,
+          "max_bundle_bytes": 268435456,
+          "max_connection_ns": 3600000000000
+        },
+        "environment": {
+          "condition": "Declaración actual: puerta y ventanas cerradas, sin ventilador; ventanas futuras manuales E y S, aún sin adquirir.",
+          "occupancy": "Actualmente solo Alan en el cuarto; E vacía y S Alan sentado son condiciones futuras del plan, sin etiquetas adquiridas.",
+          "movement": "Mismo montaje y posiciones; único operador. Sin medición automática de movimiento ni declaración anticipada de cumplimiento de ventanas.",
+          "geometry": "Mismo montaje y posiciones declarados; tras la pausa RX-01 reconectado al hub, RX-02 directamente a laptop. results/local/estado-preflight-rx02-C01-20261104T215611Z/declaracion-actual.json#sha256=4fdb066a344ee294bc515205e47fc18339ae7a9ddd02e4e7e162e3f1dde6cb35",
+          "tx_power": "TX-01 reconectado al cargador; RX-01 al hub; RX-02 directamente a laptop. Nuevo arranque declarado para las tres ESP, hora exacta desconocida.",
+          "mounting_confirmation": "Confirmación humana actual del mismo montaje y posiciones. Se registra la reconexión, sin asumir continuidad de alimentación. results/local/estado-preflight-rx02-C01-20261104T215611Z/declaracion-actual.json#sha256=4fdb066a344ee294bc515205e47fc18339ae7a9ddd02e4e7e162e3f1dde6cb35",
+          "sound_practice_reference": "results/local/SONIDOS-FUERA-PRUEBA02/practice.json#sha256=2fb862e7963828f4b5067c75a4ebe9361fcd84019451e948ff633da3ee2dc7cd; mismo sonido PRUEBA02 reconfirmado por operador; sin nueva reproducción ni medición acústica automática.",
+          "laptop_power_lid": "Laptop enchufada y abierta, declarado actualmente por operador.",
+          "suspension_ac_battery": "Suspensión desactivada; el operador confirma condiciones iguales a las últimas declaradas. Sin inspección automática de ajustes AC/batería.",
+          "serial_readers_absent": "Sin otros lectores serie, según declaración actual del operador."
+        },
+        "eligibility_revision": "rx02-exploratory-1",
+        "line_policy_revision": "v4-startup-sequence-1",
+        "review_state": "authorized_single_attempt",
+        "authorization_granted": true,
+        "permitted_uses": {
+          "calibration": false,
+          "training": false,
+          "production": false
+        },
+        "transmitter": {
+          "identity": "TX-01",
+          "source_mac": "1a:00:00:00:00:00"
+        },
+        "unused_receiver": {
+          "receiver": "RX-01",
+          "action": "leave_connected_fixed_uart_unopened",
+          "operator_confirmation": "confirmed_current"
+        },
+        "selection_revision": "rx02-continuity-selection-1",
+        "future_partition": "development_future"
+      },
+      "tails": {
+        "RX-02": {
+          "bytes": 0,
+          "byte_end": 2833345,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    "C02": {
+      "bundle": "results/local/piloto-rx02-r1-C02",
+      "original_files": {
+        "audio/0-establish_condition.wav": {
+          "bytes": 17324,
+          "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+        },
+        "audio/1-failure.wav": {
+          "bytes": 58924,
+          "sha256": "d394f5d61a23f29df7ec760c745b47107aa66a2ed1564670ecb675d8e51362d7"
+        },
+        "audio/2-selected_port_closed_confirmed.wav": {
+          "bytes": 57644,
+          "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+        },
+        "authorization-consumed.json": {
+          "bytes": 261,
+          "sha256": "7daf49962b3bf4c4c65289b6016c6dc543830b715c5080d12d5f4a06dba87dde"
+        },
+        "close-receipt.json": {
+          "bytes": 617,
+          "sha256": "ccdce22abb734b447df588257302e0cb3f35c027c60e6226952a56f93928dc35"
+        },
+        "events.json": {
+          "bytes": 900643,
+          "sha256": "8b32b0bbe7e6bdc042405072e080cfb55036ee34ce306bb98b4e4615ade16dda"
+        },
+        "manifest.json": {
+          "bytes": 1776,
+          "sha256": "50d597433625234d3935207f28a4686aa5359dff85a2e956a7fd46110495983c"
+        },
+        "operations.jsonl": {
+          "bytes": 3204975,
+          "sha256": "f78dafab61812623d56785bdb7aca1fadb420cbda175fc3b124ac32fef808412"
+        },
+        "plan.json": {
+          "bytes": 3748,
+          "sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b"
+        },
+        "provenance.json": {
+          "bytes": 5208,
+          "sha256": "63f2836a46dc3cec77f5564552481fe7b998612d557641c23bc320ab2bfab8d3"
+        },
+        "rx-02.serial.log": {
+          "bytes": 880889,
+          "sha256": "dde85d3a83256ac5a201932fb057c248447edb9e01f47db8d7766ecc0b875ca5"
+        },
+        "summary.json": {
+          "bytes": 524779,
+          "sha256": "2321b4956ac24a80c677d70293267bb7bfd9bdb7d5e3730453bc7a80869228be"
+        }
+      },
+      "integrity_ok": true,
+      "replay_ok": true,
+      "operations": 29106,
+      "events": 1917,
+      "operation_counts": {
+        "begin": 1,
+        "storage_check": 790,
+        "tick": 21973,
+        "opened": 1,
+        "chunk": 6335,
+        "request": 1,
+        "cue_ack": 3,
+        "closing": 1,
+        "closed": 1
+      },
+      "fatal": "availability_gap:RX-02",
+      "connection": {
+        "quality_ok": false,
+        "reasons": [
+          "format:RX-02",
+          "preamble_anomaly:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "format:RX-02",
+          "availability_gap:RX-02",
+          "incomplete_tail:RX-02"
+        ]
+      },
+      "exploratory_eligibility": {
+        "revision": "rx02-exploratory-1",
+        "evidence_type": "physical_capture",
+        "integrity_ok": true,
+        "replay_ok": true,
+        "identity_ok": true,
+        "storage_ok": true,
+        "windows": [
+          {
+            "slot_id": "RX02-C02-S",
+            "eligible": false,
+            "reasons": [
+              "connection_suspended",
+              "anomaly_intersects_or_unlocated",
+              "label_quality_ok"
+            ],
+            "status": "ineligible_exploratory"
+          }
+        ],
+        "permitted_uses": {
+          "calibration": false,
+          "training": false,
+          "production": false
+        }
+      },
+      "open_to_close_ns": 205841626668,
+      "complete_CSI_rows": 1014,
+      "raw_bytes": 880889,
+      "host_row_gap_ns": {
+        "count": 1013,
+        "min": 0,
+        "median": 199661826,
+        "mean": 200614561.51727542,
+        "p95": 218595047,
+        "p99": 226869081,
+        "max": 1221331818
+      },
+      "local_row_gap_us": {
+        "count": 1013,
+        "min": 183175,
+        "median": 200001,
+        "mean": 200197.77295162884,
+        "p95": 202502,
+        "p99": 204595,
+        "max": 399686
+      },
+      "host_row_gaps_over_500ms": 5,
+      "host_row_gaps_over_1s": 1,
+      "host_zero_gaps": 14,
+      "callbacks_consecutive": true,
+      "callback_ids": [
+        0,
+        1013
+      ],
+      "queue_drops_values": [
+        0
+      ],
+      "row_assembly_ns": {
+        "count": 1014,
+        "min": 39514,
+        "median": 66224192.0,
+        "mean": 67029270.968441814,
+        "p95": 79980152,
+        "p99": 85007135,
+        "max": 1221398627
+      },
+      "timing": {
+        "read_duration_ns": {
+          "count": 6335,
+          "min": 5270,
+          "median": 33584,
+          "mean": 33269.33559589582,
+          "p95": 54133,
+          "p99": 70609,
+          "max": 546816
+        },
+        "return_to_decision_sample_ns": {
+          "count": 6335,
+          "min": 1473700,
+          "median": 2303220,
+          "mean": 2576997.3114443566,
+          "p95": 2833452,
+          "p99": 3959245,
+          "max": 485252012
+        },
+        "bytes_per_read": {
+          "count": 6335,
+          "min": 1,
+          "median": 128,
+          "mean": 139.05114443567481,
+          "p95": 256,
+          "p99": 256,
+          "max": 4095
+        },
+        "read_return_gap_ns": {
+          "count": 6334,
+          "min": 10354560,
+          "median": 12495773.5,
+          "mean": 32188754.2316072,
+          "p95": 137833779,
+          "p99": 146830256,
+          "max": 1221331818
+        },
+        "previous_return_to_next_read_start_ns": {
+          "count": 6334,
+          "min": 10341009,
+          "median": 12456094.0,
+          "mean": 32155484.25670982,
+          "p95": 137814872,
+          "p99": 146809999,
+          "max": 1221262655
+        }
+      },
+      "windows": [
+        {
+          "id": "RX02-C02-S",
+          "condition": "S",
+          "state": "complete",
+          "last": false,
+          "requested_ns": 4255940658250,
+          "gate_ns": 4316652457106,
+          "gate_deadline_ns": 4326652457106,
+          "T0_ns": 4317281061098,
+          "T1_ns": 4347281061098,
+          "start_signal": 0,
+          "end_signal": null,
+          "reasons": [],
+          "availability_evidence": {
+            "RX-02": {
+              "ready_line": 91,
+              "row_lines": [
+                911,
+                912,
+                913
+              ]
+            }
+          },
+          "label": {
+            "status": "pending",
+            "declaration_ns": null,
+            "timing_uncertainty": "unknown"
+          },
+          "window_quality_ok": true,
+          "pilot_coverage_ok": true,
+          "label_quality_ok": false,
+          "eligible": false,
+          "coverage": {
+            "included_rows": 149,
+            "bins_5s": [
+              25,
+              24,
+              25,
+              26,
+              25,
+              24
+            ],
+            "gaps_ns": [
+              189973055,
+              207756050,
+              210575220,
+              188120197,
+              201395590,
+              210795702,
+              188154607,
+              191026162,
+              205684241,
+              205243660,
+              196623428,
+              200650334,
+              198893746,
+              197893244,
+              219054247,
+              181587725,
+              194690896,
+              208035262,
+              212915675,
+              202038348,
+              191428570,
+              193923088,
+              206535128,
+              211338018,
+              178565998,
+              214708905,
+              189012604,
+              190961292,
+              217508145,
+              189287470,
+              215161836,
+              196670187,
+              193763666,
+              199069293,
+              207887744,
+              196734847,
+              187206091,
+              216946160,
+              202581848,
+              188430809,
+              204889598,
+              183714077,
+              212322794,
+              194780164,
+              196590916,
+              197858864,
+              212466563,
+              209846299,
+              183968251,
+              214655794,
+              186561034,
+              219935232,
+              190306825,
+              200417459,
+              186393476,
+              208386889,
+              196618829,
+              209271236,
+              180098626,
+              219712926,
+              188930246,
+              211797801,
+              187009655,
+              190521706,
+              226869081,
+              191054682,
+              188603592,
+              194270377,
+              208289495,
+              215856296,
+              201246484,
+              186953278,
+              192551084,
+              221413075,
+              193136055,
+              199714140,
+              186702966,
+              214630166,
+              176760751,
+              214695968,
+              209886326,
+              190304231,
+              194320893,
+              220914006,
+              190809685,
+              197355161,
+              203099775,
+              190154959,
+              207840757,
+              202511774,
+              204441153,
+              188046692,
+              198430150,
+              202233407,
+              196143094,
+              209047132,
+              191960665,
+              199912087,
+              215491450,
+              175142161,
+              214122385,
+              194281564,
+              211808502,
+              202187861,
+              189751757,
+              189606600,
+              205428213,
+              215042308,
+              195718059,
+              200133968,
+              189484050,
+              207856866,
+              195158547,
+              202139629,
+              208272731,
+              187440961,
+              200350383,
+              222462385,
+              193517709,
+              173927851,
+              220001210,
+              197725806,
+              201209622,
+              198582484,
+              190921222,
+              205219332,
+              188652517,
+              205842913,
+              203851273,
+              199265988,
+              198719124,
+              204459704,
+              195241677,
+              208921275,
+              195138951,
+              197372009,
+              203253487,
+              191375800,
+              200261135,
+              216737137,
+              190157014,
+              211325386,
+              186622386,
+              198940310,
+              193475010,
+              201492322,
+              208431729,
+              217061910,
+              177516805,
+              206854737
+            ],
+            "max_gap_ns": 226869081,
+            "basic_ok": true,
+            "pilot_ok": true
+          },
+          "start_gap_ns": 189973055,
+          "end_gap_ns": 206854737,
+          "first_included_reference": {
+            "kind": "row",
+            "id": 821,
+            "local_timestamp": 164970614,
+            "queue_drops": 0,
+            "first_read_index": 5252,
+            "first_read_started_ns": "4317417843273",
+            "byte_offset": 713189,
+            "line_1based": 914,
+            "byte_end": 713960,
+            "byte_length": 771,
+            "line_sha256": "d862026369365a25bf7d6308ceef904e02e33374994dbe287bca2b2d4ad337f9",
+            "last_read_index": 5256,
+            "returned_ns": "4317471034153",
+            "continuity_error": null
+          },
+          "last_included_reference": {
+            "kind": "row",
+            "id": 969,
+            "local_timestamp": 194570616,
+            "queue_drops": 0,
+            "first_read_index": 6181,
+            "first_read_started_ns": "4347013170128",
+            "byte_offset": 841470,
+            "line_1based": 1062,
+            "byte_end": 842217,
+            "byte_length": 747,
+            "line_sha256": "0efc08985ad8e2900d3ff66ad66e08bc1ff5cc52049ec56dc2f5b1f07c8e3719",
+            "last_read_index": 6186,
+            "returned_ns": "4347074206361",
+            "continuity_error": null
+          },
+          "timing_scope": "Original references for coverage; read timing below grouped by return, without RF synchronization",
+          "read_and_row_timing": {
+            "start_ns": 4317281061098,
+            "end_exclusive_ns": 4347281061098,
+            "complete_rows_by_return": 149,
+            "host_row_gap_ns": {
+              "count": 148,
+              "min": 173927851,
+              "median": 199167640.5,
+              "mean": 200021433.83783785,
+              "p95": 219054247,
+              "p99": 222462385,
+              "max": 226869081
+            },
+            "local_row_gap_us": {
+              "count": 148,
+              "min": 195992,
+              "median": 199997.0,
+              "mean": 200000.01351351352,
+              "p95": 202220,
+              "p99": 203696,
+              "max": 204064
+            },
+            "host_row_gaps_over_500ms": 0,
+            "host_row_gaps_over_1s": 0,
+            "reads_by_return": 941,
+            "timing": {
+              "read_duration_ns": {
+                "count": 941,
+                "min": 9785,
+                "median": 39073,
+                "mean": 38428.150903294365,
+                "p95": 54487,
+                "p99": 68113,
+                "max": 170854
+              },
+              "return_to_decision_sample_ns": {
+                "count": 941,
+                "min": 1705210,
+                "median": 2367067,
+                "mean": 2391972.535600425,
+                "p95": 2704061,
+                "p99": 2877886,
+                "max": 34884556
+              },
+              "bytes_per_read": {
+                "count": 941,
+                "min": 18,
+                "median": 128,
+                "mean": 138.0701381509033,
+                "p95": 256,
+                "p99": 256,
+                "max": 640
+              },
+              "read_return_gap_ns": {
+                "count": 940,
+                "min": 10354560,
+                "median": 12585624.0,
+                "mean": 31768607.024468087,
+                "p95": 137391879,
+                "p99": 145704454,
+                "max": 149474129
+              },
+              "previous_return_to_next_read_start_ns": {
+                "count": 940,
+                "min": 10341009,
+                "median": 12542772.0,
+                "mean": 31730174.428723406,
+                "p95": 137354800,
+                "p99": 145685926,
+                "max": 149435767
+              }
+            }
+          }
+        }
+      ],
+      "signals": [
+        {
+          "id": 0,
+          "kind": "establish_condition",
+          "requested_ns": 4285947537461,
+          "ack_ns": 4286644302238,
+          "software_playback_ok": true
+        },
+        {
+          "id": 1,
+          "kind": "failure",
+          "requested_ns": 4356805088842,
+          "ack_ns": 4360010411708,
+          "software_playback_ok": true
+        },
+        {
+          "id": 2,
+          "kind": "selected_port_closed_confirmed",
+          "requested_ns": 4358275291649,
+          "ack_ns": 4361924678018,
+          "software_playback_ok": true
+        }
+      ],
+      "remaining_slots": [
+        {
+          "id": "RX02-C02-E",
+          "condition": "E",
+          "state": "suspended"
+        }
+      ],
+      "close_receipt": {
+        "protocol": "presence_rx02_persistent_1",
+        "connection_id": "RX02-C02",
+        "closed": {
+          "RX-02": {
+            "confirmed": true,
+            "reader_stopped": true,
+            "at_ns": 4358275291649,
+            "error": null,
+            "proof": "pyserial_close_returned_and_all_fds_released"
+          }
+        },
+        "selected_confirmed": true,
+        "read_loop_stopped": true,
+        "timer_is_close_proof": false,
+        "raw_sha256": {
+          "RX-02": "dde85d3a83256ac5a201932fb057c248447edb9e01f47db8d7766ecc0b875ca5"
+        },
+        "operations_prefix_bytes": 3204571,
+        "operations_prefix_sha256": "f616d421e0ef080be83d83df1430f743762c6ccb91506573a22a38c228c2f0c6"
+      },
+      "runtime": {
+        "transport": "UART",
+        "receivers": {
+          "RX-02": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              },
+              {
+                "line": "rts",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          }
+        },
+        "notifier": "laptop_aplay_human_audibility_unverified",
+        "audibility_verified_automatically": false,
+        "bubblewrap_isolation_claimed": false,
+        "retry_count": 0,
+        "startup_reader_stopped": true
+      },
+      "authorization_consumed": {
+        "protocol": "presence_rx02_persistent_1",
+        "connection_id": "RX02-C02",
+        "reference": "Alan-RX02-C02-20261104-unico-intento",
+        "consumed": true,
+        "retry_allowed": false,
+        "meaning": "consumed_before_open_attempt; actual opens recorded in operations"
+      },
+      "provenance": {
+        "implementation_base_commit": "9b28addc221468ed1c38e6480a6cf153e5a00c70",
+        "line_policy_revision": "v4-startup-sequence-1",
+        "eligibility_revision": "rx02-exploratory-1",
+        "evidence_type": "physical_capture",
+        "python_version": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+        "physical_transport_enabled": true,
+        "plan_sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b",
+        "sources": [
+          {
+            "path": "src/persistent_presence_v4.py",
+            "sha256": "2ee89f05c33af7f638016cf4d87871f882e359a859a8671f07037b9a3a37171a",
+            "bytes": 25615
+          },
+          {
+            "path": "src/presence_v4_journal.py",
+            "sha256": "9a42e4132219deb5cecf505e817c61d207516304586cbbd63feb4977adc50b3a",
+            "bytes": 10914
+          },
+          {
+            "path": "src/presence_v4_pty.py",
+            "sha256": "7aa1288295d2cfe10e77c3a6c61104f1d2716ad9967c81842645939d47f4d7f5",
+            "bytes": 10366
+          },
+          {
+            "path": "src/presence_v4_audio.py",
+            "sha256": "658c6fad43079c16d3ca3d5f8bd3a5324a5a9995be85d630165b406395571232",
+            "bytes": 3098
+          },
+          {
+            "path": "src/availability_window.py",
+            "sha256": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596",
+            "bytes": 12330
+          },
+          {
+            "path": "src/capture_csi_multi.py",
+            "sha256": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+            "bytes": 19548
+          },
+          {
+            "path": "src/capture_csi.py",
+            "sha256": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+            "bytes": 4305
+          },
+          {
+            "path": "src/preserving_serial.py",
+            "sha256": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+            "bytes": 1195
+          },
+          {
+            "path": "src/controlled_protocol.py",
+            "sha256": "86f547f825094243e1500bcda507282c934b3daa0a3178c5558c7fa13ccaba78",
+            "bytes": 628
+          },
+          {
+            "path": "tools/campana_presencia_v4.py",
+            "sha256": "49e8d4e1cb2fbcccdb90f5743cfc9fac23370041d9aa3f0263eaedc6a96e7513",
+            "bytes": 9957
+          },
+          {
+            "path": "config/csi_esp32s3.json",
+            "sha256": "c39115ee2a789e8a8b3aa372528f869a6ac9fe5f92847b427ad4075d78f3c048",
+            "bytes": 1050
+          },
+          {
+            "path": "src/presence_v4_exploratory.py",
+            "sha256": "7da77617fc6af9031e334027a2d8a311c37c1119e860579b07332cd27734af50",
+            "bytes": 14409
+          },
+          {
+            "path": "src/presence_rx02.py",
+            "sha256": "b2992f3b4bf6b710bb9c42a549c5984733849a1eaa255f4be101e857648c9c25",
+            "bytes": 15279
+          },
+          {
+            "path": "src/presence_rx02_journal.py",
+            "sha256": "faca3ac20252c93943d199abfc0576c0110234756b953dc2e1844355b887c1a7",
+            "bytes": 10754
+          },
+          {
+            "path": "src/presence_rx02_uart.py",
+            "sha256": "32ba9c9028465a3b56707703715a71f3b8bcbd1a29105e1bc8c57bfe92f86ca8",
+            "bytes": 10399
+          },
+          {
+            "path": "src/presence_v4_uart.py",
+            "sha256": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+            "bytes": 22468
+          },
+          {
+            "path": "tools/piloto_presencia_rx02.py",
+            "sha256": "ddb8d98a9aaa0c7e7dcdf853224de5355b59cbdf18095b73aaa6071dcfccfa34",
+            "bytes": 5459
+          },
+          {
+            "path": "config/pyserial_uart_v4.lock.json",
+            "sha256": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010",
+            "bytes": 384
+          }
+        ],
+        "transport": {
+          "implementation_base_commit": "9b28addc221468ed1c38e6480a6cf153e5a00c70",
+          "backend": "UART",
+          "identities": {
+            "RX-02": {
+              "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00",
+              "resolved": "/dev/ttyACM1",
+              "serial": "5C93200689",
+              "vid": "1a86",
+              "pid": "55d3",
+              "bus": "usb",
+              "node_fingerprint": [
+                7,
+                1291,
+                42497
+              ],
+              "permissions": {
+                "mode": "0o660",
+                "uid": 0,
+                "gid": 20
+              }
+            }
+          },
+          "authorization_reference": "Alan-RX02-C02-20261104-unico-intento",
+          "initial_free_bytes_observed": 113441611776,
+          "pyserial_version": "3.5",
+          "serialposix_sha256": "5d56f98513391e1766a1847a04e2e1202ced4172a152803ba1c823a149a9b6f9",
+          "serialutil_sha256": "3c84f8c7c319f161a85d6f8db5bedc4f65255714589bdcbeee6f2daf65a17c0a",
+          "storage_policy": {
+            "initial_free_bytes": 104857600,
+            "reserve_bytes": 33554432,
+            "max_raw_bytes": 67108864,
+            "max_bundle_bytes": 268435456,
+            "max_connection_ns": 3600000000000
+          },
+          "dtr_requested": false,
+          "rts_requested": false,
+          "decision_clock_sampled_after_raw_persistence": true,
+          "electrical_behavior_verified": false,
+          "installed_firmware_attested": false,
+          "sources": {
+            "src/presence_rx02_uart.py": "32ba9c9028465a3b56707703715a71f3b8bcbd1a29105e1bc8c57bfe92f86ca8",
+            "src/presence_v4_uart.py": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+            "src/preserving_serial.py": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+            "tools/piloto_presencia_rx02.py": "ddb8d98a9aaa0c7e7dcdf853224de5355b59cbdf18095b73aaa6071dcfccfa34",
+            "config/pyserial_uart_v4.lock.json": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010"
+          }
+        }
+      },
+      "plan": {
+        "protocol": "presence_rx02_persistent_1",
+        "execution_mode": "physical_after_approval",
+        "policy": {
+          "window_ns": 30000000000,
+          "availability_wait_ns": 10000000000,
+          "freshness_ns": 1000000000,
+          "exit_delay_ns": 60000000000,
+          "start_cue_delay_ns": 30000000000,
+          "establishment_ns": 30000000000,
+          "label_tail_ns": 10000000000,
+          "close_wait_ns": 250000000,
+          "close_bytes": 65536,
+          "coverage_min_rows": 120,
+          "coverage_bin_rows": 15,
+          "coverage_gap_ns": 500000000
+        },
+        "receivers": {
+          "RX-02": "5C93200689"
+        },
+        "connection_id": "RX02-C02",
+        "actor": "Alan; único operador, confirmado actualmente",
+        "mounting_reference": "results/local/estado-preflight-rx02-C02-20261104T224009Z/declaracion-actual.json#sha256=12b1155799de22e845fd79fce4426310ca96b32933d9174e2feebcc238823685",
+        "partition_group": "RX02-C02",
+        "slots": [
+          {
+            "id": "RX02-C02-S",
+            "condition": "S"
+          },
+          {
+            "id": "RX02-C02-E",
+            "condition": "E"
+          }
+        ],
+        "ports": {
+          "RX-02": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00"
+        },
+        "baud": 115200,
+        "storage_policy": {
+          "initial_free_bytes": 104857600,
+          "reserve_bytes": 33554432,
+          "max_raw_bytes": 67108864,
+          "max_bundle_bytes": 268435456,
+          "max_connection_ns": 3600000000000
+        },
+        "environment": {
+          "condition": "Puerta y ventanas cerradas; sin ventilador ni movimientos ajenos. Condiciones actuales declaradas; ventanas futuras S y E aún sin adquirir.",
+          "occupancy": "Solo Alan al confirmar. Ventanas futuras: sentado S y después vacía E última; aún sin adquirir ni declarar sus etiquetas.",
+          "movement": "Sin cambios de montaje ni movimientos ajenos desde C01, según operador. No se anticipa cumplimiento de las ventanas.",
+          "geometry": "Mismas posiciones, antenas, coaxiales, USB y hub que C01; sin moverlos. RX-01 al hub y RX-02 directo a laptop. results/local/estado-preflight-rx02-C02-20261104T224009Z/declaracion-actual.json#sha256=12b1155799de22e845fd79fce4426310ca96b32933d9174e2feebcc238823685",
+          "tx_power": "TX-01 al cargador; RX-01 al hub; RX-02 directamente a laptop. Sin desconexiones ni reinicios desde C01 según operador; continuidad eléctrica no medida.",
+          "mounting_confirmation": "Montaje actual confirmado sin movimientos desde C01; sin desconexiones ni reinicios declarados. results/local/estado-preflight-rx02-C02-20261104T224009Z/declaracion-actual.json#sha256=12b1155799de22e845fd79fce4426310ca96b32933d9174e2feebcc238823685",
+          "sound_practice_reference": "results/local/SONIDOS-FUERA-PRUEBA02/practice.json#sha256=2fb862e7963828f4b5067c75a4ebe9361fcd84019451e948ff633da3ee2dc7cd; mismo sonido y escucha que PRUEBA02 reconfirmados por operador; sin reproducción nueva ni medición acústica automática.",
+          "laptop_power_lid": "Laptop enchufada y abierta, declarado actualmente por operador.",
+          "suspension_ac_battery": "Suspensión desactivada con corriente y batería según confirmación actual; sin inspección automática de ajustes.",
+          "serial_readers_absent": "Sin otros lectores serie según declaración actual."
+        },
+        "eligibility_revision": "rx02-exploratory-1",
+        "line_policy_revision": "v4-startup-sequence-1",
+        "review_state": "authorized_single_attempt",
+        "authorization_granted": true,
+        "permitted_uses": {
+          "calibration": false,
+          "training": false,
+          "production": false
+        },
+        "transmitter": {
+          "identity": "TX-01",
+          "source_mac": "1a:00:00:00:00:00"
+        },
+        "unused_receiver": {
+          "receiver": "RX-01",
+          "action": "leave_connected_fixed_uart_unopened",
+          "operator_confirmation": "confirmed_current"
+        },
+        "selection_revision": "rx02-continuity-selection-1",
+        "future_partition": "development_future"
+      },
+      "tails": {
+        "RX-02": {
+          "bytes": 349,
+          "byte_end": 880889,
+          "sha256": "dfc8af86bd78634940863e9e27ca991b87ad84b0317eaa6cdea8b3a39b739f97"
+        }
+      }
+    }
+  },
+  "comparability": {
+    "acquisition_sources_identical": true,
+    "source_count": 18,
+    "fixed_plan_fields_equal": {
+      "protocol": true,
+      "policy": true,
+      "receivers": true,
+      "ports": true,
+      "baud": true,
+      "storage_policy": true,
+      "transmitter": true,
+      "eligibility_revision": true,
+      "line_policy_revision": true
+    },
+    "serial_settings_equal": true,
+    "same_selected_identity": true,
+    "installed_binaries_attested": false,
+    "mounting_and_no_changes_since_C01": "current operator declaration; not an independent measurement",
+    "repeated_READY": "Both recorded attempts reached initial availability; no general repeatability or electrical behavior claim"
+  },
+  "incident": {
+    "suspension": {
+      "seq": 1904,
+      "kind": "suspended",
+      "now_ns": 4356805088842,
+      "reason": "availability_gap:RX-02"
+    },
+    "triggering_operation": {
+      "seq": 29099,
+      "op": "chunk",
+      "now_ns": 4356805088842,
+      "data": {
+        "receiver": "RX-02",
+        "started_ns": 4356319767667,
+        "returned_ns": 4356319836830,
+        "offset": 876794,
+        "size": 4095,
+        "sha256": "3ac3a88dd212df76ffd9bcd561aa042e8d5e4e2ca59f73c4e40455be69dc82c5"
+      }
+    },
+    "triggering_row_pair": {
+      "previous": {
+        "seq": 1901,
+        "kind": "line",
+        "now_ns": 4355399487236,
+        "receiver": "RX-02",
+        "evidence": {
+          "kind": "row",
+          "id": 1008,
+          "local_timestamp": 202370649,
+          "queue_drops": 0,
+          "first_read_index": 6333,
+          "first_read_started_ns": "4355098438203",
+          "byte_offset": 875512,
+          "line_1based": 1101,
+          "byte_end": 876386,
+          "byte_length": 874,
+          "line_sha256": "b76bb2d36b80254db71baefc558ebc2d0f3db774fa8c06cf00a1d3297727b393",
+          "last_read_index": 6333,
+          "returned_ns": "4355098505012",
+          "continuity_error": null
+        }
+      },
+      "following": {
+        "seq": 1903,
+        "kind": "line",
+        "now_ns": 4356805088842,
+        "receiver": "RX-02",
+        "evidence": {
+          "kind": "row",
+          "id": 1009,
+          "local_timestamp": 202570627,
+          "queue_drops": 0,
+          "first_read_index": 6333,
+          "first_read_started_ns": "4355098438203",
+          "byte_offset": 876386,
+          "line_1based": 1102,
+          "byte_end": 877176,
+          "byte_length": 790,
+          "line_sha256": "5c394b7c0bdbce93a4bee12a81098b66ab7fdf5e01f5217630dc3a7b306ecc42",
+          "last_read_index": 6334,
+          "returned_ns": "4356319836830",
+          "continuity_error": null
+        }
+      },
+      "host_gap_ns": 1221331818,
+      "local_gap_us": 199978,
+      "callback_id_delta": 1,
+      "queue_drops_delta": 0
+    },
+    "final_complete_row": {
+      "seq": 1909,
+      "kind": "line",
+      "now_ns": 4356805088842,
+      "receiver": "RX-02",
+      "evidence": {
+        "kind": "row",
+        "id": 1013,
+        "local_timestamp": 203370621,
+        "queue_drops": 0,
+        "first_read_index": 6334,
+        "first_read_started_ns": "4356319767667",
+        "byte_offset": 879778,
+        "line_1based": 1106,
+        "byte_end": 880540,
+        "byte_length": 762,
+        "line_sha256": "b924a1e3dbc9d877ed0bb17d6df6745a43baf609b78ae7f8fd86cc1bec21f0ec",
+        "last_read_index": 6334,
+        "returned_ns": "4356319836830",
+        "continuity_error": null
+      }
+    },
+    "last_tick_before_failure": {
+      "seq": 29097,
+      "op": "tick",
+      "now_ns": 4355613920502,
+      "data": {}
+    },
+    "last_tick_age_of_previous_valid_row_ns": 515415490,
+    "trigger_read_to_decision_ns": 485252012,
+    "trigger_read_duration_ns": 69163,
+    "threshold_ns": 1000000000,
+    "first_exceedance_ns": 4356098505013,
+    "gap_excess_over_threshold_ns": 221331818,
+    "previous_row_age_at_decision_ns": 1706583830,
+    "T0_ns": 4317281061098,
+    "T1_ns": 4347281061098,
+    "suspension_after_T1_ns": 9524027744,
+    "earliest_end_cue_ns": 4357281061098,
+    "time_remaining_until_earliest_end_cue_ns": 475972256,
+    "original_end_cue_requested": false,
+    "window_end_event": {
+      "seq": 1840,
+      "kind": "window_ended_connection_open",
+      "now_ns": 4347285604837,
+      "slot_id": "RX02-C02-S",
+      "T1_ns": 4347281061098
+    },
+    "row_pair_gap_is_post_window": true,
+    "tail": {
+      "byte_offset": 880540,
+      "byte_end": 880889,
+      "bytes": 349,
+      "sha256": "dfc8af86bd78634940863e9e27ca991b87ad84b0317eaa6cdea8b3a39b739f97",
+      "contains_LF": false,
+      "original_reference": {
+        "receiver": "RX-02",
+        "kind": "incomplete_tail",
+        "start_ns": 4356319767667,
+        "end_ns": null,
+        "byte_offset": 880540,
+        "byte_end": 880889,
+        "sha256": "dfc8af86bd78634940863e9e27ca991b87ad84b0317eaa6cdea8b3a39b739f97"
+      },
+      "literal_partial_header": {
+        "validated_as_CSI": false,
+        "complete_row_counted": false,
+        "literal_fields": {
+          "id": 1014,
+          "local_timestamp": 203571797,
+          "queue_drops": 0,
+          "channel": 11,
+          "len": 256
+        }
+      },
+      "validated_as_CSI": false,
+      "complete_row_counted": false
+    },
+    "final_chunk_complete_rows": [
+      {
+        "seq": 1903,
+        "kind": "line",
+        "now_ns": 4356805088842,
+        "receiver": "RX-02",
+        "evidence": {
+          "kind": "row",
+          "id": 1009,
+          "local_timestamp": 202570627,
+          "queue_drops": 0,
+          "first_read_index": 6333,
+          "first_read_started_ns": "4355098438203",
+          "byte_offset": 876386,
+          "line_1based": 1102,
+          "byte_end": 877176,
+          "byte_length": 790,
+          "line_sha256": "5c394b7c0bdbce93a4bee12a81098b66ab7fdf5e01f5217630dc3a7b306ecc42",
+          "last_read_index": 6334,
+          "returned_ns": "4356319836830",
+          "continuity_error": null
+        }
+      },
+      {
+        "seq": 1906,
+        "kind": "line",
+        "now_ns": 4356805088842,
+        "receiver": "RX-02",
+        "evidence": {
+          "kind": "row",
+          "id": 1010,
+          "local_timestamp": 202772998,
+          "queue_drops": 0,
+          "first_read_index": 6334,
+          "first_read_started_ns": "4356319767667",
+          "byte_offset": 877176,
+          "line_1based": 1103,
+          "byte_end": 878137,
+          "byte_length": 961,
+          "line_sha256": "6689918d34bc6fcec3e65c9605fd8d99ac0422aa0cb25b5a860c835595206377",
+          "last_read_index": 6334,
+          "returned_ns": "4356319836830",
+          "continuity_error": null
+        }
+      },
+      {
+        "seq": 1907,
+        "kind": "line",
+        "now_ns": 4356805088842,
+        "receiver": "RX-02",
+        "evidence": {
+          "kind": "row",
+          "id": 1011,
+          "local_timestamp": 202970692,
+          "queue_drops": 0,
+          "first_read_index": 6334,
+          "first_read_started_ns": "4356319767667",
+          "byte_offset": 878137,
+          "line_1based": 1104,
+          "byte_end": 879032,
+          "byte_length": 895,
+          "line_sha256": "b83005ace1a5b7d9db44c292bff5259a078590e52d643a7b776795b8e6c2d167",
+          "last_read_index": 6334,
+          "returned_ns": "4356319836830",
+          "continuity_error": null
+        }
+      },
+      {
+        "seq": 1908,
+        "kind": "line",
+        "now_ns": 4356805088842,
+        "receiver": "RX-02",
+        "evidence": {
+          "kind": "row",
+          "id": 1012,
+          "local_timestamp": 203170688,
+          "queue_drops": 0,
+          "first_read_index": 6334,
+          "first_read_started_ns": "4356319767667",
+          "byte_offset": 879032,
+          "line_1based": 1105,
+          "byte_end": 879778,
+          "byte_length": 746,
+          "line_sha256": "ebb736d6592b7c2e165ac409e3b7513f9128374bee1844a83db12f03ddd134a6",
+          "last_read_index": 6334,
+          "returned_ns": "4356319836830",
+          "continuity_error": null
+        }
+      },
+      {
+        "seq": 1909,
+        "kind": "line",
+        "now_ns": 4356805088842,
+        "receiver": "RX-02",
+        "evidence": {
+          "kind": "row",
+          "id": 1013,
+          "local_timestamp": 203370621,
+          "queue_drops": 0,
+          "first_read_index": 6334,
+          "first_read_started_ns": "4356319767667",
+          "byte_offset": 879778,
+          "line_1based": 1106,
+          "byte_end": 880540,
+          "byte_length": 762,
+          "line_sha256": "b924a1e3dbc9d877ed0bb17d6df6745a43baf609b78ae7f8fd86cc1bec21f0ec",
+          "last_read_index": 6334,
+          "returned_ns": "4356319836830",
+          "continuity_error": null
+        }
+      }
+    ],
+    "parsed_rows_after_suspension_event_in_same_chunk": [
+      {
+        "seq": 1906,
+        "kind": "line",
+        "now_ns": 4356805088842,
+        "receiver": "RX-02",
+        "evidence": {
+          "kind": "row",
+          "id": 1010,
+          "local_timestamp": 202772998,
+          "queue_drops": 0,
+          "first_read_index": 6334,
+          "first_read_started_ns": "4356319767667",
+          "byte_offset": 877176,
+          "line_1based": 1103,
+          "byte_end": 878137,
+          "byte_length": 961,
+          "line_sha256": "6689918d34bc6fcec3e65c9605fd8d99ac0422aa0cb25b5a860c835595206377",
+          "last_read_index": 6334,
+          "returned_ns": "4356319836830",
+          "continuity_error": null
+        }
+      },
+      {
+        "seq": 1907,
+        "kind": "line",
+        "now_ns": 4356805088842,
+        "receiver": "RX-02",
+        "evidence": {
+          "kind": "row",
+          "id": 1011,
+          "local_timestamp": 202970692,
+          "queue_drops": 0,
+          "first_read_index": 6334,
+          "first_read_started_ns": "4356319767667",
+          "byte_offset": 878137,
+          "line_1based": 1104,
+          "byte_end": 879032,
+          "byte_length": 895,
+          "line_sha256": "b83005ace1a5b7d9db44c292bff5259a078590e52d643a7b776795b8e6c2d167",
+          "last_read_index": 6334,
+          "returned_ns": "4356319836830",
+          "continuity_error": null
+        }
+      },
+      {
+        "seq": 1908,
+        "kind": "line",
+        "now_ns": 4356805088842,
+        "receiver": "RX-02",
+        "evidence": {
+          "kind": "row",
+          "id": 1012,
+          "local_timestamp": 203170688,
+          "queue_drops": 0,
+          "first_read_index": 6334,
+          "first_read_started_ns": "4356319767667",
+          "byte_offset": 879032,
+          "line_1based": 1105,
+          "byte_end": 879778,
+          "byte_length": 746,
+          "line_sha256": "ebb736d6592b7c2e165ac409e3b7513f9128374bee1844a83db12f03ddd134a6",
+          "last_read_index": 6334,
+          "returned_ns": "4356319836830",
+          "continuity_error": null
+        }
+      },
+      {
+        "seq": 1909,
+        "kind": "line",
+        "now_ns": 4356805088842,
+        "receiver": "RX-02",
+        "evidence": {
+          "kind": "row",
+          "id": 1013,
+          "local_timestamp": 203370621,
+          "queue_drops": 0,
+          "first_read_index": 6334,
+          "first_read_started_ns": "4356319767667",
+          "byte_offset": 879778,
+          "line_1based": 1106,
+          "byte_end": 880540,
+          "byte_length": 762,
+          "line_sha256": "b924a1e3dbc9d877ed0bb17d6df6745a43baf609b78ae7f8fd86cc1bec21f0ec",
+          "last_read_index": 6334,
+          "returned_ns": "4356319836830",
+          "continuity_error": null
+        }
+      }
+    ],
+    "explicit_failures": [
+      {
+        "reason": "availability_gap:RX-02",
+        "start_ns": 4356098505013,
+        "end_ns": 4356805088842
+      },
+      {
+        "reason": "incomplete_tail:RX-02",
+        "start_ns": null,
+        "end_ns": 4358275291649
+      }
+    ],
+    "eligibility_reasons": [
+      "connection_suspended",
+      "anomaly_intersects_or_unlocated",
+      "label_quality_ok"
+    ],
+    "operation_chain": [
+      {
+        "seq": 29096,
+        "op": "chunk",
+        "now_ns": 4355399487236,
+        "data": {
+          "receiver": "RX-02",
+          "started_ns": 4355098438203,
+          "returned_ns": 4355098505012,
+          "offset": 872699,
+          "size": 4095,
+          "sha256": "8d228eed5f1b85c1b19f020d4bc21f7591f82df1256d2712ee0a7b87a20d8de5"
+        }
+      },
+      {
+        "seq": 29097,
+        "op": "tick",
+        "now_ns": 4355613920502,
+        "data": {}
+      },
+      {
+        "seq": 29098,
+        "op": "storage_check",
+        "now_ns": 4355819746052,
+        "data": {
+          "free_bytes": 113406693376,
+          "raw_bytes": 876794,
+          "size_bytes": 4107116,
+          "final_extra": 0,
+          "guard_started_ns": 4152417605166
+        }
+      },
+      {
+        "seq": 29099,
+        "op": "chunk",
+        "now_ns": 4356805088842,
+        "data": {
+          "receiver": "RX-02",
+          "started_ns": 4356319767667,
+          "returned_ns": 4356319836830,
+          "offset": 876794,
+          "size": 4095,
+          "sha256": "3ac3a88dd212df76ffd9bcd561aa042e8d5e4e2ca59f73c4e40455be69dc82c5"
+        }
+      },
+      {
+        "seq": 29100,
+        "op": "tick",
+        "now_ns": 4357540255845,
+        "data": {}
+      }
+    ],
+    "recorded_time_portions": [
+      {
+        "start": "previous_read_return",
+        "end": "previous_decision_sample",
+        "start_ns": 4355098505012,
+        "end_ns": 4355399487236,
+        "elapsed_ns": 300982224
+      },
+      {
+        "start": "previous_decision_sample",
+        "end": "operation_29097_tick",
+        "start_ns": 4355399487236,
+        "end_ns": 4355613920502,
+        "elapsed_ns": 214433266
+      },
+      {
+        "start": "operation_29097_tick",
+        "end": "operation_29098_storage_check",
+        "start_ns": 4355613920502,
+        "end_ns": 4355819746052,
+        "elapsed_ns": 205825550
+      },
+      {
+        "start": "operation_29098_storage_check",
+        "end": "trigger_read_start",
+        "start_ns": 4355819746052,
+        "end_ns": 4356319767667,
+        "elapsed_ns": 500021615
+      },
+      {
+        "start": "trigger_read_start",
+        "end": "trigger_read_return",
+        "start_ns": 4356319767667,
+        "end_ns": 4356319836830,
+        "elapsed_ns": 69163
+      },
+      {
+        "start": "trigger_read_return",
+        "end": "trigger_decision_sample",
+        "start_ns": 4356319836830,
+        "end_ns": 4356805088842,
+        "elapsed_ns": 485252012
+      }
+    ],
+    "max_operation_sample_gap_in_causal_chain_ns": 985342790,
+    "final_reads": [
+      {
+        "operation": {
+          "seq": 29066,
+          "op": "chunk",
+          "now_ns": 4351822479061,
+          "data": {
+            "receiver": "RX-02",
+            "started_ns": 4351817711090,
+            "returned_ns": 4351817759539,
+            "offset": 862361,
+            "size": 128,
+            "sha256": "2892e33aadf69d7f958745a4425237e79cca89729db6d468a154ea94dc53fe8e"
+          }
+        },
+        "relative_read_return_to_T1_ns": 4536698441,
+        "read_duration_ns": 48449,
+        "return_to_decision_ns": 4719522
+      },
+      {
+        "operation": {
+          "seq": 29069,
+          "op": "chunk",
+          "now_ns": 4351845746150,
+          "data": {
+            "receiver": "RX-02",
+            "started_ns": 4351841098784,
+            "returned_ns": 4351841141944,
+            "offset": 862489,
+            "size": 256,
+            "sha256": "20064b1a6fb64fd5dbfcc63035b3b7673f0211063a8c73d18dba01bd588e4281"
+          }
+        },
+        "relative_read_return_to_T1_ns": 4560080846,
+        "read_duration_ns": 43160,
+        "return_to_decision_ns": 4604206
+      },
+      {
+        "operation": {
+          "seq": 29071,
+          "op": "chunk",
+          "now_ns": 4351864859305,
+          "data": {
+            "receiver": "RX-02",
+            "started_ns": 4351860189427,
+            "returned_ns": 4351860236401,
+            "offset": 862745,
+            "size": 256,
+            "sha256": "6ce952df1617f16f77ce30af5653a2c23ce4e9c11de0f75215f2072e9a7f9f06"
+          }
+        },
+        "relative_read_return_to_T1_ns": 4579175303,
+        "read_duration_ns": 46974,
+        "return_to_decision_ns": 4622904
+      },
+      {
+        "operation": {
+          "seq": 29073,
+          "op": "chunk",
+          "now_ns": 4351884183425,
+          "data": {
+            "receiver": "RX-02",
+            "started_ns": 4351879567114,
+            "returned_ns": 4351879605712,
+            "offset": 863001,
+            "size": 112,
+            "sha256": "d9205c31b2fb882f823d0db3fcac0c801b1e22ab9deae7214665a78395505d46"
+          }
+        },
+        "relative_read_return_to_T1_ns": 4598544614,
+        "read_duration_ns": 38598,
+        "return_to_decision_ns": 4577713
+      },
+      {
+        "operation": {
+          "seq": 29084,
+          "op": "chunk",
+          "now_ns": 4352238882754,
+          "data": {
+            "receiver": "RX-02",
+            "started_ns": 4352080175077,
+            "returned_ns": 4352080214591,
+            "offset": 863113,
+            "size": 799,
+            "sha256": "5131dab8de6e086677b07ce532bd766106a910a3682c04104f8bab88dbe7d99c"
+          }
+        },
+        "relative_read_return_to_T1_ns": 4799153493,
+        "read_duration_ns": 39514,
+        "return_to_decision_ns": 158668163
+      },
+      {
+        "operation": {
+          "seq": 29087,
+          "op": "chunk",
+          "now_ns": 4353036131644,
+          "data": {
+            "receiver": "RX-02",
+            "started_ns": 4352868716992,
+            "returned_ns": 4352868765920,
+            "offset": 863912,
+            "size": 3280,
+            "sha256": "7bc169c911fb247e489cb66961da36af848145300278d987a324312d75e1163f"
+          }
+        },
+        "relative_read_return_to_T1_ns": 5587704822,
+        "read_duration_ns": 48928,
+        "return_to_decision_ns": 167365724
+      },
+      {
+        "operation": {
+          "seq": 29090,
+          "op": "chunk",
+          "now_ns": 4353698039834,
+          "data": {
+            "receiver": "RX-02",
+            "started_ns": 4353541394476,
+            "returned_ns": 4353541455918,
+            "offset": 867192,
+            "size": 2914,
+            "sha256": "0d411ce00bba17302750eda144479168b09d61287abc298e4b38659f3b33e606"
+          }
+        },
+        "relative_read_return_to_T1_ns": 6260394820,
+        "read_duration_ns": 61442,
+        "return_to_decision_ns": 156583916
+      },
+      {
+        "operation": {
+          "seq": 29093,
+          "op": "chunk",
+          "now_ns": 4354311305239,
+          "data": {
+            "receiver": "RX-02",
+            "started_ns": 4354193754758,
+            "returned_ns": 4354193814456,
+            "offset": 870106,
+            "size": 2593,
+            "sha256": "ce57fd814dd0fbfca1e9f05d3f17d38d4f8463c440609ce86085f3120e3bdcee"
+          }
+        },
+        "relative_read_return_to_T1_ns": 6912753358,
+        "read_duration_ns": 59698,
+        "return_to_decision_ns": 117490783
+      },
+      {
+        "operation": {
+          "seq": 29096,
+          "op": "chunk",
+          "now_ns": 4355399487236,
+          "data": {
+            "receiver": "RX-02",
+            "started_ns": 4355098438203,
+            "returned_ns": 4355098505012,
+            "offset": 872699,
+            "size": 4095,
+            "sha256": "8d228eed5f1b85c1b19f020d4bc21f7591f82df1256d2712ee0a7b87a20d8de5"
+          }
+        },
+        "relative_read_return_to_T1_ns": 7817443914,
+        "read_duration_ns": 66809,
+        "return_to_decision_ns": 300982224
+      },
+      {
+        "operation": {
+          "seq": 29099,
+          "op": "chunk",
+          "now_ns": 4356805088842,
+          "data": {
+            "receiver": "RX-02",
+            "started_ns": 4356319767667,
+            "returned_ns": 4356319836830,
+            "offset": 876794,
+            "size": 4095,
+            "sha256": "3ac3a88dd212df76ffd9bcd561aa042e8d5e4e2ca59f73c4e40455be69dc82c5"
+          }
+        },
+        "relative_read_return_to_T1_ns": 9038775732,
+        "read_duration_ns": 69163,
+        "return_to_decision_ns": 485252012
+      }
+    ],
+    "phases": {
+      "window": {
+        "start_ns": 4317281061098,
+        "end_exclusive_ns": 4347281061098,
+        "complete_rows_by_return": 149,
+        "host_row_gap_ns": {
+          "count": 148,
+          "min": 173927851,
+          "median": 199167640.5,
+          "mean": 200021433.83783785,
+          "p95": 219054247,
+          "p99": 222462385,
+          "max": 226869081
+        },
+        "local_row_gap_us": {
+          "count": 148,
+          "min": 195992,
+          "median": 199997.0,
+          "mean": 200000.01351351352,
+          "p95": 202220,
+          "p99": 203696,
+          "max": 204064
+        },
+        "host_row_gaps_over_500ms": 0,
+        "host_row_gaps_over_1s": 0,
+        "reads_by_return": 941,
+        "timing": {
+          "read_duration_ns": {
+            "count": 941,
+            "min": 9785,
+            "median": 39073,
+            "mean": 38428.150903294365,
+            "p95": 54487,
+            "p99": 68113,
+            "max": 170854
+          },
+          "return_to_decision_sample_ns": {
+            "count": 941,
+            "min": 1705210,
+            "median": 2367067,
+            "mean": 2391972.535600425,
+            "p95": 2704061,
+            "p99": 2877886,
+            "max": 34884556
+          },
+          "bytes_per_read": {
+            "count": 941,
+            "min": 18,
+            "median": 128,
+            "mean": 138.0701381509033,
+            "p95": 256,
+            "p99": 256,
+            "max": 640
+          },
+          "read_return_gap_ns": {
+            "count": 940,
+            "min": 10354560,
+            "median": 12585624.0,
+            "mean": 31768607.024468087,
+            "p95": 137391879,
+            "p99": 145704454,
+            "max": 149474129
+          },
+          "previous_return_to_next_read_start_ns": {
+            "count": 940,
+            "min": 10341009,
+            "median": 12542772.0,
+            "mean": 31730174.428723406,
+            "p95": 137354800,
+            "p99": 145685926,
+            "max": 149435767
+          }
+        }
+      },
+      "post_T1_first_4s": {
+        "start_ns": 4347281061098,
+        "end_exclusive_ns": 4351281061098,
+        "complete_rows_by_return": 21,
+        "host_row_gap_ns": {
+          "count": 20,
+          "min": 162743349,
+          "median": 201226302.5,
+          "mean": 198488590.75,
+          "p95": 214546605,
+          "p99": 220959611,
+          "max": 220959611
+        },
+        "local_row_gap_us": {
+          "count": 20,
+          "min": 196587,
+          "median": 199995.5,
+          "mean": 200000.9,
+          "p95": 200251,
+          "p99": 203389,
+          "max": 203389
+        },
+        "host_row_gaps_over_500ms": 0,
+        "host_row_gaps_over_1s": 0,
+        "reads_by_return": 122,
+        "timing": {
+          "read_duration_ns": {
+            "count": 122,
+            "min": 11201,
+            "median": 37009.5,
+            "mean": 34652.05737704918,
+            "p95": 51769,
+            "p99": 72014,
+            "max": 77838
+          },
+          "return_to_decision_sample_ns": {
+            "count": 122,
+            "min": 1820719,
+            "median": 2310260.5,
+            "mean": 2615560.5163934426,
+            "p95": 4465027,
+            "p99": 4569388,
+            "max": 4661458
+          },
+          "bytes_per_read": {
+            "count": 122,
+            "min": 27,
+            "median": 128.0,
+            "mean": 143.4262295081967,
+            "p95": 256,
+            "p99": 256,
+            "max": 256
+          },
+          "read_return_gap_ns": {
+            "count": 121,
+            "min": 10667404,
+            "median": 12456545,
+            "mean": 32808031.52892562,
+            "p95": 135808080,
+            "p99": 147490241,
+            "max": 147900722
+          },
+          "previous_return_to_next_read_start_ns": {
+            "count": 121,
+            "min": 10651390,
+            "median": 12424398,
+            "mean": 32773314.082644626,
+            "p95": 135770554,
+            "p99": 147444978,
+            "max": 147863352
+          }
+        }
+      },
+      "post_T1_after_4s": {
+        "start_ns": 4351281061098,
+        "end_exclusive_ns": 4356805088843,
+        "complete_rows_by_return": 23,
+        "host_row_gap_ns": {
+          "count": 22,
+          "min": 0,
+          "median": 0.0,
+          "mean": 219619426.63636363,
+          "p95": 904690556,
+          "p99": 1221331818,
+          "max": 1221331818
+        },
+        "local_row_gap_us": {
+          "count": 22,
+          "min": 196565,
+          "median": 199996.0,
+          "mean": 199996.95454545456,
+          "p95": 202571,
+          "p99": 203488,
+          "max": 203488
+        },
+        "host_row_gaps_over_500ms": 5,
+        "host_row_gaps_over_1s": 1,
+        "reads_by_return": 20,
+        "timing": {
+          "read_duration_ns": {
+            "count": 20,
+            "min": 36737,
+            "median": 46522.0,
+            "mean": 50839.65,
+            "p95": 74641,
+            "p99": 77842,
+            "max": 77842
+          },
+          "return_to_decision_sample_ns": {
+            "count": 20,
+            "min": 4217120,
+            "median": 4613555.0,
+            "mean": 72466031.65,
+            "p95": 300982224,
+            "p99": 485252012,
+            "max": 485252012
+          },
+          "bytes_per_read": {
+            "count": 20,
+            "min": 102,
+            "median": 256.0,
+            "mean": 1013.9,
+            "p95": 4095,
+            "p99": 4095,
+            "max": 4095
+          },
+          "read_return_gap_ns": {
+            "count": 19,
+            "min": 17468749,
+            "median": 19369311,
+            "mean": 258170137.47368422,
+            "p95": 1221331818,
+            "p99": 1221331818,
+            "max": 1221331818
+          },
+          "previous_return_to_next_read_start_ns": {
+            "count": 19,
+            "min": 17431085,
+            "median": 19330713,
+            "mean": 258118910.21052632,
+            "p95": 1221262655,
+            "p99": 1221262655,
+            "max": 1221262655
+          }
+        }
+      }
+    },
+    "post_T1_complete_rows": 44,
+    "all_gaps_over_500ms": [
+      {
+        "previous": {
+          "seq": 1883,
+          "kind": "line",
+          "now_ns": 4352238882754,
+          "receiver": "RX-02",
+          "evidence": {
+            "kind": "row",
+            "id": 994,
+            "local_timestamp": 199571955,
+            "queue_drops": 0,
+            "first_read_index": 6329,
+            "first_read_started_ns": "4352080175077",
+            "byte_offset": 863113,
+            "line_1based": 1087,
+            "byte_end": 863912,
+            "byte_length": 799,
+            "line_sha256": "5131dab8de6e086677b07ce532bd766106a910a3682c04104f8bab88dbe7d99c",
+            "last_read_index": 6329,
+            "returned_ns": "4352080214591",
+            "continuity_error": null
+          }
+        },
+        "following": {
+          "seq": 1885,
+          "kind": "line",
+          "now_ns": 4353036131644,
+          "receiver": "RX-02",
+          "evidence": {
+            "kind": "row",
+            "id": 995,
+            "local_timestamp": 199771527,
+            "queue_drops": 0,
+            "first_read_index": 6330,
+            "first_read_started_ns": "4352868716992",
+            "byte_offset": 863912,
+            "line_1based": 1088,
+            "byte_end": 864665,
+            "byte_length": 753,
+            "line_sha256": "b90169a31d38dfb8a0acd0a5d2bfb308c325d5da56239fb95fd75289a87bc26c",
+            "last_read_index": 6330,
+            "returned_ns": "4352868765920",
+            "continuity_error": null
+          }
+        },
+        "host_gap_ns": 788551329,
+        "local_gap_us": 199572,
+        "callback_id_delta": 1,
+        "queue_drops_delta": 0
+      },
+      {
+        "previous": {
+          "seq": 1887,
+          "kind": "line",
+          "now_ns": 4353036131644,
+          "receiver": "RX-02",
+          "evidence": {
+            "kind": "row",
+            "id": 997,
+            "local_timestamp": 200170702,
+            "queue_drops": 0,
+            "first_read_index": 6330,
+            "first_read_started_ns": "4352868716992",
+            "byte_offset": 865548,
+            "line_1based": 1090,
+            "byte_end": 866424,
+            "byte_length": 876,
+            "line_sha256": "5a911b27e074c5d28d50ce1487ca0a2cc62439be9334fa53446490b84d5a1ae0",
+            "last_read_index": 6330,
+            "returned_ns": "4352868765920",
+            "continuity_error": null
+          }
+        },
+        "following": {
+          "seq": 1889,
+          "kind": "line",
+          "now_ns": 4353698039834,
+          "receiver": "RX-02",
+          "evidence": {
+            "kind": "row",
+            "id": 998,
+            "local_timestamp": 200370613,
+            "queue_drops": 0,
+            "first_read_index": 6330,
+            "first_read_started_ns": "4352868716992",
+            "byte_offset": 866424,
+            "line_1based": 1091,
+            "byte_end": 867305,
+            "byte_length": 881,
+            "line_sha256": "f0b0430cf183a015a9159bbbfd813385707a733453f550f4e3844b15e5b8300a",
+            "last_read_index": 6331,
+            "returned_ns": "4353541455918",
+            "continuity_error": null
+          }
+        },
+        "host_gap_ns": 672689998,
+        "local_gap_us": 199911,
+        "callback_id_delta": 1,
+        "queue_drops_delta": 0
+      },
+      {
+        "previous": {
+          "seq": 1892,
+          "kind": "line",
+          "now_ns": 4353698039834,
+          "receiver": "RX-02",
+          "evidence": {
+            "kind": "row",
+            "id": 1001,
+            "local_timestamp": 200970673,
+            "queue_drops": 0,
+            "first_read_index": 6331,
+            "first_read_started_ns": "4353541394476",
+            "byte_offset": 869149,
+            "line_1based": 1094,
+            "byte_end": 870106,
+            "byte_length": 957,
+            "line_sha256": "b07b1f293a55726f10e9beff84aa49f64c1baf22dc0b5df3f517c528dbbe301c",
+            "last_read_index": 6331,
+            "returned_ns": "4353541455918",
+            "continuity_error": null
+          }
+        },
+        "following": {
+          "seq": 1894,
+          "kind": "line",
+          "now_ns": 4354311305239,
+          "receiver": "RX-02",
+          "evidence": {
+            "kind": "row",
+            "id": 1002,
+            "local_timestamp": 201170697,
+            "queue_drops": 0,
+            "first_read_index": 6332,
+            "first_read_started_ns": "4354193754758",
+            "byte_offset": 870106,
+            "line_1based": 1095,
+            "byte_end": 870974,
+            "byte_length": 868,
+            "line_sha256": "4a6765dfa8dd74093fceaee1568c0a085113273883152f2c96bf616b03d338ce",
+            "last_read_index": 6332,
+            "returned_ns": "4354193814456",
+            "continuity_error": null
+          }
+        },
+        "host_gap_ns": 652358538,
+        "local_gap_us": 200024,
+        "callback_id_delta": 1,
+        "queue_drops_delta": 0
+      },
+      {
+        "previous": {
+          "seq": 1896,
+          "kind": "line",
+          "now_ns": 4354311305239,
+          "receiver": "RX-02",
+          "evidence": {
+            "kind": "row",
+            "id": 1004,
+            "local_timestamp": 201570628,
+            "queue_drops": 0,
+            "first_read_index": 6332,
+            "first_read_started_ns": "4354193754758",
+            "byte_offset": 871743,
+            "line_1based": 1097,
+            "byte_end": 872699,
+            "byte_length": 956,
+            "line_sha256": "acb8b59e877d0e902d818f4b54ebeaa67096311195f80258109071d4f1694c4a",
+            "last_read_index": 6332,
+            "returned_ns": "4354193814456",
+            "continuity_error": null
+          }
+        },
+        "following": {
+          "seq": 1898,
+          "kind": "line",
+          "now_ns": 4355399487236,
+          "receiver": "RX-02",
+          "evidence": {
+            "kind": "row",
+            "id": 1005,
+            "local_timestamp": 201774116,
+            "queue_drops": 0,
+            "first_read_index": 6333,
+            "first_read_started_ns": "4355098438203",
+            "byte_offset": 872699,
+            "line_1based": 1098,
+            "byte_end": 873692,
+            "byte_length": 993,
+            "line_sha256": "6e837b0c2835b5d07077fd812678bc24f1964f8ac3f478154aefa9a8cfaaa81e",
+            "last_read_index": 6333,
+            "returned_ns": "4355098505012",
+            "continuity_error": null
+          }
+        },
+        "host_gap_ns": 904690556,
+        "local_gap_us": 203488,
+        "callback_id_delta": 1,
+        "queue_drops_delta": 0
+      },
+      {
+        "previous": {
+          "seq": 1901,
+          "kind": "line",
+          "now_ns": 4355399487236,
+          "receiver": "RX-02",
+          "evidence": {
+            "kind": "row",
+            "id": 1008,
+            "local_timestamp": 202370649,
+            "queue_drops": 0,
+            "first_read_index": 6333,
+            "first_read_started_ns": "4355098438203",
+            "byte_offset": 875512,
+            "line_1based": 1101,
+            "byte_end": 876386,
+            "byte_length": 874,
+            "line_sha256": "b76bb2d36b80254db71baefc558ebc2d0f3db774fa8c06cf00a1d3297727b393",
+            "last_read_index": 6333,
+            "returned_ns": "4355098505012",
+            "continuity_error": null
+          }
+        },
+        "following": {
+          "seq": 1903,
+          "kind": "line",
+          "now_ns": 4356805088842,
+          "receiver": "RX-02",
+          "evidence": {
+            "kind": "row",
+            "id": 1009,
+            "local_timestamp": 202570627,
+            "queue_drops": 0,
+            "first_read_index": 6333,
+            "first_read_started_ns": "4355098438203",
+            "byte_offset": 876386,
+            "line_1based": 1102,
+            "byte_end": 877176,
+            "byte_length": 790,
+            "line_sha256": "5c394b7c0bdbce93a4bee12a81098b66ab7fdf5e01f5217630dc3a7b306ecc42",
+            "last_read_index": 6334,
+            "returned_ns": "4356319836830",
+            "continuity_error": null
+          }
+        },
+        "host_gap_ns": 1221331818,
+        "local_gap_us": 199978,
+        "callback_id_delta": 1,
+        "queue_drops_delta": 0
+      }
+    ]
+  },
+  "statistical_method": "Equal actual observed intervals; nearest-rank p95/p99; zero host gaps retained as shared-read timestamps",
+  "diagnostic_activity": {
+    "physical_UART_opened": false,
+    "new_acquisition": false,
+    "parameters_changed": false,
+    "calibration": false,
+    "training": false,
+    "classification": false,
+    "replacement_prepared": false
+  },
+  "conclusions": {
+    "C02_remains_ineligible": true,
+    "label_not_reconstructed": true,
+    "C01_result_unchanged": true,
+    "recorded_host_delivery_and_processing_pipeline_degraded": true,
+    "one_second_gap_in_firmware_timestamps_at_trigger": false,
+    "exclusive_RF_USB_firmware_disk_or_scheduler_cause_demonstrated": false,
+    "acquisition_recommended_or_prepared": false
+  },
+  "timing_limits": [
+    "Decision now_ns follows durable raw write/flush/fsync but precedes reducer and operations-journal fsync",
+    "Return-to-decision includes lock, scheduling, raw persistence and Python overhead; no isolated disk latency",
+    "Decision-to-next-operation includes reducer, journal fsync, notifications, console/input and scheduling; no isolated parser duration",
+    "No per-stage end clocks, BOOTTIME, scheduler trace, USB URBs or RF/transmitter log; no absolute one-way delivery latency",
+    "Same-chunk rows may be parsed after suspension; this is not a resumed acquisition or new observation interval"
+  ],
+  "preservation": {
+    "files": 34,
+    "all_bytes_and_hashes_unchanged": true,
+    "input_snapshot": "results/local/diagnostico-rx02-C02-r1/originales-antes.json",
+    "input_snapshot_sha256": "bf83093bb703f362dbb8a15e1c66fadbf92ae5f4c182a3d456100d5d213213a6",
+    "files_snapshot": {
+      "results/local/piloto-rx02-r1-C01/audio/0-establish_condition.wav": {
+        "bytes": 17324,
+        "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+      },
+      "results/local/piloto-rx02-r1-C01/audio/1-window_finished_connection_open.wav": {
+        "bytes": 8684,
+        "sha256": "e3cce4eeab2f906735116e0ea1dd6534db30a46a261910bc3b26e124b9c479c2"
+      },
+      "results/local/piloto-rx02-r1-C01/audio/2-establish_condition.wav": {
+        "bytes": 17324,
+        "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+      },
+      "results/local/piloto-rx02-r1-C01/audio/3-window_finished_connection_open.wav": {
+        "bytes": 8684,
+        "sha256": "e3cce4eeab2f906735116e0ea1dd6534db30a46a261910bc3b26e124b9c479c2"
+      },
+      "results/local/piloto-rx02-r1-C01/audio/4-selected_port_closed_confirmed.wav": {
+        "bytes": 57644,
+        "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+      },
+      "results/local/piloto-rx02-r1-C01/authorization-consumed.json": {
+        "bytes": 261,
+        "sha256": "f963b3ae45b204c707c8d550102184745c0f2363ae297caf5eaa69770242c019"
+      },
+      "results/local/piloto-rx02-r1-C01/close-receipt.json": {
+        "bytes": 618,
+        "sha256": "63e78e576354a43aab4feae88e3a931760a630cff02538465a88b04aace5922a"
+      },
+      "results/local/piloto-rx02-r1-C01/events.json": {
+        "bytes": 2732831,
+        "sha256": "c8dee28ea122d0e1dfd97460945ce9c66cba0c0f10ac524ea5e676d356445a9e"
+      },
+      "results/local/piloto-rx02-r1-C01/manifest.json": {
+        "bytes": 2148,
+        "sha256": "af4c98f10dd8af66f8b1ed90d877e489bc20cc403cc9357c9e4184e8cd8cef2c"
+      },
+      "results/local/piloto-rx02-r1-C01/operations.jsonl": {
+        "bytes": 10916155,
+        "sha256": "adfbe05748ac56c7cf9d686d4455928a71185aadc5bdaae39ba9035b0801b4ea"
+      },
+      "results/local/piloto-rx02-r1-C01/plan.json": {
+        "bytes": 3793,
+        "sha256": "89d853add6326c201ed9ff0b84d0793129379b1cf98a177ed83cc158883aff83"
+      },
+      "results/local/piloto-rx02-r1-C01/provenance.json": {
+        "bytes": 5208,
+        "sha256": "f3964d648c7e83e13490df94286fdc587f8e869fbd29b16d41fddac5507de938"
+      },
+      "results/local/piloto-rx02-r1-C01/rx-02.serial.log": {
+        "bytes": 2833345,
+        "sha256": "0d21c925338f774597396e70782d587ff5c3ec9e8737633b4b82468f794082a7"
+      },
+      "results/local/piloto-rx02-r1-C01/summary.json": {
+        "bytes": 1202787,
+        "sha256": "006b49307c4c1e7076481d4ae5714b3002d0ce369999ab82250477b7d1628a5e"
+      },
+      "results/local/piloto-rx02-r1-C02/audio/0-establish_condition.wav": {
+        "bytes": 17324,
+        "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+      },
+      "results/local/piloto-rx02-r1-C02/audio/1-failure.wav": {
+        "bytes": 58924,
+        "sha256": "d394f5d61a23f29df7ec760c745b47107aa66a2ed1564670ecb675d8e51362d7"
+      },
+      "results/local/piloto-rx02-r1-C02/audio/2-selected_port_closed_confirmed.wav": {
+        "bytes": 57644,
+        "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+      },
+      "results/local/piloto-rx02-r1-C02/authorization-consumed.json": {
+        "bytes": 261,
+        "sha256": "7daf49962b3bf4c4c65289b6016c6dc543830b715c5080d12d5f4a06dba87dde"
+      },
+      "results/local/piloto-rx02-r1-C02/close-receipt.json": {
+        "bytes": 617,
+        "sha256": "ccdce22abb734b447df588257302e0cb3f35c027c60e6226952a56f93928dc35"
+      },
+      "results/local/piloto-rx02-r1-C02/events.json": {
+        "bytes": 900643,
+        "sha256": "8b32b0bbe7e6bdc042405072e080cfb55036ee34ce306bb98b4e4615ade16dda"
+      },
+      "results/local/piloto-rx02-r1-C02/manifest.json": {
+        "bytes": 1776,
+        "sha256": "50d597433625234d3935207f28a4686aa5359dff85a2e956a7fd46110495983c"
+      },
+      "results/local/piloto-rx02-r1-C02/operations.jsonl": {
+        "bytes": 3204975,
+        "sha256": "f78dafab61812623d56785bdb7aca1fadb420cbda175fc3b124ac32fef808412"
+      },
+      "results/local/piloto-rx02-r1-C02/plan.json": {
+        "bytes": 3748,
+        "sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b"
+      },
+      "results/local/piloto-rx02-r1-C02/provenance.json": {
+        "bytes": 5208,
+        "sha256": "63f2836a46dc3cec77f5564552481fe7b998612d557641c23bc320ab2bfab8d3"
+      },
+      "results/local/piloto-rx02-r1-C02/rx-02.serial.log": {
+        "bytes": 880889,
+        "sha256": "dde85d3a83256ac5a201932fb057c248447edb9e01f47db8d7766ecc0b875ca5"
+      },
+      "results/local/piloto-rx02-r1-C02/summary.json": {
+        "bytes": 524779,
+        "sha256": "2321b4956ac24a80c677d70293267bb7bfd9bdb7d5e3730453bc7a80869228be"
+      },
+      "results/local/autorizacion-rx02-C02-20261104T225215Z/SHA256.json": {
+        "bytes": 727,
+        "sha256": "3fd960254c8134caf4862a6a7078bcb4c3057e97c1b94e06d6d5517e0e9a388c"
+      },
+      "results/local/autorizacion-rx02-C02-20261104T225215Z/autorizacion.json": {
+        "bytes": 3323,
+        "sha256": "1edcbf06bce4f20971bca3588ba41d97d7bff4e47e3911c7582456a36230a359"
+      },
+      "results/local/autorizacion-rx02-C02-20261104T225215Z/plan-autorizado.json": {
+        "bytes": 3748,
+        "sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b"
+      },
+      "results/local/autorizacion-rx02-C02-20261104T225215Z/plan-revisado-antes-de-autorizacion.json": {
+        "bytes": 3747,
+        "sha256": "39e737b2626a972606344404f3b78fd8babc4db1c5a3587cb011443c863c004c"
+      },
+      "results/local/autorizacion-rx02-C01-20261104T220105Z/SHA256.json": {
+        "bytes": 571,
+        "sha256": "efe50946fb2b6fbdee5a2f51cc93be85cea0759f690a01d086c9b355ac9f59f9"
+      },
+      "results/local/autorizacion-rx02-C01-20261104T220105Z/autorizacion.json": {
+        "bytes": 2672,
+        "sha256": "6e00f92da857ab81d8e4793b640734dcd8e38f1ea32b0cb9747c434519d8b8e3"
+      },
+      "results/local/autorizacion-rx02-C01-20261104T220105Z/plan-autorizado.json": {
+        "bytes": 3793,
+        "sha256": "89d853add6326c201ed9ff0b84d0793129379b1cf98a177ed83cc158883aff83"
+      },
+      "results/local/autorizacion-rx02-C01-20261104T220105Z/plan-revisado-antes-de-autorizacion.json": {
+        "bytes": 3792,
+        "sha256": "aad3b6697ded9e5042c2b146b290b538a75973d220714f4b5ab1b94d1ceb98d6"
+      }
+    }
+  },
+  "analysis_sources": {
+    "src/rx02_gap_diagnostics.py": {
+      "bytes": 15133,
+      "sha256": "0cf501d16d9550c542917120a0313f78254b7b5e61a239d95f5ff87d41bd8234"
+    },
+    "tools/diagnosticar_rx02_c02.py": {
+      "bytes": 1701,
+      "sha256": "5862c18557234fdb4c22f0d9a30b73edf23fb61e5fc881250406d163979c0ce8"
+    },
+    "tests/test_rx02_gap_diagnostics.py": {
+      "bytes": 5794,
+      "sha256": "a58a55767191140c3b050ee8e5dde18a360287ce51c905f284dc1e11a6ed5d42"
+    },
+    "src/continuity_diagnostics.py": {
+      "bytes": 11715,
+      "sha256": "6e53b0e853f137749ffe415415085c05cafe85d9c26788dc56ca1247ec174cf3"
+    },
+    "src/presence_rx02_journal.py": {
+      "bytes": 10754,
+      "sha256": "faca3ac20252c93943d199abfc0576c0110234756b953dc2e1844355b887c1a7"
+    },
+    "src/presence_rx02.py": {
+      "bytes": 15279,
+      "sha256": "b2992f3b4bf6b710bb9c42a549c5984733849a1eaa255f4be101e857648c9c25"
+    },
+    "src/presence_v4_journal.py": {
+      "bytes": 10914,
+      "sha256": "9a42e4132219deb5cecf505e817c61d207516304586cbbd63feb4977adc50b3a"
+    },
+    "src/presence_v4_uart.py": {
+      "bytes": 22468,
+      "sha256": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373"
+    },
+    "src/presence_v4_exploratory.py": {
+      "bytes": 14409,
+      "sha256": "7da77617fc6af9031e334027a2d8a311c37c1119e860579b07332cd27734af50"
+    },
+    "src/persistent_presence_v4.py": {
+      "bytes": 25615,
+      "sha256": "2ee89f05c33af7f638016cf4d87871f882e359a859a8671f07037b9a3a37171a"
+    },
+    "src/presence_rx02_uart.py": {
+      "bytes": 10399,
+      "sha256": "32ba9c9028465a3b56707703715a71f3b8bcbd1a29105e1bc8c57bfe92f86ca8"
+    },
+    "firmware/csi_recv_02/main/app_main.c": {
+      "bytes": 11165,
+      "sha256": "1fb53776e1e5776194749041d1252c3f8ee11f69f30fb982a42c7577319e00d5"
+    }
+  },
+  "local_derivatives": {
+    "results/local/diagnostico-rx02-C02-r2/audit-C01.json": {
+      "bytes": 1202360,
+      "sha256": "3a1ec8c4133027c2052f70747234f29c5f336ba3b54134c9452d8121d97f453a"
+    },
+    "results/local/diagnostico-rx02-C02-r2/audit-C02.json": {
+      "bytes": 524331,
+      "sha256": "e74d49c34943696aae91fd776f16eef2a95fea7e6a6b1bc63811479531ab0cc4"
+    },
+    "results/local/diagnostico-rx02-C02-r2/diagnostic.json": {
+      "bytes": 103142,
+      "sha256": "41d223d68e31bd51f19c7fa0bb51211a0933b1bc254a057e6b0da66fcbe00a53"
+    },
+    "results/local/diagnostico-rx02-C02-r2/files.json": {
+      "bytes": 392,
+      "sha256": "d38b2b8ed349dc9f66e5c077f808946758dfedc422762549d24efd8b3ef1c8c8"
+    }
+  },
+  "post_attempt_operator_report": {
+    "recorded_utc": "2026-11-04T23:06:06.553580+00:00",
+    "evidence_type": "post_attempt_operator_report_not_a_slot_yes",
+    "text": "C02 terminó por availability_gap:RX-02, después del fin de la ventana\nsentado y antes del aviso final. No declaré la condición ni inicié vacío.",
+    "used_as_retroactive_label": false
+  }
+}

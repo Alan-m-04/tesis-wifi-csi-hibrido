@@ -1,0 +1,2195 @@
+{
+  "schema": "continuity-dual-forensics-1",
+  "original_integrity_ok": true,
+  "original_replay_ok": true,
+  "acquisition": {
+    "physical_UART_opened": true,
+    "opened_receivers": [
+      "RX-01",
+      "RX-02"
+    ]
+  },
+  "analysis_activity": {
+    "physical_UART_opened": false
+  },
+  "quality_approval": false,
+  "permitted_uses": {
+    "eligible_windows": false,
+    "presence_labels": false,
+    "calibration": false,
+    "training": false,
+    "production": false
+  },
+  "authorization": {
+    "reference": "CONT-DUAL-01-60S-UNICO",
+    "consumed": true,
+    "evidence_type": "physical_capture",
+    "reattempt_permitted": false
+  },
+  "input_files": {
+    "authorization-consumed.json": {
+      "bytes": 135,
+      "sha256": "6edc0170dde9e9e09dffb8739cf6bc6aeb5c78f58e589302c9af5ea3679855f0"
+    },
+    "closure.json": {
+      "bytes": 1895,
+      "sha256": "6d02672f5a6470715377e05f6c083938f76c3543f1c684f4065402bdcb56ca3e"
+    },
+    "ledger.jsonl": {
+      "bytes": 4192111,
+      "sha256": "27e3141633aa1ae71a6a0b9abb42dbc271375808b16ac65cf4a9e373c01a2fb2"
+    },
+    "manifest.json": {
+      "bytes": 711,
+      "sha256": "eb234666b18dbfceca92909c1f5763c3836abe9e38b1b6b0a2086a9974e6237b"
+    },
+    "metadata.json": {
+      "bytes": 1925,
+      "sha256": "52255f1368ed194d919fe52002c5366a658d8eeb23ea4db434ad1503f8cd0025"
+    },
+    "plan.json": {
+      "bytes": 1491,
+      "sha256": "598e01e003b4ceed7c61521f53292b0abe55090de3dd8d50d672681dc13bd77b"
+    },
+    "report.json": {
+      "bytes": 791926,
+      "sha256": "97840fb6e332b549d86cebcaf6d3686f8debcf29ce28c26370c70727eb8a9020"
+    },
+    "rx-01.serial.log": {
+      "bytes": 150310,
+      "sha256": "2b8a41bf8e3e333981362742ecae41d401435ab40093e1e0d56b74f9f88ba64e"
+    },
+    "rx-02.serial.log": {
+      "bytes": 255433,
+      "sha256": "72e71aa680495e2f8dd68882e2aef68de8bb61de445b42688a3eef83b0f29939"
+    }
+  },
+  "acquisition_commit": "c243406af0052c08eafd0e130533311554b0732e",
+  "acquisition_sources": {
+    "src/dual_continuity.py": "ae07cbd477d0dbd0c36b1359cdf07cd2a9ff29f8b5783930b95bf90a91ebe7e1",
+    "tools/diagnostico_continuidad_dual.py": "554d08f77508ad0df78187374bbb431f4c5509a5c0b0cde3927bc56be863c888",
+    "src/presence_v4_uart.py": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+    "src/preserving_serial.py": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+    "src/availability_window.py": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596",
+    "src/capture_csi_multi.py": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+    "src/capture_csi.py": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+    "config/pyserial_uart_v4.lock.json": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010"
+  },
+  "acquisition_sources_match_current": {
+    "src/dual_continuity.py": true,
+    "tools/diagnostico_continuidad_dual.py": true,
+    "src/presence_v4_uart.py": true,
+    "src/preserving_serial.py": true,
+    "src/availability_window.py": true,
+    "src/capture_csi_multi.py": true,
+    "src/capture_csi.py": true,
+    "config/pyserial_uart_v4.lock.json": true
+  },
+  "interval": {
+    "common_start_ns": 178535024151861,
+    "common_deadline_ns": 178595024151861,
+    "common_duration_ns": 60000000000,
+    "actual_common_elapsed_ns": 60008476056,
+    "actual_stop_ns": 178595032627917,
+    "clocks": {
+      "monotonic_ns": 60041904843,
+      "boottime_ns": 60041904440,
+      "realtime_ns": 60041903956,
+      "boottime_minus_monotonic_ns": -403,
+      "realtime_minus_monotonic_ns": -887
+    }
+  },
+  "quantile_method": "p95/p99 nearest rank ceil(p*n); median conventional; no interpolation of measurements",
+  "scopes": {
+    "rows": "Only strict complete valid CSI rows returned in [common_start, common_deadline)",
+    "reads": "Whole connection and common interval reported separately; read return is not byte/RF arrival time",
+    "service": "Common interval includes clipped boundaries; incident service spans include both exact boundaries",
+    "gaps": "Between adjacent complete rows; leading/trailing ages reported separately; local clocks not synchronized across RX"
+  },
+  "receivers": {
+    "RX-01": {
+      "valid_complete_rows_common": 171,
+      "valid_complete_rows_connection": 171,
+      "complete_line_kinds": {
+        "invalid": 21,
+        "info": 66,
+        "reset": 1,
+        "neutral": 2,
+        "ready": 1,
+        "row": 171
+      },
+      "valid_rows_per_10s": [
+        22,
+        31,
+        32,
+        28,
+        27,
+        31
+      ],
+      "host_row_gaps_ns": {
+        "count": 170,
+        "min": 175379580,
+        "median": 212823693.5,
+        "mean": 346858858.4941176,
+        "p95": 797810302,
+        "p99": 1215564608,
+        "max": 1395580849,
+        "unit": "ns",
+        "over_1s": 3,
+        "histogram": [
+          {
+            "lower_inclusive_ns": 0,
+            "upper_exclusive_ns": 250000000,
+            "count": 96
+          },
+          {
+            "lower_inclusive_ns": 250000000,
+            "upper_exclusive_ns": 500000000,
+            "count": 45
+          },
+          {
+            "lower_inclusive_ns": 500000000,
+            "upper_exclusive_ns": 750000000,
+            "count": 15
+          },
+          {
+            "lower_inclusive_ns": 750000000,
+            "upper_exclusive_ns": 1000000000,
+            "count": 11
+          },
+          {
+            "lower_inclusive_ns": 1000000000,
+            "upper_exclusive_ns": 1250000000,
+            "count": 2
+          },
+          {
+            "lower_inclusive_ns": 1250000000,
+            "upper_exclusive_ns": 1500000000,
+            "count": 1
+          },
+          {
+            "lower_inclusive_ns": 1500000000,
+            "upper_exclusive_ns": null,
+            "count": 0
+          }
+        ]
+      },
+      "local_row_gaps_ns": {
+        "count": 170,
+        "min": 194404000,
+        "median": 200294000.0,
+        "mean": 347057805.88235295,
+        "p95": 800098000,
+        "p99": 1200083000,
+        "max": 1398388000,
+        "unit": "ns",
+        "over_1s": 4,
+        "histogram": [
+          {
+            "lower_inclusive_ns": 0,
+            "upper_exclusive_ns": 250000000,
+            "count": 96
+          },
+          {
+            "lower_inclusive_ns": 250000000,
+            "upper_exclusive_ns": 500000000,
+            "count": 45
+          },
+          {
+            "lower_inclusive_ns": 500000000,
+            "upper_exclusive_ns": 750000000,
+            "count": 15
+          },
+          {
+            "lower_inclusive_ns": 750000000,
+            "upper_exclusive_ns": 1000000000,
+            "count": 10
+          },
+          {
+            "lower_inclusive_ns": 1000000000,
+            "upper_exclusive_ns": 1250000000,
+            "count": 3
+          },
+          {
+            "lower_inclusive_ns": 1250000000,
+            "upper_exclusive_ns": 1500000000,
+            "count": 1
+          },
+          {
+            "lower_inclusive_ns": 1500000000,
+            "upper_exclusive_ns": null,
+            "count": 0
+          }
+        ]
+      },
+      "local_nearest_200ms_periods": {
+        "reference_only_not_packet_loss": true,
+        "counts": {
+          "1": 96,
+          "2": 45,
+          "3": 15,
+          "4": 10,
+          "5": 1,
+          "6": 2,
+          "7": 1
+        },
+        "max_absolute_residual_us": 5698
+      },
+      "first_row_age_from_common_start_ns": 843502325,
+      "last_row_age_at_common_deadline_ns": 190491731,
+      "host_valid_row_span_ns": 58966005944,
+      "local_valid_row_span_us": 58999827,
+      "callback_ids": {
+        "first": 0,
+        "last": 170,
+        "deltas": {
+          "1": 170
+        }
+      },
+      "queue_drops_values": [
+        0
+      ],
+      "profile_values": {
+        "mac": [
+          "1a:00:00:00:00:00"
+        ],
+        "channel": [
+          "11"
+        ],
+        "bandwidth": [
+          "0"
+        ],
+        "rx_state": [
+          "0"
+        ],
+        "len": [
+          "256"
+        ],
+        "first_word_invalid": [
+          "0"
+        ],
+        "sig_mode": [
+          "1"
+        ],
+        "mcs": [
+          "0"
+        ],
+        "stbc": [
+          "0"
+        ]
+      },
+      "bytes_connection": 150310,
+      "reads_connection": 964,
+      "bytes_common_return_time": 149784,
+      "reads_common_return_time": 962,
+      "pre_common_reads": 2,
+      "post_deadline_reads": 0,
+      "read_sizes_bytes": {
+        "count": 962,
+        "min": 4,
+        "median": 128.0,
+        "mean": 155.7006237006237,
+        "p95": 256,
+        "p99": 256,
+        "max": 384
+      },
+      "read_return_gaps_ns": {
+        "count": 961,
+        "min": 11119068,
+        "median": 16133547,
+        "mean": 62410524.409989595,
+        "p95": 333028148,
+        "p99": 731831422,
+        "max": 1324366244,
+        "unit": "ns",
+        "over_1s": 3,
+        "histogram": [
+          {
+            "lower_inclusive_ns": 0,
+            "upper_exclusive_ns": 250000000,
+            "count": 887
+          },
+          {
+            "lower_inclusive_ns": 250000000,
+            "upper_exclusive_ns": 500000000,
+            "count": 45
+          },
+          {
+            "lower_inclusive_ns": 500000000,
+            "upper_exclusive_ns": 750000000,
+            "count": 25
+          },
+          {
+            "lower_inclusive_ns": 750000000,
+            "upper_exclusive_ns": 1000000000,
+            "count": 1
+          },
+          {
+            "lower_inclusive_ns": 1000000000,
+            "upper_exclusive_ns": 1250000000,
+            "count": 2
+          },
+          {
+            "lower_inclusive_ns": 1250000000,
+            "upper_exclusive_ns": 1500000000,
+            "count": 1
+          },
+          {
+            "lower_inclusive_ns": 1500000000,
+            "upper_exclusive_ns": null,
+            "count": 0
+          }
+        ]
+      },
+      "service_gaps_ns": {
+        "count": 4259,
+        "min": 7322219,
+        "median": 13052808,
+        "mean": 14087814.04085466,
+        "p95": 17949898,
+        "p99": 23620217,
+        "max": 34110014,
+        "unit": "ns",
+        "over_1s": 0,
+        "histogram": [
+          {
+            "lower_inclusive_ns": 0,
+            "upper_exclusive_ns": 250000000,
+            "count": 4259
+          },
+          {
+            "lower_inclusive_ns": 250000000,
+            "upper_exclusive_ns": 500000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 500000000,
+            "upper_exclusive_ns": 750000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 750000000,
+            "upper_exclusive_ns": 1000000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1000000000,
+            "upper_exclusive_ns": 1250000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1250000000,
+            "upper_exclusive_ns": 1500000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1500000000,
+            "upper_exclusive_ns": null,
+            "count": 0
+          }
+        ]
+      },
+      "service_count_common": 4258,
+      "row_assembly_ns": {
+        "count": 171,
+        "min": 52285546,
+        "median": 68924107,
+        "mean": 70036324.40935673,
+        "p95": 83071552,
+        "p99": 100411326,
+        "max": 101711310
+      },
+      "timing": {
+        "read_duration_ns": {
+          "count": 962,
+          "min": 10314,
+          "median": 57892.5,
+          "mean": 67520.22141372142,
+          "p95": 165752,
+          "p99": 245858,
+          "max": 418458
+        },
+        "raw_persistence_ns": {
+          "count": 962,
+          "min": 1739219,
+          "median": 2421983.0,
+          "mean": 2447319.782744283,
+          "p95": 2781085,
+          "p99": 2895162,
+          "max": 18796904
+        },
+        "return_to_persistence_start_ns": {
+          "count": 962,
+          "min": 7043,
+          "median": 3150714.5,
+          "mean": 3818730.681912682,
+          "p95": 5999849,
+          "p99": 7993537,
+          "max": 22007317
+        },
+        "processing_after_raw_persistence_ns": {
+          "count": 962,
+          "min": 12145,
+          "median": 80084.5,
+          "mean": 143978.04158004158,
+          "p95": 491056,
+          "p99": 536522,
+          "max": 588313
+        },
+        "processing_to_ledger_sample_ns": {
+          "count": 962,
+          "min": 2108,
+          "median": 9196.0,
+          "mean": 9422.840956340957,
+          "p95": 11761,
+          "p99": 21964,
+          "max": 73149
+        }
+      },
+      "closure": {
+        "confirmed": true,
+        "error": null,
+        "details": {
+          "open_attempts": 1,
+          "close_attempts": 1,
+          "dtr_requested": false,
+          "rts_requested": false,
+          "actual_line_update_attempts": [
+            {
+              "line": "dtr",
+              "requested": false,
+              "outcome": "ioctl_returned"
+            },
+            {
+              "line": "rts",
+              "requested": false,
+              "outcome": "ioctl_returned"
+            }
+          ],
+          "serial_settings": {
+            "baudrate": 115200,
+            "bytesize": 8,
+            "parity": "N",
+            "stopbits": 1,
+            "xonxoff": false,
+            "dsrdtr": false,
+            "rtscts": false,
+            "timeout": 0,
+            "write_timeout": 0,
+            "inter_byte_timeout": null
+          },
+          "open_flush_suppressed": 1,
+          "is_open": false,
+          "fd": null,
+          "electrical_transients_or_resets_excluded": false
+        },
+        "resource_observed_open_before_close": true
+      },
+      "tail": {
+        "byte_offset": 149670,
+        "byte_length": 640,
+        "sha256": "b6ce986991441695938b6012d70273798b63c88d8dc76614650aa328bf2c49d0",
+        "first_read": {
+          "first_read_index": 960,
+          "first_read_started_ns": "178594966086287",
+          "byte_offset": 149670
+        },
+        "last_read_index": 963,
+        "literal_header": {
+          "validated_as_CSI": false,
+          "complete_row_counted": false,
+          "literal_fields": {
+            "id": 171,
+            "local_timestamp": 59949062,
+            "queue_drops": 0,
+            "channel": 11,
+            "len": 256
+          }
+        }
+      },
+      "incidents_recorded": [
+        {
+          "anchor_ns": 178537830721451,
+          "first_observed_ns": 178538847454284,
+          "recovered_ns": 178539046286059,
+          "duration_ns": 1215564608,
+          "quality_approval": false,
+          "recovery_line": 99
+        },
+        {
+          "anchor_ns": 178579049535307,
+          "first_observed_ns": 178580054880070,
+          "recovered_ns": 178580243700152,
+          "duration_ns": 1194164845,
+          "quality_approval": false,
+          "recovery_line": 221
+        },
+        {
+          "anchor_ns": 178592241831812,
+          "first_observed_ns": 178593246217082,
+          "recovered_ns": 178593637412661,
+          "duration_ns": 1395580849,
+          "quality_approval": false,
+          "recovery_line": 259
+        }
+      ]
+    },
+    "RX-02": {
+      "valid_complete_rows_common": 296,
+      "valid_complete_rows_connection": 296,
+      "complete_line_kinds": {
+        "invalid": 21,
+        "info": 67,
+        "reset": 1,
+        "neutral": 2,
+        "row": 296,
+        "ready": 1
+      },
+      "valid_rows_per_10s": [
+        47,
+        50,
+        50,
+        50,
+        50,
+        49
+      ],
+      "host_row_gaps_ns": {
+        "count": 295,
+        "min": 156594515,
+        "median": 200542027,
+        "mean": 200609863.0135593,
+        "p95": 219028965,
+        "p99": 231330246,
+        "max": 398945162,
+        "unit": "ns",
+        "over_1s": 0,
+        "histogram": [
+          {
+            "lower_inclusive_ns": 0,
+            "upper_exclusive_ns": 250000000,
+            "count": 294
+          },
+          {
+            "lower_inclusive_ns": 250000000,
+            "upper_exclusive_ns": 500000000,
+            "count": 1
+          },
+          {
+            "lower_inclusive_ns": 500000000,
+            "upper_exclusive_ns": 750000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 750000000,
+            "upper_exclusive_ns": 1000000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1000000000,
+            "upper_exclusive_ns": 1250000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1250000000,
+            "upper_exclusive_ns": 1500000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1500000000,
+            "upper_exclusive_ns": null,
+            "count": 0
+          }
+        ]
+      },
+      "local_row_gaps_ns": {
+        "count": 295,
+        "min": 194406000,
+        "median": 200000000,
+        "mean": 200677633.8983051,
+        "p95": 202239000,
+        "p99": 204514000,
+        "max": 400149000,
+        "unit": "ns",
+        "over_1s": 0,
+        "histogram": [
+          {
+            "lower_inclusive_ns": 0,
+            "upper_exclusive_ns": 250000000,
+            "count": 294
+          },
+          {
+            "lower_inclusive_ns": 250000000,
+            "upper_exclusive_ns": 500000000,
+            "count": 1
+          },
+          {
+            "lower_inclusive_ns": 500000000,
+            "upper_exclusive_ns": 750000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 750000000,
+            "upper_exclusive_ns": 1000000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1000000000,
+            "upper_exclusive_ns": 1250000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1250000000,
+            "upper_exclusive_ns": 1500000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1500000000,
+            "upper_exclusive_ns": null,
+            "count": 0
+          }
+        ]
+      },
+      "local_nearest_200ms_periods": {
+        "reference_only_not_packet_loss": true,
+        "counts": {
+          "1": 294,
+          "2": 1
+        },
+        "max_absolute_residual_us": 5594
+      },
+      "first_row_age_from_common_start_ns": 627064339,
+      "last_row_age_at_common_deadline_ns": 193026072,
+      "host_valid_row_span_ns": 59179909589,
+      "local_valid_row_span_us": 59199902,
+      "callback_ids": {
+        "first": 0,
+        "last": 295,
+        "deltas": {
+          "1": 295
+        }
+      },
+      "queue_drops_values": [
+        0
+      ],
+      "profile_values": {
+        "mac": [
+          "1a:00:00:00:00:00"
+        ],
+        "channel": [
+          "11"
+        ],
+        "bandwidth": [
+          "0"
+        ],
+        "rx_state": [
+          "0"
+        ],
+        "len": [
+          "256"
+        ],
+        "first_word_invalid": [
+          "0"
+        ],
+        "sig_mode": [
+          "1"
+        ],
+        "mcs": [
+          "0"
+        ],
+        "stbc": [
+          "0"
+        ]
+      },
+      "bytes_connection": 255433,
+      "reads_connection": 1844,
+      "bytes_common_return_time": 255433,
+      "reads_common_return_time": 1844,
+      "pre_common_reads": 0,
+      "post_deadline_reads": 0,
+      "read_sizes_bytes": {
+        "count": 1844,
+        "min": 6,
+        "median": 128.0,
+        "mean": 138.5211496746204,
+        "p95": 256,
+        "p99": 256,
+        "max": 384
+      },
+      "read_return_gaps_ns": {
+        "count": 1843,
+        "min": 6771140,
+        "median": 14564748,
+        "mean": 32548986.551275093,
+        "p95": 136776034,
+        "p99": 144978367,
+        "max": 334085826,
+        "unit": "ns",
+        "over_1s": 0,
+        "histogram": [
+          {
+            "lower_inclusive_ns": 0,
+            "upper_exclusive_ns": 250000000,
+            "count": 1842
+          },
+          {
+            "lower_inclusive_ns": 250000000,
+            "upper_exclusive_ns": 500000000,
+            "count": 1
+          },
+          {
+            "lower_inclusive_ns": 500000000,
+            "upper_exclusive_ns": 750000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 750000000,
+            "upper_exclusive_ns": 1000000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1000000000,
+            "upper_exclusive_ns": 1250000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1250000000,
+            "upper_exclusive_ns": 1500000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1500000000,
+            "upper_exclusive_ns": null,
+            "count": 0
+          }
+        ]
+      },
+      "service_gaps_ns": {
+        "count": 4463,
+        "min": 6233833,
+        "median": 12959623,
+        "mean": 13443871.835088506,
+        "p95": 17572891,
+        "p99": 23148372,
+        "max": 42049385,
+        "unit": "ns",
+        "over_1s": 0,
+        "histogram": [
+          {
+            "lower_inclusive_ns": 0,
+            "upper_exclusive_ns": 250000000,
+            "count": 4463
+          },
+          {
+            "lower_inclusive_ns": 250000000,
+            "upper_exclusive_ns": 500000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 500000000,
+            "upper_exclusive_ns": 750000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 750000000,
+            "upper_exclusive_ns": 1000000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1000000000,
+            "upper_exclusive_ns": 1250000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1250000000,
+            "upper_exclusive_ns": 1500000000,
+            "count": 0
+          },
+          {
+            "lower_inclusive_ns": 1500000000,
+            "upper_exclusive_ns": null,
+            "count": 0
+          }
+        ]
+      },
+      "service_count_common": 4462,
+      "row_assembly_ns": {
+        "count": 296,
+        "min": 51397004,
+        "median": 65701085.5,
+        "mean": 67841081.7027027,
+        "p95": 82306979,
+        "p99": 88598336,
+        "max": 99322688
+      },
+      "timing": {
+        "read_duration_ns": {
+          "count": 1844,
+          "min": 9297,
+          "median": 59117.0,
+          "mean": 68038.75,
+          "p95": 158791,
+          "p99": 247278,
+          "max": 319840
+        },
+        "raw_persistence_ns": {
+          "count": 1844,
+          "min": 1832212,
+          "median": 2437827.0,
+          "mean": 2446194.3552060737,
+          "p95": 2792139,
+          "p99": 2925894,
+          "max": 18620044
+        },
+        "return_to_persistence_start_ns": {
+          "count": 1844,
+          "min": 2317,
+          "median": 2220995.0,
+          "mean": 2141501.8053145334,
+          "p95": 5705142,
+          "p99": 6229366,
+          "max": 8953497
+        },
+        "processing_after_raw_persistence_ns": {
+          "count": 1844,
+          "min": 14309,
+          "median": 78397.0,
+          "mean": 136831.7467462039,
+          "p95": 487582,
+          "p99": 541687,
+          "max": 704835
+        },
+        "processing_to_ledger_sample_ns": {
+          "count": 1844,
+          "min": 2020,
+          "median": 9657.0,
+          "mean": 9531.204446854665,
+          "p95": 11805,
+          "p99": 20652,
+          "max": 41284
+        }
+      },
+      "closure": {
+        "confirmed": true,
+        "error": null,
+        "details": {
+          "open_attempts": 1,
+          "close_attempts": 1,
+          "dtr_requested": false,
+          "rts_requested": false,
+          "actual_line_update_attempts": [
+            {
+              "line": "dtr",
+              "requested": false,
+              "outcome": "ioctl_returned"
+            },
+            {
+              "line": "rts",
+              "requested": false,
+              "outcome": "ioctl_returned"
+            }
+          ],
+          "serial_settings": {
+            "baudrate": 115200,
+            "bytesize": 8,
+            "parity": "N",
+            "stopbits": 1,
+            "xonxoff": false,
+            "dsrdtr": false,
+            "rtscts": false,
+            "timeout": 0,
+            "write_timeout": 0,
+            "inter_byte_timeout": null
+          },
+          "open_flush_suppressed": 1,
+          "is_open": false,
+          "fd": null,
+          "electrical_transients_or_resets_excluded": false
+        },
+        "resource_observed_open_before_close": true
+      },
+      "tail": {
+        "byte_offset": 254793,
+        "byte_length": 640,
+        "sha256": "397d3b1aa728f4c7de78f5a213a2eca13ab0abbaee368049686703e1c2008e72",
+        "first_read": {
+          "first_read_index": 1840,
+          "first_read_started_ns": "178594965871543",
+          "byte_offset": 254793
+        },
+        "last_read_index": 1843,
+        "literal_header": {
+          "validated_as_CSI": false,
+          "complete_row_counted": false,
+          "literal_fields": {
+            "id": 296,
+            "local_timestamp": 59934886,
+            "queue_drops": 0,
+            "channel": 11,
+            "len": 256
+          }
+        }
+      },
+      "incidents_recorded": []
+    }
+  },
+  "incidents": [
+    {
+      "receiver": "RX-01",
+      "number": 1,
+      "original": {
+        "anchor_ns": 178537830721451,
+        "first_observed_ns": 178538847454284,
+        "recovered_ns": 178539046286059,
+        "duration_ns": 1215564608,
+        "quality_approval": false,
+        "recovery_line": 99
+      },
+      "anchor_relative_ns": 2806569590,
+      "recovery_relative_ns": 4022134198,
+      "previous_row": {
+        "kind": "row",
+        "id": 6,
+        "local_timestamp": 2749157,
+        "queue_drops": 0,
+        "first_read_index": 67,
+        "first_read_started_ns": "178537767432006",
+        "byte_offset": 9805,
+        "line_1based": 98,
+        "byte_end": 10583,
+        "byte_length": 778,
+        "line_sha256": "534f20cc49192f62920a1ff2b5496673381ef2e6bb6857b190b74c946a442f18",
+        "last_read_index": 71,
+        "returned_ns": "178537830721451",
+        "ledger_seq": 601
+      },
+      "recovery_row": {
+        "kind": "row",
+        "id": 7,
+        "local_timestamp": 3949240,
+        "queue_drops": 0,
+        "first_read_index": 72,
+        "first_read_started_ns": "178538967157377",
+        "byte_offset": 10583,
+        "line_1based": 99,
+        "byte_end": 11450,
+        "byte_length": 867,
+        "line_sha256": "9e684f594cff19d78507a37cee40d05417b9f02e64b24ad3fcaaa4e245c74b9a",
+        "last_read_index": 77,
+        "returned_ns": "178539046286059",
+        "ledger_seq": 838
+      },
+      "context": {
+        "RX-01": {
+          "read_count": 6,
+          "bytes": 867,
+          "valid_rows": 1,
+          "service_count": 89,
+          "max_service_gap_with_boundaries_ns": 19039390,
+          "first_read_return_relative_to_anchor_ns": 1136574303,
+          "ledger_seqs": [
+            819,
+            823,
+            827,
+            831,
+            835,
+            838
+          ],
+          "read_byte_ranges": [
+            [
+              10583,
+              10711
+            ],
+            [
+              10711,
+              10839
+            ],
+            [
+              10839,
+              10967
+            ],
+            [
+              10967,
+              11223
+            ],
+            [
+              11223,
+              11351
+            ],
+            [
+              11351,
+              11450
+            ]
+          ]
+        },
+        "RX-02": {
+          "read_count": 42,
+          "bytes": 5320,
+          "valid_rows": 7,
+          "service_count": 96,
+          "max_service_gap_with_boundaries_ns": 23446255,
+          "first_read_return_relative_to_anchor_ns": 2511312,
+          "ledger_seqs": [
+            602,
+            623,
+            626,
+            629,
+            632,
+            635,
+            637,
+            641,
+            664,
+            666,
+            669,
+            672,
+            675,
+            677,
+            680,
+            702,
+            705,
+            707,
+            710,
+            713,
+            716,
+            718,
+            740,
+            743,
+            746,
+            749,
+            751,
+            754,
+            757,
+            778,
+            781,
+            784,
+            788,
+            790,
+            793,
+            796,
+            798,
+            818,
+            822,
+            826,
+            830,
+            834
+          ],
+          "read_byte_ranges": [
+            [
+              14681,
+              14901
+            ],
+            [
+              14901,
+              15029
+            ],
+            [
+              15029,
+              15157
+            ],
+            [
+              15157,
+              15285
+            ],
+            [
+              15285,
+              15413
+            ],
+            [
+              15413,
+              15541
+            ],
+            [
+              15541,
+              15669
+            ],
+            [
+              15669,
+              15774
+            ],
+            [
+              15774,
+              15902
+            ],
+            [
+              15902,
+              16030
+            ],
+            [
+              16030,
+              16158
+            ],
+            [
+              16158,
+              16286
+            ],
+            [
+              16286,
+              16414
+            ],
+            [
+              16414,
+              16542
+            ],
+            [
+              16542,
+              16628
+            ],
+            [
+              16628,
+              16756
+            ],
+            [
+              16756,
+              16884
+            ],
+            [
+              16884,
+              17012
+            ],
+            [
+              17012,
+              17140
+            ],
+            [
+              17140,
+              17268
+            ],
+            [
+              17268,
+              17396
+            ],
+            [
+              17396,
+              17415
+            ],
+            [
+              17415,
+              17543
+            ],
+            [
+              17543,
+              17671
+            ],
+            [
+              17671,
+              17799
+            ],
+            [
+              17799,
+              17927
+            ],
+            [
+              17927,
+              18055
+            ],
+            [
+              18055,
+              18183
+            ],
+            [
+              18183,
+              18292
+            ],
+            [
+              18292,
+              18420
+            ],
+            [
+              18420,
+              18548
+            ],
+            [
+              18548,
+              18676
+            ],
+            [
+              18676,
+              18804
+            ],
+            [
+              18804,
+              18932
+            ],
+            [
+              18932,
+              19060
+            ],
+            [
+              19060,
+              19188
+            ],
+            [
+              19188,
+              19264
+            ],
+            [
+              19264,
+              19392
+            ],
+            [
+              19392,
+              19520
+            ],
+            [
+              19520,
+              19648
+            ],
+            [
+              19648,
+              19776
+            ],
+            [
+              19776,
+              20001
+            ]
+          ]
+        }
+      },
+      "local_gap_us": 1200083,
+      "callback_id_delta": 1,
+      "queue_drops_delta": 0,
+      "recovery_and_next_complete_rows": [
+        {
+          "kind": "row",
+          "id": 7,
+          "local_timestamp": 3949240,
+          "queue_drops": 0,
+          "first_read_index": 72,
+          "first_read_started_ns": "178538967157377",
+          "byte_offset": 10583,
+          "line_1based": 99,
+          "byte_end": 11450,
+          "byte_length": 867,
+          "line_sha256": "9e684f594cff19d78507a37cee40d05417b9f02e64b24ad3fcaaa4e245c74b9a",
+          "last_read_index": 77,
+          "returned_ns": "178539046286059",
+          "ledger_seq": 838
+        },
+        {
+          "kind": "row",
+          "id": 8,
+          "local_timestamp": 4349135,
+          "queue_drops": 0,
+          "first_read_index": 78,
+          "first_read_started_ns": "178539375191827",
+          "byte_offset": 11450,
+          "line_1based": 100,
+          "byte_end": 12231,
+          "byte_length": 781,
+          "line_sha256": "d7be447173546bf9de6143f2967133a0ed8460001addc28c7cc60380b4fe9f1e",
+          "last_read_index": 81,
+          "returned_ns": "178539427477373",
+          "ledger_seq": 910
+        },
+        {
+          "kind": "row",
+          "id": 9,
+          "local_timestamp": 4749153,
+          "queue_drops": 0,
+          "first_read_index": 82,
+          "first_read_started_ns": "178539767017886",
+          "byte_offset": 12231,
+          "line_1based": 101,
+          "byte_end": 13205,
+          "byte_length": 974,
+          "line_sha256": "c65c69a6ba40c61a3d66ebb35acac23aa87ae7cfabaad7a910cb4c756aacbdb4",
+          "last_read_index": 87,
+          "returned_ns": "178539845847913",
+          "ledger_seq": 993
+        },
+        {
+          "kind": "row",
+          "id": 10,
+          "local_timestamp": 5149140,
+          "queue_drops": 0,
+          "first_read_index": 88,
+          "first_read_started_ns": "178540167756622",
+          "byte_offset": 13205,
+          "line_1based": 102,
+          "byte_end": 14101,
+          "byte_length": 896,
+          "line_sha256": "7fb042f476e9233c0834c0e8d8249d2389678f870c400e09e10fbf76880044a5",
+          "last_read_index": 92,
+          "returned_ns": "178540234292412",
+          "ledger_seq": 1070
+        },
+        {
+          "kind": "row",
+          "id": 11,
+          "local_timestamp": 5549161,
+          "queue_drops": 0,
+          "first_read_index": 93,
+          "first_read_started_ns": "178540567192796",
+          "byte_offset": 14101,
+          "line_1based": 103,
+          "byte_end": 15005,
+          "byte_length": 904,
+          "line_sha256": "8e794422933732ab34efd0b5ab193d30c689cff8e32b70a0ef23b226b2a607c5",
+          "last_read_index": 98,
+          "returned_ns": "178540648180541",
+          "ledger_seq": 1150
+        },
+        {
+          "kind": "row",
+          "id": 12,
+          "local_timestamp": 6149133,
+          "queue_drops": 0,
+          "first_read_index": 99,
+          "first_read_started_ns": "178541167212673",
+          "byte_offset": 15005,
+          "line_1based": 104,
+          "byte_end": 15900,
+          "byte_length": 895,
+          "line_sha256": "f8fbfb956aa12d645b09a65eec80f964a16be05b14e9d4578066591aa5fd85ca",
+          "last_read_index": 104,
+          "returned_ns": "178541244188899",
+          "ledger_seq": 1267
+        }
+      ]
+    },
+    {
+      "receiver": "RX-01",
+      "number": 2,
+      "original": {
+        "anchor_ns": 178579049535307,
+        "first_observed_ns": 178580054880070,
+        "recovered_ns": 178580243700152,
+        "duration_ns": 1194164845,
+        "quality_approval": false,
+        "recovery_line": 221
+      },
+      "anchor_relative_ns": 44025383446,
+      "recovery_relative_ns": 45219548291,
+      "previous_row": {
+        "kind": "row",
+        "id": 128,
+        "local_timestamp": 43949121,
+        "queue_drops": 0,
+        "first_read_index": 730,
+        "first_read_started_ns": "178578966463755",
+        "byte_offset": 113170,
+        "line_1based": 220,
+        "byte_end": 114058,
+        "byte_length": 888,
+        "line_sha256": "a9de401ad1fe4070ef7545820d40f6dddb6d0e52b8f56ad1bc1b8d349d87f99a",
+        "last_read_index": 735,
+        "returned_ns": "178579049535307",
+        "ledger_seq": 8678
+      },
+      "recovery_row": {
+        "kind": "row",
+        "id": 129,
+        "local_timestamp": 45149039,
+        "queue_drops": 0,
+        "first_read_index": 736,
+        "first_read_started_ns": "178580166110501",
+        "byte_offset": 114058,
+        "line_1based": 221,
+        "byte_end": 114963,
+        "byte_length": 905,
+        "line_sha256": "0bccfc48927bc843635bfe64ea6d5788cd017bee79d40bbee85369b5c159663b",
+        "last_read_index": 741,
+        "returned_ns": "178580243700152",
+        "ledger_seq": 8911
+      },
+      "context": {
+        "RX-01": {
+          "read_count": 6,
+          "bytes": 905,
+          "valid_rows": 1,
+          "service_count": 87,
+          "max_service_gap_with_boundaries_ns": 22247295,
+          "first_read_return_relative_to_anchor_ns": 1116633961,
+          "ledger_seqs": [
+            8890,
+            8894,
+            8899,
+            8903,
+            8907,
+            8911
+          ],
+          "read_byte_ranges": [
+            [
+              114058,
+              114186
+            ],
+            [
+              114186,
+              114314
+            ],
+            [
+              114314,
+              114442
+            ],
+            [
+              114442,
+              114698
+            ],
+            [
+              114698,
+              114826
+            ],
+            [
+              114826,
+              114963
+            ]
+          ]
+        },
+        "RX-02": {
+          "read_count": 42,
+          "bytes": 5249,
+          "valid_rows": 5,
+          "service_count": 92,
+          "max_service_gap_with_boundaries_ns": 36594992,
+          "first_read_return_relative_to_anchor_ns": 116719577,
+          "ledger_seqs": [
+            8694,
+            8697,
+            8701,
+            8703,
+            8706,
+            8709,
+            8712,
+            8714,
+            8735,
+            8738,
+            8741,
+            8744,
+            8747,
+            8749,
+            8752,
+            8756,
+            8775,
+            8778,
+            8781,
+            8784,
+            8786,
+            8789,
+            8813,
+            8816,
+            8819,
+            8821,
+            8824,
+            8827,
+            8829,
+            8852,
+            8854,
+            8857,
+            8860,
+            8863,
+            8865,
+            8868,
+            8871,
+            8891,
+            8895,
+            8900,
+            8904,
+            8908
+          ],
+          "read_byte_ranges": [
+            [
+              188519,
+              188647
+            ],
+            [
+              188647,
+              188775
+            ],
+            [
+              188775,
+              188903
+            ],
+            [
+              188903,
+              189031
+            ],
+            [
+              189031,
+              189159
+            ],
+            [
+              189159,
+              189287
+            ],
+            [
+              189287,
+              189415
+            ],
+            [
+              189415,
+              189480
+            ],
+            [
+              189480,
+              189608
+            ],
+            [
+              189608,
+              189736
+            ],
+            [
+              189736,
+              189864
+            ],
+            [
+              189864,
+              189992
+            ],
+            [
+              189992,
+              190120
+            ],
+            [
+              190120,
+              190248
+            ],
+            [
+              190248,
+              190376
+            ],
+            [
+              190376,
+              190457
+            ],
+            [
+              190457,
+              190585
+            ],
+            [
+              190585,
+              190713
+            ],
+            [
+              190713,
+              190841
+            ],
+            [
+              190841,
+              190969
+            ],
+            [
+              190969,
+              191097
+            ],
+            [
+              191097,
+              191207
+            ],
+            [
+              191207,
+              191335
+            ],
+            [
+              191335,
+              191463
+            ],
+            [
+              191463,
+              191591
+            ],
+            [
+              191591,
+              191719
+            ],
+            [
+              191719,
+              191847
+            ],
+            [
+              191847,
+              191975
+            ],
+            [
+              191975,
+              192062
+            ],
+            [
+              192062,
+              192190
+            ],
+            [
+              192190,
+              192318
+            ],
+            [
+              192318,
+              192446
+            ],
+            [
+              192446,
+              192574
+            ],
+            [
+              192574,
+              192702
+            ],
+            [
+              192702,
+              192830
+            ],
+            [
+              192830,
+              192958
+            ],
+            [
+              192958,
+              193000
+            ],
+            [
+              193000,
+              193128
+            ],
+            [
+              193128,
+              193256
+            ],
+            [
+              193256,
+              193512
+            ],
+            [
+              193512,
+              193640
+            ],
+            [
+              193640,
+              193768
+            ]
+          ]
+        }
+      },
+      "local_gap_us": 1199918,
+      "callback_id_delta": 1,
+      "queue_drops_delta": 0,
+      "recovery_and_next_complete_rows": [
+        {
+          "kind": "row",
+          "id": 129,
+          "local_timestamp": 45149039,
+          "queue_drops": 0,
+          "first_read_index": 736,
+          "first_read_started_ns": "178580166110501",
+          "byte_offset": 114058,
+          "line_1based": 221,
+          "byte_end": 114963,
+          "byte_length": 905,
+          "line_sha256": "0bccfc48927bc843635bfe64ea6d5788cd017bee79d40bbee85369b5c159663b",
+          "last_read_index": 741,
+          "returned_ns": "178580243700152",
+          "ledger_seq": 8911
+        },
+        {
+          "kind": "row",
+          "id": 130,
+          "local_timestamp": 45949133,
+          "queue_drops": 0,
+          "first_read_index": 742,
+          "first_read_started_ns": "178580966999452",
+          "byte_offset": 114963,
+          "line_1based": 222,
+          "byte_end": 115771,
+          "byte_length": 808,
+          "line_sha256": "d68761bc2e7eefe226453596827e0a250c09b081cb41d709b3571b3260da2cdb",
+          "last_read_index": 746,
+          "returned_ns": "178581032990335",
+          "ledger_seq": 9063
+        },
+        {
+          "kind": "row",
+          "id": 131,
+          "local_timestamp": 46149037,
+          "queue_drops": 0,
+          "first_read_index": 747,
+          "first_read_started_ns": "178581168456642",
+          "byte_offset": 115771,
+          "line_1based": 223,
+          "byte_end": 116624,
+          "byte_length": 853,
+          "line_sha256": "18693c352b4ecc0b05efa216af3a87321e7c6d80d6069ff55142fa5c4d8ca5cd",
+          "last_read_index": 751,
+          "returned_ns": "178581242731732",
+          "ledger_seq": 9101
+        },
+        {
+          "kind": "row",
+          "id": 132,
+          "local_timestamp": 46349496,
+          "queue_drops": 0,
+          "first_read_index": 752,
+          "first_read_started_ns": "178581366429158",
+          "byte_offset": 116624,
+          "line_1based": 224,
+          "byte_end": 117428,
+          "byte_length": 804,
+          "line_sha256": "a5f7b1d90c06cc995680aac9010bce0571648fff52c2d8a8368b9613873201b8",
+          "last_read_index": 757,
+          "returned_ns": "178581436839131",
+          "ledger_seq": 9142
+        },
+        {
+          "kind": "row",
+          "id": 133,
+          "local_timestamp": 46949102,
+          "queue_drops": 0,
+          "first_read_index": 758,
+          "first_read_started_ns": "178581968054766",
+          "byte_offset": 117428,
+          "line_1based": 225,
+          "byte_end": 118353,
+          "byte_length": 925,
+          "line_sha256": "20729ee5f94a9c91019e9f8ed15fa849b1dd2acf178fa8881a385562702c11f1",
+          "last_read_index": 762,
+          "returned_ns": "178582037627195",
+          "ledger_seq": 9261
+        },
+        {
+          "kind": "row",
+          "id": 134,
+          "local_timestamp": 47348999,
+          "queue_drops": 0,
+          "first_read_index": 763,
+          "first_read_started_ns": "178582366068824",
+          "byte_offset": 118353,
+          "line_1based": 226,
+          "byte_end": 119125,
+          "byte_length": 772,
+          "line_sha256": "6e9bc378f6f512d4d750c9b81ef5bd363473c2a4b4d2ee6bc254be0b9c97f699",
+          "last_read_index": 767,
+          "returned_ns": "178582425352411",
+          "ledger_seq": 9339
+        }
+      ]
+    },
+    {
+      "receiver": "RX-01",
+      "number": 3,
+      "original": {
+        "anchor_ns": 178592241831812,
+        "first_observed_ns": 178593246217082,
+        "recovered_ns": 178593637412661,
+        "duration_ns": 1395580849,
+        "quality_approval": false,
+        "recovery_line": 259
+      },
+      "anchor_relative_ns": 57217679951,
+      "recovery_relative_ns": 58613260800,
+      "previous_row": {
+        "kind": "row",
+        "id": 166,
+        "local_timestamp": 57150577,
+        "queue_drops": 0,
+        "first_read_index": 933,
+        "first_read_started_ns": "178592167283219",
+        "byte_offset": 145410,
+        "line_1based": 258,
+        "byte_end": 146225,
+        "byte_length": 815,
+        "line_sha256": "bb3bf5e0c1f8231f1979a4886ed4dab7ebbcc66902b565eac562c1a3ad085ca3",
+        "last_read_index": 938,
+        "returned_ns": "178592241831812",
+        "ledger_seq": 11246
+      },
+      "recovery_row": {
+        "kind": "row",
+        "id": 167,
+        "local_timestamp": 58548965,
+        "queue_drops": 0,
+        "first_read_index": 939,
+        "first_read_started_ns": "178593565950115",
+        "byte_offset": 146225,
+        "line_1based": 259,
+        "byte_end": 147085,
+        "byte_length": 860,
+        "line_sha256": "7763f72e68b7973e287e50da3a0830a330d7fb9e3239fe22ea77a8a02569a2ab",
+        "last_read_index": 943,
+        "returned_ns": "178593637412661",
+        "ledger_seq": 11507
+      },
+      "context": {
+        "RX-01": {
+          "read_count": 5,
+          "bytes": 860,
+          "valid_rows": 1,
+          "service_count": 101,
+          "max_service_gap_with_boundaries_ns": 24194105,
+          "first_read_return_relative_to_anchor_ns": 1324366244,
+          "ledger_seqs": [
+            11490,
+            11494,
+            11498,
+            11502,
+            11507
+          ],
+          "read_byte_ranges": [
+            [
+              146225,
+              146353
+            ],
+            [
+              146353,
+              146481
+            ],
+            [
+              146481,
+              146737
+            ],
+            [
+              146737,
+              146865
+            ],
+            [
+              146865,
+              147085
+            ]
+          ]
+        },
+        "RX-02": {
+          "read_count": 40,
+          "bytes": 5163,
+          "valid_rows": 5,
+          "service_count": 110,
+          "max_service_gap_with_boundaries_ns": 20325225,
+          "first_read_return_relative_to_anchor_ns": 124118025,
+          "ledger_seqs": [
+            11266,
+            11269,
+            11272,
+            11275,
+            11277,
+            11280,
+            11283,
+            11335,
+            11338,
+            11341,
+            11344,
+            11346,
+            11349,
+            11352,
+            11374,
+            11376,
+            11379,
+            11382,
+            11385,
+            11388,
+            11390,
+            11412,
+            11415,
+            11418,
+            11421,
+            11423,
+            11426,
+            11429,
+            11431,
+            11452,
+            11456,
+            11458,
+            11461,
+            11464,
+            11466,
+            11489,
+            11493,
+            11497,
+            11501,
+            11506
+          ],
+          "read_byte_ranges": [
+            [
+              244564,
+              244692
+            ],
+            [
+              244692,
+              244820
+            ],
+            [
+              244820,
+              244948
+            ],
+            [
+              244948,
+              245076
+            ],
+            [
+              245076,
+              245204
+            ],
+            [
+              245204,
+              245332
+            ],
+            [
+              245332,
+              245453
+            ],
+            [
+              245453,
+              245581
+            ],
+            [
+              245581,
+              245709
+            ],
+            [
+              245709,
+              245837
+            ],
+            [
+              245837,
+              245965
+            ],
+            [
+              245965,
+              246093
+            ],
+            [
+              246093,
+              246221
+            ],
+            [
+              246221,
+              246320
+            ],
+            [
+              246320,
+              246448
+            ],
+            [
+              246448,
+              246576
+            ],
+            [
+              246576,
+              246704
+            ],
+            [
+              246704,
+              246832
+            ],
+            [
+              246832,
+              246960
+            ],
+            [
+              246960,
+              247088
+            ],
+            [
+              247088,
+              247123
+            ],
+            [
+              247123,
+              247251
+            ],
+            [
+              247251,
+              247379
+            ],
+            [
+              247379,
+              247507
+            ],
+            [
+              247507,
+              247635
+            ],
+            [
+              247635,
+              247763
+            ],
+            [
+              247763,
+              247891
+            ],
+            [
+              247891,
+              248019
+            ],
+            [
+              248019,
+              248087
+            ],
+            [
+              248087,
+              248215
+            ],
+            [
+              248215,
+              248343
+            ],
+            [
+              248343,
+              248471
+            ],
+            [
+              248471,
+              248599
+            ],
+            [
+              248599,
+              248727
+            ],
+            [
+              248727,
+              248831
+            ],
+            [
+              248831,
+              248959
+            ],
+            [
+              248959,
+              249087
+            ],
+            [
+              249087,
+              249215
+            ],
+            [
+              249215,
+              249471
+            ],
+            [
+              249471,
+              249727
+            ]
+          ]
+        }
+      },
+      "local_gap_us": 1398388,
+      "callback_id_delta": 1,
+      "queue_drops_delta": 0,
+      "recovery_and_next_complete_rows": [
+        {
+          "kind": "row",
+          "id": 167,
+          "local_timestamp": 58548965,
+          "queue_drops": 0,
+          "first_read_index": 939,
+          "first_read_started_ns": "178593565950115",
+          "byte_offset": 146225,
+          "line_1based": 259,
+          "byte_end": 147085,
+          "byte_length": 860,
+          "line_sha256": "7763f72e68b7973e287e50da3a0830a330d7fb9e3239fe22ea77a8a02569a2ab",
+          "last_read_index": 943,
+          "returned_ns": "178593637412661",
+          "ledger_seq": 11507
+        },
+        {
+          "kind": "row",
+          "id": 168,
+          "local_timestamp": 58748960,
+          "queue_drops": 0,
+          "first_read_index": 944,
+          "first_read_started_ns": "178593765795762",
+          "byte_offset": 147085,
+          "line_1based": 260,
+          "byte_end": 147989,
+          "byte_length": 904,
+          "line_sha256": "e2d65df3b44ec36b40daaaeb571e4c37892fbef28a030b3a3edb792111fdaae0",
+          "last_read_index": 948,
+          "returned_ns": "178593833990456",
+          "ledger_seq": 11544
+        },
+        {
+          "kind": "row",
+          "id": 169,
+          "local_timestamp": 59548968,
+          "queue_drops": 0,
+          "first_read_index": 949,
+          "first_read_started_ns": "178594565639883",
+          "byte_offset": 147989,
+          "line_1based": 261,
+          "byte_end": 148915,
+          "byte_length": 926,
+          "line_sha256": "c4bb8a962d6c725ba7624cd2331709f457ea4e06e2a1f5dc3abcfd6de30f8448",
+          "last_read_index": 954,
+          "returned_ns": "178594650329189",
+          "ledger_seq": 11702
+        },
+        {
+          "kind": "row",
+          "id": 170,
+          "local_timestamp": 59748968,
+          "queue_drops": 0,
+          "first_read_index": 955,
+          "first_read_started_ns": "178594768858195",
+          "byte_offset": 148915,
+          "line_1based": 262,
+          "byte_end": 149670,
+          "byte_length": 755,
+          "line_sha256": "a9fd668c8619271df30e0a3e1d1256e58e65de6672e960d0f8adefc74d145514",
+          "last_read_index": 959,
+          "returned_ns": "178594833660130",
+          "ledger_seq": 11738
+        }
+      ]
+    }
+  ],
+  "host_clocks": {
+    "boottime_minus_monotonic_offset_ns": {
+      "count": 11772,
+      "min": 50,
+      "median": 1005.5,
+      "mean": 1033.6554536187564,
+      "p95": 1711,
+      "p99": 2073,
+      "max": 33964
+    },
+    "realtime_minus_monotonic_offset_ns": {
+      "count": 11772,
+      "min": 1793548810845957257,
+      "median": 1.793548810845959e+18,
+      "mean": 1.793548810845959e+18,
+      "p95": 1793548810845960160,
+      "p99": 1793548810845960467,
+      "max": 1793548810845992487
+    },
+    "ledger_sample_gaps_ns": {
+      "count": 11771,
+      "min": 1871259,
+      "median": 4456408,
+      "mean": 5099981.764930762,
+      "p95": 10214907,
+      "p99": 10463136,
+      "max": 22359078
+    }
+  },
+  "storage": {
+    "checks": 239,
+    "min_free_bytes": 113935876096,
+    "max_raw_bytes": 405743,
+    "max_bundle_bytes": 5394940
+  },
+  "full_local_artifact": {
+    "path": "results/local/diagnostico-continuidad-dual-01-r1/forense-r1.json",
+    "sha256": "7eb48a053463dfa9591d6ab307ebed4499a78fbfbbb187331ca5376b75f8c7ed"
+  },
+  "firmware_sources_inspected": {
+    "firmware/csi_recv/main/app_main.c": "c940779452aedad8862dd6eb7a24d51786c662d3acbb9369b1a86bff54a1ccc6",
+    "firmware/csi_recv_02/main/app_main.c": "1fb53776e1e5776194749041d1252c3f8ee11f69f30fb982a42c7577319e00d5",
+    "firmware/csi_send/main/app_main.c": "8e9d1a0cfd2996f0b6b3420f495fe2270e7f7ad0ca7487c3b876b6878c5c8eba",
+    "config/csi_esp32s3.json": "c39115ee2a789e8a8b3aa372528f869a6ac9fe5f92847b427ad4075d78f3c048"
+  },
+  "verification": {
+    "tests_passed": 269,
+    "skipped": 0,
+    "seconds": 24.512,
+    "new_tests": 7,
+    "log_sha256": "f37e707c9c4ae3fbcc67eafc728fb1476056c4a4f7c8abe163b2c66bf4712b09",
+    "physical_UART_opened_by_analysis": false
+  },
+  "preservation": {
+    "total_existing": 2625,
+    "identical_files": 2624,
+    "append_only_state": "docs/ESTADO_INICIAL.md",
+    "historical_prefix_preserved": true,
+    "bundle_originals_identical": true,
+    "authorization_consumed_unchanged": true
+  },
+  "analysis_sources": {
+    "src/continuity_diagnostics.py": "6e53b0e853f137749ffe415415085c05cafe85d9c26788dc56ca1247ec174cf3",
+    "tools/analizar_continuidad_dual.py": "df914cc77ea0014072c1deafb7a3ae6c0f5b751ec0f19fffd8a9f39a2fd4be69",
+    "tests/test_continuity_diagnostics.py": "0be29c31e8747555be4253f2ba962b203f3f1d7bce8b169335cb05ab469ef235"
+  }
+}

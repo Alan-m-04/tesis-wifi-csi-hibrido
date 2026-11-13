@@ -1,0 +1,527 @@
+{
+  "schema": "continuity-antenna-aba-figures-1",
+  "files": [
+    {
+      "path": "figures/antena_aba_r3/cadencia.svg",
+      "sha256": "2da4ea13cbb28981cb6622ced9193d142a14c2d26afe9d2d22823b7f9ca53f38",
+      "bytes": 28923,
+      "axes": [
+        {
+          "panel": "RX-01",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        },
+        {
+          "panel": "RX-02",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/antena_aba_r3/huecos_ecdf.svg",
+      "sha256": "b6d2783d7b283e0dfe8bfb9ffa30f26037bf2b0d46918af7580116f469c6c85b",
+      "bytes": 76506,
+      "axes": [
+        {
+          "panel": "RX-01 / retorno host",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-01 / reloj local",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-02 / retorno host",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-02 / reloj local",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/antena_aba_r3/huecos_tiempo.svg",
+      "sha256": "4c86444b4e57035adb0ef10096e9e736e80ba90829c59cbca150fa7458f890e5",
+      "bytes": 517017,
+      "axes": [
+        {
+          "panel": "RX-01 / retorno host",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            1500.0
+          ]
+        },
+        {
+          "panel": "RX-01 / reloj local",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            1500.0
+          ]
+        },
+        {
+          "panel": "RX-02 / retorno host",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            1500.0
+          ]
+        },
+        {
+          "panel": "RX-02 / reloj local",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            1500.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/antena_aba_r3/rssi.svg",
+      "sha256": "e55124f5ca1611efa0de1967569fc5be591245ef768c2125a7287a9800e80694",
+      "bytes": 285436,
+      "axes": [
+        {
+          "panel": "RX-01 / evolución RSSI",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            -62.0,
+            -43.0
+          ]
+        },
+        {
+          "panel": "RX-01 / distribución RSSI",
+          "xlim": [
+            -62.0,
+            -43.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-02 / evolución RSSI",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            -62.0,
+            -43.0
+          ]
+        },
+        {
+          "panel": "RX-02 / distribución RSSI",
+          "xlim": [
+            -62.0,
+            -43.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        }
+      ]
+    },
+    {
+      "path": "figures/antena_aba_r3/transporte.svg",
+      "sha256": "69863b554ae7e04257d3383c30956c533ee9643f5acbb52c8300e4b15ee2c56f",
+      "bytes": 166667,
+      "axes": [
+        {
+          "panel": "RX-01 / servicio",
+          "xlim": [
+            0.0,
+            50.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-01 / retornos con bytes",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-01 / p99 por bloque",
+          "xlim": [
+            -0.6,
+            2.6
+          ],
+          "ylim": [
+            0.0,
+            10.0
+          ]
+        },
+        {
+          "panel": "RX-02 / servicio",
+          "xlim": [
+            0.0,
+            50.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-02 / retornos con bytes",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-02 / p99 por bloque",
+          "xlim": [
+            -0.6,
+            2.6
+          ],
+          "ylim": [
+            0.0,
+            10.0
+          ]
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.4.2"
+  },
+  "requirements_sha256": "466c2a8b7597c4758dd642fbe49ace211888c55f423aa8ffe8dddcdb63893871",
+  "published_summary_sha256": "5b692e7e713942f832217a0b626d79dd1d75cf3dffde11d3ab8d109d90503669",
+  "local_observations_sha256": "8c5aaccedce25ee3fbb2997543198ceb9f7b08e390f4639b7b00669237ae7b7d",
+  "quality_approval": false,
+  "common_axes_verified": true,
+  "interpolation_of_observations": false,
+  "png_previews_local_only": [
+    {
+      "path": "cadencia.png",
+      "sha256": "ee600234295f5e29e8bc2dbf23c6b5dfbf35cdba96e7a8b66db81d8035ef28b1",
+      "bytes": 88675,
+      "axes": [
+        {
+          "panel": "RX-01",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        },
+        {
+          "panel": "RX-02",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            55.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "huecos_ecdf.png",
+      "sha256": "1e8809f68fcac030a1242b2aea6b539855163902a1c5755a82f8e8c09f0c0963",
+      "bytes": 105707,
+      "axes": [
+        {
+          "panel": "RX-01 / retorno host",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-01 / reloj local",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-02 / retorno host",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-02 / reloj local",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        }
+      ]
+    },
+    {
+      "path": "huecos_tiempo.png",
+      "sha256": "d1fff42928dc92a450fa150f69fb0cd36ebc7455a8024bcd1c00eb0767986bd3",
+      "bytes": 184661,
+      "axes": [
+        {
+          "panel": "RX-01 / retorno host",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            1500.0
+          ]
+        },
+        {
+          "panel": "RX-01 / reloj local",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            1500.0
+          ]
+        },
+        {
+          "panel": "RX-02 / retorno host",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            1500.0
+          ]
+        },
+        {
+          "panel": "RX-02 / reloj local",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            0.0,
+            1500.0
+          ]
+        }
+      ]
+    },
+    {
+      "path": "rssi.png",
+      "sha256": "7280f4100bb6fa8c7fdea1cb0d9561ff51dea20b8d4a091ec0306931863bb819",
+      "bytes": 214043,
+      "axes": [
+        {
+          "panel": "RX-01 / evolución RSSI",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            -62.0,
+            -43.0
+          ]
+        },
+        {
+          "panel": "RX-01 / distribución RSSI",
+          "xlim": [
+            -62.0,
+            -43.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-02 / evolución RSSI",
+          "xlim": [
+            0.0,
+            60.0
+          ],
+          "ylim": [
+            -62.0,
+            -43.0
+          ]
+        },
+        {
+          "panel": "RX-02 / distribución RSSI",
+          "xlim": [
+            -62.0,
+            -43.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        }
+      ]
+    },
+    {
+      "path": "transporte.png",
+      "sha256": "c441a824ab23f3bd79446d4358011eca872f2468e66d8ad1fc9d5a4745267bfc",
+      "bytes": 165743,
+      "axes": [
+        {
+          "panel": "RX-01 / servicio",
+          "xlim": [
+            0.0,
+            50.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-01 / retornos con bytes",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-01 / p99 por bloque",
+          "xlim": [
+            -0.6,
+            2.6
+          ],
+          "ylim": [
+            0.0,
+            10.0
+          ]
+        },
+        {
+          "panel": "RX-02 / servicio",
+          "xlim": [
+            0.0,
+            50.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-02 / retornos con bytes",
+          "xlim": [
+            0.0,
+            1500.0
+          ],
+          "ylim": [
+            0.0,
+            1.02
+          ]
+        },
+        {
+          "panel": "RX-02 / p99 por bloque",
+          "xlim": [
+            -0.6,
+            2.6
+          ],
+          "ylim": [
+            0.0,
+            10.0
+          ]
+        }
+      ]
+    }
+  ]
+}

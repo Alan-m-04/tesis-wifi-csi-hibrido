@@ -1,0 +1,123 @@
+{
+  "protocol": "presence_rx02_persistent_1",
+  "execution_mode": "offline_only",
+  "policy": {
+    "window_ns": 30000000000,
+    "availability_wait_ns": 10000000000,
+    "freshness_ns": 1000000000,
+    "exit_delay_ns": 60000000000,
+    "start_cue_delay_ns": 30000000000,
+    "establishment_ns": 30000000000,
+    "label_tail_ns": 10000000000,
+    "close_wait_ns": 250000000,
+    "close_bytes": 65536,
+    "coverage_min_rows": 120,
+    "coverage_bin_rows": 15,
+    "coverage_gap_ns": 500000000
+  },
+  "receivers": {
+    "RX-02": "5C93200689"
+  },
+  "connection_id": "RX02-DEVREP-R3-N01",
+  "actor": "PENDIENTE",
+  "mounting_reference": "PENDIENTE",
+  "partition_group": "RX02-DEVREP-R3-N01",
+  "slots": [
+    {
+      "id": "RX02-DEVREP-R3-N01-E",
+      "condition": "E"
+    },
+    {
+      "id": "RX02-DEVREP-R3-N01-S",
+      "condition": "S"
+    }
+  ],
+  "ports": {
+    "RX-02": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00"
+  },
+  "baud": 115200,
+  "storage_policy": {
+    "initial_free_bytes": 104857600,
+    "reserve_bytes": 33554432,
+    "max_raw_bytes": 67108864,
+    "max_bundle_bytes": 268435456,
+    "max_connection_ns": 3600000000000
+  },
+  "environment": {
+    "condition": "PENDIENTE",
+    "occupancy": "PENDIENTE",
+    "movement": "PENDIENTE",
+    "geometry": "PENDIENTE",
+    "tx_power": "PENDIENTE",
+    "mounting_confirmation": "PENDIENTE",
+    "sound_practice_reference": "PENDIENTE",
+    "laptop_power_lid": "PENDIENTE",
+    "suspension_ac_battery": "PENDIENTE",
+    "serial_readers_absent": "PENDIENTE"
+  },
+  "eligibility_revision": "rx02-exploratory-1",
+  "line_policy_revision": "v4-startup-sequence-1",
+  "review_state": "R3_DRAFT_ONLY_CONDITIONS_AND_EXECUTOR_PENDING",
+  "authorization_granted": false,
+  "permitted_uses": {
+    "calibration": false,
+    "training": false,
+    "production": false
+  },
+  "transmitter": {
+    "identity": "TX-01",
+    "source_mac": "1a:00:00:00:00:00"
+  },
+  "unused_receiver": {
+    "receiver": "RX-01",
+    "action": "remain_disconnected_uart_unopened",
+    "operator_confirmation": "PENDIENTE"
+  },
+  "selection_revision": "rx02-continuity-selection-1",
+  "future_partition": "development_future",
+  "persistence_revision": "rx02-raw-sync-control-checkpoint-2",
+  "review_only": true,
+  "integration_revision": "rx02-devrep-checkpoint-entry-1",
+  "output_new": "results/local/devrep-rx02-r3-N01",
+  "schedule_revision": "rx02-devrep-fixed-agenda-1",
+  "schedule": {
+    "request_offsets_ns": [
+      30000000000,
+      240000000000
+    ],
+    "request_lateness_limit_ns": 2000000000,
+    "T0_ranges_ns": [
+      [
+        90000000000,
+        120000000000
+      ],
+      [
+        300000000000,
+        330000000000
+      ]
+    ],
+    "label_due_offsets_ns": [
+      210000000000,
+      420000000000
+    ],
+    "close_ceiling_ns": 390000000000,
+    "inter_connection_gap_ns": 300000000000,
+    "inter_connection_lateness_ns": 5000000000
+  },
+  "max_attempts": 1,
+  "retry_allowed": false,
+  "ready_risk_reviewed": false,
+  "setup_snapshot_path": "PENDIENTE",
+  "setup_snapshot_sha256": "PENDIENTE",
+  "dataset_role": "development_extension_prospective",
+  "preparation_schema": "devrep-independent-preparation-2",
+  "series_id": "RX02-DEVREP-R3",
+  "predecessor": null,
+  "acquisition_executor_enabled": false,
+  "conditions_confirmation": {
+    "confirmed_current": false,
+    "host_boot_id": null,
+    "declaration_path": null,
+    "declaration_sha256": null
+  }
+}

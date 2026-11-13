@@ -1,0 +1,314 @@
+{
+  "schema": "tesis-v4-startup-sequence-review-v1",
+  "date": "2026-11-01",
+  "base_commit": "6af037bb835db9b8e03a45a4ede0373b3030d663",
+  "branch": "feat/backend-uart-presencia-v4",
+  "conclusion": {
+    "status": "blocked_before_new_ES_plan",
+    "reason": "Full-connection eligibility still fails on recorded non-UTF8 startup prefixes and other unsupported initial formats; no verified interpretation of binary prefix.",
+    "new_ES_plan_prepared": false,
+    "new_authorization": false
+  },
+  "policy": {
+    "explicit_revision": "v4-startup-sequence-1",
+    "default_unchanged": "v4-strict-post-ready-1",
+    "previous_revision_unchanged": "v4-app-main-return-1",
+    "shared_grammar_unchanged": true,
+    "csi_profile_unchanged": true,
+    "csi_continuity_unchanged": true,
+    "templates_unchanged": true
+  },
+  "tests": {
+    "total": 210,
+    "new": 22,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 17.344,
+    "log_sha256": "afe58a73f5dd28f8b2a58f645fc16f0fe4a11f2c78e06f949e4d1f235a749f6c",
+    "source_permitted_reconstructions": "synthetic only",
+    "synthetic_pty_complete_windows": 2
+  },
+  "existing_logs": [
+    {
+      "path": "data/raw/dual-60s-20261024T205854Z/captura/rx-01.serial.log",
+      "receiver": "RX-01",
+      "bytes": 247862,
+      "sha256": "51cb3bb1cb191b5a85e09cfa8936c29f9c0e89d930e73802623defbdcae8125a",
+      "complete_lines": 385,
+      "ready_line": 91,
+      "first_csi_line": 94,
+      "initial_invalid_lines": 21,
+      "tail": {
+        "byte_offset": 247605,
+        "bytes": 257,
+        "sha256": "93987626efdbbf7c8945f90a057274c8e4aedd9a992ea0ba1b1780364c293afe",
+        "raw_hex": "4353495f444154412c3239322c31613a30303a30303a30303a30303a30302c2d36302c31312c312c302c302c312c312c302c302c302c302c2d39302c302c31312c302c35393937323833302c302c34372c302c3235362c302c302c225b302c302c2d31302c2d362c2d31312c2d382c2d31312c2d372c2d31312c2d372c2d31322c2d362c2d31332c2d362c2d31332c2d362c2d31322c2d352c2d31342c2d352c2d31342c2d342c2d31342c2d352c2d31372c2d322c2d31372c2d332c2d31372c2d332c2d31382c2d322c2d31392c2d342c2d31392c2d342c2d32312c2d352c2d32312c2d352c2d32312c2d352c2d32302c2d382c2d31392c2d372c2d32302c2d38"
+      }
+    },
+    {
+      "path": "data/raw/dual-60s-20261024T205854Z/captura/rx-02.serial.log",
+      "receiver": "RX-02",
+      "bytes": 250408,
+      "sha256": "5af63769f6bea835b037e3ad81e4f03ce4b5113ea266219d83fe8e4234f8d6ff",
+      "complete_lines": 384,
+      "ready_line": 92,
+      "first_csi_line": 94,
+      "initial_invalid_lines": 21,
+      "tail": {
+        "byte_offset": 250151,
+        "bytes": 257,
+        "sha256": "79fced4fb0b58ec5e871ca88c25c03b12856bca0c91ac488188558ee304988a2",
+        "raw_hex": "4353495f444154412c3239312c31613a30303a30303a30303a30303a30302c2d34392c31312c312c302c302c312c312c302c302c302c302c2d39312c302c31312c302c35393937303936312c302c34372c302c3235362c302c302c225b302c302c2d31342c362c2d31352c352c2d31342c362c2d31342c362c2d31342c362c2d31332c372c2d31332c372c2d31322c372c2d31322c382c2d31322c382c2d31322c392c2d31312c392c2d31312c392c2d31322c31302c2d31322c31312c2d31322c31312c2d31332c31312c2d31322c31312c2d31332c31312c2d31332c31312c2d31342c31302c2d31342c392c2d31352c392c2d31352c372c2d31352c372c2d31"
+      }
+    },
+    {
+      "path": "results/local/captura-dual-30s-post-reinicio-20261025-intento01/capture/rx-01.serial.log",
+      "receiver": "RX-01",
+      "bytes": 129605,
+      "sha256": "1a4839ee20f6256058d1a1924007a791b77bacbcb8fc53804018fd4443ffb90e",
+      "complete_lines": 236,
+      "ready_line": 89,
+      "first_csi_line": 92,
+      "initial_invalid_lines": 20,
+      "tail": {
+        "byte_offset": 129476,
+        "bytes": 129,
+        "sha256": "768d7e1f19c8648b76ed1d87d99ba8ca5f83d1d189ae16398c355a2de49a287c",
+        "raw_hex": "4353495f444154412c3134352c31613a30303a30303a30303a30303a30302c2d34362c31312c312c302c302c312c312c302c302c302c302c2d39302c302c31312c302c32393938363633392c302c34372c302c3235362c302c302c225b302c302c31322c392c31322c392c31322c392c31322c392c31322c382c31322c372c3132"
+      }
+    },
+    {
+      "path": "results/local/captura-dual-30s-post-reinicio-20261025-intento01/capture/rx-02.serial.log",
+      "receiver": "RX-02",
+      "bytes": 130592,
+      "sha256": "a03defbf5fe1483615fc354442c1a9a9a22542e5fa9e4ec8bd49ecd8861246bd",
+      "complete_lines": 238,
+      "ready_line": 91,
+      "first_csi_line": 93,
+      "initial_invalid_lines": 21,
+      "tail": {
+        "byte_offset": 130463,
+        "bytes": 129,
+        "sha256": "43b891b4d1cdd6a2e07ca1b9d4e549555e05f1c40880c77e2a802a89d6d9a7e0",
+        "raw_hex": "4353495f444154412c3134362c31613a30303a30303a30303a30303a30302c2d35302c31312c312c302c302c312c312c302c302c302c302c2d39342c302c31312c302c32393938313531352c302c34372c302c3235362c302c302c225b302c302c2d31352c332c2d31352c332c2d31352c332c2d31342c332c2d31342c332c2d31"
+      }
+    },
+    {
+      "path": "results/local/captura-dual-v2-30s-20261025-intento01/capture/rx-01.serial.log",
+      "receiver": "RX-01",
+      "bytes": 130321,
+      "sha256": "6eb534791e782a8abf5bf8b6601e923b9f7698421c3c08e51d1a066feef23e96",
+      "complete_lines": 238,
+      "ready_line": 89,
+      "first_csi_line": 92,
+      "initial_invalid_lines": 20,
+      "tail": {
+        "byte_offset": 130321,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_hex": ""
+      }
+    },
+    {
+      "path": "results/local/captura-dual-v2-30s-20261025-intento01/capture/rx-02.serial.log",
+      "receiver": "RX-02",
+      "bytes": 131945,
+      "sha256": "0a88339d6799e0bcd29c709aafe81e726d164c0c92d04a8dbab7bd1371b2ba70",
+      "complete_lines": 242,
+      "ready_line": 94,
+      "first_csi_line": 96,
+      "initial_invalid_lines": 22,
+      "tail": {
+        "byte_offset": 131945,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_hex": ""
+      }
+    },
+    {
+      "path": "results/local/preparacion-dual-v3-20261026T000758Z/captura-dual-v3-20261026T000758Z-intento-unico/capture/rx-01.serial.log",
+      "receiver": "RX-01",
+      "bytes": 137718,
+      "sha256": "a4201f669fd04f477eacd8250039c0bcf0981c23a2311f60444819a501a4ac4a",
+      "complete_lines": 246,
+      "ready_line": 90,
+      "first_csi_line": 93,
+      "initial_invalid_lines": 20,
+      "tail": {
+        "byte_offset": 137718,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_hex": ""
+      }
+    },
+    {
+      "path": "results/local/preparacion-dual-v3-20261026T000758Z/captura-dual-v3-20261026T000758Z-intento-unico/capture/rx-02.serial.log",
+      "receiver": "RX-02",
+      "bytes": 135560,
+      "sha256": "9ff49b0405f694b44368cd58b497bc4f1c000ccb4e8bd73246abf9e71c8818c4",
+      "complete_lines": 246,
+      "ready_line": 92,
+      "first_csi_line": 94,
+      "initial_invalid_lines": 21,
+      "tail": {
+        "byte_offset": 135560,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_hex": ""
+      }
+    },
+    {
+      "path": "results/local/preparacion-dual-v3-movimiento-libre-20261026T035823Z/captura-dual-v3-movimiento-libre-20261026T035823Z-intento-unico/capture/rx-01.serial.log",
+      "receiver": "RX-01",
+      "bytes": 134406,
+      "sha256": "1cbb2df485cb7cb49ec3f9420e18bbe2a46e966ddd42623c8b25d2235cedb750",
+      "complete_lines": 245,
+      "ready_line": 91,
+      "first_csi_line": 94,
+      "initial_invalid_lines": 22,
+      "tail": {
+        "byte_offset": 134406,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_hex": ""
+      }
+    },
+    {
+      "path": "results/local/preparacion-dual-v3-movimiento-libre-20261026T035823Z/captura-dual-v3-movimiento-libre-20261026T035823Z-intento-unico/capture/rx-02.serial.log",
+      "receiver": "RX-02",
+      "bytes": 134241,
+      "sha256": "29c9c500c7b772c892ce8a6d11b12c84c766db8ec653cf07a2d4fe33bdbe0242",
+      "complete_lines": 247,
+      "ready_line": 94,
+      "first_csi_line": 96,
+      "initial_invalid_lines": 22,
+      "tail": {
+        "byte_offset": 134241,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_hex": ""
+      }
+    },
+    {
+      "path": "results/local/v4-c01-vacia-sentado-20261028T014057Z/rx-01.serial.log",
+      "receiver": "RX-01",
+      "bytes": 4470,
+      "sha256": "67eef193aa3d15638f4f212757ede7713f7de7abfd3250977b454d73ea3d39c4",
+      "complete_lines": 89,
+      "ready_line": null,
+      "first_csi_line": null,
+      "initial_invalid_lines": 20,
+      "tail": {
+        "byte_offset": 4469,
+        "bytes": 1,
+        "sha256": "a83dd0ccbffe39d071cc317ddf6e97f5c6b1c87af91919271f9fa140b0508c6c",
+        "raw_hex": "49"
+      }
+    },
+    {
+      "path": "results/local/v4-c01-vacia-sentado-20261028T014057Z/rx-02.serial.log",
+      "receiver": "RX-02",
+      "bytes": 4669,
+      "sha256": "2b4cade6d115b28033db17f592e3b28d8723b3523d183b65a52c75aebc7df719",
+      "complete_lines": 92,
+      "ready_line": 91,
+      "first_csi_line": null,
+      "initial_invalid_lines": 21,
+      "tail": {
+        "byte_offset": 4669,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_hex": ""
+      }
+    }
+  ],
+  "source_inspection": {
+    "sdk_commit": "67c1de1eebe095d554d281952fde63c16ee2dca0",
+    "sources": [
+      {
+        "path": "firmware/csi_recv/main/app_main.c",
+        "sha256": "c940779452aedad8862dd6eb7a24d51786c662d3acbb9369b1a86bff54a1ccc6",
+        "git_blob_matches": true
+      },
+      {
+        "path": "firmware/csi_recv_02/main/app_main.c",
+        "sha256": "1fb53776e1e5776194749041d1252c3f8ee11f69f30fb982a42c7577319e00d5",
+        "git_blob_matches": true
+      },
+      {
+        "path": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/sdk/esp-idf/components/freertos/app_startup.c",
+        "sha256": "d30009e2d269f1078c938a87b3f481beae4480c01ea87e74e4d015df5510f22f",
+        "git_blob_matches": true
+      },
+      {
+        "path": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/sdk/esp-idf/components/esp_system/include/esp_task.h",
+        "sha256": "78bc0f886085c922e4d4c5c9a27d460378c7a923eef5dcc9d3b1cde1e9f7005b",
+        "git_blob_matches": true
+      },
+      {
+        "path": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/sdk/esp-idf/components/esp_wifi/include/esp_wifi.h",
+        "sha256": "aff32efe4b8ee582677ca94b0f6a13eed69b2dea745406db83b4d26aa11c2463",
+        "git_blob_matches": true
+      },
+      {
+        "path": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/sdk/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32s3.c",
+        "sha256": "85cfe3ad125d99899d6d0d1b4b69039181de5b31ff381d0ce56d3557ab4bcc18",
+        "git_blob_matches": true
+      },
+      {
+        "path": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/sdk/esp-idf/components/esp_wifi/lib/esp32s3/libpp.a",
+        "sha256": "284e57fbc83ce1b57733733a536ff09bdae99a6ff464eaefb71119080bb1cb39",
+        "inspection": "prebuilt library, not C source or installed firmware attestation"
+      },
+      {
+        "path": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/sdk/esp-idf/components/esp_wifi/lib/esp32s3/libnet80211.a",
+        "sha256": "5b90eb4f4553ba3479784470e186f3269fe1ea48acbe1c6fef23e4c7776b4ba9",
+        "inspection": "prebuilt library, not C source or installed firmware attestation"
+      },
+      {
+        "path": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/sdk/esp-idf/components/log/src/os/log_write.c",
+        "sha256": "9aec42f120b24573d6b353d305b01c22d57d42cea86a0ac26b7635c4722505f5",
+        "git_blob_matches": true
+      },
+      {
+        "path": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/sdk/esp-idf/components/log/include/esp_log.h",
+        "sha256": "6f51eca6c0635b86f04add469eb3a96bcbc37936ee710a23a76fabcab5e86fa1",
+        "git_blob_matches": true
+      }
+    ],
+    "installed_firmware_attested": false
+  },
+  "historical_v4": {
+    "integrity_ok": true,
+    "replay_ok": true,
+    "fatal": "post_ready_info:RX-02",
+    "operations": 112,
+    "windows": 0,
+    "both_ports_closed_confirmed": true,
+    "original_authorization_preserved": true
+  },
+  "preservation": {
+    "checked_files": 2355,
+    "changed": [],
+    "manifest_sha256": "a4c31e701a11c28a52f13281ee3256da85bcb7cfd13d782c270a45f6599ee3aa"
+  },
+  "artifacts": {
+    "local_directory": "results/local/revision-arranque-v4-20261101",
+    "log_inspection_sha256": "2feba6c51ff345c099796c447a1f356cf1b016d8bd73a1baf8d0d370b6f66fd3",
+    "source_inspection_sha256": "17b5e3f25effac3b87910f28b2384e9f83f761fff754580a4fed2ba5f539e477"
+  },
+  "implementation_sha256": {
+    "src/persistent_presence_v4.py": "7e5710be794d8da413eeac012e88d6f46e30e57ffb2a27c0651e264fd9113ff5",
+    "tools/revisar_arranque_v4.py": "c855d6a2c9632da817365fc72552f1ea6cb25bc90d8266b3f1810a9ac2d36ab1",
+    "tests/test_v4_startup_sequence.py": "de35938b7df2c06bc0eb342ea254b0b2052f358efdc6a5aada2636d20f5ec9e5"
+  },
+  "limits": {
+    "installed_firmware_attested": false,
+    "bubblewrap_isolation_claimed": false,
+    "bubblewrap_probe_exit_code": 1,
+    "physical_operations_performed": false,
+    "firmware_changed": false,
+    "detector_calibrated": false
+  }
+}

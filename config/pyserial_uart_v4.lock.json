@@ -1,0 +1,9 @@
+{
+  "version": "3.5",
+  "platform": "Linux POSIX",
+  "files": {
+    "serialposix.py": "5d56f98513391e1766a1847a04e2e1202ced4172a152803ba1c823a149a9b6f9",
+    "serialutil.py": "3c84f8c7c319f161a85d6f8db5bedc4f65255714589bdcbeee6f2daf65a17c0a"
+  },
+  "scope": "Inspected local POSIX open/configure/DTR/RTS/close code; no guarantee of electrical behavior, kernel, driver or hardware."
+}

@@ -1,0 +1,105 @@
+{
+  "schema": "tesis-c03-checkpoint-integration-validation-1",
+  "base_commit": "b3b5fc73223069a970f56c8a565abe6add39886e",
+  "validation": {
+    "modules": [
+      "test_antenna_aba_analysis",
+      "test_availability_window",
+      "test_boundary_diagnostic",
+      "test_canonical_csi",
+      "test_capture_boundaries",
+      "test_capture_csi_multi",
+      "test_capture_preparation",
+      "test_comparar_fisicas_v3",
+      "test_consolidar_fisica_v3",
+      "test_consolidar_rx02_c01",
+      "test_continuity_diagnostics",
+      "test_controlled_v2",
+      "test_controlled_v3",
+      "test_csi_correspondence",
+      "test_dual_continuity",
+      "test_persistent_presence_v4",
+      "test_physical_reference",
+      "test_presence_rx02",
+      "test_rx02_checkpoint",
+      "test_rx02_gap_diagnostics",
+      "test_uart_v4",
+      "test_v4_availability_diagnostic",
+      "test_v4_exploratory",
+      "test_v4_line_policy",
+      "test_v4_startup_sequence",
+      "test_validate_capture",
+      "test_rx02_diagnostic",
+      "test_rx02_physical_report",
+      "test_c03_checkpoint_integration"
+    ],
+    "tests": 465,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_s": 46.848799276001955,
+    "physical_UART_opened": false,
+    "bubblewrap_isolation_claimed": true,
+    "excluded": {
+      "test_presence_offline": "Calibration/inference outside scope"
+    },
+    "exit_code": 0
+  },
+  "protected_files_unchanged": 68,
+  "historical_acquisition_and_diagnostic_sources_modified": false,
+  "physical_UART_opened": false,
+  "physical_preflight_performed": false,
+  "authorization_granted": false,
+  "capture_executed": false,
+  "calibration_executed": false,
+  "training_executed": false,
+  "plan_local": "results/local/preparacion-C03-checkpoint-r1/plan.local.json",
+  "plan_sha256": "8fcb3fc9a6f442dcd7512a60b1b17f562c5a59fd32b0d02eb7bd682af67590fd",
+  "conditions_sha256": "148cfaa06eaaecea9d0a72a856218f78a9dcff521e6f948e3e7f74bf1d8df337",
+  "conditions_state": "awaiting_one_grouped_current_operator_reply",
+  "output_exclusive": "results/local/piloto-rx02-r1-C03-checkpoint-r1",
+  "output_exists": false,
+  "persistence_revision": "rx02-raw-sync-control-checkpoint-2",
+  "integration_revision": "rx02-c03-checkpoint-entry-1",
+  "session": "rx02_c03.checkpoint.C03CheckpointSession",
+  "auditor": "rx02_c03.checkpoint.audit_c03_checkpoints",
+  "default_without_revision": "Delegates exactly to unchanged historical CLI/session/auditor",
+  "criteria_preserved": [
+    "E then S, S last",
+    "whole-connection C03 development_future",
+    "coverage",
+    "freshness",
+    "labels",
+    "close"
+  ],
+  "sources": {
+    "src/rx02_checkpoint_journal.py": {
+      "bytes": 9046,
+      "sha256": "adeb17f8f7694b4701c1a979aa038e0607b6e6e2b0692283b93db4aef528bc0c"
+    },
+    "src/rx02_c03/__init__.py": {
+      "bytes": 85,
+      "sha256": "36c4b59ca742f5760135b309c14c44d5e2364b1e6788e48cb9dd782cff1c74ab"
+    },
+    "src/rx02_c03/contract.py": {
+      "bytes": 5906,
+      "sha256": "e3b744b9e66519466d297ea57620db27c9441f3983d24ac15986f060d26479de"
+    },
+    "src/rx02_c03/journal.py": {
+      "bytes": 11740,
+      "sha256": "5263cc512a8142959f9e412f42ab0b485212eeae6e70a284b215ea45f8bb6c21"
+    },
+    "src/rx02_c03/uart.py": {
+      "bytes": 11148,
+      "sha256": "1e570ab971f3995e2a693835ef2e236a5c6641f4a3e72c5fe4870c29a193b979"
+    },
+    "src/rx02_c03/checkpoint.py": {
+      "bytes": 2870,
+      "sha256": "4bff1f8de7f933bff03f1896a4b924deb2251ecdc00fd700135c765c5f8a6d23"
+    },
+    "tools/campana_rx02_checkpoint.py": {
+      "bytes": 5870,
+      "sha256": "026704fbd240bcc6feb730d40d92ac476c6b57e8cde88b1bcad6e89c7f0424f9"
+    }
+  }
+}

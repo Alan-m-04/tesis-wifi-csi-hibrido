@@ -1,0 +1,73 @@
+{
+  "schema": "rx02-service-validation-2",
+  "base_commit": "6403274b8422ddd764397370a1a2741090254c12",
+  "tests": {
+    "modules": [
+      "test_antenna_aba_analysis",
+      "test_availability_window",
+      "test_boundary_diagnostic",
+      "test_canonical_csi",
+      "test_capture_boundaries",
+      "test_capture_csi_multi",
+      "test_capture_preparation",
+      "test_comparar_fisicas_v3",
+      "test_consolidar_fisica_v3",
+      "test_consolidar_rx02_c01",
+      "test_continuity_diagnostics",
+      "test_controlled_v2",
+      "test_controlled_v3",
+      "test_csi_correspondence",
+      "test_dual_continuity",
+      "test_persistent_presence_v4",
+      "test_physical_reference",
+      "test_presence_rx02",
+      "test_rx02_checkpoint",
+      "test_rx02_gap_diagnostics",
+      "test_uart_v4",
+      "test_v4_availability_diagnostic",
+      "test_v4_exploratory",
+      "test_v4_line_policy",
+      "test_v4_startup_sequence",
+      "test_validate_capture"
+    ],
+    "excluded": {
+      "test_presence_offline": "Head calibration/inference tests outside this acquisition-only change"
+    },
+    "tests": 433,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_s": 44.82461416800015,
+    "physical_UART_opened": false,
+    "bubblewrap_isolation_claimed": false
+  },
+  "test_log": {
+    "path": "results/local/laboratorio-servicio-rx02-r1/pruebas-regresion.stderr.txt",
+    "bytes": 71696,
+    "sha256": "de48865535b44049ed922cf403c979edd7733058f44bff452ef64818cb13abfb"
+  },
+  "final_matrix_cases": 16,
+  "sustained_cases": 1,
+  "sustained_active_seconds": 246.799890362,
+  "sustained_both_windows_coverage_ok": true,
+  "sustained_first_window_ineligible_reason": "late_row_processing",
+  "sustained_not_repeated_for_eligibility": true,
+  "preliminary_stress_rejection_retained": true,
+  "prototype_source_archive_verified": true,
+  "prototype_replay_verified": true,
+  "protected_original_files_unchanged": 34,
+  "historical_18_acquisition_sources_unchanged": true,
+  "physical_UART_opened": false,
+  "metadata_preflight_executed": false,
+  "physical_acquisition_prepared": false,
+  "old_CLI_unchanged": true,
+  "firmware_unchanged": true,
+  "thresholds_unchanged": true,
+  "calibration": false,
+  "training": false,
+  "bubblewrap": {
+    "returncode": 1,
+    "tests_executed": false,
+    "isolation_claimed": false
+  }
+}
