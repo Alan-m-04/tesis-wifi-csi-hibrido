@@ -16,6 +16,9 @@ from presence_v4_exploratory import ExploratoryPresenceV4, STORAGE_POLICY, outsi
 
 PROTOCOL = 'rx02_service_diagnostic_1'
 ELIGIBILITY = 'rx02-diagnostic-only-1'
+HISTORICAL_CONNECTION = 'RX02-DIAG-CP-R1'
+VIEW_CONNECTION = 'RX02-DIAG-VISOR-240S-R1'
+VIEW_IDENTITY_REVISION = 'rx02-live-identity-2'
 RECEIVERS = {'RX-02': '5C93200689'}
 PORTS = {'RX-02': '/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00'}
 UNUSED_RX = dict(receiver='RX-01', action='leave_connected_fixed_uart_unopened',
@@ -32,8 +35,14 @@ def validate_plan(plan, *, allow_physical=False, execution=False):
         plan.get('persistence_revision') != PERSISTENCE_REVISION or
         plan.get('execution_mode') not in (('offline_only','physical_after_approval') if allow_physical else ('offline_only',))):
         raise ValueError('Exact diagnostic protocol, persistence, identities and unchanged thresholds required')
-    if (plan.get('connection_id') != 'RX02-DIAG-CP-R1' or
-        plan.get('partition_group') != 'RX02-DIAG-CP-R1' or plan.get('future_partition') != 'diagnostic_only' or
+    connection = plan.get('connection_id')
+    live = plan.get('live_view')
+    historical = connection == HISTORICAL_CONNECTION and live is None
+    viewer = (connection == VIEW_CONNECTION and isinstance(live, dict) and
+              live.get('attempt_id') == VIEW_CONNECTION and live.get('identity_revision') == VIEW_IDENTITY_REVISION and
+              plan.get('authorization_granted') is False and plan.get('review_state') == 'prepared_not_authorized')
+    if (not (historical or viewer) or plan.get('partition_group') != connection or
+        plan.get('future_partition') != 'diagnostic_only' or
         plan.get('slots') != [] or plan.get('duration_ns') != 240_000_000_000 or
         plan.get('transmitter') != dict(identity='TX-01',source_mac=SOURCE) or
         plan.get('selection_revision') != 'rx02-continuity-selection-1' or

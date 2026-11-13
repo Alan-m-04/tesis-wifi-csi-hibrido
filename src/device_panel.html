@@ -1,0 +1,17 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dispositivos · Metadatos locales</title><style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0b111a;color:#edf4fc;font:16px/1.5 system-ui,sans-serif}main{max-width:1200px;margin:auto;padding:28px 24px}h1{margin:0;font-size:28px}p{color:#b5c4d6}.notice{border-left:3px solid #ffcf78;padding:10px 14px;background:#241f16}button{font:inherit;color:#edf4fc;background:#1b3045;border:1px solid #53718e;border-radius:6px;padding:10px 16px;cursor:pointer}button:disabled{opacity:.6;cursor:wait}button:focus-visible{outline:3px solid #5edbd0;outline-offset:3px}#devices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;margin:20px 0}.card{padding:18px;border:1px solid #31465e;border-radius:10px;background:#131f2d;min-width:0}.card h2{margin:0 0 8px}.state{font-weight:700;color:#ffcf78}.state[data-state=detectado]{color:#5edbd0}dl{font-size:14px}dt{color:#b5c4d6;margin-top:10px}dd{margin:0;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}.fine{font-size:13px}#status{min-height:28px}a{color:#5edbd0}
+nav{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:18px;font-size:14px}nav [aria-current]{color:#b5c4d6}nav a:focus-visible{outline:3px solid #5edbd0;outline-offset:3px}
+</style></head><body><main>
+<nav aria-label="Vistas locales"><span aria-current="page">Dispositivos · metadatos actuales</span><a href="/replay">C01/C03 · datos históricos</a></nav>
+<h1>Dispositivos · Metadatos locales</h1>
+<p>Consulta de identificación USB. Vista independiente de la reproducción offline. Es una instantánea: actualiza manualmente para consultar cambios.</p>
+<div class="notice">USB detectado no significa READY ni CSI recibido. No se abre UART. La ausencia se refiere a la vista local del proceso; si falta acceso a <code>/dev</code>, el estado es no verificable.</div>
+<p><button id="refresh" type="button">Consultar dispositivos</button></p>
+<p id="status" role="status" aria-live="polite">Sin consultar.</p>
+<p id="time" class="fine">Hora de consulta: sin consulta disponible.</p>
+<div id="devices"></div>
+<details><summary>Alcance del inventario y errores de metadatos</summary><pre id="scope">Sin consultar.</pre></details>
+<p class="fine">TX-01 con alimentación externa: no verificable por USB. Los permisos mostrados son metadatos del momento de consulta; no autorizan ni garantizan una adquisición.</p>
+<p class="fine">La reproducción C01/C03 muestra datos históricos en otra vista. Esta consulta USB no observa CSI ni cambia capturas, etiquetas, rechazos o autorizaciones.</p>
+</main><script id="catalogue" type="application/json">__DEVICE_CATALOGUE__</script><script type="module" src="/panel.mjs"></script></body></html>

@@ -5,6 +5,7 @@ from pathlib import Path
 
 from continuity_diagnostics import distribution
 from presence_rx02_journal import audit_rx02
+from rx02_diagnostic.contract import HISTORICAL_CONNECTION
 from rx02_gap_diagnostics import inventory,adjacent_gaps,timing,phase,require
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -83,6 +84,9 @@ def summarize(root,auditor):
 
 
 def compare(diagnostic,c02,diagnostic_auditor):
+    plan=load(Path(diagnostic)/'plan.json')
+    require(plan.get('connection_id')==plan.get('partition_group')==HISTORICAL_CONNECTION and
+            'live_view' not in plan,'Historical RX02-DIAG-CP-R1 bundle required for this comparison')
     d,da=summarize(diagnostic,diagnostic_auditor);c,ca=summarize(c02,audit_rx02)
     require(d['evidence_type']==c['evidence_type']=='physical_capture','Existing physical evidence required')
     fields=('policy','receivers','ports','baud','storage_policy','transmitter','line_policy_revision')

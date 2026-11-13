@@ -105,6 +105,8 @@ def calibrate_synthetic(anchors, *, receiver, scope):
     """
     if receiver not in ('RX-01', 'RX-02') or not isinstance(scope, str) or not scope:
         raise ValueError('Synthetic RX/scope required')
+    # A generator must be validated and consumed exactly once, like a list.
+    anchors = tuple(anchors)
     for a in anchors:
         if a.get('evidence_type') != 'synthetic_fixture' or a.get('receiver') != receiver or a.get('scope') != scope:
             raise ValueError('Only explicitly synthetic anchors from one RX/scope allowed')
@@ -135,11 +137,15 @@ def infer_synthetic(mean, variance, *, receiver, scope, calibration=None, eviden
         return dict(result, status='no evaluable', reason='required_features_incomplete')
     if calibration is None:
         return result
+    if not isinstance(calibration, dict):
+        return dict(result, reason='invalid_calibration_record')
     if (calibration.get('receiver') != receiver or calibration.get('scope') != scope or
             calibration.get('contract') != CONTRACT or calibration.get('evidence_type') != 'synthetic_fixture'):
         result['reason'] = 'calibration_scope_mismatch'; return result
-    if calibration['status'] != 'calibración sintética' or calibration.get('model') is None:
-        result['status'] = calibration['status']; return result
+    if calibration.get('status') != 'calibración sintética' or calibration.get('model') is None:
+        result['status'] = calibration.get('status', 'sin calibración'); return result
+    if not isinstance(calibration['model'], PresenceSpecialistPort):
+        return dict(result, reason='invalid_synthetic_model')
     reading = calibration['model'].infer(mean, variance)
     return dict(result, status='resultado sintético', presence=bool(reading['value']),
                 confidence_margin=reading['confidence_margin'], inference_executed=True)

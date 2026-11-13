@@ -6,10 +6,41 @@ Forked topology-specific receipt/audit from v4; append/fsync command path reused
 import hashlib
 import json
 import os
+import subprocess
 import sys
 from pathlib import Path
 from presence_v4_journal import V4Journal, digest, write_new
-from rx02_diagnostic.contract import RECEIVERS, ELIGIBILITY, Rx02Presence
+from rx02_diagnostic.contract import RECEIVERS, ELIGIBILITY, HISTORICAL_CONNECTION, VIEW_CONNECTION, Rx02Presence
+
+
+# These are the exact sources before the viewer acquired its own connection ID.
+_HISTORICAL_SOURCE_COMMIT = '74f8ff28905fbc7e04c71f1adfdea9b9ff211357'
+_VERSIONED_SOURCES = {'src/rx02_diagnostic/contract.py', 'src/rx02_diagnostic/journal.py'}
+
+
+def verify_sources(source_root, entries, connection):
+    mismatches = set()
+    for entry in entries:
+        path = source_root / entry['path']
+        if entry['bytes'] != path.stat().st_size or entry['sha256'] != digest(path):
+            mismatches.add(entry['path'])
+    if not mismatches:
+        return
+    if connection != HISTORICAL_CONNECTION or not mismatches <= _VERSIONED_SOURCES:
+        raise ValueError('Singleton source provenance differs: ' + ', '.join(sorted(mismatches)))
+    for entry in entries:
+        if entry['path'] not in _VERSIONED_SOURCES:
+            continue
+        # Match the whole archived pair. A mixed source revision is invalid.
+        try:
+            source = subprocess.check_output(
+                ['git', '-C', str(source_root), 'show', f"{_HISTORICAL_SOURCE_COMMIT}:{entry['path']}"],
+                stderr=subprocess.PIPE,
+            )
+        except (OSError, subprocess.CalledProcessError) as exc:
+            raise ValueError('Archived diagnostic sources are unavailable') from exc
+        if entry['bytes'] != len(source) or entry['sha256'] != hashlib.sha256(source).hexdigest():
+            raise ValueError('Archived diagnostic source differs: ' + entry['path'])
 
 class Rx02Journal(V4Journal):
     def __init__(self, output, plan, *, allow_physical=False, evidence_type=None, extra_provenance=None,
@@ -121,10 +152,7 @@ def audit_rx02(directory):
     entries = provenance['sources']
     if len(entries) != len(required_sources) or {s['path'] for s in entries} != required_sources:
         raise ValueError('Singleton source set differs')
-    for entry in entries:
-        path = source_root/entry['path']
-        if entry['sha256'] != digest(path) or entry['bytes'] != path.stat().st_size:
-            raise ValueError('Singleton source provenance differs: '+entry['path'])
+    verify_sources(source_root, entries, plan['connection_id'])
     if (provenance['physical_transport_enabled'] != (m.evidence_type=='physical_capture') or
             provenance['plan_sha256'] != digest(root/'plan.json')):
         raise ValueError('Provenance contradicts plan or evidence type')
@@ -132,6 +160,10 @@ def audit_rx02(directory):
         from presence_v4_uart import check_authorization
         reference = provenance.get('transport', {}).get('authorization_reference')
         check_authorization(reference)
+        if plan['connection_id'] == VIEW_CONNECTION:
+            prefix, separator, sha = reference.partition(':')
+            if prefix != VIEW_CONNECTION or not separator or len(sha) != 64 or any(c not in '0123456789abcdef' for c in sha):
+                raise ValueError('Authorization reference belongs to another diagnostic connection')
         authorization = json.loads((root/'authorization-consumed.json').read_text())
         if (authorization.get('reference') != reference or authorization.get('consumed') is not True or
             authorization.get('retry_allowed') is not False or

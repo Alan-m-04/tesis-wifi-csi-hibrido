@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSI provisional · RX-02</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; background: #0b111a; color: #edf4fc; font: 16px/1.5 system-ui, sans-serif; }
+    main { max-width: 1300px; margin: auto; padding: 24px; }
+    button { font: inherit; padding: 9px 14px; background: #1b3045; color: #edf4fc; border: 1px solid #53718e; border-radius: 6px; }
+    button:focus-visible { outline: 3px solid #5edbd0; outline-offset: 3px; }
+    canvas { display: block; width: 100%; background: #0d1723; }
+    h1 { font-size: 1.7rem; }
+    #state { font-size: 1.3rem; font-weight: bold; color: #ffcf78; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+  </style>
+</head>
+<body data-source="physical_capture"><main>
+  <h1>CSI provisional · RX-02</h1>
+  <p>Diagnóstico de 240 s. La vista muestra amplitud y RSSI. Los controles actúan solo sobre la vista.</p>
+  <p><button id="pause">Pausar vista</button> <button id="refresh">Actualizar vista</button></p>
+  <p id="state" role="status" aria-live="polite">Esperando</p>
+  <p id="reason">Esperando al observador.</p>
+  <p id="last">Última muestra host: sin muestra.</p>
+  <p id="loss"></p><p id="audit">Cierre pendiente de auditoría nativa.</p>
+  <p id="blank">No hay una señal actual verificable.</p>
+  <p>Amplitud LLTF52 · tiempo × subportadora</p>
+  <canvas id="heat" width="1100" height="360" aria-label="Amplitud LLTF52" role="img"></canvas>
+  <p>RSSI original por fila</p>
+  <canvas id="rssi" width="1100" height="175" aria-label="Serie de RSSI" role="img"></canvas>
+  <details><summary>Procedencia y límites de la vista</summary><pre id="details"></pre></details>
+</main><script type="module" src="/live.mjs"></script></body>
+</html>

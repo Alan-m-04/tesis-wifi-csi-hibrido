@@ -2,6 +2,7 @@
 from array import array
 from collections import Counter
 import csv
+import hashlib
 import io
 import json
 import math
@@ -25,6 +26,8 @@ from presence_v4_journal import write_new
 ROOT=Path(__file__).resolve().parents[1]
 SIZES=(750,874,993,751)
 PERIOD_NS=200_000_000
+MAX_DURATION_S=900
+MAX_GENERATED_ROWS=MAX_DURATION_S*1_000_000_000//PERIOD_NS+1
 MAX_SAMPLES=262144
 
 
@@ -70,11 +73,16 @@ def synthetic_row(ident,target_bytes):
 class Producer:
     def __init__(self,pair):
         self.pair=pair;self.stop=threading.Event();self.rows=0;self.bytes=0
+        self.sent_hash=hashlib.sha256()
         self.error=None;self.meter=Meter();self.thread=threading.Thread(target=self.run,name='synthetic-5Hz',daemon=True)
     def write(self,data):
         view=memoryview(data)
         while view and not self.stop.is_set():
-            try:n=os.write(self.pair.master,view);view=view[n:];self.bytes+=n
+            try:
+                n=os.write(self.pair.master,view)
+                self.sent_hash.update(view[:n])
+                view=view[n:]
+                self.bytes+=n
             except BlockingIOError:self.stop.wait(.001)
     def run(self):
         try:
@@ -82,7 +90,7 @@ class Producer:
               b'I (10) csi_recv_02: RX-02 READY channel=11 HT20 UART0=115200 raw CSI; source=1a:00:00:00:00:00\n'
               b'I (545) main_task: Returned from app_main()\r\n')
             origin=time.monotonic_ns()+50_000_000
-            for ident in range(3000):
+            for ident in range(MAX_GENERATED_ROWS):
                 if self.stop.wait(max(0,(origin+ident*PERIOD_NS-time.monotonic_ns())/1e9)):return
                 late=time.monotonic_ns()-(origin+ident*PERIOD_NS);self.meter.add('row_start_lateness_ns',late)
                 if late>PERIOD_NS:raise RuntimeError('Synthetic producer missed a period; no catch-up or invented throughput')
@@ -123,7 +131,7 @@ class Fixture:
 
 def run_case(output,*,variant='legacy',mechanism='none',delay_ms=0,duration=10,windows=False,request_delay=0,poll_ms=5):
     """Wall-clock injection into one named stage; same generator and policies."""
-    if not 3<=duration<=600 or not 0<=delay_ms<=1500 or not 1<=poll_ms<=10:
+    if not 3<=duration<=MAX_DURATION_S or not 0<=delay_ms<=1500 or not 1<=poll_ms<=10:
         raise ValueError('Bounded laboratory duration/delay/poll required')
     output=Path(output);output.mkdir(parents=True,exist_ok=False)
     fixture=Fixture();meter=Meter();producer=Producer(fixture.pair)
@@ -236,7 +244,8 @@ def run_case(output,*,variant='legacy',mechanism='none',delay_ms=0,duration=10,w
         physical_UART_opened=False,variant=variant,mechanism=mechanism,injected_delay_ms=delay_ms,
         duration_budget_s=duration,actual_elapsed_s=elapsed/1e9,clock='time.monotonic_ns, unscaled',
         active_service_duration_s=(service_end-start)/1e9 if service_end is not None else None,
-        generated_rows=producer.rows,generated_bytes=producer.bytes,producer_error=producer.error,
+        generated_rows=producer.rows,generated_bytes=producer.bytes,generated_sha256=producer.sent_hash.hexdigest(),
+        producer_error=producer.error,
         row_period_ns=PERIOD_NS,synthetic_target_row_sizes=list(SIZES),fragment_sizes='128,256,256,remainder; 20 ms between fragment targets',
         poll_pause_ms=poll_ms,
         injected_calls=dict(injected),timings=meter.summary(),producer_timing=producer.meter.summary(),resources=resources,
