@@ -1,218 +1,69 @@
-# Tesis: sistema híbrido WiFi CSI con ESP32-S3 y RuView
-
-## Sesiones SQLite en el tablero offline
-
-[Abrir la vista e interpretar sus indicadores](docs/VISTA_SQLITE_OFFLINE.md):
-el tablero existente añade `/sessions`, de solo lectura, con duración, muestras,
-cadencia, hueco máximo y calidad por sesión/receptor. Piloto contrastado con
-su CSV y aviso explícito **RECHAZADA · PREÁMBULO**. 60 pruebas Python y 3
-contratos Node aprobados; ver [resultados y límites visuales](results/VISTA_SQLITE_OFFLINE.md).
-Sin UART ni datos nuevos; C04–C06 reservadas y R5-N01 pendiente del ensayo.
-
-
-## Base SQLite y análisis offline: primer piloto
-
-[Esquema y comandos para el capítulo 3](docs/CAPITULO_3_BASE_DATOS_CSI.md):
-índice SQLite derivado de la captura histórica auditada RX02-DIAG-VISOR-240S-R1,
-con dispositivos, sesión, 1.192 muestras y validaciones separadas. CSV por
-sesión/receptor; indicadores contrastados y doble importación sin duplicados.
-[Resultados](results/BASE_DATOS_CSI_OFFLINE.md): 90 pruebas, calidad estricta
-rechazada conservada, originales intactos y C04–C06 reservadas. Sin UART ni
-datos nuevos. R5-N01 continúa pendiente del ensayo interactivo.
-
-
-## C03 consolidada: comparación descriptiva con C01
-
-[C03 E/S auditada](results/RX02_C03_C01.md): 143/146 filas exploratorias elegibles,
-integridad/replay, 495 checkpoints, pendiente cero y cierre RX-02 confirmado.
-Conexión estricta rechazada por preámbulo. RSSI, amplitud LLTF52 y variabilidad
-comparados por condición con C01, en escalas comunes y sin causalidad atribuida
-solo a presencia. C02 permanece rechazada; particiones intactas. Autorización
-C03 consumida; reserva C04–C06 sin abrir, sin calibración o entrenamiento.
-
-
-## Antecedente: integración C03 preparada antes de adquirir
-
-[Entrada optativa C03](docs/INTEGRACION_C03_CHECKPOINTS_RX02.md) con revisión
-explícita en plan/procedencia/auditoría y comportamiento histórico por defecto.
-E→S, partición y criterios intactos; plan local nuevo, sin autorización física.
-Pendientes condiciones actuales, preflight por metadatos y permiso nuevo.
-
-
-## Checkpoints RX-02: diagnóstico físico de 240 s consolidado
-
-[Un único intento físico](results/RX02_DIAG_CP_R1.md) conserva integridad/replay,
-1190 filas CSI, cero huecos host >500 ms, cola cero y cierre RX-02 confirmado.
-76 checkpoints, pendiente final cero; calidad estricta rechazada por preámbulo.
-Comparación descriptiva con C02 sin causalidad demostrada; CPU/RSS medidos solo
-en el diagnóstico. Autorización consumida, originales intactos. [C03](docs/REVISION_C03_CHECKPOINTS_RX02.md)
-queda únicamente para revisión con persistencia explícita, sin ruta física ni
-permiso nuevo. Sin calibración o entrenamiento.
-
-
-## Antecedente: revisión optativa de persistencia validada offline
-
-La [comparación de código y PTY antes/después](results/SERVICIO_RX02_CHECKPOINT_V2.md)
-reproduce el costo de fsync por tick/control y añade una revisión explícita de
-checkpoints del journal, conservando fsync de cada bloque bruto. [Garantías
-de interrupción/fallo y cotas](docs/PERSISTENCIA_RX02_CHECKPOINT_V2.md): sin
-escritor asíncrono o cambio de criterios históricos. 433 pruebas aprobadas,
-ensayo real de 246,8 s, con un rechazo sintético por procesamiento tardío
-conservado. C01/C02 y autorizaciones intactos. No se activa el CLI físico ni se
-prepara otra adquisición, calibra, entrena o modifica firmware.
-
-## RX02-C02 suspendida — diagnóstico exclusivamente offline
-
-El [diagnóstico C02 y comparación de continuidad con C01](results/DIAGNOSTICO_RX02_C02.md)
-conserva `availability_gap:RX-02`, la etiqueta sentada sin declarar y vacío sin
-iniciar. El hueco disparador está después de T1: 1221,332 ms host frente a
-199,978 ms locales; lecturas agrupadas y demoras del host sin causa exclusiva
-identificada. Cola de 349 bytes, cierre confirmado, ambas autorizaciones
-consumidas y 34 archivos originales intactos. 53 pruebas offline aprobadas.
-Sin UART, cambios de parámetros, aprobación retrospectiva ni reemplazo preparado.
-
-## RX02-C01 consolidada offline — 4 de noviembre de 2026
-
-La [auditoría y comparación descriptiva vacío/sentado](results/RX02_C01.md)
-verifica 3.299 filas CSI, ventanas de 148/150 filas, ambas exploratorias elegibles,
-etiquetas humanas y cierre confirmado de RX-02. La conexión completa conserva
-el rechazo por preámbulo; 14 archivos originales permanecen intactos. Cinco
-figuras usan escalas comunes de RSSI, amplitud LLTF52, variabilidad y cobertura.
-63 pruebas aprobadas; Bubblewrap no pudo crear namespaces y no se afirma su
-aislamiento. Autorización C01 consumida; C02 solo descrita para preparación,
-sentado → vacío último, con autorización nueva. Sin clasificar presencia,
-calibrar, entrenar o cambiar firmware, montaje o umbrales.
-
-Base verificable del sistema de sensado CSI y Edge AI para MIPYMES de Riobamba, con procesamiento en PC local. Se conservan los objetivos del anteproyecto aprobado: presencia será el primer hito, no el alcance total.
-
-## Estado actualizado el 25 de octubre de 2026
-
-- Fuentes TX-01, RX-01 y RX-02 compiladas aquí con ESP-IDF v5.4 para ESP32-S3.
-- Parser restaurado y capturador derivado con correcciones verificadas de entrada, encuadre y cierre; originales preservados.
-- Primer hito: 40 pruebas aprobadas. Segundo hito: 60 aprobadas. Tercer hito: 103 aprobadas (72 Python y 31 Node), sin omisiones. No se ejecutaron las 304 pruebas del proyecto anterior.
-- Referencia física histórica: 292/291 filas. Su rechazo estricto se conserva; aprobar la regresión no convierte la captura en una campaña válida.
-- Dos sesiones físicas separadas y rechazadas: v1 con 145/146 filas y colas conservadas; v2 con 147/147 y parada LF sin cola, rechazada por residuos iniciales. Sin flasheo, instalación de RuView ni entrenamiento.
-
-## Reproducir
-
-Crear `.venv` con Python compatible, instalar `requirements-dev.txt` exclusivamente allí y ejecutar `./tools/test_base.sh`. Requiere Bubblewrap (`bwrap`): el procedimiento bloquea red y dispositivos físicos, mantiene el repositorio de solo lectura y permite PTY sintéticos. Sin la copia física local se omiten explícitamente tres pruebas; los datos no se descargan automáticamente.
-
-Con el entorno oficial ESP-IDF v5.4 ya activado, ejecutar `./tools/build_firmware.sh TX-01` y repetir para RX-01 y RX-02. El procedimiento solo compila; no flashea. Builds y entornos son locales e ignorados.
-
-## Estructura y siguiente hito
-
-`firmware/`: tres proyectos y atribuciones; `src/`: captura y validación; `tests/`: pruebas; `config/`: perfil; `data/`: manifiesto; `results/`: resultados; `docs/`: procedencia, formato y pendientes.
-
-Antes de integrar RuView hay que verificar orden I/Q, empaquetado LTF y subportadoras, relojes y compatibilidad de modelos. Existe un puente diagnóstico offline al consumidor oficial de este tercer hito; no hay streaming integrado ni modelo entrenado validado. Las capturas brutas permanecen locales e intactas. Una nueva adquisición física requiere autorización explícita.
-
-Consultar [inventario](docs/INVENTARIO_BASE.md), [estado](docs/ESTADO_INICIAL.md), [resultados](results/BASE_VERIFICADA.md) y [flujo Git](docs/FLUJO_GIT.md).
-
-La [auditoría CSI/RuView](docs/COMPATIBILIDAD_CSI_RUVIEW.md) demuestra Im/Re y documenta incompatibilidades de fase, banda e índices. [Resultados del segundo hito](results/AUDITORIA_CSI_RUVIEW.md): queda respaldado el análisis offline; ADR-018 directo sigue bloqueado.
-
-## Tercer hito: visualización offline
-
-Se ejecutan `parsePacket` y `SpectrumCollector` oficiales de `harness/ruview/src/devices/esp32.js` (RuView fefb0f9) con Node v22.20.0 local fijado y sin UDP. La representación canónica conserva fuentes, hashes, máscaras, metadatos y relojes; la página muestra RX-01/RX-02 y LLTF/HT-LTF con **captura histórica con validación estricta rechazada**.
-
-103 pruebas aprobadas: 72 Python y 31 Node, cero omisiones; cuatro vistas verificadas en Firefox. Ver [contrato/procedimiento](docs/CONTRATO_CONSUMIDOR_RUVIEW.md) y [validación](results/VALIDACION_VISUALIZACION_OFFLINE.md). El artefacto local generado es `results/local/visualizacion-csi-entrega/index.html`; no se publican sus datos brutos en Git.
-
-## Cuarto hito: preparación de captura dual (estado previo)
-
-Protocolo de 30 s preparado; **no se han abierto UART ni ejecutado la captura física**. Se corrigieron el flush implícito al abrir, el conteo de cola sin LF y el cierre durante startup interrumpido. Se registrarán ambiente, identidades, procedencia y ledgers sin borrar el arranque ni aprobar un recorte.
-
-124 pruebas aprobadas (93 Python, 31 Node), sin omisiones. Ver [protocolo y comandos pendientes de autorización](docs/PROTOCOLO_CAPTURA_DUAL.md) e [informe de preparación](results/PREPARACION_CAPTURA_DUAL.md). El plan local exige completar la condición ambiental antes de abrir ambos receptores.
-
-## Captura posterior al reinicio
-
-Con autorización nueva y ambiente confirmado se ejecutó un único intento de 30 s comunes. Ambos puertos quedaron cerrados. Se conservaron 145/146 filas completas y todos los bytes leídos; la sesión fue **rechazada** por residuos iniciales pegados a ROM y colas incompletas de 129 bytes en ambos RX. No hubo recortes ni reintentos. La integridad permitió generar una visualización offline con rechazo visible, verificada en sus cuatro vistas. Ver [resultado real y límites](results/CAPTURA_DUAL_POST_REINICIO.md). Los datos permanecen locales; otra adquisición requiere nueva autorización.
-
-El [diagnóstico offline posterior](docs/DIAGNOSTICO_LIMITES_CAPTURA.md) reproduce la parada a mitad de línea y propone una finalización hasta LF con espera acotada, ensayada en memoria/PTY y todavía sin integrar a v1. Pasaron 142 pruebas (111 Python, 31 Node), sin omisiones. La causa de los residuos iniciales sigue indeterminada; el intento físico conserva su rechazo. No se realizó otra captura ni se modificó firmware.
-
-## controlled_dual_v2 preparado y probado sin hardware físico
-
-v2 integra el lector acotado: mantiene los 30 s nominales y completa una línea pendiente hasta LF con máximo 250 ms desde el deadline y 65536 bytes adicionales. Conserva todos los fragmentos y registra motivos/tiempos por RX; las filas posteriores quedan fuera del conteo nominal. v1 y sus resultados siguen disponibles. Pasaron 155 pruebas (124 Python, 31 Node), un ensayo PTY de 30 s y ocho vistas de navegador. No se abrió UART físico ni se creó otra autorización. Ver [protocolo, límites y comando pendiente de revisión](docs/PROTOCOLO_CAPTURA_DUAL_V2.md) y [evidencia](results/CONTROLLED_DUAL_V2.validacion.json).
-
-## Intento físico v2 posterior, con autorización nueva
-
-Un único intento produjo 147 filas completas por RX, todas nominales. Integridad registrada, filas completas y parada pasan; la calidad global sigue **rechazada por residuos iniciales**. Ambos puertos se cerraron y no quedó cola; no fue necesaria finalización adicional. Se conservaron v1 y su rechazo, sin concatenar sesiones. Ver [resultado físico, visualización local y comparación](results/CAPTURA_FISICA_V2_20261025.md). No hubo reintentos ni cambios de firmware.
-
-## controlled_dual_v3: ventana prospectiva, validación exclusivamente offline
-
-En `feat/ventana-disponibilidad`, desde `a3f10ea`, se implementa el [protocolo v3](docs/PROTOCOLO_VENTANA_DISPONIBILIDAD_V3.md): READY estricto, tres filas consecutivas y frescura de 1 s en ambos RX; máximo 10 s para disparar una única ventana futura de 30 s. Registra eventos auditables, T0 real e inmutable, fronteras conservadoras y cierre acotado de 250 ms/65536 bytes. La visualización muestra conexión completa y ventana por separado; ninguna aprueba a la otra. «Caída de flujo» es terminación prematura del lector; los huecos se informan sin umbral máximo de silencio. La idoneidad para campañas/modelos permanece sin evaluar.
-
-Ver [implementación, pruebas memoria/PTY, navegador y límites](results/VENTANA_DISPONIBILIDAD_V3.md). v1/v2 y sus rechazos físicos permanecen intactos. No hay ventana v3 retrospectiva ni validación física del nuevo protocolo. El comando de preparación no abre UART y una ejecución física requiere otra autorización explícita.
-
-## Único intento físico v3 consolidado offline
-
-El [informe físico reproducible](results/CAPTURA_FISICA_V3.md) y su [resumen con hashes](results/CAPTURA_FISICA_V3.resumen.json) consolidan la adquisición existente desde `513be60`: 154/153 filas completas, 150/150 incluidas, ventana conforme y **conexión/resultado global rechazados**. Se preservan prefijos iniciales y texto de arranque no reconocido; se documenta además una autoentrada inconsistente del manifiesto auxiliar, sin alterar el original. No es detección de presencia ni aprobación para entrenar.
-
-El [plan de campaña piloto](docs/PLAN_CAMPAÑA_PRESENCIA_PILOTO.md) propone 18 slots en condiciones vacía, sentada y caminando, con etiquetas desde fuera, sesiones completas reservadas y cobertura prospectiva pendiente de revisión. Este cambio solo verifica archivos y documenta: ninguna nueva adquisición, UART, modificación de firmware o entrenamiento. No hay autorización vigente.
-
-## Ruta de presencia seleccionada y bloqueos del piloto
-
-La [inspección del RuView fijado](docs/DETECTOR_PRESENCIA_RUVIEW.md) selecciona `PresenceSpecialist`: un componente estadístico de media/varianza que requiere calibración vacía/ocupada, propuesto para un adaptador offline de LLTF en RX-01 y réplica independiente en RX-02. No exige inventar una frecuencia mayor que las ~5 filas/s reales; faltan adaptador, calibración y evaluación. No se ejecutó ni entrenó un detector, y su futura puntuación no será presencia validada por sí sola.
-
-El piloto se revisó para una única persona: laptop exterior con los cables existentes si alcanzan, inicio diferido, etiquetas declaradas y confirmación de ambos cierres antes del aviso final. Esa geometría y los avisos siguen sin confirmar. Otro bloqueo: el firmware emite READY una vez al arrancar y el host no lo solicita al reabrir; no está demostrada su repetibilidad para 18 sesiones. Se requiere resolver estas decisiones antes de adquirir, sin resets, reconexiones ni cambios silenciosos del protocolo. Se conservan los rechazos anteriores; no hay autorización física vigente.
-
-## Movimiento libre y comparación descriptiva v3
-
-El [intento exploratorio posterior](results/CAPTURA_MOVIMIENTO_LIBRE_V3.md) conserva 152 filas completas y 149 incluidas por RX: integridad/filas/parada conformes, ventana conforme y conexión/global rechazados. El operador declaró que comenzaría actividades después del mensaje de autorización; el inicio físico sigue incierto. La sesión no pertenece al piloto, calibración o entrenamiento.
-
-La [comparación offline con la sesión sentada](results/COMPARACION_FISICA_V3.md) incluye procedencia, máscaras, cobertura y cinco figuras con escalas comunes de RSSI/amplitud/variabilidad, separadas por RX y LLTF/HT-LTF. Se verifican fuentes/perfil iguales; la igualdad física del montaje solo está declarada. Diez pruebas específicas y preservación de 507 archivos anteriores. Sin umbrales, entrenamiento, detección validada o nueva captura por la comparación; dos sesiones no acreditan causalidad o precisión.
-
-## Adaptador de presencia offline, sin calibración física
-
-La [implementación y validación](results/VALIDACION_ADAPTADOR_PRESENCIA.md) integra extracción LLTF52 por RX independiente y un port Python explícito de `PresenceSpecialist`, con RuView fijado. Pasaron 22 pruebas y 2022 casos sintéticos de equivalencia bit a bit contra los cuerpos Rust originales ejecutados en un arnés mínimo. No se compiló el workspace completo ni se usaron los registros físicos para ajustar o inferir.
-
-Las dos ventanas físicas solo producen rasgos y trazabilidad: media/varianza poblacional por sesión, cuatro resultados **sin calibración y sin decisión de presencia**, con sus rechazos históricos intactos. Un dato requerido incompleto deja el RX/sesión no evaluable, sin relleno o media de un subconjunto. No hay UART, captura, firmware o protocolo nuevo; 598 archivos anteriores preservados y ninguna autorización física vigente.
-
-Reanudación del 27 de octubre: 22 pruebas repetidas y 2022 salidas sintéticas del binario Rust guardado confirmadas. Ver [cierre, límite de Bubblewrap y pendientes físicos](results/VALIDACION_ADAPTADOR_PRESENCIA.md#reanudación-y-cierre-documental--27-de-octubre-de-2026).
-
-## Preparación de campaña persistente v4 — solo offline
-
-Desde `51246df`, un [protocolo nuevo](docs/PROTOCOLO_PRESENCIA_PERSISTENTE_V4.md) mantiene una conexión por RX, READY inicial y disponibilidad fresca con tres filas nuevas antes de cada ventana prospectiva de 30 s. Registra toda la conexión, conserva T0/T1 y separa conexión, ventana, cobertura y etiqueta declarada. v1/v2/v3 permanecen intactos; v4 añade explícitamente vigilancia de silencio de 1 s y cobertura piloto prospectiva, sin aplicarlas a resultados anteriores.
-
-El [plan para revisión](docs/PLAN_REVISION_CAMPAÑA_PERSISTENTE_V4.md) usa laptop/RX dentro, un solo operador, demora de salida, avisos diferentes y recibo de ambos cierres basado en su estado real. El backend es exclusivamente memoria/PTY, sin ejecución física habilitada, dashboard o servidor. [Pruebas y límites](results/PRESENCIA_PERSISTENTE_V4.md): quedan pendientes transporte físico revisado, montaje, READY inicial y audibilidad, además de autorización nueva. No se calibra el detector. El wrapper conserva el fallo de Bubblewrap si no puede aislar.
-
-## Backend UART de v4 implementado — ejecución física pendiente
-
-Desde `414b461`, el [backend UART y su comando solo para revisión](docs/BACKEND_UART_PRESENCIA_V4.md) reutilizan identidad by-id, apertura sin flush y registro/cierre de v4. Preparación y preflight no abren; ejecución solo con opción explícita y autorización nueva. Conserva una apertura por RX, READY obligatorio y cero reintentos. Se documentan solicitudes DTR/RTS sin prometer ausencia de transitorios/resets.
-
-[163 pruebas offline aprobadas](results/BACKEND_UART_V4.md), con dobles y PTY, sin UART real, firmware nuevo, calibración o campaña física. La [práctica breve de sonidos sin ESP](docs/PRACTICA_SONIDOS_V4.md) guarda tu declaración después de escucharlos desde fuera; la audibilidad humana sigue pendiente y nunca se verifica automáticamente.
-
-## Diagnóstico posterior del primer intento v4
-
-El [análisis de los registros existentes](results/DIAGNOSTICO_V4_POST_READY.md) conserva `post_ready_info:RX-02`, cero slots/CSI y ambos cierres confirmados. El mensaje exacto tras READY corresponde al retorno de `app_main()` en las fuentes ESP-IDF inspeccionadas; la conexión conserva además residuos iniciales y una cola. Se entrega una excepción estrecha propuesta y probada solo en copia temporal: 176 pruebas offline aprobadas, backend activo intacto. Ninguna UART se abrió durante el diagnóstico ni se relanzó el intento. PRUEBA02 queda como declaración humana de audibilidad, sin verificación automática. Otra adquisición requiere revisión y autorización nueva.
-
-Reanudación del 1 de noviembre: la [corrección integrada y verificada](results/CORRECCION_V4_POST_READY.md) añade la selección explícita `line_policy_revision=v4-app-main-return-1`, limitada a un retorno inmediato de `app_main()` por RX. Sin ese campo sigue rigiendo el rechazo histórico. Pasaron 188 pruebas offline, incluidas 25 de política/replay; se preservan los datos, el rechazo y la autorización consumida. No se preparó ni ejecutó otro intento; quedan pendientes los motivos de formato inicial, READY/CSI real de ambos RX y una autorización nueva.
-
-La [revisión posterior del arranque](results/REVISION_ARRANQUE_V4.md), desde `6af037b`, contrasta doce brutos y las fuentes v5.4. Añade la política optativa `v4-startup-sequence-1` para el sniffer de RX-01 y el retorno con cabecera/CSI interpuestos; 210 pruebas offline aprobadas. **Persiste el bloqueo del preámbulo completo**: los residuos no UTF-8 y otros formatos iniciales conservan el rechazo de conexión. No se preparó un nuevo plan vacío/sentado, ni hubo UART, firmware o calibración.
-
-La [revisión explícita de elegibilidad exploratoria](results/ELEGIBILIDAD_EXPLORATORIA_V4.md), desde `1f974b0`, separa conexión completa rechazada, preámbulo anómalo íntegro, ventanas prospectivas y elegibilidad auditada. `v4-exploratory-1` exige arranque revisado, barreras conservadoras y todas las pruebas de calidad/transporte; no autoriza calibración, entrenamiento o producción. Pasaron 234 pruebas offline y se preparó un [plan E/S nuevo solo para revisión](config/piloto_exploratorio_v4_ES_r1.review.json), todavía con declaraciones pendientes y sin autorización. No hubo UART o adquisición física; los rechazos históricos permanecen intactos.
-
-El intento EXP02 autorizado posteriormente quedó [rechazado por `availability_lost:RX-01`](results/DIAGNOSTICO_EXP02_AVAILABILITY.md), antes de solicitar slots: 1,006375455 s desde su última fila válida, mientras RX-02 seguía fresco y el host registraba operaciones continuas. Se conservan la cola de 768 bytes, ambos cierres y autorización consumida. El diagnóstico offline corrige únicamente el contexto de apertura física en informes nuevos; no cambia el umbral de 1 s ni la aceptación histórica. Pasaron 246 pruebas sin omisiones; ninguna UART se abrió durante el diagnóstico.
-
-## Diagnóstico dual de continuidad preparado, sin ejecución física
-
-[continuity-dual-1](docs/CONTRATO_CONTINUIDAD_DUAL_1.md) observa 60 s comunes con
-una apertura por RX. Registra silencios >1 s y recuperación, colas y relojes,
-sin ventanas elegibles ni aprobación de calidad. Transporte/almacenamiento
-fallidos detienen ambos lectores; v4 y sus watchdogs permanecen intactos.
-Ver [plan, declaraciones pendientes y comando reservado](docs/PLAN_CONTINUIDAD_DUAL_60S_R1.md)
-y [validación exclusivamente offline](results/CONTINUIDAD_DUAL_1.md).
-Otra ejecución requiere autorización explícita nueva; no hay calibración ni entrenamiento.
-
-El único intento físico posterior completó 60 s y cerró ambos puertos, con
-integridad/replay correctos. Su [diagnóstico offline r1](results/DIAGNOSTICO_CONTINUIDAD_DUAL_01_R1.md)
-explica 171/296 filas válidas: RX-01 conserva ids consecutivos y cero descartes,
-pero presenta intervalos locales mayores durante toda la adquisición, incluidas
-tres incidencias host recuperadas. No se demuestra pérdida RF ni una pausa global
-del host. Colas y autorización consumida intactas; siguiente experimento pasivo
-propuesto sin ejecución ni autorización. No se cambia v4 o firmware.
-
-La serie posterior de inclinación de antena [A1–B–A2 r3, consolidada offline](results/COMPARACION_ANTENA_ABA_R3.md)
-completó tres intentos con integridad/replay y ambos cierres confirmados. RX-01
-produjo 294/213/201 filas y RX-02 296/291/291; **A2 no reprodujo A1**. El RSSI
-aumentó en ambos RX y no se establece causalidad por orientación. Cinco gráficos
-con escalas comunes, hashes y 279 pruebas sin omisiones. Las tres autorizaciones
-están consumidas; siguiente prueba A–A estática solo propuesta. Sin nueva UART,
-captura, cambio de firmware, umbral o calibración durante la consolidación.
+# Tesis: análisis espacial mediante WiFi CSI y Edge AI
+
+Sistema híbrido con ESP32-S3, firmware propio y componentes verificados de
+RuView, con procesamiento en PC local, para MIPYMES de Riobamba. Presencia es
+el primer hito; el alcance también contempla zonas, mapas de calor y validación
+en una MIPYME.
+
+## Avance verificable al 13/11/2026
+
+El [informe de seguimiento del Anexo G](docs/AVANCE_ANEXO_G_2026-11-13.md)
+relaciona los ocho hitos, sus fechas referenciales, evidencia y pendientes.
+Último seguimiento indicado: **12/11/2026**; último plazo: **13/11/2026**.
+Los porcentajes del Anexo G están **no verificados**: la copia privada disponible
+tiene esas celdas vacías. No se calcula un porcentaje global a partir de pruebas
+de software ni se atribuye aprobación académica sin respaldo.
+
+| Evidencia disponible | Resultado y límite |
+| --- | --- |
+| [Firmware y captura dual de 60 s](docs/INVENTARIO_BASE.md) | TX-01, RX-01 y RX-02 compilados con ESP-IDF v5.4; referencia física de 292/291 filas. Se conserva el rechazo estricto de RX-01. Compilar no acredita el binario instalado. |
+| [Captura dual v2, 25/10](results/CAPTURA_FISICA_V2_20261025.md) | 147/147 filas en 30 s, integridad conforme, ambos puertos cerrados y cero cola; sesión **rechazada por residuos iniciales**. |
+| [C03 frente a C01](results/RX02_C03_C01.md) | Ventanas E/S exploratorias y comparación descriptiva de RSSI/LLTF52; conexión estricta rechazada. No demuestra clasificación de presencia. C02 conserva su rechazo. |
+| [Visor RX-02 y diagnóstico físico histórico](results/RX02_DIAG_VISOR_240S_R1.md) | 1.192 muestras en aproximadamente 240 s; integridad, replay y cierre confirmados. Calidad **rechazada por preámbulo**. Diagnóstico ejecutado el 10/11, sin etiquetas E/S. |
+| [Piloto SQLite y CSV agregado](results/BASE_DATOS_CSI_OFFLINE.md) | 1.192 muestras históricas indexadas, importación repetida sin duplicados y métricas contrastadas. SQLite y datos por muestra permanecen locales. |
+| [Vista SQLite en el tablero](results/VISTA_SQLITE_OFFLINE.md) | `/sessions` de solo lectura; 60 pruebas Python y 3 contratos Node registrados. Revisión visual y HTTP real en navegador pendientes. |
+| [Integración offline R5-N01](results/DEVREP_R5_N01_INTEGRACION.md) | Evidencia local de 229 pruebas, incluidas 42 específicas, contrastada por hashes. Parte de sus fuentes sigue sin confirmar en la copia original; el ensayo guiado humano continúa pendiente. |
+
+Las [instantáneas publicadas y sus commits locales de origen](docs/AVANCE_ANEXO_G_2026-11-13.md#correspondencia-entre-origen-local-y-publicación) tienen árboles Git idénticos.
+
+Las pruebas con memoria/PTY y DOM simulado verifican software. Los diagnósticos
+físicos verifican el registro de intentos históricos. Ninguno sustituye una
+evaluación experimental independiente de Edge AI con verdad terreno.
+
+## Evidencia para el tutor
+
+- [Capítulo III: esquema SQLite y análisis reproducible](docs/CAPITULO_3_BASE_DATOS_CSI.md).
+- [CSV agregado del piloto, una fila por sesión/receptor](results/BASE_DATOS_CSI_PILOTO/RX02-DIAG-VISOR-240S-R1__RX-02.csv).
+- [Guía de la vista SQLite y sus límites](docs/VISTA_SQLITE_OFFLINE.md).
+- [Preparación de R5-N01](docs/GUIA_DEVREP_R5_N01.md) y [registro de integración offline](results/DEVREP_R5_N01_INTEGRACION.validacion.json).
+- [Auditoría CSI/RuView](docs/COMPATIBILIDAD_CSI_RUVIEW.md), [adaptador offline de presencia](results/VALIDACION_ADAPTADOR_PRESENCIA.md) y [revisión de PresenceSpecialist](docs/REVISION_ADAPTADOR_PRESENCE_20261109.md).
+- [Comprobaciones de esta publicación](results/VERIFICACION_AVANCE_ANEXO_G_2026-11-13.json).
+
+Los informes históricos conservan los estados de preparación de cada etapa.
+El informe del Anexo G establece el estado comprobado a este corte y distingue
+las fechas de seguimiento de las fechas reales de implementación y adquisición.
+
+## Lo que falta validar
+
+Faltan el ensayo guiado y la comprobación humana de R5-N01; sesiones reales
+elegibles y repetidas, etiquetas de ocupación y evaluación separada por sesión;
+calibración y evaluación de Edge AI sin usar la reserva; geometría y verdad
+terreno para distinguir zonas y generar mapas de calor; y despliegue y prueba
+en una MIPYME. El tablero histórico no mide ocupación actual.
+
+**C04–C06 permanecen cerradas y reservadas.** Esta actualización utiliza
+evidencia existente: sin UART, capturas, firmware nuevo, calibración o
+entrenamiento. Los documentos académicos privados, datos personales,
+credenciales, SQLite local y datos brutos reservados quedan fuera de la
+publicación. Los cambios sin confirmar de la copia original se conservan.
+
+## Estructura técnica
+
+`firmware/`: TX-01 y receptores; `src/`: captura, auditoría y análisis;
+`tests/`: pruebas; `config/`: perfiles y esquema; `data/`: manifiestos;
+`results/`: informes revisados; `docs/`: contratos, procedencia y seguimiento.
+
+Consultar el [estado histórico](docs/ESTADO_INICIAL.md), los
+[resultados de la base](results/BASE_VERIFICADA.md) y el
+[flujo Git](docs/FLUJO_GIT.md). Los artefactos bajo `results/local/` y `data/raw/`
+son referencias locales deliberadas, no descargas públicas.
