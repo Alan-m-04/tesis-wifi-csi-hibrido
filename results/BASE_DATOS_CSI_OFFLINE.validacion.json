@@ -1,0 +1,164 @@
+{
+  "schema": "csi-sqlite-offline-validation-1",
+  "session_id": "RX02-DIAG-VISOR-240S-R1",
+  "database": "results/local/base-datos-csi/piloto.sqlite3",
+  "public_csv": "results/BASE_DATOS_CSI_PILOTO/RX02-DIAG-VISOR-240S-R1__RX-02.csv",
+  "database_sha256": "86d37e68ea63f2a3f97dc00626533ca646488416d2d1dd63960efd1769f8199c",
+  "tests": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true,
+    "modules": [
+      "test_csi_sqlite",
+      "test_rx02_diagnostic",
+      "test_rx02_physical_report",
+      "test_rx02_live_view",
+      "test_consolidar_rx02_c01",
+      "test_canonical_csi",
+      "test_csi_correspondence",
+      "test_rx02_gap_diagnostics"
+    ]
+  },
+  "specific_tests": 12,
+  "execution": {
+    "first_state": "imported",
+    "second_state": "already_imported",
+    "counts_before": [
+      {
+        "tabla": "devices",
+        "registros": 2
+      },
+      {
+        "tabla": "sessions",
+        "registros": 1
+      },
+      {
+        "tabla": "session_devices",
+        "registros": 2
+      },
+      {
+        "tabla": "source_files",
+        "registros": 16
+      },
+      {
+        "tabla": "csi_samples",
+        "registros": 1192
+      },
+      {
+        "tabla": "validation_results",
+        "registros": 8
+      }
+    ],
+    "counts_after": [
+      {
+        "tabla": "devices",
+        "registros": 2
+      },
+      {
+        "tabla": "sessions",
+        "registros": 1
+      },
+      {
+        "tabla": "session_devices",
+        "registros": 2
+      },
+      {
+        "tabla": "source_files",
+        "registros": 16
+      },
+      {
+        "tabla": "csi_samples",
+        "registros": 1192
+      },
+      {
+        "tabla": "validation_results",
+        "registros": 8
+      }
+    ],
+    "counts_unchanged": true,
+    "database_sha256_unchanged": true,
+    "database_sha256": "86d37e68ea63f2a3f97dc00626533ca646488416d2d1dd63960efd1769f8199c",
+    "sqlite_integrity": "ok",
+    "foreign_key_errors": [],
+    "metrics": [
+      {
+        "session_id": "RX02-DIAG-VISOR-240S-R1",
+        "device_key": "usb:5C93200689",
+        "receiver_id": "RX-02",
+        "future_partition": "diagnostic_only",
+        "duration_ns": 240005564743,
+        "duration_s": 240.005564743,
+        "service_duration_ns": 240003543760,
+        "service_duration_s": 240.00354376,
+        "rows": 1192,
+        "sample_span_ns": 239191988869,
+        "sample_span_s": 239.191988869,
+        "capture_frequency_hz": 4.9792637522332885,
+        "rows_per_open_second": 4.966551510071875,
+        "max_host_gap_ns": 614782902,
+        "max_host_gap_ms": 614.782902,
+        "max_local_gap_us": 601971,
+        "max_local_gap_ms": 601.971,
+        "strict_quality_ok": 0,
+        "quality_status": "rejected",
+        "quality_details_json": "{\"quality_ok\":false,\"reasons\":[\"format:RX-02\",\"preamble_anomaly:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\",\"format:RX-02\"]}",
+        "integrity_ok": 1,
+        "replay_ok": 1,
+        "close_ok": 1,
+        "diagnostic_ok": 1
+      }
+    ],
+    "csv": [
+      {
+        "path": "/home/alan-monar/tesis-wifi-csi-hibrido/results/local/base-datos-csi/csv-r2/RX02-DIAG-VISOR-240S-R1__RX-02.csv",
+        "sha256": "9a72a84ef5c7171aadbc9a8a9a31f81b4ffc7d870fbd46ce89d91153f427ff3c"
+      }
+    ],
+    "metrics_match_original": true
+  },
+  "original_files_checked": 4491,
+  "original_files_preserved": 4490,
+  "intentional_documentation_changes": [
+    "docs/ESTADO_INICIAL.md"
+  ],
+  "reserved_C04_C06_contents_accessed": false,
+  "physical_UART_opened": false,
+  "new_capture": false,
+  "calibration": false,
+  "training": false,
+  "R5_N01": "pending_interactive_trial_unchanged",
+  "bubblewrap": {
+    "attempted": true,
+    "available": false,
+    "reason": "No permissions to create a new namespace"
+  },
+  "direct_tests_guard": "csi_live_observer.guard via sys.addaudithook",
+  "regression_command": "PYTHONPATH=src:tools:tests .venv/bin/python -B -m unittest test_csi_sqlite test_rx02_diagnostic test_rx02_physical_report test_rx02_live_view test_consolidar_rx02_c01 test_canonical_csi test_csi_correspondence test_rx02_gap_diagnostics -v",
+  "sources": {
+    "config/csi_sqlite_v1.sql": "7af7c7c2c544d649362413d070ddc2eff5c9e9bcff91f2c8187dfca007763f45",
+    "config/csi_sqlite_pilot.review.json": "50cbea5ed701e6092c597555bd761867046263e3ccaaf75944b6bcb2e10d5fdb",
+    "src/csi_sqlite.py": "e10fd5aebb7fd0bda34b4534db4778a04ec9870cdad8ef07a6a8e3a130870e72",
+    "src/csi_sqlite_pilot.py": "7a8b30603cf1e01bd80c95cc987f0d5a5a374fffaf2cfac6dacf4a0b8d8afe40",
+    "tools/base_datos_csi.py": "9cef5bb193bff81d94736fc1b82dd9fa8e3c0ab55dfc790ff20b909094abf729",
+    "tests/test_csi_sqlite.py": "fb2e15968de51ce718e30db5f19cd7837804203faae2485db8f6034213ccada4"
+  },
+  "artifacts": {
+    "results/local/base-datos-csi/validacion-r1/anteriores.hashes.json": "9fe7e35e16ff5634161898fbc361e10f539231845b50aaab62b981b4d35306c0",
+    "results/local/base-datos-csi/validacion-r1/conteos-1.json": "f2b0a3f90cb8e20c909074af80a225bbc4f586fc762fe5e84753255d44dfd52d",
+    "results/local/base-datos-csi/validacion-r1/conteos-2.json": "f2b0a3f90cb8e20c909074af80a225bbc4f586fc762fe5e84753255d44dfd52d",
+    "results/local/base-datos-csi/validacion-r1/exportacion-final.json": "709deaa72a0be4fa1f89b735b644c38d698223764faac02129856825968abb07",
+    "results/local/base-datos-csi/validacion-r1/exportacion.json": "b4f7134abe9f33c988f0faf2ca7425013a8ee0ceeb6205d9e56f367e99fd27a5",
+    "results/local/base-datos-csi/validacion-r1/importacion-1.json": "3eb8cbd1b39ec54ae0030d4e7b41d99d10e0381e9d10a2b6b7438deba778c135",
+    "results/local/base-datos-csi/validacion-r1/importacion-2.json": "2429a48aac32f8615b572c9059a7234fa753749363548551034af67dfc669e8d",
+    "results/local/base-datos-csi/validacion-r1/pruebas-iniciales.json": "ee735865b8c657179359552035194fac8be485df187b9e5171ef4ec73da101bf",
+    "results/local/base-datos-csi/validacion-r1/pruebas-iniciales.log": "7e987f255388d0c93ba615600e4f49b73e9d21f3fa2cecbf09a418a73e46b34b",
+    "results/local/base-datos-csi/validacion-r1/pruebas.json": "ee735865b8c657179359552035194fac8be485df187b9e5171ef4ec73da101bf",
+    "results/local/base-datos-csi/validacion-r1/pruebas.log": "e8d96e93bde2eb05300f4d42531570922dcfc65eb2e66f42088b7b34e0cb3b97",
+    "results/local/base-datos-csi/validacion-r1/resultado.json": "4b7e8a3ed56c6d03827424601007a3e463cb5b2d1058062be407e18a3354d245",
+    "results/local/base-datos-csi/validacion-r1/resumen-sql.json": "283bcd6bb0f72a1d3a786cb9f1027d3dbfa1fcd2ef7c31185134b3110622d77f",
+    "results/local/base-datos-csi/validacion-r1/verificacion.json": "f9eb280262848bf744280f7feac33d841b3b27fd05e175e045d970c3fdc5472f"
+  },
+  "public_csv_sha256": "9a72a84ef5c7171aadbc9a8a9a31f81b4ffc7d870fbd46ce89d91153f427ff3c"
+}

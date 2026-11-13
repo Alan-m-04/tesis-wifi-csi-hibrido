@@ -1,5 +1,16 @@
 # Tesis: sistema híbrido WiFi CSI con ESP32-S3 y RuView
 
+## Base SQLite y análisis offline: primer piloto
+
+[Esquema y comandos para el capítulo 3](docs/CAPITULO_3_BASE_DATOS_CSI.md):
+índice SQLite derivado de la captura histórica auditada RX02-DIAG-VISOR-240S-R1,
+con dispositivos, sesión, 1.192 muestras y validaciones separadas. CSV por
+sesión/receptor; indicadores contrastados y doble importación sin duplicados.
+[Resultados](results/BASE_DATOS_CSI_OFFLINE.md): 90 pruebas, calidad estricta
+rechazada conservada, originales intactos y C04–C06 reservadas. Sin UART ni
+datos nuevos. R5-N01 continúa pendiente del ensayo interactivo.
+
+
 ## C03 consolidada: comparación descriptiva con C01
 
 [C03 E/S auditada](results/RX02_C03_C01.md): 143/146 filas exploratorias elegibles,

@@ -443,3 +443,20 @@ Diferencias de persistencia, montaje declarado y RX-01 alimentada/desconectada
 documentadas. C02 y particiones intactas; 102 archivos originales preservados.
 473 pruebas aisladas aprobadas; reserva C04–C06 sin acceder y cero intentos de
 lectura registrados. Sin UART nuevo, captura adicional, calibración o entrenamiento.
+
+## Primer flujo de base de datos CSI y análisis offline
+
+[Diseño y comandos para capítulo 3](CAPITULO_3_BASE_DATOS_CSI.md): se añade un
+prototipo SQLite al almacenamiento vigente, sin modificar los formatos ni el
+capturador. El piloto histórico RX02-DIAG-VISOR-240S-R1 se reaudita y relaciona
+dispositivos, sesión, muestras, fuentes y validaciones. La vista SQL y su CSV
+reproducen duración 240,005564743 s, 1.192 filas, cadencia host 4,979263752 Hz
+y máximo hueco host 614,782902 ms. Calidad estricta rechazada por preámbulo;
+integridad/replay/diagnóstico/cierre conformes se mantienen separados.
+
+Dos importaciones conservan los mismos registros y SHA-256 del archivo SQLite;
+90 pruebas relacionadas aprobadas, incluidas 12 específicas. Fuentes originales
+sin cambios; C04–C06 sin abrir, sin UART, captura, calibración o entrenamiento.
+Bubblewrap no pudo crear namespaces; regresión directa con barrera de auditoría
+Python para UART/reserva. [Evidencia](../results/BASE_DATOS_CSI_OFFLINE.md).
+R5-N01 sigue pendiente del ensayo interactivo y no se importó como medición.
