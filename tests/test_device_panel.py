@@ -192,7 +192,7 @@ class HttpTests(unittest.TestCase):
              patch.object(cli,'make_server',return_value=server) as make,patch.object(cli.sys,'addaudithook'),redirect_stdout(io.StringIO()):
             self.assertEqual(cli.main([]),0)
         build.assert_called_once_with(cli.DEFAULT)
-        make.assert_called_once_with(8766,replay_html=b'historical fixture')
+        make.assert_called_once_with(8766,replay_html=b'historical fixture',database_path=cli.DEFAULT_DATABASE)
 
 
 if __name__=='__main__':unittest.main()

@@ -460,3 +460,20 @@ sin cambios; C04–C06 sin abrir, sin UART, captura, calibración o entrenamient
 Bubblewrap no pudo crear namespaces; regresión directa con barrera de auditoría
 Python para UART/reserva. [Evidencia](../results/BASE_DATOS_CSI_OFFLINE.md).
 R5-N01 sigue pendiente del ensayo interactivo y no se importó como medición.
+
+## Vista SQLite de solo lectura en el tablero local
+
+Desde `403e794`, la [vista /sessions](VISTA_SQLITE_OFFLINE.md) reutiliza el
+servidor y estilo del panel para consultar `session_receiver_summary` en
+SQLite con `mode=ro` y `query_only=ON`. Duración, muestras, cadencia, máximo
+hueco y calidad se contrastan con el CSV del piloto. Se ve el rechazo por
+preámbulo y los motivos ×20/×1, separados de integridad/replay/cierre.
+No hay importación, SQL arbitrario, consultas USB o adquisición desde la vista.
+
+60 pruebas Python y 3 contratos Node aprobados. HTTP verificado sobre streams
+en memoria y presentación mediante DOM simulado; sockets localhost y arranque
+Firefox no disponibles en el entorno, sin verificación visual de navegador.
+Bubblewrap tampoco pudo crear namespaces; pruebas directas con barrera de
+auditoría Python para UART/reserva. Originales, SQLite y CSV conservados.
+C04–C06 reservadas; R5-N01 sigue pendiente del ensayo interactivo.
+[Evidencia y límites](../results/VISTA_SQLITE_OFFLINE.md).

@@ -1,0 +1,140 @@
+{
+  "schema": "sqlite-offline-dashboard-validation-1",
+  "base_commit": "403e794",
+  "python_tests": {
+    "tests": 60,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true,
+    "modules": [
+      "test_sqlite_sessions_view",
+      "test_device_panel",
+      "test_csi_sqlite",
+      "test_session_offline",
+      "test_rx02_live_view"
+    ]
+  },
+  "node_contracts": {
+    "tests": 3,
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0
+  },
+  "pilot_comparison": {
+    "state": "matched",
+    "checked_fields": [
+      "duration_ns",
+      "duration_s",
+      "rows",
+      "capture_frequency_hz",
+      "max_host_gap_ns",
+      "max_host_gap_ms",
+      "strict_quality_ok",
+      "integrity_ok",
+      "replay_ok",
+      "close_ok",
+      "diagnostic_ok",
+      "quality_status",
+      "quality_details_json"
+    ]
+  },
+  "metrics": [
+    {
+      "session_id": "RX02-DIAG-VISOR-240S-R1",
+      "device_key": "usb:5C93200689",
+      "receiver_id": "RX-02",
+      "future_partition": "diagnostic_only",
+      "duration_ns": 240005564743,
+      "duration_s": 240.005564743,
+      "service_duration_ns": 240003543760,
+      "service_duration_s": 240.00354376,
+      "rows": 1192,
+      "sample_span_ns": 239191988869,
+      "sample_span_s": 239.191988869,
+      "capture_frequency_hz": 4.9792637522332885,
+      "rows_per_open_second": 4.966551510071875,
+      "max_host_gap_ns": 614782902,
+      "max_host_gap_ms": 614.782902,
+      "max_local_gap_us": 601971,
+      "max_local_gap_ms": 601.971,
+      "strict_quality_ok": 0,
+      "quality_status": "rejected",
+      "integrity_ok": 1,
+      "replay_ok": 1,
+      "close_ok": 1,
+      "diagnostic_ok": 1,
+      "quality_reasons": [
+        {
+          "reason": "format:RX-02",
+          "count": 20
+        },
+        {
+          "reason": "preamble_anomaly:RX-02",
+          "count": 1
+        }
+      ],
+      "preamble_rejected": true
+    }
+  ],
+  "database_sha256": "86d37e68ea63f2a3f97dc00626533ca646488416d2d1dd63960efd1769f8199c",
+  "csv_sha256": "9a72a84ef5c7171aadbc9a8a9a31f81b4ffc7d870fbd46ce89d91153f427ff3c",
+  "database_and_csv_unchanged": true,
+  "previous_files_checked": 4517,
+  "previous_files_preserved": 4512,
+  "intentional_source_documentation_changes": [
+    "docs/CAPITULO_3_BASE_DATOS_CSI.md",
+    "docs/ESTADO_INICIAL.md",
+    "docs/PANEL_DISPOSITIVOS_LOCAL.md",
+    "src/device_panel.html",
+    "tools/panel_dispositivos.py"
+  ],
+  "UART_opened": false,
+  "new_capture": false,
+  "USB_queried_by_SQLite_view": false,
+  "reserved_C04_C06_contents_accessed": false,
+  "R5_N01": "pending_interactive_trial_unchanged",
+  "environment": {
+    "localhost_socket": {
+      "verified": false,
+      "error": "PermissionError: [Errno 1] Operation not permitted"
+    },
+    "firefox_launcher": {
+      "exit_code": 46,
+      "error": "XDG_RUNTIME_DIR /run/user/1000/snap.firefox read-only"
+    },
+    "firefox_binary": {
+      "exit_code": 139,
+      "error": "Sandbox: CanCreateUserNamespace() unshare(CLONE_NEWPID): EPERM; no screenshot generated"
+    },
+    "browser_visual_verified": false,
+    "bubblewrap": {
+      "verified": false,
+      "error": "No permissions to create a new namespace"
+    }
+  },
+  "url": "http://127.0.0.1:8766/sessions",
+  "command": ".venv/bin/python -B tools/panel_dispositivos.py --sin-replay",
+  "sources": {
+    "src/csi_sqlite_view.py": "21f1ace4b60be9c9a5bbfab96ac57b6bb65e9ecc97693d436cddd74d7690f3ac",
+    "src/sqlite_sessions.html": "4263b75c9593fbb6f0fb2d3344e6b04add6195b6e52f9283f518eb85c44f05ae",
+    "src/sqlite_sessions.mjs": "5f353d97b3bf6b42dc4a182ccad000d231bdec8d859187f6c8615d54de30f516",
+    "src/device_panel.html": "be79056007727447b91879fca4ef2cd1d0bd1f2e1efb30604c6deb67960a0cdc",
+    "src/device_panel.css": "4449218cffd1af74994422f184161c23a86f4fd4bb7121ba6ff62f1c12c2d2fb",
+    "tools/panel_dispositivos.py": "86bb1fcdfea0beceabfc40d7cd8af2e6c8727656167b4681552fd43a931d2364",
+    "tests/test_sqlite_sessions_view.py": "c86c84a036eb48998b858fbcc86d51e847d7f80e8b0eb0fad318335cf20aed67",
+    "tests/test_device_panel.py": "8467354df4fe933e70255ff62bb4725968be77e81ea280783a16f28ab89a8fb8",
+    "tests/js/sqlite_sessions.test.mjs": "39703b720a5471ae3c8a97b9d1c46580dff5eefcb1f84dc8b72594f18fcb02d0"
+  },
+  "artifacts": {
+    "results/local/vista-sqlite-r1/anteriores.hashes.json": "9e4d174736978058b28d8b20e87b5bd3f9300b5e3a1736cb502c7f3f46d78fbb",
+    "results/local/vista-sqlite-r1/api-http-en-memoria.txt": "e67bf4d1a272161dfab2f5d7ad887c099dd6eac0611cae0b83eb357325e2933f",
+    "results/local/vista-sqlite-r1/api-sessions-final.json": "1e58e156c19f80075211092c00083e3ec4f2f388e3c403289b4e683a0410562d",
+    "results/local/vista-sqlite-r1/api-sessions.json": "e9d7c0c69390dfc1664960b586d9ce39362d44e55336b32174087d5ebba706ba",
+    "results/local/vista-sqlite-r1/instantanea-qa.html": "798e91cb7dc4db37d21f7fecff22f5e636876fbaef21fbfb2ef77baee8242ebe",
+    "results/local/vista-sqlite-r1/limites-entorno.json": "9a18ce200551e3b3ddd6f5ceae4f75c7e38032df45be26607b34c239e1be7d23",
+    "results/local/vista-sqlite-r1/pruebas-js.log": "ebfb2a560ed5aa71629e53bad3416a9941fa56157be1868cccd617ba62f52ac5",
+    "results/local/vista-sqlite-r1/pruebas-python.json": "22ed9f9d1da96b4c2a2dd810151737984e439f39e274bd88ca8e548033ad7bc9",
+    "results/local/vista-sqlite-r1/pruebas-python.log": "2f409da80a3f505f7ade857da27d74cfd42a0a2ea0e22be12c69748c36265dff"
+  }
+}

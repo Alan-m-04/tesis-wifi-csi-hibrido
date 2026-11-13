@@ -13,6 +13,13 @@ sirve el panel, su módulo JS, `/api/devices` y la reproducción histórica en
 `/replay`. No instala dependencias nuevas.
 El HTML requiere este backend para consultar el sistema operativo.
 
+La vista adicional **Sesiones · SQLite offline**, en `/sessions`, reutiliza
+el tablero y su hoja de estilo. Lee la base derivada de `403e794`, con calidad
+estricta separada de integridad/replay/cierre. Para abrirla sin preparar C01/C03,
+usar `tools/panel_dispositivos.py --sin-replay`. Esa página consulta únicamente
+`/api/sessions`, sin consultar USB ni importar datos.
+[Comandos, interpretación y supervisión en MIPYMES](VISTA_SQLITE_OFFLINE.md).
+
 Para una sola consulta JSON sin servidor:
 
 ```bash

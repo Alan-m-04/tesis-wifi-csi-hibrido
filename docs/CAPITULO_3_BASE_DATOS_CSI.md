@@ -163,6 +163,11 @@ es una copia agregada idéntica al CSV local; base, muestras y bruto siguen loca
 
 ## Idempotencia, pruebas y límites
 
+La base también puede consultarse desde la [vista de sesiones del tablero
+local](VISTA_SQLITE_OFFLINE.md), que reutiliza el backend existente y muestra
+los agregados por sesión/receptor junto con el rechazo original. No se cambia
+este esquema ni se importa desde la interfaz.
+
 La importación usa `BEGIN IMMEDIATE` y claves compuestas. Si la sesión ya
 existe, compara todos los registros con las entradas auditadas. Una huella,
 identidad, muestra, referencia o validación distinta provoca error, sin

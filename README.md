@@ -1,5 +1,15 @@
 # Tesis: sistema híbrido WiFi CSI con ESP32-S3 y RuView
 
+## Sesiones SQLite en el tablero offline
+
+[Abrir la vista e interpretar sus indicadores](docs/VISTA_SQLITE_OFFLINE.md):
+el tablero existente añade `/sessions`, de solo lectura, con duración, muestras,
+cadencia, hueco máximo y calidad por sesión/receptor. Piloto contrastado con
+su CSV y aviso explícito **RECHAZADA · PREÁMBULO**. 60 pruebas Python y 3
+contratos Node aprobados; ver [resultados y límites visuales](results/VISTA_SQLITE_OFFLINE.md).
+Sin UART ni datos nuevos; C04–C06 reservadas y R5-N01 pendiente del ensayo.
+
+
 ## Base SQLite y análisis offline: primer piloto
 
 [Esquema y comandos para el capítulo 3](docs/CAPITULO_3_BASE_DATOS_CSI.md):
