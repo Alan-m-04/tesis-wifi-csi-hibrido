@@ -2,6 +2,23 @@
 
 Rama: `feat/demo-offline-operacion-20261109`, creada desde `703cefd`.
 
+## Propuesta única E→S con interfaz guiada vigente
+
+`RX02-DEVREP-R5-N01` se preparó exclusivamente para revisión, con grupo propio
+y salida `results/local/devrep-rx02-r5-N01`. El operador declara que está
+haciendo tarea y se moverá por el cuarto. Las condiciones del futuro intento
+siguen pendientes y no se trasladaron las declaraciones de sentado del visor.
+El antecedente auditado de 240 s acredita adquisición y observación de 1.192
+filas y conserva su rechazo por preámbulo.
+
+El descriptor selecciona `devrep_operator_interface` y `devrep_operation_view`,
+con la agenda y los criterios actuales. El comando `tools/revisar_devrep_r5_n01.py
+--check-guidance` proyecta estados en memoria y confirma salir, permanecer
+fuera, regresar/declarar E, sentarse y declarar S tras el cierre simulado.
+Pasaron 12 pruebas offline. El descriptor mantiene el ejecutor físico y los
+permisos deshabilitados. La entrada física con ID R5 queda para esa revisión
+posterior. [Guía corta y órdenes exactas](GUIA_DEVREP_R5_N01.md).
+
 ## Revisión de procedencia del intento RX-02 de 240 s
 
 El preflight original encontró a RX-02 por USB y aún incluía la declaración
