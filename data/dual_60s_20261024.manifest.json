@@ -1,0 +1,74 @@
+{
+  "schema": "tesis-csi-reference-v1",
+  "evidence_type": "physical_capture",
+  "source_run_id": "dual-60s-20261024T205854Z",
+  "source_directory": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/pruebas_fisicas/dual-60s-20261024T205854Z/captura",
+  "source_report": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/pruebas_fisicas/dual-60s-20261024T205854Z/INFORME_CAPTURA_DUAL_60S.md",
+  "source_report_sha256": "a30170c97f784ef325862178f898ec0d73e4e851c23d2e25d0fe2580b7a934d1",
+  "source_runner_record_sha256": "53b066e6cc9d50712627db1b1052fe59d1d28a341328c6a58c2e262fa6001fcf",
+  "local_ignored_copy": "data/raw/dual-60s-20261024T205854Z/captura",
+  "files": [
+    {
+      "name": "rx-01.serial.log",
+      "bytes": 247862,
+      "sha256": "51cb3bb1cb191b5a85e09cfa8936c29f9c0e89d930e73802623defbdcae8125a"
+    },
+    {
+      "name": "rx-02.serial.log",
+      "bytes": 250408,
+      "sha256": "5af63769f6bea835b037e3ad81e4f03ce4b5113ea266219d83fe8e4234f8d6ff"
+    },
+    {
+      "name": "rx-01.csv",
+      "bytes": 264558,
+      "sha256": "fd0cca50ba528d5b7d444fad887e79357d25da902a658569f8d9b0e5c0eab507"
+    },
+    {
+      "name": "rx-02.csv",
+      "bytes": 266956,
+      "sha256": "4b8af9370e65b49580164ba84ce5e11c136abd362bbd96c76e9200b6c048c9fc"
+    },
+    {
+      "name": "rx-01.summary.json",
+      "bytes": 1610,
+      "sha256": "13de974ea7cd72f370b046265c8453f9955911d964dc7e2771c8b35d5e955f0c"
+    },
+    {
+      "name": "rx-02.summary.json",
+      "bytes": 1610,
+      "sha256": "9a6e52ddef66bdb4768b1ce3501044c94c16e8b49ded523e132ba28e8377dcce"
+    },
+    {
+      "name": "session.json",
+      "bytes": 4211,
+      "sha256": "bfdff22bdb293728aaca56915366b13a720bb12fb4bba7b5adc5f2771b717908"
+    }
+  ],
+  "expected": {
+    "session_status": "completed",
+    "collector_exit_code": 1,
+    "rows": {
+      "RX-01": 292,
+      "RX-02": 291
+    },
+    "strict_quality": {
+      "RX-01": false,
+      "RX-02": true
+    },
+    "malformed_CSI": {
+      "RX-01": 1,
+      "RX-02": 0
+    },
+    "initial_boot_events": {
+      "RX-01": 1,
+      "RX-02": 1
+    }
+  },
+  "this_repository_operation": "offline_review_only; no UART opened",
+  "limitations": [
+    "ventana incluye arranque y residuos",
+    "no campaña completa ni ground truth de ocupación",
+    "no modelo entrenado",
+    "sin sincronización RF demostrada"
+  ]
+}

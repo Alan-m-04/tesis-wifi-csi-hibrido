@@ -1,0 +1,50 @@
+{
+  "schema": "rx02-service-publication-2",
+  "scope": "Versioned code, docs, aggregate laboratory data and hashes; excludes this manifest itself",
+  "files": {
+    "README.md": {
+      "bytes": 20741,
+      "sha256": "a8b6b1b6c963d7885ee9f84af8b59abe3d7fc15229816c5fa9620d55b4550bd8"
+    },
+    "docs/PERSISTENCIA_RX02_CHECKPOINT_V2.md": {
+      "bytes": 7635,
+      "sha256": "df13197085d7e4b083b422a0d0efc4a2d150a917d1a3965ebc368b7de1451863"
+    },
+    "results/SERVICIO_RX02_CHECKPOINT_V2.md": {
+      "bytes": 15817,
+      "sha256": "373fcf7b368fecd1299aaf29ab4e46648d8964b718f5f2c8e478721019b838cf"
+    },
+    "results/SERVICIO_RX02_CHECKPOINT_V2.resumen.json": {
+      "bytes": 293796,
+      "sha256": "934652c012f2245f776c6301095ef0bc15f0a949b9afd051af4368ff5eea7426"
+    },
+    "results/SERVICIO_RX02_CHECKPOINT_V2.validacion.json": {
+      "bytes": 2353,
+      "sha256": "de552092025df378903c934238a4ec6389092b8e596e79332f41fe0c3df24701"
+    },
+    "src/rx02_checkpoint_journal.py": {
+      "bytes": 9046,
+      "sha256": "adeb17f8f7694b4701c1a979aa038e0607b6e6e2b0692283b93db4aef528bc0c"
+    },
+    "src/rx02_service_lab.py": {
+      "bytes": 14674,
+      "sha256": "31ffd8fba8ef4fe6618578e11bd7c038e5c3ca35d1408376debfb788c538e1d1"
+    },
+    "tests/test_rx02_checkpoint.py": {
+      "bytes": 13718,
+      "sha256": "f28daddd7c49e32f693bcd7cbd794b6df72df2ce34d4ddca7d085ebc4edcb410"
+    },
+    "tools/consolidar_servicio_rx02.py": {
+      "bytes": 6843,
+      "sha256": "0544cebebfa288f1e8878f1407264b8bf83bd9970a202a2dd4589055fa1dac3a"
+    },
+    "tools/medir_crecimiento_rx02.py": {
+      "bytes": 2807,
+      "sha256": "e9f072062148b9fc346868ff052f9b93b19547bbe161c2c99b05ff8d25a1a677"
+    },
+    "tools/reproducir_servicio_rx02.py": {
+      "bytes": 1498,
+      "sha256": "05f10596aa7bec973da0dbfd4a6a8e2120d11b352239886ea370a33ff8b31959"
+    }
+  }
+}

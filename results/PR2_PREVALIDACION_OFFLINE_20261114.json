@@ -1,0 +1,103 @@
+{
+  "schema": "tesis-pr2-prevalidation-synthetic-1",
+  "date": "2026-11-14",
+  "evidence_type": "synthetic_fixture",
+  "physical_capture_performed": false,
+  "physical_UART_opened": false,
+  "reserve_opened": false,
+  "python_tests": 102,
+  "python_failures": 0,
+  "python_errors": 0,
+  "python_skipped": 0,
+  "node_contracts": 3,
+  "initial_pr_head": "492e965d41fde83be22ed04a1095d9e497eb4a67",
+  "local_origin_commits": [
+    "9f73b69",
+    "eaf6713"
+  ],
+  "r5_dependency_sha256": {
+    "src/rx02_devrep/journal.py": "1a13c347201f65997e65d21e14ef4876d488ae0eeb3aa966dba182a48efc3e5b",
+    "src/rx02_devrep/session.py": "9148f1d48f3ccd4bef5af45cb918f89702d91ce1d52712ffd7c1ac4772fe3ed4",
+    "src/rx02_devrep/series.py": "8abefc5eac774125a7d4023bb182332491df9ba5d400424fd55d22a5a619ba30",
+    "src/rx02_devrep/__init__.py": "4dfe79a5f7c584636ae74881e8547fa3cf6aa5596a9625bcf1e160db525d722e",
+    "src/rx02_devrep/contract.py": "af3bd1a44b98997c52689ef15a149ebe5943edd47b7678f83c0e907b721b8a94",
+    "src/rx02_devrep/coordinator.py": "4362f032e7ca41cf27746d353c2da5f2a624810fc2074911c69100fdfda7c60c",
+    "src/rx02_devrep_r5_n01/journal.py": "f115b6062b96af96d6fff88dcebca13476f5931a4272014ec08cf3dbe4ef0593",
+    "src/rx02_devrep_r5_n01/session.py": "df38d37a414a689d017c0145fc788ec67ec9ff789851906acf753d0fd90ac4ff",
+    "src/rx02_devrep_r5_n01/series.py": "55b7379b96703e83933250463fcc40835dc4ab966804b1759626f13bae312eb5",
+    "src/rx02_devrep_r5_n01/__init__.py": "0213a72ae2c204e43b5d13259328683efdeaa5003309de1062e72db615fc18ad",
+    "src/rx02_devrep_r5_n01/contract.py": "f20fd4ad0f2fb212244a215f900de0ca849c9bdaa5ebb5b0a968faf7f03cfc6f",
+    "tools/devrep_rx02.py": "3d416ea5566b61f33d4d2fbd8961575ad9d73c05bbebcd314d0c3598b2f9d03b",
+    "tools/preflight_devrep_r5.py": "16a579380ce0ecb4c878451aa24af5d20942eebd8abc4e7cc42b1d2bafbfcd70",
+    "tools/ejecutar_devrep_r5_n01.py": "dcdefa566e861466b09e81ec1792a1ff6c091e87a23ac3e18e92075461aa9680",
+    "tools/practica_devrep_r5_n01.py": "3c0936993a49ebf730bad782dc65fcb7f769ed1ce1b3091a17ef4826c205ac57",
+    "config/devrep_r1/D01.review.json": "27341e6c0991ccc642e500b57c7cb4f4ca08356c4047b84eec568a063ff0363e"
+  },
+  "publication_note": "Solo agregados: inventarios privados, paths personales, credenciales, SQLite y brutos se excluyen.",
+  "native_synthetic_accepted": {
+    "accepted": true,
+    "native_audit_executed": true,
+    "evidence_type": "synthetic_fixture",
+    "integrity_ok": true,
+    "replay_ok": true,
+    "labels_ok": true,
+    "eligibility_ok": true,
+    "strict_quality_ok": true,
+    "features_ok": true,
+    "sources_unchanged": true,
+    "model_training_executed": false,
+    "inference_executed": false,
+    "model_evaluation_ready": false,
+    "rejection_reasons": []
+  },
+  "native_synthetic_preamble": {
+    "accepted": false,
+    "native_audit_executed": true,
+    "evidence_type": "synthetic_fixture",
+    "integrity_ok": true,
+    "replay_ok": true,
+    "labels_ok": true,
+    "eligibility_ok": false,
+    "strict_quality_ok": false,
+    "features_ok": true,
+    "sources_unchanged": true,
+    "model_training_executed": false,
+    "inference_executed": false,
+    "model_evaluation_ready": false,
+    "rejection_reasons": [
+      {
+        "code": "strict_connection_rejected",
+        "detail": [
+          "format:RX-02",
+          "preamble_anomaly:RX-02"
+        ]
+      },
+      {
+        "code": "strict_window_ineligible",
+        "detail": "RX02-DEVREP-R5-N01-E"
+      },
+      {
+        "code": "strict_window_ineligible",
+        "detail": "RX02-DEVREP-R5-N01-S"
+      }
+    ]
+  },
+  "local_log_sha256": {
+    "regresion-publicable-r3.log": "1ef709da8799d9cbe13fa50349cef12394803b9e448ed9e710a88c4bbb6f3214",
+    "node-panel-r2.log": "2567211496666cd5f9803501d2c39b79699b51b2d4c96274ebc5ac9eaf284211",
+    "node-replay-r2.log": "41f9e93b3dc3f972915f6f09c011f7850d1f7cb67e969a3fd358498af0014755",
+    "cli-accepted-r2.log": "a97e87ac12a4705a8cc0712276ae673d98333d7365af3e3b76fd6887e346b840",
+    "cli-rejected-r2.log": "649bd252e0579ce712ef8774a2d1fbe2504371b20feb79242f790b9a82366d05"
+  },
+  "prevalidation_new_tests": 8,
+  "prevalidation_implementation_sha256": {
+    "src/edge_session_prevalidation.py": "d61d1e4cc97a2b60ad788aa6b61b3e2113026adfb346b4f5b9bd0ca21a94b223",
+    "tools/prevalidar_captura_offline.py": "9659705b3f6c266acb2b272d59224da29ac6d6895885ee5bad32d6188f757a19",
+    "tests/test_edge_session_prevalidation.py": "5b4429ee77218ce0653bfc490e8ee71ac6d88bcbb29c0eb861b340d47f4c3efe"
+  },
+  "environment_limits": [
+    "Git sin resolución DNS; publicación mediante conector GitHub.",
+    "HTTP SQLite en memoria; revisión visual conectada en Ubuntu pendiente.",
+    "Contrato Node replay requiere artefacto histórico local: se proporcionó explícitamente, sin publicarlo."
+  ]
+}

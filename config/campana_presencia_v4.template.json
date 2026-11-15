@@ -1,0 +1,36 @@
+{
+  "protocol": "presence_persistent_v4",
+  "execution_mode": "offline_only",
+  "policy": {
+    "window_ns": 30000000000,
+    "availability_wait_ns": 10000000000,
+    "freshness_ns": 1000000000,
+    "exit_delay_ns": 60000000000,
+    "start_cue_delay_ns": 30000000000,
+    "establishment_ns": 30000000000,
+    "label_tail_ns": 10000000000,
+    "close_wait_ns": 250000000,
+    "close_bytes": 65536,
+    "coverage_min_rows": 120,
+    "coverage_bin_rows": 15,
+    "coverage_gap_ns": 500000000
+  },
+  "receivers": {
+    "RX-01": "5C93199744",
+    "RX-02": "5C93200689"
+  },
+  "connection_id": "SYNTHETIC-v4-NOT-A-CAPTURE",
+  "actor": "SYNTHETIC-OPERATOR",
+  "mounting_reference": "synthetic-fixture-no-physical-layout",
+  "partition_group": "one-connection-one-group",
+  "slots": [
+    {
+      "id": "SYN-E",
+      "condition": "E"
+    },
+    {
+      "id": "SYN-S",
+      "condition": "S"
+    }
+  ]
+}

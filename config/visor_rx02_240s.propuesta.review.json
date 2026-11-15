@@ -1,0 +1,56 @@
+{
+  "state": "REVIEW_ONLY_NOT_AUTHORIZED",
+  "authorization_granted": false,
+  "proposal_id": "RX02-DIAG-VISOR-240S-R1",
+  "connection_id": "RX02-DIAG-VISOR-240S-R1",
+  "partition_group": "RX02-DIAG-VISOR-240S-R1",
+  "identity_revision": "rx02-live-identity-2",
+  "reference_contract": "config/diagnostico_checkpoints_rx02_r1.review.json",
+  "protocol_reference": "rx02_service_diagnostic_1",
+  "persistence_revision": "rx02-raw-sync-control-checkpoint-2",
+  "future_partition": "diagnostic_only",
+  "duration_ns_from_opened": 240000000000,
+  "receiver": "RX-02",
+  "usb_serial": "5C93200689",
+  "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00",
+  "baud": 115200,
+  "slots": [],
+  "proposed_bundle_new": "results/local/diagnostico-rx02-visor-240s-r1",
+  "proposed_view_new": "results/local/vista-rx02-visor-240s-r1",
+  "session": {
+    "max_open_attempts": 1,
+    "retries": 0,
+    "initial_availability_ns": 10000000000,
+    "required_fresh_rows": 3,
+    "freshness_ns": 1000000000,
+    "close_drain_ns": 250000000,
+    "close_drain_bytes": 65536
+  },
+  "storage": {
+    "initial_free_bytes": 104857600,
+    "reserve_bytes": 33554432,
+    "max_raw_bytes": 67108864,
+    "max_bundle_bytes": 268435456,
+    "max_connection_ns": 3600000000000
+  },
+  "checkpoints": {
+    "pending_ops_bytes": 65536,
+    "max_record_bytes": 16384,
+    "max_chunk_bytes": 16384,
+    "max_events": 100000,
+    "max_lines": 25000,
+    "max_operations": 500000
+  },
+  "view": {
+    "poll_interval_ms": 250,
+    "max_operations_per_poll": 64,
+    "max_rows": 8,
+    "window_s": 30,
+    "max_snapshot_bytes": 2097152
+  },
+  "permitted_uses": {
+    "calibration": false,
+    "training": false,
+    "production": false
+  }
+}

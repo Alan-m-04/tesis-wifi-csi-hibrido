@@ -1,0 +1,363 @@
+{
+  "schema": "tesis-edge-evaluation-1",
+  "evidence_type": "synthetic_fixture",
+  "title": "EVALUACIÓN SINTÉTICA · SIN VALIDEZ FÍSICA",
+  "receiver": "RX-02",
+  "scope": "synthetic-room-RX02-v1",
+  "contract": "presence-offline-v1/LLTF52/row-mean/session-population",
+  "ruview": {
+    "commit": "fefb0f918eefa7db6daef8cc83787fc7d6f74187",
+    "license": "MIT",
+    "provenance": "vendor/ruview/presence/PROVENANCE.json"
+  },
+  "policy": {
+    "unit": "original_30s_window",
+    "split_unit": "whole_session_partition_group",
+    "empty_anchor": "first Empty in session_id lexical order; remaining Empty anchors not used by upstream head",
+    "occupied_anchor": "unweighted average of all Sit anchors",
+    "model_selection": "none",
+    "resampling": false,
+    "confidence_is_probability": false,
+    "min_groups": {
+      "train": 2,
+      "evaluation": 2
+    },
+    "final_reserve_opened": false
+  },
+  "partitions": {
+    "train": [
+      "SYNTHETIC-TRAIN-01",
+      "SYNTHETIC-TRAIN-02"
+    ],
+    "evaluation": [
+      "SYNTHETIC-EVAL-01",
+      "SYNTHETIC-EVAL-02",
+      "SYNTHETIC-EVAL-03"
+    ]
+  },
+  "model": {
+    "status": "trained",
+    "parameters": {
+      "threshold": 1.3333333730697632,
+      "occupied_var": 2.6666667461395264,
+      "empty_mean": 10.0,
+      "mean_dist_threshold": 6.25
+    },
+    "empty_anchor_slot": "SYNTHETIC-TRAIN-01-E",
+    "training_windows": 4
+  },
+  "confusion_matrix": {
+    "rows": "truth",
+    "columns": [
+      "vacio",
+      "ocupado",
+      "abstencion"
+    ],
+    "counts": {
+      "vacio": {
+        "vacio": 1,
+        "ocupado": 1,
+        "abstencion": 1
+      },
+      "ocupado": {
+        "vacio": 1,
+        "ocupado": 1,
+        "abstencion": 1
+      }
+    }
+  },
+  "metrics": {
+    "evaluation_windows": 6,
+    "decided_windows": 4,
+    "abstentions": 2,
+    "coverage": 0.6666666666666666,
+    "accuracy_decided": 0.5,
+    "correct_over_all_windows": 0.3333333333333333,
+    "false_alarms": 1,
+    "false_negatives": 1,
+    "false_alarm_rate_decided_empty": 0.5,
+    "false_alarm_rate_all_empty": 0.3333333333333333,
+    "abstention_rate": 0.3333333333333333
+  },
+  "by_session": {
+    "SYNTHETIC-EVAL-01": {
+      "windows": 2,
+      "abstentions": 0,
+      "false_alarms": 0,
+      "false_negatives": 0
+    },
+    "SYNTHETIC-EVAL-02": {
+      "windows": 2,
+      "abstentions": 0,
+      "false_alarms": 1,
+      "false_negatives": 1
+    },
+    "SYNTHETIC-EVAL-03": {
+      "windows": 2,
+      "abstentions": 2,
+      "false_alarms": 0,
+      "false_negatives": 0
+    }
+  },
+  "training": [
+    {
+      "session_id": "SYNTHETIC-TRAIN-01",
+      "partition_group": "SYNTHETIC-TRAIN-01",
+      "split": "train",
+      "slot_id": "SYNTHETIC-TRAIN-01-E",
+      "truth": "vacio",
+      "features": {
+        "n": 150,
+        "mean": 10.0,
+        "variance": 0.0
+      },
+      "feature_status": "evaluable",
+      "reasons": [],
+      "connection_full": {
+        "quality_ok": false,
+        "reasons": [
+          "synthetic_history_rejection"
+        ]
+      },
+      "input_rows": 150
+    },
+    {
+      "session_id": "SYNTHETIC-TRAIN-01",
+      "partition_group": "SYNTHETIC-TRAIN-01",
+      "split": "train",
+      "slot_id": "SYNTHETIC-TRAIN-01-S",
+      "truth": "ocupado",
+      "features": {
+        "n": 150,
+        "mean": 22.0,
+        "variance": 2.6666666666666665
+      },
+      "feature_status": "evaluable",
+      "reasons": [],
+      "connection_full": {
+        "quality_ok": false,
+        "reasons": [
+          "synthetic_history_rejection"
+        ]
+      },
+      "input_rows": 150
+    },
+    {
+      "session_id": "SYNTHETIC-TRAIN-02",
+      "partition_group": "SYNTHETIC-TRAIN-02",
+      "split": "train",
+      "slot_id": "SYNTHETIC-TRAIN-02-E",
+      "truth": "vacio",
+      "features": {
+        "n": 150,
+        "mean": 10.0,
+        "variance": 0.6666666666666666
+      },
+      "feature_status": "evaluable",
+      "reasons": [],
+      "connection_full": {
+        "quality_ok": false,
+        "reasons": [
+          "synthetic_history_rejection"
+        ]
+      },
+      "input_rows": 150
+    },
+    {
+      "session_id": "SYNTHETIC-TRAIN-02",
+      "partition_group": "SYNTHETIC-TRAIN-02",
+      "split": "train",
+      "slot_id": "SYNTHETIC-TRAIN-02-S",
+      "truth": "ocupado",
+      "features": {
+        "n": 150,
+        "mean": 23.0,
+        "variance": 2.6666666666666665
+      },
+      "feature_status": "evaluable",
+      "reasons": [],
+      "connection_full": {
+        "quality_ok": false,
+        "reasons": [
+          "synthetic_history_rejection"
+        ]
+      },
+      "input_rows": 150
+    }
+  ],
+  "predictions": [
+    {
+      "session_id": "SYNTHETIC-EVAL-01",
+      "partition_group": "SYNTHETIC-EVAL-01",
+      "split": "evaluation",
+      "slot_id": "SYNTHETIC-EVAL-01-E",
+      "truth": "vacio",
+      "features": {
+        "n": 150,
+        "mean": 10.0,
+        "variance": 0.6666666666666666
+      },
+      "feature_status": "evaluable",
+      "reasons": [],
+      "connection_full": {
+        "quality_ok": false,
+        "reasons": [
+          "synthetic_history_rejection"
+        ]
+      },
+      "input_rows": 150,
+      "prediction": "vacio",
+      "confidence_margin": 1.0,
+      "abstention_reason": null
+    },
+    {
+      "session_id": "SYNTHETIC-EVAL-01",
+      "partition_group": "SYNTHETIC-EVAL-01",
+      "split": "evaluation",
+      "slot_id": "SYNTHETIC-EVAL-01-S",
+      "truth": "ocupado",
+      "features": {
+        "n": 150,
+        "mean": 24.0,
+        "variance": 2.6666666666666665
+      },
+      "feature_status": "evaluable",
+      "reasons": [],
+      "connection_full": {
+        "quality_ok": false,
+        "reasons": [
+          "synthetic_history_rejection"
+        ]
+      },
+      "input_rows": 150,
+      "prediction": "ocupado",
+      "confidence_margin": 1.0,
+      "abstention_reason": null
+    },
+    {
+      "session_id": "SYNTHETIC-EVAL-02",
+      "partition_group": "SYNTHETIC-EVAL-02",
+      "split": "evaluation",
+      "slot_id": "SYNTHETIC-EVAL-02-E",
+      "truth": "vacio",
+      "features": {
+        "n": 150,
+        "mean": 22.0,
+        "variance": 2.6666666666666665
+      },
+      "feature_status": "evaluable",
+      "reasons": [],
+      "connection_full": {
+        "quality_ok": false,
+        "reasons": [
+          "synthetic_history_rejection"
+        ]
+      },
+      "input_rows": 150,
+      "prediction": "ocupado",
+      "confidence_margin": 1.0,
+      "abstention_reason": null
+    },
+    {
+      "session_id": "SYNTHETIC-EVAL-02",
+      "partition_group": "SYNTHETIC-EVAL-02",
+      "split": "evaluation",
+      "slot_id": "SYNTHETIC-EVAL-02-S",
+      "truth": "ocupado",
+      "features": {
+        "n": 150,
+        "mean": 10.0,
+        "variance": 0.0
+      },
+      "feature_status": "evaluable",
+      "reasons": [],
+      "connection_full": {
+        "quality_ok": false,
+        "reasons": [
+          "synthetic_history_rejection"
+        ]
+      },
+      "input_rows": 150,
+      "prediction": "vacio",
+      "confidence_margin": 1.0,
+      "abstention_reason": null
+    },
+    {
+      "session_id": "SYNTHETIC-EVAL-03",
+      "partition_group": "SYNTHETIC-EVAL-03",
+      "split": "evaluation",
+      "slot_id": "SYNTHETIC-EVAL-03-E",
+      "truth": "vacio",
+      "features": null,
+      "feature_status": "no evaluable",
+      "reasons": [
+        "required_tone_invalid"
+      ],
+      "connection_full": {
+        "quality_ok": false,
+        "reasons": [
+          "synthetic_history_rejection"
+        ]
+      },
+      "input_rows": 150,
+      "prediction": "abstencion",
+      "confidence_margin": null,
+      "abstention_reason": "required_features_incomplete"
+    },
+    {
+      "session_id": "SYNTHETIC-EVAL-03",
+      "partition_group": "SYNTHETIC-EVAL-03",
+      "split": "evaluation",
+      "slot_id": "SYNTHETIC-EVAL-03-S",
+      "truth": "ocupado",
+      "features": null,
+      "feature_status": "no evaluable",
+      "reasons": [
+        "required_tone_invalid"
+      ],
+      "connection_full": {
+        "quality_ok": false,
+        "reasons": [
+          "synthetic_history_rejection"
+        ]
+      },
+      "input_rows": 150,
+      "prediction": "abstencion",
+      "confidence_margin": null,
+      "abstention_reason": "required_features_incomplete"
+    }
+  ],
+  "inputs_sha256": {
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/sessions.json": "5fd8490b303f8ea59e02011f40637824e8a3cecf14bf69d0a99494376e1a884b",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-EVAL-01/sources.json": "a70174a263c150f4b11e79adfdec421d0b37fb64e21a7f2c2b3ec627541ceacb",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-EVAL-01/rx-02.serial.log": "83233eae7ba4296d5029f778bc1a08051a72e2bebf7aa38f1d79807ff3362299",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-EVAL-01/audit-fixture.json": "e824d3911cfe3148a56d712319883a62fb586cc804ab325485987df84a8d3f7d",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-EVAL-02/sources.json": "a6cfeca5a6bd3c6b118e681a53f8d9f68cffcea87af905c402da7a0d893509e7",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-EVAL-02/rx-02.serial.log": "345d7c03f09c8d4210d953c5bcb242932611f320f3c848851f40d99d2fbea439",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-EVAL-02/audit-fixture.json": "eb35d6f95b714d8e00a6338b2eff5159bbbabb9d38e45c5a1ff28c4a02b44cf7",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-EVAL-03/sources.json": "cf6293086e706e2c9569b78a199eebb0f63e4c35b2fb5260c431d85f32656cd8",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-EVAL-03/rx-02.serial.log": "aff13695de3c6e5bb170a2c22cfa91dc8d4ced0ffd8068c8c4ef1724334792e4",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-EVAL-03/audit-fixture.json": "fda15cdc870f84cc72ce1746171ef22611f455104c67a3eae64bf089580e47af",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-TRAIN-01/sources.json": "509624d59917fa9884aa1c63f43428d625bdd4504daee3dde7153db0b64d3e57",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-TRAIN-01/rx-02.serial.log": "1a78e98f9a1814eb353b100a82e9895679a0094b1116d92fe37cb5899be13cbc",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-TRAIN-01/audit-fixture.json": "e5342cb8c32fcc53352197516c731e64ccaaf2c16c332c4a0eb6d54b8948a12c",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-TRAIN-02/sources.json": "151045430cd8821d3f15b39236caf75f6db4293d92e3a7e8c7fb524faf1ff048",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-TRAIN-02/rx-02.serial.log": "08e5f1695000998078a00407ae7e5c20a6720350e6fb1b6a9730396025456f8c",
+    "results/local/edge-ai-synthetic-20261114-r1/dataset-synthetic/SYNTHETIC-TRAIN-02/audit-fixture.json": "f3658fb247b7166923b8ce09133fe5409b393fbeb212bbe18bfc894562dc9935"
+  },
+  "sources_unchanged": true,
+  "implementation_sha256": {
+    "src/edge_presence_evaluation.py": "ee8b867c060d233a091639d0b38e784a950fa51afda7f6fb1c7458ae1cbbee67",
+    "src/edge_presence_synthetic.py": "4d2e27f3ac50367c9cf997e184ccb47477be360f9b54da165dba7cc42e81af9b",
+    "src/eligible_presence_features.py": "aa2443e931a10f33aeb1deb111091af20865a65561f1a8b77eea1b8a099b82ea",
+    "src/presence_offline.py": "5cfc985817d855bc526f5978713b7b25d3d5b2ee6f5c52a7cb455c2412f02e53",
+    "src/ruview_presence_port.py": "9c81e88a8b7ed94d00c0714eb717006219dcfe01c3271f7fda19f104d06f6edb",
+    "tools/consolidar_rx02_c01.py": "eb6ac8624f57a1ab2242b1505f9f4ea85df22cd638c13b921c39257e160ff6cd",
+    "src/canonical_csi.py": "59f1b1884efd4287b32257d8f8487d060da3202e4a196cb5e4c1992ce814b344",
+    "src/csi_correspondence.py": "e1d9b820a5cb700641134c5a518ed01ead67ae98eac6f71ded9d1cfbf75a4980",
+    "src/capture_csi_multi.py": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+    "vendor/ruview/presence/PROVENANCE.json": "756b2c8435ef43699db562bf7c8fb6ddb8d60a7fac853b4e03cb0abcdffd3b03",
+    "vendor/ruview/presence/LICENSE": "f6f0fbda447f9374dd06cab17b764c485352f57f4d491471128a0525c10287c8",
+    "tools/evaluar_edge_ai.py": "92282dc5da521ef010aa6f4403b7f8e7830e06c1e544e0a1e9030e008ffa2b3d"
+  }
+}

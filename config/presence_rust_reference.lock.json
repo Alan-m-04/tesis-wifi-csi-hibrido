@@ -1,0 +1,21 @@
+{
+  "version": "1.85.1",
+  "host": "x86_64-unknown-linux-gnu",
+  "target": "x86_64-unknown-linux-musl",
+  "destination": ".tools/rust-presence-1.85.1",
+  "base_url": "https://static.rust-lang.org/dist/",
+  "components": [
+    {
+      "archive": "rustc-1.85.1-x86_64-unknown-linux-gnu.tar.xz",
+      "sha256": "92a5c532b9e87912190128704e0d65825912e3b08a6ee9203c4068d6d1df62c4",
+      "component_directory": "rustc"
+    },
+    {
+      "archive": "rust-std-1.85.1-x86_64-unknown-linux-musl.tar.xz",
+      "sha256": "a2a99b60e86214a836e53396f3a0716a48724902b9dd8c69f146897efc76691e",
+      "component_directory": "rust-std-x86_64-unknown-linux-musl"
+    }
+  ],
+  "purpose": "Compile original extracted RuView presence train/infer bodies for synthetic equivalence only; no Cargo workspace, firmware or physical data inference.",
+  "remote_installer_executed": false
+}

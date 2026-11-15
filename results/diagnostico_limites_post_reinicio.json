@@ -1,0 +1,799 @@
+{
+  "schema": "tesis-offline-boundary-diagnosis-v1",
+  "operation": "read_only_offline",
+  "run_id": "captura-dual-30s-post-reinicio-20261025-intento01",
+  "new_physical_capture": false,
+  "common_start_ns": "663842227682",
+  "common_deadline_ns": "693842227682",
+  "readers_joined_ns": "693852932395",
+  "ports_closed_ns": "693892186797",
+  "session_quality_ok": false,
+  "derived_window": null,
+  "bundle_files_verified": 15,
+  "audit": {
+    "schema": "tesis-offline-capture-audit-v1",
+    "operation": "offline_validation",
+    "new_physical_capture": false,
+    "manifest_ok": true,
+    "source_evidence_type": "physical_capture",
+    "session_status": "completed",
+    "receivers": {
+      "RX-01": {
+        "valid_rows": 145,
+        "raw_sha256": "1a4839ee20f6256058d1a1924007a791b77bacbcb8fc53804018fd4443ffb90e",
+        "csv_sha256": "1b8f9198df0c5d01618ca0ec826d3b55310e93799a20f9115a19e81011d8cc09",
+        "raw_frames_equal_csv": true,
+        "integrity_ok": true,
+        "collector_quality_recorded": true,
+        "collector_quality_recomputed": true,
+        "representation_profile_ok": true,
+        "additional_checks_ok": false,
+        "host_frames_inside_requested_gate": true,
+        "read_ledger_ok": true,
+        "common_window_rows": 145,
+        "counts": {
+          "malformed_rows": 0,
+          "unexpected_source_rows": 0,
+          "unexpected_metadata_rows": 0,
+          "boot_error_count": 0,
+          "oversized_lines": 0,
+          "callback_id_gaps": 0,
+          "nonincreasing_ids": 0,
+          "device_clock_wraps": 0,
+          "device_time_discontinuities": 0,
+          "queue_drop_increment": 0,
+          "queue_counter_decreases": 0
+        },
+        "trailing_bytes": 129,
+        "embedded_boot_lines": [
+          1
+        ],
+        "orphan_fragment_lines": [],
+        "initial_boot_markers": 2,
+        "midstream_boot_markers": 0,
+        "first_id": 0,
+        "last_id": 144,
+        "quality_ok": false
+      },
+      "RX-02": {
+        "valid_rows": 146,
+        "raw_sha256": "a03defbf5fe1483615fc354442c1a9a9a22542e5fa9e4ec8bd49ecd8861246bd",
+        "csv_sha256": "5036345f913fa9eb3bf9adedba3c60f7eff8fd4026e6bad8320fb18ec1b11ffe",
+        "raw_frames_equal_csv": true,
+        "integrity_ok": true,
+        "collector_quality_recorded": true,
+        "collector_quality_recomputed": true,
+        "representation_profile_ok": true,
+        "additional_checks_ok": false,
+        "host_frames_inside_requested_gate": true,
+        "read_ledger_ok": true,
+        "common_window_rows": 146,
+        "counts": {
+          "malformed_rows": 0,
+          "unexpected_source_rows": 0,
+          "unexpected_metadata_rows": 0,
+          "boot_error_count": 0,
+          "oversized_lines": 0,
+          "callback_id_gaps": 0,
+          "nonincreasing_ids": 0,
+          "device_clock_wraps": 0,
+          "device_time_discontinuities": 0,
+          "queue_drop_increment": 0,
+          "queue_counter_decreases": 0
+        },
+        "trailing_bytes": 129,
+        "embedded_boot_lines": [
+          1
+        ],
+        "orphan_fragment_lines": [],
+        "initial_boot_markers": 2,
+        "midstream_boot_markers": 0,
+        "first_id": 0,
+        "last_id": 145,
+        "quality_ok": false
+      }
+    },
+    "postflight_identity_ok": true,
+    "quality_ok": false
+  },
+  "receivers": {
+    "RX-01": {
+      "raw_bytes": 129605,
+      "raw_sha256": "1a4839ee20f6256058d1a1924007a791b77bacbcb8fc53804018fd4443ffb90e",
+      "read_count": 2106,
+      "opened_ns": "663836561532",
+      "first_line": {
+        "offset": 0,
+        "end_exclusive": 29,
+        "bytes": 29,
+        "sha256": "c94b2c907bb2826cd8f5e76454c03178c21a01ae1f727cbdb831d97f0fe31d66",
+        "reads": [
+          {
+            "offset": 0,
+            "size": 3,
+            "started_ns": "663837155074",
+            "returned_ns": "663837288612",
+            "host_timestamp_utc": "2026-10-25T19:14:56.681038+00:00",
+            "overlap_start": 0,
+            "overlap_end": 3,
+            "started_relative_to_deadline_ns": -30005072608,
+            "returned_relative_to_deadline_ns": -30004939070,
+            "returned_after_open_ns": 727080
+          },
+          {
+            "offset": 3,
+            "size": 1,
+            "started_ns": "663837543308",
+            "returned_ns": "663843690157",
+            "host_timestamp_utc": "2026-10-25T19:14:56.687440+00:00",
+            "overlap_start": 3,
+            "overlap_end": 4,
+            "started_relative_to_deadline_ns": -30004684374,
+            "returned_relative_to_deadline_ns": -29998537525,
+            "returned_after_open_ns": 7128625
+          },
+          {
+            "offset": 4,
+            "size": 25,
+            "started_ns": "663843769885",
+            "returned_ns": "663843800819",
+            "host_timestamp_utc": "2026-10-25T19:14:56.687550+00:00",
+            "overlap_start": 4,
+            "overlap_end": 29,
+            "started_relative_to_deadline_ns": -29998457797,
+            "returned_relative_to_deadline_ns": -29998426863,
+            "returned_after_open_ns": 7239287
+          }
+        ]
+      },
+      "prefix_before_rom": {
+        "offset": 0,
+        "end_exclusive": 3,
+        "bytes": 3,
+        "sha256": "ee7a5a1661d7db5b6916db63b11d82c6e075335df04ab78a66bb191dfc089224",
+        "hex": "4c1300",
+        "reads": [
+          {
+            "offset": 0,
+            "size": 3,
+            "started_ns": "663837155074",
+            "returned_ns": "663837288612",
+            "host_timestamp_utc": "2026-10-25T19:14:56.681038+00:00",
+            "overlap_start": 0,
+            "overlap_end": 3,
+            "started_relative_to_deadline_ns": -30005072608,
+            "returned_relative_to_deadline_ns": -30004939070,
+            "returned_after_open_ns": 727080
+          }
+        ]
+      },
+      "rom_marker_offset": 3,
+      "tail": {
+        "offset": 129476,
+        "end_exclusive": 129605,
+        "bytes": 129,
+        "sha256": "768d7e1f19c8648b76ed1d87d99ba8ca5f83d1d189ae16398c355a2de49a287c",
+        "reads": [
+          {
+            "offset": 129476,
+            "size": 1,
+            "started_ns": "693812651843",
+            "returned_ns": "693838899407",
+            "host_timestamp_utc": "2026-10-25T19:15:26.682653+00:00",
+            "overlap_start": 129476,
+            "overlap_end": 129477,
+            "started_relative_to_deadline_ns": -29575839,
+            "returned_relative_to_deadline_ns": -3328275,
+            "returned_after_open_ns": 30002337875
+          },
+          {
+            "offset": 129477,
+            "size": 127,
+            "started_ns": "693839298138",
+            "returned_ns": "693839324924",
+            "host_timestamp_utc": "2026-10-25T19:15:26.683074+00:00",
+            "overlap_start": 129477,
+            "overlap_end": 129604,
+            "started_relative_to_deadline_ns": -2929544,
+            "returned_relative_to_deadline_ns": -2902758,
+            "returned_after_open_ns": 30002763392
+          },
+          {
+            "offset": 129604,
+            "size": 1,
+            "started_ns": "693839361062",
+            "returned_ns": "693849785384",
+            "host_timestamp_utc": "2026-10-25T19:15:26.693538+00:00",
+            "overlap_start": 129604,
+            "overlap_end": 129605,
+            "started_relative_to_deadline_ns": -2866620,
+            "returned_relative_to_deadline_ns": 7557702,
+            "returned_after_open_ns": 30013223852
+          }
+        ]
+      },
+      "last_complete_line": {
+        "offset": 128507,
+        "end_exclusive": 129476,
+        "bytes": 969,
+        "sha256": "1ca9a90416f7e6e8fd508fb8a1a8998008bac879dd96aee7d31990bebff51dea",
+        "reads": [
+          {
+            "offset": 128507,
+            "size": 1,
+            "started_ns": "693605089920",
+            "returned_ns": "693638745043",
+            "host_timestamp_utc": "2026-10-25T19:15:26.482499+00:00",
+            "overlap_start": 128507,
+            "overlap_end": 128508,
+            "started_relative_to_deadline_ns": -237137762,
+            "returned_relative_to_deadline_ns": -203482639,
+            "returned_after_open_ns": 29802183511
+          },
+          {
+            "offset": 128508,
+            "size": 127,
+            "started_ns": "693638900730",
+            "returned_ns": "693638951484",
+            "host_timestamp_utc": "2026-10-25T19:15:26.482701+00:00",
+            "overlap_start": 128508,
+            "overlap_end": 128635,
+            "started_relative_to_deadline_ns": -203326952,
+            "returned_relative_to_deadline_ns": -203276198,
+            "returned_after_open_ns": 29802389952
+          },
+          {
+            "offset": 128635,
+            "size": 1,
+            "started_ns": "693639073675",
+            "returned_ns": "693650462540",
+            "host_timestamp_utc": "2026-10-25T19:15:26.494217+00:00",
+            "overlap_start": 128635,
+            "overlap_end": 128636,
+            "started_relative_to_deadline_ns": -203154007,
+            "returned_relative_to_deadline_ns": -191765142,
+            "returned_after_open_ns": 29813901008
+          },
+          {
+            "offset": 128636,
+            "size": 127,
+            "started_ns": "693650872006",
+            "returned_ns": "693650930444",
+            "host_timestamp_utc": "2026-10-25T19:15:26.494682+00:00",
+            "overlap_start": 128636,
+            "overlap_end": 128763,
+            "started_relative_to_deadline_ns": -191355676,
+            "returned_relative_to_deadline_ns": -191297238,
+            "returned_after_open_ns": 29814368912
+          },
+          {
+            "offset": 128763,
+            "size": 1,
+            "started_ns": "693651041751",
+            "returned_ns": "693661128624",
+            "host_timestamp_utc": "2026-10-25T19:15:26.504884+00:00",
+            "overlap_start": 128763,
+            "overlap_end": 128764,
+            "started_relative_to_deadline_ns": -191185931,
+            "returned_relative_to_deadline_ns": -181099058,
+            "returned_after_open_ns": 29824567092
+          },
+          {
+            "offset": 128764,
+            "size": 127,
+            "started_ns": "693661383610",
+            "returned_ns": "693661582862",
+            "host_timestamp_utc": "2026-10-25T19:15:26.505332+00:00",
+            "overlap_start": 128764,
+            "overlap_end": 128891,
+            "started_relative_to_deadline_ns": -180844072,
+            "returned_relative_to_deadline_ns": -180644820,
+            "returned_after_open_ns": 29825021330
+          },
+          {
+            "offset": 128891,
+            "size": 1,
+            "started_ns": "693661623809",
+            "returned_ns": "693672061273",
+            "host_timestamp_utc": "2026-10-25T19:15:26.515815+00:00",
+            "overlap_start": 128891,
+            "overlap_end": 128892,
+            "started_relative_to_deadline_ns": -180603873,
+            "returned_relative_to_deadline_ns": -170166409,
+            "returned_after_open_ns": 29835499741
+          },
+          {
+            "offset": 128892,
+            "size": 127,
+            "started_ns": "693672252165",
+            "returned_ns": "693672498159",
+            "host_timestamp_utc": "2026-10-25T19:15:26.516247+00:00",
+            "overlap_start": 128892,
+            "overlap_end": 129019,
+            "started_relative_to_deadline_ns": -169975517,
+            "returned_relative_to_deadline_ns": -169729523,
+            "returned_after_open_ns": 29835936627
+          },
+          {
+            "offset": 129019,
+            "size": 1,
+            "started_ns": "693672538531",
+            "returned_ns": "693683867860",
+            "host_timestamp_utc": "2026-10-25T19:15:26.527618+00:00",
+            "overlap_start": 129019,
+            "overlap_end": 129020,
+            "started_relative_to_deadline_ns": -169689151,
+            "returned_relative_to_deadline_ns": -158359822,
+            "returned_after_open_ns": 29847306328
+          },
+          {
+            "offset": 129020,
+            "size": 127,
+            "started_ns": "693684047950",
+            "returned_ns": "693684204031",
+            "host_timestamp_utc": "2026-10-25T19:15:26.527953+00:00",
+            "overlap_start": 129020,
+            "overlap_end": 129147,
+            "started_relative_to_deadline_ns": -158179732,
+            "returned_relative_to_deadline_ns": -158023651,
+            "returned_after_open_ns": 29847642499
+          },
+          {
+            "offset": 129147,
+            "size": 1,
+            "started_ns": "693684266576",
+            "returned_ns": "693694708971",
+            "host_timestamp_utc": "2026-10-25T19:15:26.538459+00:00",
+            "overlap_start": 129147,
+            "overlap_end": 129148,
+            "started_relative_to_deadline_ns": -157961106,
+            "returned_relative_to_deadline_ns": -147518711,
+            "returned_after_open_ns": 29858147439
+          },
+          {
+            "offset": 129148,
+            "size": 127,
+            "started_ns": "693694898587",
+            "returned_ns": "693695092358",
+            "host_timestamp_utc": "2026-10-25T19:15:26.538842+00:00",
+            "overlap_start": 129148,
+            "overlap_end": 129275,
+            "started_relative_to_deadline_ns": -147329095,
+            "returned_relative_to_deadline_ns": -147135324,
+            "returned_after_open_ns": 29858530826
+          },
+          {
+            "offset": 129275,
+            "size": 1,
+            "started_ns": "693695138239",
+            "returned_ns": "693705380337",
+            "host_timestamp_utc": "2026-10-25T19:15:26.549131+00:00",
+            "overlap_start": 129275,
+            "overlap_end": 129276,
+            "started_relative_to_deadline_ns": -147089443,
+            "returned_relative_to_deadline_ns": -136847345,
+            "returned_after_open_ns": 29868818805
+          },
+          {
+            "offset": 129276,
+            "size": 127,
+            "started_ns": "693705470326",
+            "returned_ns": "693705506967",
+            "host_timestamp_utc": "2026-10-25T19:15:26.549256+00:00",
+            "overlap_start": 129276,
+            "overlap_end": 129403,
+            "started_relative_to_deadline_ns": -136757356,
+            "returned_relative_to_deadline_ns": -136720715,
+            "returned_after_open_ns": 29868945435
+          },
+          {
+            "offset": 129403,
+            "size": 1,
+            "started_ns": "693705545134",
+            "returned_ns": "693711751295",
+            "host_timestamp_utc": "2026-10-25T19:15:26.555503+00:00",
+            "overlap_start": 129403,
+            "overlap_end": 129404,
+            "started_relative_to_deadline_ns": -136682548,
+            "returned_relative_to_deadline_ns": -130476387,
+            "returned_after_open_ns": 29875189763
+          },
+          {
+            "offset": 129404,
+            "size": 72,
+            "started_ns": "693711853019",
+            "returned_ns": "693711890265",
+            "host_timestamp_utc": "2026-10-25T19:15:26.555639+00:00",
+            "overlap_start": 129404,
+            "overlap_end": 129476,
+            "started_relative_to_deadline_ns": -130374663,
+            "returned_relative_to_deadline_ns": -130337417,
+            "returned_after_open_ns": 29875328733
+          }
+        ]
+      },
+      "last_read": {
+        "offset": 129604,
+        "size": 1,
+        "started_ns": "693839361062",
+        "returned_ns": "693849785384",
+        "host_timestamp_utc": "2026-10-25T19:15:26.693538+00:00"
+      },
+      "last_read_to_join_ns": 3147011,
+      "last_read_to_close_ns": 42401413,
+      "first_complete_csi_line_1based": 92,
+      "invalid_utf8_complete_lines_after_first_csi": [],
+      "non_csi_complete_lines_after_first_csi": [],
+      "classification": {
+        "prefix_already_present_in_first_read": true,
+        "prefix_pending_before_os_open": "undetermined: no trace before open/configuration",
+        "host_stopped_with_line_pending": true,
+        "last_read_started_before_deadline": true,
+        "remainder_ever_emitted_on_wire": "undetermined: not observed after host stopped reading",
+        "corruption_of_complete_rows": "not demonstrated by these records",
+        "origin_of_startup_prefix": "undetermined; no automatic WiFi/firmware/electrical attribution"
+      }
+    },
+    "RX-02": {
+      "raw_bytes": 130592,
+      "raw_sha256": "a03defbf5fe1483615fc354442c1a9a9a22542e5fa9e4ec8bd49ecd8861246bd",
+      "read_count": 2134,
+      "opened_ns": "663841737359",
+      "first_line": {
+        "offset": 0,
+        "end_exclusive": 28,
+        "bytes": 28,
+        "sha256": "997e5c4c5c34a74aa5e96e4b6a3d98ef506c04d40676d5fa3370aaac2d801474",
+        "reads": [
+          {
+            "offset": 0,
+            "size": 2,
+            "started_ns": "663842182611",
+            "returned_ns": "663842278178",
+            "host_timestamp_utc": "2026-10-25T19:14:56.686028+00:00",
+            "overlap_start": 0,
+            "overlap_end": 2,
+            "started_relative_to_deadline_ns": -30000045071,
+            "returned_relative_to_deadline_ns": -29999949504,
+            "returned_after_open_ns": 540819
+          },
+          {
+            "offset": 2,
+            "size": 1,
+            "started_ns": "663842357074",
+            "returned_ns": "663848912499",
+            "host_timestamp_utc": "2026-10-25T19:14:56.692663+00:00",
+            "overlap_start": 2,
+            "overlap_end": 3,
+            "started_relative_to_deadline_ns": -29999870608,
+            "returned_relative_to_deadline_ns": -29993315183,
+            "returned_after_open_ns": 7175140
+          },
+          {
+            "offset": 3,
+            "size": 25,
+            "started_ns": "663848982544",
+            "returned_ns": "663849028247",
+            "host_timestamp_utc": "2026-10-25T19:14:56.692777+00:00",
+            "overlap_start": 3,
+            "overlap_end": 28,
+            "started_relative_to_deadline_ns": -29993245138,
+            "returned_relative_to_deadline_ns": -29993199435,
+            "returned_after_open_ns": 7290888
+          }
+        ]
+      },
+      "prefix_before_rom": {
+        "offset": 0,
+        "end_exclusive": 2,
+        "bytes": 2,
+        "sha256": "9f5d9bcda8ec56bbce812ae464abc3599e80a3bbc762b7d987bf723be49ef7ab",
+        "hex": "31f2",
+        "reads": [
+          {
+            "offset": 0,
+            "size": 2,
+            "started_ns": "663842182611",
+            "returned_ns": "663842278178",
+            "host_timestamp_utc": "2026-10-25T19:14:56.686028+00:00",
+            "overlap_start": 0,
+            "overlap_end": 2,
+            "started_relative_to_deadline_ns": -30000045071,
+            "returned_relative_to_deadline_ns": -29999949504,
+            "returned_after_open_ns": 540819
+          }
+        ]
+      },
+      "rom_marker_offset": 2,
+      "tail": {
+        "offset": 130463,
+        "end_exclusive": 130592,
+        "bytes": 129,
+        "sha256": "43b891b4d1cdd6a2e07ca1b9d4e549555e05f1c40880c77e2a802a89d6d9a7e0",
+        "reads": [
+          {
+            "offset": 130463,
+            "size": 1,
+            "started_ns": "693805323238",
+            "returned_ns": "693838974202",
+            "host_timestamp_utc": "2026-10-25T19:15:26.682724+00:00",
+            "overlap_start": 130463,
+            "overlap_end": 130464,
+            "started_relative_to_deadline_ns": -36904444,
+            "returned_relative_to_deadline_ns": -3253480,
+            "returned_after_open_ns": 29997236843
+          },
+          {
+            "offset": 130464,
+            "size": 127,
+            "started_ns": "693839107798",
+            "returned_ns": "693839169088",
+            "host_timestamp_utc": "2026-10-25T19:15:26.682918+00:00",
+            "overlap_start": 130464,
+            "overlap_end": 130591,
+            "started_relative_to_deadline_ns": -3119884,
+            "returned_relative_to_deadline_ns": -3058594,
+            "returned_after_open_ns": 29997431729
+          },
+          {
+            "offset": 130591,
+            "size": 1,
+            "started_ns": "693839227167",
+            "returned_ns": "693849916590",
+            "host_timestamp_utc": "2026-10-25T19:15:26.693667+00:00",
+            "overlap_start": 130591,
+            "overlap_end": 130592,
+            "started_relative_to_deadline_ns": -3000515,
+            "returned_relative_to_deadline_ns": 7688908,
+            "returned_after_open_ns": 30008179231
+          }
+        ]
+      },
+      "last_complete_line": {
+        "offset": 129581,
+        "end_exclusive": 130463,
+        "bytes": 882,
+        "sha256": "ceafd8f8774fdf2505660d0482c3b1454d118d1b80b4c393b605eccedbc2fdb2",
+        "reads": [
+          {
+            "offset": 129581,
+            "size": 1,
+            "started_ns": "693605745898",
+            "returned_ns": "693639020907",
+            "host_timestamp_utc": "2026-10-25T19:15:26.482774+00:00",
+            "overlap_start": 129581,
+            "overlap_end": 129582,
+            "started_relative_to_deadline_ns": -236481784,
+            "returned_relative_to_deadline_ns": -203206775,
+            "returned_after_open_ns": 29797283548
+          },
+          {
+            "offset": 129582,
+            "size": 127,
+            "started_ns": "693639164008",
+            "returned_ns": "693639203683",
+            "host_timestamp_utc": "2026-10-25T19:15:26.482953+00:00",
+            "overlap_start": 129582,
+            "overlap_end": 129709,
+            "started_relative_to_deadline_ns": -203063674,
+            "returned_relative_to_deadline_ns": -203023999,
+            "returned_after_open_ns": 29797466324
+          },
+          {
+            "offset": 129709,
+            "size": 1,
+            "started_ns": "693639241228",
+            "returned_ns": "693650627942",
+            "host_timestamp_utc": "2026-10-25T19:15:26.494380+00:00",
+            "overlap_start": 129709,
+            "overlap_end": 129710,
+            "started_relative_to_deadline_ns": -202986454,
+            "returned_relative_to_deadline_ns": -191599740,
+            "returned_after_open_ns": 29808890583
+          },
+          {
+            "offset": 129710,
+            "size": 127,
+            "started_ns": "693650730831",
+            "returned_ns": "693650786136",
+            "host_timestamp_utc": "2026-10-25T19:15:26.494535+00:00",
+            "overlap_start": 129710,
+            "overlap_end": 129837,
+            "started_relative_to_deadline_ns": -191496851,
+            "returned_relative_to_deadline_ns": -191441546,
+            "returned_after_open_ns": 29809048777
+          },
+          {
+            "offset": 129837,
+            "size": 1,
+            "started_ns": "693650827680",
+            "returned_ns": "693661216250",
+            "host_timestamp_utc": "2026-10-25T19:15:26.504966+00:00",
+            "overlap_start": 129837,
+            "overlap_end": 129838,
+            "started_relative_to_deadline_ns": -191400002,
+            "returned_relative_to_deadline_ns": -181011432,
+            "returned_after_open_ns": 29819478891
+          },
+          {
+            "offset": 129838,
+            "size": 127,
+            "started_ns": "693661442743",
+            "returned_ns": "693661486018",
+            "host_timestamp_utc": "2026-10-25T19:15:26.505236+00:00",
+            "overlap_start": 129838,
+            "overlap_end": 129965,
+            "started_relative_to_deadline_ns": -180784939,
+            "returned_relative_to_deadline_ns": -180741664,
+            "returned_after_open_ns": 29819748659
+          },
+          {
+            "offset": 129965,
+            "size": 1,
+            "started_ns": "693661542866",
+            "returned_ns": "693672135127",
+            "host_timestamp_utc": "2026-10-25T19:15:26.515885+00:00",
+            "overlap_start": 129965,
+            "overlap_end": 129966,
+            "started_relative_to_deadline_ns": -180684816,
+            "returned_relative_to_deadline_ns": -170092555,
+            "returned_after_open_ns": 29830397768
+          },
+          {
+            "offset": 129966,
+            "size": 127,
+            "started_ns": "693672362529",
+            "returned_ns": "693672406311",
+            "host_timestamp_utc": "2026-10-25T19:15:26.516156+00:00",
+            "overlap_start": 129966,
+            "overlap_end": 130093,
+            "started_relative_to_deadline_ns": -169865153,
+            "returned_relative_to_deadline_ns": -169821371,
+            "returned_after_open_ns": 29830668952
+          },
+          {
+            "offset": 130093,
+            "size": 1,
+            "started_ns": "693672462217",
+            "returned_ns": "693683800074",
+            "host_timestamp_utc": "2026-10-25T19:15:26.527555+00:00",
+            "overlap_start": 130093,
+            "overlap_end": 130094,
+            "started_relative_to_deadline_ns": -169765465,
+            "returned_relative_to_deadline_ns": -158427608,
+            "returned_after_open_ns": 29842062715
+          },
+          {
+            "offset": 130094,
+            "size": 127,
+            "started_ns": "693684115357",
+            "returned_ns": "693684163453",
+            "host_timestamp_utc": "2026-10-25T19:15:26.527913+00:00",
+            "overlap_start": 130094,
+            "overlap_end": 130221,
+            "started_relative_to_deadline_ns": -158112325,
+            "returned_relative_to_deadline_ns": -158064229,
+            "returned_after_open_ns": 29842426094
+          },
+          {
+            "offset": 130221,
+            "size": 1,
+            "started_ns": "693684327449",
+            "returned_ns": "693694639700",
+            "host_timestamp_utc": "2026-10-25T19:15:26.538395+00:00",
+            "overlap_start": 130221,
+            "overlap_end": 130222,
+            "started_relative_to_deadline_ns": -157900233,
+            "returned_relative_to_deadline_ns": -147587982,
+            "returned_after_open_ns": 29852902341
+          },
+          {
+            "offset": 130222,
+            "size": 127,
+            "started_ns": "693694870790",
+            "returned_ns": "693694973369",
+            "host_timestamp_utc": "2026-10-25T19:15:26.538723+00:00",
+            "overlap_start": 130222,
+            "overlap_end": 130349,
+            "started_relative_to_deadline_ns": -147356892,
+            "returned_relative_to_deadline_ns": -147254313,
+            "returned_after_open_ns": 29853236010
+          },
+          {
+            "offset": 130349,
+            "size": 1,
+            "started_ns": "693695053318",
+            "returned_ns": "693704476249",
+            "host_timestamp_utc": "2026-10-25T19:15:26.548231+00:00",
+            "overlap_start": 130349,
+            "overlap_end": 130350,
+            "started_relative_to_deadline_ns": -147174364,
+            "returned_relative_to_deadline_ns": -137751433,
+            "returned_after_open_ns": 29862738890
+          },
+          {
+            "offset": 130350,
+            "size": 113,
+            "started_ns": "693704630969",
+            "returned_ns": "693704677796",
+            "host_timestamp_utc": "2026-10-25T19:15:26.548427+00:00",
+            "overlap_start": 130350,
+            "overlap_end": 130463,
+            "started_relative_to_deadline_ns": -137596713,
+            "returned_relative_to_deadline_ns": -137549886,
+            "returned_after_open_ns": 29862940437
+          }
+        ]
+      },
+      "last_read": {
+        "offset": 130591,
+        "size": 1,
+        "started_ns": "693839227167",
+        "returned_ns": "693849916590",
+        "host_timestamp_utc": "2026-10-25T19:15:26.693667+00:00"
+      },
+      "last_read_to_join_ns": 3015805,
+      "last_read_to_close_ns": 42270207,
+      "first_complete_csi_line_1based": 93,
+      "invalid_utf8_complete_lines_after_first_csi": [],
+      "non_csi_complete_lines_after_first_csi": [],
+      "classification": {
+        "prefix_already_present_in_first_read": true,
+        "prefix_pending_before_os_open": "undetermined: no trace before open/configuration",
+        "host_stopped_with_line_pending": true,
+        "last_read_started_before_deadline": true,
+        "remainder_ever_emitted_on_wire": "undetermined: not observed after host stopped reading",
+        "corruption_of_complete_rows": "not demonstrated by these records",
+        "origin_of_startup_prefix": "undetermined; no automatic WiFi/firmware/electrical attribution"
+      }
+    }
+  },
+  "acquisition_unchanged": true,
+  "raw_data_policy": "No raw UART files or CSI fragments published; full hex inspection remains in ignored local diagnosis. Only 2/3-byte residual signatures, offsets, counts and hashes are included.",
+  "verification": {
+    "recorded_utc": "2026-10-25T19:32:01.481591+00:00",
+    "physical_UART_opened": false,
+    "new_capture": false,
+    "firmware_modified": false,
+    "original_capture_code_and_profile_unchanged": {
+      "src/capture_csi_multi.py": true,
+      "src/preserving_serial.py": true,
+      "src/controlled_capture.py": true,
+      "src/validate_capture.py": true,
+      "config/csi_esp32s3.json": true,
+      "firmware/csi_send/main/app_main.c": true,
+      "firmware/csi_recv/main/app_main.c": true,
+      "firmware/csi_recv_02/main/app_main.c": true
+    },
+    "previous_40_files_unchanged": true,
+    "full_regression": {
+      "command": "./tools/test_offline.sh results/local/visualizacion-csi-entrega/canonical.json",
+      "returncode": 0,
+      "python": 111,
+      "node": 31,
+      "total": 142,
+      "failures": 0,
+      "skips": 0,
+      "new_synthetic_tests": 16,
+      "new_private_pty_tests_included": 4,
+      "new_offline_physical_regressions": 2,
+      "stdout_sha256": "60f259443ca3fbf2d48efa4b60d29f78b5dd36e1134a4464c0743a51f04a774d",
+      "stderr_sha256": "28dd3e5b279c54a24067fdd4b1def0be0e8d181123c97bcacdc19c307a132da0"
+    },
+    "followup_checks": "Two diagnostic tests passed again after adding the complete-line byte observations; no production reader changes."
+  },
+  "proposal": {
+    "file": "src/bounded_frame_reader.py",
+    "state": "offline_prototype_not_integrated_into_controlled_dual_v1",
+    "grace_ns": 250000000,
+    "max_completion_bytes": 65536,
+    "nominal_common_window_unchanged": true,
+    "stop_at_first_lf_after_nominal_deadline_only_if_tail_pending": true,
+    "post_deadline_read_size": 1,
+    "timeout_capped_to_remaining_budget": true,
+    "record_real_times_and_all_returned_bytes": true,
+    "no_automatic_retries": true,
+    "no_change_to_existing_quality_criteria": true,
+    "future_integration_requires_versioned_protocol_and_auditor_metadata": true
+  }
+}

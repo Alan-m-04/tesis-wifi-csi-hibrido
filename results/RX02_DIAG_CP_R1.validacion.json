@@ -1,0 +1,50 @@
+{
+  "modules": [
+    "test_antenna_aba_analysis",
+    "test_availability_window",
+    "test_boundary_diagnostic",
+    "test_canonical_csi",
+    "test_capture_boundaries",
+    "test_capture_csi_multi",
+    "test_capture_preparation",
+    "test_comparar_fisicas_v3",
+    "test_consolidar_fisica_v3",
+    "test_consolidar_rx02_c01",
+    "test_continuity_diagnostics",
+    "test_controlled_v2",
+    "test_controlled_v3",
+    "test_csi_correspondence",
+    "test_dual_continuity",
+    "test_persistent_presence_v4",
+    "test_physical_reference",
+    "test_presence_rx02",
+    "test_rx02_checkpoint",
+    "test_rx02_gap_diagnostics",
+    "test_uart_v4",
+    "test_v4_availability_diagnostic",
+    "test_v4_exploratory",
+    "test_v4_line_policy",
+    "test_v4_startup_sequence",
+    "test_validate_capture",
+    "test_rx02_diagnostic",
+    "test_rx02_physical_report"
+  ],
+  "tests": 450,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_s": 49.091582103999826,
+  "physical_UART_opened": false,
+  "bubblewrap_isolation_claimed": true,
+  "excluded": {
+    "test_presence_offline": "Calibration/inference outside scope"
+  },
+  "exit_code": 0,
+  "coverage": "433 historical tests, 11 diagnostic-entry tests, 4 physical comparison tests, 2 campaign review-only tests",
+  "preservation": {
+    "protected_historical_files": 38,
+    "all_unchanged": true,
+    "diagnostic_and_C02_files_unchanged": true,
+    "acquisition_sources_unchanged": true
+  }
+}

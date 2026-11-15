@@ -1,0 +1,40 @@
+{
+  "schema": "tesis-ruview-presence-port-source-v1",
+  "commit": "fefb0f918eefa7db6daef8cc83787fc7d6f74187",
+  "license": "MIT",
+  "license_file": "vendor/ruview/presence/LICENSE",
+  "original_sources": [
+    {
+      "path": "v2/crates/wifi-densepose-calibration/src/specialist.rs",
+      "sha256": "268492d206c891c6267330b050b54c8503420a21ca691abc0332ef156af7bcfb",
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-calibration/src/specialist.rs"
+    },
+    {
+      "path": "v2/crates/wifi-densepose-calibration/src/anchor.rs",
+      "sha256": "22bc0ef16384b804cd1d325d18e887f7ab0425d0549784c36178a7808e4fc79b",
+      "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-calibration/src/anchor.rs"
+    }
+  ],
+  "excerpts": [
+    {
+      "path": "vendor/ruview/presence/presence_original.rs",
+      "sha256": "5d40befddbe14bee7f49ff64f72ced7b0b7396581fe304b8a9ea82db59b29dc1",
+      "origin": "VARIANCE_SEPARATION_MARGIN line plus complete PresenceSpecialist struct/train/infer, unchanged",
+      "main_start_line": 100,
+      "main_end_line": 199
+    },
+    {
+      "path": "vendor/ruview/presence/expects_presence_original.rs",
+      "sha256": "8f3fa32aa84a4e85cee78b8b1538de0c92b31d374673ceb7c9b336bec9d58645",
+      "origin": "AnchorLabel::expects_presence, unchanged"
+    }
+  ],
+  "compile_transformations": [
+    "Remove serialization-only derive attributes and two serde(default) attributes; train/infer numerical bodies remain byte-identical.",
+    "Supply minimal types with the fields read by these functions; do not compile the full crate or Features::from_series."
+  ],
+  "python_port": "src/ruview_presence_port.py",
+  "physical_runtime_requires_Rust": false,
+  "license_sha256": "f6f0fbda447f9374dd06cab17b764c485352f57f4d491471128a0525c10287c8",
+  "copyright_notice": "Copyright (c) 2024 rUv; upstream root MIT license. Existing JS harness license remains separate and unchanged."
+}

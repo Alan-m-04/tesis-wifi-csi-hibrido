@@ -1,0 +1,4104 @@
+{
+  "schema": "continuity-antenna-aba-comparison-1",
+  "analysis_activity": {
+    "physical_UART_opened": false
+  },
+  "quality_approval": false,
+  "causal_orientation_effect_established": false,
+  "permitted_uses": {
+    "eligible_windows": false,
+    "presence_labels": false,
+    "calibration": false,
+    "training": false,
+    "production": false
+  },
+  "method": {
+    "interval": "Original common 60s, return timestamps in [start,deadline)",
+    "gaps": "Adjacent full valid rows only; edges reported separately; local clocks independent per RX",
+    "quantiles": "Nearest rank ceil(p*n); conventional median; no interpolation",
+    "RSSI": "Observed valid-row population; no estimate for unobserved receptions",
+    "control": "RX-02 descriptive concurrent control; not randomized or replicated"
+  },
+  "phases": {
+    "A1": {
+      "diagnostic_id": "CONT-ANT-ABA-R3-A1",
+      "bundle_path": "/home/alan-monar/tesis-wifi-csi-hibrido/results/local/continuidad-antena-aba-r3-A1",
+      "input_files": {
+        "authorization-consumed.json": {
+          "bytes": 137,
+          "sha256": "c13c1b870f560ad16ec2b0f0ec1701bddcda41eec73a2988a3c0d085a890561e"
+        },
+        "closure.json": {
+          "bytes": 1895,
+          "sha256": "6d02672f5a6470715377e05f6c083938f76c3543f1c684f4065402bdcb56ca3e"
+        },
+        "ledger.jsonl": {
+          "bytes": 5214565,
+          "sha256": "2a51ddc91168838d31eb962e4faf2bf1eaf7979de82e243f6d94405e03fbd1b0"
+        },
+        "manifest.json": {
+          "bytes": 711,
+          "sha256": "4049e3dcfbb523618dd55156059682008c054ab23ad32e61a7188b3dffaa4c49"
+        },
+        "metadata.json": {
+          "bytes": 2612,
+          "sha256": "8ebdfa7a7c5a4e4a4ab6d211c57297d41a0fbad7da06055721b53f6624e708b3"
+        },
+        "plan.json": {
+          "bytes": 2248,
+          "sha256": "588866f90b6bed8bd2b89f4680e335eb7cb99101c8c68e137c076b0a18ae5690"
+        },
+        "report.json": {
+          "bytes": 979349,
+          "sha256": "95f6869ac6f868074eb9a457f3d68e1d82f17616aca2c2791f89d4870be49dfe"
+        },
+        "rx-01.serial.log": {
+          "bytes": 243097,
+          "sha256": "3326240b23da59417ec61afd8a19a9b50ca14cbab20566dbc0436e22a53959f0"
+        },
+        "rx-02.serial.log": {
+          "bytes": 255822,
+          "sha256": "131981ed1fa164446872fe43ab4b207c6d20fc25e63ab2798a34f2e859ecef6d"
+        }
+      },
+      "integrity_ok": true,
+      "replay_ok": true,
+      "fatal": null,
+      "completed_nominal_duration": true,
+      "closure": {
+        "RX-01": {
+          "confirmed": true,
+          "error": null,
+          "details": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              },
+              {
+                "line": "rts",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          },
+          "resource_observed_open_before_close": true
+        },
+        "RX-02": {
+          "confirmed": true,
+          "error": null,
+          "details": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              },
+              {
+                "line": "rts",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          },
+          "resource_observed_open_before_close": true
+        }
+      },
+      "both_ports_closed_confirmed": true,
+      "authorization": {
+        "reference": "CONT-ANT-ABA-R3-A1-UNICO",
+        "consumed": true,
+        "evidence_type": "physical_capture",
+        "reattempt_permitted": false
+      },
+      "quality_approval": false,
+      "interval": {
+        "common_start_ns": 192555238608188,
+        "common_deadline_ns": 192615238608188,
+        "common_duration_ns": 60000000000,
+        "actual_common_elapsed_ns": 60006937558,
+        "actual_stop_ns": 192615245545746,
+        "clocks": {
+          "monotonic_ns": 60037934389,
+          "boottime_ns": 60037933169,
+          "realtime_ns": 60037932278,
+          "boottime_minus_monotonic_ns": -1220,
+          "realtime_minus_monotonic_ns": -2111
+        }
+      },
+      "host_clocks": {
+        "boottime_minus_monotonic_offset_ns": {
+          "count": 13464,
+          "min": 44,
+          "median": 258.0,
+          "mean": 410.80912061794413,
+          "p95": 1240,
+          "p99": 1769,
+          "max": 24078
+        },
+        "realtime_minus_monotonic_offset_ns": {
+          "count": 13464,
+          "min": 1793548810845957246,
+          "median": 1.7935488108459576e+18,
+          "mean": 1.793548810845958e+18,
+          "p95": 1793548810845959383,
+          "p99": 1793548810845960237,
+          "max": 1793548810845982795
+        },
+        "ledger_sample_gaps_ns": {
+          "count": 13463,
+          "min": 1706594,
+          "median": 3910107,
+          "mean": 4458886.45353933,
+          "p95": 10074723,
+          "p99": 10189403,
+          "max": 20626740
+        }
+      },
+      "storage": {
+        "checks": 239,
+        "min_free_bytes": 113856970752,
+        "max_raw_bytes": 498919,
+        "max_bundle_bytes": 6699439
+      },
+      "declarations": {
+        "mounting": "A1 actual: cuerpo móvil de antena externa RX-01 apoyado sobre mesa; sin cambio a B. Referencia general 03_59_06 PM y detalle 02_23_17 PM, croquis digital confirmado por Alan. B fijada antes de medir: 90° hacia arriba en bisagra natural, solo cuerpo móvil. Partes fijas: placa/soporte, base/conector/coaxial, USB, RX-02 completo, TX, laptop y hub. Registro inmutable results/local/preparacion-antena-aba-r3/montaje-A1-B-documentado-r1.json SHA256=e234330f993880fb00c59d084f90f6c63f20744efb174b8d5b9d4217530ef837. Ángulo absoluto A1 no medido. RX-01 por hub y RX-02 directo, identidades y cableado confirmados.",
+        "power": "Alan confirma TX conectado al cargador de pared, laptop enchufada y abierta. RX-01 conectado por USB al hub marrón, RX-02 por USB directo a laptop; sin movimientos o desconexiones.",
+        "host": "Alan consultó en terminal normal sleep-inactive-ac-type=nothing y sleep-inactive-battery-type=nothing. fuser -v sobre ambos by-id no mostró procesos ni errores. Son comprobaciones previas de configuración/propietarios, no un recibo de cierre posterior a captura.",
+        "environment": "Alan solo, sentado frente a la laptop; puerta y ventanas cerradas, sin ventilador. Antena/equipos sin cambios respecto de las fotos confirmadas. Antes de A1 se aplicarán 30 s de quietud fuera de los 60 s; sin etiquetas de presencia."
+      },
+      "identities": {
+        "RX-01": {
+          "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93199744-if00",
+          "resolved": "/dev/ttyACM1",
+          "serial": "5C93199744",
+          "vid": "1a86",
+          "pid": "55d3",
+          "bus": "usb",
+          "node_fingerprint": [
+            7,
+            1659,
+            42497
+          ],
+          "permissions": {
+            "mode": "0o660",
+            "uid": 0,
+            "gid": 20
+          }
+        },
+        "RX-02": {
+          "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00",
+          "resolved": "/dev/ttyACM0",
+          "serial": "5C93200689",
+          "vid": "1a86",
+          "pid": "55d3",
+          "bus": "usb",
+          "node_fingerprint": [
+            7,
+            1649,
+            42496
+          ],
+          "permissions": {
+            "mode": "0o660",
+            "uid": 0,
+            "gid": 20
+          }
+        }
+      },
+      "acquisition_commit": "4cd768aeea090966777e95bc7df6aded2d8afbdf",
+      "acquisition_working_tree_status": " M docs/ESTADO_INICIAL.md\n?? config/continuidad_antena_aba_r3.montaje.review.json\n?? config/continuidad_antena_aba_r3_A1.review.json\n?? config/continuidad_antena_aba_r3_A2.review.json\n?? config/continuidad_antena_aba_r3_B.review.json\n?? config/continuidad_orientacion_aba_r1_A1.review.json\n?? config/continuidad_orientacion_aba_r1_A2.review.json\n?? config/continuidad_orientacion_aba_r1_B.review.json\n?? docs/ASOCIACION_RX_FOTOS_CONFIRMADA_R1.md\n?? docs/IDENTIFICACION_RX_USB_MONTAJE_R1.md\n?? docs/PLAN_ANTENA_ABA_CONTINUIDAD_R3.md\n?? docs/PLAN_ORIENTACION_ABA_CONTINUIDAD_R1.md\n?? docs/PLAN_ORIENTACION_ABA_CONTINUIDAD_R2.md\n?? docs/VIABILIDAD_MONTAJE_CONTINUIDAD_R1.md\n",
+      "acquisition_sources": {
+        "src/dual_continuity.py": "ae07cbd477d0dbd0c36b1359cdf07cd2a9ff29f8b5783930b95bf90a91ebe7e1",
+        "tools/diagnostico_continuidad_dual.py": "554d08f77508ad0df78187374bbb431f4c5509a5c0b0cde3927bc56be863c888",
+        "src/presence_v4_uart.py": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+        "src/preserving_serial.py": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+        "src/availability_window.py": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596",
+        "src/capture_csi_multi.py": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+        "src/capture_csi.py": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+        "config/pyserial_uart_v4.lock.json": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010"
+      },
+      "source_hashes_match_current": true,
+      "receivers": {
+        "RX-01": {
+          "valid_complete_rows_common": 294,
+          "valid_complete_rows_connection": 294,
+          "complete_line_kinds": {
+            "invalid": 23,
+            "info": 67,
+            "reset": 1,
+            "neutral": 2,
+            "ready": 1,
+            "row": 294
+          },
+          "valid_rows_per_10s": [
+            46,
+            49,
+            50,
+            50,
+            49,
+            50
+          ],
+          "host_row_gaps_ns": {
+            "count": 293,
+            "min": 168513640,
+            "median": 201413546,
+            "mean": 201387354.23549488,
+            "p95": 212877664,
+            "p99": 224820421,
+            "max": 405874363,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 291
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 2
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_row_gaps_ns": {
+            "count": 293,
+            "min": 196651000,
+            "median": 199996000,
+            "mean": 201364672.35494882,
+            "p95": 201748000,
+            "p99": 203351000,
+            "max": 400008000,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 291
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 2
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_nearest_200ms_periods": {
+            "reference_only_not_packet_loss": true,
+            "counts": {
+              "1": 291,
+              "2": 2
+            },
+            "max_absolute_residual_us": 3351
+          },
+          "first_row_age_from_common_start_ns": 862639191,
+          "last_row_age_at_common_deadline_ns": 130866018,
+          "host_valid_row_span_ns": 59006494791,
+          "local_valid_row_span_us": 58999849,
+          "callback_ids": {
+            "first": 0,
+            "last": 293,
+            "deltas": {
+              "1": 293
+            }
+          },
+          "queue_drops_values": [
+            0
+          ],
+          "profile_values": {
+            "mac": [
+              "1a:00:00:00:00:00"
+            ],
+            "channel": [
+              "11"
+            ],
+            "bandwidth": [
+              "0"
+            ],
+            "rx_state": [
+              "0"
+            ],
+            "len": [
+              "256"
+            ],
+            "first_word_invalid": [
+              "0"
+            ],
+            "sig_mode": [
+              "1"
+            ],
+            "mcs": [
+              "0"
+            ],
+            "stbc": [
+              "0"
+            ]
+          },
+          "bytes_connection": 243097,
+          "reads_connection": 1849,
+          "bytes_common_return_time": 242604,
+          "reads_common_return_time": 1847,
+          "pre_common_reads": 2,
+          "post_deadline_reads": 0,
+          "read_sizes_bytes": {
+            "count": 1847,
+            "min": 2,
+            "median": 128,
+            "mean": 131.3502977801841,
+            "p95": 185,
+            "p99": 256,
+            "max": 379
+          },
+          "read_return_gaps_ns": {
+            "count": 1846,
+            "min": 6152432,
+            "median": 12767125.0,
+            "mean": 32424509.039544962,
+            "p95": 138033608,
+            "p99": 143354718,
+            "max": 336246092,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 1844
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 2
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_gaps_ns": {
+            "count": 4700,
+            "min": 1008507,
+            "median": 12310962.5,
+            "mean": 12765957.446808511,
+            "p95": 15613290,
+            "p99": 21235067,
+            "max": 37831067,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 4700
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_count_common": 4699,
+          "row_assembly_ns": {
+            "count": 294,
+            "min": 52787332,
+            "median": 65220689.5,
+            "mean": 65552743.1632653,
+            "p95": 74200178,
+            "p99": 78864604,
+            "max": 87204285
+          },
+          "timing": {
+            "read_duration_ns": {
+              "count": 1847,
+              "min": 4583,
+              "median": 19209,
+              "mean": 28417.494315105578,
+              "p95": 71763,
+              "p99": 157271,
+              "max": 505984
+            },
+            "raw_persistence_ns": {
+              "count": 1847,
+              "min": 1691807,
+              "median": 2021341,
+              "mean": 2052774.8023822415,
+              "p95": 2425782,
+              "p99": 2591262,
+              "max": 18076700
+            },
+            "return_to_persistence_start_ns": {
+              "count": 1847,
+              "min": 1259,
+              "median": 3637473,
+              "mean": 3066126.876556578,
+              "p95": 4921351,
+              "p99": 6700838,
+              "max": 20907695
+            },
+            "processing_after_raw_persistence_ns": {
+              "count": 1847,
+              "min": 9498,
+              "median": 25710,
+              "mean": 56779.224147265835,
+              "p95": 173896,
+              "p99": 437246,
+              "max": 652431
+            },
+            "processing_to_ledger_sample_ns": {
+              "count": 1847,
+              "min": 1540,
+              "median": 2796,
+              "mean": 3715.433676231727,
+              "p95": 8854,
+              "p99": 11016,
+              "max": 25630
+            }
+          },
+          "closure": {
+            "confirmed": true,
+            "error": null,
+            "details": {
+              "open_attempts": 1,
+              "close_attempts": 1,
+              "dtr_requested": false,
+              "rts_requested": false,
+              "actual_line_update_attempts": [
+                {
+                  "line": "dtr",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                },
+                {
+                  "line": "rts",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                }
+              ],
+              "serial_settings": {
+                "baudrate": 115200,
+                "bytesize": 8,
+                "parity": "N",
+                "stopbits": 1,
+                "xonxoff": false,
+                "dsrdtr": false,
+                "rtscts": false,
+                "timeout": 0,
+                "write_timeout": 0,
+                "inter_byte_timeout": null
+              },
+              "open_flush_suppressed": 1,
+              "is_open": false,
+              "fd": null,
+              "electrical_transients_or_resets_excluded": false
+            },
+            "resource_observed_open_before_close": true
+          },
+          "tail": {
+            "byte_offset": 243097,
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "first_read": null,
+            "last_read_index": null,
+            "literal_header": {
+              "validated_as_CSI": false,
+              "complete_row_counted": false
+            }
+          },
+          "incidents_recorded": [],
+          "cadence_rows_per_second": 4.9,
+          "rssi": {
+            "count": 294,
+            "min": -60,
+            "median": -58.0,
+            "mean": -58.03741496598639,
+            "p95": -56,
+            "p99": -56,
+            "max": -56,
+            "p10": -59,
+            "p90": -57,
+            "unit": "dBm",
+            "histogram": {
+              "-56": 29,
+              "-57": 49,
+              "-58": 124,
+              "-59": 66,
+              "-60": 26
+            },
+            "population": "Strict complete valid rows only; unequal sample counts, no missing-value filling"
+          },
+          "continuity_flags": {
+            "callback_restart": 0,
+            "callback_gap": 0,
+            "local_discontinuity": 0,
+            "queue_drops_changed": 0
+          },
+          "anomalies_after_first_valid_row": []
+        },
+        "RX-02": {
+          "valid_complete_rows_common": 296,
+          "valid_complete_rows_connection": 296,
+          "complete_line_kinds": {
+            "invalid": 22,
+            "reset": 2,
+            "info": 67,
+            "neutral": 2,
+            "ready": 1,
+            "row": 296
+          },
+          "valid_rows_per_10s": [
+            47,
+            50,
+            50,
+            50,
+            49,
+            50
+          ],
+          "host_row_gaps_ns": {
+            "count": 295,
+            "min": 171408098,
+            "median": 200206073,
+            "mean": 200686338.05084747,
+            "p95": 217629195,
+            "p99": 226408876,
+            "max": 392082880,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 294
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 1
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_row_gaps_ns": {
+            "count": 295,
+            "min": 196652000,
+            "median": 199997000,
+            "mean": 200678379.66101694,
+            "p95": 201741000,
+            "p99": 203157000,
+            "max": 400010000,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 294
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 1
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_nearest_200ms_periods": {
+            "reference_only_not_packet_loss": true,
+            "counts": {
+              "1": 294,
+              "2": 1
+            },
+            "max_absolute_residual_us": 3351
+          },
+          "first_row_age_from_common_start_ns": 668617171,
+          "last_row_age_at_common_deadline_ns": 128913104,
+          "host_valid_row_span_ns": 59202469725,
+          "local_valid_row_span_us": 59200122,
+          "callback_ids": {
+            "first": 0,
+            "last": 295,
+            "deltas": {
+              "1": 295
+            }
+          },
+          "queue_drops_values": [
+            0
+          ],
+          "profile_values": {
+            "mac": [
+              "1a:00:00:00:00:00"
+            ],
+            "channel": [
+              "11"
+            ],
+            "bandwidth": [
+              "0"
+            ],
+            "rx_state": [
+              "0"
+            ],
+            "len": [
+              "256"
+            ],
+            "first_word_invalid": [
+              "0"
+            ],
+            "sig_mode": [
+              "1"
+            ],
+            "mcs": [
+              "0"
+            ],
+            "stbc": [
+              "0"
+            ]
+          },
+          "bytes_connection": 255822,
+          "reads_connection": 1944,
+          "bytes_common_return_time": 255822,
+          "reads_common_return_time": 1944,
+          "pre_common_reads": 0,
+          "post_deadline_reads": 0,
+          "read_sizes_bytes": {
+            "count": 1944,
+            "min": 7,
+            "median": 128.0,
+            "mean": 131.59567901234567,
+            "p95": 209,
+            "p99": 256,
+            "max": 409
+          },
+          "read_return_gaps_ns": {
+            "count": 1943,
+            "min": 6098690,
+            "median": 12754393,
+            "mean": 30813688.33350489,
+            "p95": 135163987,
+            "p99": 142071235,
+            "max": 334024989,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 1942
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 1
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_gaps_ns": {
+            "count": 4729,
+            "min": 5596096,
+            "median": 12313929,
+            "mean": 12687671.812222457,
+            "p95": 15705669,
+            "p99": 21079601,
+            "max": 37104536,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 4729
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_count_common": 4728,
+          "row_assembly_ns": {
+            "count": 296,
+            "min": 52701932,
+            "median": 69130105.0,
+            "mean": 68757172.0777027,
+            "p95": 81668825,
+            "p99": 84951951,
+            "max": 87219212
+          },
+          "timing": {
+            "read_duration_ns": {
+              "count": 1944,
+              "min": 5679,
+              "median": 19024.0,
+              "mean": 27157.56841563786,
+              "p95": 65916,
+              "p99": 145222,
+              "max": 245232
+            },
+            "raw_persistence_ns": {
+              "count": 1944,
+              "min": 1686234,
+              "median": 2013978.0,
+              "mean": 2053031.827160494,
+              "p95": 2416070,
+              "p99": 2639098,
+              "max": 18038155
+            },
+            "return_to_persistence_start_ns": {
+              "count": 1944,
+              "min": 1132,
+              "median": 2308520.5,
+              "mean": 2768103.513888889,
+              "p95": 4999167,
+              "p99": 6145175,
+              "max": 8498571
+            },
+            "processing_after_raw_persistence_ns": {
+              "count": 1944,
+              "min": 9165,
+              "median": 25424.5,
+              "mean": 55355.68364197531,
+              "p95": 178288,
+              "p99": 443756,
+              "max": 684207
+            },
+            "processing_to_ledger_sample_ns": {
+              "count": 1944,
+              "min": 1503,
+              "median": 2744.0,
+              "mean": 3746.1656378600824,
+              "p95": 8859,
+              "p99": 11619,
+              "max": 117264
+            }
+          },
+          "closure": {
+            "confirmed": true,
+            "error": null,
+            "details": {
+              "open_attempts": 1,
+              "close_attempts": 1,
+              "dtr_requested": false,
+              "rts_requested": false,
+              "actual_line_update_attempts": [
+                {
+                  "line": "dtr",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                },
+                {
+                  "line": "rts",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                }
+              ],
+              "serial_settings": {
+                "baudrate": 115200,
+                "bytesize": 8,
+                "parity": "N",
+                "stopbits": 1,
+                "xonxoff": false,
+                "dsrdtr": false,
+                "rtscts": false,
+                "timeout": 0,
+                "write_timeout": 0,
+                "inter_byte_timeout": null
+              },
+              "open_flush_suppressed": 1,
+              "is_open": false,
+              "fd": null,
+              "electrical_transients_or_resets_excluded": false
+            },
+            "resource_observed_open_before_close": true
+          },
+          "tail": {
+            "byte_offset": 255822,
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "first_read": null,
+            "last_read_index": null,
+            "literal_header": {
+              "validated_as_CSI": false,
+              "complete_row_counted": false
+            }
+          },
+          "incidents_recorded": [],
+          "cadence_rows_per_second": 4.933333333333334,
+          "rssi": {
+            "count": 296,
+            "min": -53,
+            "median": -50.0,
+            "mean": -49.935810810810814,
+            "p95": -48,
+            "p99": -48,
+            "max": -48,
+            "p10": -51,
+            "p90": -49,
+            "unit": "dBm",
+            "histogram": {
+              "-48": 19,
+              "-49": 86,
+              "-50": 92,
+              "-51": 95,
+              "-52": 2,
+              "-53": 2
+            },
+            "population": "Strict complete valid rows only; unequal sample counts, no missing-value filling"
+          },
+          "continuity_flags": {
+            "callback_restart": 0,
+            "callback_gap": 0,
+            "local_discontinuity": 0,
+            "queue_drops_changed": 0
+          },
+          "anomalies_after_first_valid_row": []
+        }
+      },
+      "incidents": []
+    },
+    "B": {
+      "diagnostic_id": "CONT-ANT-ABA-R3-B",
+      "bundle_path": "/home/alan-monar/tesis-wifi-csi-hibrido/results/local/continuidad-antena-aba-r3-B",
+      "input_files": {
+        "authorization-consumed.json": {
+          "bytes": 136,
+          "sha256": "5671800d08fca293240b7bba9a9ebc23ed3bb0fc625106a55fc3c7ec17391a34"
+        },
+        "closure.json": {
+          "bytes": 1895,
+          "sha256": "6d02672f5a6470715377e05f6c083938f76c3543f1c684f4065402bdcb56ca3e"
+        },
+        "ledger.jsonl": {
+          "bytes": 4612863,
+          "sha256": "5dafb3ad6648239cda2c84736f4002c71fceb23d7ac7ba58d728e9f0297d30f4"
+        },
+        "manifest.json": {
+          "bytes": 711,
+          "sha256": "c3a7be290361e082dc6fc28961cc7c0756233e5ad8a023ea918a0ae88f77afe1"
+        },
+        "metadata.json": {
+          "bytes": 2611,
+          "sha256": "4aee5c4eb14b3589c697832b85ec487d20d2103d33951c5e808d4af23d73a11f"
+        },
+        "plan.json": {
+          "bytes": 2487,
+          "sha256": "9aef62e82d9fda749eae87426bf6a4f3e227c28e68f8f720db21405f8ed073ff"
+        },
+        "report.json": {
+          "bytes": 850319,
+          "sha256": "58a8c3675fd104a90d52f8f72c4dc41112eec0ab310b81b628af1d4a1fb7d53f"
+        },
+        "rx-01.serial.log": {
+          "bytes": 182726,
+          "sha256": "397ee041f9f745895d5012cde839617d5ce2fc92259d89ba79d7eaa716363a17"
+        },
+        "rx-02.serial.log": {
+          "bytes": 249303,
+          "sha256": "854611761beb4f70c5c4854ebf68bf9179e7014aea7b052f032765b6f0d4f7be"
+        }
+      },
+      "integrity_ok": true,
+      "replay_ok": true,
+      "fatal": null,
+      "completed_nominal_duration": true,
+      "closure": {
+        "RX-01": {
+          "confirmed": true,
+          "error": null,
+          "details": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              },
+              {
+                "line": "rts",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          },
+          "resource_observed_open_before_close": true
+        },
+        "RX-02": {
+          "confirmed": true,
+          "error": null,
+          "details": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              },
+              {
+                "line": "rts",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          },
+          "resource_observed_open_before_close": true
+        }
+      },
+      "both_ports_closed_confirmed": true,
+      "authorization": {
+        "reference": "CONT-ANT-ABA-R3-B-UNICO",
+        "consumed": true,
+        "evidence_type": "physical_capture",
+        "reattempt_permitted": false
+      },
+      "quality_approval": false,
+      "interval": {
+        "common_start_ns": 194549372096064,
+        "common_deadline_ns": 194609372096064,
+        "common_duration_ns": 60000000000,
+        "actual_common_elapsed_ns": 60012542376,
+        "actual_stop_ns": 194609384638440,
+        "clocks": {
+          "monotonic_ns": 60043820206,
+          "boottime_ns": 60043821311,
+          "realtime_ns": 60043821381,
+          "boottime_minus_monotonic_ns": 1105,
+          "realtime_minus_monotonic_ns": 1175
+        }
+      },
+      "host_clocks": {
+        "boottime_minus_monotonic_offset_ns": {
+          "count": 12629,
+          "min": 40,
+          "median": 324,
+          "mean": 630.0703935386808,
+          "p95": 1742,
+          "p99": 2053,
+          "max": 85520
+        },
+        "realtime_minus_monotonic_offset_ns": {
+          "count": 12629,
+          "min": 1793548810845957241,
+          "median": 1793548810845957745,
+          "mean": 1.7935488108459581e+18,
+          "p95": 1793548810845960232,
+          "p99": 1793548810845960633,
+          "max": 1793548810846044185
+        },
+        "ledger_sample_gaps_ns": {
+          "count": 12628,
+          "min": 1716153,
+          "median": 4053156.5,
+          "mean": 4753802.840592334,
+          "p95": 10110360,
+          "p99": 10267662,
+          "max": 21710793
+        }
+      },
+      "storage": {
+        "checks": 240,
+        "min_free_bytes": 113887760384,
+        "max_raw_bytes": 432029,
+        "max_bundle_bytes": 5902054
+      },
+      "declarations": {
+        "mounting": "B: Alan confirma cuerpo móvil de antena externa RX-01 inclinado 90° hacia arriba respecto de A1, solo articulación, partes fijas intactas. Placa/base/conector/coaxial/USB, RX-02 completo, TX, laptop y hub conservados según esa declaración. Giro realizado tras verificar offline integridad/replay y cierre de ambos UART de A1. Registro B results/local/preparacion-antena-aba-r3/montaje-B-documentado-r1.json SHA256=7eb43c9ed4af8726ca2124942e11317189b48bd470540666b51c22a960d7b500. Referencia inicial A1/croquis conservada. Sin metrología angular adicional.",
+        "power": "Alan confirma TX conectado al cargador de pared, laptop enchufada y abierta. RX-01 conectado por USB al hub marrón, RX-02 por USB directo a laptop; sin movimientos o desconexiones. Declaración previa a A1, con partes fijas conservadas al pasar a B; no nueva medición eléctrica.",
+        "host": "Alan consultó en terminal normal sleep-inactive-ac-type=nothing y sleep-inactive-battery-type=nothing. fuser -v sobre ambos by-id no mostró procesos ni errores. Son comprobaciones previas de configuración/propietarios, no un recibo de cierre posterior a captura. Comprobaciones previas a A1; B realizará de nuevo preflight de identidad por metadatos antes de abrir.",
+        "environment": "Alan solo, sentado frente a la laptop; puerta y ventanas cerradas, sin ventilador. Antena/equipos sin cambios respecto de las fotos confirmadas. Antes de B se aplicarán 30 s de quietud fuera de los 60 s; sin etiquetas de presencia. Contexto declarado para la serie; no reconfirmado mediante una observación nueva en B."
+      },
+      "identities": {
+        "RX-01": {
+          "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93199744-if00",
+          "resolved": "/dev/ttyACM1",
+          "serial": "5C93199744",
+          "vid": "1a86",
+          "pid": "55d3",
+          "bus": "usb",
+          "node_fingerprint": [
+            7,
+            1659,
+            42497
+          ],
+          "permissions": {
+            "mode": "0o660",
+            "uid": 0,
+            "gid": 20
+          }
+        },
+        "RX-02": {
+          "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00",
+          "resolved": "/dev/ttyACM0",
+          "serial": "5C93200689",
+          "vid": "1a86",
+          "pid": "55d3",
+          "bus": "usb",
+          "node_fingerprint": [
+            7,
+            1649,
+            42496
+          ],
+          "permissions": {
+            "mode": "0o660",
+            "uid": 0,
+            "gid": 20
+          }
+        }
+      },
+      "acquisition_commit": "4cd768aeea090966777e95bc7df6aded2d8afbdf",
+      "acquisition_working_tree_status": " M docs/ESTADO_INICIAL.md\n?? config/continuidad_antena_aba_r3.montaje.review.json\n?? config/continuidad_antena_aba_r3_A1.review.json\n?? config/continuidad_antena_aba_r3_A2.review.json\n?? config/continuidad_antena_aba_r3_B.review.json\n?? config/continuidad_orientacion_aba_r1_A1.review.json\n?? config/continuidad_orientacion_aba_r1_A2.review.json\n?? config/continuidad_orientacion_aba_r1_B.review.json\n?? docs/ASOCIACION_RX_FOTOS_CONFIRMADA_R1.md\n?? docs/IDENTIFICACION_RX_USB_MONTAJE_R1.md\n?? docs/PLAN_ANTENA_ABA_CONTINUIDAD_R3.md\n?? docs/PLAN_ORIENTACION_ABA_CONTINUIDAD_R1.md\n?? docs/PLAN_ORIENTACION_ABA_CONTINUIDAD_R2.md\n?? docs/VIABILIDAD_MONTAJE_CONTINUIDAD_R1.md\n",
+      "acquisition_sources": {
+        "src/dual_continuity.py": "ae07cbd477d0dbd0c36b1359cdf07cd2a9ff29f8b5783930b95bf90a91ebe7e1",
+        "tools/diagnostico_continuidad_dual.py": "554d08f77508ad0df78187374bbb431f4c5509a5c0b0cde3927bc56be863c888",
+        "src/presence_v4_uart.py": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+        "src/preserving_serial.py": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+        "src/availability_window.py": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596",
+        "src/capture_csi_multi.py": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+        "src/capture_csi.py": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+        "config/pyserial_uart_v4.lock.json": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010"
+      },
+      "source_hashes_match_current": true,
+      "receivers": {
+        "RX-01": {
+          "valid_complete_rows_common": 213,
+          "valid_complete_rows_connection": 213,
+          "complete_line_kinds": {
+            "invalid": 24,
+            "info": 66,
+            "reset": 1,
+            "neutral": 2,
+            "ready": 1,
+            "row": 213
+          },
+          "valid_rows_per_10s": [
+            36,
+            32,
+            40,
+            34,
+            37,
+            34
+          ],
+          "host_row_gaps_ns": {
+            "count": 212,
+            "min": 169531061,
+            "median": 205053879.5,
+            "mean": 278361368.4433962,
+            "p95": 609885350,
+            "p99": 806453830,
+            "max": 1191936676,
+            "unit": "ns",
+            "over_1s": 2,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 159
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 35
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 10
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 6
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 2
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_row_gaps_ns": {
+            "count": 212,
+            "min": 196727000,
+            "median": 200013500.0,
+            "mean": 278301000,
+            "p95": 600020000,
+            "p99": 802289000,
+            "max": 1200102000,
+            "unit": "ns",
+            "over_1s": 2,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 159
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 35
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 10
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 6
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 2
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_nearest_200ms_periods": {
+            "reference_only_not_packet_loss": true,
+            "counts": {
+              "1": 159,
+              "2": 35,
+              "3": 10,
+              "4": 6,
+              "6": 2
+            },
+            "max_absolute_residual_us": 3273
+          },
+          "first_row_age_from_common_start_ns": 899707392,
+          "last_row_age_at_common_deadline_ns": 87682498,
+          "host_valid_row_span_ns": 59012610110,
+          "local_valid_row_span_us": 58999812,
+          "callback_ids": {
+            "first": 0,
+            "last": 212,
+            "deltas": {
+              "1": 212
+            }
+          },
+          "queue_drops_values": [
+            0
+          ],
+          "profile_values": {
+            "mac": [
+              "1a:00:00:00:00:00"
+            ],
+            "channel": [
+              "11"
+            ],
+            "bandwidth": [
+              "0"
+            ],
+            "rx_state": [
+              "0"
+            ],
+            "len": [
+              "256"
+            ],
+            "first_word_invalid": [
+              "0"
+            ],
+            "sig_mode": [
+              "1"
+            ],
+            "mcs": [
+              "0"
+            ],
+            "stbc": [
+              "0"
+            ]
+          },
+          "bytes_connection": 182726,
+          "reads_connection": 1312,
+          "bytes_common_return_time": 182326,
+          "reads_common_return_time": 1310,
+          "pre_common_reads": 2,
+          "post_deadline_reads": 0,
+          "read_sizes_bytes": {
+            "count": 1310,
+            "min": 2,
+            "median": 128.0,
+            "mean": 139.18015267175574,
+            "p95": 256,
+            "p99": 256,
+            "max": 373
+          },
+          "read_return_gaps_ns": {
+            "count": 1309,
+            "min": 7678520,
+            "median": 13812210,
+            "mean": 45766042.345301755,
+            "p95": 142900009,
+            "p99": 533669251,
+            "max": 1125143940,
+            "unit": "ns",
+            "over_1s": 2,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 1256
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 35
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 16
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 2
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_gaps_ns": {
+            "count": 4546,
+            "min": 2373726,
+            "median": 12640336.5,
+            "mean": 13198416.190057194,
+            "p95": 16814791,
+            "p99": 21542064,
+            "max": 39509230,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 4546
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_count_common": 4545,
+          "row_assembly_ns": {
+            "count": 213,
+            "min": 51431241,
+            "median": 67865965,
+            "mean": 68268309.09859155,
+            "p95": 79827550,
+            "p99": 83191213,
+            "max": 86212349
+          },
+          "timing": {
+            "read_duration_ns": {
+              "count": 1310,
+              "min": 5781,
+              "median": 25152.0,
+              "mean": 38336.4213740458,
+              "p95": 101978,
+              "p99": 195350,
+              "max": 427197
+            },
+            "raw_persistence_ns": {
+              "count": 1310,
+              "min": 1692302,
+              "median": 2119953.0,
+              "mean": 2162076.4290076336,
+              "p95": 2651356,
+              "p99": 2835872,
+              "max": 4490094
+            },
+            "return_to_persistence_start_ns": {
+              "count": 1310,
+              "min": 1241,
+              "median": 3982672.5,
+              "mean": 3495205.103053435,
+              "p95": 5735629,
+              "p99": 7078624,
+              "max": 20607203
+            },
+            "processing_after_raw_persistence_ns": {
+              "count": 1310,
+              "min": 7652,
+              "median": 42375.0,
+              "mean": 79343.8503816794,
+              "p95": 404175,
+              "p99": 505252,
+              "max": 699529
+            },
+            "processing_to_ledger_sample_ns": {
+              "count": 1310,
+              "min": 1257,
+              "median": 3303.5,
+              "mean": 5072.117557251909,
+              "p95": 10735,
+              "p99": 14085,
+              "max": 45244
+            }
+          },
+          "closure": {
+            "confirmed": true,
+            "error": null,
+            "details": {
+              "open_attempts": 1,
+              "close_attempts": 1,
+              "dtr_requested": false,
+              "rts_requested": false,
+              "actual_line_update_attempts": [
+                {
+                  "line": "dtr",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                },
+                {
+                  "line": "rts",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                }
+              ],
+              "serial_settings": {
+                "baudrate": 115200,
+                "bytesize": 8,
+                "parity": "N",
+                "stopbits": 1,
+                "xonxoff": false,
+                "dsrdtr": false,
+                "rtscts": false,
+                "timeout": 0,
+                "write_timeout": 0,
+                "inter_byte_timeout": null
+              },
+              "open_flush_suppressed": 1,
+              "is_open": false,
+              "fd": null,
+              "electrical_transients_or_resets_excluded": false
+            },
+            "resource_observed_open_before_close": true
+          },
+          "tail": {
+            "byte_offset": 182726,
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "first_read": null,
+            "last_read_index": null,
+            "literal_header": {
+              "validated_as_CSI": false,
+              "complete_row_counted": false
+            }
+          },
+          "incidents_recorded": [
+            {
+              "anchor_ns": 194560080018082,
+              "first_observed_ns": 194561083313540,
+              "recovered_ns": 194561271954758,
+              "duration_ns": 1191936676,
+              "quality_approval": false,
+              "recovery_line": 135
+            },
+            {
+              "anchor_ns": 194583482423013,
+              "first_observed_ns": 194584487144757,
+              "recovered_ns": 194584672427396,
+              "duration_ns": 1190004383,
+              "quality_approval": false,
+              "recovery_line": 218
+            }
+          ],
+          "cadence_rows_per_second": 3.55,
+          "rssi": {
+            "count": 213,
+            "min": -58,
+            "median": -54,
+            "mean": -53.8075117370892,
+            "p95": -52,
+            "p99": -52,
+            "max": -51,
+            "p10": -56,
+            "p90": -52,
+            "unit": "dBm",
+            "histogram": {
+              "-51": 2,
+              "-52": 27,
+              "-53": 77,
+              "-54": 37,
+              "-55": 46,
+              "-56": 23,
+              "-58": 1
+            },
+            "population": "Strict complete valid rows only; unequal sample counts, no missing-value filling"
+          },
+          "continuity_flags": {
+            "callback_restart": 0,
+            "callback_gap": 0,
+            "local_discontinuity": 0,
+            "queue_drops_changed": 0
+          },
+          "anomalies_after_first_valid_row": []
+        },
+        "RX-02": {
+          "valid_complete_rows_common": 291,
+          "valid_complete_rows_connection": 291,
+          "complete_line_kinds": {
+            "invalid": 23,
+            "reset": 2,
+            "info": 67,
+            "neutral": 2,
+            "ready": 1,
+            "row": 291
+          },
+          "valid_rows_per_10s": [
+            46,
+            49,
+            49,
+            47,
+            50,
+            50
+          ],
+          "host_row_gaps_ns": {
+            "count": 290,
+            "min": 176558495,
+            "median": 200769817.5,
+            "mean": 204165019.24827588,
+            "p95": 217739571,
+            "p99": 412951620,
+            "max": 415802287,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 284
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 6
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_row_gaps_ns": {
+            "count": 290,
+            "min": 196187000,
+            "median": 200000000.0,
+            "mean": 204138296.55172414,
+            "p95": 202241000,
+            "p99": 400012000,
+            "max": 400884000,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 284
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 6
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_nearest_200ms_periods": {
+            "reference_only_not_packet_loss": true,
+            "counts": {
+              "1": 284,
+              "2": 6
+            },
+            "max_absolute_residual_us": 3941
+          },
+          "first_row_age_from_common_start_ns": 685382254,
+          "last_row_age_at_common_deadline_ns": 106762164,
+          "host_valid_row_span_ns": 59207855582,
+          "local_valid_row_span_us": 59200106,
+          "callback_ids": {
+            "first": 0,
+            "last": 290,
+            "deltas": {
+              "1": 290
+            }
+          },
+          "queue_drops_values": [
+            0
+          ],
+          "profile_values": {
+            "mac": [
+              "1a:00:00:00:00:00"
+            ],
+            "channel": [
+              "11"
+            ],
+            "bandwidth": [
+              "0"
+            ],
+            "rx_state": [
+              "0"
+            ],
+            "len": [
+              "256"
+            ],
+            "first_word_invalid": [
+              "0"
+            ],
+            "sig_mode": [
+              "1"
+            ],
+            "mcs": [
+              "0"
+            ],
+            "stbc": [
+              "0"
+            ]
+          },
+          "bytes_connection": 249303,
+          "reads_connection": 1868,
+          "bytes_common_return_time": 249303,
+          "reads_common_return_time": 1868,
+          "pre_common_reads": 0,
+          "post_deadline_reads": 0,
+          "read_sizes_bytes": {
+            "count": 1868,
+            "min": 4,
+            "median": 128.0,
+            "mean": 133.4598501070664,
+            "p95": 254,
+            "p99": 256,
+            "max": 384
+          },
+          "read_return_gaps_ns": {
+            "count": 1867,
+            "min": 5568764,
+            "median": 12945604,
+            "mean": 32079912.294054635,
+            "p95": 136884314,
+            "p99": 145161413,
+            "max": 345356030,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 1861
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 6
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_gaps_ns": {
+            "count": 4660,
+            "min": 255559,
+            "median": 12546330.0,
+            "mean": 12875536.480686694,
+            "p95": 16325921,
+            "p99": 21843804,
+            "max": 32626401,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 4660
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_count_common": 4659,
+          "row_assembly_ns": {
+            "count": 291,
+            "min": 51080484,
+            "median": 66387058,
+            "mean": 67376465.33333333,
+            "p95": 78982091,
+            "p99": 81710576,
+            "max": 85616194
+          },
+          "timing": {
+            "read_duration_ns": {
+              "count": 1868,
+              "min": 6139,
+              "median": 27307.0,
+              "mean": 39802.78586723769,
+              "p95": 103848,
+              "p99": 215657,
+              "max": 438424
+            },
+            "raw_persistence_ns": {
+              "count": 1868,
+              "min": 1690888,
+              "median": 2139443.0,
+              "mean": 2204907.699143469,
+              "p95": 2668606,
+              "p99": 2928452,
+              "max": 18773869
+            },
+            "return_to_persistence_start_ns": {
+              "count": 1868,
+              "min": 1042,
+              "median": 2121685.5,
+              "mean": 2141082.866167024,
+              "p95": 5167597,
+              "p99": 5929949,
+              "max": 21313328
+            },
+            "processing_after_raw_persistence_ns": {
+              "count": 1868,
+              "min": 7931,
+              "median": 42691.0,
+              "mean": 80486.60438972163,
+              "p95": 398976,
+              "p99": 519018,
+              "max": 837558
+            },
+            "processing_to_ledger_sample_ns": {
+              "count": 1868,
+              "min": 1220,
+              "median": 3502.0,
+              "mean": 5288.515524625268,
+              "p95": 10972,
+              "p99": 13135,
+              "max": 46503
+            }
+          },
+          "closure": {
+            "confirmed": true,
+            "error": null,
+            "details": {
+              "open_attempts": 1,
+              "close_attempts": 1,
+              "dtr_requested": false,
+              "rts_requested": false,
+              "actual_line_update_attempts": [
+                {
+                  "line": "dtr",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                },
+                {
+                  "line": "rts",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                }
+              ],
+              "serial_settings": {
+                "baudrate": 115200,
+                "bytesize": 8,
+                "parity": "N",
+                "stopbits": 1,
+                "xonxoff": false,
+                "dsrdtr": false,
+                "rtscts": false,
+                "timeout": 0,
+                "write_timeout": 0,
+                "inter_byte_timeout": null
+              },
+              "open_flush_suppressed": 1,
+              "is_open": false,
+              "fd": null,
+              "electrical_transients_or_resets_excluded": false
+            },
+            "resource_observed_open_before_close": true
+          },
+          "tail": {
+            "byte_offset": 249303,
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "first_read": null,
+            "last_read_index": null,
+            "literal_header": {
+              "validated_as_CSI": false,
+              "complete_row_counted": false
+            }
+          },
+          "incidents_recorded": [],
+          "cadence_rows_per_second": 4.85,
+          "rssi": {
+            "count": 291,
+            "min": -51,
+            "median": -49,
+            "mean": -48.68041237113402,
+            "p95": -48,
+            "p99": -48,
+            "max": -48,
+            "p10": -50,
+            "p90": -48,
+            "unit": "dBm",
+            "histogram": {
+              "-48": 141,
+              "-49": 104,
+              "-50": 44,
+              "-51": 2
+            },
+            "population": "Strict complete valid rows only; unequal sample counts, no missing-value filling"
+          },
+          "continuity_flags": {
+            "callback_restart": 0,
+            "callback_gap": 0,
+            "local_discontinuity": 0,
+            "queue_drops_changed": 0
+          },
+          "anomalies_after_first_valid_row": []
+        }
+      },
+      "incidents": [
+        {
+          "receiver": "RX-01",
+          "number": 1,
+          "original": {
+            "anchor_ns": 194560080018082,
+            "first_observed_ns": 194561083313540,
+            "recovered_ns": 194561271954758,
+            "duration_ns": 1191936676,
+            "quality_approval": false,
+            "recovery_line": 135
+          },
+          "anchor_relative_ns": 10707922018,
+          "recovery_relative_ns": 11899858694,
+          "previous_row": {
+            "kind": "row",
+            "id": 39,
+            "local_timestamp": 10640873,
+            "queue_drops": 0,
+            "first_read_index": 269,
+            "first_read_started_ns": "194560005149267",
+            "byte_offset": 38094,
+            "line_1based": 134,
+            "byte_end": 39038,
+            "byte_length": 944,
+            "line_sha256": "8311e778ed95401c358250095471d04b7100b3b23a5fb2925c131c2a28b09f6b",
+            "last_read_index": 275,
+            "returned_ns": "194560080018082",
+            "ledger_seq": 2284
+          },
+          "recovery_row": {
+            "kind": "row",
+            "id": 40,
+            "local_timestamp": 11840891,
+            "queue_drops": 0,
+            "first_read_index": 276,
+            "first_read_started_ns": "194561205112903",
+            "byte_offset": 39038,
+            "line_1based": 135,
+            "byte_end": 39784,
+            "byte_length": 746,
+            "line_sha256": "215e61089db6295cb2274524cb65252ac0932bde71e1a06db3bd92d148f5792d",
+            "last_read_index": 281,
+            "returned_ns": "194561271954758",
+            "ledger_seq": 2528
+          },
+          "local_gap_us": 1200018,
+          "callback_id_delta": 1,
+          "queue_drops_delta": 0,
+          "recovery_and_next_complete_rows": [
+            {
+              "kind": "row",
+              "id": 40,
+              "local_timestamp": 11840891,
+              "queue_drops": 0,
+              "first_read_index": 276,
+              "first_read_started_ns": "194561205112903",
+              "byte_offset": 39038,
+              "line_1based": 135,
+              "byte_end": 39784,
+              "byte_length": 746,
+              "line_sha256": "215e61089db6295cb2274524cb65252ac0932bde71e1a06db3bd92d148f5792d",
+              "last_read_index": 281,
+              "returned_ns": "194561271954758",
+              "ledger_seq": 2528
+            },
+            {
+              "kind": "row",
+              "id": 41,
+              "local_timestamp": 12240983,
+              "queue_drops": 0,
+              "first_read_index": 282,
+              "first_read_started_ns": "194561605336532",
+              "byte_offset": 39784,
+              "line_1based": 136,
+              "byte_end": 40514,
+              "byte_length": 730,
+              "line_sha256": "76eece488d2b2e6570decfa17208b85a06e453b3f20526c218055384a0954c46",
+              "last_read_index": 286,
+              "returned_ns": "194561666929463",
+              "ledger_seq": 2605
+            },
+            {
+              "kind": "row",
+              "id": 42,
+              "local_timestamp": 12640893,
+              "queue_drops": 0,
+              "first_read_index": 287,
+              "first_read_started_ns": "194562007198360",
+              "byte_offset": 40514,
+              "line_1based": 137,
+              "byte_end": 41288,
+              "byte_length": 774,
+              "line_sha256": "9561f5c5d3f1a968a8d26992ffc85685a4f2abfee38012c992ac906942cf7302",
+              "last_read_index": 292,
+              "returned_ns": "194562067175247",
+              "ledger_seq": 2693
+            },
+            {
+              "kind": "row",
+              "id": 43,
+              "local_timestamp": 12840891,
+              "queue_drops": 0,
+              "first_read_index": 293,
+              "first_read_started_ns": "194562204926570",
+              "byte_offset": 41288,
+              "line_1based": 138,
+              "byte_end": 42179,
+              "byte_length": 891,
+              "line_sha256": "d90333724e92a9a4c52e00bcec7f2f08099e7fe6162248994751ff7ef563e432",
+              "last_read_index": 299,
+              "returned_ns": "194562284497172",
+              "ledger_seq": 2743
+            },
+            {
+              "kind": "row",
+              "id": 44,
+              "local_timestamp": 13040893,
+              "queue_drops": 0,
+              "first_read_index": 300,
+              "first_read_started_ns": "194562407437093",
+              "byte_offset": 42179,
+              "line_1based": 139,
+              "byte_end": 43073,
+              "byte_length": 894,
+              "line_sha256": "e4dbda71258a851274e138ec5000451934b1a9091a65bf4ad64bd69883f27618",
+              "last_read_index": 304,
+              "returned_ns": "194562471705213",
+              "ledger_seq": 2780
+            },
+            {
+              "kind": "row",
+              "id": 45,
+              "local_timestamp": 13240988,
+              "queue_drops": 0,
+              "first_read_index": 305,
+              "first_read_started_ns": "194562605178595",
+              "byte_offset": 43073,
+              "line_1based": 140,
+              "byte_end": 43829,
+              "byte_length": 756,
+              "line_sha256": "500d9f19209895c8ddb5b3fdf75c3c57c74d194793b05a8680a686863875c7e2",
+              "last_read_index": 309,
+              "returned_ns": "194562671080747",
+              "ledger_seq": 2817
+            }
+          ]
+        },
+        {
+          "receiver": "RX-01",
+          "number": 2,
+          "original": {
+            "anchor_ns": 194583482423013,
+            "first_observed_ns": 194584487144757,
+            "recovered_ns": 194584672427396,
+            "duration_ns": 1190004383,
+            "quality_approval": false,
+            "recovery_line": 218
+          },
+          "anchor_relative_ns": 34110326949,
+          "recovery_relative_ns": 35300331332,
+          "previous_row": {
+            "kind": "row",
+            "id": 122,
+            "local_timestamp": 34040821,
+            "queue_drops": 0,
+            "first_read_index": 770,
+            "first_read_started_ns": "194583404979800",
+            "byte_offset": 106409,
+            "line_1based": 217,
+            "byte_end": 107326,
+            "byte_length": 917,
+            "line_sha256": "3906f57e99cdfa84c1b4f63fc0bf2a81b820108d86b69753115f57fbe6a48a26",
+            "last_read_index": 775,
+            "returned_ns": "194583482423013",
+            "ledger_seq": 7231
+          },
+          "recovery_row": {
+            "kind": "row",
+            "id": 123,
+            "local_timestamp": 35240923,
+            "queue_drops": 0,
+            "first_read_index": 776,
+            "first_read_started_ns": "194584607408706",
+            "byte_offset": 107326,
+            "line_1based": 218,
+            "byte_end": 108159,
+            "byte_length": 833,
+            "line_sha256": "6ca9a7957033b22a04f275d4401072745727ce9e35e3278b1a847f206bc2217d",
+            "last_read_index": 780,
+            "returned_ns": "194584672427396",
+            "ledger_seq": 7463
+          },
+          "local_gap_us": 1200102,
+          "callback_id_delta": 1,
+          "queue_drops_delta": 0,
+          "recovery_and_next_complete_rows": [
+            {
+              "kind": "row",
+              "id": 123,
+              "local_timestamp": 35240923,
+              "queue_drops": 0,
+              "first_read_index": 776,
+              "first_read_started_ns": "194584607408706",
+              "byte_offset": 107326,
+              "line_1based": 218,
+              "byte_end": 108159,
+              "byte_length": 833,
+              "line_sha256": "6ca9a7957033b22a04f275d4401072745727ce9e35e3278b1a847f206bc2217d",
+              "last_read_index": 780,
+              "returned_ns": "194584672427396",
+              "ledger_seq": 7463
+            },
+            {
+              "kind": "row",
+              "id": 124,
+              "local_timestamp": 35440828,
+              "queue_drops": 0,
+              "first_read_index": 781,
+              "first_read_started_ns": "194584808233945",
+              "byte_offset": 108159,
+              "line_1based": 219,
+              "byte_end": 109067,
+              "byte_length": 908,
+              "line_sha256": "46bd9e8ecf358ae027b3f00d1a947cb6a51b7306be20ce4f23269994e62ca569",
+              "last_read_index": 785,
+              "returned_ns": "194584875400210",
+              "ledger_seq": 7503
+            },
+            {
+              "kind": "row",
+              "id": 125,
+              "local_timestamp": 35640805,
+              "queue_drops": 0,
+              "first_read_index": 786,
+              "first_read_started_ns": "194585004711540",
+              "byte_offset": 109067,
+              "line_1based": 220,
+              "byte_end": 109811,
+              "byte_length": 744,
+              "line_sha256": "81b0a6b1e17825d8edf5ef04a5a14f060b96fc91ab4172d48e74bde0a306a488",
+              "last_read_index": 790,
+              "returned_ns": "194585068621000",
+              "ledger_seq": 7541
+            },
+            {
+              "kind": "row",
+              "id": 126,
+              "local_timestamp": 35843681,
+              "queue_drops": 0,
+              "first_read_index": 791,
+              "first_read_started_ns": "194585210112048",
+              "byte_offset": 109811,
+              "line_1based": 221,
+              "byte_end": 110633,
+              "byte_length": 822,
+              "line_sha256": "cb55b06acf3150dcb819a4f2e484710e3629ee63332d5d0d31a1772759398967",
+              "last_read_index": 795,
+              "returned_ns": "194585273368341",
+              "ledger_seq": 7582
+            },
+            {
+              "kind": "row",
+              "id": 127,
+              "local_timestamp": 36240933,
+              "queue_drops": 0,
+              "first_read_index": 796,
+              "first_read_started_ns": "194585606188854",
+              "byte_offset": 110633,
+              "line_1based": 222,
+              "byte_end": 111469,
+              "byte_length": 836,
+              "line_sha256": "4e8c166c402a13c943274a12b2be61bded9867d45b8eed357cdac4cbf3d01044",
+              "last_read_index": 800,
+              "returned_ns": "194585674747108",
+              "ledger_seq": 7653
+            },
+            {
+              "kind": "row",
+              "id": 128,
+              "local_timestamp": 36440837,
+              "queue_drops": 0,
+              "first_read_index": 801,
+              "first_read_started_ns": "194585805076522",
+              "byte_offset": 111469,
+              "line_1based": 223,
+              "byte_end": 112239,
+              "byte_length": 770,
+              "line_sha256": "13acd2396134630063f26fa9d989b00816af1667a1ea6e26814b6ff404250676",
+              "last_read_index": 804,
+              "returned_ns": "194585861310412",
+              "ledger_seq": 7686
+            }
+          ]
+        }
+      ]
+    },
+    "A2": {
+      "diagnostic_id": "CONT-ANT-ABA-R3-A2",
+      "bundle_path": "/home/alan-monar/tesis-wifi-csi-hibrido/results/local/continuidad-antena-aba-r3-A2",
+      "input_files": {
+        "authorization-consumed.json": {
+          "bytes": 137,
+          "sha256": "f42350291006e571f1e90c70b93fc6a04c619efb360d43fd147317d7a1bfa67b"
+        },
+        "closure.json": {
+          "bytes": 1895,
+          "sha256": "6d02672f5a6470715377e05f6c083938f76c3543f1c684f4065402bdcb56ca3e"
+        },
+        "ledger.jsonl": {
+          "bytes": 4509478,
+          "sha256": "8aed2145a8834f9882cd3e0c2b88ed89ff79fb9023b96aaa69bb4fa9058042ab"
+        },
+        "manifest.json": {
+          "bytes": 711,
+          "sha256": "13976ce59045f7e5371ae3065b0a2a7460e807083aad079d0097935237d1a25e"
+        },
+        "metadata.json": {
+          "bytes": 2612,
+          "sha256": "1b55e1931b1addb1ba88f6f1e47d10e30df9fd4325ba2c1b29a1a026f3711832"
+        },
+        "plan.json": {
+          "bytes": 2507,
+          "sha256": "f7342ba22b8743f10e4ca00050ee9f57e605ae3a52e75678b51f6f7b63273c13"
+        },
+        "report.json": {
+          "bytes": 831064,
+          "sha256": "401aa6f57e98ada707ebe8a07b42c3a9581bb248ee96beb968db024d0ab9afe2"
+        },
+        "rx-01.serial.log": {
+          "bytes": 174290,
+          "sha256": "f5b2ff32aeafdaa9606373c1965d708350172a1baa16fe80966c517ba00700a5"
+        },
+        "rx-02.serial.log": {
+          "bytes": 251512,
+          "sha256": "9d077091878d38cea050d5eda7917e995f65e82daa6b63b7c2a02b323a84593b"
+        }
+      },
+      "integrity_ok": true,
+      "replay_ok": true,
+      "fatal": null,
+      "completed_nominal_duration": true,
+      "closure": {
+        "RX-01": {
+          "confirmed": true,
+          "error": null,
+          "details": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              },
+              {
+                "line": "rts",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          },
+          "resource_observed_open_before_close": true
+        },
+        "RX-02": {
+          "confirmed": true,
+          "error": null,
+          "details": {
+            "open_attempts": 1,
+            "close_attempts": 1,
+            "dtr_requested": false,
+            "rts_requested": false,
+            "actual_line_update_attempts": [
+              {
+                "line": "dtr",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              },
+              {
+                "line": "rts",
+                "requested": false,
+                "outcome": "ioctl_returned"
+              }
+            ],
+            "serial_settings": {
+              "baudrate": 115200,
+              "bytesize": 8,
+              "parity": "N",
+              "stopbits": 1,
+              "xonxoff": false,
+              "dsrdtr": false,
+              "rtscts": false,
+              "timeout": 0,
+              "write_timeout": 0,
+              "inter_byte_timeout": null
+            },
+            "open_flush_suppressed": 1,
+            "is_open": false,
+            "fd": null,
+            "electrical_transients_or_resets_excluded": false
+          },
+          "resource_observed_open_before_close": true
+        }
+      },
+      "both_ports_closed_confirmed": true,
+      "authorization": {
+        "reference": "CONT-ANT-ABA-R3-A2-UNICO",
+        "consumed": true,
+        "evidence_type": "physical_capture",
+        "reattempt_permitted": false
+      },
+      "quality_approval": false,
+      "interval": {
+        "common_start_ns": 195368515274466,
+        "common_deadline_ns": 195428515274466,
+        "common_duration_ns": 60000000000,
+        "actual_common_elapsed_ns": 60005813066,
+        "actual_stop_ns": 195428521087532,
+        "clocks": {
+          "monotonic_ns": 60050228064,
+          "boottime_ns": 60050228484,
+          "realtime_ns": 60050228586,
+          "boottime_minus_monotonic_ns": 420,
+          "realtime_minus_monotonic_ns": 522
+        }
+      },
+      "host_clocks": {
+        "boottime_minus_monotonic_offset_ns": {
+          "count": 12454,
+          "min": 44,
+          "median": 468.5,
+          "mean": 701.6480648787538,
+          "p95": 1771,
+          "p99": 2072,
+          "max": 39850
+        },
+        "realtime_minus_monotonic_offset_ns": {
+          "count": 12454,
+          "min": 1793548810845957247,
+          "median": 1.7935488108459581e+18,
+          "mean": 1.7935488108459584e+18,
+          "p95": 1793548810845960297,
+          "p99": 1793548810845960699,
+          "max": 1793548810845997885
+        },
+        "ledger_sample_gaps_ns": {
+          "count": 12453,
+          "min": 1730894,
+          "median": 4097892,
+          "mean": 4821119.73693086,
+          "p95": 10105335,
+          "p99": 10269295,
+          "max": 21905787
+        }
+      },
+      "storage": {
+        "checks": 239,
+        "min_free_bytes": 113879748608,
+        "max_raw_bytes": 425802,
+        "max_bundle_bytes": 5773209
+      },
+      "declarations": {
+        "mounting": "A2: Alan confirma regreso de la antena externa RX-01 a la postura A1 apoyada según foto y croquis digital confirmados, partes fijas intactas. Solo retorno por articulación tras verificar integridad/replay y ambos cierres de B. Placa/base/conector/coaxial/USB, RX-02 completo, TX, laptop y hub conservados según declaración. Registro A2 results/local/preparacion-antena-aba-r3/montaje-A2-documentado-r1.json SHA256=aeaa3c61c8e1bcd3bb4038c1d6160cb7cebaae7939d724b6322ad1bc258ca3e2. Retorno declarado, sin nueva medición angular o foto.",
+        "power": "Alan confirma TX conectado al cargador de pared, laptop enchufada y abierta. RX-01 conectado por USB al hub marrón, RX-02 por USB directo a laptop; sin movimientos o desconexiones. Declaración previa a A1; partes fijas conservadas al regresar a A2 según operador; sin nueva medición eléctrica.",
+        "host": "Alan consultó en terminal normal sleep-inactive-ac-type=nothing y sleep-inactive-battery-type=nothing. fuser -v sobre ambos by-id no mostró procesos ni errores. Son comprobaciones previas de configuración/propietarios, no un recibo de cierre posterior a captura. Comprobaciones previas a A1. A2 realizará nuevo preflight por metadatos antes de abrir; B quedó cerrado según auditoría.",
+        "environment": "Alan solo, sentado frente a la laptop; puerta y ventanas cerradas, sin ventilador. Antena/equipos sin cambios respecto de las fotos confirmadas. Antes de A2 se aplicarán 30 s de quietud fuera de los 60 s; sin etiquetas de presencia. Contexto declarado para la serie; no se ha realizado otra observación del ambiente en A2."
+      },
+      "identities": {
+        "RX-01": {
+          "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93199744-if00",
+          "resolved": "/dev/ttyACM1",
+          "serial": "5C93199744",
+          "vid": "1a86",
+          "pid": "55d3",
+          "bus": "usb",
+          "node_fingerprint": [
+            7,
+            1659,
+            42497
+          ],
+          "permissions": {
+            "mode": "0o660",
+            "uid": 0,
+            "gid": 20
+          }
+        },
+        "RX-02": {
+          "by_id": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00",
+          "resolved": "/dev/ttyACM0",
+          "serial": "5C93200689",
+          "vid": "1a86",
+          "pid": "55d3",
+          "bus": "usb",
+          "node_fingerprint": [
+            7,
+            1649,
+            42496
+          ],
+          "permissions": {
+            "mode": "0o660",
+            "uid": 0,
+            "gid": 20
+          }
+        }
+      },
+      "acquisition_commit": "4cd768aeea090966777e95bc7df6aded2d8afbdf",
+      "acquisition_working_tree_status": " M docs/ESTADO_INICIAL.md\n?? config/continuidad_antena_aba_r3.montaje.review.json\n?? config/continuidad_antena_aba_r3_A1.review.json\n?? config/continuidad_antena_aba_r3_A2.review.json\n?? config/continuidad_antena_aba_r3_B.review.json\n?? config/continuidad_orientacion_aba_r1_A1.review.json\n?? config/continuidad_orientacion_aba_r1_A2.review.json\n?? config/continuidad_orientacion_aba_r1_B.review.json\n?? docs/ASOCIACION_RX_FOTOS_CONFIRMADA_R1.md\n?? docs/IDENTIFICACION_RX_USB_MONTAJE_R1.md\n?? docs/PLAN_ANTENA_ABA_CONTINUIDAD_R3.md\n?? docs/PLAN_ORIENTACION_ABA_CONTINUIDAD_R1.md\n?? docs/PLAN_ORIENTACION_ABA_CONTINUIDAD_R2.md\n?? docs/VIABILIDAD_MONTAJE_CONTINUIDAD_R1.md\n",
+      "acquisition_sources": {
+        "src/dual_continuity.py": "ae07cbd477d0dbd0c36b1359cdf07cd2a9ff29f8b5783930b95bf90a91ebe7e1",
+        "tools/diagnostico_continuidad_dual.py": "554d08f77508ad0df78187374bbb431f4c5509a5c0b0cde3927bc56be863c888",
+        "src/presence_v4_uart.py": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+        "src/preserving_serial.py": "8a1dac506c48fdb3b2db698120509cdd479e8d44857de3004c808e1dea4631ec",
+        "src/availability_window.py": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596",
+        "src/capture_csi_multi.py": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+        "src/capture_csi.py": "f2e285971f9c6dd4802e7ed38b72dc44cb70a9ac061c5b68c7bb70b97c4287e8",
+        "config/pyserial_uart_v4.lock.json": "ab86a8bbfa3f0164900f6e388ade8fa124b857a0a6a406ee10adaf878861a010"
+      },
+      "source_hashes_match_current": true,
+      "receivers": {
+        "RX-01": {
+          "valid_complete_rows_common": 201,
+          "valid_complete_rows_connection": 201,
+          "complete_line_kinds": {
+            "neutral": 3,
+            "invalid": 22,
+            "info": 66,
+            "reset": 1,
+            "ready": 1,
+            "row": 201
+          },
+          "valid_rows_per_10s": [
+            40,
+            36,
+            35,
+            30,
+            30,
+            30
+          ],
+          "host_row_gaps_ns": {
+            "count": 200,
+            "min": 171636753,
+            "median": 205783745.0,
+            "mean": 296077171.07,
+            "p95": 614247553,
+            "p99": 988322579,
+            "max": 1405114678,
+            "unit": "ns",
+            "over_1s": 2,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 139
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 40
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 12
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 7
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 1
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 1
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_row_gaps_ns": {
+            "count": 200,
+            "min": 196608000,
+            "median": 200082500.0,
+            "mean": 295998880,
+            "p95": 600086000,
+            "p99": 999975000,
+            "max": 1395473000,
+            "unit": "ns",
+            "over_1s": 2,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 139
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 40
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 12
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 7
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 1
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 1
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_nearest_200ms_periods": {
+            "reference_only_not_packet_loss": true,
+            "counts": {
+              "1": 139,
+              "2": 40,
+              "3": 12,
+              "4": 6,
+              "5": 2,
+              "7": 1
+            },
+            "max_absolute_residual_us": 4527
+          },
+          "first_row_age_from_common_start_ns": 732553848,
+          "last_row_age_at_common_deadline_ns": 52011938,
+          "host_valid_row_span_ns": 59215434214,
+          "local_valid_row_span_us": 59199776,
+          "callback_ids": {
+            "first": 0,
+            "last": 200,
+            "deltas": {
+              "1": 200
+            }
+          },
+          "queue_drops_values": [
+            0
+          ],
+          "profile_values": {
+            "mac": [
+              "1a:00:00:00:00:00"
+            ],
+            "channel": [
+              "11"
+            ],
+            "bandwidth": [
+              "0"
+            ],
+            "rx_state": [
+              "0"
+            ],
+            "len": [
+              "256"
+            ],
+            "first_word_invalid": [
+              "0"
+            ],
+            "sig_mode": [
+              "1"
+            ],
+            "mcs": [
+              "0"
+            ],
+            "stbc": [
+              "0"
+            ]
+          },
+          "bytes_connection": 174290,
+          "reads_connection": 1221,
+          "bytes_common_return_time": 173711,
+          "reads_common_return_time": 1218,
+          "pre_common_reads": 3,
+          "post_deadline_reads": 0,
+          "read_sizes_bytes": {
+            "count": 1218,
+            "min": 12,
+            "median": 128.0,
+            "mean": 142.61986863711002,
+            "p95": 256,
+            "p99": 256,
+            "max": 384
+          },
+          "read_return_gaps_ns": {
+            "count": 1217,
+            "min": 6706939,
+            "median": 14366969,
+            "mean": 49246769.16680361,
+            "p95": 317796575,
+            "p99": 536293985,
+            "max": 1330122965,
+            "unit": "ns",
+            "over_1s": 1,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 1156
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 40
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 18
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 2
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 1
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_gaps_ns": {
+            "count": 4500,
+            "min": 5892553,
+            "median": 12686520.5,
+            "mean": 13333333.333333334,
+            "p95": 16868817,
+            "p99": 21762224,
+            "max": 39860525,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 4500
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_count_common": 4499,
+          "row_assembly_ns": {
+            "count": 201,
+            "min": 54119182,
+            "median": 68797433,
+            "mean": 68805698.21393035,
+            "p95": 80043549,
+            "p99": 84068252,
+            "max": 85144214
+          },
+          "timing": {
+            "read_duration_ns": {
+              "count": 1218,
+              "min": 6025,
+              "median": 36427.5,
+              "mean": 44531.08210180624,
+              "p95": 123329,
+              "p99": 220175,
+              "max": 310220
+            },
+            "raw_persistence_ns": {
+              "count": 1218,
+              "min": 1678994,
+              "median": 2202985.0,
+              "mean": 2246855.5566502465,
+              "p95": 2698628,
+              "p99": 2873356,
+              "max": 18611675
+            },
+            "return_to_persistence_start_ns": {
+              "count": 1218,
+              "min": 1780,
+              "median": 3575167.0,
+              "mean": 3391112.565681445,
+              "p95": 5799761,
+              "p99": 7759654,
+              "max": 18105527
+            },
+            "processing_after_raw_persistence_ns": {
+              "count": 1218,
+              "min": 8151,
+              "median": 55058.5,
+              "mean": 95936.63875205255,
+              "p95": 450040,
+              "p99": 544418,
+              "max": 745015
+            },
+            "processing_to_ledger_sample_ns": {
+              "count": 1218,
+              "min": 1370,
+              "median": 7299.5,
+              "mean": 6441.354679802956,
+              "p95": 11495,
+              "p99": 14495,
+              "max": 59006
+            }
+          },
+          "closure": {
+            "confirmed": true,
+            "error": null,
+            "details": {
+              "open_attempts": 1,
+              "close_attempts": 1,
+              "dtr_requested": false,
+              "rts_requested": false,
+              "actual_line_update_attempts": [
+                {
+                  "line": "dtr",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                },
+                {
+                  "line": "rts",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                }
+              ],
+              "serial_settings": {
+                "baudrate": 115200,
+                "bytesize": 8,
+                "parity": "N",
+                "stopbits": 1,
+                "xonxoff": false,
+                "dsrdtr": false,
+                "rtscts": false,
+                "timeout": 0,
+                "write_timeout": 0,
+                "inter_byte_timeout": null
+              },
+              "open_flush_suppressed": 1,
+              "is_open": false,
+              "fd": null,
+              "electrical_transients_or_resets_excluded": false
+            },
+            "resource_observed_open_before_close": true
+          },
+          "tail": {
+            "byte_offset": 174290,
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "first_read": null,
+            "last_read_index": null,
+            "literal_header": {
+              "validated_as_CSI": false,
+              "complete_row_counted": false
+            }
+          },
+          "incidents_recorded": [
+            {
+              "anchor_ns": 195389253930793,
+              "first_observed_ns": 195390265988521,
+              "recovered_ns": 195390268624297,
+              "duration_ns": 1014693504,
+              "quality_approval": false,
+              "recovery_line": 174
+            },
+            {
+              "anchor_ns": 195427058147850,
+              "first_observed_ns": 195428066196126,
+              "recovered_ns": 195428463262528,
+              "duration_ns": 1405114678,
+              "quality_approval": false,
+              "recovery_line": 294
+            }
+          ],
+          "cadence_rows_per_second": 3.35,
+          "rssi": {
+            "count": 201,
+            "min": -56,
+            "median": -51,
+            "mean": -50.646766169154226,
+            "p95": -49,
+            "p99": -48,
+            "max": -47,
+            "p10": -52,
+            "p90": -49,
+            "unit": "dBm",
+            "histogram": {
+              "-47": 1,
+              "-48": 3,
+              "-49": 36,
+              "-50": 47,
+              "-51": 69,
+              "-52": 35,
+              "-53": 7,
+              "-54": 1,
+              "-55": 1,
+              "-56": 1
+            },
+            "population": "Strict complete valid rows only; unequal sample counts, no missing-value filling"
+          },
+          "continuity_flags": {
+            "callback_restart": 0,
+            "callback_gap": 0,
+            "local_discontinuity": 0,
+            "queue_drops_changed": 0
+          },
+          "anomalies_after_first_valid_row": []
+        },
+        "RX-02": {
+          "valid_complete_rows_common": 291,
+          "valid_complete_rows_connection": 291,
+          "complete_line_kinds": {
+            "invalid": 22,
+            "reset": 2,
+            "info": 67,
+            "neutral": 2,
+            "ready": 1,
+            "row": 291
+          },
+          "valid_rows_per_10s": [
+            47,
+            48,
+            48,
+            49,
+            50,
+            49
+          ],
+          "host_row_gaps_ns": {
+            "count": 290,
+            "min": 171446533,
+            "median": 199716319.0,
+            "mean": 204093148.1310345,
+            "p95": 219454014,
+            "p99": 397914908,
+            "max": 612338620,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 285
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 4
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 1
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_row_gaps_ns": {
+            "count": 290,
+            "min": 195458000,
+            "median": 199996000.0,
+            "mean": 204138148.27586207,
+            "p95": 201901000,
+            "p99": 399847000,
+            "max": 600020000,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 285
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 4
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 1
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "local_nearest_200ms_periods": {
+            "reference_only_not_packet_loss": true,
+            "counts": {
+              "1": 285,
+              "2": 4,
+              "3": 1
+            },
+            "max_absolute_residual_us": 4543
+          },
+          "first_row_age_from_common_start_ns": 744393444,
+          "last_row_age_at_common_deadline_ns": 68593598,
+          "host_valid_row_span_ns": 59187012958,
+          "local_valid_row_span_us": 59200063,
+          "callback_ids": {
+            "first": 0,
+            "last": 290,
+            "deltas": {
+              "1": 290
+            }
+          },
+          "queue_drops_values": [
+            0
+          ],
+          "profile_values": {
+            "mac": [
+              "1a:00:00:00:00:00"
+            ],
+            "channel": [
+              "11"
+            ],
+            "bandwidth": [
+              "0"
+            ],
+            "rx_state": [
+              "0"
+            ],
+            "len": [
+              "256"
+            ],
+            "first_word_invalid": [
+              "0"
+            ],
+            "sig_mode": [
+              "1"
+            ],
+            "mcs": [
+              "0"
+            ],
+            "stbc": [
+              "0"
+            ]
+          },
+          "bytes_connection": 251512,
+          "reads_connection": 1861,
+          "bytes_common_return_time": 251512,
+          "reads_common_return_time": 1861,
+          "pre_common_reads": 0,
+          "post_deadline_reads": 0,
+          "read_sizes_bytes": {
+            "count": 1861,
+            "min": 1,
+            "median": 128,
+            "mean": 135.1488447071467,
+            "p95": 256,
+            "p99": 256,
+            "max": 384
+          },
+          "read_return_gaps_ns": {
+            "count": 1860,
+            "min": 5434520,
+            "median": 13206331.0,
+            "mean": 32221146.725806452,
+            "p95": 136897943,
+            "p99": 145753006,
+            "max": 537914830,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 1855
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 4
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 1
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_gaps_ns": {
+            "count": 4629,
+            "min": 5718695,
+            "median": 12606231,
+            "mean": 12961762.799740765,
+            "p95": 16597248,
+            "p99": 22009910,
+            "max": 40640176,
+            "unit": "ns",
+            "over_1s": 0,
+            "histogram": [
+              {
+                "lower_inclusive_ns": 0,
+                "upper_exclusive_ns": 250000000,
+                "count": 4629
+              },
+              {
+                "lower_inclusive_ns": 250000000,
+                "upper_exclusive_ns": 500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 500000000,
+                "upper_exclusive_ns": 750000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 750000000,
+                "upper_exclusive_ns": 1000000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1000000000,
+                "upper_exclusive_ns": 1250000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1250000000,
+                "upper_exclusive_ns": 1500000000,
+                "count": 0
+              },
+              {
+                "lower_inclusive_ns": 1500000000,
+                "upper_exclusive_ns": null,
+                "count": 0
+              }
+            ]
+          },
+          "service_count_common": 4628,
+          "row_assembly_ns": {
+            "count": 291,
+            "min": 51094743,
+            "median": 66802986,
+            "mean": 67866131.82130584,
+            "p95": 80913378,
+            "p99": 85920505,
+            "max": 89273542
+          },
+          "timing": {
+            "read_duration_ns": {
+              "count": 1861,
+              "min": 6057,
+              "median": 37683,
+              "mean": 44934.09457281032,
+              "p95": 109686,
+              "p99": 208926,
+              "max": 289934
+            },
+            "raw_persistence_ns": {
+              "count": 1861,
+              "min": 1685941,
+              "median": 2205245,
+              "mean": 2230428.085975282,
+              "p95": 2681492,
+              "p99": 2873597,
+              "max": 4607637
+            },
+            "return_to_persistence_start_ns": {
+              "count": 1861,
+              "min": 1164,
+              "median": 2168736,
+              "mean": 2301090.70177324,
+              "p95": 5570092,
+              "p99": 6382961,
+              "max": 16330765
+            },
+            "processing_after_raw_persistence_ns": {
+              "count": 1861,
+              "min": 7269,
+              "median": 53784,
+              "mean": 92006.95969908651,
+              "p95": 446152,
+              "p99": 524183,
+              "max": 858504
+            },
+            "processing_to_ledger_sample_ns": {
+              "count": 1861,
+              "min": 1316,
+              "median": 7183,
+              "mean": 6427.910800644815,
+              "p95": 11615,
+              "p99": 15774,
+              "max": 31980
+            }
+          },
+          "closure": {
+            "confirmed": true,
+            "error": null,
+            "details": {
+              "open_attempts": 1,
+              "close_attempts": 1,
+              "dtr_requested": false,
+              "rts_requested": false,
+              "actual_line_update_attempts": [
+                {
+                  "line": "dtr",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                },
+                {
+                  "line": "rts",
+                  "requested": false,
+                  "outcome": "ioctl_returned"
+                }
+              ],
+              "serial_settings": {
+                "baudrate": 115200,
+                "bytesize": 8,
+                "parity": "N",
+                "stopbits": 1,
+                "xonxoff": false,
+                "dsrdtr": false,
+                "rtscts": false,
+                "timeout": 0,
+                "write_timeout": 0,
+                "inter_byte_timeout": null
+              },
+              "open_flush_suppressed": 1,
+              "is_open": false,
+              "fd": null,
+              "electrical_transients_or_resets_excluded": false
+            },
+            "resource_observed_open_before_close": true
+          },
+          "tail": {
+            "byte_offset": 251512,
+            "byte_length": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "first_read": null,
+            "last_read_index": null,
+            "literal_header": {
+              "validated_as_CSI": false,
+              "complete_row_counted": false
+            }
+          },
+          "incidents_recorded": [],
+          "cadence_rows_per_second": 4.85,
+          "rssi": {
+            "count": 291,
+            "min": -49,
+            "median": -47,
+            "mean": -46.62199312714777,
+            "p95": -46,
+            "p99": -45,
+            "max": -45,
+            "p10": -47,
+            "p90": -46,
+            "unit": "dBm",
+            "histogram": {
+              "-45": 13,
+              "-46": 91,
+              "-47": 181,
+              "-48": 5,
+              "-49": 1
+            },
+            "population": "Strict complete valid rows only; unequal sample counts, no missing-value filling"
+          },
+          "continuity_flags": {
+            "callback_restart": 0,
+            "callback_gap": 0,
+            "local_discontinuity": 0,
+            "queue_drops_changed": 0
+          },
+          "anomalies_after_first_valid_row": []
+        }
+      },
+      "incidents": [
+        {
+          "receiver": "RX-01",
+          "number": 1,
+          "original": {
+            "anchor_ns": 195389253930793,
+            "first_observed_ns": 195390265988521,
+            "recovered_ns": 195390268624297,
+            "duration_ns": 1014693504,
+            "quality_approval": false,
+            "recovery_line": 174
+          },
+          "anchor_relative_ns": 20738656327,
+          "recovery_relative_ns": 21753349831,
+          "previous_row": {
+            "kind": "row",
+            "id": 79,
+            "local_timestamp": 20691261,
+            "queue_drops": 0,
+            "first_read_index": 485,
+            "first_read_started_ns": "195389189523118",
+            "byte_offset": 70749,
+            "line_1based": 173,
+            "byte_end": 71485,
+            "byte_length": 736,
+            "line_sha256": "d35c3c2faefa60811fae565c82f58ae616eb17d92d65a91a8c4297e0b593e682",
+            "last_read_index": 489,
+            "returned_ns": "195389253930793",
+            "ledger_seq": 4298
+          },
+          "recovery_row": {
+            "kind": "row",
+            "id": 80,
+            "local_timestamp": 21691262,
+            "queue_drops": 0,
+            "first_read_index": 490,
+            "first_read_started_ns": "195390189172282",
+            "byte_offset": 71485,
+            "line_1based": 174,
+            "byte_end": 72385,
+            "byte_length": 900,
+            "line_sha256": "895f2079dc284261f9e6140bbad1ce4c0f212f17f14189b771cf6286f3767baa",
+            "last_read_index": 495,
+            "returned_ns": "195390268624297",
+            "ledger_seq": 4481
+          },
+          "local_gap_us": 1000001,
+          "callback_id_delta": 1,
+          "queue_drops_delta": 0,
+          "recovery_and_next_complete_rows": [
+            {
+              "kind": "row",
+              "id": 80,
+              "local_timestamp": 21691262,
+              "queue_drops": 0,
+              "first_read_index": 490,
+              "first_read_started_ns": "195390189172282",
+              "byte_offset": 71485,
+              "line_1based": 174,
+              "byte_end": 72385,
+              "byte_length": 900,
+              "line_sha256": "895f2079dc284261f9e6140bbad1ce4c0f212f17f14189b771cf6286f3767baa",
+              "last_read_index": 495,
+              "returned_ns": "195390268624297",
+              "ledger_seq": 4481
+            },
+            {
+              "kind": "row",
+              "id": 81,
+              "local_timestamp": 22092088,
+              "queue_drops": 0,
+              "first_read_index": 496,
+              "first_read_started_ns": "195390591229190",
+              "byte_offset": 72385,
+              "line_1based": 175,
+              "byte_end": 73232,
+              "byte_length": 847,
+              "line_sha256": "2bc7ea780c0b1e4205b1eb19123d14e9ad2e7510fcca316000b411957a1af7f8",
+              "last_read_index": 500,
+              "returned_ns": "195390656440718",
+              "ledger_seq": 4557
+            },
+            {
+              "kind": "row",
+              "id": 82,
+              "local_timestamp": 22491277,
+              "queue_drops": 0,
+              "first_read_index": 501,
+              "first_read_started_ns": "195390991043342",
+              "byte_offset": 73232,
+              "line_1based": 176,
+              "byte_end": 74008,
+              "byte_length": 776,
+              "line_sha256": "06a8806bb9203ecb5ed26f580fbb576a1ba24c5ed9c0d6978bb469b7b7eb31bc",
+              "last_read_index": 505,
+              "returned_ns": "195391047889493",
+              "ledger_seq": 4635
+            },
+            {
+              "kind": "row",
+              "id": 83,
+              "local_timestamp": 22891276,
+              "queue_drops": 0,
+              "first_read_index": 506,
+              "first_read_started_ns": "195391389218095",
+              "byte_offset": 74008,
+              "line_1based": 177,
+              "byte_end": 74842,
+              "byte_length": 834,
+              "line_sha256": "f3309978015e6e969ab8f9e80be50dfeac5b4f5b76deafcb3910970762de6d3e",
+              "last_read_index": 510,
+              "returned_ns": "195391451425553",
+              "ledger_seq": 4715
+            },
+            {
+              "kind": "row",
+              "id": 84,
+              "local_timestamp": 23091362,
+              "queue_drops": 0,
+              "first_read_index": 511,
+              "first_read_started_ns": "195391589282800",
+              "byte_offset": 74842,
+              "line_1based": 178,
+              "byte_end": 75671,
+              "byte_length": 829,
+              "line_sha256": "d46992a89b928912aa7aa0c2b5ac15e4568c4929ab7eb8f13dc19c91358031c6",
+              "last_read_index": 515,
+              "returned_ns": "195391657599887",
+              "ledger_seq": 4754
+            },
+            {
+              "kind": "row",
+              "id": 85,
+              "local_timestamp": 23691281,
+              "queue_drops": 0,
+              "first_read_index": 516,
+              "first_read_started_ns": "195392190231265",
+              "byte_offset": 75671,
+              "line_1based": 179,
+              "byte_end": 76632,
+              "byte_length": 961,
+              "line_sha256": "52b0bdc4389b11a528332d65a5c1f1b7d73547d58cf38c1a21d1fd667bc180f2",
+              "last_read_index": 521,
+              "returned_ns": "195392268380919",
+              "ledger_seq": 4874
+            }
+          ]
+        },
+        {
+          "receiver": "RX-01",
+          "number": 2,
+          "original": {
+            "anchor_ns": 195427058147850,
+            "first_observed_ns": 195428066196126,
+            "recovered_ns": 195428463262528,
+            "duration_ns": 1405114678,
+            "quality_approval": false,
+            "recovery_line": 294
+          },
+          "anchor_relative_ns": 58542873384,
+          "recovery_relative_ns": 59947988062,
+          "previous_row": {
+            "kind": "row",
+            "id": 199,
+            "local_timestamp": 58495697,
+            "queue_drops": 0,
+            "first_read_index": 1209,
+            "first_read_started_ns": "195426993436603",
+            "byte_offset": 172636,
+            "line_1based": 293,
+            "byte_end": 173423,
+            "byte_length": 787,
+            "line_sha256": "6c78a950fbf9fc6b4242cba7ae372b318e1def4a7e82083110ef65085b42b6c4",
+            "last_read_index": 1214,
+            "returned_ns": "195427058147850",
+            "ledger_seq": 12161
+          },
+          "recovery_row": {
+            "kind": "row",
+            "id": 200,
+            "local_timestamp": 59891170,
+            "queue_drops": 0,
+            "first_read_index": 1215,
+            "first_read_started_ns": "195428388212801",
+            "byte_offset": 173423,
+            "line_1based": 294,
+            "byte_end": 174290,
+            "byte_length": 867,
+            "line_sha256": "4810e3728d612c618932bf7f50853d867fe18ee2476a8a6016ff8b95e5612f81",
+            "last_read_index": 1220,
+            "returned_ns": "195428463262528",
+            "ledger_seq": 12445
+          },
+          "local_gap_us": 1395473,
+          "callback_id_delta": 1,
+          "queue_drops_delta": 0,
+          "recovery_and_next_complete_rows": [
+            {
+              "kind": "row",
+              "id": 200,
+              "local_timestamp": 59891170,
+              "queue_drops": 0,
+              "first_read_index": 1215,
+              "first_read_started_ns": "195428388212801",
+              "byte_offset": 173423,
+              "line_1based": 294,
+              "byte_end": 174290,
+              "byte_length": 867,
+              "line_sha256": "4810e3728d612c618932bf7f50853d867fe18ee2476a8a6016ff8b95e5612f81",
+              "last_read_index": 1220,
+              "returned_ns": "195428463262528",
+              "ledger_seq": 12445
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "contrasts": {
+    "RX-01": {
+      "rows": {
+        "A1": 294,
+        "B": 213,
+        "A2": 201,
+        "B_minus_A1": -81,
+        "A2_minus_A1": -93,
+        "A2_minus_B": -12,
+        "B_minus_mean_of_A1_A2": -34.5,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      },
+      "cadence_rows_per_second": {
+        "A1": 4.9,
+        "B": 3.55,
+        "A2": 3.35,
+        "B_minus_A1": -1.3500000000000005,
+        "A2_minus_A1": -1.5500000000000003,
+        "A2_minus_B": -0.19999999999999973,
+        "B_minus_mean_of_A1_A2": -0.5750000000000002,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      },
+      "host_mean_gap_ns": {
+        "A1": 201387354.23549488,
+        "B": 278361368.4433962,
+        "A2": 296077171.07,
+        "B_minus_A1": 76974014.20790133,
+        "A2_minus_A1": 94689816.83450511,
+        "A2_minus_B": 17715802.626603782,
+        "B_minus_mean_of_A1_A2": 29629105.79064876,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      },
+      "local_mean_gap_ns": {
+        "A1": 201364672.35494882,
+        "B": 278301000,
+        "A2": 295998880,
+        "B_minus_A1": 76936327.64505118,
+        "A2_minus_A1": 94634207.64505118,
+        "A2_minus_B": 17697880,
+        "B_minus_mean_of_A1_A2": 29619223.82252559,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      },
+      "RSSI_mean_dBm": {
+        "A1": -58.03741496598639,
+        "B": -53.8075117370892,
+        "A2": -50.646766169154226,
+        "B_minus_A1": 4.229903228897193,
+        "A2_minus_A1": 7.390648796832167,
+        "A2_minus_B": 3.160745567934974,
+        "B_minus_mean_of_A1_A2": 0.5345788304811094,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      },
+      "RSSI_median_dBm": {
+        "A1": -58.0,
+        "B": -54,
+        "A2": -51,
+        "B_minus_A1": 4.0,
+        "A2_minus_A1": 7.0,
+        "A2_minus_B": 3,
+        "B_minus_mean_of_A1_A2": 0.5,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      }
+    },
+    "RX-02": {
+      "rows": {
+        "A1": 296,
+        "B": 291,
+        "A2": 291,
+        "B_minus_A1": -5,
+        "A2_minus_A1": -5,
+        "A2_minus_B": 0,
+        "B_minus_mean_of_A1_A2": -2.5,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      },
+      "cadence_rows_per_second": {
+        "A1": 4.933333333333334,
+        "B": 4.85,
+        "A2": 4.85,
+        "B_minus_A1": -0.08333333333333393,
+        "A2_minus_A1": -0.08333333333333393,
+        "A2_minus_B": 0.0,
+        "B_minus_mean_of_A1_A2": -0.04166666666666696,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      },
+      "host_mean_gap_ns": {
+        "A1": 200686338.05084747,
+        "B": 204165019.24827588,
+        "A2": 204093148.1310345,
+        "B_minus_A1": 3478681.1974284053,
+        "A2_minus_A1": 3406810.0801870227,
+        "A2_minus_B": -71871.1172413826,
+        "B_minus_mean_of_A1_A2": 1775276.157334894,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      },
+      "local_mean_gap_ns": {
+        "A1": 200678379.66101694,
+        "B": 204138296.55172414,
+        "A2": 204138148.27586207,
+        "B_minus_A1": 3459916.890707195,
+        "A2_minus_A1": 3459768.614845127,
+        "A2_minus_B": -148.27586206793785,
+        "B_minus_mean_of_A1_A2": 1730032.5832846165,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      },
+      "RSSI_mean_dBm": {
+        "A1": -49.935810810810814,
+        "B": -48.68041237113402,
+        "A2": -46.62199312714777,
+        "B_minus_A1": 1.2553984396767959,
+        "A2_minus_A1": 3.3138176836630464,
+        "A2_minus_B": 2.0584192439862505,
+        "B_minus_mean_of_A1_A2": -0.40151040215472733,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      },
+      "RSSI_median_dBm": {
+        "A1": -50.0,
+        "B": -49,
+        "A2": -47,
+        "B_minus_A1": 1.0,
+        "A2_minus_A1": 3.0,
+        "A2_minus_B": 2,
+        "B_minus_mean_of_A1_A2": -0.5,
+        "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+      }
+    }
+  },
+  "timeline": {
+    "A1": {
+      "common_start_monotonic_ns": 192555238608188,
+      "actual_stop_monotonic_ns": 192615245545746,
+      "common_start_utc": "2026-11-03T21:29:26+00:00",
+      "common_start_realtime_ns": 1793741366084566557,
+      "gap_from_previous_actual_stop_ns": null
+    },
+    "B": {
+      "common_start_monotonic_ns": 194549372096064,
+      "actual_stop_monotonic_ns": 194609384638440,
+      "common_start_utc": "2026-11-03T22:02:40+00:00",
+      "common_start_realtime_ns": 1793743360218053677,
+      "gap_from_previous_actual_stop_ns": 1934126550318
+    },
+    "A2": {
+      "common_start_monotonic_ns": 195368515274466,
+      "actual_stop_monotonic_ns": 195428521087532,
+      "common_start_utc": "2026-11-03T22:16:19+00:00",
+      "common_start_realtime_ns": 1793744179361232972,
+      "gap_from_previous_actual_stop_ns": 759130636026
+    }
+  },
+  "RX01_to_RX02_count_ratios": {
+    "A1": 0.9932432432432432,
+    "B": 0.7319587628865979,
+    "A2": 0.6907216494845361
+  },
+  "A2_did_not_reproduce_A1": true,
+  "A2_reproduction_evidence": {
+    "RX01_rows": {
+      "A1": 294,
+      "B": 213,
+      "A2": 201,
+      "B_minus_A1": -81,
+      "A2_minus_A1": -93,
+      "A2_minus_B": -12,
+      "B_minus_mean_of_A1_A2": -34.5,
+      "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+    },
+    "RX01_RSSI_mean": {
+      "A1": -58.03741496598639,
+      "B": -53.8075117370892,
+      "A2": -50.646766169154226,
+      "B_minus_A1": 4.229903228897193,
+      "A2_minus_A1": 7.390648796832167,
+      "A2_minus_B": 3.160745567934974,
+      "B_minus_mean_of_A1_A2": 0.5345788304811094,
+      "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+    },
+    "RX02_RSSI_mean": {
+      "A1": -49.935810810810814,
+      "B": -48.68041237113402,
+      "A2": -46.62199312714777,
+      "B_minus_A1": 1.2553984396767959,
+      "A2_minus_A1": 3.3138176836630464,
+      "A2_minus_B": 2.0584192439862505,
+      "B_minus_mean_of_A1_A2": -0.40151040215472733,
+      "interpretation": "Descriptive contrasts only; neither causal effects nor uncertainty estimates"
+    },
+    "interpretation": "Exact observed count/mean differences, not a statistical equivalence test. Mechanical return is declared; no orientation causality established"
+  },
+  "preparation_evidence": {
+    "autorizacion-serie.json": {
+      "bytes": 2447,
+      "sha256": "3eb21f0458ab917ea2b890bdd961f3ee35d7d31bd1b33534883c800d8a84fabb"
+    },
+    "confirmacion-croquis-A1-B-r1.json": {
+      "bytes": 559,
+      "sha256": "c38155e7df5ac3b8655c9c32de59fcdbc5ceac5fa4151005867f7af74f7314ec"
+    },
+    "confirmacion-posicion-B-r1.json": {
+      "bytes": 720,
+      "sha256": "232d64afc0eeb6793b46dd31ea293a19ee9216e6f10c15cac8dade46794d2282"
+    },
+    "confirmacion-retorno-A1-para-A2-r1.json": {
+      "bytes": 1080,
+      "sha256": "cb155131c5d6f12fb04fb6cb3f559bed772fc4c2d0c0524ce4496f9049ea0311"
+    },
+    "confirmacion-suspension-A1-r1.json": {
+      "bytes": 523,
+      "sha256": "177989fcb5e01910286ae33c36db3b1af62d2e4dbf0aaddb2bd1e18cb873b95a"
+    },
+    "confirmacion-fuser-A1-r1.json": {
+      "bytes": 688,
+      "sha256": "8f9e982b3ab8b9d6bc9482cf9ec8a4b783bbaa0fc995c7864bb3b132c0ceb6ba"
+    },
+    "confirmacion-alimentacion-TX-A1-r1.json": {
+      "bytes": 248,
+      "sha256": "775b8fafd947e34b9f4e680c4638884bb899c407b8656144c9f9df6f30151c3e"
+    },
+    "croquis-A1-B-provisional-r1.md": {
+      "bytes": 1971,
+      "sha256": "26186f547bd50e6cc37acecc101299742da6975801deb3a0ae01366da04121e7"
+    },
+    "preparacion-A1-validada-r1.json": {
+      "bytes": 655,
+      "sha256": "3d06ffe0066a7ce66c079848dd1a2fc916b79d363180ef1a9c270dff1ba4e6e6"
+    },
+    "preparacion-B-validada-r1.json": {
+      "bytes": 644,
+      "sha256": "dc9e30fed1c565826302045fb3b70754aa7b32069700df42d9b032d038310aad"
+    },
+    "preparacion-A2-validada-r1.json": {
+      "bytes": 1120,
+      "sha256": "dcc09d34cd15e43864def04b949575155fd4cbe6843bee092b6d521488b6c378"
+    },
+    "preflight-reportado-y-comando-A1-r1.json": {
+      "bytes": 647,
+      "sha256": "ef0223ee1f02c2c613c26c922a93d2319035fb6565b53ff204c79bb688a9373f"
+    },
+    "preflight-reportado-y-comando-B-r1.json": {
+      "bytes": 552,
+      "sha256": "d83040145b303225c3de816a034c9058037ae6b4933e873ae99804c656d512cc"
+    },
+    "preflight-reportado-y-comando-A2-r1.json": {
+      "bytes": 573,
+      "sha256": "f390f990e2348e777648668b04bc3b511fcb9ce23c9a3f47c10f61a6045dcf27"
+    },
+    "montaje-A1-B-documentado-r1.json": {
+      "bytes": 7932,
+      "sha256": "e234330f993880fb00c59d084f90f6c63f20744efb174b8d5b9d4217530ef837"
+    },
+    "montaje-B-documentado-r1.json": {
+      "bytes": 8887,
+      "sha256": "7eb43c9ed4af8726ca2124942e11317189b48bd470540666b51c22a960d7b500"
+    },
+    "montaje-A2-documentado-r1.json": {
+      "bytes": 9567,
+      "sha256": "aeaa3c61c8e1bcd3bb4038c1d6160cb7cebaae7939d724b6322ad1bc258ca3e2"
+    }
+  },
+  "photo_reference_sha256": {
+    "/home/alan-monar/Downloads/ChatGPT Image Nov 3, 2026, 02_23_17 PM.jpg": "af4fa3e1a25090ec8ec10732435d0033f37294a03474e4ff0288ad9d34f568a8",
+    "/home/alan-monar/Downloads/ChatGPT Image Nov 3, 2026, 02_23_29 PM.jpg": "ae60d38a0136f65312cd952876a61389a93a96f7d4791ebdcd15f05ea7bb760d",
+    "/home/alan-monar/Downloads/ChatGPT Image Nov 3, 2026, 03_59_06 PM.jpg": "7d9c92f2038e210a4a9614cb9244c4ad9f0863ea4738ce6aa7dd1d7afc8b93ff"
+  },
+  "geometry_evidence_scope": "Operator declarations, unchanged photographs and confirmed relative sketch; no angular metrology or B/A2 photo measurement",
+  "acquisition_preflight_evidence": "Operator reported completion; no stdout/exit code archived. Acquisition runtime rechecked identities before/after opening.",
+  "sources": {
+    "src/antenna_aba_analysis.py": "e4459baac666b716de00371bdc86769de95e6bd5dbc4b3cb60d71fb716d4a15c",
+    "tools/comparar_antena_aba.py": "02c29f56a02770fdff4ebb9cec6ae8cc9d66ba6d174276f760d2a9d19243cb66",
+    "src/continuity_diagnostics.py": "6e53b0e853f137749ffe415415085c05cafe85d9c26788dc56ca1247ec174cf3",
+    "requirements-comparacion.txt": "466c2a8b7597c4758dd642fbe49ace211888c55f423aa8ffe8dddcdb63893871"
+  },
+  "validation": {
+    "tests_passed": 279,
+    "skipped": 0,
+    "seconds": 29.719,
+    "new_tests": 10,
+    "test_log_sha256": "34a55addb6eec8a2115e179377e9885b2afbb4956e90901cbb2cf3b32a2e4335",
+    "physical_UART_opened_by_analysis": false,
+    "plots_visually_inspected": [
+      "cadencia",
+      "huecos_ecdf",
+      "huecos_tiempo",
+      "rssi",
+      "transporte"
+    ]
+  },
+  "full_local_artifacts": {
+    "results/local/consolidacion-antena-aba-r3-r1/artefactos-r1/comparison.json": {
+      "bytes": 135853,
+      "sha256": "dbb50418665060fd11ce899a4ab5fb59015f9a0458f06dea20882656a5571839"
+    },
+    "results/local/consolidacion-antena-aba-r3-r1/artefactos-r1/observations.json": {
+      "bytes": 1390039,
+      "sha256": "8c5aaccedce25ee3fbb2997543198ceb9f7b08e390f4639b7b00669237ae7b7d"
+    },
+    "results/local/consolidacion-antena-aba-r3-r1/serie-cerrada-r1.json": {
+      "bytes": 967,
+      "sha256": "40efd99977ba1186f4b3596207c0d70f7a9ae7413f3d6b45574896ce7c68db2c"
+    }
+  },
+  "preservation": {
+    "existing_files": 2792,
+    "unchanged_files": 2791,
+    "state_previous_prefix_preserved": true,
+    "all_27_bundle_files_unchanged": true,
+    "original_photos_and_preparation_unchanged": true,
+    "all_three_authorizations_consumed": true
+  }
+}

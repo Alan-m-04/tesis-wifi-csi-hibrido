@@ -1,0 +1,61 @@
+{
+  "protocol": "presence_persistent_v4",
+  "execution_mode": "physical_after_approval",
+  "policy": {
+    "window_ns": 30000000000,
+    "availability_wait_ns": 10000000000,
+    "freshness_ns": 1000000000,
+    "exit_delay_ns": 60000000000,
+    "start_cue_delay_ns": 30000000000,
+    "establishment_ns": 30000000000,
+    "label_tail_ns": 10000000000,
+    "close_wait_ns": 250000000,
+    "close_bytes": 65536,
+    "coverage_min_rows": 120,
+    "coverage_bin_rows": 15,
+    "coverage_gap_ns": 500000000
+  },
+  "receivers": {
+    "RX-01": "5C93199744",
+    "RX-02": "5C93200689"
+  },
+  "connection_id": "PENDIENTE-ID-CONEXION-UNICO",
+  "actor": "PENDIENTE",
+  "mounting_reference": "PENDIENTE-HASH-MONTAJE",
+  "partition_group": "PENDIENTE-VISITA",
+  "slots": [
+    {
+      "id": "B01-E",
+      "condition": "E"
+    },
+    {
+      "id": "B01-S",
+      "condition": "S"
+    },
+    {
+      "id": "B01-W",
+      "condition": "W"
+    }
+  ],
+  "ports": {
+    "RX-01": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93199744-if00",
+    "RX-02": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00"
+  },
+  "baud": 115200,
+  "storage_policy": {
+    "initial_free_bytes": 104857600,
+    "reserve_bytes": 33554432,
+    "max_raw_bytes": 67108864,
+    "max_bundle_bytes": 268435456,
+    "max_connection_ns": 3600000000000
+  },
+  "environment": {
+    "condition": "PENDIENTE",
+    "occupancy": "PENDIENTE",
+    "movement": "PENDIENTE",
+    "geometry": "PENDIENTE",
+    "tx_power": "PENDIENTE",
+    "mounting_confirmation": "PENDIENTE",
+    "sound_practice_reference": "PENDIENTE"
+  }
+}

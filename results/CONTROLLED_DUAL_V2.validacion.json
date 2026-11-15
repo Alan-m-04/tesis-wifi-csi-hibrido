@@ -1,0 +1,479 @@
+{
+  "schema": "tesis-controlled-dual-v2-verification-v1",
+  "base_commit": "39c5cc3413ca5250320a5218f14dca2723bbb612",
+  "branch": "feat/captura-dual-v2",
+  "checked_utc": "2026-10-25T19:57:24.039846+00:00",
+  "physical_UART_opened": false,
+  "new_physical_capture": false,
+  "authorization_created_or_consumed": false,
+  "firmware_modified": false,
+  "preservation": {
+    "files": 51,
+    "all_unchanged": true,
+    "snapshot_sha256": "453661ef61741e8ae991f665cea38ec75ac643568aa4a72bded56127b246fa0c"
+  },
+  "stop_policy": {
+    "grace_ns": 250000000,
+    "max_completion_bytes": 65536
+  },
+  "tests": {
+    "command": "./tools/test_offline.sh results/local/visualizacion-csi-entrega/canonical.json",
+    "python_passed": 124,
+    "node_passed": 31,
+    "total_passed": 155,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "stdout_sha256": "f137466c75de2c65b7d3dd0eb9810eccf3bbfcdd567347786641e029c469462c",
+    "stderr_sha256": "e255f0c445caec6b066418aad0f0bdc3689ac6add12d8da1c69bd4847d9cd073",
+    "new_test_methods": 13,
+    "development_issue_fixed": "Initial PTY abort test exposed an audit envelope assumption: a planned nominal deadline can be later than actual aborted stop. v2 now audits recorded transport and still rejects the aborted session globally."
+  },
+  "synthetic_runs": {
+    "accepted": {
+      "evidence_type": "synthetic_fixture",
+      "nominal_seconds": 30,
+      "common_window_ns": 30000000000,
+      "returncode": 0,
+      "bundle_files_verified": 15,
+      "bundle_manifest_sha256": "aa15cd88480e77ad2434fc7b254f5acd93ba6c3daa8feb3c102857082d8bfc22",
+      "audit_matches_independent": true,
+      "quality": {
+        "session_quality_ok": true,
+        "full_session": {
+          "schema": "tesis-offline-capture-audit-v1",
+          "operation": "offline_validation",
+          "new_physical_capture": false,
+          "manifest_ok": true,
+          "source_evidence_type": "synthetic_fixture",
+          "session_status": "completed",
+          "receivers": {
+            "RX-01": {
+              "valid_rows": 2,
+              "raw_sha256": "ed43f38d468c7a0672648daa6f983f3d3633b81767bb9652fd7c378427e759b2",
+              "csv_sha256": "e17c4382cd7483fc4c8c88c304d93ce5014c339bfbb0ddcb3f2f1697660c245a",
+              "raw_frames_equal_csv": true,
+              "integrity_ok": true,
+              "collector_quality_recorded": true,
+              "collector_quality_recomputed": true,
+              "representation_profile_ok": true,
+              "additional_checks_ok": true,
+              "host_frames_inside_requested_gate": true,
+              "read_ledger_ok": true,
+              "common_window_rows": 1,
+              "counts": {
+                "malformed_rows": 0,
+                "unexpected_source_rows": 0,
+                "unexpected_metadata_rows": 0,
+                "boot_error_count": 0,
+                "oversized_lines": 0,
+                "callback_id_gaps": 0,
+                "nonincreasing_ids": 0,
+                "device_clock_wraps": 0,
+                "device_time_discontinuities": 0,
+                "queue_drop_increment": 0,
+                "queue_counter_decreases": 0
+              },
+              "trailing_bytes": 0,
+              "embedded_boot_lines": [],
+              "orphan_fragment_lines": [],
+              "initial_boot_markers": 0,
+              "midstream_boot_markers": 0,
+              "first_id": 0,
+              "last_id": 1,
+              "quality_ok": true,
+              "complete_rows_quality_ok": true,
+              "preamble_rows": 0,
+              "post_deadline_rows": 1,
+              "stop_metadata_ok": true,
+              "stop_quality_ok": true,
+              "stop": {
+                "started_ns": "2946226756588",
+                "started_utc": "2026-10-25T19:52:59.070507+00:00",
+                "nominal_deadline_ns": "2976227257573",
+                "completion_deadline_ns": "2976477257573",
+                "max_completion_bytes": 65536,
+                "completion_started_ns": "2976227454979",
+                "last_read_returned_ns": "2976277100037",
+                "stop_reason": "lf_boundary",
+                "stopped_ns": "2976277262596",
+                "stopped_utc": "2026-10-25T19:53:29.121011+00:00",
+                "bytes_received": 1708,
+                "trailing_bytes": 0,
+                "completion_bytes": 725,
+                "lf_boundary_reached": true,
+                "last_return_within_budget": true
+              }
+            },
+            "RX-02": {
+              "valid_rows": 2,
+              "raw_sha256": "ed43f38d468c7a0672648daa6f983f3d3633b81767bb9652fd7c378427e759b2",
+              "csv_sha256": "8084e27277bcc62e68d860ee4e4594ec6081754a32b8326382d01005564b7349",
+              "raw_frames_equal_csv": true,
+              "integrity_ok": true,
+              "collector_quality_recorded": true,
+              "collector_quality_recomputed": true,
+              "representation_profile_ok": true,
+              "additional_checks_ok": true,
+              "host_frames_inside_requested_gate": true,
+              "read_ledger_ok": true,
+              "common_window_rows": 1,
+              "counts": {
+                "malformed_rows": 0,
+                "unexpected_source_rows": 0,
+                "unexpected_metadata_rows": 0,
+                "boot_error_count": 0,
+                "oversized_lines": 0,
+                "callback_id_gaps": 0,
+                "nonincreasing_ids": 0,
+                "device_clock_wraps": 0,
+                "device_time_discontinuities": 0,
+                "queue_drop_increment": 0,
+                "queue_counter_decreases": 0
+              },
+              "trailing_bytes": 0,
+              "embedded_boot_lines": [],
+              "orphan_fragment_lines": [],
+              "initial_boot_markers": 0,
+              "midstream_boot_markers": 0,
+              "first_id": 0,
+              "last_id": 1,
+              "quality_ok": true,
+              "complete_rows_quality_ok": true,
+              "preamble_rows": 0,
+              "post_deadline_rows": 1,
+              "stop_metadata_ok": true,
+              "stop_quality_ok": true,
+              "stop": {
+                "started_ns": "2946227203118",
+                "started_utc": "2026-10-25T19:52:59.070952+00:00",
+                "nominal_deadline_ns": "2976227257573",
+                "completion_deadline_ns": "2976477257573",
+                "max_completion_bytes": 65536,
+                "completion_started_ns": "2976227642706",
+                "last_read_returned_ns": "2976278862839",
+                "stop_reason": "lf_boundary",
+                "stopped_ns": "2976278999525",
+                "stopped_utc": "2026-10-25T19:53:29.122752+00:00",
+                "bytes_received": 1708,
+                "trailing_bytes": 0,
+                "completion_bytes": 725,
+                "lf_boundary_reached": true,
+                "last_return_within_budget": true
+              }
+            }
+          },
+          "postflight_identity_ok": true,
+          "quality_ok": true
+        },
+        "stable_window": null,
+        "derived_window_created": false
+      },
+      "visualization": {
+        "path": "results/local/verificacion-controlled-dual-v2/analisis-aceptado/visualization/index.html",
+        "validation_sha256": "d01ad7e1de8e6fc275aedf3593bf4c4f9803618728b150c30081af10b5e2d1a7",
+        "browser_views": 4,
+        "browser_report_sha256": "807ff71032e9c89f2e384aae8b532e55db280592197a633ed106eb9bc9a82c87",
+        "all_late_rows_shown_outside_nominal_window": true
+      },
+      "lifecycle": [
+        {
+          "event": "opening",
+          "receiver": "RX-01",
+          "monotonic_ns": "2946224450517",
+          "utc": "2026-10-25T19:52:59.068200+00:00"
+        },
+        {
+          "event": "opened",
+          "receiver": "RX-01",
+          "monotonic_ns": "2946224766063",
+          "dtr_requested": false,
+          "rts_requested": false,
+          "open_input_flush_suppressed": 1,
+          "utc": "2026-10-25T19:52:59.068517+00:00"
+        },
+        {
+          "event": "opening",
+          "receiver": "RX-02",
+          "monotonic_ns": "2946225221918",
+          "utc": "2026-10-25T19:52:59.068972+00:00"
+        },
+        {
+          "event": "opened",
+          "receiver": "RX-02",
+          "monotonic_ns": "2946226857299",
+          "dtr_requested": false,
+          "rts_requested": false,
+          "open_input_flush_suppressed": 1,
+          "utc": "2026-10-25T19:52:59.070609+00:00"
+        },
+        {
+          "event": "readers_joined",
+          "monotonic_ns": "2976279348182"
+        },
+        {
+          "event": "closing",
+          "receiver": "RX-02",
+          "monotonic_ns": "2976279353046",
+          "utc": "2026-10-25T19:53:29.123102+00:00"
+        },
+        {
+          "event": "closed",
+          "receiver": "RX-02",
+          "monotonic_ns": "2976279382387",
+          "utc": "2026-10-25T19:53:29.123130+00:00"
+        },
+        {
+          "event": "closing",
+          "receiver": "RX-01",
+          "monotonic_ns": "2976279387119",
+          "utc": "2026-10-25T19:53:29.123136+00:00"
+        },
+        {
+          "event": "closed",
+          "receiver": "RX-01",
+          "monotonic_ns": "2976279401789",
+          "utc": "2026-10-25T19:53:29.123150+00:00"
+        },
+        {
+          "event": "ports_closed",
+          "monotonic_ns": "2976279404698"
+        }
+      ]
+    },
+    "rejected": {
+      "evidence_type": "synthetic_fixture",
+      "nominal_seconds": 0.12,
+      "common_window_ns": 120000000,
+      "returncode": 1,
+      "bundle_files_verified": 15,
+      "bundle_manifest_sha256": "05324e39e116d90117a9cc618d6f8bf4b518c1728dd0d442eb6bbaf0a84c993a",
+      "audit_matches_independent": true,
+      "quality": {
+        "session_quality_ok": false,
+        "full_session": {
+          "schema": "tesis-offline-capture-audit-v1",
+          "operation": "offline_validation",
+          "new_physical_capture": false,
+          "manifest_ok": true,
+          "source_evidence_type": "synthetic_fixture",
+          "session_status": "completed",
+          "receivers": {
+            "RX-01": {
+              "valid_rows": 2,
+              "raw_sha256": "9fdde78ff1262350b9d9fe68cb4e0b20c4ef9392283a91d4469310c895378bd2",
+              "csv_sha256": "00b55992d1bb990d4312ef86504f27a3076b1ee14c600310c1cc39ff87e1ff80",
+              "raw_frames_equal_csv": true,
+              "integrity_ok": true,
+              "collector_quality_recorded": true,
+              "collector_quality_recomputed": true,
+              "representation_profile_ok": true,
+              "additional_checks_ok": false,
+              "host_frames_inside_requested_gate": true,
+              "read_ledger_ok": true,
+              "common_window_rows": 1,
+              "counts": {
+                "malformed_rows": 0,
+                "unexpected_source_rows": 0,
+                "unexpected_metadata_rows": 0,
+                "boot_error_count": 0,
+                "oversized_lines": 0,
+                "callback_id_gaps": 0,
+                "nonincreasing_ids": 0,
+                "device_clock_wraps": 0,
+                "device_time_discontinuities": 0,
+                "queue_drop_increment": 0,
+                "queue_counter_decreases": 0
+              },
+              "trailing_bytes": 0,
+              "embedded_boot_lines": [
+                1
+              ],
+              "orphan_fragment_lines": [],
+              "initial_boot_markers": 1,
+              "midstream_boot_markers": 0,
+              "first_id": 0,
+              "last_id": 1,
+              "quality_ok": false,
+              "complete_rows_quality_ok": true,
+              "preamble_rows": 0,
+              "post_deadline_rows": 1,
+              "stop_metadata_ok": true,
+              "stop_quality_ok": true,
+              "stop": {
+                "started_ns": "2976292161987",
+                "started_utc": "2026-10-25T19:53:29.135911+00:00",
+                "nominal_deadline_ns": "2976412575352",
+                "completion_deadline_ns": "2976662575352",
+                "max_completion_bytes": 65536,
+                "completion_started_ns": "2976412779076",
+                "last_read_returned_ns": "2976466769800",
+                "stop_reason": "lf_boundary",
+                "stopped_ns": "2976466917569",
+                "stopped_utc": "2026-10-25T19:53:29.310666+00:00",
+                "bytes_received": 1730,
+                "trailing_bytes": 0,
+                "completion_bytes": 725,
+                "lf_boundary_reached": true,
+                "last_return_within_budget": true
+              }
+            },
+            "RX-02": {
+              "valid_rows": 2,
+              "raw_sha256": "9fdde78ff1262350b9d9fe68cb4e0b20c4ef9392283a91d4469310c895378bd2",
+              "csv_sha256": "1ee4f4ffa929845be6f19a9d65945aca7380444cfcf2a968932c19483c627efa",
+              "raw_frames_equal_csv": true,
+              "integrity_ok": true,
+              "collector_quality_recorded": true,
+              "collector_quality_recomputed": true,
+              "representation_profile_ok": true,
+              "additional_checks_ok": false,
+              "host_frames_inside_requested_gate": true,
+              "read_ledger_ok": true,
+              "common_window_rows": 1,
+              "counts": {
+                "malformed_rows": 0,
+                "unexpected_source_rows": 0,
+                "unexpected_metadata_rows": 0,
+                "boot_error_count": 0,
+                "oversized_lines": 0,
+                "callback_id_gaps": 0,
+                "nonincreasing_ids": 0,
+                "device_clock_wraps": 0,
+                "device_time_discontinuities": 0,
+                "queue_drop_increment": 0,
+                "queue_counter_decreases": 0
+              },
+              "trailing_bytes": 0,
+              "embedded_boot_lines": [
+                1
+              ],
+              "orphan_fragment_lines": [],
+              "initial_boot_markers": 1,
+              "midstream_boot_markers": 0,
+              "first_id": 0,
+              "last_id": 1,
+              "quality_ok": false,
+              "complete_rows_quality_ok": true,
+              "preamble_rows": 0,
+              "post_deadline_rows": 1,
+              "stop_metadata_ok": true,
+              "stop_quality_ok": true,
+              "stop": {
+                "started_ns": "2976292561022",
+                "started_utc": "2026-10-25T19:53:29.136310+00:00",
+                "nominal_deadline_ns": "2976412575352",
+                "completion_deadline_ns": "2976662575352",
+                "max_completion_bytes": 65536,
+                "completion_started_ns": "2976412724801",
+                "last_read_returned_ns": "2976466159581",
+                "stop_reason": "lf_boundary",
+                "stopped_ns": "2976466337679",
+                "stopped_utc": "2026-10-25T19:53:29.310086+00:00",
+                "bytes_received": 1730,
+                "trailing_bytes": 0,
+                "completion_bytes": 725,
+                "lf_boundary_reached": true,
+                "last_return_within_budget": true
+              }
+            }
+          },
+          "postflight_identity_ok": true,
+          "quality_ok": false
+        },
+        "stable_window": null,
+        "derived_window_created": false
+      },
+      "visualization": {
+        "path": "results/local/verificacion-controlled-dual-v2/analisis-rechazado/visualization/index.html",
+        "validation_sha256": "05bbaa0d8310a7ef15c5b74c9822e8b1cf2d18e792ad1fd43f48337f417b39f6",
+        "browser_views": 4,
+        "browser_report_sha256": "10529dc8ae557925f32cd1435df7da4325426b6c762c5514b263a7686acb9c62",
+        "all_late_rows_shown_outside_nominal_window": true
+      },
+      "lifecycle": [
+        {
+          "event": "opening",
+          "receiver": "RX-01",
+          "monotonic_ns": "2976291805064",
+          "utc": "2026-10-25T19:53:29.135554+00:00"
+        },
+        {
+          "event": "opened",
+          "receiver": "RX-01",
+          "monotonic_ns": "2976291945890",
+          "dtr_requested": false,
+          "rts_requested": false,
+          "open_input_flush_suppressed": 1,
+          "utc": "2026-10-25T19:53:29.135696+00:00"
+        },
+        {
+          "event": "opening",
+          "receiver": "RX-02",
+          "monotonic_ns": "2976292196021",
+          "utc": "2026-10-25T19:53:29.135944+00:00"
+        },
+        {
+          "event": "opened",
+          "receiver": "RX-02",
+          "monotonic_ns": "2976292364528",
+          "dtr_requested": false,
+          "rts_requested": false,
+          "open_input_flush_suppressed": 1,
+          "utc": "2026-10-25T19:53:29.136114+00:00"
+        },
+        {
+          "event": "readers_joined",
+          "monotonic_ns": "2976467378191"
+        },
+        {
+          "event": "closing",
+          "receiver": "RX-02",
+          "monotonic_ns": "2976467382385",
+          "utc": "2026-10-25T19:53:29.311131+00:00"
+        },
+        {
+          "event": "closed",
+          "receiver": "RX-02",
+          "monotonic_ns": "2976467402861",
+          "utc": "2026-10-25T19:53:29.311151+00:00"
+        },
+        {
+          "event": "closing",
+          "receiver": "RX-01",
+          "monotonic_ns": "2976467406240",
+          "utc": "2026-10-25T19:53:29.311154+00:00"
+        },
+        {
+          "event": "closed",
+          "receiver": "RX-01",
+          "monotonic_ns": "2976467415654",
+          "utc": "2026-10-25T19:53:29.311164+00:00"
+        },
+        {
+          "event": "ports_closed",
+          "monotonic_ns": "2976467418998"
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "src/bounded_frame_reader.py": "beff59e37c4df07c7a07dc107b476929dc5ba94213a374170f9cf340bb4b30c4",
+    "src/audit_bounded_stop.py": "28af6bc357c8e80a38136f1168b92c2cc8d735ead41eae60723125be88b206b9",
+    "src/controlled_protocol.py": "4ffe309fb7143dd62ffd9047612f12315daa4f93844a0e848d13ec242231aeee",
+    "src/capture_csi_multi.py": "b0f8248e717a47cb729593845bd3f5ae437de82832c1410293f5c4b0e7c62cd3",
+    "src/controlled_capture.py": "a1b6acb10628a853e52c6928fb9e198f834979c7a038291a13b8557e996c8179",
+    "src/validate_capture.py": "0ba5ac8ea08c35f70e927d9b7f1b07f5f7a62dcc4e5385177a5723eb99f6e524",
+    "src/canonical_csi.py": "1dfd205efc4477a85163d6469d365194bdf86cb4dde01ca47666c1c994d9534a",
+    "src/offline_view.mjs": "7243f3d25ed68297b056fda4b1c560615a2236a4cb5d81fead9e8adf0a71a788",
+    "tools/check_offline_browser.py": "079a7d28bc43673a966bdda886179534d224696e56c7f9788e31df8c6c8b3fbd",
+    "tools/ensayar_controlled_v2.py": "a53fda2ff6768901712c6cfc803ba713304c9f4e91c6e43a86d69a06e023982d",
+    "tests/pty_dual_v2_fixture.py": "335bcca4d10045823a45676a148ec638f99f3a504fab2e5d2c12a6d5d77c608d",
+    "tests/test_controlled_v2.py": "6e1237aeffe484ae7593766e106d9b83748f0f2cba123bcb6e2e0faf3f404163",
+    "config/captura_dual_v2_30s.template.json": "75206ea2e9f817a27ec7b672892769054d4ff6b64c889818d3ccc404112bfd79"
+  },
+  "previous_v1_audit_exactly_equal": true,
+  "default_cli_verified_prepared_without_UART": true,
+  "implementation_commit": "564e1e1535bed170d95909c21c69337bbda02140",
+  "tested_sources_match_implementation_commit": true
+}

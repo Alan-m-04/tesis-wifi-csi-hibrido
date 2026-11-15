@@ -1,0 +1,40 @@
+{
+  "protocol": "continuity-dual-1",
+  "policy": {
+    "duration_ns": 60000000000,
+    "incident_ns": 1000000000,
+    "poll_ns": 10000000,
+    "read_bytes": 16384
+  },
+  "diagnostic_id": "CONT-ORI-ABA-R1-A1",
+  "operator": "Alan",
+  "ports": {
+    "RX-01": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93199744-if00",
+    "RX-02": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5C93200689-if00"
+  },
+  "receivers": {
+    "RX-01": "5C93199744",
+    "RX-02": "5C93200689"
+  },
+  "baud": 115200,
+  "storage_policy": {
+    "initial_free_bytes": 104857600,
+    "reserve_bytes": 33554432,
+    "max_raw_bytes": 67108864,
+    "max_bundle_bytes": 268435456,
+    "max_connection_ns": 3600000000000
+  },
+  "declarations": {
+    "mounting": "PENDIENTE completar registro antes de medir. A inicial: orientación actual 0° relativa, centro C y flecha USB→extremo opuesto por registrar. RX-02, TX, laptop, identidades, cables y puertos fijos. Sin desconexión.",
+    "power": "PENDIENTE confirmación actual de alimentación de TX/RX/laptop y tapa; no asumir por antecedentes.",
+    "host": "PENDIENTE confirmación actual de suspensión desactivada y ausencia de otros lectores/capturas.",
+    "environment": "PENDIENTE describir ambiente y contexto del operador constantes en A1/B/A2; sin etiqueta experimental de presencia."
+  },
+  "permitted_uses": {
+    "eligible_windows": false,
+    "presence_labels": false,
+    "calibration": false,
+    "training": false,
+    "production": false
+  }
+}

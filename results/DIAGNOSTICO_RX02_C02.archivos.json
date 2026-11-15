@@ -1,0 +1,38 @@
+{
+  "schema": "tesis-rx02-C02-diagnostic-publication-1",
+  "scope": "Report, forensic derived statistics and references, source and tests; excludes this manifest itself",
+  "input_files_preserved": 34,
+  "C02_ineligible": true,
+  "label_status": "pending",
+  "new_acquisition": false,
+  "files": {
+    "README.md": {
+      "bytes": 20032,
+      "sha256": "e3fad28ac9aeab62ab23d785f95e622e160eecfd4eeea9f7aafdb06592f75794"
+    },
+    "src/rx02_gap_diagnostics.py": {
+      "bytes": 15133,
+      "sha256": "0cf501d16d9550c542917120a0313f78254b7b5e61a239d95f5ff87d41bd8234"
+    },
+    "tools/diagnosticar_rx02_c02.py": {
+      "bytes": 1701,
+      "sha256": "5862c18557234fdb4c22f0d9a30b73edf23fb61e5fc881250406d163979c0ce8"
+    },
+    "tests/test_rx02_gap_diagnostics.py": {
+      "bytes": 5794,
+      "sha256": "a58a55767191140c3b050ee8e5dde18a360287ce51c905f284dc1e11a6ed5d42"
+    },
+    "results/DIAGNOSTICO_RX02_C02.md": {
+      "bytes": 15574,
+      "sha256": "65bb207a87fd0fb23ca65e5a35b7ec220bde22858af0298ceebed7f907c1ba5c"
+    },
+    "results/DIAGNOSTICO_RX02_C02.resumen.json": {
+      "bytes": 112782,
+      "sha256": "4af18529845a0b41c8254ab6ff2a14d251d810967cfd40b8cc43d00d81924c0d"
+    },
+    "results/DIAGNOSTICO_RX02_C02.validacion.json": {
+      "bytes": 1073,
+      "sha256": "20f1b4911202f6b45923f63ac1db266f6730d637510e9a2de2aa605cd6fe6a85"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "tesis-preservation-offline-20261114-1",
+  "branch": "feat/demo-offline-operacion-20261109",
+  "initial_head": "c518d079e9882158f4ad63b8bf6c620bf47bd67a",
+  "dirty_files_checked": 69,
+  "protected_local_files_checked": 4126,
+  "protected_local_bytes": 927079174,
+  "changed_files": {
+    "dirty": [],
+    "protected": []
+  },
+  "reserve_contents_read": false,
+  "inventory_excludes_reserved_C04_C06": true,
+  "initial_manifest": "results/local/avance-offline-20261114-r1/preservacion-inicial.json",
+  "initial_manifest_sha256": "d84b7bb10f39b5a08f14f37ac991b2e40a3ebaaa59f51e7723179641a12141ac",
+  "logs": {
+    "regresion-final-r2.log": {
+      "bytes": 17227,
+      "sha256": "87d6db9a82a2c9b1cc7b99e246554bd61427a6fad40504fa2bc7c5372867059b"
+    },
+    "node-contracts.log": {
+      "bytes": 522,
+      "sha256": "ac91573597b3f4e6e682459cccb2839a7e5f3d7bfc8850875f09906b6aa21013"
+    },
+    "servidor.log": {
+      "bytes": 76,
+      "sha256": "e90d3c5f1f8bc317d26ffa39366d288cb5aa8f6887860e64570f033cc4c5bf7b"
+    },
+    "firefox.log": {
+      "bytes": 105,
+      "sha256": "675c56bbf372db0a6819d0f1b2636ee82110b8f5a9e236edd99b1db00df76e96"
+    },
+    "sqlite-verify.log": {
+      "bytes": 1498,
+      "sha256": "7f96067d9ef3d3fdcea598888f4a26d57e7071bd0c486481c4376723036fc9f0"
+    },
+    "tablero-verificado.log": {
+      "bytes": 2423,
+      "sha256": "3bd510c2a652229c771938ba19da42238fb1b77469a1b9608cea005aba8ffd3f"
+    },
+    "edge-evaluation-final.log": {
+      "bytes": 559,
+      "sha256": "b6010c3f323a52770354a8780893c596b36fc1f55cb8c5207b00d28decc8bbf7"
+    },
+    "qa-dom-piloto.json": {
+      "bytes": 882,
+      "sha256": "8c57736b0d5f0212da83647829c5f6fb54b8835cdae0a830b3faf0fe294148eb"
+    }
+  },
+  "publication_note": "Inventario detallado y rutas privadas permanecen locales; se publican conteos y hashes agregados."
+}

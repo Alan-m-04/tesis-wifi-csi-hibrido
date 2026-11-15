@@ -1,0 +1,321 @@
+{
+  "schema": "tesis-c03-checkpoint-integration-hashes-1",
+  "protected_files": {
+    "config/piloto_rx02_r1_C01.local.json": {
+      "bytes": 3793,
+      "sha256": "89d853add6326c201ed9ff0b84d0793129379b1cf98a177ed83cc158883aff83"
+    },
+    "config/piloto_rx02_r1_C01.review.json": {
+      "bytes": 2165,
+      "sha256": "76168def1353e4cf1e9a393b142ca9d6763e23fd88c05df4984052ccd9b89119"
+    },
+    "config/piloto_rx02_r1_C02.local.json": {
+      "bytes": 3748,
+      "sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b"
+    },
+    "config/piloto_rx02_r1_C02.review.json": {
+      "bytes": 2165,
+      "sha256": "e9ce306812c30fdf84aab4f4559582f1cd0eb857347f187a24e0ccbe42a62cc5"
+    },
+    "results/local/autorizacion-rx02-C01-20261104T220105Z/SHA256.json": {
+      "bytes": 571,
+      "sha256": "efe50946fb2b6fbdee5a2f51cc93be85cea0759f690a01d086c9b355ac9f59f9"
+    },
+    "results/local/autorizacion-rx02-C01-20261104T220105Z/autorizacion.json": {
+      "bytes": 2672,
+      "sha256": "6e00f92da857ab81d8e4793b640734dcd8e38f1ea32b0cb9747c434519d8b8e3"
+    },
+    "results/local/autorizacion-rx02-C01-20261104T220105Z/plan-autorizado.json": {
+      "bytes": 3793,
+      "sha256": "89d853add6326c201ed9ff0b84d0793129379b1cf98a177ed83cc158883aff83"
+    },
+    "results/local/autorizacion-rx02-C01-20261104T220105Z/plan-revisado-antes-de-autorizacion.json": {
+      "bytes": 3792,
+      "sha256": "aad3b6697ded9e5042c2b146b290b538a75973d220714f4b5ab1b94d1ceb98d6"
+    },
+    "results/local/autorizacion-rx02-C02-20261104T225215Z/SHA256.json": {
+      "bytes": 727,
+      "sha256": "3fd960254c8134caf4862a6a7078bcb4c3057e97c1b94e06d6d5517e0e9a388c"
+    },
+    "results/local/autorizacion-rx02-C02-20261104T225215Z/autorizacion.json": {
+      "bytes": 3323,
+      "sha256": "1edcbf06bce4f20971bca3588ba41d97d7bff4e47e3911c7582456a36230a359"
+    },
+    "results/local/autorizacion-rx02-C02-20261104T225215Z/plan-autorizado.json": {
+      "bytes": 3748,
+      "sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b"
+    },
+    "results/local/autorizacion-rx02-C02-20261104T225215Z/plan-revisado-antes-de-autorizacion.json": {
+      "bytes": 3747,
+      "sha256": "39e737b2626a972606344404f3b78fd8babc4db1c5a3587cb011443c863c004c"
+    },
+    "results/local/piloto-rx02-r1-C01/audio/0-establish_condition.wav": {
+      "bytes": 17324,
+      "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+    },
+    "results/local/piloto-rx02-r1-C01/audio/1-window_finished_connection_open.wav": {
+      "bytes": 8684,
+      "sha256": "e3cce4eeab2f906735116e0ea1dd6534db30a46a261910bc3b26e124b9c479c2"
+    },
+    "results/local/piloto-rx02-r1-C01/audio/2-establish_condition.wav": {
+      "bytes": 17324,
+      "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+    },
+    "results/local/piloto-rx02-r1-C01/audio/3-window_finished_connection_open.wav": {
+      "bytes": 8684,
+      "sha256": "e3cce4eeab2f906735116e0ea1dd6534db30a46a261910bc3b26e124b9c479c2"
+    },
+    "results/local/piloto-rx02-r1-C01/audio/4-selected_port_closed_confirmed.wav": {
+      "bytes": 57644,
+      "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+    },
+    "results/local/piloto-rx02-r1-C01/authorization-consumed.json": {
+      "bytes": 261,
+      "sha256": "f963b3ae45b204c707c8d550102184745c0f2363ae297caf5eaa69770242c019"
+    },
+    "results/local/piloto-rx02-r1-C01/close-receipt.json": {
+      "bytes": 618,
+      "sha256": "63e78e576354a43aab4feae88e3a931760a630cff02538465a88b04aace5922a"
+    },
+    "results/local/piloto-rx02-r1-C01/events.json": {
+      "bytes": 2732831,
+      "sha256": "c8dee28ea122d0e1dfd97460945ce9c66cba0c0f10ac524ea5e676d356445a9e"
+    },
+    "results/local/piloto-rx02-r1-C01/manifest.json": {
+      "bytes": 2148,
+      "sha256": "af4c98f10dd8af66f8b1ed90d877e489bc20cc403cc9357c9e4184e8cd8cef2c"
+    },
+    "results/local/piloto-rx02-r1-C01/operations.jsonl": {
+      "bytes": 10916155,
+      "sha256": "adfbe05748ac56c7cf9d686d4455928a71185aadc5bdaae39ba9035b0801b4ea"
+    },
+    "results/local/piloto-rx02-r1-C01/plan.json": {
+      "bytes": 3793,
+      "sha256": "89d853add6326c201ed9ff0b84d0793129379b1cf98a177ed83cc158883aff83"
+    },
+    "results/local/piloto-rx02-r1-C01/provenance.json": {
+      "bytes": 5208,
+      "sha256": "f3964d648c7e83e13490df94286fdc587f8e869fbd29b16d41fddac5507de938"
+    },
+    "results/local/piloto-rx02-r1-C01/rx-02.serial.log": {
+      "bytes": 2833345,
+      "sha256": "0d21c925338f774597396e70782d587ff5c3ec9e8737633b4b82468f794082a7"
+    },
+    "results/local/piloto-rx02-r1-C01/summary.json": {
+      "bytes": 1202787,
+      "sha256": "006b49307c4c1e7076481d4ae5714b3002d0ce369999ab82250477b7d1628a5e"
+    },
+    "results/local/piloto-rx02-r1-C02/audio/0-establish_condition.wav": {
+      "bytes": 17324,
+      "sha256": "a466db13270ed2c054d0d9812e0387939a461aa195bd1945c6507585bbc426a7"
+    },
+    "results/local/piloto-rx02-r1-C02/audio/1-failure.wav": {
+      "bytes": 58924,
+      "sha256": "d394f5d61a23f29df7ec760c745b47107aa66a2ed1564670ecb675d8e51362d7"
+    },
+    "results/local/piloto-rx02-r1-C02/audio/2-selected_port_closed_confirmed.wav": {
+      "bytes": 57644,
+      "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+    },
+    "results/local/piloto-rx02-r1-C02/authorization-consumed.json": {
+      "bytes": 261,
+      "sha256": "7daf49962b3bf4c4c65289b6016c6dc543830b715c5080d12d5f4a06dba87dde"
+    },
+    "results/local/piloto-rx02-r1-C02/close-receipt.json": {
+      "bytes": 617,
+      "sha256": "ccdce22abb734b447df588257302e0cb3f35c027c60e6226952a56f93928dc35"
+    },
+    "results/local/piloto-rx02-r1-C02/events.json": {
+      "bytes": 900643,
+      "sha256": "8b32b0bbe7e6bdc042405072e080cfb55036ee34ce306bb98b4e4615ade16dda"
+    },
+    "results/local/piloto-rx02-r1-C02/manifest.json": {
+      "bytes": 1776,
+      "sha256": "50d597433625234d3935207f28a4686aa5359dff85a2e956a7fd46110495983c"
+    },
+    "results/local/piloto-rx02-r1-C02/operations.jsonl": {
+      "bytes": 3204975,
+      "sha256": "f78dafab61812623d56785bdb7aca1fadb420cbda175fc3b124ac32fef808412"
+    },
+    "results/local/piloto-rx02-r1-C02/plan.json": {
+      "bytes": 3748,
+      "sha256": "d95965b985868070f59ed25de830769f51a11be5b237ee3b9dc077c1d0ab0b0b"
+    },
+    "results/local/piloto-rx02-r1-C02/provenance.json": {
+      "bytes": 5208,
+      "sha256": "63f2836a46dc3cec77f5564552481fe7b998612d557641c23bc320ab2bfab8d3"
+    },
+    "results/local/piloto-rx02-r1-C02/rx-02.serial.log": {
+      "bytes": 880889,
+      "sha256": "dde85d3a83256ac5a201932fb057c248447edb9e01f47db8d7766ecc0b875ca5"
+    },
+    "results/local/piloto-rx02-r1-C02/summary.json": {
+      "bytes": 524779,
+      "sha256": "2321b4956ac24a80c677d70293267bb7bfd9bdb7d5e3730453bc7a80869228be"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/persistence-policy.json": {
+      "bytes": 1296,
+      "sha256": "4b35eb4d16be7a1c7183378eec8671912b76f738b0252c43b38cc891e91aa25f"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/rx-02.serial.log": {
+      "bytes": 1007158,
+      "sha256": "e8dc6ac746ea1cf4560d9ff2dbf68f3416b0c726277b5415ab061e9a725afc8e"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/provenance.json": {
+      "bytes": 6256,
+      "sha256": "8604a0ceb8cc6b6bce727ff07615eabdd8f83e3c4923a11be38ce8e4f2868c3d"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/summary.json": {
+      "bytes": 359640,
+      "sha256": "7e13f9205f4c299d677184e446a50d028d9147564ec9c11573086c48257f46d8"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/manifest.json": {
+      "bytes": 1926,
+      "sha256": "8817cf0009d477d081bb5d320aabcb9b403f54afafa9e7902b960b74de7d70e0"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/service-metrics.json": {
+      "bytes": 273,
+      "sha256": "0e6ed1fb8577240396ba7258c288316112dc833dc36f274a16ac3c486d5cc32e"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/close-receipt.json": {
+      "bytes": 624,
+      "sha256": "e87a32e27dfb3f6950e8dcb21c4d04dbb0a1d3e2a4e8007251153105d7a4ea80"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/authorization-consumed.json": {
+      "bytes": 311,
+      "sha256": "0ddd9b60f04176afb7e507b16d3f7dbcf37d04f13779552a0cd01fa3d1f18402"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/plan.json": {
+      "bytes": 3200,
+      "sha256": "617cf0bf21dc3084168209669bb1e82a9dd2da5f3a1549a8edd7ff0aef44f897"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/checkpoint-status.json": {
+      "bytes": 600,
+      "sha256": "4b5857b3ec11e06af1f06a42ccdbdf52e4558ce2787124ff3cd3687168ae63f5"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/events.json": {
+      "bytes": 1050847,
+      "sha256": "851108ce82a68e289d154cc3c9d9d498ddca52a6cfbca5f1904d73be6ac4a436"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/operations.jsonl": {
+      "bytes": 4772610,
+      "sha256": "96174bed5057cbfd5bb4cdbbcecc4521182b6418a1b74930fa3c9c68b27fff8b"
+    },
+    "results/local/diagnostico-checkpoints-rx02-r1/audio/0-selected_port_closed_confirmed.wav": {
+      "bytes": 57644,
+      "sha256": "946f57137fabdedf4a057791843830fc3790b72b9df6df32d9d628ea2c00964d"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/pruebas.stderr.txt": {
+      "bytes": 73558,
+      "sha256": "08ab56f301f1839bf6269df830c3a9a85d1338194d31403f91da79bf2b8c7e8a"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/preflight.json": {
+      "bytes": 667,
+      "sha256": "2fc37a8deff49dcabf745d8f44cdbebbfefceaaf454bebbf8506c8b15ca66946"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/verificacion-offline.json": {
+      "bytes": 542,
+      "sha256": "c41626d64d92248ca12b11d7af1915f023135260929f0f4da3deff1ce05ad02f"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/PLAN.md": {
+      "bytes": 10555,
+      "sha256": "c63553e3c2e241d83750dd61b925e2a6bce110e2bf11c03027d22c369699c8fb"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/plan.local.json": {
+      "bytes": 3200,
+      "sha256": "617cf0bf21dc3084168209669bb1e82a9dd2da5f3a1549a8edd7ff0aef44f897"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/fuentes-plan-sha256.json": {
+      "bytes": 1010,
+      "sha256": "30408b24e8f3dce1f6d5180a2bd368dc4554a446ad7e682d9c8f7cfb76585171"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/condiciones-actuales.json": {
+      "bytes": 585,
+      "sha256": "4f2dc0ddc291fa86fd8e691060e706ee7c2b317f6227ff19a94db5922a2603dd"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/pruebas.json": {
+      "bytes": 1113,
+      "sha256": "3a198c9f4d651a77bee1c04ec3ffd9adcee1ade95bfd52f61b0ce102c0765e08"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/plan-revisado-sin-autorizacion.json": {
+      "bytes": 3210,
+      "sha256": "d69e08638de7fcca3b433448045c260f30336905281cd852db4dec7c40ad2e1f"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/plan-antes-condiciones.json": {
+      "bytes": 2146,
+      "sha256": "d2c6446a6941da92e81e65a7303292d66fe169c98e12515c1f358d295d4c0f32"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/plan-autorizado.json": {
+      "bytes": 3200,
+      "sha256": "617cf0bf21dc3084168209669bb1e82a9dd2da5f3a1549a8edd7ff0aef44f897"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/originales-antes.json": {
+      "bytes": 6479,
+      "sha256": "44f535609159850b231d07b41656084677e259102984d06a8357f358713db379"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/pruebas.stdout.txt": {
+      "bytes": 1889,
+      "sha256": "7f16d62fa37cc395b32209e7613eabb1b17e50b15f3997615c76add12eb0cd6a"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/revision-preflight-y-comando.json": {
+      "bytes": 2689,
+      "sha256": "450cd3da97cd5bfe5b1b57ff7c5e22b34755e7d69f1b39376a8ec44a92bc1f2c"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/COMANDO-PROPUESTO.txt": {
+      "bytes": 551,
+      "sha256": "348473e4a9b2e14f090ff3479ebf861d088a768753ff3f00096c5eaba5ada141"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/autorizacion-unica.json": {
+      "bytes": 1083,
+      "sha256": "4306dd8cfd267ab2179c6b135e193d17f54004d86b9c1e90aa0bf3f7c3b1885c"
+    },
+    "results/local/preparacion-rx02-diagnostico-checkpoints-r1/pruebas-primer-pase.json": {
+      "bytes": 267,
+      "sha256": "7296b1ddeef6591483a7d5ade4e91349ae1f7d9a99d455e7d62576dba86f0794"
+    }
+  },
+  "local_validation_artifacts": {
+    "results/local/preparacion-C03-checkpoint-r1/COMANDO-REVISION.txt": {
+      "bytes": 124,
+      "sha256": "bfc4705142af40d62ec5b979baca0830cb567ea18635a2dac1c3a725a4a4d0c9"
+    },
+    "results/local/preparacion-C03-checkpoint-r1/PLAN.md": {
+      "bytes": 8041,
+      "sha256": "114d4c699e7c126fcffe1b4bf2131f79e16deebb3cea0fe714e2412cce7a4fa4"
+    },
+    "results/local/preparacion-C03-checkpoint-r1/originales-antes.json": {
+      "bytes": 12064,
+      "sha256": "ce2d6c2195d867bb1c6894da93d92ae8023f28c86d27b0ad5756bf1495958b80"
+    },
+    "results/local/preparacion-C03-checkpoint-r1/plan.local.json": {
+      "bytes": 2511,
+      "sha256": "8fcb3fc9a6f442dcd7512a60b1b17f562c5a59fd32b0d02eb7bd682af67590fd"
+    },
+    "results/local/preparacion-C03-checkpoint-r1/pruebas-command.json": {
+      "bytes": 2218,
+      "sha256": "d86387f35e974be0348178215dacf10ec4b0b2f20faa127c17e50ac9b82b9cb3"
+    },
+    "results/local/preparacion-C03-checkpoint-r1/pruebas.json": {
+      "bytes": 1186,
+      "sha256": "b1df9e861b5069839c6d6f800e76c7c6a755f26852943e161482b54641b8bdce"
+    },
+    "results/local/preparacion-C03-checkpoint-r1/pruebas.stderr.txt": {
+      "bytes": 77378,
+      "sha256": "b7a51f8187565e34a2cd2a352c5374710cf67f8baa5033c50866bde4826c7011"
+    },
+    "results/local/preparacion-C03-checkpoint-r1/pruebas.stdout.txt": {
+      "bytes": 1954,
+      "sha256": "b637c5e3e640b33f02faee44a2f48e440b4d4031f1b12a62c68d3cc43f21a744"
+    }
+  },
+  "report": {
+    "results/INTEGRACION_C03_CHECKPOINTS_RX02.md": {
+      "bytes": 3883,
+      "sha256": "6c6f641639110c0ee52476b6ad8256e7d6a77cc3245708fafb1f403c34a1b426"
+    },
+    "results/INTEGRACION_C03_CHECKPOINTS_RX02.validacion.json": {
+      "bytes": 3675,
+      "sha256": "501a4ddd03351bd865e7437cd71aacfb9aafd39718e95c53402e0000c1e0a577"
+    }
+  }
+}

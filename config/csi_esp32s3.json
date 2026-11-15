@@ -1,0 +1,36 @@
+{
+  "schema": "tesis-own-csi-profile-v1",
+  "idf_version": "v5.4",
+  "idf_commit": "67c1de1eebe095d554d281952fde63c16ee2dca0",
+  "target": "esp32s3",
+  "baud": 115200,
+  "channel": 11,
+  "bandwidth": "HT20",
+  "source_mac": "1a:00:00:00:00:00",
+  "receivers": {
+    "RX-01": "5C93199744",
+    "RX-02": "5C93200689"
+  },
+  "usb_vendor": "1a86",
+  "usb_product_observed": "55d3",
+  "matrix": {
+    "observed_length_bytes": 256,
+    "scalar_type": "int8",
+    "complex_conversion_applied": false,
+    "I_Q_LTF_subcarrier_mapping_for_RuView": "pendiente de verificación independiente"
+  },
+  "firmware_ltf_config": {
+    "lltf_en": true,
+    "htltf_en": true,
+    "stbc_htltf2_en": true,
+    "ltf_merge_en": true,
+    "channel_filter_en": true,
+    "manu_scale": false
+  },
+  "clocks": {
+    "local_timestamp": "microsegundos uint32, independiente por RX",
+    "host_monotonic_ns": "nanosegundos, lectura serie del host",
+    "host_timestamp_utc": "hora de lectura serie; no llegada RF"
+  },
+  "simulated_data": "solo fixtures explícitos de pruebas"
+}

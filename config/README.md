@@ -1,3 +1,3 @@
-# Configuración
+# Configuración de la base
 
-Versionar plantillas y parámetros necesarios para reproducir los experimentos. Las identidades de receptores, campos CSI y relojes deben verificarse con los archivos originales antes de fijar un perfil. La configuración específica de la máquina puede guardarse en archivos `*.local.*` excluidos de Git.
+`csi_esp32s3.json` documenta el perfil observado, identidades USB históricas, MAC TX, canal, LTF y relojes. No contiene credenciales. No programa las placas. El validador contrasta este perfil con el capturador recuperado.

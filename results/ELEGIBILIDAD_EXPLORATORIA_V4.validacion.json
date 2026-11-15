@@ -1,0 +1,107 @@
+{
+  "schema": "tesis-v4-exploratory-eligibility-validation-v1",
+  "base_commit": "1f974b0633e2c6d4e4d96bb2cb67f0c06ca09f90",
+  "branch": "feat/backend-uart-presencia-v4",
+  "date": "2026-11-01",
+  "eligibility_revision": "v4-exploratory-1",
+  "line_policy_revision": "v4-startup-sequence-1",
+  "tests": {
+    "total": 234,
+    "new": 24,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 23.571,
+    "log_sha256": "5684377545db355978f7c2678a21487dabae0ecba938c620023daf40829e6e8b"
+  },
+  "synthetic_fixture": {
+    "bundle": "results/local/elegibilidad-exploratoria-v4-20261101/synthetic-ES-final",
+    "evidence_type": "synthetic_fixture",
+    "integrity_ok": true,
+    "replay_ok": true,
+    "connection_quality_ok": false,
+    "strict_eligible": [
+      false,
+      false
+    ],
+    "preamble_status": "anomalous_uninterpreted",
+    "certification": {
+      "revision": "v4-exploratory-1",
+      "evidence_type": "synthetic_fixture",
+      "integrity_ok": true,
+      "replay_ok": true,
+      "identity_ok": true,
+      "storage_ok": true,
+      "windows": [
+        {
+          "slot_id": "B01-E",
+          "eligible": true,
+          "reasons": [],
+          "status": "eligible_exploratory"
+        },
+        {
+          "slot_id": "B01-S",
+          "eligible": true,
+          "reasons": [],
+          "status": "eligible_exploratory"
+        }
+      ],
+      "permitted_uses": {
+        "calibration": false,
+        "training": false,
+        "production": false
+      }
+    },
+    "manifest_sha256": "3f80728f39ddbd292df3ad6bd8bdd3be23c61afa456b8eaaddae406083ec6dc8"
+  },
+  "historical_attempt": {
+    "integrity_ok": true,
+    "replay_ok": true,
+    "fatal": "post_ready_info:RX-02",
+    "windows": 0,
+    "both_ports_closed_confirmed": true,
+    "reclassified": false
+  },
+  "preservation": {
+    "checked_files": 2370,
+    "changed": [],
+    "previous_versioned_results_verified": 52,
+    "manifest_sha256": "18fe2007e4c0b6a60959b8988cf898838cebb9d9f078f73f5e369432d503ee77"
+  },
+  "review_plan": {
+    "path": "config/piloto_exploratorio_v4_ES_r1.review.json",
+    "sha256": "4267f21a69ab8555d80cbebc7cad5d2c161cfc6041b707a8d857593309a300b1",
+    "slots": [
+      {
+        "id": "EXP02-E",
+        "condition": "E"
+      },
+      {
+        "id": "EXP02-S",
+        "condition": "S"
+      }
+    ],
+    "preparation_valid": true,
+    "execution_validation_rejected": true,
+    "reason": "Complete declaration before physical execution: condition",
+    "authorization_granted": false
+  },
+  "implementation_sha256": {
+    "src/persistent_presence_v4.py": "2ee89f05c33af7f638016cf4d87871f882e359a859a8671f07037b9a3a37171a",
+    "src/presence_v4_exploratory.py": "7da77617fc6af9031e334027a2d8a311c37c1119e860579b07332cd27734af50",
+    "src/presence_v4_journal.py": "9a42e4132219deb5cecf505e817c61d207516304586cbbd63feb4977adc50b3a",
+    "src/presence_v4_uart.py": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373",
+    "tests/test_v4_exploratory.py": "1b8157d6c3dd08ae739aab70552addc690e7182e0f8d178ce1231c521663bf0a",
+    "tools/auditar_exploratorio_v4.py": "789201027506d3700c76df37ea9ea4ca54cc05e385a2e5eefe1a18e1ccc3a046"
+  },
+  "limits": {
+    "physical_operations_performed": false,
+    "new_physical_capture": false,
+    "firmware_changed": false,
+    "detector_calibrated": false,
+    "training": false,
+    "production_authorized": false,
+    "bubblewrap_isolation_claimed": false,
+    "bubblewrap_probe_exit_code": 1
+  }
+}

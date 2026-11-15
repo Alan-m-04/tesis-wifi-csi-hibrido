@@ -1,0 +1,16 @@
+{
+  "schema": "csi-sqlite-audited-pilot-1",
+  "session_id": "RX02-DIAG-VISOR-240S-R1",
+  "bundle": "results/local/diagnostico-rx02-visor-240s-r1",
+  "manifest_sha256": "d45ebe596bc67b62427151a891827269d0c8298b00d87b84b0dbfc123aba8a7c",
+  "report_json": "results/local/consolidacion-rx02-visor-240s-r1/evidencia.json",
+  "audit_json": "results/local/vista-rx02-visor-240s-r1/audit-native.json",
+  "references": {
+    "results/RX02_DIAG_VISOR_240S_R1.md": "fea10d17892794d120f890989ab8c4d4ca00b6fdf8dbc16aff9e73e55e148208",
+    "results/local/consolidacion-rx02-visor-240s-r1/evidencia.json": "73a7478d975ad56a8d9a5a09a5fd5ce62286cbee237ecc0d6fa5443271861c0d",
+    "results/local/vista-rx02-visor-240s-r1/audit-native.json": "1fed91e06ccaa7610098dcd9a1b1151a58e827002b8ccfd9616eaa23c7de4a9c"
+  },
+  "physical_UART_opened": false,
+  "new_capture": false,
+  "reserved_C04_C06_accessed": false
+}

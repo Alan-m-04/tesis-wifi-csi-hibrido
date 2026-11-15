@@ -1,0 +1,119 @@
+{
+  "schema": "tesis-source-audit-v1",
+  "base_commit": "74d612a87fa02021a30a7a034595e4aa5575dbb7",
+  "ruview": {
+    "repository": "https://github.com/ruvnet/RuView",
+    "commit": "fefb0f918eefa7db6daef8cc83787fc7d6f74187",
+    "checkout": "/home/alan-monar/auditorias-externas/ruview-fefb0f918eef",
+    "license": "MIT",
+    "dependencies_installed": false,
+    "files": [
+      {
+        "path": "LICENSE",
+        "sha256": "f6f0fbda447f9374dd06cab17b764c485352f57f4d491471128a0525c10287c8",
+        "bytes": 1059,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/LICENSE"
+      },
+      {
+        "path": "docs/adr/ADR-018-esp32-dev-implementation.md",
+        "sha256": "245d926568529f3d34caed6c22df63104306349da5b2fffa606d013c2ae027e9",
+        "bytes": 14481,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/docs/adr/ADR-018-esp32-dev-implementation.md"
+      },
+      {
+        "path": "firmware/esp32-csi-node/main/csi_collector.c",
+        "sha256": "2634abdd3675b923fcd12ba9b6f25f9620ab2adc2ba18a8512a83173ec6c8729",
+        "bytes": 37714,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/firmware/esp32-csi-node/main/csi_collector.c"
+      },
+      {
+        "path": "v2/crates/wifi-densepose-hardware/src/esp32_parser.rs",
+        "sha256": "0742045da5ed091c74a3fb1b0e91d250867fcb18d2e27e3810615af47489db3a",
+        "bytes": 25512,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-hardware/src/esp32_parser.rs"
+      },
+      {
+        "path": "v2/crates/wifi-densepose-hardware/src/csi_frame.rs",
+        "sha256": "484040a60d50b1630ebbe16a9017665a471f0a5fe30a9ae3ce724aee639313b8",
+        "bytes": 9580,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-hardware/src/csi_frame.rs"
+      },
+      {
+        "path": "v2/crates/wifi-densepose-sensing-server/src/main.rs",
+        "sha256": "2a773c46e2afa8caec25212ec93f4f36edea06754168d0900b27c19da37cc4e3",
+        "bytes": 721691,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/v2/crates/wifi-densepose-sensing-server/src/main.rs"
+      },
+      {
+        "path": "archive/v1/src/hardware/csi_extractor.py",
+        "sha256": "40c5f801a0969b3f7d07ff325e0d72459b3a2872af48b7aaa630b3cc921034fb",
+        "bytes": 24893,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/archive/v1/src/hardware/csi_extractor.py"
+      },
+      {
+        "path": "scripts/record-csi-udp.py",
+        "sha256": "b95e50d08053be66448c904c60be6f63168042c52648916e8065ac84e55b6b2e",
+        "bytes": 4898,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/scripts/record-csi-udp.py"
+      },
+      {
+        "path": "scripts/esp32_jsonl_to_rvcsi.py",
+        "sha256": "267270c81b73ebf45392d5dba978f60d0cbd5136f9353722ae07f5bcc238e97c",
+        "bytes": 7526,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/scripts/esp32_jsonl_to_rvcsi.py"
+      },
+      {
+        "path": "scripts/csi-graph-visualizer.js",
+        "sha256": "8e79d17fd180ff1763705314280b5b1a62a100d6d5d0b1f73c600ecc9016c4f6",
+        "bytes": 21467,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/scripts/csi-graph-visualizer.js"
+      },
+      {
+        "path": "scripts/csi-spectrogram.js",
+        "sha256": "6550f970b8858a16caad883a67a3f860e840bf7eaaed7ab29c6af8a3a8c6f916",
+        "bytes": 21319,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/scripts/csi-spectrogram.js"
+      },
+      {
+        "path": "ui/pose-fusion/js/csi-simulator.js",
+        "sha256": "63c9b04a0b6e7db48e955c80e990a9d3cb6f2470c3303804b9af4307e0c9f71c",
+        "bytes": 13766,
+        "url": "https://github.com/ruvnet/RuView/blob/fefb0f918eefa7db6daef8cc83787fc7d6f74187/ui/pose-fusion/js/csi-simulator.js"
+      }
+    ]
+  },
+  "esp_idf": {
+    "commit": "67c1de1eebe095d554d281952fde63c16ee2dca0",
+    "checkout": "/home/alan-monar/tesis-restaurada-20261024T043056Z/consolidacion-tecnica-20261024/sdk/esp-idf",
+    "files": [
+      {
+        "path": "docs/en/api-guides/wifi.rst",
+        "sha256": "7558f3f027fe47e900daad4127f983f1f8d67cd0be8b14b1b122c03d2e8cdc44",
+        "bytes": 178308,
+        "url": "https://github.com/espressif/esp-idf/blob/67c1de1eebe095d554d281952fde63c16ee2dca0/docs/en/api-guides/wifi.rst"
+      },
+      {
+        "path": "components/esp_wifi/include/local/esp_wifi_types_native.h",
+        "sha256": "654e4dafaa181be069d9bbd6791621f803d97dcf8e3a2ba5ad28c7e6e4ac36ac",
+        "bytes": 7873,
+        "url": "https://github.com/espressif/esp-idf/blob/67c1de1eebe095d554d281952fde63c16ee2dca0/components/esp_wifi/include/local/esp_wifi_types_native.h"
+      }
+    ]
+  },
+  "native_runtime_available": {
+    "javascript": false,
+    "rust": false
+  },
+  "method": "static source audit; independent stdlib contract tests; reviewed pure Python recorder functions executed offline",
+  "reviewed_excerpt": {
+    "path": "tests/fixtures/ruview_record_parser.py",
+    "sha256": "3a95f7856254f8408ddb28a9580ca950cd3befd2d07bcd2bbf510bf283b3c1fd",
+    "source_path": "scripts/record-csi-udp.py",
+    "functions": [
+      "freq_to_channel",
+      "parse_csi_packet"
+    ],
+    "function_AST_equal_to_upstream": true,
+    "license_path": "tests/fixtures/LICENSE.RuView.MIT"
+  }
+}

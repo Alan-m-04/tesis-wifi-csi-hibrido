@@ -1,0 +1,120 @@
+{
+  "operation": "offline_only",
+  "physical_UART_opened": false,
+  "receivers": {
+    "rx-01": {
+      "source": "/home/alan-monar/tesis-wifi-csi-hibrido/data/raw/dual-60s-20261024T205854Z/captura/rx-01.serial.log",
+      "bytes": 247862,
+      "sha256": "51cb3bb1cb191b5a85e09cfa8936c29f9c0e89d930e73802623defbdcae8125a",
+      "first_lines": [
+        {
+          "line_1based": 1,
+          "offset": 0,
+          "bytes": 3,
+          "hex": "220d0a",
+          "sha256": "c818e5e0b64e5c5eb61f2f544bf393acb1d44a60f3e7c9e768bf41816f63d45f"
+        },
+        {
+          "line_1based": 2,
+          "offset": 3,
+          "bytes": 120,
+          "hex": "4353495f444154412c333932372c31613a30303a30303a30303a30303a30302c2d35332c31312c312c302c302c312c312c302c302c302c302c2d39302c2c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c4553502d524f4d3a657370333273332d32303231303332370d0a",
+          "sha256": "60d7ec58af2e8eaab0cf4303f30153df97470627db3c1ce3c0c85a61c5305eb7"
+        },
+        {
+          "line_1based": 3,
+          "offset": 123,
+          "bytes": 19,
+          "hex": "4275696c643a4d617220323720323032310d0a",
+          "sha256": "e50c5676e2be4d5f29124d3832da9b12f3c8d2e9156e092de03297b5677368c9"
+        },
+        {
+          "line_1based": 4,
+          "offset": 142,
+          "bytes": 50,
+          "hex": "7273743a3078312028504f5745524f4e292c626f6f743a30783820285350495f464153545f464c4153485f424f4f54290d0a",
+          "sha256": "18d73c84ffd809c49bb4859c37f0122841c73b90e66523d5eadb6afb928152b7"
+        }
+      ],
+      "landmarks": [
+        {
+          "line_1based": 2,
+          "offset": 3,
+          "prefix": "CSI_DATA,3927,1a:00:00:00:00:00,-53,11,1,0,0,1,1,0,0,0,0,-90,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,ESP-ROM:esp32s3-20210327\r"
+        },
+        {
+          "line_1based": 4,
+          "offset": 142,
+          "prefix": "rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)\r"
+        },
+        {
+          "line_1based": 91,
+          "offset": 4489,
+          "prefix": "I (587) csi_recv: RX-01 READY channel=11 HT20 UART0=115200 raw CSI; source=1a:00:00:00:00:00\r"
+        },
+        {
+          "line_1based": 94,
+          "offset": 4660,
+          "prefix": "CSI_DATA,0,1a:00:00:00:00:00,-56,11,1,0,0,1,1,0,0,0,0,-96,0,11,0,772582,0,47,0,256,0,0,\"[0,0,-4,13,-3,13,-3,13,-2,12,-1,13,-1,12,0"
+        }
+      ]
+    },
+    "rx-02": {
+      "source": "/home/alan-monar/tesis-wifi-csi-hibrido/data/raw/dual-60s-20261024T205854Z/captura/rx-02.serial.log",
+      "bytes": 250408,
+      "sha256": "5af63769f6bea835b037e3ad81e4f03ce4b5113ea266219d83fe8e4234f8d6ff",
+      "first_lines": [
+        {
+          "line_1based": 1,
+          "offset": 0,
+          "bytes": 97,
+          "hex": "2c302c312c312c302c302c302c302c2d39312c302c31312c302c3830393134353437352c302c34372c302c3235362c302c302c225b302c302c2d31342c372c2d2d31332c302cf84553502d524f4d3a657370333273332d32303231303332370d0a",
+          "sha256": "88a09b3fff65f693b2321e925c567cc0926f6301f8da8c4c2498ba7e2dd4dedd"
+        },
+        {
+          "line_1based": 2,
+          "offset": 97,
+          "bytes": 19,
+          "hex": "4275696c643a4d617220323720323032310d0a",
+          "sha256": "e50c5676e2be4d5f29124d3832da9b12f3c8d2e9156e092de03297b5677368c9"
+        },
+        {
+          "line_1based": 3,
+          "offset": 116,
+          "bytes": 50,
+          "hex": "7273743a3078312028504f5745524f4e292c626f6f743a30783820285350495f464153545f464c4153485f424f4f54290d0a",
+          "sha256": "18d73c84ffd809c49bb4859c37f0122841c73b90e66523d5eadb6afb928152b7"
+        },
+        {
+          "line_1based": 4,
+          "offset": 166,
+          "bytes": 12,
+          "hex": "53504957503a307865650d0a",
+          "sha256": "0ca9dbc6ade78a812d8bff9c7a003e5c641581df33913a99d3e6fc54151af1c5"
+        }
+      ],
+      "landmarks": [
+        {
+          "line_1based": 1,
+          "offset": 0,
+          "prefix": ",0,1,1,0,0,0,0,-91,0,11,0,809145475,0,47,0,256,0,0,\"[0,0,-14,7,--13,0,�ESP-ROM:esp32s3-20210327\r"
+        },
+        {
+          "line_1based": 3,
+          "offset": 116,
+          "prefix": "rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)\r"
+        },
+        {
+          "line_1based": 92,
+          "offset": 4593,
+          "prefix": "I (551) csi_recv_02: RX-02 READY channel=11 HT20 UART0=115200 raw CSI; source=1a:00:00:00:00:00\r"
+        },
+        {
+          "line_1based": 94,
+          "offset": 4735,
+          "prefix": "CSI_DATA,0,1a:00:00:00:00:00,-49,11,1,0,0,1,1,0,0,0,0,-96,0,11,0,569753,0,47,0,256,0,0,\"[0,0,-16,0,-16,0,-16,0,-16,0,-16,0,-15,0,-"
+        }
+      ]
+    }
+  }
+}

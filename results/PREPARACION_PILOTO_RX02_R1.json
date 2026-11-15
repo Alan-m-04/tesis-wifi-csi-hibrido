@@ -1,0 +1,224 @@
+{
+  "schema": "rx02-pilot-preparation-1",
+  "base_commit": "9b28addc221468ed1c38e6480a6cf153e5a00c70",
+  "activity": {
+    "physical_UART_opened": false,
+    "physical_capture_executed": false,
+    "actual_usb_preflight_executed": false,
+    "physical_environment_verified": false,
+    "synthetic_PTY_tests": true,
+    "firmware_changed": false,
+    "calibration": false,
+    "training": false
+  },
+  "protocol": "presence_rx02_persistent_1",
+  "eligibility_revision": "rx02-exploratory-1",
+  "line_policy_revision": "v4-startup-sequence-1",
+  "selection": {
+    "revision": "rx02-continuity-selection-1",
+    "selected_receiver": "RX-02",
+    "serial": "5C93200689",
+    "transmitter": "TX-01",
+    "prior_primary_preference": "RX-01",
+    "new_pilot_primary": "RX-02",
+    "evidence": "continuity_only_no_presence_outcomes",
+    "historical_reacceptance": false,
+    "automatic_substitution": false,
+    "source": "results/COMPARACION_ANTENA_ABA_R3.resumen.json",
+    "source_sha256": "5b692e7e713942f832217a0b626d79dd1d75cf3dffde11d3ab8d109d90503669",
+    "observed": {
+      "A1": {
+        "RX-01": {
+          "valid_complete_rows": 294,
+          "incident_count": 0,
+          "max_host_gap_ns": 405874363,
+          "max_local_gap_ns": 400008000
+        },
+        "RX-02": {
+          "valid_complete_rows": 296,
+          "incident_count": 0,
+          "max_host_gap_ns": 392082880,
+          "max_local_gap_ns": 400010000
+        }
+      },
+      "B": {
+        "RX-01": {
+          "valid_complete_rows": 213,
+          "incident_count": 2,
+          "max_host_gap_ns": 1191936676,
+          "max_local_gap_ns": 1200102000
+        },
+        "RX-02": {
+          "valid_complete_rows": 291,
+          "incident_count": 0,
+          "max_host_gap_ns": 415802287,
+          "max_local_gap_ns": 400884000
+        }
+      },
+      "A2": {
+        "RX-01": {
+          "valid_complete_rows": 201,
+          "incident_count": 2,
+          "max_host_gap_ns": 1405114678,
+          "max_local_gap_ns": 1395473000
+        },
+        "RX-02": {
+          "valid_complete_rows": 291,
+          "incident_count": 0,
+          "max_host_gap_ns": 612338620,
+          "max_local_gap_ns": 600020000
+        }
+      }
+    }
+  },
+  "plan": {
+    "campaign": "config/piloto_rx02_r1.campaign.review.json",
+    "connections": 6,
+    "repetitions_per_condition": 6,
+    "partition_unit": "complete_connection",
+    "development": [
+      "RX02-C01",
+      "RX02-C02",
+      "RX02-C03"
+    ],
+    "future_sealed_evaluation": [
+      "RX02-C04",
+      "RX02-C05",
+      "RX02-C06"
+    ],
+    "unused_receiver": {
+      "receiver": "RX-01",
+      "action": "leave_connected_fixed_uart_unopened",
+      "operator_confirmation": "PENDIENTE"
+    },
+    "authorization_granted": false,
+    "output_paths_new_at_preparation": true
+  },
+  "tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:tests .venv/bin/python -B -m unittest test_presence_rx02 test_uart_v4 test_persistent_presence_v4 test_availability_window test_controlled_v2 test_controlled_v3 test_capture_preparation test_capture_boundaries test_boundary_diagnostic test_v4_line_policy test_v4_startup_sequence test_v4_exploratory test_v4_availability_diagnostic test_dual_continuity test_continuity_diagnostics test_antenna_aba_analysis -v",
+    "passed": 310,
+    "new_variant": 31,
+    "regression": 279,
+    "skipped": 0,
+    "seconds": 31.87,
+    "log": "results/local/preparacion-piloto-rx02-r1/tests-finales.log",
+    "log_sha256": "d791644aea0f607f28943f8a953fbf267a0d0e926d1d128376c510d58ad576a7"
+  },
+  "preservation": {
+    "files_verified": 2855,
+    "changed": 0,
+    "inventory": "results/local/preparacion-piloto-rx02-r1/originales.sha256.json",
+    "inventory_sha256": "439c9f3bd334dc9fb35e399e65d3015de3027c18e8a04a5f6eed08110b364e47",
+    "historical_modules": {
+      "src/persistent_presence_v4.py": {
+        "bytes": 25615,
+        "sha256": "2ee89f05c33af7f638016cf4d87871f882e359a859a8671f07037b9a3a37171a"
+      },
+      "src/presence_v4_exploratory.py": {
+        "bytes": 14409,
+        "sha256": "7da77617fc6af9031e334027a2d8a311c37c1119e860579b07332cd27734af50"
+      },
+      "src/presence_v4_uart.py": {
+        "bytes": 22468,
+        "sha256": "0c4a6cf7d11ea914bdaecd51bc77339281d6698172f6e763735cfb1dbcea3373"
+      },
+      "src/presence_v4_journal.py": {
+        "bytes": 10914,
+        "sha256": "9a42e4132219deb5cecf505e817c61d207516304586cbbd63feb4977adc50b3a"
+      },
+      "src/presence_v4_pty.py": {
+        "bytes": 10366,
+        "sha256": "7aa1288295d2cfe10e77c3a6c61104f1d2716ad9967c81842645939d47f4d7f5"
+      },
+      "src/presence_v4_audio.py": {
+        "bytes": 3098,
+        "sha256": "658c6fad43079c16d3ca3d5f8bd3a5324a5a9995be85d630165b406395571232"
+      },
+      "src/availability_window.py": {
+        "bytes": 12330,
+        "sha256": "b6c1848e2ceb8739a2fce52ca3fae2384bcc2434f9f7fa55aa965870620f1596"
+      },
+      "src/controlled_capture_v3.py": {
+        "bytes": 11786,
+        "sha256": "31efa9ab34f7acd02484993a9f4727f4a9cc4d1e45f80a093c50f1910eccdde1"
+      },
+      "config/csi_esp32s3.json": {
+        "bytes": 1050,
+        "sha256": "c39115ee2a789e8a8b3aa372528f869a6ac9fe5f92847b427ad4075d78f3c048"
+      },
+      "docs/DETECTOR_PRESENCIA_RUVIEW.md": {
+        "bytes": 28691,
+        "sha256": "7c69d3d1b5231bcfd9ca06d4c310ed234aeba754073941dc469f51941d4c8b79"
+      }
+    }
+  },
+  "new_artifacts": {
+    "config/piloto_rx02_r1.campaign.review.json": {
+      "bytes": 3583,
+      "sha256": "77a83098905224ce44b6cb3e9f2ed88e7fd7d7156c213e278ed62b4a838523ca"
+    },
+    "config/piloto_rx02_r1_C01.review.json": {
+      "bytes": 2165,
+      "sha256": "76168def1353e4cf1e9a393b142ca9d6763e23fd88c05df4984052ccd9b89119"
+    },
+    "config/piloto_rx02_r1_C02.review.json": {
+      "bytes": 2165,
+      "sha256": "e9ce306812c30fdf84aab4f4559582f1cd0eb857347f187a24e0ccbe42a62cc5"
+    },
+    "config/piloto_rx02_r1_C03.review.json": {
+      "bytes": 2165,
+      "sha256": "875cb5ee5efe50f0b5a1ffebb4acdd0697a319a1cf9a8930db04cddf16ac1197"
+    },
+    "config/piloto_rx02_r1_C04.review.json": {
+      "bytes": 2171,
+      "sha256": "3179a4be3d0babe6909d2bb5e856ad7a12c792b0708e9b468a1d473ae3ca5419"
+    },
+    "config/piloto_rx02_r1_C05.review.json": {
+      "bytes": 2171,
+      "sha256": "92cd91ee4b94f4e5c5da7ae720c5d1b2686a96c249477c8c82c60618993fdd46"
+    },
+    "config/piloto_rx02_r1_C06.review.json": {
+      "bytes": 2171,
+      "sha256": "9f1bfef724a0c90297adf1ebc73dc251b88457b3f1fb9064b05ea960147117f1"
+    },
+    "docs/PILOTO_RX02_EXPLORATORIO_R1.md": {
+      "bytes": 12321,
+      "sha256": "152291e9353666c43482b2e09b1ea9c581f9c8e035ae17cde0ea76e482cea80c"
+    },
+    "src/presence_rx02.py": {
+      "bytes": 15279,
+      "sha256": "b2992f3b4bf6b710bb9c42a549c5984733849a1eaa255f4be101e857648c9c25"
+    },
+    "src/presence_rx02_journal.py": {
+      "bytes": 10754,
+      "sha256": "faca3ac20252c93943d199abfc0576c0110234756b953dc2e1844355b887c1a7"
+    },
+    "src/presence_rx02_uart.py": {
+      "bytes": 10399,
+      "sha256": "32ba9c9028465a3b56707703715a71f3b8bcbd1a29105e1bc8c57bfe92f86ca8"
+    },
+    "tests/test_presence_rx02.py": {
+      "bytes": 26826,
+      "sha256": "2da1f4ed3b36e3d029a3d6171a37e558c69c9727c6a829248f41e8b15d42016b"
+    },
+    "tools/piloto_presencia_rx02.py": {
+      "bytes": 5459,
+      "sha256": "ddb8d98a9aaa0c7e7dcdf853224de5355b59cbdf18095b73aaa6071dcfccfa34"
+    }
+  },
+  "limits": [
+    "RX-02 A2 max host gap 612338620 ns exceeds unchanged 500000000 ns coverage limit; no future eligibility guaranteed",
+    "Selection uses continuity diagnoses; no presence performance estimated",
+    "No concurrent RX-01 control; connected radio state not attested silent",
+    "Small same-mount/person pilot; future partitions do not establish generalization",
+    "Hashes/replay are not cryptographic attestation of operator truth or electrical behavior",
+    "No historical capture reevaluated for acceptance"
+  ],
+  "conclusion": "OFFLINE_VERIFIED_READY_FOR_REVIEW_NOT_AUTHORIZED",
+  "blockers_before_acquisition": [
+    "current_environment_mount_power_suspend_sound_and_reader_declarations",
+    "operator_confirmation_RX01_connected_fixed_UART_unopened",
+    "fresh_metadata_preflight_RX02",
+    "new_explicit_authorization_per_connection"
+  ]
+}

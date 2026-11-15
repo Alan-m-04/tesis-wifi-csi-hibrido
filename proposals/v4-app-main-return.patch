@@ -1,0 +1,53 @@
+--- a/src/persistent_presence_v4.py
++++ b/src/persistent_presence_v4.py
+@@ -4,6 +4,7 @@
+ for pure framing/grammar/continuity; their policies are never modified.
+ """
+ import copy
++import re
+ 
+ from availability_window import LineFramer, transition_error
+ from capture_csi_multi import RECEIVERS
+@@ -38,6 +39,20 @@
+     return copy.deepcopy(plan)
+ 
+ 
++class _StartupLineFramer(LineFramer):
++    """Proposed v4-only annotation; all original bytes and grammar retained."""
++    def feed(self, chunk, read_index, event):
++        prefix = bytes(self.prefix)
++        parts = chunk.split(b'\n')
++        lines = super().feed(chunk, read_index, event)
++        for index, line in enumerate(lines):
++            if line['kind'] == 'info':
++                raw = (prefix if index == 0 else b'') + parts[index] + b'\n'
++                if re.fullmatch(rb'I \([0-9]+\) main_task: Returned from app_main\(\)\r?\n', raw):
++                    line['startup_app_main_return'] = True
++        return lines
++
++
+ class PersistentPresenceV4:
+     def __init__(self, plan, *, allow_physical=False, evidence_type=None):
+         self.plan = validate_plan(plan, allow_physical=allow_physical)
+@@ -49,7 +64,7 @@
+         self.states = {rx: dict(opened=False, ready=None, previous=None, streak=[],
+                               gate_rows=[], last_valid=None, last_read=None, lines=[])
+                        for rx in RECEIVERS}
+-        self.framers = {rx: LineFramer(rx) for rx in RECEIVERS}
++        self.framers = {rx: _StartupLineFramer(rx) for rx in RECEIVERS}
+         self.events, self.windows, self.signals = [], [], []
+         self.fatal = None
+         self.connection_reasons = []
+@@ -185,6 +200,12 @@
+                             s['gate_rows'] = (s['gate_rows']+[line])[-3:]
+             elif kind != 'neutral':
+                 s['streak'] = []; s['gate_rows'] = []
++                if (kind == 'info' and line.get('startup_app_main_return') and
++                        s['ready'] is not None and line['line_1based'] == s['ready']+1 and
++                        s['previous'] is None and self.initial_available is None and
++                        self.fatal is None and self.now < self.a+POLICY['availability_wait_ns']):
++                    # One immediate startup return only; never readiness evidence.
++                    continue
+                 if kind == 'invalid':
+                     reason = 'format:'+receiver
+                     if s['ready'] is None:

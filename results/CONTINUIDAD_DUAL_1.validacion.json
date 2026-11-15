@@ -1,0 +1,100 @@
+{
+  "base_commit": "6450919618a8003a488c32e9d1925b84a9a80db3",
+  "protocol": "continuity-dual-1",
+  "physical_UART_opened": false,
+  "physical_preflight_executed": false,
+  "authorization_granted": false,
+  "tests": {
+    "total": 262,
+    "passed": 262,
+    "skipped": 0,
+    "seconds": 23.949,
+    "new_continuity_tests": 16,
+    "log_sha256": "6fd4792d46515b07830ab89e6f479c7913a786cfb6c4176bbdd71c6154f6bd44"
+  },
+  "real_time_pty": {
+    "evidence_type": "synthetic_fixture",
+    "physical_UART_opened": false,
+    "integrity_ok": true,
+    "replay_ok": true,
+    "both_ports_closed_confirmed": true,
+    "quality_approval": false,
+    "actual_elapsed_ns": 60007825271
+  },
+  "receivers": {
+    "RX-01": {
+      "rows": 288,
+      "bytes": 173542,
+      "reads": 288,
+      "incidents": [
+        {
+          "anchor_ns": 176822900086217,
+          "first_observed_ns": 176823909863850,
+          "recovered_ns": 176825103172914,
+          "duration_ns": 2203086697,
+          "quality_approval": false,
+          "recovery_line": 26
+        }
+      ],
+      "tail": {
+        "byte_offset": 173519,
+        "byte_length": 23,
+        "sha256": "6b498aa11c0d6d2eead56d7e3158fcfc0de5be89f6da72d1f0f19316350372cb",
+        "first_read": {
+          "first_read_index": 287,
+          "first_read_started_ns": "176877609774545",
+          "byte_offset": 173519
+        },
+        "last_read_index": 287
+      },
+      "max_service_gap_ns": 29839801,
+      "max_persistence_ns": 2948625,
+      "max_processing_ns": 886799
+    },
+    "RX-02": {
+      "rows": 289,
+      "bytes": 174125,
+      "reads": 289,
+      "incidents": [
+        {
+          "anchor_ns": 176837928706132,
+          "first_observed_ns": 176838941603767,
+          "recovered_ns": 176840132957884,
+          "duration_ns": 2204251752,
+          "quality_approval": false,
+          "recovery_line": 101
+        }
+      ],
+      "tail": {
+        "byte_offset": 174102,
+        "byte_length": 23,
+        "sha256": "6b498aa11c0d6d2eead56d7e3158fcfc0de5be89f6da72d1f0f19316350372cb",
+        "first_read": {
+          "first_read_index": 288,
+          "first_read_started_ns": "176877608399680",
+          "byte_offset": 174102
+        },
+        "last_read_index": 288
+      },
+      "max_service_gap_ns": 34717137,
+      "max_persistence_ns": 3026757,
+      "max_processing_ns": 687708
+    }
+  },
+  "evidence_type": "synthetic_fixture",
+  "preservation": {
+    "total_existing": 2517,
+    "unchanged_files": 2516,
+    "append_only_state": "docs/ESTADO_INICIAL.md",
+    "historic_prefix_preserved": true,
+    "missing": []
+  },
+  "local_review_plan_sha256": "c0d23c30454ccd2cfd6315fb0cb1939f9ae479aba289f92a771e79ce3a75abf1",
+  "physical_output_reserved": "results/local/continuidad-dual-01-60s-intento-unico",
+  "physical_output_exists": false,
+  "artifacts": {
+    "ensayo-pty-60s/manifest.json": "66b2fac2fecfbc98354c42cc9e2cd222d1a34d940f3d861f4dee761d13ed1d9a",
+    "ensayo-final-pty-60s/manifest.json": "e1a4b5e7c6122b51070397f4d3c4870893cecd80e0891730508eee890fd6881b",
+    "ensayo-pty-60s.py": "a339fb5b5e8d5f6a3a74e490263c062ebd8e426ae9678403df7ca972f88c6961"
+  }
+}

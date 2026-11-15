@@ -1,0 +1,92 @@
+{
+  "schema": "avance-anexo-g-verification-1",
+  "cutoff": "2026-11-13",
+  "followup_date_supplied_by_requester": "2026-11-12",
+  "deadline_supplied_by_requester": "2026-11-13",
+  "annex_percentages": "not_verified_blank_cells_in_available_private_copy",
+  "original_head": "c518d079e9882158f4ad63b8bf6c620bf47bd67a",
+  "initial_remote_main": "72ccb0abc29912b05716d2f52710fd9d270a901b",
+  "initial_remote_backend": "81cdd20fe1c41a2f69a1f93b04d1aa3e7238b634",
+  "local_commits_found": [
+    "952365c7246d76103c846777b7fe8a44e965fb53",
+    "6f5ae46d8aa18b9a95f4af9aa5eb844f79ec6113",
+    "403e7942e667bad26d5852d8510daa2f9720829b",
+    "c518d079e9882158f4ad63b8bf6c620bf47bd67a"
+  ],
+  "saved_evidence_hash_checks": [
+    {
+      "report": "results/BASE_DATOS_CSI_OFFLINE.validacion.json",
+      "references_checked": 20,
+      "matching": 20
+    },
+    {
+      "report": "results/VISTA_SQLITE_OFFLINE.validacion.json",
+      "references_checked": 18,
+      "matching": 18
+    },
+    {
+      "report": "results/DEVREP_R5_N01_INTEGRACION.validacion.json",
+      "references_checked": 53,
+      "matching": 53
+    }
+  ],
+  "sqlite_read_only_check": {
+    "rows": 1192,
+    "duration_ns": 240005564743,
+    "sample_span_ns": 239191988869,
+    "host_cadence_hz": 4.9792637522332885,
+    "max_host_gap_ns": 614782902,
+    "max_local_gap_us": 601971,
+    "integrity_check": "ok",
+    "foreign_key_errors": 0,
+    "strict_quality_ok": false,
+    "integrity_ok": true,
+    "replay_ok": true,
+    "close_ok": true,
+    "diagnostic_ok": true
+  },
+  "published_csv_aggregate_rows": 1,
+  "published_csv_sha256": "9a72a84ef5c7171aadbc9a8a9a31f81b4ffc7d870fbd46ce89d91153f427ff3c",
+  "r5_physical_output_exists": false,
+  "r5_guided_human_trial": "pending",
+  "r5_integration_sources": "partly_uncommitted_preserved_in_original_copy_not_added_as_code",
+  "prior_test_results_only": true,
+  "new_software_test_runs": 0,
+  "physical_uart_opened": false,
+  "new_capture": false,
+  "reserved_C04_C06_contents_accessed": false,
+  "published_local_sqlite": false,
+  "published_raw_data": false,
+  "published_academic_documents": false,
+  "source_files_protected": 508,
+  "publication_docs_sha256": {
+    "README.md": "d51b7be707c47aeb3523ec411ed659ebc87918f98740af76d047fb65507346c1",
+    "docs/AVANCE_ANEXO_G_2026-11-13.md": "c498a9413c1eb0afdf2e6b3cca70f127d3c3239652678d58a076adf0b5af3562",
+    "results/DEVREP_R5_N01_INTEGRACION.md": "85f89b65d5e0d931de8ce699c63b6ca8c174401152450adee7dc1eeecea253ef",
+    "results/DEVREP_R5_N01_INTEGRACION.validacion.json": "691856a8bee94413c5567c3dd5cd8fd60d6e818da225b70d2dafbbf198e86b55"
+  },
+  "published_snapshots": [
+    {
+      "local": "952365c7246d76103c846777b7fe8a44e965fb53",
+      "tree": "1011f0813b058f2d03cf91aaf3a4406d997e1cc1",
+      "published": "adf2618249927ff499489b325f48df2520a74f57"
+    },
+    {
+      "local": "6f5ae46d8aa18b9a95f4af9aa5eb844f79ec6113",
+      "tree": "b5cb11aaba2775ceeb075d2ed1a0b4fcc5089acb",
+      "published": "10e3f5538eab0d8a00bdbe6b888d420883f275db"
+    },
+    {
+      "local": "403e7942e667bad26d5852d8510daa2f9720829b",
+      "tree": "3ccbd20612930c013291fef80395c2168e85a8f5",
+      "published": "59166f80310c9e78d7cc71723b2425d064780878"
+    },
+    {
+      "local": "c518d079e9882158f4ad63b8bf6c620bf47bd67a",
+      "tree": "1de436c90ec4bc5595011ebaa8f6abd021f01afb",
+      "published": "9f20714aab3e555488c5d9eab15a246188b97141"
+    }
+  ],
+  "publication_method": "GitHub connector; identical Git trees; local original commit identities not uploaded",
+  "relative_links_checked": 47
+}

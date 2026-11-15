@@ -1,0 +1,444 @@
+{
+  "schema": "tesis-presence-head-test-v1",
+  "evidence_type": "synthetic_fixture",
+  "not_physical_measurements": true,
+  "cases": [
+    {
+      "id": "no_anchors",
+      "anchors": [],
+      "query": {
+        "mean": 10,
+        "variance": 1
+      }
+    },
+    {
+      "id": "only_empty",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        }
+      ],
+      "query": {
+        "mean": 10,
+        "variance": 1
+      }
+    },
+    {
+      "id": "only_occupied",
+      "anchors": [
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        }
+      ],
+      "query": {
+        "mean": 10,
+        "variance": 1
+      }
+    },
+    {
+      "id": "both_channels_empty",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        }
+      ],
+      "query": {
+        "mean": 10,
+        "variance": 1
+      }
+    },
+    {
+      "id": "by_variance",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        }
+      ],
+      "query": {
+        "mean": 10,
+        "variance": 3
+      }
+    },
+    {
+      "id": "positive_mean",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        }
+      ],
+      "query": {
+        "mean": 12,
+        "variance": 1
+      }
+    },
+    {
+      "id": "negative_mean",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        }
+      ],
+      "query": {
+        "mean": 8,
+        "variance": 1
+      }
+    },
+    {
+      "id": "strict_threshold_equality",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        }
+      ],
+      "query": {
+        "mean": 11,
+        "variance": 2
+      }
+    },
+    {
+      "id": "next_variance_above",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        }
+      ],
+      "query": {
+        "mean": 10,
+        "variance": 2.000000238418579
+      }
+    },
+    {
+      "id": "next_mean_above",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        }
+      ],
+      "query": {
+        "mean": 11.000000953674316,
+        "variance": 1
+      }
+    },
+    {
+      "id": "margin_equality",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 10,
+          "variance": 1.0499999523162842
+        }
+      ],
+      "query": {
+        "mean": 10,
+        "variance": 2
+      }
+    },
+    {
+      "id": "margin_next_above",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 10,
+          "variance": 1.0500000715255737
+        }
+      ],
+      "query": {
+        "mean": 10,
+        "variance": 2
+      }
+    },
+    {
+      "id": "mean_guard_equality",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 0,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 9.999999747378752e-05,
+          "variance": 1
+        }
+      ],
+      "query": {
+        "mean": 1,
+        "variance": 1
+      }
+    },
+    {
+      "id": "mean_guard_next_above",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 0,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 0.00010000000474974513,
+          "variance": 1
+        }
+      ],
+      "query": {
+        "mean": 1,
+        "variance": 1
+      }
+    },
+    {
+      "id": "inverted_variance_no_shift",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 4
+        },
+        {
+          "label": "Sit",
+          "mean": 10,
+          "variance": 1
+        }
+      ],
+      "query": {
+        "mean": 10,
+        "variance": 4
+      }
+    },
+    {
+      "id": "inverted_variance_with_shift",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 4
+        },
+        {
+          "label": "Sit",
+          "mean": 8,
+          "variance": 1
+        }
+      ],
+      "query": {
+        "mean": 8,
+        "variance": 1
+      }
+    },
+    {
+      "id": "first_empty_only",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Empty",
+          "mean": 100,
+          "variance": 100
+        },
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        }
+      ],
+      "query": {
+        "mean": 10,
+        "variance": 1
+      }
+    },
+    {
+      "id": "multiple_occupied",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        },
+        {
+          "label": "StandStill",
+          "mean": 14,
+          "variance": 5
+        }
+      ],
+      "query": {
+        "mean": 13,
+        "variance": 4
+      }
+    },
+    {
+      "id": "all_labels",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "StandStill",
+          "mean": 12,
+          "variance": 3
+        },
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        },
+        {
+          "label": "LieDown",
+          "mean": 12,
+          "variance": 3
+        },
+        {
+          "label": "BreatheSlow",
+          "mean": 12,
+          "variance": 3
+        },
+        {
+          "label": "BreatheNormal",
+          "mean": 12,
+          "variance": 3
+        },
+        {
+          "label": "SmallMove",
+          "mean": 12,
+          "variance": 3
+        },
+        {
+          "label": "SleepPosture",
+          "mean": 12,
+          "variance": 3
+        }
+      ],
+      "query": {
+        "mean": 12,
+        "variance": 3
+      }
+    },
+    {
+      "id": "zeros_no_separation",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 0,
+          "variance": 0
+        },
+        {
+          "label": "Sit",
+          "mean": 0,
+          "variance": 0
+        }
+      ],
+      "query": {
+        "mean": 0,
+        "variance": 0
+      }
+    },
+    {
+      "id": "confidence_clamp",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 10,
+          "variance": 1
+        },
+        {
+          "label": "Sit",
+          "mean": 12,
+          "variance": 3
+        }
+      ],
+      "query": {
+        "mean": 180,
+        "variance": 1000
+      }
+    },
+    {
+      "id": "tiny_variance",
+      "anchors": [
+        {
+          "label": "Empty",
+          "mean": 1,
+          "variance": 0
+        },
+        {
+          "label": "Sit",
+          "mean": 1,
+          "variance": 1e-20
+        }
+      ],
+      "query": {
+        "mean": 1,
+        "variance": 1e-20
+      }
+    }
+  ]
+}

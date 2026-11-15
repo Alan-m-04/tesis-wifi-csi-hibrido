@@ -1,0 +1,291 @@
+{
+  "schema": "tesis-presence-offline-adapter-verification-v1",
+  "verified_utc": "2026-10-26T06:22:55.624030+00:00",
+  "base_commit": "796d534a9d04bb040f9868f77030980529ec02e7",
+  "branch": "feat/adaptador-presencia-offline",
+  "ruview_commit": "fefb0f918eefa7db6daef8cc83787fc7d6f74187",
+  "implementation": "Explicit Python port plus binary64 LLTF52 adapter; physical path feature extraction only",
+  "checks": {
+    "tests_passed": 22,
+    "tests_failed": 0,
+    "tests_skipped": 0,
+    "original_Rust_bodies_executed_on_synthetic_only": true,
+    "full_RuView_workspace_compiled": false,
+    "synthetic_cases_matching": 2022,
+    "bitwise_model_and_inference_cases": 513,
+    "missing_anchor_None_matches": 1509,
+    "pinned_original_excerpts_match_git_blobs": true,
+    "official_compiler_and_std_archive_hashes_verified": 2,
+    "physical_RX_session_results": 4,
+    "physical_feature_rows_traced_to_raw_CSV_IQ_and_raw_line_hashes": 598,
+    "physical_calibration_or_inference_calls": 0,
+    "published_physical_report_reproduced": true,
+    "preserved_previous_files": 598,
+    "local_links_checked": 65,
+    "whitespace_check": true
+  },
+  "physical_presence_states": "All four: sin calibración, presence=null, confidence=null; full/global rejected and window conforming unchanged.",
+  "physical_calibration_executed": false,
+  "physical_thresholds_fit": false,
+  "physical_presence_classified": false,
+  "new_UART_opened": false,
+  "new_capture": false,
+  "reset_or_firmware_or_protocol_change": false,
+  "numeric_limits": "Binary32 head equivalence on tested finite nonnegative synthetic inputs, not every IEEE value. Binary64 extraction is not full Features::from_series.",
+  "calibration_scope": "Only explicitly synthetic wrappers available; no valid physical calibration or physical-model CLI supplied.",
+  "attribution_verification": "Root Rust MIT notice (2024 rUv) copied exactly beside port; distinct preexisting JS MIT notice (2026 ruvnet) preserved unchanged. Mismatch was caught and resolved before publication.",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 11806,
+      "sha256": "682f8bd3f482bf2dc73629e81acbb580db91dd16ad68d369b56a56f2007d15d6"
+    },
+    {
+      "path": "docs/ESTADO_INICIAL.md",
+      "bytes": 19835,
+      "sha256": "8b5bd3c0253b83d240f5c1a3ea45ff9f71baa440be4b5403b33db9ccc0a68aed"
+    },
+    {
+      "path": "results/VALIDACION_ADAPTADOR_PRESENCIA.md",
+      "bytes": 16392,
+      "sha256": "1461affef4ae0e0308504477e1b5e40015e76c4d38a6e87691ac4edcd6a44521"
+    },
+    {
+      "path": "results/ADAPTADOR_PRESENCIA_FISICAS.resumen.json",
+      "bytes": 66049,
+      "sha256": "e5f4d8920ed0fc79710e71b135c020b030f4ed30ef6c301f9210a087d2c11ac0"
+    },
+    {
+      "path": "results/ADAPTADOR_PRESENCIA.equivalencia.json",
+      "bytes": 5613,
+      "sha256": "d7b0e79477934ca98fb689556410702e199df952912105db716278518ad5bb64"
+    },
+    {
+      "path": "src/presence_offline.py",
+      "bytes": 8992,
+      "sha256": "5cfc985817d855bc526f5978713b7b25d3d5b2ee6f5c52a7cb455c2412f02e53"
+    },
+    {
+      "path": "src/ruview_presence_port.py",
+      "bytes": 6992,
+      "sha256": "5994a675a7298ec2e0e21145f42ff6989f44285d308ee60c35d24bf23aeab703"
+    },
+    {
+      "path": "tools/extraer_presencia_offline.py",
+      "bytes": 5709,
+      "sha256": "88f94082e52aff35a0f9174e5359ae4c416e8b3ee982cb33c8764711565e108e"
+    },
+    {
+      "path": "tools/verificar_port_presencia.py",
+      "bytes": 8478,
+      "sha256": "35e8481f0f1701c7f59d778e447cebae2115cd9e446a3002b6c7a77f1399846c"
+    },
+    {
+      "path": "tools/preparar_rust_presencia.py",
+      "bytes": 2704,
+      "sha256": "2748fa38c179eea18c0c4f5c13104bc6ddfcee79653eaeeee3f8d64b4669b786"
+    },
+    {
+      "path": "config/presence_rust_reference.lock.json",
+      "bytes": 863,
+      "sha256": "32c341822f33eef0a5c82a71d640fea08b7a17c66ce9dc84f6b3841399191da0"
+    },
+    {
+      "path": "tests/test_presence_offline.py",
+      "bytes": 15767,
+      "sha256": "2ef6e34f234777941ecf8676e63cb989c71595f28c282b02fd54f73360ffa23e"
+    },
+    {
+      "path": "tests/rust/presence_reference_support.rs",
+      "bytes": 2545,
+      "sha256": "1f70f7a8ced57d5a0c4d9787ad1c09f17817dcc72025af69a83ea403832860d2"
+    },
+    {
+      "path": "tests/fixtures/presence_head_synthetic.json",
+      "bytes": 7869,
+      "sha256": "df708d5a7d9b3cbce29134c4d6a6a764739cb06702fd48b7ae8b1b684edc0a80"
+    },
+    {
+      "path": "vendor/ruview/presence/PROVENANCE.json",
+      "bytes": 2026,
+      "sha256": "756b2c8435ef43699db562bf7c8fb6ddb8d60a7fac853b4e03cb0abcdffd3b03"
+    },
+    {
+      "path": "vendor/ruview/presence/presence_original.rs",
+      "bytes": 4321,
+      "sha256": "5d40befddbe14bee7f49ff64f72ced7b0b7396581fe304b8a9ea82db59b29dc1"
+    },
+    {
+      "path": "vendor/ruview/presence/expects_presence_original.rs",
+      "bytes": 95,
+      "sha256": "8f3fa32aa84a4e85cee78b8b1538de0c92b31d374673ceb7c9b336bec9d58645"
+    },
+    {
+      "path": "vendor/ruview/presence/LICENSE",
+      "bytes": 1059,
+      "sha256": "f6f0fbda447f9374dd06cab17b764c485352f57f4d491471128a0525c10287c8"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 154,
+      "sha256": "7cfb9e356cb739238f0697d8da076e1620eb7207281e255a26db6a5da873e45d"
+    }
+  ],
+  "local_row_feature_artifacts_not_in_git": [
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/extraccion-fisica-03/sentado-rx-01.LLTF52.features.jsonl",
+      "bytes": 117480,
+      "sha256": "3f9dad09c30f48a1fd00e888dcfa7f78dde0ad75bafb446fb7cbdb716a07cd99"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/extraccion-fisica-03/sentado-rx-02.LLTF52.features.jsonl",
+      "bytes": 117462,
+      "sha256": "4b66fe57730ee5242d0d91f05a38145f7c2f50fb099a146f47a7e12f21ee89ab"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/extraccion-fisica-03/libre-rx-01.LLTF52.features.jsonl",
+      "bytes": 119207,
+      "sha256": "f85e3c0fdf253d0dae19d5c657dfa18c26e7ca37ba51a54569f2470e49392478"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/extraccion-fisica-03/libre-rx-02.LLTF52.features.jsonl",
+      "bytes": 119207,
+      "sha256": "88c4501a89eeefaae6b968440ef24348ca12a74a42af3458e15d71c543a2feca"
+    }
+  ],
+  "local_evidence": [
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/preservacion-antes.json",
+      "bytes": 107226,
+      "sha256": "17e8a98d40eeca0868033eb74ddc3f52d477d094ff02ee6ba3e133cb905502ff"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/preparacion-rust.log",
+      "bytes": 309,
+      "sha256": "4885a36fc61bc32ab8075bf18f97496f6880bf0f5a6ea8880bed65c5afe48d2a"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/pruebas-01.log",
+      "bytes": 3158,
+      "sha256": "0c36a224a3b17eecda23ba1173b0da2e61f6d671fd1c0e78f914cf032b78b0b9"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/pruebas-02.log",
+      "bytes": 3462,
+      "sha256": "e18735e7f1c6001e57a607dda5d493abac1ef1cde087e0bcfe7e76598841e1b3"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/pruebas-03.log",
+      "bytes": 3462,
+      "sha256": "11871b2a346150624d6737d741d2e29f3b916528c7a7907162505c791b1aa398"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-01.log",
+      "bytes": 63,
+      "sha256": "c14f0f4df7acf09eee092d55c9730cd2ba6fea330f1b76038a406e72a613cadb"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-02.log",
+      "bytes": 63,
+      "sha256": "c14f0f4df7acf09eee092d55c9730cd2ba6fea330f1b76038a406e72a613cadb"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-03.log",
+      "bytes": 63,
+      "sha256": "c14f0f4df7acf09eee092d55c9730cd2ba6fea330f1b76038a406e72a613cadb"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/equivalencia-04.log",
+      "bytes": 63,
+      "sha256": "c14f0f4df7acf09eee092d55c9730cd2ba6fea330f1b76038a406e72a613cadb"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/extraccion-fisica-01.log",
+      "bytes": 77,
+      "sha256": "6d673ea28a626a6766a7e2b0a3fa28eef951264f7fd3bad322d2549a0e944e4e"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/extraccion-fisica-02.log",
+      "bytes": 77,
+      "sha256": "6d673ea28a626a6766a7e2b0a3fa28eef951264f7fd3bad322d2549a0e944e4e"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/extraccion-fisica-03.log",
+      "bytes": 77,
+      "sha256": "6d673ea28a626a6766a7e2b0a3fa28eef951264f7fd3bad322d2549a0e944e4e"
+    },
+    {
+      "path": "results/local/adaptador-presencia-offline-20261026/verificacion-publicada-final.log",
+      "bytes": 86,
+      "sha256": "23191342c1a39ea4612b5ddcf1f6fda387ff64ef5bd4140f1302ec364390e62d"
+    }
+  ],
+  "outcome": "OFFLINE_ADAPTER_VERIFIED; NO_VALID_PHYSICAL_CALIBRATION_OR_PRESENCE_DECISIONS",
+  "resumption_verification": {
+    "verified_utc": "2026-10-27T23:59:27.045787+00:00",
+    "initial_head": "796d534a9d04bb040f9868f77030980529ec02e7",
+    "initial_branch": "feat/adaptador-presencia-offline",
+    "initial_stashes": 0,
+    "initial_staged_files": 0,
+    "existing_implementation_preserved": true,
+    "tests_passed": 22,
+    "tests_failed": 0,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "test_command": ".venv/bin/python -B -m unittest discover -s tests -p test_presence_offline.py -v",
+    "bubblewrap_rerun_succeeded": false,
+    "bubblewrap_failure": "No permissions to create a new namespace",
+    "test_isolation": "Existing restricted execution environment; no new Bubblewrap namespaces. Reviewed software tests only; physical extraction patches train/infer, serial.Serial and port discovery.",
+    "saved_references_verified_before_documentation_updates": 35,
+    "previous_files_preserved": 598,
+    "physical_rows_traced": 598,
+    "published_physical_report_reconstructed_exactly": true,
+    "physical_calibration_and_inference_calls": 0,
+    "UART_and_device_discovery_calls": 0,
+    "saved_Rust_binary_reexecuted_on_synthetic_inputs_only": true,
+    "synthetic_cases_identical_to_Python": 2022,
+    "model_and_inference_cases": 513,
+    "missing_anchor_cases": 1509,
+    "new_Rust_compilation_or_installation": false,
+    "local_links_checked": 71,
+    "whitespace_check": true,
+    "artifact_hashes_refreshed_after_documentation_updates": true,
+    "initial_validation_manifest_sha256": "dfaee0f230c185ee7ab07d97d2408028c5c6bd1877bf40efad150c520463f363",
+    "git_HTTPS_failure": "Could not resolve host: github.com",
+    "publication_transport": "GitHub connector Git objects and branch API; remote SHA to be checked after publication",
+    "physical_validation_pending": [
+      "eligible empty/occupied anchors",
+      "per-RX physical calibration bank",
+      "independent evaluation by complete sessions",
+      "pilot geometry/labels/READY repeatability review"
+    ],
+    "local_evidence": [
+      {
+        "path": "results/local/reanudacion-presencia-offline-20261027/preservacion-inicio.json",
+        "bytes": 17070,
+        "sha256": "dd31912accc4182fffee884d3b2c7cbe8bf636fca28ee1fbc2fa973d4625d4ed"
+      },
+      {
+        "path": "results/local/reanudacion-presencia-offline-20261027/pruebas.log",
+        "bytes": 3462,
+        "sha256": "ae2957fc6f59112793a07548275b8e90e624a1d357341b2509f4c0715db732ca"
+      },
+      {
+        "path": "results/local/reanudacion-presencia-offline-20261027/verificar_reanudacion.py",
+        "bytes": 7306,
+        "sha256": "e2868e0794d03ac11961d11235785b897d4edd0fc4ccd61f41dca3ac27691fd7"
+      },
+      {
+        "path": "results/local/reanudacion-presencia-offline-20261027/verificacion.log",
+        "bytes": 422,
+        "sha256": "418d103c04155f5980ce60c689c8877378b3210a838571d4a5c68258a04e48de"
+      }
+    ],
+    "staged_whitespace_exception": {
+      "path": "vendor/ruview/presence/presence_original.rs",
+      "attribute": "whitespace=-blank-at-eof",
+      "reason": "Preserve the exact pinned upstream excerpt and its SHA-256; all other whitespace checks remain enabled."
+    },
+    "staged_diff_check": "git diff --cached --check"
+  }
+}
