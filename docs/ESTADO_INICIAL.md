@@ -477,3 +477,24 @@ Bubblewrap tampoco pudo crear namespaces; pruebas directas con barrera de
 auditoría Python para UART/reserva. Originales, SQLite y CSV conservados.
 C04–C06 reservadas; R5-N01 sigue pendiente del ensayo interactivo.
 [Evidencia y límites](../results/VISTA_SQLITE_OFFLINE.md).
+
+## Continuación del PR #2: seguimiento y primera sesión, 14/11/2026
+
+El [Anexo G](AVANCE_ANEXO_G_2026-11-13.md) incorpora la aclaración del solicitante:
+fechas referenciales y estimaciones acumuladas 10/15/20/25/35/40/50/55 %, con
+plazo final 13/11/2026. Se mantienen separadas las fechas reales de las pruebas.
+Se incorporan cambios publicables de `9f73b69` y `eaf6713`, con SQLite comprobado
+por HTTP en memoria; la revisión visual conectada en Ubuntu sigue pendiente.
+
+La [prevalidación de una sesión](PREVALIDACION_CAPTURA_REAL_OFFLINE.md) reutiliza
+auditores nativos y LLTF52, devuelve motivos exactos y conserva todos los
+rechazos. Se comprobaron dos bundles R5 sintéticos, apto y rechazado por
+preámbulo, sin entrenamiento. Dependencias R5 copiadas/verificadas; fuentes
+sin confirmar de la copia original intactas. Regresión publicable: 102 pruebas
+Python y tres contratos Node aprobados; ocho pruebas nuevas de prevalidación.
+
+Una sesión real válida comprobará procesamiento de punta a punta; evaluar
+el modelo exige varias conexiones independientes completas y contrato de uso
+prospectivo. La evaluación existente sigue siendo sintética. Sin UART, captura
+o datos físicos nuevos. R5 humano, capturas reales y MIPYME pendientes;
+C04–C06 permanecen reservadas. [Evidencia](../results/PR2_PREVALIDACION_OFFLINE_20261114.json).

@@ -1,0 +1,141 @@
+{
+  "schema": "tesis-dashboard-offline-verification-1",
+  "transport": "HTTP handler over memory streams; no listening socket",
+  "browser_verified": false,
+  "api_queries": 3,
+  "routes": {
+    "/sessions": {
+      "status": 200,
+      "bytes": 3395
+    },
+    "/sessions.mjs": {
+      "status": 200,
+      "bytes": 5525
+    },
+    "/panel.css": {
+      "status": 200,
+      "bytes": 2617
+    },
+    "/api/sessions": {
+      "status": 200,
+      "bytes": 1267
+    }
+  },
+  "pilot": {
+    "session_id": "RX02-DIAG-VISOR-240S-R1",
+    "device_key": "usb:5C93200689",
+    "receiver_id": "RX-02",
+    "future_partition": "diagnostic_only",
+    "duration_ns": 240005564743,
+    "duration_s": 240.005564743,
+    "service_duration_ns": 240003543760,
+    "service_duration_s": 240.00354376,
+    "rows": 1192,
+    "sample_span_ns": 239191988869,
+    "sample_span_s": 239.191988869,
+    "capture_frequency_hz": 4.9792637522332885,
+    "rows_per_open_second": 4.966551510071875,
+    "max_host_gap_ns": 614782902,
+    "max_host_gap_ms": 614.782902,
+    "max_local_gap_us": 601971,
+    "max_local_gap_ms": 601.971,
+    "strict_quality_ok": 0,
+    "quality_status": "rejected",
+    "integrity_ok": 1,
+    "replay_ok": 1,
+    "close_ok": 1,
+    "diagnostic_ok": 1,
+    "quality_reasons": [
+      {
+        "reason": "format:RX-02",
+        "count": 20
+      },
+      {
+        "reason": "preamble_anomaly:RX-02",
+        "count": 1
+      }
+    ],
+    "preamble_rejected": true
+  },
+  "pilot_csv_comparison": {
+    "state": "matched",
+    "checked_fields": [
+      "duration_ns",
+      "duration_s",
+      "rows",
+      "capture_frequency_hz",
+      "max_host_gap_ns",
+      "max_host_gap_ms",
+      "strict_quality_ok",
+      "integrity_ok",
+      "replay_ok",
+      "close_ok",
+      "diagnostic_ok",
+      "quality_status",
+      "quality_details_json"
+    ]
+  },
+  "before": {
+    "results/local/base-datos-csi/piloto.sqlite3": {
+      "bytes": 5115904,
+      "mtime_ns": 1794451275626527622,
+      "sha256": "86d37e68ea63f2a3f97dc00626533ca646488416d2d1dd63960efd1769f8199c"
+    },
+    "results/BASE_DATOS_CSI_PILOTO/RX02-DIAG-VISOR-240S-R1__RX-02.csv": {
+      "bytes": 999,
+      "mtime_ns": 1794451582361961200,
+      "sha256": "9a72a84ef5c7171aadbc9a8a9a31f81b4ffc7d870fbd46ce89d91153f427ff3c"
+    }
+  },
+  "after": {
+    "results/local/base-datos-csi/piloto.sqlite3": {
+      "bytes": 5115904,
+      "mtime_ns": 1794451275626527622,
+      "sha256": "86d37e68ea63f2a3f97dc00626533ca646488416d2d1dd63960efd1769f8199c"
+    },
+    "results/BASE_DATOS_CSI_PILOTO/RX02-DIAG-VISOR-240S-R1__RX-02.csv": {
+      "bytes": 999,
+      "mtime_ns": 1794451582361961200,
+      "sha256": "9a72a84ef5c7171aadbc9a8a9a31f81b4ffc7d870fbd46ce89d91153f427ff3c"
+    }
+  },
+  "sqlite_unchanged": true,
+  "csv_unchanged": true,
+  "sidecar_set_unchanged": true,
+  "physical_UART_opened": false,
+  "reserve_opened": false,
+  "server_attempt": {
+    "command": ".venv/bin/python -B tools/panel_dispositivos.py --sin-replay",
+    "started": false,
+    "error": "[Errno 1] Operation not permitted",
+    "log": "results/local/avance-offline-20261114-r1/servidor.log"
+  },
+  "browser_attempt": {
+    "browser": "/snap/firefox/current/usr/lib/firefox/firefox",
+    "exit_code": -11,
+    "screenshot_created": false,
+    "error": "Sandbox: CanCreateUserNamespace() unshare(CLONE_NEWPID): EPERM",
+    "log": "results/local/avance-offline-20261114-r1/firefox.log"
+  },
+  "tests": {
+    "python": 102,
+    "node_contracts": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "browser_verified": false
+  },
+  "initial_branch": "feat/demo-offline-operacion-20261109",
+  "initial_head": "c518d07",
+  "pilot_dom_qa": {
+    "passed": true,
+    "actual_browser": false,
+    "source": "real SQLite API snapshot via memory HTTP",
+    "snapshot_sha256": "ab59959763d76ba2fcb1da05956d55076cfa4195345b10126cd2820aadc717c5",
+    "table_text": "  RX02-DIAG-VISOR-240S-R1 · RX-02 240,005564743 1192 4,9792637522332885 614,782902 RECHAZADA · PREÁMBULO",
+    "details_text": "  RX02-DIAG-VISOR-240S-R1 · RX-02 RECHAZADA · PREÁMBULO   Línea con formato inválido ·  format:RX-02  ×20  Anomalía en el preámbulo ·  preamble_anomaly:RX-02  ×1 Integridad: verificada · Replay: verificado · Cierre: confirmado · Diagnóstico: conforme",
+    "alert_text": "CALIDAD ESTRICTA RECHAZADA POR PREÁMBULO. Las anomalías originales de arranque/formato se conservan. No utilizar esta sesión como una captura aprobada.",
+    "csv_text": "Piloto RX02-DIAG-VISOR-240S-R1 / RX-02: indicadores y calidad coinciden con su CSV."
+  },
+  "final_test_log": "results/local/avance-offline-20261114-r1/regresion-final-r2.log"
+}
