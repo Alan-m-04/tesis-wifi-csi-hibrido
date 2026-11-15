@@ -10,9 +10,10 @@ en una MIPYME.
 El [informe de seguimiento del Anexo G](docs/AVANCE_ANEXO_G_2026-11-13.md)
 relaciona los ocho hitos, sus fechas referenciales, evidencia y pendientes.
 Último seguimiento indicado: **12/11/2026**; último plazo: **13/11/2026**.
-Los porcentajes del Anexo G están **no verificados**: la copia privada disponible
-tiene esas celdas vacías. No se calcula un porcentaje global a partir de pruebas
-de software ni se atribuye aprobación académica sin respaldo.
+Las fechas del Anexo G son referenciales y sus porcentajes son estimaciones
+acumuladas declaradas: **10, 15, 20, 25, 35, 40, 50 y 55 %**, respectivamente.
+Se conservan separadas las fechas reales de las pruebas; estos porcentajes no
+miden precisión de Edge AI ni acreditan aprobación académica.
 
 | Evidencia disponible | Resultado y límite |
 | --- | --- |
@@ -22,13 +23,21 @@ de software ni se atribuye aprobación académica sin respaldo.
 | [Visor RX-02 y diagnóstico físico histórico](results/RX02_DIAG_VISOR_240S_R1.md) | 1.192 muestras en aproximadamente 240 s; integridad, replay y cierre confirmados. Calidad **rechazada por preámbulo**. Diagnóstico ejecutado el 10/11, sin etiquetas E/S. |
 | [Piloto SQLite y CSV agregado](results/BASE_DATOS_CSI_OFFLINE.md) | 1.192 muestras históricas indexadas, importación repetida sin duplicados y métricas contrastadas. SQLite y datos por muestra permanecen locales. |
 | [Vista SQLite en el tablero](results/VISTA_SQLITE_OFFLINE.md) | `/sessions` de solo lectura; 60 pruebas Python y 3 contratos Node registrados. Revisión visual y HTTP real en navegador pendientes. |
-| [Integración offline R5-N01](results/DEVREP_R5_N01_INTEGRACION.md) | Evidencia local de 229 pruebas, incluidas 42 específicas, contrastada por hashes. Parte de sus fuentes sigue sin confirmar en la copia original; el ensayo guiado humano continúa pendiente. |
+| [Integración offline R5-N01](results/DEVREP_R5_N01_INTEGRACION.md) | Evidencia local histórica de 229 pruebas, incluidas 42 específicas. Se incorporan copias verificadas de las dependencias del auditor para prevalidar R5; los archivos ajenos de la copia original se conservan sin modificar. Ensayo humano pendiente. |
 
 Las [instantáneas publicadas y sus commits locales de origen](docs/AVANCE_ANEXO_G_2026-11-13.md#correspondencia-entre-origen-local-y-publicación) tienen árboles Git idénticos.
 
 Las pruebas con memoria/PTY y DOM simulado verifican software. Los diagnósticos
 físicos verifican el registro de intentos históricos. Ninguno sustituye una
 evaluación experimental independiente de Edge AI con verdad terreno.
+
+## Continuación offline del 14/11/2026
+
+[Checklist técnico](docs/CHECKLIST_TECNICO.md), [evaluación sintética Edge AI](docs/EVALUACION_EDGE_AI_OFFLINE.md)
+y [prevalidación de la primera captura real](docs/PREVALIDACION_CAPTURA_REAL_OFFLINE.md).
+SQLite se contrastó con el CSV y HTTP en memoria; la revisión visual conectada
+en Ubuntu sigue pendiente. Una primera sesión válida verifica procesamiento;
+evaluar un modelo requiere varias conexiones independientes completas.
 
 ## Evidencia para el tutor
 
@@ -52,8 +61,9 @@ terreno para distinguir zonas y generar mapas de calor; y despliegue y prueba
 en una MIPYME. El tablero histórico no mide ocupación actual.
 
 **C04–C06 permanecen cerradas y reservadas.** Esta actualización utiliza
-evidencia existente: sin UART, capturas, firmware nuevo, calibración o
-entrenamiento. Los documentos académicos privados, datos personales,
+evidencia existente: sin UART, capturas o firmware nuevo; sin calibración o
+entrenamiento con datos físicos. La evaluación del modelo es sintética.
+Los documentos académicos privados, datos personales,
 credenciales, SQLite local y datos brutos reservados quedan fuera de la
 publicación. Los cambios sin confirmar de la copia original se conservan.
 
