@@ -67,6 +67,15 @@ Los documentos académicos privados, datos personales,
 credenciales, SQLite local y datos brutos reservados quedan fuera de la
 publicación. Los cambios sin confirmar de la copia original se conservan.
 
+## Variante experimental Mesh/CSI — 24/11/2026
+
+[Fuentes y protocolo de ensayo](docs/PROTOCOLO_MESH_CSI_EXPERIMENTAL.md): proyecto
+independiente ESP-IDF 5.4, encuadre binario TCSI y decoder offline. Doce pruebas
+C/Python de memoria aprobadas; **compilación ESP32-S3 y validación física
+pendientes**. Hotspot Ubuntu propuesto por el usuario, sin configurar. No es
+compatible todavía con el contrato de captura v3/v4, no autoriza intervención
+física y no cambia los firmware históricos ni el alcance del anteproyecto.
+
 ## Estructura técnica
 
 `firmware/`: TX-01 y receptores; `src/`: captura, auditoría y análisis;

@@ -1,0 +1,81 @@
+{
+  "date_local": "2026-11-24",
+  "timezone": "America/Guayaquil",
+  "base_commit": "0feec428f323d285c6c986b9ae50f5aca37ac303",
+  "scope": "experimental sources and synthetic C/Python codec interoperability",
+  "tests": {
+    "command": "python3 -m unittest discover -s tests -p test_mesh_csi_wire.py -v",
+    "run": 12,
+    "passed": 12,
+    "failures": 0,
+    "skips": 0,
+    "kind": "synthetic_memory_only"
+  },
+  "compiled": {
+    "host_wire_c": true,
+    "gcc": "14.2.0",
+    "flags": [
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pedantic"
+    ],
+    "esp32s3_app": false,
+    "esp_build_blocker": "ESP-IDF/Xtensa toolchain not installed in this environment"
+  },
+  "budget": {
+    "kind": "theoretical_not_measurement",
+    "candidate_baud": 921600,
+    "uart_frame_bits": 10,
+    "csi_bytes": 256,
+    "wire_bytes_per_csi_frame": 462,
+    "candidate_hz": 100,
+    "csi_bytes_per_second": 46200,
+    "event_reserve_bytes_per_second": 20000,
+    "capacity_bytes_per_second": 92160.0,
+    "reserved_demand_fraction": 0.7183159722222222,
+    "ceiling_fraction": 0.8,
+    "storage_180h_csi_frames_bytes_per_receiver": 29937600000
+  },
+  "hotspot": {
+    "user_declared": "Ubuntu hotspot available as candidate",
+    "created_or_verified": false,
+    "channel": 11,
+    "bandwidth": "HT20",
+    "band_ghz": 2.4
+  },
+  "physical_uart_opened": false,
+  "flashed": false,
+  "acquired_physical_data": false,
+  "trained_model": false,
+  "legacy_unchanged": [
+    {
+      "path": "firmware/csi_send/main/app_main.c",
+      "sha256": "8e9d1a0cfd2996f0b6b3420f495fe2270e7f7ad0ca7487c3b876b6878c5c8eba",
+      "unchanged_from_base": true
+    },
+    {
+      "path": "firmware/csi_recv/main/app_main.c",
+      "sha256": "c940779452aedad8862dd6eb7a24d51786c662d3acbb9369b1a86bff54a1ccc6",
+      "unchanged_from_base": true
+    },
+    {
+      "path": "firmware/csi_recv_02/main/app_main.c",
+      "sha256": "1fb53776e1e5776194749041d1252c3f8ee11f69f30fb982a42c7577319e00d5",
+      "unchanged_from_base": true
+    },
+    {
+      "path": "src/capture_csi_multi.py",
+      "sha256": "8286cc6520bcda2c039dedd3e04efb4e44241bbbca556883ff587fb9a162dfd1",
+      "unchanged_from_base": true
+    },
+    {
+      "path": "src/validate_capture.py",
+      "sha256": "b8a470600ee17473f37600fe8c8d70714e3cc21677a3bf2d1ab557dfa3f8aac0",
+      "unchanged_from_base": true
+    }
+  ],
+  "task_closure": false,
+  "decisions_D01_D02": "provisional; physical and capture-contract evidence pending"
+}

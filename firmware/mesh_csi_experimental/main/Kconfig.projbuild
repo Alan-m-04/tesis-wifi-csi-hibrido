@@ -1,0 +1,26 @@
+menu "TESIS experimental Mesh/CSI (not approved for physical acquisition)"
+config TESIS_EXP_NODE_ID
+    int "Node label: 0=TX-01/root, 1=RX-01, 2=RX-02"
+    range 0 2
+    default 1
+config TESIS_EXP_ROUTER_SSID
+    string "Local Ubuntu hotspot SSID (do not commit credentials)"
+    default ""
+config TESIS_EXP_ROUTER_PASSWORD
+    string "Hotspot password"
+    default ""
+config TESIS_EXP_MESH_PASSWORD
+    string "Mesh softAP password: 8-63 characters"
+    default ""
+config TESIS_EXP_SOURCE_MAC
+    string "Sensor RF source MAC: lowercase/uppercase colon notation"
+    default ""
+config TESIS_EXP_HZ
+    int "Candidate probe cycles per second; delivered CSI rate is measured separately"
+    range 1 100
+    default 5
+config TESIS_EXP_CSI_MAX_BYTES
+    int "Largest admissible CSI buffer (oversize is counted and rejected, never truncated)"
+    range 2 1024
+    default 256
+endmenu
